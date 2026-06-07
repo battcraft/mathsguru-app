@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Trophy, RefreshCw } from 'lucide-react';
 import { STORY_SLIDES } from '../data';
@@ -14,10 +14,23 @@ export function StoryView({ onAddXP }: Props) {
   const [showResult, setShowResult] = useState(false);
   const [storyComplete, setStoryComplete] = useState(false);
 
+  const isTransitioning = useRef(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const slide = STORY_SLIDES[currentSlide];
   const totalSlides = STORY_SLIDES.length;
 
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   const handleChoice = (choiceIdx: number) => {
+    if (isTransitioning.current) return;
+    isTransitioning.current = true;
     setSelectedChoice(choiceIdx);
     setShowResult(true);
     const isCorrect = slide.choices[choiceIdx].correct;
@@ -25,7 +38,7 @@ export function StoryView({ onAddXP }: Props) {
       setScore(s => s + 1);
       onAddXP(15);
     }
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       if (currentSlide < totalSlides - 1) {
         setCurrentSlide(i => i + 1);
         setSelectedChoice(null);
@@ -33,6 +46,8 @@ export function StoryView({ onAddXP }: Props) {
       } else {
         setStoryComplete(true);
       }
+      isTransitioning.current = false;
+      timeoutRef.current = null;
     }, 1500);
   };
 
