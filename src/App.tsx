@@ -45,7 +45,7 @@ export function loadStats(): UserStats {
       }
 
       return {
-        xp: parsed.xp || 0,
+        xp: typeof parsed.xp === 'number' && !Number.isNaN(parsed.xp) ? parsed.xp : 0,
         streak,
         lastActiveDate: today,
         screensViewed: new Set(parsed.screensViewed || []),

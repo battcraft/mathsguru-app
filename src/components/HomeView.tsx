@@ -35,10 +35,30 @@ export function HomeView({ stats, onStartQuiz, onNavigate, difficulty, onSetDiff
   const riddle = DAILY_RIDDLES[riddleIdx];
   const currentLevel = DIFFICULTY_LEVELS.find(l => l.id === difficulty)!;
 
+  const topicProgress = TOPICS.map(t => {
+    const screenIds = t.subtopics.flatMap(s => s.screens.map(sc => sc.id));
+    const completed = screenIds.filter(id => stats.completedScreens.has(id)).length;
+    return { topic: t, total: screenIds.length, completed };
+  });
+
   const unlockedBadges = BADGES.filter(b => {
     if (b.id === 'streak-star') return stats.streak >= b.requirement;
-    if (b.id === 'desi-explorer') return stats.completedScreens.size > 0;
     if (b.id === 'bullet-brain') return stats.completedScreens.size >= b.requirement;
+    if (b.id === 'desi-explorer') {
+      const subsWithProgress = TOPICS.flatMap(t => t.subtopics).filter(
+        sub => sub.screens.some(s => stats.completedScreens.has(s.id))
+      ).length;
+      return subsWithProgress >= b.requirement;
+    }
+    if (b.id === 'geometry-guru') return stats.completedScreens.size >= b.requirement;
+    if (b.id === 'number-ninja') return stats.completedScreens.size >= b.requirement;
+    if (b.id === 'bazaar-master') {
+      const highScored = Object.values(stats.quizScores).filter(q => q.total > 0 && q.score / q.total >= 0.8).length;
+      return highScored >= b.requirement;
+    }
+    if (b.id === 'panga-king') {
+      return Object.values(stats.quizScores).some(q => q.total > 0 && q.score >= q.total);
+    }
     return false;
   });
 

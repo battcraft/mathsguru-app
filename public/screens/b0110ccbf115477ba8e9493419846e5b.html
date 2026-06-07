@@ -230,22 +230,16 @@
 </div>
 <!-- Video Player Bento Box -->
 <div class="w-full bg-surface-container-lowest neo-border neo-shadow rounded-lg overflow-hidden flex flex-col">
-<div class="video-container neo-border border-x-0 border-t-0">
-<!-- Using an image placeholder for the video frame -->
-<img alt="Video: The History of Zero and Bindu" data-alt="A stylized, neo-brutalist graphic frame showing an ancient Indian palm leaf manuscript covered in Sanskrit mathematical texts. Floating above the manuscript is a glowing, perfect geometric dot, representing the 'Bindu'. The lighting is dynamic, high-contrast, illuminating the ancient script while the glowing pink and yellow geometry overlays add a modern, street-pop aesthetic against a dark, moody background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwASd-3wGvFwHqb7suml7qw4yDY4Ji1RjbgcEKvmNu31IXtr-kuAwNgO2hO0_5uJuxMCywWgWvnJqVeDwsDhvJjjitLO6Npxyj68iYIfb4ekK5R3z8IuyDOWwOaCr71zQALEUxVYWBmg0Xals9y7UAIUW-vioGkHgb8g2Qk25hCoatoFd8kb8oVDCP5PTQh238cMMHzQh2jWucDIkLdlGnRJ-7I4uqZDVM26OpO0ZFlIqmTtI-CRmj3Gv3QwWZPKUnRSE3_E6DM4J8"/>
-<!-- Play Button Overlay -->
-<div class="absolute inset-0 flex items-center justify-center bg-black/40">
-<button class="w-20 h-20 bg-primary rounded-full neo-border neo-shadow neo-interactive flex items-center justify-center text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors">
-<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
-</button>
-</div>
-</div>
+<video class="w-full aspect-video object-contain bg-black" controls preload="metadata" playsinline>
+<source src="/videos/FINAL_bind.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 <!-- Video Controls/Metadata Bar -->
 <div class="p-4 bg-surface-container flex justify-between items-center">
 <div class="flex items-center gap-4">
 <span class="font-label-bold text-label-bold px-3 py-1 bg-secondary-container text-on-secondary-container neo-border rounded-DEFAULT">Module 1.2</span>
 <span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">schedule</span> 12:45
+<span class="material-symbols-outlined text-sm">schedule</span> Animated
                     </span>
 </div>
 <div class="flex gap-2">

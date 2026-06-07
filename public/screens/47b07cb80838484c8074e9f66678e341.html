@@ -198,22 +198,11 @@
 <!-- Main Content Canvas -->
 <main class="flex-grow p-margin-mobile md:p-margin-desktop max-w-4xl mx-auto w-full space-y-8">
 <!-- Video Player Container (Neo-Brutalist Frame) -->
-<div class="w-full aspect-video bg-surface-container-lowest border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT relative overflow-hidden group cursor-pointer">
-<!-- Video Cover Image -->
-<img alt="Video cover showing a neon laser" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A highly stylized, high-energy digital illustration blending mathematical geometry with urban street culture. A brilliant, glowing neon pink laser beam cuts diagonally across a stark, grid-like architectural background. The scene features heavy black structural lines and stark contrasting colors, embodying a neo-brutalist blueprint aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF06xfjV87CgGuNn1KjcyxQnsh7Jd_zVeQs45p78uhIE5CWrCddNcDcQ921NkpA6ZG35YtS_0RbNku2wGhxDNQdHnKH0cu8-LsKuyosd4aMb6nrprBPg_40Z46lonW60NF2VC-Rd-ToVJZEzqAZuhUclM8Arh99TskDlS-MNw_U4oB4WMcq90CKq5Y1Z74b9-fsJokJDnM_8ydR1SzIIibhrcd-wmlqy7zs4j6DzBJRmetFsLIp81dCu41x4W2RcpW5KQoaaV5qdzJ"/>
-<!-- Play Button Overlay -->
-<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
-<button class="w-20 h-20 bg-primary border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-full flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
-<span class="material-symbols-outlined text-white text-5xl ml-2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
-</button>
-</div>
-<!-- Video Timeline/Progress bar (Static visual representation) -->
-<div class="absolute bottom-0 left-0 w-full h-2 bg-surface-container-highest border-t-[3px] border-black">
-<div class="h-full bg-secondary-container w-1/3 border-r-[3px] border-black relative">
-<!-- Progress handle -->
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-4 h-4 bg-primary border-[3px] border-black rounded-full shadow-[2px_2px_0px_#1A1A1A]"></div>
-</div>
-</div>
+<div class="w-full bg-surface-container-lowest border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT overflow-hidden">
+<video class="w-full aspect-video object-contain bg-black" controls preload="metadata" playsinline>
+<source src="/videos/FINAL_rekha.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
 <!-- Lesson Header & Metadata -->
 <div class="space-y-4 bg-surface-container-lowest p-6 border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT">

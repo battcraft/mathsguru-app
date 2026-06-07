@@ -180,6 +180,8 @@ export function LearnView({ stats, onViewScreen, onCompleteScreen, onAddXP, diff
                 completingRef.current = true;
                 onCompleteScreen(currentScreen.id);
                 onAddXP(5);
+                // Reset guard so subsequent screens can also be completed
+                setTimeout(() => { completingRef.current = false; }, 100);
               }}
                 className="bg-[var(--green)] text-white px-4 py-2 rounded-lg border-2 border-black font-bold text-sm hover:translate-y-[1px] shadow-[2px_2px_0px_var(--black)] transition-all flex items-center gap-1">
                 <CheckCircle size={16} /> Done!
