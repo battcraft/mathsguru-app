@@ -8,6 +8,7 @@ function makeStats(overrides?: Partial<UserStats>): UserStats {
   return {
     xp: 0,
     streak: 0,
+    lastActiveDate: '',
     screensViewed: new Set(),
     completedScreens: new Set(),
     badges: [],

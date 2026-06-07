@@ -40,7 +40,7 @@ export function loadStats(): UserStats {
         // already active today — keep streak
       } else if (last === yesterday) {
         streak += 1;
-      } else {
+      } else if (last || parsed.lastActiveDate !== undefined) {
         streak = 1;
       }
 
@@ -55,7 +55,7 @@ export function loadStats(): UserStats {
       };
     }
   } catch {}
-  return { ...defaults, lastActiveDate: today, streak: 1 };
+  return { ...defaults, lastActiveDate: today, streak: 0 };
 }
 
 export function saveStats(stats: UserStats) {

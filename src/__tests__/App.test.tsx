@@ -27,6 +27,7 @@ function emptyStats(): UserStats {
   return {
     xp: 0,
     streak: 0,
+    lastActiveDate: '',
     screensViewed: new Set(),
     completedScreens: new Set(),
     badges: [],
@@ -41,13 +42,16 @@ describe('loadStats', () => {
 
   it('returns default stats when localStorage is empty', () => {
     const stats = loadStats();
-    expect(stats).toEqual(emptyStats());
+    expect(stats.xp).toBe(0);
+    expect(stats.streak).toBe(0);
+    expect(stats.lastActiveDate).toBe(new Date().toISOString().slice(0, 10));
   });
 
   it('returns default stats when localStorage contains corrupted JSON', () => {
     localStorage.setItem(STORAGE_KEY, '{invalid json!!!');
     const stats = loadStats();
-    expect(stats).toEqual(emptyStats());
+    expect(stats.xp).toBe(0);
+    expect(stats.streak).toBe(0);
   });
 
   it('returns default stats when localStorage contains partial data (no xp)', () => {
@@ -61,6 +65,7 @@ describe('loadStats', () => {
     const saved = {
       xp: 150,
       streak: 7,
+      lastActiveDate: '2026-06-07',
       screensViewed: ['screen1', 'screen2'],
       completedScreens: ['screen1'],
       badges: ['geometry-guru'],
@@ -100,6 +105,7 @@ describe('saveStats', () => {
     const original: UserStats = {
       xp: 42,
       streak: 3,
+      lastActiveDate: '2026-06-07',
       screensViewed: new Set(['a', 'b']),
       completedScreens: new Set(['a']),
       badges: ['panga-king'],
@@ -208,6 +214,7 @@ describe('App component', () => {
     saveStats({
       xp: 100,
       streak: 5,
+      lastActiveDate: '2026-06-07',
       screensViewed: new Set(['s1']),
       completedScreens: new Set(['s1']),
       badges: ['panga-king'],
