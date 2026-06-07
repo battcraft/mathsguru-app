@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahani: The Number Line Race</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration from Design System -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fbf9f3",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "on-surface": "#1b1c19",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#5a4136",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffd9e1",
+                    "secondary-fixed": "#63ff9d",
+                    "primary-fixed-dim": "#ffb693",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-background": "#1b1c19",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-primary-fixed": "#351000",
+                    "surface-container-high": "#eae8e2",
+                    "primary": "#a04100",
+                    "on-secondary-fixed-variant": "#005229",
+                    "on-primary-container": "#572000",
+                    "on-secondary-fixed": "#00210d",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-low": "#f5f3ee",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "on-tertiary-fixed": "#3f001a",
+                    "tertiary": "#ba005b",
+                    "surface-tint": "#a04100",
+                    "surface-container-highest": "#e4e2dd",
+                    "tertiary-container": "#ff6096",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fbf9f3",
+                    "surface-dim": "#dbdad4",
+                    "outline-variant": "#e2bfb0",
+                    "secondary": "#006d38",
+                    "inverse-surface": "#30312d",
+                    "secondary-container": "#63ff9d",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-secondary-container": "#00743c",
+                    "primary-container": "#ff6b00",
+                    "outline": "#8e7164",
+                    "surface-container": "#f0eee8",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": [
+                            "Bricolage Grotesque"
+                    ],
+                    "headline-xl": [
+                            "Bricolage Grotesque"
+                    ],
+                    "body-lg": [
+                            "Nunito Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Bricolage Grotesque"
+                    ],
+                    "headline-lg": [
+                            "Bricolage Grotesque"
+                    ],
+                    "label-lg": [
+                            "Nunito Sans"
+                    ],
+                    "body-md": [
+                            "Nunito Sans"
+                    ],
+                    "headline-md": [
+                            "Bricolage Grotesque"
+                    ]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-interactive:active {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+            transform: translate(4px, 4px);
+        }
+        .checkered-pattern {
+            background-image: 
+              linear-gradient(45deg, #1b1c19 25%, transparent 25%, transparent 75%, #1b1c19 75%, #1b1c19), 
+              linear-gradient(-45deg, #1b1c19 25%, transparent 25%, transparent 75%, #1b1c19 75%, #1b1c19);
+            background-size: 20px 20px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-headline-md text-headline-md w-full top-0 sticky border-b-[3px] border-on-surface dark:border-outline-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center px-margin-mobile h-16 z-50 transition-all">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="w-10 h-10 rounded-full border-[3px] border-on-surface bg-tertiary-container flex items-center justify-center neo-shadow neo-shadow-interactive transition-all">
+<span class="material-symbols-outlined text-on-surface font-bold">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight">Kahani: Number Race</h1>
+</div>
+<div>
+<!-- Trailing Action -->
+<button class="px-3 py-1 bg-surface-container-high border-[3px] border-on-surface rounded-lg font-label-lg text-label-lg font-bold neo-shadow neo-shadow-interactive flex items-center gap-1 transition-all">
+<span>12</span>
+<span>🔥</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max-width mx-auto px-margin-mobile py-6 flex flex-col gap-6 md:gap-8 pb-32">
+<!-- Hero Section with Number Line -->
+<section class="flex flex-col gap-4">
+<!-- Number Line -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface rounded-DEFAULT p-4 neo-shadow relative overflow-hidden flex flex-col gap-2">
+<div class="flex justify-between items-end h-8 w-full border-b-[3px] border-on-surface relative">
+<div class="absolute inset-0 flex justify-between items-end px-2">
+<div class="w-[3px] h-4 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-4 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-2 bg-on-surface"></div>
+<div class="w-[3px] h-4 bg-on-surface"></div>
+</div>
+</div>
+<div class="flex justify-between font-label-lg text-label-lg font-bold">
+<span>0</span>
+<span>50</span>
+<span>100</span>
+</div>
+</div>
+<!-- Hero Image Card -->
+<div class="bg-secondary-container border-[3px] border-on-surface rounded-DEFAULT overflow-hidden neo-shadow relative group">
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 border-[3px] border-on-surface rounded-full font-label-lg text-label-lg font-bold z-10 neo-shadow transform -rotate-2">
+                    START
+                </div>
+<img alt="Illustration of Indian children running on a brightly colored rainbow track shaped like a number line, designed in a Desi Street-Pop style with thick black borders, flat colors, and dynamic action poses." class="w-full h-auto object-cover border-b-[3px] border-on-surface aspect-[4/3] md:aspect-[16/9] transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFFX9y3fwN8bmGAVBhtSxYl4Dk0uXryq3LtdOD5t9yAREqGr8duKZ0hL1dy-nKB59gFTqhydcKO7u8TBcYh0O4V728FhTPE_jUmCk5NILHnPEP-DuCIAaoWZTIHt3PEunZdX4cyFGkmFgNr2BAm1HfNu7CFQmebgTFcCq79cO3-s831XpOoCPl0qm5YfgIPJotGIYTqtSS1G4Htpsp9vhwEGnStNVltgAvi6zjvn42wCX5kQvieQxFQQvxAE-HmXHU4s7MNIKfcQYz"/>
+<div class="p-4 bg-surface-container-lowest">
+<p class="font-body-lg text-body-lg font-medium">Dekho! Track par numbers race laga rahe hain. Kaun jitega?</p>
+</div>
+</div>
+</section>
+<!-- The Rule Block -->
+<section class="bg-tertiary-container border-[3px] border-on-surface rounded-DEFAULT p-6 neo-shadow transform rotate-1 md:rotate-0 hover:rotate-0 transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-on-surface text-tertiary-container rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold" style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-extrabold text-on-surface tracking-tight uppercase">Bada number,</h2>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-extrabold text-on-surface tracking-tight uppercase">tez bhaagta hai!</h2>
+</div>
+</div>
+</section>
+<!-- Finish Line Details -->
+<section class="bg-surface-container-lowest border-[3px] border-on-surface rounded-DEFAULT overflow-hidden neo-shadow flex flex-col">
+<div class="h-8 w-full checkered-pattern border-b-[3px] border-on-surface"></div>
+<div class="p-6 flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md font-bold">Number 85 aur Number 42</h3>
+<p class="font-body-lg text-body-lg">Dono bhag rahe hain. 85 aage nikal gaya kyunki wo <strong>bada</strong> hai!</p>
+<div class="flex flex-wrap gap-3 mt-2">
+<div class="bg-primary-container px-4 py-2 border-[3px] border-on-surface rounded-full font-headline-md text-headline-md font-bold neo-shadow inline-block">
+                        85 &gt; 42
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Action Footer (Sticky) -->
+<footer class="fixed bottom-0 w-full bg-surface border-t-[3px] border-on-surface p-4 flex justify-center z-50 pb-safe">
+<button class="w-full max-w-sm bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-DEFAULT py-4 font-headline-md text-headline-md font-extrabold uppercase tracking-wide neo-shadow neo-shadow-interactive transition-all flex justify-center items-center gap-2">
+            Agla Level
+            <span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+</footer>
+<!-- BottomNavBar (Hidden here as it's a focused story screen, suppressing per "Destination Rule") -->
+</body></html>

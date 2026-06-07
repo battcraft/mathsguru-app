@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti - Mid-Lesson Panga!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f2f1eb",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-secondary-fixed": "#00210d",
+                        "surface-dim": "#dbdad4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#351000",
+                        "on-error": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "on-background": "#1b1c19",
+                        "background": "#fbf9f3",
+                        "on-primary-container": "#572000",
+                        "outline": "#8e7164",
+                        "surface-bright": "#fbf9f3",
+                        "primary-fixed": "#ffdbcc",
+                        "surface-container-high": "#eae8e2",
+                        "surface-tint": "#a04100",
+                        "outline-variant": "#e2bfb0",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-container": "#ff6096",
+                        "tertiary-fixed": "#ffd9e1",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#63ff9d",
+                        "on-surface": "#1b1c19",
+                        "secondary": "#006d38",
+                        "on-surface-variant": "#5a4136",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-container": "#67002f",
+                        "surface-container-low": "#f5f3ee",
+                        "on-secondary-container": "#00743c",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#40e183",
+                        "primary": "#a04100",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0eee8",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#63ff9d",
+                        "surface-container-highest": "#e4e2dd",
+                        "inverse-surface": "#30312d",
+                        "tertiary": "#ba005b",
+                        "inverse-primary": "#ffb693"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .bricolage {
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        .neo-brutalism-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-brutalism-button:active {
+            box-shadow: 0px 0px 0px #1A1A1A;
+            transform: translate(4px, 4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col md:hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden neo-brutalism-shadow">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TR-YT9dY5FWLd26CPUiiNYBom7sFFDiYI1UC2MEGv8m4qKp_W76dTtsLYErTU4pflL3Sk_UkXdgeNHUvXz3VlTtqce8VGrf6v5EtyldHuUPNnnsDOKSybuVxYY5u6C-zdnMsPSSt81qkngvJiCIewGCiIjQL2WjM8VQRtZwUmqISXl9irwWn8WlrjoJerdVU1tTsYy8f_NzWc5YcZ8hWkBDPjI7VRExRjIxD4tnGRmuwrbJZj18qqbf84qyT80_TJ5xZ96H1jdsL"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Math-Masti</span>
+</div>
+<div class="flex items-center gap-1 font-label-lg text-label-lg font-bold bg-surface-container-high px-3 py-1 rounded-full border-[3px] border-on-surface neo-brutalism-shadow">
+            12 <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-margin-mobile flex flex-col gap-unit overflow-y-auto pb-32">
+<!-- Header & Progress -->
+<div class="flex flex-col gap-2 mb-4">
+<div class="flex justify-between items-center">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface uppercase">Mid-Lesson Panga!</h1>
+<!-- Circular Timer -->
+<div class="relative w-16 h-16 flex items-center justify-center rounded-full border-[3px] border-on-surface bg-surface-container-highest neo-brutalism-shadow">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-current text-surface-variant" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-current text-primary-container" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="25" stroke-width="3"></circle>
+</svg>
+<span class="absolute font-label-lg text-label-lg font-bold">02:15</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-6 border-[3px] border-on-surface rounded-full bg-surface-variant overflow-hidden flex relative neo-brutalism-shadow">
+<div class="h-full bg-secondary-container w-[60%] border-r-[3px] border-on-surface transition-all duration-500"></div>
+<div class="absolute inset-0 flex items-center justify-center font-label-lg text-label-lg font-bold z-10 pointer-events-none mix-blend-difference text-white">Question 3/5</div>
+</div>
+</div>
+<!-- Question Card -->
+<section class="bg-surface-container-low border-[3px] border-on-surface rounded-[16px] p-6 neo-brutalism-shadow flex flex-col gap-6 mb-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-center">Find the <span class="text-primary-container bg-surface-variant px-2 py-1 rounded-md border-[2px] border-on-surface">MAXIMUM</span> value in this set:</h2>
+<!-- Math Chips -->
+<div class="flex flex-wrap justify-center gap-3">
+<div class="w-14 h-14 rounded-full border-[3px] border-on-surface bg-[#FFE066] flex items-center justify-center font-headline-md text-headline-md neo-brutalism-shadow transition-transform hover:-translate-y-1">12</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-on-surface bg-[#FFE066] flex items-center justify-center font-headline-md text-headline-md neo-brutalism-shadow transition-transform hover:-translate-y-1">45</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-on-surface bg-[#FFE066] flex items-center justify-center font-headline-md text-headline-md neo-brutalism-shadow transition-transform hover:-translate-y-1">23</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-on-surface bg-[#FFE066] flex items-center justify-center font-headline-md text-headline-md neo-brutalism-shadow transition-transform hover:-translate-y-1">67</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-on-surface bg-[#FFE066] flex items-center justify-center font-headline-md text-headline-md neo-brutalism-shadow transition-transform hover:-translate-y-1">8</div>
+</div>
+</section>
+<!-- Answer Options -->
+<div class="flex flex-col gap-4">
+<!-- Incorrect / Neutral Option -->
+<button class="w-full bg-surface border-[3px] border-on-surface rounded-[16px] p-4 text-center font-headline-md text-headline-md neo-brutalism-shadow neo-brutalism-button transition-all hover:bg-surface-variant">
+                45
+            </button>
+<!-- Selected Correct Option -->
+<button class="w-full bg-primary-container border-[3px] border-on-surface rounded-[16px] p-4 text-center font-headline-md text-headline-md neo-brutalism-shadow transition-all relative overflow-hidden text-on-primary-container">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-secondary-container border-[3px] border-on-surface rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface font-bold" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+                67
+            </button>
+<!-- Incorrect / Neutral Option -->
+<button class="w-full bg-surface border-[3px] border-on-surface rounded-[16px] p-4 text-center font-headline-md text-headline-md neo-brutalism-shadow neo-brutalism-button transition-all hover:bg-surface-variant">
+                12
+            </button>
+<!-- Incorrect / Neutral Option -->
+<button class="w-full bg-surface border-[3px] border-on-surface rounded-[16px] p-4 text-center font-headline-md text-headline-md neo-brutalism-shadow neo-brutalism-button transition-all hover:bg-surface-variant">
+                23
+            </button>
+</div>
+</main>
+<!-- Immediate Feedback / Floating Action -->
+<div class="fixed bottom-24 left-0 right-0 px-margin-mobile z-40 pointer-events-none">
+<div class="bg-surface-container-highest border-[3px] border-on-surface rounded-[16px] rounded-br-none p-4 neo-brutalism-shadow flex items-center gap-4 animate-bounce max-w-sm ml-auto mr-4 relative">
+<div class="absolute -bottom-[3px] right-0 translate-y-full w-0 h-0 border-l-[16px] border-l-transparent border-t-[16px] border-t-on-surface"></div>
+<div class="w-12 h-12 rounded-full border-[3px] border-on-surface overflow-hidden bg-primary-fixed flex-shrink-0">
+<img alt="MathsGuru Bhaiya Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGfF-7Yeh30fyXcp5ubIk-_Z_7pAiRP8P5COJ1n5AMII6M1eH_AORo26EcPm4fq9341EnVqzaeJ2gvtSigxyNEv9pv-AVaZmJsoam2Iwcn2CVRdA0Vr3voM4lDZRSX9AqAjmWq-7aQPe2cu9Dh9bIyibIXQ4cRoW-n1wm_nnrBEChaa_VxBUUrDXRX1adyIMsgKs-X5hJZEj06XdJ-MsIu2kENLK2c5O7O-qtIdLJDZGamGOOVNVuSYUyQkWK8OS6pQgLiyVIahHn"/>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-bold pointer-events-auto">
+                Quick! Jawab do, time kam hai! 🏃‍♂️💨
+            </p>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors rounded-lg">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors rounded-lg">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors rounded-lg">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</button>
+</nav>
+</body></html>

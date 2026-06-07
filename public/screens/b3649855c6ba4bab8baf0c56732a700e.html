@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Range Practice - Math-Masti</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#ba005b",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-dim": "#dbdad4",
+                        "surface": "#fbf9f3",
+                        "on-secondary-container": "#00743c",
+                        "on-surface": "#1b1c19",
+                        "primary-container": "#ff6b00",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-background": "#1b1c19",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-tint": "#a04100",
+                        "primary-fixed": "#ffdbcc",
+                        "on-primary-fixed": "#351000",
+                        "on-tertiary-container": "#67002f",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-primary": "#ffb693",
+                        "on-primary": "#ffffff",
+                        "background": "#fbf9f3",
+                        "primary": "#a04100",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary": "#006d38",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-primary-container": "#572000",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container": "#f0eee8",
+                        "on-secondary-fixed-variant": "#005229",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "outline-variant": "#e2bfb0",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#ff6096",
+                        "outline": "#8e7164",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "inverse-surface": "#30312d",
+                        "surface-bright": "#fbf9f3",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#63ff9d",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-container-high": "#eae8e2",
+                        "on-surface-variant": "#5a4136",
+                        "on-error": "#ffffff",
+                        // Brand Aliases
+                        "mango-orange": "#ff6b00",
+                        "gulabi-pink": "#ff6096",
+                        "nimbu-green": "#63ff9d",
+                        "warm-chalk": "#fbf9f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}]
+                    },
+                    backgroundImage: {
+                        'dot-grid': 'radial-gradient(#1b1c19 1px, transparent 1px)',
+                    },
+                    backgroundSize: {
+                        'dot': '16px 16px',
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .brutal-border {
+                @apply border-[3px] border-on-surface;
+            }
+            .brutal-shadow {
+                @apply shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+            }
+            .brutal-interactive {
+                @apply brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-150;
+            }
+            .chip {
+                @apply bg-surface-container-lowest brutal-border rounded-full flex items-center justify-center font-headline-md text-headline-md text-on-surface;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-[100px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky border-b-[3px] border-on-surface dark:border-outline-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 z-50 bg-surface">
+<div class="flex items-center gap-2">
+<button aria-label="Go back" class="brutal-interactive p-1 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim ml-2">Math-Masti</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="font-label-lg text-label-lg font-bold">12 🔥</div>
+<div class="w-10 h-10 rounded-full brutal-border overflow-hidden bg-primary-container">
+<!-- Avatar placeholder -->
+</div>
+</div>
+</header>
+<main class="max-w-[800px] mx-auto px-margin-mobile py-8 flex flex-col gap-8">
+<!-- Header Section -->
+<section class="text-center">
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Range Finder: Gap Nikalo!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Max aur Min ke beech ka gap. Easy hai boss!</p>
+</section>
+<!-- Card 1 (Easy) - Feedback State (Correct) -->
+<article class="bg-surface-container-lowest brutal-border brutal-shadow rounded-DEFAULT overflow-hidden relative">
+<div class="absolute inset-0 bg-dot-grid bg-dot opacity-10 pointer-events-none"></div>
+<div class="p-6 relative z-10 flex flex-col gap-6">
+<div class="flex justify-between items-center border-b-[3px] border-on-surface pb-4">
+<h2 class="font-headline-md text-headline-md">Level 1: Basic Range</h2>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 brutal-border rounded-full font-label-lg text-label-lg">Solved!</span>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap justify-center gap-4">
+<div class="chip w-16 h-16">12</div>
+<div class="chip w-16 h-16">45</div>
+<div class="chip w-16 h-16 bg-error-container brutal-shadow">8 <span class="text-[12px] absolute -bottom-5">Min</span></div>
+<div class="chip w-16 h-16 bg-primary-container brutal-shadow">67 <span class="text-[12px] absolute -bottom-5">Max</span></div>
+<div class="chip w-16 h-16">23</div>
+</div>
+<!-- Visualizer -->
+<div class="mt-8 relative pt-4">
+<div class="h-1 bg-on-surface w-full relative">
+<div class="absolute left-[15%] w-[70%] h-4 -top-[6px] border-t-[3px] border-l-[3px] border-r-[3px] border-tertiary-container rounded-t-lg"></div>
+<div class="absolute left-[50%] -translate-x-1/2 -top-8 font-label-lg text-label-lg text-tertiary-container bg-surface-container-lowest px-2">Gap = 59</div>
+</div>
+</div>
+<!-- Input Area - Correct State -->
+<div class="flex items-center gap-4 mt-4 p-4 bg-secondary-container brutal-border rounded-lg">
+<span class="font-headline-md text-headline-md">Range =</span>
+<input class="w-24 text-center font-headline-md text-headline-md brutal-border rounded-lg bg-surface-container-lowest py-2 focus:outline-none focus:border-secondary focus:ring-0 shadow-[4px_4px_0px_0px_#006d38] border-secondary" readonly="" type="text" value="59"/>
+<span class="material-symbols-outlined text-[32px] text-secondary">check_circle</span>
+</div>
+</div>
+</article>
+<!-- Card 2 (Medium) -->
+<article class="bg-surface-container-lowest brutal-border brutal-shadow rounded-DEFAULT overflow-hidden relative">
+<div class="absolute inset-0 bg-dot-grid bg-dot opacity-10 pointer-events-none"></div>
+<div class="p-6 relative z-10 flex flex-col gap-6">
+<div class="flex justify-between items-center border-b-[3px] border-on-surface pb-4">
+<h2 class="font-headline-md text-headline-md">Level 2: Big Numbers</h2>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap justify-center gap-4">
+<div class="chip w-20 h-16">150</div>
+<div class="chip w-20 h-16">300</div>
+<div class="chip w-20 h-16">75</div>
+<div class="chip w-20 h-16">225</div>
+<div class="chip w-20 h-16">200</div>
+</div>
+<!-- Input Area -->
+<div class="flex flex-col sm:flex-row items-center gap-4 mt-4 justify-center">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md">Range =</span>
+<input class="w-24 text-center font-headline-md text-headline-md brutal-border rounded-lg bg-surface-container-lowest py-2 focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0px_0px_#63ff9d]" placeholder="?" type="text"/>
+</div>
+<button class="bg-primary-container text-on-surface font-label-lg text-label-lg px-8 py-3 brutal-border brutal-interactive rounded-lg w-full sm:w-auto">
+                        Check
+                    </button>
+</div>
+</div>
+</article>
+<!-- Card 3 (Hard) -->
+<article class="bg-surface-container-lowest brutal-border brutal-shadow rounded-DEFAULT overflow-hidden relative">
+<div class="absolute inset-0 bg-dot-grid bg-dot opacity-10 pointer-events-none"></div>
+<div class="p-6 relative z-10 flex flex-col gap-6">
+<div class="flex justify-between items-center border-b-[3px] border-on-surface pb-4">
+<h2 class="font-headline-md text-headline-md">Level 3: Decimals</h2>
+<span class="material-symbols-outlined text-[24px] text-primary-container">local_fire_department</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface text-center bg-tertiary-fixed p-3 brutal-border rounded-lg">
+                    Dimaag Lagao! Decimal ka range kaise nikaloge?
+                </p>
+<!-- Chips -->
+<div class="flex flex-wrap justify-center gap-4">
+<div class="chip w-20 h-16 bg-surface-variant">5.5</div>
+<div class="chip w-20 h-16 bg-surface-variant">12.5</div>
+<div class="chip w-20 h-16 bg-surface-variant">3.8</div>
+<div class="chip w-20 h-16 bg-surface-variant">8.1</div>
+<div class="chip w-20 h-16 bg-surface-variant">10.2</div>
+</div>
+<!-- Input Area -->
+<div class="flex flex-col sm:flex-row items-center gap-4 mt-4 justify-center">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md">Range =</span>
+<input class="w-24 text-center font-headline-md text-headline-md brutal-border rounded-lg bg-surface-container-lowest py-2 focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0px_0px_#63ff9d]" placeholder="?" type="text"/>
+</div>
+<button class="bg-primary-container text-on-surface font-label-lg text-label-lg px-8 py-3 brutal-border brutal-interactive rounded-lg w-full sm:w-auto">
+                        Check
+                    </button>
+</div>
+</div>
+</article>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface dark:border-outline-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg mt-1">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</a>
+</nav>
+</body></html>

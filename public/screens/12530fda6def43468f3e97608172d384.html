@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparing Decimals - MathsGuru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-container-high": "#eae8e2",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-primary-container": "#572000",
+                        "on-surface": "#1b1c19",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-fixed": "#00210d",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "outline-variant": "#e2bfb0",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "background": "#fbf9f3",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006d38",
+                        "on-secondary-container": "#00743c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-container": "#67002f",
+                        "surface-tint": "#a04100",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-surface-variant": "#5a4136",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "outline": "#8e7164",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-primary-fixed": "#351000",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312d",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-variant": "#e4e2dd",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "primary-fixed": "#ffdbcc",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "tertiary": "#ba005b",
+                        "error": "#ba1a1a",
+                        "primary": "#a04100",
+                        "tertiary-container": "#ff6096",
+                        "surface-container": "#f0eee8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pt-20 pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:bg-primary-container transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none p-2 rounded-full border-[3px] border-transparent hover:border-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-primary dark:text-primary-fixed-dim">MathsGuru</h1>
+</div>
+<!-- Desktop Nav Cluster -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface font-label-lg text-label-lg hover:bg-tertiary-container/20 transition-colors px-4 py-2 rounded-full" href="#">Home</a>
+<a class="text-on-surface font-label-lg text-label-lg hover:bg-tertiary-container/20 transition-colors px-4 py-2 rounded-full" href="#">Chat</a>
+<a class="text-primary font-label-lg text-label-lg bg-primary-container px-4 py-2 rounded-full border-[3px] border-on-surface shadow-[2px_2px_0px_#1B1C19]" href="#">Quiz</a>
+<a class="text-on-surface font-label-lg text-label-lg hover:bg-tertiary-container/20 transition-colors px-4 py-2 rounded-full" href="#">Story</a>
+</nav>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden shadow-[2px_2px_0px_#1B1C19] bg-surface-container-highest">
+<!-- Avatar placeholder -->
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmE5OQ1R9orDfO-7oIdIE6_9D_-nqAKcxDo3sQmR-Jbkd3l4oEElWD--3WszvO5YCK5Cu9Oi5wmlmuDboDKet-esyopOFW24lmdF07aWywP6-GSjcDRBbF1b7Q4Jcm3etZy8rr5cO2-GSylfNVtRCZPl7K3btsZ47EhlZ9_S7SaoIJ3dkpiIhhkINX2lWLgzkjRrALTmAmW2V33OvzD3qCqmEAurByUYZ65tj6wYYY5xvozZ9u9L6pEaNZEjfK1kBDV3WtHmJTik9b"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<!-- Header Section -->
+<div class="mb-10 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-2">Comparing Decimals</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Who is the bigger boss? Let's find out.</p>
+</div>
+<!-- Decorative badge -->
+<div class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] transform rotate-2 font-headline-md text-headline-md">
+                Level 4
+            </div>
+</div>
+<!-- The Core Rule Card -->
+<section class="bg-surface-container-lowest border-[3px] border-on-surface rounded-DEFAULT shadow-[4px_4px_0px_#1B1C19] mb-12 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary-container rounded-bl-full border-b-[3px] border-l-[3px] border-on-surface opacity-20 -z-0"></div>
+<div class="p-6 md:p-10 relative z-10">
+<div class="flex items-center gap-4 mb-6 border-b-[3px] border-on-surface pb-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Golden Rule</h3>
+</div>
+<p class="font-headline-md text-headline-md mb-6 leading-tight">
+<span class="bg-secondary-fixed px-2 py-1 border-[2px] border-on-surface rounded-md shadow-[2px_2px_0px_#1B1C19]">Whole part</span> compare karo pehle.
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Always look at the numbers BEFORE the decimal point first. If they are different, the bigger whole number wins immediately. If they are the same, THEN you check the decimal parts.
+                </p>
+</div>
+</section>
+<!-- Example Battle Area -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Competitor 1 -->
+<div class="bg-surface-bright border-[3px] border-on-surface rounded-DEFAULT p-8 shadow-[4px_4px_0px_#1B1C19] flex flex-col items-center justify-center relative overflow-hidden group hover:bg-tertiary-fixed-dim transition-colors duration-300">
+<div class="absolute top-4 left-4 bg-surface text-on-surface font-label-lg text-label-lg px-3 py-1 border-[2px] border-on-surface rounded-full shadow-[2px_2px_0px_#1B1C19]">
+                    Player 1
+                </div>
+<div class="text-[80px] font-headline-xl text-on-surface font-extrabold tracking-tighter mt-8">
+<span class="text-primary group-hover:text-on-surface transition-colors">3</span><span class="text-tertiary">.</span>4
+                </div>
+</div>
+<!-- VS Badge (Desktop Center absolute, Mobile flex between) -->
+<div class="md:absolute left-1/2 md:-translate-x-1/2 mt-[120px] md:mt-[140px] z-20 hidden md:flex items-center justify-center w-20 h-20 bg-primary border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] text-on-primary font-headline-md text-headline-md transform -rotate-12">
+                VS
+            </div>
+<!-- Competitor 2 -->
+<div class="bg-surface-bright border-[3px] border-on-surface rounded-DEFAULT p-8 shadow-[4px_4px_0px_#1B1C19] flex flex-col items-center justify-center relative overflow-hidden group hover:bg-secondary-fixed transition-colors duration-300">
+<div class="absolute top-4 right-4 bg-surface text-on-surface font-label-lg text-label-lg px-3 py-1 border-[2px] border-on-surface rounded-full shadow-[2px_2px_0px_#1B1C19]">
+                    Player 2
+                </div>
+<div class="text-[80px] font-headline-xl text-on-surface font-extrabold tracking-tighter mt-8">
+<span class="text-primary group-hover:text-on-surface transition-colors">3</span><span class="text-tertiary">.</span>9
+                </div>
+</div>
+<!-- Mobile VS Indicator -->
+<div class="md:hidden flex justify-center -mt-12 mb-4 relative z-20">
+<div class="flex items-center justify-center w-16 h-16 bg-primary border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] text-on-primary font-headline-md text-headline-md transform -rotate-12">
+                    VS
+                </div>
+</div>
+</section>
+<!-- Breakdown Analysis -->
+<section class="bg-surface-container border-[3px] border-on-surface rounded-DEFAULT shadow-[4px_4px_0px_#1B1C19] p-6 md:p-8">
+<h4 class="font-headline-md text-headline-md border-b-[3px] border-on-surface pb-4 mb-6">Breakdown Analysis</h4>
+<div class="flex flex-col gap-4">
+<!-- Step 1 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 bg-primary-container text-on-primary-container border-[2px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md shadow-[2px_2px_0px_#1B1C19]">1</div>
+<div class="pt-1">
+<p class="font-body-lg text-body-lg">Whole parts are equal: <strong class="bg-tertiary-fixed px-2 py-0.5 border-[2px] border-on-surface rounded">3 = 3</strong></p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex-shrink-0 bg-secondary-container text-on-secondary-container border-[2px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md shadow-[2px_2px_0px_#1B1C19]">2</div>
+<div class="pt-1">
+<p class="font-body-lg text-body-lg">Compare tenths: <strong class="bg-secondary-fixed px-2 py-0.5 border-[2px] border-on-surface rounded">4 &lt; 9</strong></p>
+</div>
+</div>
+<!-- Result -->
+<div class="mt-4 bg-surface-bright border-[2px] border-on-surface rounded-lg p-4 shadow-[2px_2px_0px_#1B1C19] flex justify-between items-center">
+<span class="font-headline-md text-headline-md">Result:</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary bg-primary-container px-4 py-2 border-[2px] border-on-surface rounded-full transform rotate-2">3.9 is bigger!</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container dark:bg-surface-container-highest border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 p-2 rounded-lg transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 p-2 rounded-lg transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="forum">forum</span>
+<span class="font-label-lg text-label-lg text-xs">Chat</span>
+</a>
+<!-- Active Tab: Quiz -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_#1B1C19] transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="quiz" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg text-xs">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 p-2 rounded-lg transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg text-xs">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the result
+        document.querySelectorAll('.group').forEach(el => {
+            el.addEventListener('mousedown', function() {
+                this.style.transform = 'translate(4px, 4px)';
+                this.style.boxShadow = '0px 0px 0px #1B1C19';
+            });
+            el.addEventListener('mouseup', function() {
+                this.style.transform = 'translate(0px, 0px)';
+                this.style.boxShadow = '4px 4px 0px #1B1C19';
+            });
+            el.addEventListener('mouseleave', function() {
+                this.style.transform = 'translate(0px, 0px)';
+                this.style.boxShadow = '4px 4px 0px #1B1C19';
+            });
+        });
+    </script>
+</body></html>

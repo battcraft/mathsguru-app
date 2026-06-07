@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .neo-shadow-active {
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md selection:bg-secondary-container">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="p-2 border-[3px] border-on-surface rounded-full bg-surface-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px]">
+<span class="material-symbols-outlined block" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Mastery Summary</h1>
+</div>
+<div class="font-headline-xl text-headline-xl text-primary hidden md:block">CHAMPION</div>
+</header>
+<main class="max-w-2xl mx-auto px-6 py-12 pb-32">
+<!-- Hero Section -->
+<div class="text-center mb-12">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl mb-4 text-on-surface">Max/Min Mastered!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">Shabaash! You've completely crushed this topic with 100% accuracy.</p>
+</div>
+<!-- Mastery Visualization Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Circular Progress Card -->
+<div class="bg-surface-bright border-[3px] border-on-surface rounded-lg p-8 neo-shadow flex flex-col items-center justify-center text-center">
+<div class="relative w-40 h-40 mb-4">
+<svg class="w-full h-full">
+<circle class="text-surface-variant stroke-current" cx="80" cy="80" fill="transparent" r="70" stroke-width="12"></circle>
+<circle class="text-secondary stroke-current progress-ring__circle" cx="80" cy="80" fill="transparent" r="70" stroke-dasharray="440" stroke-dashoffset="0" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-headline-xl text-headline-xl text-on-surface">100%</span>
+</div>
+</div>
+<p class="font-label-lg text-label-lg uppercase text-secondary">Concept Accuracy</p>
+</div>
+<!-- Badge Unlock Card -->
+<div class="bg-primary-fixed border-[3px] border-on-surface rounded-lg p-8 neo-shadow flex flex-col items-center justify-center text-center relative overflow-hidden">
+<div class="absolute -top-4 -right-4 bg-tertiary text-on-tertiary px-4 py-1 rotate-12 border-[3px] border-on-surface font-label-bold text-label-bold">NEW UNLOCK</div>
+<div class="w-24 h-24 bg-surface-container-lowest border-[3px] border-on-surface rounded-full flex items-center justify-center mb-6 neo-shadow">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-primary-fixed-variant mb-1">Peak Performer</h3>
+<p class="font-body-md text-body-md text-on-primary-fixed">The highest rank in optimization!</p>
+</div>
+</div>
+<!-- Stat Snapshot Bento -->
+<div class="grid grid-cols-3 gap-4 mb-12">
+<div class="bg-surface-container border-[3px] border-on-surface rounded-lg p-4 neo-shadow text-center">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="timer">timer</span>
+<p class="font-headline-md text-headline-md">12m</p>
+<p class="text-xs font-bold uppercase opacity-60">Fastest Solve</p>
+</div>
+<div class="bg-secondary-container border-[3px] border-on-surface rounded-lg p-4 neo-shadow text-center">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="local_fire_department">local_fire_department</span>
+<p class="font-headline-md text-headline-md">7 Days</p>
+<p class="text-xs font-bold uppercase opacity-60">Daily Streak</p>
+</div>
+<div class="bg-tertiary-fixed border-[3px] border-on-surface rounded-lg p-4 neo-shadow text-center">
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="bolt">bolt</span>
+<p class="font-headline-md text-headline-md">+250</p>
+<p class="text-xs font-bold uppercase opacity-60">XP Earned</p>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="space-y-4">
+<button class="w-full bg-primary-container text-on-primary-container border-[3px] border-on-surface py-5 px-8 rounded-lg font-headline-md text-headline-md neo-shadow flex items-center justify-center gap-3 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px]" onclick="window.location.reload()">
+                Next Topic: Mean/Average
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-bright text-on-surface border-[3px] border-on-surface py-4 px-8 rounded-lg font-label-lg text-label-lg neo-shadow flex items-center justify-center gap-3 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px]">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+                Brag to your friends
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Contextual Filter: Top Level) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Confetti effect or simple entrance animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.neo-shadow');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body></html>

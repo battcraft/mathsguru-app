@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rounding in the Real World</title>
+<!-- Google Fonts: Fredoka & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#5a3f48",
+                    "on-secondary": "#ffffff",
+                    "outline": "#8d6f78",
+                    "tertiary": "#705d00",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "surface-dim": "#dadada",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb0cb",
+                    "on-secondary-fixed": "#2f1400",
+                    "secondary-fixed-dim": "#ffb781",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary-container": "#5b2d00",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#924c00",
+                    "inverse-surface": "#2f3131",
+                    "surface-tint": "#b80069",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-low": "#f3f3f4",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#c9a900",
+                    "secondary-container": "#f88400",
+                    "primary-fixed": "#ffd9e3",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e1bdc7",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "on-primary-fixed": "#3e0020",
+                    "primary-container": "#df0b81",
+                    "background": "#f9f9f9",
+                    "on-tertiary-container": "#4c3f00",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed": "#ffe16d",
+                    "inverse-on-surface": "#f0f1f1",
+                    "error": "#ba1a1a",
+                    "primary": "#b40067",
+                    "on-surface": "#1a1c1c",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "on-tertiary-fixed-variant": "#544600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "border-width": "3px",
+                    "shadow-offset": "4px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Nunito Sans"
+                    ],
+                    "label-bold": [
+                            "Nunito Sans"
+                    ],
+                    "body-lg": [
+                            "Nunito Sans"
+                    ],
+                    "headline-xl": [
+                            "Fredoka"
+                    ],
+                    "headline-xl-mobile": [
+                            "Fredoka"
+                    ],
+                    "headline-md": [
+                            "Fredoka"
+                    ],
+                    "headline-lg": [
+                            "Fredoka"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-bold": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+        }
+        }
+      }
+    </script>
+<style>
+        /* Repeating dot grid pattern for background */
+        .bg-pattern {
+            background-image: radial-gradient(#8d6f78 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        /* Neo-brutalist interaction classes */
+        .neo-btn {
+            transition: all 0.1s ease-in-out;
+        }
+        .neo-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md bg-pattern min-h-screen flex flex-col md:pb-0 pb-24">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md docked full-width top-0 border-b-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A stylized, vibrant illustrated avatar of an Indian student with short hair, wearing a bright geometric t-shirt. The background is a flat, saturated pink. The illustration style is flat vector, energetic, and matches a modern street-pop aesthetic with bold black outlines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKgDuT9XHTt2r695je7WarZSBzAWHPUCS0FvQCmIocw_08oWNOIvxqKsIlJxWHofEKvHspT1_M5rBP52LLLxcLQa0TrfbxOAphEAayPXRfjZfRMFqvDArrT3WL6d0cLwkHFY9rgxvANYVC8HNp7hZ3Wi520z7IWnyT491l22UQ9BnPJsqzQWuJHjeonmetmzEddtX9QDgwB70t7Cp53dn3KPgSreU-BDYTE2X2-QfCqQA9n0ZFzCiWPaBY3bKFjZfNLIRqr6Aak19O"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<button class="flex items-center justify-center p-2 rounded-full border-3 border-black hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all neo-btn shadow-[2px_2px_0px_#1A1A1A] bg-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-8">
+<!-- Header Section -->
+<section class="flex flex-col gap-4">
+<div class="inline-block px-4 py-2 bg-secondary-fixed text-on-secondary-fixed w-max border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded rotate-[-2deg]">
+<span class="font-label-bold text-label-bold uppercase tracking-wider">Real World Math</span>
+</div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl">The Magic of <span class="text-primary underline decoration-[4px] underline-offset-4 decoration-black">₹99</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Have you ever noticed that shops love to end prices with 99? It's not a coincidence. Let's look at the psychology of rounding.
+            </p>
+</section>
+<!-- Shop Window Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+<!-- Decorative background box -->
+<div class="absolute inset-0 bg-surface-container border-3 border-black rounded shadow-[8px_8px_0px_#1A1A1A] -z-10 translate-y-4 translate-x-4"></div>
+<!-- Item 1 -->
+<article class="bg-surface border-3 border-black rounded p-4 flex flex-col items-center gap-4 shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 transition-all">
+<div class="w-full h-40 bg-inverse-primary border-3 border-black rounded flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-[80px] text-primary">directions_run</span>
+</div>
+<div class="w-full border-t-3 border-black border-dashed pt-4 flex justify-between items-end">
+<span class="font-headline-md text-headline-md">Sneakers</span>
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">₹499</span>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="bg-surface border-3 border-black rounded p-4 flex flex-col items-center gap-4 shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 transition-all">
+<div class="w-full h-40 bg-tertiary-fixed border-3 border-black rounded flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-[80px] text-tertiary">checkroom</span>
+</div>
+<div class="w-full border-t-3 border-black border-dashed pt-4 flex justify-between items-end">
+<span class="font-headline-md text-headline-md">T-Shirt</span>
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">₹199</span>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="bg-surface border-3 border-black rounded p-4 flex flex-col items-center gap-4 shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 transition-all">
+<div class="w-full h-40 bg-secondary-fixed border-3 border-black rounded flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-[80px] text-secondary">face</span>
+</div>
+<div class="w-full border-t-3 border-black border-dashed pt-4 flex justify-between items-end">
+<span class="font-headline-md text-headline-md">Cool Cap</span>
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">₹99</span>
+</div>
+</article>
+</section>
+<!-- Explainer Block -->
+<section class="mt-8 flex flex-col md:flex-row gap-8 items-stretch">
+<!-- Left Brain Box -->
+<div class="flex-1 bg-primary border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-gutter rounded text-on-primary flex flex-col gap-4 relative overflow-hidden">
+<!-- Background decoration -->
+<span class="material-symbols-outlined text-[120px] absolute -right-4 -bottom-4 opacity-20 rotate-12">psychology</span>
+<h2 class="font-headline-md text-headline-md border-b-3 border-black pb-2">The "Left-Digit" Effect</h2>
+<p class="font-body-md text-body-md z-10">
+                    Our brains read numbers from left to right. When we see <strong>₹499</strong>, the first number our brain registers is the <strong>4</strong>.
+                </p>
+<div class="bg-surface text-on-surface border-3 border-black p-3 rounded mt-auto flex items-center justify-between z-10">
+<span class="font-headline-md text-headline-md">₹499</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+<span class="font-label-bold text-label-bold bg-primary text-white px-2 py-1 border-2 border-black">Feels like ₹400</span>
+</div>
+</div>
+<!-- Reality Box -->
+<div class="flex-1 bg-surface border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-gutter rounded flex flex-col gap-4">
+<h2 class="font-headline-md text-headline-md border-b-3 border-black pb-2">Mathematical Reality</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Mathematically, ₹499 is just ₹1 away from ₹500. Let's round to the nearest hundred.
+                </p>
+<div class="mt-auto flex flex-col gap-2">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border-3 border-black bg-tertiary-fixed flex items-center justify-center font-label-bold text-label-bold">99</div>
+<div class="flex-grow h-[3px] bg-black relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary border-2 border-black"></div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary">₹500</div>
+</div>
+<p class="font-label-bold text-label-bold text-center mt-2">We round UP because 99 is greater than 50.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest text-primary font-label-lg text-label-lg docked full-width bottom-0 border-t-[3px] border-black shadow-[0px_-4px_0px_#1A1A1A] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all rounded" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all rounded" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all rounded" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span>Quiz</span>
+</a>
+<!-- Active Tab: Story (Explainer module fits best here) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all neo-btn" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span>Story</span>
+</a>
+</nav>
+</body></html>

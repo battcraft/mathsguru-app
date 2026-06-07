@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Temperature Tracker - Ganit Pop</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration (Brand Design System) -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist Background Pattern */
+        body {
+            background-color: theme('colors.background');
+            background-image: radial-gradient(theme('colors.surface-dim') 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        
+        /* Drag and Drop Utilities */
+        .draggable {
+            cursor: grab;
+        }
+        .draggable:active {
+            cursor: grabbing;
+        }
+        .dropzone {
+            transition: all 0.2s ease;
+        }
+        .dropzone.dragover {
+            background-color: theme('colors.tertiary-fixed');
+            border-style: dashed;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar (from JSON) -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface dark:border-on-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit transition-all">
+<button aria-label="Go back" class="text-primary dark:text-primary-fixed hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none flex items-center justify-center p-2 rounded-full hover:bg-surface-variant cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">
+            Ganit Pop
+        </h1>
+<!-- Spacer for centering -->
+<div class="w-[40px]"></div>
+</header>
+<!-- Main Canvas -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-8">
+<!-- Section Header -->
+<div class="flex flex-col gap-2">
+<div class="inline-block bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-3 py-1 border-[3px] border-on-surface uppercase w-max mb-2">Practice Zone</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Temperature Tracker</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl bg-surface p-4 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)]">
+                Review the temperature data for these 5 cities. Drag and drop the correct city into the <strong>Hottest</strong> and <strong>Coldest</strong> zones based on the reading.
+            </p>
+</div>
+<!-- Interactive Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Visual & Drop Zones (Bento Style) -->
+<div class="lg:col-span-7 flex flex-col md:flex-row gap-6 bg-surface p-6 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] relative overflow-hidden">
+<!-- Decorative Blueprint Lines -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(theme('colors.on-surface') 1px, transparent 1px), linear-gradient(90deg, theme('colors.on-surface') 1px, transparent 1px); background-size: 64px 64px;"></div>
+<!-- Brutalist Thermometer Graphic -->
+<div class="relative flex flex-col items-center z-10 w-full md:w-auto shrink-0 pt-4">
+<!-- Glass Tube -->
+<div class="w-16 h-[300px] border-[3px] border-on-surface bg-surface-container-lowest rounded-t-full relative z-10 overflow-hidden flex flex-col justify-end">
+<!-- Liquid Level (Representing Hot) -->
+<div class="w-full h-[70%] bg-primary border-t-[3px] border-on-surface"></div>
+<!-- Scale Marks -->
+<div class="absolute inset-y-0 right-0 w-full flex flex-col justify-between py-4 pointer-events-none">
+<div class="w-4 h-[3px] bg-on-surface"></div>
+<div class="w-2 h-[3px] bg-on-surface"></div>
+<div class="w-4 h-[3px] bg-on-surface"></div>
+<div class="w-2 h-[3px] bg-on-surface"></div>
+<div class="w-4 h-[3px] bg-on-surface"></div>
+<div class="w-2 h-[3px] bg-on-surface"></div>
+<div class="w-4 h-[3px] bg-on-surface"></div>
+</div>
+</div>
+<!-- Bulb -->
+<div class="w-24 h-24 bg-primary border-[3px] border-on-surface rounded-full -mt-6 z-20 flex items-center justify-center shadow-[inset_inset_-4px_-4px_0px_rgba(0,0,0,0.2)]">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">device_thermostat</span>
+</div>
+</div>
+<!-- Drop Zones Area -->
+<div class="flex-1 flex flex-col gap-6 z-10 w-full">
+<!-- Hottest Drop Zone -->
+<div class="flex flex-col gap-2">
+<label class="font-headline-md text-headline-md flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                            Hottest City
+                        </label>
+<div class="dropzone w-full h-24 border-[3px] border-on-surface bg-error-container flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] border-dashed" id="hottest-zone" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)" ondragover="allowDrop(event)" ondrop="drop(event)">
+<span class="font-label-bold text-label-bold text-on-error-container opacity-60 pointer-events-none">Drop city chip here</span>
+</div>
+</div>
+<!-- Coldest Drop Zone -->
+<div class="flex flex-col gap-2">
+<label class="font-headline-md text-headline-md flex items-center gap-2 text-tertiary-container dark:text-tertiary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+                            Coldest City
+                        </label>
+<div class="dropzone w-full h-24 border-[3px] border-on-surface bg-surface-container flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] border-dashed" id="coldest-zone" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)" ondragover="allowDrop(event)" ondrop="drop(event)">
+<span class="font-label-bold text-label-bold text-on-surface-variant opacity-60 pointer-events-none">Drop city chip here</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Data Source & Draggables -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Data Log Container -->
+<div class="bg-tertiary-fixed p-6 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)]">
+<div class="flex items-center gap-2 border-b-[3px] border-on-surface pb-4 mb-4">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">list_alt</span>
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed-variant">Data Log</h3>
+</div>
+<ul class="flex flex-col gap-3 font-body-lg text-body-lg text-on-tertiary-fixed">
+<li class="flex justify-between items-center bg-surface-container-lowest p-2 border-[3px] border-on-surface">
+<span>Delhi</span> <strong class="font-headline-md">42°C</strong>
+</li>
+<li class="flex justify-between items-center bg-surface-container-lowest p-2 border-[3px] border-on-surface">
+<span>Mumbai</span> <strong class="font-headline-md">32°C</strong>
+</li>
+<li class="flex justify-between items-center bg-surface-container-lowest p-2 border-[3px] border-on-surface">
+<span>Srinagar</span> <strong class="font-headline-md">5°C</strong>
+</li>
+<li class="flex justify-between items-center bg-surface-container-lowest p-2 border-[3px] border-on-surface">
+<span>Chennai</span> <strong class="font-headline-md">38°C</strong>
+</li>
+<li class="flex justify-between items-center bg-surface-container-lowest p-2 border-[3px] border-on-surface">
+<span>Shimla</span> <strong class="font-headline-md">15°C</strong>
+</li>
+</ul>
+</div>
+<!-- Chips Container -->
+<div class="bg-surface p-6 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)]">
+<h3 class="font-label-bold text-label-bold text-on-surface mb-4 uppercase tracking-wider">City Chips</h3>
+<div class="flex flex-wrap gap-4" id="chip-container" ondragover="allowDrop(event)" ondrop="drop(event)">
+<!-- Draggable Geometry Chips -->
+<div class="draggable bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all select-none" draggable="true" id="chip-delhi" ondragstart="drag(event)">
+                            Delhi
+                        </div>
+<div class="draggable bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all select-none" draggable="true" id="chip-mumbai" ondragstart="drag(event)">
+                            Mumbai
+                        </div>
+<div class="draggable bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all select-none" draggable="true" id="chip-srinagar" ondragstart="drag(event)">
+                            Srinagar
+                        </div>
+<div class="draggable bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all select-none" draggable="true" id="chip-chennai" ondragstart="drag(event)">
+                            Chennai
+                        </div>
+<div class="draggable bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-4 py-2 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all select-none" draggable="true" id="chip-shimla" ondragstart="drag(event)">
+                            Shimla
+                        </div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(26,28,28,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all mt-4 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Verify Answers
+                </button>
+</div>
+</div>
+</main>
+<!-- Vanilla JS for basic Drag & Drop visual feedback -->
+<script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            ev.target.style.opacity = "0.5";
+        }
+
+        function dragEnter(ev) {
+            ev.preventDefault();
+            if (ev.target.classList.contains('dropzone')) {
+                ev.target.classList.add('dragover');
+            }
+        }
+
+        function dragLeave(ev) {
+            if (ev.target.classList.contains('dropzone')) {
+                ev.target.classList.remove('dragover');
+            }
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+            
+            draggedElement.style.opacity = "1";
+            
+            // Basic logic to append to dropzone if it's a valid target
+            let target = ev.target;
+            
+            // Traverse up if dropping onto the text placeholder inside the zone
+            while (target && !target.classList.contains('dropzone') && target.id !== 'chip-container') {
+                target = target.parentNode;
+            }
+
+            if (target && (target.classList.contains('dropzone') || target.id === 'chip-container')) {
+                target.classList.remove('dragover');
+                
+                // Hide placeholder text if dropping in a zone
+                const placeholder = target.querySelector('span.pointer-events-none');
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+
+                // If dropzone already has a chip, maybe swap or reject (keeping simple for demo: just append)
+                // For a real app, you'd want to restrict to 1 item per zone
+                if (target.classList.contains('dropzone') && target.querySelectorAll('.draggable').length >= 1) {
+                    // return dragged item to original container if full
+                    document.getElementById('chip-container').appendChild(draggedElement);
+                } else {
+                    target.appendChild(draggedElement);
+                }
+            } else {
+                 document.getElementById(data).style.opacity = "1";
+            }
+        }
+
+        // Restore opacity if drag ends outside
+        document.addEventListener('dragend', function(ev) {
+            if(ev.target.classList.contains('draggable')) {
+                ev.target.style.opacity = "1";
+            }
+        });
+    </script>
+</body></html>

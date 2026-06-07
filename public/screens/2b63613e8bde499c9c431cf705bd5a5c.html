@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-pattern {
+            background-size: 32px 32px;
+            background-image: radial-gradient(circle, #e2e2e2 1px, transparent 1px);
+        }
+        .neo-brutalism-card {
+            border: 3px solid #1A1A1A;
+            box-shadow: 4px 4px 0px #1A1A1A;
+            transition: all 0.2s ease;
+        }
+        .neo-brutalism-card:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .neo-brutalism-button {
+            border: 3px solid #1A1A1A;
+            box-shadow: 4px 4px 0px #1A1A1A;
+            transition: all 0.1s ease;
+        }
+        .neo-brutalism-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background bg-grid-pattern min-h-screen pb-24">
+<!-- Top Navigation -->
+<nav class="flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black bg-secondary-container overflow-hidden">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWD3_rXE7GVmmFBj8UW77dy9RPDlYsgD5Mi_7ZnRr5WEIRLmmd5dVmvfnsNRvWcMWmWAypI20EYJuz_TnT_klJNDLx_hUf6klsOJ_5sA8jbW4BmfWjqxZ-8IaHaF3odBG8lPBN6Vfryhi0D3zM4Ow0iXPV9OEmjQPPpQ__y5xSZbfm437HVVAWLMrkxlnVj-RAgUMnhSyO6a_h_x8XoAEuG8UChPWqFMvqiKB24xtYcxeiTWj5CX9VZxnAxF0afkbk8Xlk0FSojaBq"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full border-3 border-black">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-label-bold">12</span>
+</div>
+</div>
+</nav>
+<main class="max-w-5xl mx-auto px-margin-mobile mt-8">
+<!-- Header Section -->
+<header class="mb-8">
+<div class="inline-block bg-tertiary-container text-on-tertiary-container px-4 py-1 border-3 border-black font-label-bold mb-4 shadow-[2px_2px_0px_#1A1A1A]">
+                EXPERT PRACTICE
+            </div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-2">Ruler Error Catch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Sharp your eyes! Measurement mistakes happen when we get lazy with the grid.</p>
+</header>
+<!-- Question Section -->
+<div class="bg-surface-container-lowest neo-brutalism-card p-6 mb-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<h2 class="font-headline-md text-headline-md">Inmein se Kaunsa galat hai?</h2>
+<div class="flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 border-3 border-black font-label-bold">MISTAKE 101</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 border-3 border-black font-label-bold">VISUAL LOGIC</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid of Ruler Mistakes -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Mistake 1: Zero Alignment -->
+<div class="neo-brutalism-card bg-white group cursor-pointer overflow-hidden" onclick="selectMistake(1)">
+<div class="h-48 relative overflow-hidden border-b-3 border-black">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="A top-down macro photograph showing a yellow wooden pencil lying on a white gridded surface. A transparent plastic ruler is placed next to it, but the end of the pencil is aligned with the 1cm mark instead of the 0 mark. The lighting is crisp and academic, using a high-contrast Neo-Brutalist style with bold black lines. Vibrant magenta accents highlight the misalignment point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw1rIulFcZWSugyYM-lZ8OofeNCuF7m79AF19nn5tcUVBEkqJEthNfkwNuzIwQ1FXkcMxWlUC1mwKLJQjNRvqtO_WdwXFcNqFF69b5bkWxo8jcXAg1C7CjF7Fd3QI1-48vqYJpODj9kuRvckd0SYqvXdmbVSH7vaNUaDEMg5mcmPQQ7bxHDCTpJyeglVcDWGCZ9C-gUHuVcyrZtWc-D47TSZ1RF1C3LxE8fZRL-QNz0HckOjnqplPGLpCBrWo_-10Rjcv-qwAECqza"/>
+<div class="absolute top-2 left-2 bg-black text-white px-2 py-1 font-label-bold text-xs">OPTION A</div>
+</div>
+<div class="p-4">
+<p class="font-label-bold text-on-surface-variant mb-2">Zero Alignment</p>
+<p class="text-body-md font-body-md">The pencil starts after the edge.</p>
+</div>
+</div>
+<!-- Mistake 2: Tilting -->
+<div class="neo-brutalism-card bg-white group cursor-pointer overflow-hidden" onclick="selectMistake(2)">
+<div class="h-48 relative overflow-hidden border-b-3 border-black">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="A detailed overhead shot of a wooden pencil being measured by a tilted ruler. The ruler is angled diagonally across the pencil, creating an incorrect hypotenuse measurement. The scene is rendered in a bright, modern light-mode palette with heavy 3px black strokes outlining the shapes. The background is a clean blue-print light gray with a dots grid pattern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7aRZs1ufvwTsyjyWGyoQE3gJSyg1D8nCVcJz2rL1tmxvTaZ67-ju-y29UwquA20iLK87z4L3xMYMH8Gp24-YMDXu3vKEddioW9JxPvvxFT77AVzlHO70JVuYu3IlHeMw5awFbsU7j4LbBOSFoSHCr-RKHjqgINTpIed7xJ5H07qEbAID1YXAT6gugeGo6P63gTcBv5BhPevX0Mvn_HMte5tHiZzfh1_fILx14EI5YC8IKh4MUCUIlOuRN-P_SjUWfOB4k5NMijk9H"/>
+<div class="absolute top-2 left-2 bg-black text-white px-2 py-1 font-label-bold text-xs">OPTION B</div>
+</div>
+<div class="p-4">
+<p class="font-label-bold text-on-surface-variant mb-2">The Tilt Factor</p>
+<p class="text-body-md font-body-md">The ruler is not parallel to the object.</p>
+</div>
+</div>
+<!-- Mistake 3: Misreading Units -->
+<div class="neo-brutalism-card bg-white group cursor-pointer overflow-hidden" onclick="selectMistake(3)">
+<div class="h-48 relative overflow-hidden border-b-3 border-black">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="A close-up view of a pencil tip ending precisely at 7.3 centimeters on a metallic ruler. A hand is pointing at the 7.5cm mark, indicating a parallax error or misreading of the small millimeter lines. The visual style follows a Neo-Brutalist geometric aesthetic with sharp shadows and bright, punchy colors like Mango Yellow and Gulabi Pink for highlight elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZskQ-ZO9p4awidC7Cl4sIgpOK7c-TfWAaURB15n8pzMGHrDl7t-e2GtZkBtZbjf8uBCVv1vI07CJ68Apus7pwp5bYvdIi0Dg6WgUymI1ZXzWLLv6izB9r_AtaiUUn0iNKzTIQEp4HCabInD-MFQwalJ06jZFKMlcwDvK4-IXBdWeouIXQ2dI0GD36DiaLQgh3DGMeVJk51o-ZvviXBrRPt0rXhhjZjSjJIcrY08ju8APC_JQUXlVBuWtS3UpQseSNBVPgHqPgntC"/>
+<div class="absolute top-2 left-2 bg-black text-white px-2 py-1 font-label-bold text-xs">OPTION C</div>
+</div>
+<div class="p-4">
+<p class="font-label-bold text-on-surface-variant mb-2">Unit Confusion</p>
+<p class="text-body-md font-body-md">Misinterpreting the small mm markings.</p>
+</div>
+</div>
+</div>
+<!-- Analytical Response Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+<div class="bg-surface-container neo-brutalism-card p-6">
+<h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+                    Kyun? Explain your logic
+                </h3>
+<div class="space-y-4">
+<textarea class="w-full border-3 border-black p-4 font-body-md focus:ring-0 focus:shadow-[4px_4px_0px_#f88400] transition-all outline-none" id="explanation" placeholder="Write why you think it's wrong..." rows="4"></textarea>
+<button class="w-full bg-primary text-on-primary py-4 font-headline-md text-headline-md neo-brutalism-button uppercase tracking-tight">
+                        Check Answer
+                    </button>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-secondary-container p-6 border-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<h4 class="font-label-bold text-label-bold text-on-secondary-container mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span>
+                        HINT BOX
+                    </h4>
+<p class="font-body-md text-on-secondary-container">Measurement begins at the absolute zero mark. If the ruler is diagonal, it measures the path, not the actual length! Look closely at the start point of each pencil.</p>
+</div>
+<div class="border-3 border-black p-6 bg-white flex items-start gap-4">
+<div class="w-12 h-12 bg-tertiary-container rounded-none border-3 border-black flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined font-bold">straighten</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold">Geometry Tip:</p>
+<p class="text-body-md">Always align the object flat against the ruler's edge for a 1:1 ratio. No gaps, no angles!</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Shell -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</footer>
+<script>
+        function selectMistake(id) {
+            // Remove selection from all cards
+            document.querySelectorAll('.neo-brutalism-card').forEach(card => {
+                card.classList.remove('border-primary-container', 'shadow-[6px_6px_0px_#df0b81]');
+                card.classList.add('border-black');
+            });
+            
+            // Highlight selected card (using parent context)
+            const cards = document.querySelectorAll('.grid-cols-1 > div');
+            const target = cards[id-1];
+            target.classList.remove('border-black');
+            target.classList.add('border-primary-container', 'shadow-[6px_6px_0px_#df0b81]');
+            
+            // Focus text area
+            document.getElementById('explanation').focus();
+        }
+
+        // Simple button click interaction
+        document.querySelector('button').addEventListener('click', function() {
+            const text = document.getElementById('explanation').value;
+            if(text.length < 5) {
+                alert("Thoda aur likho! Kyun galat hai?");
+            } else {
+                this.innerHTML = "Correct! High Five! ✋";
+                this.classList.replace('bg-primary', 'bg-tertiary-container');
+                this.classList.replace('text-on-primary', 'text-on-tertiary-container');
+            }
+        });
+    </script>
+</body></html>

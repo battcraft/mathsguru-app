@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Order the Planets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist Graph Paper Background */
+        .bg-graph-paper {
+            background-image: radial-gradient(#dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+            background-color: #f9f9f9;
+        }
+        
+        /* Drag and Drop visual feedback */
+        .dragging {
+            opacity: 0.8;
+            transform: scale(1.02) rotate(-2deg);
+            box-shadow: 8px 8px 0px #1A1A1A !important;
+            z-index: 10;
+        }
+        .drag-over {
+            border-top: 4px dashed #b40067;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-graph-paper text-on-background min-h-screen flex flex-col font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md docked full-width top-0 border-b-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky transition-all">
+<div class="flex items-center gap-unit">
+<div class="w-8 h-8 rounded-full border-[3px] border-black bg-secondary-container overflow-hidden">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe63-sYHnszsbkMWT1zx0GDp1ceDdFdpMBX7XzBk8_sfPJ-8yV7x-vYW7CWJPSc9gsSZPV8HftQWLVgQnxmvtBl4ErflyHPUQ0qoWc6Juquk4y53Qa7oQpSt0fei7TKrxsuj05h54jAN8y-BpPrSjSxfvl1nPtBo2IWjiphcS2CpZPML356-HKrw55PZ-TvbnPSUYT-WplMxOaMy6O8QTTpc-TSZlMLLSEhFrL6Q8-inlkeBZ4T-kQrNeIwP_dFk7-Br6j6NPgcuZQ"/>
+</div>
+</div>
+<div class="font-headline-md text-headline-md font-extrabold text-primary flex-1 text-center">
+            Ganit Dost
+        </div>
+<button aria-label="Streak and points" class="hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all w-10 h-10 flex items-center justify-center border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] rounded bg-white">
+<span class="material-symbols-outlined text-secondary">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-2xl mx-auto px-margin-mobile py-margin-desktop pb-32 flex flex-col gap-gutter md:px-margin-desktop">
+<!-- Header Section -->
+<section class="flex flex-col gap-unit mb-unit relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-tertiary-fixed rounded-full border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center z-[-1] transform -rotate-12">
+<span class="material-symbols-outlined text-on-tertiary-fixed font-bold text-2xl">rocket_launch</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-background font-extrabold uppercase tracking-tight">
+<span class="bg-tertiary-fixed px-2 py-1 border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] inline-block transform -rotate-1">Order</span> the Planets
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-bold bg-white border-[3px] border-black p-3 shadow-[4px_4px_0px_#1A1A1A] self-start mt-2 transform rotate-1">
+                Drag to arrange by diameter: <span class="text-primary underline decoration-4 underline-offset-4">Smallest to Largest</span>.
+            </p>
+</section>
+<!-- Interactive Drag & Drop Area -->
+<section class="flex flex-col gap-gutter" id="planet-list">
+<!-- Item 1: Venus -->
+<article class="planet-item flex items-center justify-between p-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT cursor-grab active:cursor-grabbing transition-all hover:bg-surface-container-highest" data-id="venus" data-size="12104" draggable="true">
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-variant border-[3px] border-black rounded shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-black overflow-hidden bg-secondary-container shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="A highly stylized, neo-brutalist graphic illustration of the planet Venus. The artwork features bold, thick black outlines and vibrant, flat yellow and orange toxic cloud colors against a pure white background. The planet is rendered in a raw, street-art inspired graphic style with hard geometry. The lighting is flat and high-contrast, perfectly suited for a modern, edgy educational interface." class="w-full h-full object-cover grayscale opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYYghU9BM8RUV9vA8Q5fy-kiEZpkO-9mnWMpVMyhPcEUkSZIX1R7htsLoy6KA1-CET54YA75b2LUsV4FLcmeLX9MJFMYaBK5Jl9XJ0E3_bTZr0utHmhfQFrwQzufTjO4CBNOvo-4K8L7oDJe_-bdKZjVqbQ3p2u3nntJ3EWq9bZOeX4dE-i9nBNKsxLAc8GMQj3Gp1UwxiZyh8qjX5soYGHua-c1eNVlI0kuFWCztdQmVclz342uI1gHIiMiZ5j55klgmmBCWv9Ofi"/>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background uppercase ml-2">Venus</h2>
+</div>
+<div class="font-label-bold text-label-bold bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] transform rotate-2">
+                    12,104 km
+                </div>
+</article>
+<!-- Item 2: Mars -->
+<article class="planet-item flex items-center justify-between p-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT cursor-grab active:cursor-grabbing transition-all hover:bg-surface-container-highest" data-id="mars" data-size="6779" draggable="true">
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-variant border-[3px] border-black rounded shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-black overflow-hidden bg-error-container shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="A highly stylized, neo-brutalist graphic illustration of the planet Mars. The artwork features bold, thick black outlines and vibrant, flat red and dusty rust colors against a pure white background. The planet has simplified crater geometry, rendered in a raw, street-art inspired graphic style. The lighting is flat and high-contrast, perfectly suited for a modern, edgy educational application interface." class="w-full h-full object-cover grayscale opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAVhMFu56nNnuPejcHq6KKn4TdItTfEE884qDI4n5jq0-42gHaepOHH-Lg1W0S2uUtaGnHTsc00lb7-nXSq6TnkIPGXzHbIq-93XtBtmIKg-_UjkWrUYAV2ApThyBHzvwuVMOxMFQblc0zE6OqqLp_db7A2I6RBL6_O9gYUvHCuIuYxBJ06HDwbsHavkvDC3lRv2OZkSgVsr3g4AHU-a0YTkf3_jv9rlzOm-JIWe0gAW7QJ24S3dJxrOojm-MklB32MPe44zE96tGZ"/>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background uppercase ml-2">Mars</h2>
+</div>
+<div class="font-label-bold text-label-bold bg-primary text-on-primary px-3 py-1 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] transform -rotate-1">
+                    6,779 km
+                </div>
+</article>
+<!-- Item 3: Jupiter -->
+<article class="planet-item flex items-center justify-between p-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT cursor-grab active:cursor-grabbing transition-all hover:bg-surface-container-highest" data-id="jupiter" data-size="139820" draggable="true">
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-variant border-[3px] border-black rounded shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-black overflow-hidden bg-secondary shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="A highly stylized, neo-brutalist graphic illustration of the giant planet Jupiter. The artwork features bold, thick black outlines and flat, striking bands of beige, brown, and a prominent red dot against a pure white background. The gas giant is depicted with hard-edged, geometric bands in a raw, street-art inspired graphic style. The aesthetic is high-contrast and tactile." class="w-full h-full object-cover grayscale opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwGBm5SwPU5iKhHer5cSSI35HxvDBX8xXc4psJkk2qcPhW-lJoyuxs_rb0Dxcvd0r9CCvM3nkazIEm2do45tq4MdOkcGK0S1HV8GxgoBL45fTp_lK5OE7NkspqBsCBwEWa82IqwR7uBY4_1dm4b5W04mW1rXRGw7IZTwCZc7Qwt1xzoXOKfb1hETFmNxmr5u16z7xbOwgv9LQ8tg4a4IstmyYlT26mpBjivP6fxt2EzbSRHP7TDgUpVqpmXNfs_8gh3wY954yjE7ff"/>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background uppercase ml-2">Jupiter</h2>
+</div>
+<div class="font-label-bold text-label-bold bg-secondary-container text-on-secondary-container px-3 py-1 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] transform rotate-1">
+                    139,820 km
+                </div>
+</article>
+<!-- Item 4: Mercury -->
+<article class="planet-item flex items-center justify-between p-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT cursor-grab active:cursor-grabbing transition-all hover:bg-surface-container-highest" data-id="mercury" data-size="4880" draggable="true">
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-variant border-[3px] border-black rounded shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-black overflow-hidden bg-surface-dim shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="A highly stylized, neo-brutalist graphic illustration of the small planet Mercury. The artwork uses heavy, thick black outlines and stark, flat grey tones against a pure white background. Surface details are reduced to stark geometric circles for craters, heavily influenced by blueprint and street-graffiti sticker aesthetics. The visual identity is strictly high-contrast." class="w-full h-full object-cover grayscale opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhFp6BYY4DvfX2oLqnAlNYZ1NZHfCQXs9LDtJz0P9XzYJJyeFpX0CZs8rFOg4rIzj6WPOWYuruNwGGU9_jr28lAsEh4OIemjARt2jUl4QCA6xD9RPGBSsVj2IxG5G3fmm5wHqdI8t1MnWHbGZI3D9BDIz0LHrMkTSz49Vq7YWR1MFQ_ZN1X-ctugkcszrwqHkqCC7I09Xq0o4TnNX0dq3wdM3CjO_QlesY-sHnlHQxRHtl0L-9YX0b5m--L9e7c3c7__07I2TeQFVF"/>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background uppercase ml-2">Mercury</h2>
+</div>
+<div class="font-label-bold text-label-bold bg-surface-dim text-on-surface px-3 py-1 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] transform -rotate-2">
+                    4,880 km
+                </div>
+</article>
+<!-- Item 5: Earth -->
+<article class="planet-item flex items-center justify-between p-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT cursor-grab active:cursor-grabbing transition-all hover:bg-surface-container-highest" data-id="earth" data-size="12742" draggable="true">
+<div class="flex items-center gap-unit">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-variant border-[3px] border-black rounded shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-surface-variant">drag_indicator</span>
+</div>
+<div class="w-14 h-14 rounded-full border-[3px] border-black overflow-hidden bg-secondary shadow-[2px_2px_0px_#1A1A1A]" style="background-color: #8d6f78;">
+<img alt="A highly stylized, neo-brutalist graphic illustration of planet Earth. The design is characterized by heavy black structural lines and solid, flat blocks of blue and green. The continents are abstracted into sharp, geometric polygons. The overall feel is like a high-end, tactile vinyl sticker designed for an urban, math-focused youth app. Bright, flat, and aggressive." class="w-full h-full object-cover grayscale opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8Z5MISc9HzaTtvkKUVFUeYjsTVZt-KumRoBRs_E7xBR7cv7ZJnhWTFC81NhL8vyVXzFMIIQxyw4Otk-2xGZsa_n7YoCl66EkFGYBSceH5ub2z75sAfJqOSoeDOL0x-cEr-d9f7syB8LWj3i-NY7kSFyqkYk9feslI6WGolNPbuM7JfdytZsRCkw2Y4Q3hiYgqLvuy8GcXjkLafl7FIhkYxdbbGs7jm7n3OZ9W2fjpw93puLS0xgnelWFWFzejolh_nB67FPC6sLX"/>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-background uppercase ml-2">Earth</h2>
+</div>
+<div class="font-label-bold text-label-bold bg-primary-container text-on-primary-container px-3 py-1 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] transform rotate-1">
+                    12,742 km
+                </div>
+</article>
+</section>
+<!-- Action Area -->
+<div class="mt-8 flex justify-center w-full">
+<button class="w-full md:w-auto px-8 py-4 bg-primary text-on-primary font-headline-md text-headline-md font-bold border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none hover:bg-on-primary-fixed-variant transition-all rounded-DEFAULT flex items-center justify-center gap-2 group">
+                Verify Order
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest text-primary font-label-lg text-label-lg docked full-width bottom-0 border-t-[3px] border-black shadow-[0px_-4px_0px_#1A1A1A] fixed left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span>Story</span>
+</a>
+</nav>
+<!-- Lightweight JS for visual drag-and-drop interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const list = document.getElementById('planet-list');
+            let draggedItem = null;
+
+            list.addEventListener('dragstart', (e) => {
+                draggedItem = e.target.closest('.planet-item');
+                if (!draggedItem) return;
+                
+                setTimeout(() => {
+                    draggedItem.classList.add('dragging');
+                }, 0);
+            });
+
+            list.addEventListener('dragend', (e) => {
+                if (draggedItem) {
+                    draggedItem.classList.remove('dragging');
+                    draggedItem = null;
+                }
+                document.querySelectorAll('.planet-item').forEach(item => {
+                    item.classList.remove('drag-over');
+                });
+            });
+
+            list.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                const overItem = e.target.closest('.planet-item');
+                
+                if (overItem && overItem !== draggedItem) {
+                    const bounding = overItem.getBoundingClientRect();
+                    const offset = bounding.y + (bounding.height / 2);
+                    
+                    document.querySelectorAll('.planet-item').forEach(item => item.classList.remove('drag-over'));
+                    
+                    if (e.clientY - offset > 0) {
+                        overItem.style.borderBottom = "4px dashed #b40067";
+                        overItem.style.borderTop = "";
+                        overItem.parentNode.insertBefore(draggedItem, overItem.nextSibling);
+                    } else {
+                        overItem.style.borderTop = "4px dashed #b40067";
+                        overItem.style.borderBottom = "";
+                        overItem.parentNode.insertBefore(draggedItem, overItem);
+                    }
+                }
+            });
+
+            list.addEventListener('drop', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.planet-item').forEach(item => {
+                    item.style.borderBottom = "";
+                    item.style.borderTop = "";
+                });
+            });
+        });
+    </script>
+</body></html>

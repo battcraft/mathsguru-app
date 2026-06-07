@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathsGuru - Interactive Worksheet</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "surface-container-high": "#eae8e2",
+                      "on-secondary-fixed-variant": "#005229",
+                      "on-primary-container": "#572000",
+                      "on-surface": "#1b1c19",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed": "#63ff9d",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-secondary-fixed": "#00210d",
+                      "surface-bright": "#fbf9f3",
+                      "surface-container-low": "#f5f3ee",
+                      "outline-variant": "#e2bfb0",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1b1c19",
+                      "background": "#fbf9f3",
+                      "secondary-container": "#63ff9d",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#006d38",
+                      "on-secondary-container": "#00743c",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-dim": "#dbdad4",
+                      "surface": "#fbf9f3",
+                      "on-tertiary-container": "#67002f",
+                      "surface-tint": "#a04100",
+                      "inverse-on-surface": "#f2f1eb",
+                      "on-surface-variant": "#5a4136",
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "outline": "#8e7164",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#3f001a",
+                      "on-primary-fixed": "#351000",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#30312d",
+                      "tertiary-fixed": "#ffd9e1",
+                      "surface-variant": "#e4e2dd",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#ffb693",
+                      "secondary-fixed-dim": "#40e183",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "primary-fixed": "#ffdbcc",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#ff6b00",
+                      "tertiary": "#ba005b",
+                      "error": "#ba1a1a",
+                      "primary": "#a04100",
+                      "tertiary-container": "#ff6096",
+                      "surface-container": "#f0eee8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "40px",
+                      "gutter": "16px",
+                      "container-max-width": "1200px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Nunito Sans"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-md": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg": [
+                              "Bricolage Grotesque"
+                      ],
+                      "label-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl-mobile": [
+                              "Bricolage Grotesque"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal scrolling chips if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-gutter">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary-container transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-primary dark:text-primary-fixed-dim">MathsGuru</h1>
+</div>
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden bg-primary-container shadow-[2px_2px_0px_#1B1C19]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A brightly lit, closely cropped portrait of a young student with a cheerful expression, set against a solid, vibrant yellow background. The lighting is even and flat, emphasizing the lively pop-art aesthetic suitable for a gamified education app avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQsMZjsAoDnntZyLbcl7bnA2F8-w8o_L1rw7uESl8h17ScMm0ZtJI9BCZ0w2TaWXoMMLV2m1NgvzsodmYfnxRzgsZmlgiJYeip0z-rGxL2amE5iyKFL8LGhAT6ipKBsj73nZEP4ifKbSxUyWHA2S2mllNZx3rxqoyfC-1W4kj0ykZCmtTZJzXktc28dAaTT6ymUDRrDceyjEj-eh5cUKats4hnODxwEGFdr8OkTvW4jf8UHWEihiUxvvo3i-B8mp0x_N77B9niu439"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[100px] pb-[100px] px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto flex flex-col gap-8">
+<!-- Header Banner: Robot Dost Hint -->
+<section class="bg-secondary-fixed border-[3px] border-on-surface rounded-lg p-6 shadow-[4px_4px_0px_#1B1C19] flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
+<!-- Decorative pattern bg -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#1b1c19 2px, transparent 2px); background-size: 16px 16px;"></div>
+<div class="relative w-24 h-24 md:w-32 md:h-32 shrink-0 bg-surface rounded-full border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] overflow-hidden flex items-center justify-center">
+<img alt="Robot Dost" class="w-[120%] h-[120%] object-cover object-center" data-alt="A stylized, vibrant vector illustration of a friendly, boxy robot character with glowing eyes. The robot is depicted in a bold, neo-brutalist pop-art style with thick black outlines and bright neon colors, sitting against a flat, high-contrast background to evoke a fun, engaging learning assistant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzitLPQOJYyO4YSVkgrRlgiubmvEKPaD1SxqTB51jM8UTKCgSZ8OVhJcP0GP1N8KbbhXQ2Lhl0FvQxifW88WscR_YUpHwS3VUHidYfk5IHJqhoc1o85tVdZH3T9UfWNlFSPKoelpRVg0GV9LcHQuSDLfPN906R2WQt4NR6NfAXXz7ohpwa1VTD6z8Kh1Aoq4s7eH0ZXyiOjn7xKHq_W_kg_ltaiS617iCualJHxIUXweS8reDskdwx8m1Ajx8hroH-8yYpzZlgZEza"/>
+</div>
+<div class="relative bg-surface border-[3px] border-on-surface rounded-lg p-4 shadow-[4px_4px_0px_#1B1C19] flex-1">
+<!-- Speech bubble pointer -->
+<div class="absolute -left-[14px] top-1/2 -translate-y-1/2 w-4 h-4 bg-surface border-l-[3px] border-b-[3px] border-on-surface rotate-45 hidden md:block"></div>
+<div class="absolute left-1/2 -top-[14px] -translate-x-1/2 w-4 h-4 bg-surface border-t-[3px] border-l-[3px] border-on-surface rotate-45 block md:hidden"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Finding the Minimum!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Hey Dost! 'Minimum' means the smallest number in a group. Let's track down those tiny numbers together!</p>
+</div>
+</section>
+<!-- Part A: Circle the Minimum -->
+<section class="bg-surface-bright border-[3px] border-on-surface rounded-lg p-6 md:p-8 shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-3 mb-6 border-b-[3px] border-on-surface pb-4">
+<div class="w-10 h-10 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center border-[3px] border-on-surface font-headline-md text-headline-md">A</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Circle the Minimum</h3>
+</div>
+<p class="font-body-md text-body-md mb-6">Tap the chip that shows the smallest value in the set below.</p>
+<div class="flex flex-wrap gap-4 justify-center py-4">
+<!-- Math Chips -->
+<button class="group relative w-20 h-20 bg-surface border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] hover:bg-primary-fixed transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="font-headline-lg text-headline-lg text-on-surface absolute inset-0 flex items-center justify-center">23</span>
+</button>
+<button class="group relative w-20 h-20 bg-surface border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] hover:bg-primary-fixed transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="font-headline-lg text-headline-lg text-on-surface absolute inset-0 flex items-center justify-center">17</span>
+</button>
+<button class="group relative w-20 h-20 bg-surface border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] hover:bg-primary-fixed transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="font-headline-lg text-headline-lg text-on-surface absolute inset-0 flex items-center justify-center">29</span>
+</button>
+<button class="group relative w-20 h-20 bg-surface border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] hover:bg-primary-fixed transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="font-headline-lg text-headline-lg text-on-surface absolute inset-0 flex items-center justify-center">33</span>
+</button>
+<button class="group relative w-20 h-20 bg-surface border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_#1B1C19] hover:bg-primary-fixed transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="font-headline-lg text-headline-lg text-on-surface absolute inset-0 flex items-center justify-center">21</span>
+</button>
+</div>
+</section>
+<!-- Part B: Table for Fruit Crates -->
+<section class="bg-surface-bright border-[3px] border-on-surface rounded-lg p-6 md:p-8 shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-3 mb-6 border-b-[3px] border-on-surface pb-4">
+<div class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center border-[3px] border-on-surface font-headline-md text-headline-md">B</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Fruit Crates</h3>
+</div>
+<p class="font-body-md text-body-md mb-6">Compare the crates delivered to Store 1 and Store 2. Find the minimum crates for each fruit.</p>
+<div class="overflow-x-auto hide-scrollbar border-[3px] border-on-surface rounded-lg bg-surface shadow-[4px_4px_0px_#1B1C19]">
+<table class="w-full text-left border-collapse min-w-[500px]">
+<thead>
+<tr class="bg-surface-container-high border-b-[3px] border-on-surface">
+<th class="p-4 font-headline-md text-headline-md border-r-[3px] border-on-surface">Fruit</th>
+<th class="p-4 font-headline-md text-headline-md border-r-[3px] border-on-surface">Store 1</th>
+<th class="p-4 font-headline-md text-headline-md border-r-[3px] border-on-surface">Store 2</th>
+<th class="p-4 font-headline-md text-headline-md bg-primary-fixed-dim">Minimum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b-[3px] border-on-surface">
+<td class="p-4 font-body-lg text-body-lg font-bold border-r-[3px] border-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">nutrition</span> Mangoes
+                            </td>
+<td class="p-4 font-body-lg text-body-lg border-r-[3px] border-on-surface">45</td>
+<td class="p-4 font-body-lg text-body-lg border-r-[3px] border-on-surface">32</td>
+<td class="p-4 bg-primary-fixed">
+<input class="w-full bg-surface border-[3px] border-on-surface rounded p-2 font-body-md text-body-md focus:outline-none focus:ring-4 focus:ring-secondary-container shadow-[2px_2px_0px_#1B1C19]" placeholder="?" type="number"/>
+</td>
+</tr>
+<tr class="border-b-[3px] border-on-surface bg-surface-variant/30">
+<td class="p-4 font-body-lg text-body-lg font-bold border-r-[3px] border-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">eco</span> Guavas
+                            </td>
+<td class="p-4 font-body-lg text-body-lg border-r-[3px] border-on-surface">18</td>
+<td class="p-4 font-body-lg text-body-lg border-r-[3px] border-on-surface">24</td>
+<td class="p-4 bg-primary-fixed">
+<input class="w-full bg-surface border-[3px] border-on-surface rounded p-2 font-body-md text-body-md focus:outline-none focus:ring-4 focus:ring-secondary-container shadow-[2px_2px_0px_#1B1C19]" placeholder="?" type="number"/>
+</td>
+</tr>
+<tr>
+<td class="p-4 font-body-lg text-body-lg font-bold border-r-[3px] border-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container">ios</span> Apples
+                            </td>
+<td class="p-4 font-body-lg text-body-lg border-r-[3px] border-on-surface">50</td>
+<td class="p-4 font-body-lg text-body-lg border-r-[3px] border-on-surface">50</td>
+<td class="p-4 bg-primary-fixed">
+<input class="w-full bg-surface border-[3px] border-on-surface rounded p-2 font-body-md text-body-md focus:outline-none focus:ring-4 focus:ring-secondary-container shadow-[2px_2px_0px_#1B1C19]" placeholder="?" type="number"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Part D: Create Your Own -->
+<section class="bg-tertiary-container border-[3px] border-on-surface rounded-lg p-6 md:p-8 shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-3 mb-6 border-b-[3px] border-on-surface pb-4">
+<div class="w-10 h-10 bg-surface text-on-surface rounded-full flex items-center justify-center border-[3px] border-on-surface font-headline-md text-headline-md">D</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Create Your Own</h3>
+</div>
+<p class="font-body-lg text-body-lg font-bold text-on-surface mb-6">Write 4 random numbers, then circle your own minimum!</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<input class="w-full h-16 text-center bg-surface border-[3px] border-on-surface rounded-lg p-2 font-headline-md text-headline-md focus:outline-none focus:ring-4 focus:ring-surface-bright shadow-[4px_4px_0px_#1B1C19]" placeholder="Num 1" type="number"/>
+<input class="w-full h-16 text-center bg-surface border-[3px] border-on-surface rounded-lg p-2 font-headline-md text-headline-md focus:outline-none focus:ring-4 focus:ring-surface-bright shadow-[4px_4px_0px_#1B1C19]" placeholder="Num 2" type="number"/>
+<input class="w-full h-16 text-center bg-surface border-[3px] border-on-surface rounded-lg p-2 font-headline-md text-headline-md focus:outline-none focus:ring-4 focus:ring-surface-bright shadow-[4px_4px_0px_#1B1C19]" placeholder="Num 3" type="number"/>
+<input class="w-full h-16 text-center bg-surface border-[3px] border-on-surface rounded-lg p-2 font-headline-md text-headline-md focus:outline-none focus:ring-4 focus:ring-surface-bright shadow-[4px_4px_0px_#1B1C19]" placeholder="Num 4" type="number"/>
+</div>
+<div class="flex justify-end">
+<button class="bg-surface text-on-surface font-headline-md text-headline-md px-8 py-3 rounded-lg border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center gap-2">
+                    Submit Challenge <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container dark:bg-surface-container-highest border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19]">
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">forum</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<!-- Active -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_#1B1C19] hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        // Simple JS to handle active state on chips for demonstration
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.querySelector('span') && this.querySelector('span').innerText.match(/^\d+$/)) {
+                    // Toggle a selection state visually
+                    const isSelected = this.classList.contains('bg-secondary-container');
+                    
+                    // Reset others
+                    const chips = this.parentElement.querySelectorAll('button');
+                    chips.forEach(c => {
+                        c.classList.remove('bg-secondary-container');
+                        c.classList.add('bg-surface');
+                    });
+
+                    if(!isSelected) {
+                        this.classList.remove('bg-surface');
+                        this.classList.add('bg-secondary-container');
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

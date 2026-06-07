@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speed Compare Drill</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary": "#ffffff",
+                  "on-error": "#ffffff",
+                  "inverse-on-surface": "#f2f1eb",
+                  "on-tertiary-container": "#67002f",
+                  "surface-container": "#f0eee8",
+                  "on-secondary": "#ffffff",
+                  "surface-dim": "#dbdad4",
+                  "surface-container-highest": "#e4e2dd",
+                  "tertiary-fixed": "#ffd9e1",
+                  "outline-variant": "#e2bfb0",
+                  "on-surface-variant": "#5a4136",
+                  "primary": "#a04100",
+                  "surface-container-low": "#f5f3ee",
+                  "inverse-surface": "#30312d",
+                  "on-background": "#1b1c19",
+                  "outline": "#8e7164",
+                  "surface-variant": "#e4e2dd",
+                  "on-primary-fixed-variant": "#7a3000",
+                  "secondary-fixed": "#63ff9d",
+                  "background": "#fbf9f3",
+                  "on-primary-fixed": "#351000",
+                  "tertiary-fixed-dim": "#ffb1c4",
+                  "secondary-container": "#63ff9d",
+                  "tertiary-container": "#ff6096",
+                  "on-surface": "#1b1c19",
+                  "on-secondary-fixed-variant": "#005229",
+                  "primary-container": "#ff6b00",
+                  "secondary": "#006d38",
+                  "on-secondary-container": "#00743c",
+                  "on-primary-container": "#572000",
+                  "inverse-primary": "#ffb693",
+                  "primary-fixed": "#ffdbcc",
+                  "surface": "#fbf9f3",
+                  "surface-tint": "#a04100",
+                  "on-tertiary-fixed": "#3f001a",
+                  "error": "#ba1a1a",
+                  "on-tertiary": "#ffffff",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-container-high": "#eae8e2",
+                  "primary-fixed-dim": "#ffb693",
+                  "secondary-fixed-dim": "#40e183",
+                  "on-tertiary-fixed-variant": "#8f0044",
+                  "surface-bright": "#fbf9f3",
+                  "on-error-container": "#93000a",
+                  "on-secondary-fixed": "#00210d",
+                  "tertiary": "#ba005b",
+                  "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "unit": "8px",
+                  "margin-mobile": "20px",
+                  "container-max-width": "1200px",
+                  "margin-desktop": "40px",
+                  "gutter": "16px"
+          },
+          "fontFamily": {
+                  "label-lg": [
+                          "Nunito Sans"
+                  ],
+                  "headline-lg": [
+                          "Bricolage Grotesque"
+                  ],
+                  "headline-lg-mobile": [
+                          "Bricolage Grotesque"
+                  ],
+                  "body-md": [
+                          "Nunito Sans"
+                  ],
+                  "body-lg": [
+                          "Nunito Sans"
+                  ],
+                  "headline-xl": [
+                          "Bricolage Grotesque"
+                  ],
+                  "headline-xl-mobile": [
+                          "Bricolage Grotesque"
+                  ],
+                  "headline-md": [
+                          "Bricolage Grotesque"
+                  ]
+          },
+          "fontSize": {
+                  "label-lg": [
+                          "14px",
+                          {
+                                  "lineHeight": "1.4",
+                                  "letterSpacing": "0.05em",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "headline-lg": [
+                          "32px",
+                          {
+                                  "lineHeight": "1.2",
+                                  "fontWeight": "800"
+                          }
+                  ],
+                  "headline-lg-mobile": [
+                          "28px",
+                          {
+                                  "lineHeight": "1.2",
+                                  "fontWeight": "800"
+                          }
+                  ],
+                  "body-md": [
+                          "16px",
+                          {
+                                  "lineHeight": "1.5",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "body-lg": [
+                          "18px",
+                          {
+                                  "lineHeight": "1.6",
+                                  "fontWeight": "500"
+                          }
+                  ],
+                  "headline-xl": [
+                          "48px",
+                          {
+                                  "lineHeight": "1.1",
+                                  "letterSpacing": "-0.02em",
+                                  "fontWeight": "800"
+                          }
+                  ],
+                  "headline-xl-mobile": [
+                          "36px",
+                          {
+                                  "lineHeight": "1.1",
+                                  "fontWeight": "800"
+                          }
+                  ],
+                  "headline-md": [
+                          "24px",
+                          {
+                                  "lineHeight": "1.2",
+                                  "fontWeight": "700"
+                          }
+                  ]
+          }
+  },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar (Transactional - Suppressed Nav Shells as per instructions, but keeping back button for drill exit) -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit md:px-margin-desktop md:py-4 transition-all">
+<button class="text-primary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center p-2 rounded-full border-[3px] border-transparent hover:border-on-surface focus:outline-none focus:ring-4 focus:ring-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tighter">
+      Ganit Pop
+    </div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-start px-margin-mobile py-8 md:px-margin-desktop max-w-container-max-width mx-auto w-full gap-8">
+<!-- Header Section -->
+<div class="w-full text-center flex flex-col items-center gap-4">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface uppercase tracking-tight">1-Minute Comparison Challenge</h1>
+<!-- Timer -->
+<div class="relative bg-surface-container-high border-[3px] border-on-surface rounded-full px-8 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-3xl animate-pulse">timer</span>
+<span class="font-headline-lg text-headline-lg text-primary tracking-widest font-mono" id="timerDisplay">00:59</span>
+</div>
+</div>
+<!-- Central Game Card (Bento Style) -->
+<div class="w-full max-w-2xl bg-white border-[3px] border-on-surface rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 relative overflow-hidden mt-4">
+<!-- Decorative background elements for that Desi Pop feel -->
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-secondary-container rounded-full mix-blend-multiply opacity-50 blur-2xl"></div>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-tertiary-container rounded-full mix-blend-multiply opacity-50 blur-2xl"></div>
+<!-- Number 1 -->
+<div class="flex-1 w-full bg-surface-container-low border-[3px] border-on-surface rounded-lg p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center relative">
+<span class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface font-mono tracking-tighter">4,502</span>
+</div>
+<!-- The '?' -->
+<div class="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-primary-container border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center z-10 animate-bounce">
+<span class="font-headline-lg text-headline-lg text-on-primary-container font-bold">?</span>
+</div>
+<!-- Number 2 -->
+<div class="flex-1 w-full bg-surface-container-low border-[3px] border-on-surface rounded-lg p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center relative">
+<span class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface font-mono tracking-tighter">4,052</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-2xl flex flex-row items-center justify-center gap-4 md:gap-8 mt-8">
+<!-- Less Than Button -->
+<button class="flex-1 aspect-square md:aspect-auto md:h-24 bg-tertiary-container border-[3px] border-on-surface rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-on-surface">
+<span class="font-headline-xl text-headline-xl text-on-tertiary-container font-bold group-hover:scale-110 transition-transform">&lt;</span>
+</button>
+<!-- Equal Button -->
+<button class="flex-1 aspect-square md:aspect-auto md:h-24 bg-secondary-container border-[3px] border-on-surface rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-on-surface">
+<span class="font-headline-xl text-headline-xl text-on-secondary-container font-bold group-hover:scale-110 transition-transform">=</span>
+</button>
+<!-- Greater Than Button -->
+<button class="flex-1 aspect-square md:aspect-auto md:h-24 bg-primary-container border-[3px] border-on-surface rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-on-surface">
+<span class="font-headline-xl text-headline-xl text-on-primary-container font-bold group-hover:scale-110 transition-transform">&gt;</span>
+</button>
+</div>
+<!-- Score/Combo Tracker (Desi Pop Accent) -->
+<div class="mt-8 px-6 py-2 bg-surface-container border-[3px] border-on-surface rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center gap-4">
+<span class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface-variant">Score</span>
+<span class="font-headline-md text-headline-md font-mono text-primary">1200</span>
+<div class="h-6 w-[3px] bg-on-surface mx-2"></div>
+<span class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface-variant">Combo</span>
+<span class="font-headline-md text-headline-md font-mono text-secondary">x4</span>
+</div>
+</main>
+<script>
+    // Simple timer logic for demonstration
+    let timeLeft = 59;
+    const timerDisplay = document.getElementById('timerDisplay');
+    
+    const countdown = setInterval(() => {
+      timeLeft--;
+      if (timeLeft >= 0) {
+        timerDisplay.textContent = `00:${timeLeft < 10 ? '0' : ''}${timeLeft}`;
+      } else {
+        clearInterval(countdown);
+        timerDisplay.textContent = "00:00";
+        timerDisplay.classList.add('text-error');
+      }
+    }, 1000);
+  </script>
+</body></html>

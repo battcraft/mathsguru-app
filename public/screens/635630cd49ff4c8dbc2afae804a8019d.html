@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Expert Panga - Comparing Numbers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1a1c1c",
+                    "tertiary": "#705d00",
+                    "on-primary-container": "#fffbff",
+                    "tertiary-fixed": "#ffe16d",
+                    "secondary": "#924c00",
+                    "inverse-surface": "#2f3131",
+                    "primary-container": "#df0b81",
+                    "on-primary-fixed": "#3e0020",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "surface-container-low": "#f3f3f4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#ffb0cb",
+                    "surface-container": "#eeeeee",
+                    "surface-dim": "#dadada",
+                    "surface-variant": "#e2e2e2",
+                    "surface-tint": "#b80069",
+                    "on-error": "#ffffff",
+                    "primary": "#b40067",
+                    "on-tertiary-container": "#4c3f00",
+                    "secondary-fixed-dim": "#ffb781",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "on-secondary-container": "#5b2d00",
+                    "primary-fixed": "#ffd9e3",
+                    "tertiary-container": "#c9a900",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "error-container": "#ffdad6",
+                    "outline": "#8d6f78",
+                    "background": "#f9f9f9",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#5a3f48",
+                    "on-secondary-fixed": "#2f1400",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "outline-variant": "#e1bdc7",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#f88400",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-bright": "#f9f9f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "unit": "8px",
+                    "border-width": "3px",
+                    "shadow-offset": "4px"
+            },
+            "fontFamily": {
+                    "label-bold": [
+                            "Nunito Sans"
+                    ],
+                    "headline-xl": [
+                            "Fredoka"
+                    ],
+                    "body-lg": [
+                            "Nunito Sans"
+                    ],
+                    "headline-xl-mobile": [
+                            "Fredoka"
+                    ],
+                    "headline-md": [
+                            "Fredoka"
+                    ],
+                    "body-md": [
+                            "Nunito Sans"
+                    ],
+                    "headline-lg": [
+                            "Fredoka"
+                    ]
+            },
+            "fontSize": {
+                    "label-bold": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-xl-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            background-image: 
+                linear-gradient(#e2e2e2 1px, transparent 1px),
+                linear-gradient(90deg, #e2e2e2 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        
+        .neo-shadow-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+
+        .neo-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #1a1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 z-40 transition-all">
+<div class="flex items-center gap-4">
+<button class="hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center border-[3px] border-transparent hover:border-on-surface rounded p-1 text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<button class="hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-label-bold text-label-bold border-[3px] border-on-surface bg-surface-container px-3 py-1 neo-shadow flex items-center gap-1 text-on-surface">
+            5 🔥
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop py-8 md:py-12 max-w-4xl mx-auto w-full mb-24 md:mb-0">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 bg-surface border-[3px] border-on-surface neo-shadow p-6">
+<div class="mb-4 md:mb-0">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-2 tracking-tight">Expert Panga</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-bold">Challenge: Comparing Decimals</p>
+</div>
+<div class="flex items-center gap-3 bg-tertiary-fixed text-on-tertiary-fixed border-[3px] border-on-surface neo-shadow px-4 py-3 transform rotate-[-2deg]">
+<span class="material-symbols-outlined animate-pulse text-[28px]">timer</span>
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-wider">02:45</span>
+</div>
+</section>
+<!-- Quiz Area (3-Column Layout) -->
+<section class="flex flex-col gap-6 mb-12">
+<!-- Row 1 -->
+<div class="grid grid-cols-[1fr_auto_1fr] gap-4 items-center bg-surface border-[3px] border-on-surface neo-shadow p-4 relative overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="text-center font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-surface-container-low border-[3px] border-on-surface py-6 neo-shadow relative z-10">45.02</div>
+<div class="w-16 h-16 md:w-20 md:h-20 border-[3px] border-dashed border-on-surface bg-surface-container-highest flex items-center justify-center relative z-10">
+<!-- Drop Zone -->
+</div>
+<div class="text-center font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-surface-container-low border-[3px] border-on-surface py-6 neo-shadow relative z-10">45.20</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-[1fr_auto_1fr] gap-4 items-center bg-surface border-[3px] border-on-surface neo-shadow p-4 relative overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="text-center font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-surface-container-low border-[3px] border-on-surface py-6 neo-shadow relative z-10">102.5</div>
+<div class="w-16 h-16 md:w-20 md:h-20 border-[3px] border-dashed border-on-surface bg-surface-container-highest flex items-center justify-center relative z-10">
+<!-- Drop Zone -->
+</div>
+<div class="text-center font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-surface-container-low border-[3px] border-on-surface py-6 neo-shadow relative z-10">102.50</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-[1fr_auto_1fr] gap-4 items-center bg-surface border-[3px] border-on-surface neo-shadow p-4 relative overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="text-center font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-surface-container-low border-[3px] border-on-surface py-6 neo-shadow relative z-10">0.09</div>
+<div class="w-16 h-16 md:w-20 md:h-20 border-[3px] border-dashed border-on-surface bg-surface-container-highest flex items-center justify-center relative z-10">
+<!-- Drop Zone -->
+</div>
+<div class="text-center font-headline-lg text-headline-lg-mobile md:text-headline-lg bg-surface-container-low border-[3px] border-on-surface py-6 neo-shadow relative z-10">0.1</div>
+</div>
+</section>
+<!-- Draggable Symbols -->
+<section class="flex justify-center gap-6 md:gap-8 mb-12">
+<div class="w-20 h-20 bg-secondary-container text-on-secondary-container font-headline-xl text-headline-xl border-[3px] border-on-surface neo-shadow flex items-center justify-center cursor-grab neo-shadow-hover transition-all select-none" draggable="true">&lt;</div>
+<div class="w-20 h-20 bg-tertiary-container text-on-tertiary-container font-headline-xl text-headline-xl border-[3px] border-on-surface neo-shadow flex items-center justify-center cursor-grab neo-shadow-hover transition-all select-none" draggable="true">=</div>
+<div class="w-20 h-20 bg-primary-container text-on-primary-container font-headline-xl text-headline-xl border-[3px] border-on-surface neo-shadow flex items-center justify-center cursor-grab neo-shadow-hover transition-all select-none" draggable="true">&gt;</div>
+</section>
+<!-- Action Button -->
+<button class="w-full py-5 bg-primary text-on-primary font-headline-md text-headline-md border-[3px] border-on-surface neo-shadow neo-shadow-active transition-all uppercase tracking-wider relative overflow-hidden group">
+<span class="relative z-10">Submit Challenge</span>
+<div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
+</button>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] flex justify-around items-center h-20 px-margin-mobile bg-surface md:hidden">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold mt-1">Home</span>
+</div>
+<!-- Chat -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-bold text-label-bold mt-1">Chat</span>
+</div>
+<!-- Quiz (Active) -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-4 py-1 border-[3px] border-on-surface hover:bg-secondary-container active:scale-95 transition-transform cursor-pointer shadow-[2px_2px_0px_#1B1C19]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold mt-1">Quiz</span>
+</div>
+<!-- Story -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold mt-1">Story</span>
+</div>
+</nav>
+<script>
+        // Lightweight JS for drag and drop visual feedback (structural only, no complex logic)
+        const draggables = document.querySelectorAll('[draggable="true"]');
+        const dropZones = document.querySelectorAll('.border-dashed');
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', () => {
+                draggable.classList.add('opacity-50');
+            });
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('opacity-50');
+            });
+        });
+
+        dropZones.forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('bg-secondary-fixed');
+                zone.classList.remove('bg-surface-container-highest');
+            });
+            zone.addEventListener('dragleave', () => {
+                zone.classList.remove('bg-secondary-fixed');
+                zone.classList.add('bg-surface-container-highest');
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('bg-secondary-fixed');
+                zone.classList.add('bg-surface-container-highest');
+                // In a real app, logic to append cloned element goes here.
+            });
+        });
+    </script>
+</body></html>

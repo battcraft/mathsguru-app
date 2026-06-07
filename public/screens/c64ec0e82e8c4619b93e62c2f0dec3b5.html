@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Max/Min: Section Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#67002f",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "secondary-container": "#63ff9d",
+                        "surface-container-high": "#eae8e2",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "tertiary-container": "#ff6096",
+                        "on-secondary-fixed-variant": "#005229",
+                        "surface-variant": "#e4e2dd",
+                        "surface-tint": "#a04100",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-tertiary-fixed": "#3f001a",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-container": "#00743c",
+                        "inverse-primary": "#ffb693",
+                        "tertiary": "#ba005b",
+                        "primary": "#a04100",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fbf9f3",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "surface-dim": "#dbdad4",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-primary-container": "#572000",
+                        "surface-container": "#f0eee8",
+                        "primary-container": "#ff6b00",
+                        "on-secondary-fixed": "#00210d",
+                        "on-surface": "#1b1c19",
+                        "on-primary-fixed": "#351000",
+                        "secondary-fixed": "#63ff9d",
+                        "outline-variant": "#e2bfb0",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-surface": "#30312d",
+                        "error": "#ba1a1a",
+                        "surface": "#fbf9f3",
+                        "secondary": "#006d38",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#5a4136",
+                        "background": "#fbf9f3",
+                        "surface-container-highest": "#e4e2dd",
+                        "outline": "#8e7164",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow { shadow-[4px_4px_0px_#1A1A1A]; }
+        .neo-active:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #1A1A1A; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        @keyframes celebrate-float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .celebrate-animation { animation: celebrate-float 3s ease-in-out infinite; }
+        
+        /* Custom Progress Bar Segments */
+        .progress-segment {
+            border-right: 2px solid #1A1A1A;
+        }
+        .progress-segment:last-child {
+            border-right: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background flex justify-between items-center w-full px-5 h-16 z-50 sticky top-0 border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-secondary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A stylized digital illustration of a cheerful Indian student character avatar with modern glasses and a bright yellow hoodie. The background is a flat, vibrant orange color. The art style is clean, modern, and friendly, consistent with a gamified learning application with bold outlines and high contrast colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2i2M3AAnTKRY8l0UOoKHDAaXyiMk1bx-MwMRx5TGXblsB0DkUW-JP1aI-AIn96HN8oQ9YmQ5AprV2qUmVG3Jx8WPd_x3Mucm-DYkMZ-DJUxro6RK-v3IK2J1tLtdml8vJNl7wM5RCiT7AfMrgbXeEmGVWzN3vu_NQL94PPkuUARKavN5VFoA20nLtisYy_viE8yLdCTJFBcYj7aMK6w0haOh5wHLzh_7q0xGS9RrcwlxmuPBxXrIo1Kw6mr7i1lHP4ipuEocsonQL"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-highest border-3 border-black rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-lg text-label-lg">12 Day Streak</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-10 max-w-container-max-width mx-auto w-full">
+<!-- Celebration Header -->
+<div class="text-center mb-10 celebrate-animation">
+<div class="inline-block bg-secondary-container border-3 border-black rounded-lg px-6 py-2 mb-4 shadow-[4px_4px_0px_#1A1A1A]">
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-secondary-container">SHABAASH!</h1>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface-variant">You've absolutely crushed this section!</p>
+</div>
+<!-- Success Cards Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full">
+<!-- Badge Card -->
+<div class="bg-surface-container border-3 border-black rounded-DEFAULT p-6 shadow-[4px_4px_0px_#1A1A1A] flex flex-col items-center text-center">
+<div class="w-32 h-32 mb-4 relative">
+<div class="absolute inset-0 bg-primary-container rounded-full border-3 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary-fixed border-3 border-black rounded-full p-2">
+<span class="material-symbols-outlined text-on-secondary-fixed">star</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md mb-2">Section Mastered</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Max/Min Fundamentals is now in your pocket.</p>
+</div>
+<!-- Stats Card -->
+<div class="bg-surface-container border-3 border-black rounded-DEFAULT p-6 shadow-[4px_4px_0px_#1A1A1A] flex flex-col justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md mb-4 border-b-3 border-black pb-2">Reward Summary</h2>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="bg-tertiary-container border-2 border-black rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+</div>
+<span class="font-body-lg text-body-lg">Sikka Earned</span>
+</div>
+<span class="font-headline-md text-headline-md text-secondary">+50 XP</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary-container border-2 border-black rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<span class="font-body-lg text-body-lg">Total Time</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">14:20</span>
+</div>
+</div>
+<div class="mt-6">
+<div class="flex justify-between mb-2">
+<span class="font-label-lg text-label-lg uppercase">Daily Goal</span>
+<span class="font-label-lg text-label-lg">80%</span>
+</div>
+<div class="h-6 w-full border-3 border-black bg-surface-dim rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary-fixed-dim progress-segment w-1/4"></div>
+<div class="h-full bg-secondary-fixed-dim progress-segment w-1/4"></div>
+<div class="h-full bg-secondary-fixed-dim progress-segment w-1/4"></div>
+<div class="h-full bg-secondary-fixed progress-segment w-[5%] transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="mt-12 w-full max-w-md flex flex-col gap-4">
+<button class="w-full bg-primary-container border-3 border-black rounded-DEFAULT py-4 px-6 flex items-center justify-center gap-3 shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all hover:bg-opacity-90">
+<span class="font-headline-md text-headline-md text-white">Chalo, Agla Topic!</span>
+<span class="material-symbols-outlined text-white">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-lowest border-3 border-black rounded-DEFAULT py-3 px-6 text-on-surface font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all hover:bg-surface-container-high">
+                Review Mistakes
+            </button>
+</div>
+<!-- Decorative Element -->
+<div class="mt-10 opacity-20 hidden md:block">
+<img alt="Math Geometry Shapes" class="w-full h-24 object-contain" data-alt="Abstract geometric math shapes like triangles, spheres, and grids floating in space. The style is minimalist and neo-brutalist with thick black outlines and a simple palette of orange and green. The lighting is flat and high-contrast, designed to be a background texture for a learning app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi7urnHCqbf6gtK7MvAwUbAspeoWVhgwSg4HItGKnIrjAAlrkQZizJ6QcRpRBIr7EDsbpgvQsrz4dIWcoqdgoVl8jNrZFRZysZLHMiWlhAnEgluX7mzIVnQFeSaulsSQwPDzKAaju7k2iax0_D_pcpqw0vZW24Tu99cxI3jZxmt9d58F0SgDjQChlsfcD7xRtKl9hCeR0UdGXI_JTVjuFrWMWPA_0I9FMIyL1LSe3E72WEmbibEw5cVVjwCufGa9MsAqb6ckVqEInV"/>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the coin animation
+        window.addEventListener('load', () => {
+            const progress = document.querySelector('.transition-all');
+            setTimeout(() => {
+                progress.style.width = '25%';
+            }, 500);
+        });
+
+        // Click effects for all buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Potential sound effect or haptic feedback logic
+            });
+        });
+    </script>
+</body></html>

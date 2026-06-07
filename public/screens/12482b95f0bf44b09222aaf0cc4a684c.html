@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Descending Order Relay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "inverse-on-surface": "#f0f1f1",
+                  "on-primary-fixed": "#3e0020",
+                  "outline-variant": "#e1bdc7",
+                  "tertiary-fixed": "#ffe16d",
+                  "tertiary-container": "#c9a900",
+                  "surface-container-lowest": "#ffffff",
+                  "tertiary": "#705d00",
+                  "on-primary": "#ffffff",
+                  "secondary-fixed": "#ffdcc4",
+                  "outline": "#8d6f78",
+                  "primary-fixed": "#ffd9e3",
+                  "surface-container-low": "#f3f3f4",
+                  "primary-fixed-dim": "#ffb0cb",
+                  "surface": "#f9f9f9",
+                  "secondary-fixed-dim": "#ffb781",
+                  "on-secondary-container": "#5b2d00",
+                  "surface-container-highest": "#e2e2e2",
+                  "on-error-container": "#93000a",
+                  "surface-tint": "#b80069",
+                  "tertiary-fixed-dim": "#e9c400",
+                  "surface-variant": "#e2e2e2",
+                  "on-secondary-fixed": "#2f1400",
+                  "on-error": "#ffffff",
+                  "surface-dim": "#dadada",
+                  "primary": "#b40067",
+                  "on-tertiary-fixed-variant": "#544600",
+                  "surface-container": "#eeeeee",
+                  "on-tertiary-container": "#4c3f00",
+                  "background": "#f9f9f9",
+                  "on-surface": "#1a1c1c",
+                  "surface-bright": "#f9f9f9",
+                  "surface-container-high": "#e8e8e8",
+                  "error": "#ba1a1a",
+                  "primary-container": "#df0b81",
+                  "on-tertiary": "#ffffff",
+                  "on-background": "#1a1c1c",
+                  "inverse-surface": "#2f3131",
+                  "on-tertiary-fixed": "#221b00",
+                  "inverse-primary": "#ffb0cb",
+                  "on-secondary-fixed-variant": "#6f3800",
+                  "error-container": "#ffdad6",
+                  "secondary": "#924c00",
+                  "secondary-container": "#f88400",
+                  "on-primary-container": "#fffbff",
+                  "on-primary-fixed-variant": "#8d004f",
+                  "on-secondary": "#ffffff",
+                  "on-surface-variant": "#5a3f48"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "border-width": "3px",
+                  "unit": "8px",
+                  "margin-mobile": "16px",
+                  "margin-desktop": "32px",
+                  "gutter": "16px",
+                  "shadow-offset": "4px"
+          },
+          "fontFamily": {
+                  "body-lg": ["Nunito Sans"],
+                  "headline-md": ["Fredoka"],
+                  "headline-xl": ["Fredoka"],
+                  "headline-lg": ["Fredoka"],
+                  "label-bold": ["Nunito Sans"],
+                  "body-md": ["Nunito Sans"],
+                  "headline-xl-mobile": ["Fredoka"]
+          },
+          "fontSize": {
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                  "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .bg-dot-grid {
+      background-image: radial-gradient(#d1d1d1 1.5px, transparent 1.5px);
+      background-size: 32px 32px;
+    }
+    .neo-card {
+      border: 3px solid #1a1c1c;
+      box-shadow: 4px 4px 0px 0px #1a1c1c;
+      transition: all 0.2s ease;
+    }
+    .neo-card:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0px 0px 0px 0px #1a1c1c;
+    }
+    .mountain-step {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+    .drag-ghost {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md bg-dot-grid min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden bg-primary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZrCMZBQ5sAWBam_AGZTMkS9iHXTNrw49b0Y1xd_cOCa1LrlFFoDi7RNH2EAXb918-WYHBYv746WbHGncwQ_2lb7QR1PpQkfm5gnDj8GbBekEy8eU2HTBriXXE6xxkpQKFwaQXwE5oEECzbj4Qy9JBqYShpqIT3Ud7ZCPRMMvff4GKwogvtrAm9NIT-i5HzPheTeVNiPohzAmwW8a3nPQKGw3Gm_3Cb_eNfDVfkb-vG8KoJNaZz6XS1IoVUmzghX5TDGxppq8m_Cel"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">Math-Masti</h1>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-tertiary-fixed border-[3px] border-on-surface rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="font-label-bold text-label-bold text-on-tertiary-fixed">12 🔥</span>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-margin-mobile py-8 flex flex-col items-center">
+<!-- Title Section -->
+<div class="w-full max-w-2xl text-center mb-8">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-secondary mb-2">Descending Order Relay</h2>
+<div class="inline-block bg-secondary-container text-on-secondary-container px-6 py-2 border-[3px] border-on-surface rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<p class="font-label-bold text-lg">Badi se chhoti jump maaro! (Arrange from big to small)</p>
+</div>
+</div>
+<!-- The Mountain Layout / Game Area -->
+<div class="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Source Pool (Numbers to pick) -->
+<div class="flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-primary-container">Pick the Numbers:</h3>
+<div class="flex flex-wrap gap-4 justify-center" id="number-pool">
+<button class="number-chip bg-surface border-[3px] border-on-surface p-6 rounded-xl font-headline-md text-headline-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-primary-fixed-dim transition-all cursor-grab active:cursor-grabbing" data-val="102" draggable="true">102</button>
+<button class="number-chip bg-surface border-[3px] border-on-surface p-6 rounded-xl font-headline-md text-headline-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-primary-fixed-dim transition-all cursor-grab active:cursor-grabbing" data-val="567" draggable="true">567</button>
+<button class="number-chip bg-surface border-[3px] border-on-surface p-6 rounded-xl font-headline-md text-headline-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-primary-fixed-dim transition-all cursor-grab active:cursor-grabbing" data-val="88" draggable="true">88</button>
+<button class="number-chip bg-surface border-[3px] border-on-surface p-6 rounded-xl font-headline-md text-headline-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-primary-fixed-dim transition-all cursor-grab active:cursor-grabbing" data-val="450" draggable="true">450</button>
+<button class="number-chip bg-surface border-[3px] border-on-surface p-6 rounded-xl font-headline-md text-headline-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-primary-fixed-dim transition-all cursor-grab active:cursor-grabbing" data-val="999" draggable="true">999</button>
+</div>
+</div>
+<!-- Target Waterfall/Mountain Drops -->
+<div class="relative flex flex-col items-center gap-4 py-8 bg-surface-container rounded-3xl border-[3px] border-dashed border-outline-variant p-6">
+<div class="absolute top-0 right-0 p-4 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">waterfall_chart</span>
+</div>
+<!-- Drop Slots -->
+<div class="w-full flex flex-col items-center gap-4">
+<!-- Slot 1 (Highest) -->
+<div class="drop-slot w-full md:w-4/5 bg-on-surface/5 h-20 border-[3px] border-dashed border-on-surface/20 rounded-xl flex items-center justify-center font-headline-md text-on-surface-variant relative" data-index="0">
+<span class="absolute -left-12 font-headline-md text-secondary">#1</span>
+<span class="placeholder">Highest Number Here</span>
+</div>
+<div class="w-2 bg-on-surface/10 h-6"></div>
+<div class="drop-slot w-full md:w-3/4 bg-on-surface/5 h-20 border-[3px] border-dashed border-on-surface/20 rounded-xl flex items-center justify-center font-headline-md text-on-surface-variant relative" data-index="1">
+<span class="absolute -left-12 font-headline-md text-secondary">#2</span>
+<span class="placeholder">Lower...</span>
+</div>
+<div class="w-2 bg-on-surface/10 h-6"></div>
+<div class="drop-slot w-full md:w-2/3 bg-on-surface/5 h-20 border-[3px] border-dashed border-on-surface/20 rounded-xl flex items-center justify-center font-headline-md text-on-surface-variant relative" data-index="2">
+<span class="absolute -left-12 font-headline-md text-secondary">#3</span>
+<span class="placeholder">Lower...</span>
+</div>
+<div class="w-2 bg-on-surface/10 h-6"></div>
+<div class="drop-slot w-full md:w-1/2 bg-on-surface/5 h-20 border-[3px] border-dashed border-on-surface/20 rounded-xl flex items-center justify-center font-headline-md text-on-surface-variant relative" data-index="3">
+<span class="absolute -left-12 font-headline-md text-secondary">#4</span>
+<span class="placeholder">Lower...</span>
+</div>
+<div class="w-2 bg-on-surface/10 h-6"></div>
+<div class="drop-slot w-full md:w-1/3 bg-on-surface/5 h-20 border-[3px] border-dashed border-on-surface/20 rounded-xl flex items-center justify-center font-headline-md text-on-surface-variant relative" data-index="4">
+<span class="absolute -left-12 font-headline-md text-secondary">#5</span>
+<span class="placeholder">Lowest Number</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-12 flex gap-4 w-full justify-center">
+<button class="bg-surface border-[3px] border-on-surface px-8 py-3 rounded-xl font-label-bold text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all" onclick="window.location.reload()">Reset</button>
+<button class="bg-primary text-on-primary border-[3px] border-on-surface px-12 py-3 rounded-xl font-label-bold text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all" id="check-btn">Check Answer</button>
+</div>
+<!-- Success/Failure Overlay (Hidden by default) -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-6" id="feedback-overlay">
+<div class="bg-surface border-[4px] border-on-surface p-10 rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-w-sm w-full text-center">
+<div class="mb-4" id="feedback-icon">
+<span class="material-symbols-outlined text-[80px] text-secondary">emoji_events</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-2" id="feedback-title">Awesome!</h3>
+<p class="font-body-lg text-body-lg mb-8" id="feedback-text">You arranged the waterfall perfectly!</p>
+<button class="w-full bg-secondary-container text-on-secondary-container border-[3px] border-on-surface py-3 rounded-xl font-label-bold text-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" onclick="document.getElementById('feedback-overlay').classList.add('hidden')">Continue</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+    const chips = document.querySelectorAll('.number-chip');
+    const slots = document.querySelectorAll('.drop-slot');
+    const checkBtn = document.getElementById('check-btn');
+    const overlay = document.getElementById('feedback-overlay');
+    const title = document.getElementById('feedback-title');
+    const text = document.getElementById('feedback-text');
+    const icon = document.getElementById('feedback-icon');
+
+    let draggedItem = null;
+
+    chips.forEach(chip => {
+      chip.addEventListener('dragstart', function(e) {
+        draggedItem = chip;
+        setTimeout(() => chip.classList.add('invisible'), 0);
+      });
+
+      chip.addEventListener('dragend', function() {
+        setTimeout(() => {
+          draggedItem.classList.remove('invisible');
+          draggedItem = null;
+        }, 0);
+      });
+    });
+
+    slots.forEach(slot => {
+      slot.addEventListener('dragover', e => e.preventDefault());
+      slot.addEventListener('dragenter', function(e) {
+        e.preventDefault();
+        this.classList.add('bg-primary-fixed');
+      });
+      slot.addEventListener('dragleave', function() {
+        this.classList.remove('bg-primary-fixed');
+      });
+      slot.addEventListener('drop', function() {
+        this.classList.remove('bg-primary-fixed');
+        if (draggedItem) {
+          // If slot already has a child, move it back to pool
+          const existingChild = this.querySelector('.number-chip');
+          if (existingChild) {
+            document.getElementById('number-pool').appendChild(existingChild);
+          }
+          
+          this.querySelector('.placeholder')?.classList.add('hidden');
+          this.appendChild(draggedItem);
+          draggedItem.classList.remove('shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]');
+          draggedItem.classList.add('scale-90', 'shadow-none');
+        }
+      });
+    });
+
+    // Simple touch support for mobile (click to move)
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const emptySlot = Array.from(slots).find(s => !s.querySelector('.number-chip'));
+            if (emptySlot) {
+                emptySlot.querySelector('.placeholder')?.classList.add('hidden');
+                emptySlot.appendChild(chip);
+                chip.classList.remove('shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]');
+                chip.classList.add('scale-90', 'shadow-none');
+            } else if (chip.parentElement.classList.contains('drop-slot')) {
+                // Move back to pool if clicked inside slot
+                const slot = chip.parentElement;
+                document.getElementById('number-pool').appendChild(chip);
+                chip.classList.add('shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]');
+                chip.classList.remove('scale-90', 'shadow-none');
+                slot.querySelector('.placeholder')?.classList.remove('hidden');
+            }
+        });
+    });
+
+    checkBtn.addEventListener('click', () => {
+        const answers = Array.from(slots).map(slot => {
+            const chip = slot.querySelector('.number-chip');
+            return chip ? parseInt(chip.getAttribute('data-val')) : null;
+        });
+
+        if (answers.includes(null)) {
+            alert('Pehle saare boxes bharo! (Fill all boxes first)');
+            return;
+        }
+
+        const correctOrder = [999, 567, 450, 102, 88];
+        const isCorrect = JSON.stringify(answers) === JSON.stringify(correctOrder);
+
+        overlay.classList.remove('hidden');
+        if (isCorrect) {
+            title.innerText = "Shabaash!";
+            text.innerText = "You mastered the Waterfall Relay! All numbers are perfectly descending.";
+            icon.innerHTML = '<span class="material-symbols-outlined text-[80px] text-secondary">verified</span>';
+        } else {
+            title.innerText = "Oh Ho!";
+            text.innerText = "Order thoda galat hai. Try again from Big to Small!";
+            icon.innerHTML = '<span class="material-symbols-outlined text-[80px] text-error">error</span>';
+        }
+    });
+
+  </script>
+</body></html>

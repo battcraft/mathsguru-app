@@ -1,0 +1,2310 @@
+[
+  {
+    "id": "432c1271ccd242839f50db14a9653da3",
+    "title": "Geometry: Rekha &amp; Bindu - Point Explainer",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Explainer",
+    "difficulty": 2,
+    "order": 1,
+    "file": "screens/432c1271ccd242839f50db14a9653da3.html"
+  },
+  {
+    "id": "278e78a9631f4e2f801b721fd10e39e5",
+    "title": "Kahani - Jaadui Bindu (Vertex)",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 2,
+    "file": "screens/278e78a9631f4e2f801b721fd10e39e5.html"
+  },
+  {
+    "id": "ff679af909c5451395241ad1ecaa0925",
+    "title": "Kahani - Tara Ki Udaan (Point)",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 3,
+    "file": "screens/ff679af909c5451395241ad1ecaa0925.html"
+  },
+  {
+    "id": "95fc95b0f3fa4d63a0c548620fa9be5e",
+    "title": "Video Lesson: Point (Bindu)",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 4,
+    "file": "screens/95fc95b0f3fa4d63a0c548620fa9be5e.html"
+  },
+  {
+    "id": "b0110ccbf115477ba8e9493419846e5b",
+    "title": "Video Lesson: The History of Zero &amp; Bindu",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 5,
+    "file": "screens/b0110ccbf115477ba8e9493419846e5b.html"
+  },
+  {
+    "id": "7ea0d212993d4dad8c5fd1ed93fea9c3",
+    "title": "Geometry Practice - Bindu dhundo!",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 6,
+    "file": "screens/7ea0d212993d4dad8c5fd1ed93fea9c3.html"
+  },
+  {
+    "id": "c317693ba4b248f7b99e903c3d799ad6",
+    "title": "The Rekha-Bindu Legend - Mastery Recap",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 7,
+    "file": "screens/c317693ba4b248f7b99e903c3d799ad6.html"
+  },
+  {
+    "id": "71d0c77ebc1d4024a94d0c4ad3c3909e",
+    "title": "Ganit Dost - Street Map Point Hunt",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 8,
+    "file": "screens/71d0c77ebc1d4024a94d0c4ad3c3909e.html"
+  },
+  {
+    "id": "ceac26045bcf4e1f8fe61692b836ee5f",
+    "title": "Ganit Pop - Vertex vs Endpoints",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 9,
+    "file": "screens/ceac26045bcf4e1f8fe61692b836ee5f.html"
+  },
+  {
+    "id": "db6e1236ddb64627aaacc6f9408a2fa4",
+    "title": "Geometry: Rekha &amp; Bindu - Line",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 10,
+    "file": "screens/db6e1236ddb64627aaacc6f9408a2fa4.html"
+  },
+  {
+    "id": "e4d3c0ce14e34143b8d058b64a955dce",
+    "title": "Geometry: Rekha &amp; Bindu - Line",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 11,
+    "file": "screens/e4d3c0ce14e34143b8d058b64a955dce.html"
+  },
+  {
+    "id": "809e8286b5ba406c9a432c622f122ea7",
+    "title": "Geometry: Rekha &amp; Bindu - Naming Points",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 12,
+    "file": "screens/809e8286b5ba406c9a432c622f122ea7.html"
+  },
+  {
+    "id": "121ee8d9f2b344d3969f1cdcd8d16d78",
+    "title": "Geometry: Rekha &amp; Bindu - Points in Nature",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 13,
+    "file": "screens/121ee8d9f2b344d3969f1cdcd8d16d78.html"
+  },
+  {
+    "id": "6a0638771b574b8198a83df9b67064c1",
+    "title": "Geometry: Rekha &amp; Bindu - Points in Space",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 14,
+    "file": "screens/6a0638771b574b8198a83df9b67064c1.html"
+  },
+  {
+    "id": "7aaaa747f14340919e4242ab524e8417",
+    "title": "Geometry: Rekha &amp; Bindu - Points on a Line",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 15,
+    "file": "screens/7aaaa747f14340919e4242ab524e8417.html"
+  },
+  {
+    "id": "ce6feb3d6425441e9741dc55774b2d7b",
+    "title": "Geometry: Rekha &amp; Bindu - Points on a Segment",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 16,
+    "file": "screens/ce6feb3d6425441e9741dc55774b2d7b.html"
+  },
+  {
+    "id": "f5148780fab648399f16da1714596842",
+    "title": "Geometry: Rekha &amp; Bindu - Socho",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 17,
+    "file": "screens/f5148780fab648399f16da1714596842.html"
+  },
+  {
+    "id": "0f311102e0944c72847b4c0cbc1c93aa",
+    "title": "Geometry: Rekha &amp; Bindu - Story",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 18,
+    "file": "screens/0f311102e0944c72847b4c0cbc1c93aa.html"
+  },
+  {
+    "id": "00693e0549f546f3979a53a782510f1b",
+    "title": "Geometry: Rekha &amp; Bindu - The Starting Point (Vertex)",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 19,
+    "file": "screens/00693e0549f546f3979a53a782510f1b.html"
+  },
+  {
+    "id": "519f4332edf243309de64ab9f295a91a",
+    "title": "Geometry: Rekha &amp; Bindu - What is a Point?",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 20,
+    "file": "screens/519f4332edf243309de64ab9f295a91a.html"
+  },
+  {
+    "id": "701ecaeb2db94c4ba7862764036f6e12",
+    "title": "Point Hunt: City Search",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 21,
+    "file": "screens/701ecaeb2db94c4ba7862764036f6e12.html"
+  },
+  {
+    "id": "e064f4f6b5a8448e9cc5b2380a62f751",
+    "title": "Points in Nature - Ganit Dost",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 22,
+    "file": "screens/e064f4f6b5a8448e9cc5b2380a62f751.html"
+  },
+  {
+    "id": "5581b13444de4752ba901268a950530c",
+    "title": "Expert Level: The Point (Bindu)",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 23,
+    "file": "screens/5581b13444de4752ba901268a950530c.html"
+  },
+  {
+    "id": "dac057946c7841db8da18afa4cf339a4",
+    "title": "Geometry: Rekha &amp; Bindu - Line Expert",
+    "topic": "geometry",
+    "subtopic": "point",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 24,
+    "file": "screens/dac057946c7841db8da18afa4cf339a4.html"
+  },
+  {
+    "id": "ba62308d51734fe38fb0ccbd0e80d553",
+    "title": "Kahani - Number Line Race",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 25,
+    "file": "screens/ba62308d51734fe38fb0ccbd0e80d553.html"
+  },
+  {
+    "id": "72179444de264ae885561f80fea619b8",
+    "title": "Kahani: Number Line Race",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 26,
+    "file": "screens/72179444de264ae885561f80fea619b8.html"
+  },
+  {
+    "id": "9edc21f2dffa470e9eb4f598682591d4",
+    "title": "Kahani: The Number Line Race",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 27,
+    "file": "screens/9edc21f2dffa470e9eb4f598682591d4.html"
+  },
+  {
+    "id": "b90a0d7d5d974be4bb34e4b884aa20b9",
+    "title": "Kahani: The Number Line Race",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 28,
+    "file": "screens/b90a0d7d5d974be4bb34e4b884aa20b9.html"
+  },
+  {
+    "id": "34463c4f21834a8c8e8ce2d6d4e86784",
+    "title": "Kahani: The Number Line Race",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 29,
+    "file": "screens/34463c4f21834a8c8e8ce2d6d4e86784.html"
+  },
+  {
+    "id": "85b062a708e941ce85dbe6e66b99cbe4",
+    "title": "Ganit Pop - Infinite Lines",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 30,
+    "file": "screens/85b062a708e941ce85dbe6e66b99cbe4.html"
+  },
+  {
+    "id": "490714e4a7234a4c854485af4b6f70cc",
+    "title": "Ganit Pop - Line Segment: Measuring Length",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 31,
+    "file": "screens/490714e4a7234a4c854485af4b6f70cc.html"
+  },
+  {
+    "id": "bdd3b9bca2b948c3a162d9ecb842eece",
+    "title": "Ganit Pop - Line Segment: The Fixed Path",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 32,
+    "file": "screens/bdd3b9bca2b948c3a162d9ecb842eece.html"
+  },
+  {
+    "id": "dc67e5afcb8349aaac716e0d5e2f5c8a",
+    "title": "Line Hunt - Dhoondh Re Lines Ko!",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 33,
+    "file": "screens/dc67e5afcb8349aaac716e0d5e2f5c8a.html"
+  },
+  {
+    "id": "a7f3853f4bd24c7c8084dd207629abe5",
+    "title": "Line Segment vs Ray",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 34,
+    "file": "screens/a7f3853f4bd24c7c8084dd207629abe5.html"
+  },
+  {
+    "id": "e1798591d55e44a1bf48a30e32ac555c",
+    "title": "Line Segment: The Fixed Path",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 35,
+    "file": "screens/e1798591d55e44a1bf48a30e32ac555c.html"
+  },
+  {
+    "id": "0cb62eebec364b80a4b650030b1bb755",
+    "title": "Line Symbols Match",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 36,
+    "file": "screens/0cb62eebec364b80a4b650030b1bb755.html"
+  },
+  {
+    "id": "76ce0c965f754ca5b3c8d83b93f49e61",
+    "title": "Lines in Space - Ganit Dost",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 37,
+    "file": "screens/76ce0c965f754ca5b3c8d83b93f49e61.html"
+  },
+  {
+    "id": "432a36e1b9a742eeb9206666aa86ba2f",
+    "title": "Lines in the City - Ganit Pop",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 38,
+    "file": "screens/432a36e1b9a742eeb9206666aa86ba2f.html"
+  },
+  {
+    "id": "1756d215ffaa437cb11b2e1cb2fc34bf",
+    "title": "Matchstick Math - Line Segment",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 39,
+    "file": "screens/1756d215ffaa437cb11b2e1cb2fc34bf.html"
+  },
+  {
+    "id": "efe4f34bd7db4c859cad402506ac099e",
+    "title": "Naming Your Lines - Ganit Pop",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 40,
+    "file": "screens/efe4f34bd7db4c859cad402506ac099e.html"
+  },
+  {
+    "id": "dfadc902479043f3b3fa7a7405409c35",
+    "title": "Rekha: The Infinite Traveler",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 41,
+    "file": "screens/dfadc902479043f3b3fa7a7405409c35.html"
+  },
+  {
+    "id": "c28709a72654485bab41621af23ab406",
+    "title": "Socho: Can a Line be Curved?",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 42,
+    "file": "screens/c28709a72654485bab41621af23ab406.html"
+  },
+  {
+    "id": "46e06fc5f08148f38bd01e7882dd666e",
+    "title": "Line Segment: Subsets of a Line (Expert)",
+    "topic": "geometry",
+    "subtopic": "line",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 43,
+    "file": "screens/46e06fc5f08148f38bd01e7882dd666e.html"
+  },
+  {
+    "id": "1f326abf920f481e8ca9b87a6122751d",
+    "title": "Practice: Segment Hunt (Beginner)",
+    "topic": "geometry",
+    "subtopic": "segment",
+    "type": "Practice",
+    "difficulty": 1,
+    "order": 44,
+    "file": "screens/1f326abf920f481e8ca9b87a6122751d.html"
+  },
+  {
+    "id": "3cffc7208c4d4ffda4a936ebde0fa9d1",
+    "title": "Ganit Dost - Segment Symmetry",
+    "topic": "geometry",
+    "subtopic": "segment",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 45,
+    "file": "screens/3cffc7208c4d4ffda4a936ebde0fa9d1.html"
+  },
+  {
+    "id": "f7e18d7f4011491b85bfd76754d741dd",
+    "title": "Segment Ruler Challenge - Ganit Pop",
+    "topic": "geometry",
+    "subtopic": "segment",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 46,
+    "file": "screens/f7e18d7f4011491b85bfd76754d741dd.html"
+  },
+  {
+    "id": "89d5748a061845ee8609a2db163a87c3",
+    "title": "Kahani Mode: Ray",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 47,
+    "file": "screens/89d5748a061845ee8609a2db163a87c3.html"
+  },
+  {
+    "id": "47b07cb80838484c8074e9f66678e341",
+    "title": "Video Lesson: Ray vs. Laser",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 48,
+    "file": "screens/47b07cb80838484c8074e9f66678e341.html"
+  },
+  {
+    "id": "edeb15fbeec64826bf5e12fb4de05a51",
+    "title": "Practice Zone - Ray Hunter",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 49,
+    "file": "screens/edeb15fbeec64826bf5e12fb4de05a51.html"
+  },
+  {
+    "id": "19f6aedc71764a8b9d8d44b63cccab90",
+    "title": "Practice: Ray Direction (Intermediate)",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 50,
+    "file": "screens/19f6aedc71764a8b9d8d44b63cccab90.html"
+  },
+  {
+    "id": "6866ed386cf9439a8576d8ec347c9005",
+    "title": "Kiran Ka Masterclass - Rays",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 51,
+    "file": "screens/6866ed386cf9439a8576d8ec347c9005.html"
+  },
+  {
+    "id": "30247ac1eb4a450fada80ec4284eab47",
+    "title": "Angle or Ray? - Ganit Dost",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 52,
+    "file": "screens/30247ac1eb4a450fada80ec4284eab47.html"
+  },
+  {
+    "id": "c8d3351704a14d27a072409639f6cebc",
+    "title": "Ganit Dost - Ray Directionality Speed-Run",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 53,
+    "file": "screens/c8d3351704a14d27a072409639f6cebc.html"
+  },
+  {
+    "id": "0b97313fb9b54fab9aa9562df60c56c9",
+    "title": "Ray (Kiran): One-Way Hero!",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 54,
+    "file": "screens/0b97313fb9b54fab9aa9562df60c56c9.html"
+  },
+  {
+    "id": "58e3eeefba8a47c69485958218021630",
+    "title": "Ray: Naming the Kiran",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 55,
+    "file": "screens/58e3eeefba8a47c69485958218021630.html"
+  },
+  {
+    "id": "e24f803ff17a423fafb27dc889129546",
+    "title": "Ray: The One-Way Hero",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 56,
+    "file": "screens/e24f803ff17a423fafb27dc889129546.html"
+  },
+  {
+    "id": "2384f8363c8840f99cfb670a06848b9e",
+    "title": "Challenge: Sun Rays vs Laser",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 57,
+    "file": "screens/2384f8363c8840f99cfb670a06848b9e.html"
+  },
+  {
+    "id": "372bb6e9fecc4891b2a3c55ba28a52b0",
+    "title": "Ray: The Endless Arrow (Expert)",
+    "topic": "geometry",
+    "subtopic": "ray",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 58,
+    "file": "screens/372bb6e9fecc4891b2a3c55ba28a52b0.html"
+  },
+  {
+    "id": "1eeaefb8e7fa496cabc2554d1e1f9144",
+    "title": "Find the Vertex! - Ganit Pop",
+    "topic": "geometry",
+    "subtopic": "vertex",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 59,
+    "file": "screens/1eeaefb8e7fa496cabc2554d1e1f9144.html"
+  },
+  {
+    "id": "6f009c6a030e4286a09529bd8ef1736d",
+    "title": "Ganit Dost - Vertex Collector",
+    "topic": "geometry",
+    "subtopic": "vertex",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 60,
+    "file": "screens/6f009c6a030e4286a09529bd8ef1736d.html"
+  },
+  {
+    "id": "f62c07bd4a4c48b392aa4326b3ed0ecf",
+    "title": "Expert Panga: Geometry Master",
+    "topic": "geometry",
+    "subtopic": "intersections",
+    "type": "Quiz",
+    "difficulty": 3,
+    "order": 61,
+    "file": "screens/f62c07bd4a4c48b392aa4326b3ed0ecf.html"
+  },
+  {
+    "id": "40c0eae4bb44466cbbde1b0524c99057",
+    "title": "Geometry: Intersections",
+    "topic": "geometry",
+    "subtopic": "intersections",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 62,
+    "file": "screens/40c0eae4bb44466cbbde1b0524c99057.html"
+  },
+  {
+    "id": "b304fd5fdee84f47afc210a321adca09",
+    "title": "Geometry Quiz",
+    "topic": "geometry",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 63,
+    "file": "screens/b304fd5fdee84f47afc210a321adca09.html"
+  },
+  {
+    "id": "41b3ca60303a42ebb51da2db7abaf21a",
+    "title": "Geometry Grand Panga",
+    "topic": "geometry",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 3,
+    "order": 64,
+    "file": "screens/41b3ca60303a42ebb51da2db7abaf21a.html"
+  },
+  {
+    "id": "0e938621f05846868a41a7d28d467fa0",
+    "title": "Geometry Champion Board",
+    "topic": "geometry",
+    "subtopic": "other",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 65,
+    "file": "screens/0e938621f05846868a41a7d28d467fa0.html"
+  },
+  {
+    "id": "be71ca40d1d248e7b176318852979447",
+    "title": "Geometry Level Selection",
+    "topic": "geometry",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 66,
+    "file": "screens/be71ca40d1d248e7b176318852979447.html"
+  },
+  {
+    "id": "09486f02607e46d4bfe1afba89bc15f4",
+    "title": "Geometry: The Big Comparison",
+    "topic": "geometry",
+    "subtopic": "other",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 67,
+    "file": "screens/09486f02607e46d4bfe1afba89bc15f4.html"
+  },
+  {
+    "id": "8fca9b3822704f2db1db5a86f71dcf1a",
+    "title": "Geometry: The Capital Rule",
+    "topic": "geometry",
+    "subtopic": "other",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 68,
+    "file": "screens/8fca9b3822704f2db1db5a86f71dcf1a.html"
+  },
+  {
+    "id": "7e270a5b1a7a48f5bd82883e386bd324",
+    "title": "Math-Masti | Order Masterclass",
+    "topic": "numbers",
+    "subtopic": "order",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 1,
+    "file": "screens/7e270a5b1a7a48f5bd82883e386bd324.html"
+  },
+  {
+    "id": "8634e11bb3de4f0498c732264b1a99d9",
+    "title": "Math-Masti | Order Masterclass",
+    "topic": "numbers",
+    "subtopic": "order",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 2,
+    "file": "screens/8634e11bb3de4f0498c732264b1a99d9.html"
+  },
+  {
+    "id": "b1ea3ab38c284e3eb54f6f204f5dfadf",
+    "title": "Order Masterclass",
+    "topic": "numbers",
+    "subtopic": "order",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 3,
+    "file": "screens/b1ea3ab38c284e3eb54f6f204f5dfadf.html"
+  },
+  {
+    "id": "12482b95f0bf44b09222aaf0cc4a684c",
+    "title": "Descending Order Relay",
+    "topic": "numbers",
+    "subtopic": "order",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 4,
+    "file": "screens/12482b95f0bf44b09222aaf0cc4a684c.html"
+  },
+  {
+    "id": "7b3a7320639d421c8f3ce2a42616b853",
+    "title": "Ganit Dost - Order the Planets",
+    "topic": "numbers",
+    "subtopic": "order",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 5,
+    "file": "screens/7b3a7320639d421c8f3ce2a42616b853.html"
+  },
+  {
+    "id": "68d5608ae4e14f71a67ca2377ccaa614",
+    "title": "Math-Masti | Ascending Order Relay",
+    "topic": "numbers",
+    "subtopic": "order",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 6,
+    "file": "screens/68d5608ae4e14f71a67ca2377ccaa614.html"
+  },
+  {
+    "id": "ae4e6d7bc2f34e58a8a68b6dc7183f60",
+    "title": "Ganit Pop - Place Value Power",
+    "topic": "numbers",
+    "subtopic": "place_value",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 7,
+    "file": "screens/ae4e6d7bc2f34e58a8a68b6dc7183f60.html"
+  },
+  {
+    "id": "174abf2e403947dbbe372e25a3e38a07",
+    "title": "Decimal Duel - Practice",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 8,
+    "file": "screens/174abf2e403947dbbe372e25a3e38a07.html"
+  },
+  {
+    "id": "70b097c86b9447d2ba9d7c0f46a7f109",
+    "title": "Decimal Duel - Practice Screen",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 9,
+    "file": "screens/70b097c86b9447d2ba9d7c0f46a7f109.html"
+  },
+  {
+    "id": "12530fda6def43468f3e97608172d384",
+    "title": "Comparing Decimals - MathsGuru",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 10,
+    "file": "screens/12530fda6def43468f3e97608172d384.html"
+  },
+  {
+    "id": "d8e05e417ce54b998c22d922f1029e9a",
+    "title": "Decimal Duel - Kaun Bada?",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 11,
+    "file": "screens/d8e05e417ce54b998c22d922f1029e9a.html"
+  },
+  {
+    "id": "f9cb4acda6174e75933e491960bc270a",
+    "title": "Decimal Duel - Kaun Bada?",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 12,
+    "file": "screens/f9cb4acda6174e75933e491960bc270a.html"
+  },
+  {
+    "id": "06dfc56c489e4f29bf24801fe626e39d",
+    "title": "Decimal Speed Drill - Ganit Pop",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 13,
+    "file": "screens/06dfc56c489e4f29bf24801fe626e39d.html"
+  },
+  {
+    "id": "b98bd542767a4bad8966928993eb1cd6",
+    "title": "Math-Masti: The Decimal \"Zero Trap\"",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 14,
+    "file": "screens/b98bd542767a4bad8966928993eb1cd6.html"
+  },
+  {
+    "id": "b774f87682ea43ad8c758a4b1025876a",
+    "title": "The Infinity of Decimals",
+    "topic": "numbers",
+    "subtopic": "decimals",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 15,
+    "file": "screens/b774f87682ea43ad8c758a4b1025876a.html"
+  },
+  {
+    "id": "4f7b16bdd2334989ab821b315ee29f0e",
+    "title": "Rounding Arena - Gol Gol Ghoom!",
+    "topic": "numbers",
+    "subtopic": "rounding",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 16,
+    "file": "screens/4f7b16bdd2334989ab821b315ee29f0e.html"
+  },
+  {
+    "id": "e815ae9506044518a4ebda27aa0e3d9c",
+    "title": "Rounding Arena - Gol Gol Ghoom!",
+    "topic": "numbers",
+    "subtopic": "rounding",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 17,
+    "file": "screens/e815ae9506044518a4ebda27aa0e3d9c.html"
+  },
+  {
+    "id": "173050b80a2042c89f4590ffe571fee4",
+    "title": "Rounding Arena - Math-Masti",
+    "topic": "numbers",
+    "subtopic": "rounding",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 18,
+    "file": "screens/173050b80a2042c89f4590ffe571fee4.html"
+  },
+  {
+    "id": "f301b00aa9ca46f789fa0daf8870efe9",
+    "title": "Rounding in the Real World",
+    "topic": "numbers",
+    "subtopic": "rounding",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 19,
+    "file": "screens/f301b00aa9ca46f789fa0daf8870efe9.html"
+  },
+  {
+    "id": "99512d0893ee4979804904207786cfb1",
+    "title": "Rounding ka Akhada!",
+    "topic": "numbers",
+    "subtopic": "rounding",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 20,
+    "file": "screens/99512d0893ee4979804904207786cfb1.html"
+  },
+  {
+    "id": "af954328553343c3876a0f5050a3610c",
+    "title": "Negative Number Battle - Ganit Dost",
+    "topic": "numbers",
+    "subtopic": "negative_numbers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 21,
+    "file": "screens/af954328553343c3876a0f5050a3610c.html"
+  },
+  {
+    "id": "1cdf1a8bc96542ceb1f82d6d64f233a0",
+    "title": "Math-Masti | Numbers Master Quiz",
+    "topic": "numbers",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 22,
+    "file": "screens/1cdf1a8bc96542ceb1f82d6d64f233a0.html"
+  },
+  {
+    "id": "db243691f2b14322ba3548ff3f3d3c54",
+    "title": "Numbers Ka Final Panga!",
+    "topic": "numbers",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 23,
+    "file": "screens/db243691f2b14322ba3548ff3f3d3c54.html"
+  },
+  {
+    "id": "c829a13444514785b86d0193f1827e76",
+    "title": "Numbers Panga! - Evaluation",
+    "topic": "numbers",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 24,
+    "file": "screens/c829a13444514785b86d0193f1827e76.html"
+  },
+  {
+    "id": "635630cd49ff4c8dbc2afae804a8019d",
+    "title": "Expert Panga - Comparing Numbers",
+    "topic": "numbers",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 3,
+    "order": 25,
+    "file": "screens/635630cd49ff4c8dbc2afae804a8019d.html"
+  },
+  {
+    "id": "ecaacac15a484ccb8209f28860e72fd1",
+    "title": "Mastery Summary - Comparing Numbers",
+    "topic": "numbers",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 26,
+    "file": "screens/ecaacac15a484ccb8209f28860e72fd1.html"
+  },
+  {
+    "id": "a6f44a18b8b2439cb738ba5384136082",
+    "title": "Module Mastery - Numbers and Comparison",
+    "topic": "numbers",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 27,
+    "file": "screens/a6f44a18b8b2439cb738ba5384136082.html"
+  },
+  {
+    "id": "0ec4c87c4f024146bcb10d10578210b2",
+    "title": "Speed Comparison Masterclass - Ganit Dost",
+    "topic": "numbers",
+    "subtopic": "explainers",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 28,
+    "file": "screens/0ec4c87c4f024146bcb10d10578210b2.html"
+  },
+  {
+    "id": "c70f4203b16647608fb3137e361f5247",
+    "title": "Comparing Numbers: Intro",
+    "topic": "numbers",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 1,
+    "order": 29,
+    "file": "screens/c70f4203b16647608fb3137e361f5247.html"
+  },
+  {
+    "id": "3d861d92b6fc47a29efb92f2437a3ff2",
+    "title": "Comparison Champ Unlocked!",
+    "topic": "numbers",
+    "subtopic": "mastery",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 30,
+    "file": "screens/3d861d92b6fc47a29efb92f2437a3ff2.html"
+  },
+  {
+    "id": "41e8a0f7dddd472d80cbead29f7e2786",
+    "title": "Crocodile vs Big Numbers - Ganit Pop",
+    "topic": "numbers",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 31,
+    "file": "screens/41e8a0f7dddd472d80cbead29f7e2786.html"
+  },
+  {
+    "id": "2946d07dcb844ddc9b5226942256ab96",
+    "title": "Numbers Ka Ustad!",
+    "topic": "numbers",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 32,
+    "file": "screens/2946d07dcb844ddc9b5226942256ab96.html"
+  },
+  {
+    "id": "20788723b73a40888b4f74779d11cd54",
+    "title": "Ganit Dost - Maximum &amp; Minimum Lesson",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 1,
+    "file": "screens/20788723b73a40888b4f74779d11cd54.html"
+  },
+  {
+    "id": "45e744e2076c43519a87d128158418f3",
+    "title": "Math-Masti - Max/Min Video Lesson",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 2,
+    "file": "screens/45e744e2076c43519a87d128158418f3.html"
+  },
+  {
+    "id": "0717b1b17b42450794813a60ee1e0603",
+    "title": "Max/Min Video 3: Real World Applications",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 3,
+    "file": "screens/0717b1b17b42450794813a60ee1e0603.html"
+  },
+  {
+    "id": "e8efc39f87ca46348e4faf962e835878",
+    "title": "Ganit Dost - Maximum &amp; Minimum Practice",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 4,
+    "file": "screens/e8efc39f87ca46348e4faf962e835878.html"
+  },
+  {
+    "id": "230758b7c53f4cc38ef5093f63c7dcb9",
+    "title": "Final Panga! - Max/Min",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 5,
+    "file": "screens/230758b7c53f4cc38ef5093f63c7dcb9.html"
+  },
+  {
+    "id": "0a61c38c2caf48778a2b50e58b063f28",
+    "title": "Math-Masti | Max/Min Mastery",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 6,
+    "file": "screens/0a61c38c2caf48778a2b50e58b063f28.html"
+  },
+  {
+    "id": "cee1128305224ff788e02e115362946a",
+    "title": "Math-Masti | Max/Min Mastery",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 7,
+    "file": "screens/cee1128305224ff788e02e115362946a.html"
+  },
+  {
+    "id": "c8276257f8714bc683afd8388888a367",
+    "title": "Module Mastery - Maximum &amp; Minimum",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 8,
+    "file": "screens/c8276257f8714bc683afd8388888a367.html"
+  },
+  {
+    "id": "bb35473c3e0045d69f96fad0e082aea0",
+    "title": "Maximum &amp; Minimum Intro",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 1,
+    "order": 9,
+    "file": "screens/bb35473c3e0045d69f96fad0e082aea0.html"
+  },
+  {
+    "id": "ac492ae364d24e25bd8a9cb158304cb2",
+    "title": "Ganit Dost - Grocery List Max/Min",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 10,
+    "file": "screens/ac492ae364d24e25bd8a9cb158304cb2.html"
+  },
+  {
+    "id": "1069ee7770b24c5fa5dc0075e253d0b5",
+    "title": "Ganit Dost - Maximum &amp; Minimum",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 11,
+    "file": "screens/1069ee7770b24c5fa5dc0075e253d0b5.html"
+  },
+  {
+    "id": "f6860f2742f1462cbd69e6a135ae5b56",
+    "title": "Ganit Dost - Minimum vs Maximum",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 12,
+    "file": "screens/f6860f2742f1462cbd69e6a135ae5b56.html"
+  },
+  {
+    "id": "138295dca01b4f98bc1960a2a7e8c4bc",
+    "title": "Ganit Pop - Max/Min in Nature",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 13,
+    "file": "screens/138295dca01b4f98bc1960a2a7e8c4bc.html"
+  },
+  {
+    "id": "e10f520201d141a4a63e4ed985fe82c2",
+    "title": "MathsGuru Worksheet - Maximum",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 14,
+    "file": "screens/e10f520201d141a4a63e4ed985fe82c2.html"
+  },
+  {
+    "id": "ff657683e28e4c95b9bd9c3e08844c46",
+    "title": "Max Matlab Sabse Bada",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 15,
+    "file": "screens/ff657683e28e4c95b9bd9c3e08844c46.html"
+  },
+  {
+    "id": "e2c41de2b1b44c33be43a7102e615773",
+    "title": "Max/Min: Loading...",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 16,
+    "file": "screens/e2c41de2b1b44c33be43a7102e615773.html"
+  },
+  {
+    "id": "73d43109332e470fb3bd498c30334021",
+    "title": "Max/Min: Oops! State",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 17,
+    "file": "screens/73d43109332e470fb3bd498c30334021.html"
+  },
+  {
+    "id": "c64ec0e82e8c4619b93e62c2f0dec3b5",
+    "title": "Max/Min: Section Success",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 18,
+    "file": "screens/c64ec0e82e8c4619b93e62c2f0dec3b5.html"
+  },
+  {
+    "id": "cdab882edbff42de9076da4e9bccba6f",
+    "title": "Math-Masti: Data Log Max/Min Challenge",
+    "topic": "maxmin",
+    "subtopic": "maximum",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 19,
+    "file": "screens/cdab882edbff42de9076da4e9bccba6f.html"
+  },
+  {
+    "id": "0b9aa929160f4e0eb8923e4119ecf9eb",
+    "title": "Ganit Dost - Minimum Explainer",
+    "topic": "maxmin",
+    "subtopic": "minimum",
+    "type": "Explainer",
+    "difficulty": 2,
+    "order": 20,
+    "file": "screens/0b9aa929160f4e0eb8923e4119ecf9eb.html"
+  },
+  {
+    "id": "674ef43f9d8844c7b10da7c80c0f361c",
+    "title": "Interactive Explainer: Min matlab Sabse Kam",
+    "topic": "maxmin",
+    "subtopic": "minimum",
+    "type": "Explainer",
+    "difficulty": 2,
+    "order": 21,
+    "file": "screens/674ef43f9d8844c7b10da7c80c0f361c.html"
+  },
+  {
+    "id": "649794ee52aa4e47a3ab06f0af433968",
+    "title": "Mini Panga! - Mid-Lesson Quiz",
+    "topic": "maxmin",
+    "subtopic": "minimum",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 22,
+    "file": "screens/649794ee52aa4e47a3ab06f0af433968.html"
+  },
+  {
+    "id": "0214b260a2bf40119ce6eff72a57b21d",
+    "title": "Ganit Dost - Range Explainer",
+    "topic": "maxmin",
+    "subtopic": "range",
+    "type": "Explainer",
+    "difficulty": 2,
+    "order": 23,
+    "file": "screens/0214b260a2bf40119ce6eff72a57b21d.html"
+  },
+  {
+    "id": "b3649855c6ba4bab8baf0c56732a700e",
+    "title": "Range Practice - Math-Masti",
+    "topic": "maxmin",
+    "subtopic": "range",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 24,
+    "file": "screens/b3649855c6ba4bab8baf0c56732a700e.html"
+  },
+  {
+    "id": "8882903e96a24fbc848c387e3706ad06",
+    "title": "Mastering Range - Ganit Pop",
+    "topic": "maxmin",
+    "subtopic": "range",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 25,
+    "file": "screens/8882903e96a24fbc848c387e3706ad06.html"
+  },
+  {
+    "id": "aa849749bef440f097e25d456f761f60",
+    "title": "Range Finder: Gap Nikalo!",
+    "topic": "maxmin",
+    "subtopic": "range",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 26,
+    "file": "screens/aa849749bef440f097e25d456f761f60.html"
+  },
+  {
+    "id": "bc40a62785824b6db30eb2937e528982",
+    "title": "Range Finder: Gap Nikalo!",
+    "topic": "maxmin",
+    "subtopic": "range",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 27,
+    "file": "screens/bc40a62785824b6db30eb2937e528982.html"
+  },
+  {
+    "id": "d49bf9a0bede46c09a296c75de73edbd",
+    "title": "Practice Phase Intro - MathsGuru",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Practice",
+    "difficulty": 1,
+    "order": 1,
+    "file": "screens/d49bf9a0bede46c09a296c75de73edbd.html"
+  },
+  {
+    "id": "d5d76eb210a041cfb7b9980230cd3a47",
+    "title": "Apna Guru Chuno!",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 2,
+    "file": "screens/d5d76eb210a041cfb7b9980230cd3a47.html"
+  },
+  {
+    "id": "0ccc8ae32f034b0da436d929a788f903",
+    "title": "Data Collection Examples - MathsGuru",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 3,
+    "file": "screens/0ccc8ae32f034b0da436d929a788f903.html"
+  },
+  {
+    "id": "f2a1427ce7c6486fa98b9ec0d0d8668f",
+    "title": "Ganit Dost - Level Selection",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 4,
+    "file": "screens/f2a1427ce7c6486fa98b9ec0d0d8668f.html"
+  },
+  {
+    "id": "2969d74b530b4b1ab410782de66d72c2",
+    "title": "Ganit Dost - Topic Explorer",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 5,
+    "file": "screens/2969d74b530b4b1ab410782de66d72c2.html"
+  },
+  {
+    "id": "4103a831082b453b8333a0cbacacb8cc",
+    "title": "MathsGuru - Important Symbols",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 6,
+    "file": "screens/4103a831082b453b8333a0cbacacb8cc.html"
+  },
+  {
+    "id": "4154d2b029aa4d11b9fe66b9001b71fb",
+    "title": "MathsGuru - Interactive Worksheet",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 7,
+    "file": "screens/4154d2b029aa4d11b9fe66b9001b71fb.html"
+  },
+  {
+    "id": "90cc8a7116f341de99787083e80c70ae",
+    "title": "Symbol Speed Drill",
+    "topic": "foundation",
+    "subtopic": "getting_started",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 8,
+    "file": "screens/90cc8a7116f341de99787083e80c70ae.html"
+  },
+  {
+    "id": "1b7f20927ad84fd3bfa7d3e078d6afa5",
+    "title": "Kahani Mode - The King's Dilemma",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 9,
+    "file": "screens/1b7f20927ad84fd3bfa7d3e078d6afa5.html"
+  },
+  {
+    "id": "7cf882ed35dd46dbb7b9ba245275520d",
+    "title": "Kahani: The Kings Dilemma",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 10,
+    "file": "screens/7cf882ed35dd46dbb7b9ba245275520d.html"
+  },
+  {
+    "id": "e407f60d5601490b8c5e503c06237c0e",
+    "title": "Kahani: The Kings Dilemma",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 11,
+    "file": "screens/e407f60d5601490b8c5e503c06237c0e.html"
+  },
+  {
+    "id": "e2bb30bb259340baa58d9d5031a4ec5c",
+    "title": "Tara Ki Kahani",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 12,
+    "file": "screens/e2bb30bb259340baa58d9d5031a4ec5c.html"
+  },
+  {
+    "id": "ed5ce6fe8b9a48859519447ccdbdd2fb",
+    "title": "The King's Dilemma - Kahani Mode",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 13,
+    "file": "screens/ed5ce6fe8b9a48859519447ccdbdd2fb.html"
+  },
+  {
+    "id": "d33b849c09794c83be8616774f45b0ce",
+    "title": "The Longest Road - Kahani Mode",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Kahani",
+    "difficulty": 2,
+    "order": 14,
+    "file": "screens/d33b849c09794c83be8616774f45b0ce.html"
+  },
+  {
+    "id": "fdbea8a42744419f893478d6d80d031b",
+    "title": "Math-Masti - The King's Dilemma",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 15,
+    "file": "screens/fdbea8a42744419f893478d6d80d031b.html"
+  },
+  {
+    "id": "a482666d667d4e22a8c849eaead33a9e",
+    "title": "The Broken Bridge - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 16,
+    "file": "screens/a482666d667d4e22a8c849eaead33a9e.html"
+  },
+  {
+    "id": "390f5e98a6dd4d089c046654558aade7",
+    "title": "Practice Zone - Coordinate Crossword",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 17,
+    "file": "screens/390f5e98a6dd4d089c046654558aade7.html"
+  },
+  {
+    "id": "eccd3132ddb9458fba2cc7587a25f362",
+    "title": "Practice Zone - Scale Reading",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 18,
+    "file": "screens/eccd3132ddb9458fba2cc7587a25f362.html"
+  },
+  {
+    "id": "44e0f4eaf6314354bca7837126dbfe30",
+    "title": "Ganit Pop - Scale Master",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 19,
+    "file": "screens/44e0f4eaf6314354bca7837126dbfe30.html"
+  },
+  {
+    "id": "0167ee6af6774ebebcf059d9d55f9d13",
+    "title": "Measuring in Real Life - Ganit Pop",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 20,
+    "file": "screens/0167ee6af6774ebebcf059d9d55f9d13.html"
+  },
+  {
+    "id": "8d932e8fc84a43388a6b8082b2ab4436",
+    "title": "Railway Track Matchup - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 21,
+    "file": "screens/8d932e8fc84a43388a6b8082b2ab4436.html"
+  },
+  {
+    "id": "02fcb9e0e73547888e4625f1d5c896f3",
+    "title": "The Invisible Grid - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 22,
+    "file": "screens/02fcb9e0e73547888e4625f1d5c896f3.html"
+  },
+  {
+    "id": "fec114b3fbc047c892475fa6b02c3baa",
+    "title": "Ganit Dost - Practice Question 2",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 23,
+    "file": "screens/fec114b3fbc047c892475fa6b02c3baa.html"
+  },
+  {
+    "id": "f36849c728c14cb18789ba117bb53ae5",
+    "title": "Ganit Dost - Practice Question 3",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 24,
+    "file": "screens/f36849c728c14cb18789ba117bb53ae5.html"
+  },
+  {
+    "id": "514f1e0f7b1d4d1fb98150f122591c0e",
+    "title": "Ganit Pop - Practice Zone",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 25,
+    "file": "screens/514f1e0f7b1d4d1fb98150f122591c0e.html"
+  },
+  {
+    "id": "cdad00b3c40d4a4d94000bae9e9315fe",
+    "title": "Practice Question 1 - IPL Score | Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 26,
+    "file": "screens/cdad00b3c40d4a4d94000bae9e9315fe.html"
+  },
+  {
+    "id": "6320432e61ed468abc1b03803a4299ee",
+    "title": "Practice Session - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Practice",
+    "difficulty": 2,
+    "order": 27,
+    "file": "screens/6320432e61ed468abc1b03803a4299ee.html"
+  },
+  {
+    "id": "b0460971c5a148fdacfab70bdc81a424",
+    "title": "Ganit Dost - Samosa Party",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 28,
+    "file": "screens/b0460971c5a148fdacfab70bdc81a424.html"
+  },
+  {
+    "id": "3947fe676dad4fd5b3e320731a54f45c",
+    "title": "Expert Challenge: The Negative Zone",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 29,
+    "file": "screens/3947fe676dad4fd5b3e320731a54f45c.html"
+  },
+  {
+    "id": "39eb8dab246444e3ac842f1420a872b2",
+    "title": "Ganit Pop - Mid-Lesson Panga!",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 30,
+    "file": "screens/39eb8dab246444e3ac842f1420a872b2.html"
+  },
+  {
+    "id": "816a8f3e8a6e4f35901c61b451765ab7",
+    "title": "Math-Masti - Mid-Lesson Panga!",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 31,
+    "file": "screens/816a8f3e8a6e4f35901c61b451765ab7.html"
+  },
+  {
+    "id": "77c569329f9648d994d205d83c605d0d",
+    "title": "Math-Masti | Mid-Lesson Quiz",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 32,
+    "file": "screens/77c569329f9648d994d205d83c605d0d.html"
+  },
+  {
+    "id": "52e8966b96f14cc59d7ca6308a04f306",
+    "title": "Mid-Lesson Panga!",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 33,
+    "file": "screens/52e8966b96f14cc59d7ca6308a04f306.html"
+  },
+  {
+    "id": "4cce43de589345f3a4ff3dae0a68b1ce",
+    "title": "Asli Panga: Final Test",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 34,
+    "file": "screens/4cce43de589345f3a4ff3dae0a68b1ce.html"
+  },
+  {
+    "id": "0d2f4a04774f4117a693698a37ffc672",
+    "title": "Final Evaluation - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 35,
+    "file": "screens/0d2f4a04774f4117a693698a37ffc672.html"
+  },
+  {
+    "id": "23fbd256c9f346e193c67bbbc1f7a41a",
+    "title": "Final Panga!",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 36,
+    "file": "screens/23fbd256c9f346e193c67bbbc1f7a41a.html"
+  },
+  {
+    "id": "62e499ab527347dabf548b2689fb2f49",
+    "title": "Final Panga! - Ganit Pop",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 37,
+    "file": "screens/62e499ab527347dabf548b2689fb2f49.html"
+  },
+  {
+    "id": "01067e29f6e9463fad7af0bec78fe869",
+    "title": "Final Panga! - Math Assessment",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 38,
+    "file": "screens/01067e29f6e9463fad7af0bec78fe869.html"
+  },
+  {
+    "id": "3c94e89095604fafa062da71b932943c",
+    "title": "Math-Masti Final Panga!",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Quiz",
+    "difficulty": 2,
+    "order": 39,
+    "file": "screens/3c94e89095604fafa062da71b932943c.html"
+  },
+  {
+    "id": "79fae83e06564f9ab50c05f60cdfc996",
+    "title": "Math-Masti - Video Lesson",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Video",
+    "difficulty": 2,
+    "order": 40,
+    "file": "screens/79fae83e06564f9ab50c05f60cdfc996.html"
+  },
+  {
+    "id": "9441e02537734105b4ae45a6d3e3974c",
+    "title": "Ganit Pop - Mastery Summary",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 41,
+    "file": "screens/9441e02537734105b4ae45a6d3e3974c.html"
+  },
+  {
+    "id": "009c6214fd0d43d9982c9c495311f29c",
+    "title": "Mastery Recap - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 42,
+    "file": "screens/009c6214fd0d43d9982c9c495311f29c.html"
+  },
+  {
+    "id": "b08a4d5c97e54fc3aedaacd8ba0c30df",
+    "title": "Mastery Summary",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 43,
+    "file": "screens/b08a4d5c97e54fc3aedaacd8ba0c30df.html"
+  },
+  {
+    "id": "aaf6ded937f3440b96f453b2204111b9",
+    "title": "Mastery Summary - Ganit Pop",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 44,
+    "file": "screens/aaf6ded937f3440b96f453b2204111b9.html"
+  },
+  {
+    "id": "eb6cc9e7b80d41ada4f4f4a9e43ec20a",
+    "title": "Mastery Summary - Kiran",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 45,
+    "file": "screens/eb6cc9e7b80d41ada4f4f4a9e43ec20a.html"
+  },
+  {
+    "id": "99f86d51e09f4862be86fd5d5a425106",
+    "title": "Mastery Summary | Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Mastery",
+    "difficulty": 2,
+    "order": 46,
+    "file": "screens/99f86d51e09f4862be86fd5d5a425106.html"
+  },
+  {
+    "id": "1717154266875326455",
+    "title": "1717154266875326455",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 47,
+    "file": "screens/1717154266875326455.html"
+  },
+  {
+    "id": "188fd0aee13a4b83b1c4e7a1437e865f",
+    "title": "Max/Min Video 1: IPL Dhamaka",
+    "topic": "foundation",
+    "subtopic": "videos",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 48,
+    "file": "screens/188fd0aee13a4b83b1c4e7a1437e865f.html"
+  },
+  {
+    "id": "21f68d7cfa3941d8b61725cb9ca188f1",
+    "title": "Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 49,
+    "file": "screens/21f68d7cfa3941d8b61725cb9ca188f1.html"
+  },
+  {
+    "id": "27fcf9ce091c47a3a7a4482632332ce1",
+    "title": "Math-Masti",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 50,
+    "file": "screens/27fcf9ce091c47a3a7a4482632332ce1.html"
+  },
+  {
+    "id": "28ffea78f2804cf59ce3239c6ba71dc3",
+    "title": "Math-Masti",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 51,
+    "file": "screens/28ffea78f2804cf59ce3239c6ba71dc3.html"
+  },
+  {
+    "id": "2b63613e8bde499c9c431cf705bd5a5c",
+    "title": "Ruler Error Catch",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 52,
+    "file": "screens/2b63613e8bde499c9c431cf705bd5a5c.html"
+  },
+  {
+    "id": "3f8efa6c581b4701a9296af3059198de",
+    "title": "3f8efa6c581b4701a9296af3059198de",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 53,
+    "file": "screens/3f8efa6c581b4701a9296af3059198de.html"
+  },
+  {
+    "id": "4ec31c72f32f46cea6c6fede9094e668",
+    "title": "Max/Min: Full Journey Prototype",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 54,
+    "file": "screens/4ec31c72f32f46cea6c6fede9094e668.html"
+  },
+  {
+    "id": "64518e48a9e443d8b8b03fba6543000b",
+    "title": "Panga 2: Cold Drinks",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 55,
+    "file": "screens/64518e48a9e443d8b8b03fba6543000b.html"
+  },
+  {
+    "id": "83895bd6efc449f591f88d6002ed3da3",
+    "title": "Panga 1: IPL Score",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 56,
+    "file": "screens/83895bd6efc449f591f88d6002ed3da3.html"
+  },
+  {
+    "id": "8bc3d0afcf3544a38ed16d9bdfefb6df",
+    "title": "Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 57,
+    "file": "screens/8bc3d0afcf3544a38ed16d9bdfefb6df.html"
+  },
+  {
+    "id": "99b4c87147264420a82de5af23bd648b",
+    "title": "99b4c87147264420a82de5af23bd648b",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 58,
+    "file": "screens/99b4c87147264420a82de5af23bd648b.html"
+  },
+  {
+    "id": "9dea6ba23f384c23b052f5545e8d6262",
+    "title": "Kahani 2/5",
+    "topic": "foundation",
+    "subtopic": "stories",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 59,
+    "file": "screens/9dea6ba23f384c23b052f5545e8d6262.html"
+  },
+  {
+    "id": "db85dcb9063b4a8d8eac259e030e2935",
+    "title": "Big Data Basics - Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 60,
+    "file": "screens/db85dcb9063b4a8d8eac259e030e2935.html"
+  },
+  {
+    "id": "26e6139022314cb28508dfb09b244429",
+    "title": "Comparing Money - Ganit Pop",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 61,
+    "file": "screens/26e6139022314cb28508dfb09b244429.html"
+  },
+  {
+    "id": "1f69ba49f6e24fdeb941329e85ac4bba",
+    "title": "Dimaag ki Batti Jalao! - Active Recall",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 62,
+    "file": "screens/1f69ba49f6e24fdeb941329e85ac4bba.html"
+  },
+  {
+    "id": "128654587ab543ba80a17d3c1f86a01c",
+    "title": "Ganit Dost - The \"No Dimension\" Paradox",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 63,
+    "file": "screens/128654587ab543ba80a17d3c1f86a01c.html"
+  },
+  {
+    "id": "42ce5fad9907489fa259f9e0e65328fb",
+    "title": "Ganit Dost - The Almost Equal Trap",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 64,
+    "file": "screens/42ce5fad9907489fa259f9e0e65328fb.html"
+  },
+  {
+    "id": "79962af76a4141e3ad0220552ef2437c",
+    "title": "Kaise Compare karte hain?",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 65,
+    "file": "screens/79962af76a4141e3ad0220552ef2437c.html"
+  },
+  {
+    "id": "4ced9054d7014b3089eb8c8fcbe6fa6a",
+    "title": "Kiran ki Khoj",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 66,
+    "file": "screens/4ced9054d7014b3089eb8c8fcbe6fa6a.html"
+  },
+  {
+    "id": "150047804ef54719a605bf715b231935",
+    "title": "Math-Masti - Completion",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 67,
+    "file": "screens/150047804ef54719a605bf715b231935.html"
+  },
+  {
+    "id": "c35e8f7100d74addac5482004b227a92",
+    "title": "Math-Masti | Approximation in the Kitchen",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 68,
+    "file": "screens/c35e8f7100d74addac5482004b227a92.html"
+  },
+  {
+    "id": "6be7168ee6bc45cc942cd4b79d6787f1",
+    "title": "Parallel vs Perpendicular | Ganit Dost",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 69,
+    "file": "screens/6be7168ee6bc45cc942cd4b79d6787f1.html"
+  },
+  {
+    "id": "21adc5b56d9c4faeb513c661c78d67d0",
+    "title": "Precision in Engineering",
+    "topic": "foundation",
+    "subtopic": "skills",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 70,
+    "file": "screens/21adc5b56d9c4faeb513c661c78d67d0.html"
+  },
+  {
+    "id": "08df6838913341d8bdade2dcaf0ce9f7",
+    "title": "Speed Compare Drill",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 71,
+    "file": "screens/08df6838913341d8bdade2dcaf0ce9f7.html"
+  },
+  {
+    "id": "edb30a8d279042a0ab52dcfe706ec0b1",
+    "title": "Strike Rate Sprint",
+    "topic": "foundation",
+    "subtopic": "practice",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 72,
+    "file": "screens/edb30a8d279042a0ab52dcfe706ec0b1.html"
+  },
+  {
+    "id": "f418283912d74ced84709bbd49b45dd4",
+    "title": "Temperature Tracker - Ganit Pop",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 73,
+    "file": "screens/f418283912d74ced84709bbd49b45dd4.html"
+  },
+  {
+    "id": "a3d10a691fba4ed29e4f9218155dabe4",
+    "title": "Math-Masti",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 74,
+    "file": "screens/a3d10a691fba4ed29e4f9218155dabe4.html"
+  },
+  {
+    "id": "a5c66a3195da4b2180a57cd16e2abc17",
+    "title": "a5c66a3195da4b2180a57cd16e2abc17",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 75,
+    "file": "screens/a5c66a3195da4b2180a57cd16e2abc17.html"
+  },
+  {
+    "id": "af39bb9e57684acda413a71a700b3392",
+    "title": "Comparing 5-Digit Numbers",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 76,
+    "file": "screens/af39bb9e57684acda413a71a700b3392.html"
+  },
+  {
+    "id": "cc1ae66ce0184c5bad1e7e2330674bbb",
+    "title": "Summary Video",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 77,
+    "file": "screens/cc1ae66ce0184c5bad1e7e2330674bbb.html"
+  },
+  {
+    "id": "d0de912a48df40b688a2450f899e7a78",
+    "title": "Segment or Ray?",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 78,
+    "file": "screens/d0de912a48df40b688a2450f899e7a78.html"
+  },
+  {
+    "id": "d2e2b6aa5f5d4da7b95a27a57cdec11a",
+    "title": "Mastery Summary",
+    "topic": "foundation",
+    "subtopic": "mastery",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 79,
+    "file": "screens/d2e2b6aa5f5d4da7b95a27a57cdec11a.html"
+  },
+  {
+    "id": "dc00161c107f4482acd18c198f984b0b",
+    "title": "The Range Mystery",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 80,
+    "file": "screens/dc00161c107f4482acd18c198f984b0b.html"
+  },
+  {
+    "id": "f8d85ebbb078459d8b5759156a7c8e00",
+    "title": "Ab Math ki Tension? No Mention! \ud83d\ude80",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 81,
+    "file": "screens/f8d85ebbb078459d8b5759156a7c8e00.html"
+  },
+  {
+    "id": "f9d315599ff64ea193d470cb75a83342",
+    "title": "Max/Min Video 2: Samosa Party",
+    "topic": "foundation",
+    "subtopic": "videos",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 82,
+    "file": "screens/f9d315599ff64ea193d470cb75a83342.html"
+  },
+  {
+    "id": "fbecddc12e0345b7944d978bbe7b1763",
+    "title": "Panga 3: Temperature Mix",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 83,
+    "file": "screens/fbecddc12e0345b7944d978bbe7b1763.html"
+  },
+  {
+    "id": "fc63965d66904bb6a7775ac4506cf4c5",
+    "title": "Maximum: Sabse Bada Kaun?",
+    "topic": "foundation",
+    "subtopic": "explainers",
+    "type": "Other",
+    "difficulty": 2,
+    "order": 84,
+    "file": "screens/fc63965d66904bb6a7775ac4506cf4c5.html"
+  },
+  {
+    "id": "b5969bb7d23d4ddf80b9d0b01fc29feb",
+    "title": "Ganit Dost - Hard Mode Challenge",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 85,
+    "file": "screens/b5969bb7d23d4ddf80b9d0b01fc29feb.html"
+  },
+  {
+    "id": "20a5664ca67748c8a3544e1673118a94",
+    "title": "Ganit Dost - Socho Challenge",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 86,
+    "file": "screens/20a5664ca67748c8a3544e1673118a94.html"
+  },
+  {
+    "id": "4c6868d20b33400abec8748989d8ab77",
+    "title": "Topper's Challenge!",
+    "topic": "foundation",
+    "subtopic": "quizzes",
+    "type": "Other",
+    "difficulty": 3,
+    "order": 87,
+    "file": "screens/4c6868d20b33400abec8748989d8ab77.html"
+  },
+  {
+    "id": "alg-variables-intro",
+    "title": "Algebra: x kya hai? \ud83e\udd14",
+    "file": "/screens/alg-variables-intro.html",
+    "topic": "algebra",
+    "subtopic": "variables"
+  },
+  {
+    "id": "alg-variables-explainer",
+    "title": "Variable vs Constant - Fark Samjho!",
+    "file": "/screens/alg-variables-explainer.html",
+    "topic": "algebra",
+    "subtopic": "variables"
+  },
+  {
+    "id": "alg-variables-practice",
+    "title": "Variable Hunt - Dhundho x ko!",
+    "file": "/screens/alg-variables-practice.html",
+    "topic": "algebra",
+    "subtopic": "variables"
+  },
+  {
+    "id": "alg-variables-socho",
+    "title": "Socho: Agar x = 5, toh x + 3?",
+    "file": "/screens/alg-variables-socho.html",
+    "topic": "algebra",
+    "subtopic": "variables"
+  },
+  {
+    "id": "alg-variables-kahani",
+    "title": "Kahani: Ganit Ka Jaadu - x ki Khoj",
+    "file": "/screens/alg-variables-kahani.html",
+    "topic": "algebra",
+    "subtopic": "variables"
+  },
+  {
+    "id": "alg-variables-panga",
+    "title": "Panga: Variable Quiz!",
+    "file": "/screens/alg-variables-panga.html",
+    "topic": "algebra",
+    "subtopic": "variables"
+  },
+  {
+    "id": "alg-equations-intro",
+    "title": "Algebra: Equation Ka Matlab",
+    "file": "/screens/alg-equations-intro.html",
+    "topic": "algebra",
+    "subtopic": "equations"
+  },
+  {
+    "id": "alg-equations-simple",
+    "title": "x + 5 = 10 \u2014 x dhundho!",
+    "file": "/screens/alg-equations-simple.html",
+    "topic": "algebra",
+    "subtopic": "equations"
+  },
+  {
+    "id": "alg-equations-balancing",
+    "title": "Balancing Equation - Taro Ka Scale",
+    "file": "/screens/alg-equations-balancing.html",
+    "topic": "algebra",
+    "subtopic": "equations"
+  },
+  {
+    "id": "alg-equations-practice",
+    "title": "Equation Practice - Solve Karo!",
+    "file": "/screens/alg-equations-practice.html",
+    "topic": "algebra",
+    "subtopic": "equations"
+  },
+  {
+    "id": "alg-equations-kahani",
+    "title": "Kahani: Equation Ka Akhada",
+    "file": "/screens/alg-equations-kahani.html",
+    "topic": "algebra",
+    "subtopic": "equations"
+  },
+  {
+    "id": "alg-equations-panga",
+    "title": "Panga: Equation Master Test!",
+    "file": "/screens/alg-equations-panga.html",
+    "topic": "algebra",
+    "subtopic": "equations"
+  },
+  {
+    "id": "alg-expressions-intro",
+    "title": "Algebraic Expressions - Jod aur Ghatna",
+    "file": "/screens/alg-expressions-intro.html",
+    "topic": "algebra",
+    "subtopic": "expressions"
+  },
+  {
+    "id": "alg-expressions-simplify",
+    "title": "Simplify Karo: 2x + 3x = ?",
+    "file": "/screens/alg-expressions-simplify.html",
+    "topic": "algebra",
+    "subtopic": "expressions"
+  },
+  {
+    "id": "alg-expressions-real",
+    "title": "Real Life Algebra - Bazaar mein x",
+    "file": "/screens/alg-expressions-real.html",
+    "topic": "algebra",
+    "subtopic": "expressions"
+  },
+  {
+    "id": "alg-expressions-practice",
+    "title": "Expression Practice Zone",
+    "file": "/screens/alg-expressions-practice.html",
+    "topic": "algebra",
+    "subtopic": "expressions"
+  },
+  {
+    "id": "alg-expressions-panga",
+    "title": "Panga: Expression Expert!",
+    "file": "/screens/alg-expressions-panga.html",
+    "topic": "algebra",
+    "subtopic": "expressions"
+  },
+  {
+    "id": "alg-word-intro",
+    "title": "Word Problems - Padho aur Solve Karo",
+    "file": "/screens/alg-word-intro.html",
+    "topic": "algebra",
+    "subtopic": "word_problems"
+  },
+  {
+    "id": "alg-word-bazaar",
+    "title": "Bazaar Problem: Mango ke Daam",
+    "file": "/screens/alg-word-bazaar.html",
+    "topic": "algebra",
+    "subtopic": "word_problems"
+  },
+  {
+    "id": "alg-word-cricket",
+    "title": "Cricket Problem: Score ka x",
+    "file": "/screens/alg-word-cricket.html",
+    "topic": "algebra",
+    "subtopic": "word_problems"
+  },
+  {
+    "id": "alg-word-practice",
+    "title": "Word Problem Practice",
+    "file": "/screens/alg-word-practice.html",
+    "topic": "algebra",
+    "subtopic": "word_problems"
+  },
+  {
+    "id": "alg-word-panga",
+    "title": "Panga: Word Problem Champion!",
+    "file": "/screens/alg-word-panga.html",
+    "topic": "algebra",
+    "subtopic": "word_problems"
+  },
+  {
+    "id": "alg-mastery",
+    "title": "Algebra Ka Akhada - Mastery!",
+    "file": "/screens/alg-mastery.html",
+    "topic": "algebra",
+    "subtopic": "mastery"
+  },
+  {
+    "id": "alg-video-intro",
+    "title": "Video Lesson: Algebra ki Shuruaat",
+    "file": "/screens/alg-video-intro.html",
+    "topic": "algebra",
+    "subtopic": "videos"
+  }
+]

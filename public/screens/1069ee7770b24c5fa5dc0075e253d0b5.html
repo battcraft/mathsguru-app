@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Ganit Dost - Maximum &amp; Minimum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#005229",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e4e2dd",
+                    "secondary-fixed": "#63ff9d",
+                    "on-secondary-fixed": "#00210d",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "outline": "#8e7164",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "surface-container-high": "#eae8e2",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#ffb693",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "on-surface-variant": "#5a4136",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#ff6b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-brutal-border { border: 3px solid #1A1A1A; }
+        .neo-brutal-shadow { shadow: 4px 4px 0px #1A1A1A; box-shadow: 4px 4px 0px #1A1A1A; }
+        .neo-brutal-press:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #1A1A1A; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .snap-container { scroll-snap-type: x mandatory; display: flex; overflow-x: auto; scrollbar-width: none; }
+        .snap-container::-webkit-scrollbar { display: none; }
+        .snap-section { scroll-snap-align: start; flex: 0 0 100%; width: 100%; min-height: calc(100vh - 144px); }
+        .mango-orange { background-color: #ff6b00; }
+        .auto-yellow { background-color: #ffd100; }
+        .progress-chunk { border-right: 2px solid #1A1A1A; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface overflow-x-hidden">
+<!-- TopAppBar Shell -->
+<header class="bg-background flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black bg-primary-fixed overflow-hidden">
+<img alt="Avatar" data-alt="A stylized digital illustration of a young Indian student wearing a cool baseball cap, designed in a vibrant street-pop art style. The portrait features thick black outlines, bright mango orange and auto yellow accents, and a friendly, confident expression against a clean, warm chalk background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8r-eOoC6KDscts5lFegYSPAbwj2NHbQC0uOtOXuiGCrrN70YTdm70KvTxH7S7AedT7b0k_xRSvPB2PZRgmWmxyspwqyhutEZPvRV1_vrdcUp13z6iOnUu8fJ5Qo5xzpKeYZv5baotjxLchAazxhORaKSLHqvRDzjTLyI63dIAdo8XSJfkcJWptyyrPp9vgDTUa_oGiXXK1e6iHQewXRMz_9MBjhwbwwL-ioThSyXrYs2eGBsmRIdmUjUJdU2Knl_ZRuv8hn0hChEW"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">local_fire_department</span>
+<span class="font-headline-md text-headline-md text-primary">12</span>
+</div>
+</header>
+<main class="snap-container pb-20">
+<!-- SCREEN 1: THE HOOK -->
+<section class="snap-section p-margin-mobile flex flex-col justify-center gap-6">
+<div class="neo-brutal-border neo-brutal-shadow bg-surface-container-lowest p-6 rounded-lg text-center">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile mb-4">CRICKET CHAMP <span class="text-primary">EDITION</span></h1>
+<div class="neo-brutal-border bg-black text-white p-4 rounded-lg mb-6">
+<p class="font-label-lg mb-2">KING KOHLI SCOREBOARD</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-2">
+<p class="text-secondary-fixed text-sm uppercase">Sabse Zyada</p>
+<p class="text-4xl font-extrabold">183</p>
+</div>
+<div class="p-2 border-l border-white/20">
+<p class="text-error-container text-sm uppercase">Sabse Kam</p>
+<p class="text-4xl font-extrabold">0</p>
+</div>
+</div>
+</div>
+<p class="font-body-lg text-on-surface-variant">Maths ki pitch pe chauka maarna hai? Let's learn Maximum &amp; Minimum!</p>
+</div>
+<button class="neo-brutal-border neo-brutal-shadow neo-brutal-press mango-orange p-4 rounded-lg font-headline-md text-white" onclick="document.querySelector('.snap-container').scrollBy({left: window.innerWidth, behavior: 'smooth'})">Let's Go! →</button>
+</section>
+<!-- SCREEN 2: CONCEPT EXPLAINER -->
+<section class="snap-section p-margin-mobile">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-6">Sabse Bada vs Sabse Chhota</h2>
+<div class="space-y-6">
+<div class="neo-brutal-border neo-brutal-shadow auto-yellow p-4 rounded-lg flex items-center gap-4">
+<div class="bg-white p-2 rounded-lg neo-brutal-border">
+<span class="material-symbols-outlined text-4xl">trending_up</span>
+</div>
+<div>
+<h3 class="font-headline-md">MAXIMUM</h3>
+<p class="font-body-md">Matlab <b>'Sabse Zyada'</b>. Like highest run rate in an over!</p>
+</div>
+</div>
+<div class="neo-brutal-border neo-brutal-shadow bg-primary-fixed p-4 rounded-lg flex items-center gap-4">
+<div class="bg-white p-2 rounded-lg neo-brutal-border">
+<span class="material-symbols-outlined text-4xl">trending_down</span>
+</div>
+<div>
+<h3 class="font-headline-md">MINIMUM</h3>
+<p class="font-body-md">Matlab <b>'Sabse Kam'</b>. Like the bowler giving minimum runs.</p>
+</div>
+</div>
+<img class="neo-brutal-border neo-brutal-shadow w-full h-48 object-cover rounded-lg" data-alt="A wide-angle, high-action photograph of a bustling Indian cricket stadium under bright afternoon sun. The scene captures the energy of a local match with fans in vibrant jerseys, high-contrast black shadows on the green grass, and mango orange signage reflecting a modern street-pop aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAwum0ZXiTeEPRtfhVa_IZwBv3PJGuwqlaTSmvUmuIcH-LNBFPIVv7onQhVucYn9Q7PfQfuxl8G7uOF-AZ8t6mYMacyp7zHqOP7ZQrUJf-2GIUGGHU5-kVmiAMd-5mlXPFantxxSluOmxuPN3kLnggmzaX7XSpSoci6k_D3JcrMUklQz8r5MJkx2dDhOB-Hk6vqkdSOr-EiFndUiY0BNjAdi8ulJMckxxBXMSeekpLdaM-SpTxwRXx0IpIkqhpX4VTZKcb4a2p5gtT"/>
+</div>
+</section>
+<!-- SCREEN 3: INTERACTIVE AI BLOCK -->
+<section class="snap-section p-margin-mobile">
+<div class="neo-brutal-border neo-brutal-shadow bg-surface-container p-6 rounded-lg">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h2 class="font-headline-md">Socho Box</h2>
+</div>
+<p class="font-body-lg mb-6">Niche diye gaye bowler speeds (km/h) dekho. Isme <b>Sabse Tez (Max)</b> aur <b>Sabse Slow (Min)</b> speed konsi hai?</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="neo-brutal-border p-3 bg-white text-center font-extrabold text-2xl">145.5</div>
+<div class="neo-brutal-border p-3 bg-white text-center font-extrabold text-2xl">132.0</div>
+<div class="neo-brutal-border p-3 bg-white text-center font-extrabold text-2xl">151.2</div>
+<div class="neo-brutal-border p-3 bg-white text-center font-extrabold text-2xl">128.5</div>
+</div>
+<div class="space-y-4">
+<input class="w-full neo-brutal-border p-4 rounded-lg focus:shadow-[4px_4px_0px_#63ff9d] outline-none" placeholder="Max Speed yahan likho..." type="text"/>
+<button class="w-full neo-brutal-border neo-brutal-shadow neo-brutal-press secondary-container p-4 rounded-lg font-headline-md">Check Kar!</button>
+</div>
+</div>
+</section>
+<!-- SCREEN 4: DATA VISUALIZATION -->
+<section class="snap-section p-margin-mobile">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-4">Over-wise Analysis</h2>
+<div class="neo-brutal-border neo-brutal-shadow bg-white p-6 rounded-lg h-80 flex items-end justify-between gap-2">
+<div class="flex flex-col items-center flex-1">
+<span class="text-xs font-bold mb-1">8</span>
+<div class="w-full bg-surface-variant neo-brutal-border" style="height: 40%;"></div>
+<span class="text-xs mt-2">O1</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-xs font-bold mb-1">18</span>
+<div class="w-full mango-orange neo-brutal-border" style="height: 90%;"></div>
+<span class="text-xs mt-2 font-bold text-primary">MAX</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-xs font-bold mb-1">12</span>
+<div class="w-full bg-surface-variant neo-brutal-border" style="height: 60%;"></div>
+<span class="text-xs mt-2">O3</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-xs font-bold mb-1">4</span>
+<div class="w-full auto-yellow neo-brutal-border" style="height: 20%;"></div>
+<span class="text-xs mt-2 font-bold">MIN</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-xs font-bold mb-1">10</span>
+<div class="w-full bg-surface-variant neo-brutal-border" style="height: 50%;"></div>
+<span class="text-xs mt-2">O5</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-xs font-bold mb-1">15</span>
+<div class="w-full bg-surface-variant neo-brutal-border" style="height: 75%;"></div>
+<span class="text-xs mt-2">O6</span>
+</div>
+</div>
+<p class="mt-4 font-body-md italic text-center">In 6 overs, Over 2 had <b>Maximum</b> runs (18) and Over 4 had <b>Minimum</b> runs (4).</p>
+</section>
+<!-- SCREEN 7: QUIZ Q1 (Simplified for demo) -->
+<section class="snap-section p-margin-mobile">
+<div class="mb-4 flex justify-between items-center">
+<span class="font-headline-md">Quiz: Q1/3</span>
+<span class="bg-secondary-container px-3 py-1 neo-brutal-border rounded-full font-bold">Easy</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-6">Find the MAX speed from these bowlers:</h2>
+<div class="grid grid-cols-1 gap-4">
+<button class="neo-brutal-border neo-brutal-shadow neo-brutal-press bg-white p-5 rounded-lg text-left flex justify-between items-center">
+<span class="font-headline-md">Bumrah: 148 km/h</span>
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</button>
+<button class="neo-brutal-border neo-brutal-shadow neo-brutal-press auto-yellow p-5 rounded-lg text-left flex justify-between items-center">
+<span class="font-headline-md">Umran: 156 km/h</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="neo-brutal-border neo-brutal-shadow neo-brutal-press bg-white p-5 rounded-lg text-left flex justify-between items-center">
+<span class="font-headline-md">Shami: 142 km/h</span>
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</button>
+</div>
+</section>
+<!-- SCREEN 10: RANGE EXPLAINER -->
+<section class="snap-section p-margin-mobile">
+<div class="neo-brutal-border neo-brutal-shadow bg-surface-container-highest p-6 rounded-lg">
+<h2 class="font-headline-lg-mobile mb-4">What is Range?</h2>
+<div class="relative h-24 neo-brutal-border bg-green-700 rounded-lg mb-6 flex items-center px-4 overflow-hidden">
+<!-- Cricket Pitch Representation -->
+<div class="absolute left-4 w-1 h-12 bg-white"></div>
+<div class="absolute right-4 w-1 h-12 bg-white"></div>
+<div class="w-full flex justify-between text-white font-bold text-xs">
+<span>MIN</span>
+<span class="text-xl">------- RANGE -------</span>
+<span>MAX</span>
+</div>
+</div>
+<div class="bg-white neo-brutal-border p-4 rounded-lg mb-4 text-center">
+<p class="font-headline-md">RANGE = MAX - MIN</p>
+</div>
+<p class="font-body-lg">Cricket pitch ki length fix hai, par runs ka difference (Range) change hota rehta hai!</p>
+</div>
+</section>
+<!-- SCREEN 11: KAHANI MODE -->
+<section class="snap-section p-margin-mobile">
+<div class="neo-brutal-border neo-brutal-shadow bg-primary-fixed p-6 rounded-lg relative overflow-hidden">
+<h2 class="font-headline-lg-mobile mb-4">Kahani Time 🥨</h2>
+<p class="font-body-lg mb-4">Arjun ko practice se pehle samosas khane hain. Coach ne bola "Beta, control!"</p>
+<div class="neo-brutal-border bg-white p-4 rounded-lg mb-4">
+<p class="font-body-md italic text-on-surface-variant">"Maximum 3 samosas hi kha sakte ho, varna pet dard hoga!"</p>
+</div>
+<p class="font-body-md">Arjun calculates: <br/>Agar usne 0 khaye = <b>Minimum</b> <br/>Agar usne 3 khaye = <b>Maximum</b></p>
+<div class="mt-4 flex gap-2">
+<div class="w-12 h-12 neo-brutal-border bg-white rounded-full flex items-center justify-center font-bold">1</div>
+<div class="w-12 h-12 neo-brutal-border bg-white rounded-full flex items-center justify-center font-bold">2</div>
+<div class="w-12 h-12 neo-brutal-border mango-orange rounded-full flex items-center justify-center font-bold text-white">3</div>
+</div>
+</div>
+</section>
+<!-- SCREEN 13: RESULT -->
+<section class="snap-section p-margin-mobile flex flex-col items-center justify-center text-center">
+<div class="w-48 h-48 mango-orange neo-brutal-border neo-brutal-shadow rounded-full flex items-center justify-center mb-8 animate-bounce">
+<span class="material-symbols-outlined text-white text-8xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile mb-2">CRICKET CHAMPION!</h1>
+<p class="font-body-lg mb-8">Sabse zyada marks unlocked. Tumhare basics clear hain!</p>
+<div class="neo-brutal-border neo-brutal-shadow bg-white p-4 w-full rounded-lg mb-8">
+<p class="font-label-lg text-primary uppercase">Lesson Score</p>
+<p class="font-headline-xl">95%</p>
+</div>
+<button class="w-full neo-brutal-border neo-brutal-shadow neo-brutal-press secondary-container p-4 rounded-lg font-headline-md">Certificate Download Karo</button>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<!-- FAB for Doubt Solving (Only on specific screens context) -->
+<div class="fixed bottom-24 right-6 z-50" id="fab">
+<button class="w-14 h-14 rounded-full neo-brutal-border neo-brutal-shadow bg-tertiary-container flex items-center justify-center text-white neo-brutal-press">
+<span class="material-symbols-outlined text-3xl">add_a_photo</span>
+</button>
+</div>
+<!-- Progress Bar (Custom Component) -->
+<div class="fixed top-16 left-0 w-full h-3 bg-surface-dim z-50">
+<div class="h-full mango-orange flex border-r-3 border-black" style="width: 65%;">
+<div class="flex-1 progress-chunk"></div>
+<div class="flex-1 progress-chunk"></div>
+<div class="flex-1 progress-chunk"></div>
+<div class="flex-1 progress-chunk"></div>
+<div class="flex-1 progress-chunk"></div>
+</div>
+</div>
+<script>
+        // Simple swipe interaction logic
+        const container = document.querySelector('.snap-container');
+        let currentSection = 0;
+        
+        container.addEventListener('scroll', () => {
+            const scrollPos = container.scrollLeft;
+            const width = window.innerWidth;
+            const index = Math.round(scrollPos / width);
+            
+            // Highlight progression or handle FAB visibility
+            const fab = document.getElementById('fab');
+            if(index > 8) {
+                fab.style.display = 'none';
+            } else {
+                fab.style.display = 'block';
+            }
+        });
+
+        // Answer checking micro-interaction
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('secondary-container')) {
+                    this.innerHTML = "Sahi Jawab! 🎉";
+                    this.classList.replace('secondary-container', 'auto-yellow');
+                }
+            });
+        });
+    </script>
+</body></html>

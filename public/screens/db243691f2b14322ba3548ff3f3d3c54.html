@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Numbers Ka Final Panga!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&amp;family=Nunito+Sans:opsz,wght@6..12,400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#fff8f0",
+                        surface: "#ffffff",
+                        "surface-variant": "#f0f0f0",
+                        primary: "#ff6b00",
+                        "primary-container": "#ffe4cc",
+                        "on-primary-container": "#ff6b00",
+                        secondary: "#00bcd4",
+                        "secondary-container": "#e0f7fa",
+                        "on-secondary-container": "#00bcd4",
+                        "on-surface": "#000000",
+                        "on-surface-variant": "#1a1a1a",
+                        accent: "#ffdd00"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "16px",
+                        "lg": "16px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "1rem",
+                        "sm": "0.5rem",
+                        "base": "1rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Bricolage Grotesque", "sans-serif"],
+                        "display": ["Bricolage Grotesque", "sans-serif"],
+                        "body": ["Nunito Sans", "sans-serif"],
+                        "label": ["Nunito Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-md": ["1.5rem", "2rem"],
+                        "label-bold": ["1rem", "1.5rem"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface-variant');
+            font-family: theme('fontFamily.body');
+        }
+        h1, h2, h3, .font-headline {
+            font-family: theme('fontFamily.headline');
+            color: theme('colors.on-surface');
+        }
+        .neo-brutalist {
+            border: 3px solid theme('colors.on-surface');
+            box-shadow: 4px 4px 0px 0px theme('colors.on-surface');
+            transition: all 0.2s ease;
+        }
+        .neo-brutalist:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-background flex justify-between items-center px-margin-mobile py-sm w-full sticky top-0 z-50 border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_#000000]">
+<button class="neo-brutalist bg-surface rounded-full p-2 flex items-center justify-center hover:bg-surface-variant transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+<span class="material-symbols-outlined font-bold text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline font-headline-md text-headline-md text-primary font-bold">Final Panga! 📝</h1>
+<div class="neo-brutalist bg-accent rounded-full px-3 py-1 font-bold text-on-surface flex items-center">
+<span>1/10</span>
+</div>
+</header>
+<main class="px-margin-mobile py-6 flex flex-col gap-6 max-w-md mx-auto">
+<!-- Score & Streak Header -->
+<section class="flex justify-between items-center bg-surface neo-brutalist rounded-xl p-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-lg">Score: 3/4</span>
+</div>
+<div class="flex items-center gap-2 bg-primary-container px-3 py-1 rounded-full border-2 border-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold text-primary">Streak x3</span>
+</div>
+</section>
+<!-- Main Visual -->
+<section class="w-full aspect-video bg-surface neo-brutalist rounded-xl overflow-hidden relative" data-alt="A vibrant, high-energy illustration of a mathematical number line. The style is Neo-Brutalist Desi Street-Pop, featuring thick black outlines, bold geometric shapes, and a stark off-white background with bright mango orange and teal accents. The number line has distinct, chunky markers and hand-drawn style arrows indicating greater and lesser values. The lighting is flat and graphic, emphasizing the pop-art aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4Q6ifrsGwwsXHsXDuQ5YLdoGbu9Kyw8xr4NsXoo7vDAjeIkJifIFxNrptUSMTr4-LUeZ_cmAVGPxiaLvGM91VxZEUMkMYRioh_Ho2xn-skuDopSUZfVMg8QmECPsbWWZ2v273h8l8x6ylt3kgq5B-qjln9z-DMrIBiP1OeAReQLIhnRuaOVn5RAnkGzuRxcqhNhsoyQu648fv4PgaIOWIkwquK_yDTrPyvoeWM_lEwaOygThdp3_FaTZFgwqpoXwxH_J4oVldTpWd'); background-size: cover; background-position: center;">
+</section>
+<!-- Question Card -->
+<section class="bg-surface neo-brutalist rounded-xl p-6 flex flex-col gap-4 text-center">
+<p class="text-sm font-bold text-primary bg-primary-container inline-block mx-auto px-3 py-1 rounded-full border-2 border-on-surface">
+                Final Panga hai ye! Sab kuch seekha hai abhi? 🤔
+            </p>
+<h2 class="text-2xl font-headline font-bold leading-tight">Which number is greater: 456 or 546?</h2>
+</section>
+<!-- Answer Buttons -->
+<section class="grid grid-cols-2 gap-4">
+<button class="bg-secondary text-surface neo-brutalist rounded-xl py-6 text-3xl font-headline font-bold active:bg-secondary/80">
+                456
+            </button>
+<button class="bg-primary text-surface neo-brutalist rounded-xl py-6 text-3xl font-headline font-bold active:bg-primary/80">
+                546
+            </button>
+</section>
+<!-- Fun Fact -->
+<section class="bg-[#fff3e0] neo-brutalist rounded-xl p-4 border-l-8 border-l-primary flex items-start gap-3 mt-4">
+<span class="material-symbols-outlined text-primary text-3xl mt-1" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-lg">Did you know?</h3>
+<p class="text-on-surface-variant font-medium">Numbers ka koi limit nahi hai! ♾️</p>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Timer & Progress) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t-[3px] border-on-surface p-4 z-50 shadow-[0_-4px_0px_0px_rgba(0,0,0,0.1)]">
+<div class="max-w-md mx-auto flex flex-col gap-3">
+<!-- Progress Dots -->
+<div class="flex justify-between items-center px-2">
+<div class="w-3 h-3 rounded-full bg-primary border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant border-2 border-on-surface"></div>
+</div>
+<!-- Timer Bar -->
+<div class="w-full h-4 bg-surface-variant rounded-full border-2 border-on-surface overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-accent w-2/3 transition-all duration-1000 origin-left border-r-2 border-on-surface" id="timer-bar"></div>
+</div>
+</div>
+</div>
+<script>
+        // Simple timer animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const timerBar = document.getElementById('timer-bar');
+            let width = 66; // Start at 2/3
+            
+            setInterval(() => {
+                if(width > 0) {
+                    width -= 1;
+                    timerBar.style.width = width + '%';
+                }
+            }, 100);
+        });
+    </script>
+</body></html>

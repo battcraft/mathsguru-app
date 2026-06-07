@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Angle or Ray? - Ganit Dost</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#5a3f48",
+                    "on-secondary": "#ffffff",
+                    "outline": "#8d6f78",
+                    "tertiary": "#705d00",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "surface-dim": "#dadada",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb0cb",
+                    "on-secondary-fixed": "#2f1400",
+                    "secondary-fixed-dim": "#ffb781",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary-container": "#5b2d00",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#924c00",
+                    "inverse-surface": "#2f3131",
+                    "surface-tint": "#b80069",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-low": "#f3f3f4",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#c9a900",
+                    "secondary-container": "#f88400",
+                    "primary-fixed": "#ffd9e3",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e1bdc7",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "on-primary-fixed": "#3e0020",
+                    "primary-container": "#df0b81",
+                    "background": "#f9f9f9",
+                    "on-tertiary-container": "#4c3f00",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed": "#ffe16d",
+                    "inverse-on-surface": "#f0f1f1",
+                    "error": "#ba1a1a",
+                    "primary": "#b40067",
+                    "on-surface": "#1a1c1c",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "on-tertiary-fixed-variant": "#544600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "border-width": "3px",
+                    "shadow-offset": "4px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Nunito Sans"],
+                    "label-bold": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"],
+                    "headline-xl": ["Fredoka"],
+                    "headline-xl-mobile": ["Fredoka"],
+                    "headline-md": ["Fredoka"],
+                    "headline-lg": ["Fredoka"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                    "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Blueprint Background */
+        .bg-blueprint {
+            background-color: #f9f9f9;
+            background-image: 
+                linear-gradient(to right, #e2e2e2 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+            background-size: 64px 64px;
+            background-position: center top;
+        }
+
+        /* SVG Interactive Elements Styling */
+        .game-shape {
+            stroke: #1a1c1c; /* on-background */
+            stroke-width: 3px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: transparent;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .game-shape:hover {
+            stroke: #df0b81; /* primary-container */
+            filter: drop-shadow(4px 4px 0px #1a1c1c);
+        }
+
+        .game-shape.active-ray {
+            stroke: #b40067; /* primary */
+            stroke-width: 5px;
+            filter: drop-shadow(4px 4px 0px #1a1c1c);
+        }
+
+        .game-shape.wrong-tap {
+            stroke: #ba1a1a; /* error */
+            animation: shake 0.4s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            50% { transform: translateX(4px); }
+            75% { transform: translateX(-4px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Hide scrollbar for clean canvas */
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-blueprint text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar (Brand Anchor) -->
+<header class="bg-background text-primary-fixed font-headline-md text-headline-md w-full top-0 border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center px-margin-mobile h-16 z-50 sticky transition-all md:px-margin-desktop">
+<!-- Leading Avatar -->
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-black overflow-hidden bg-secondary-container shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSO4nKV3JYX5_UQRLAF-i3F4EGjqDu3wf5uE0N0WWaCoCVRFhf0N8cUn0Yo-0vJLZp_yXKjQHaK1_1kV1TgYuupyqDCshLUK9gbLcWsvVeA4h-y5KoML8SLXH98rujMQ76xdHV5kLwXYn4ONvAot4zxbrdsRjMoUV6phIbIwg5JekazGgO-tV2mzNaL5rinPvP1igwYFDiIpvVBqWEDcGGnqpjeiYhYrZnrAOWdhKh7O36odPEAatWDR3v3xeUfi4CZBg9WYMtoeng"/>
+</div>
+<!-- Headline -->
+<div class="font-headline-md text-headline-md font-extrabold text-primary tracking-tight">Ganit Dost</div>
+<!-- Trailing Icon -->
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-black bg-surface hover:bg-surface-container-high shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<!-- Main Game Canvas -->
+<main class="flex-grow flex flex-col items-center justify-start p-margin-mobile md:p-margin-desktop gap-gutter max-w-4xl mx-auto w-full">
+<!-- Game HUD (Timer & Score) -->
+<div class="w-full flex justify-between items-center bg-surface border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg p-3 z-10 relative mt-4">
+<!-- Timer -->
+<div class="flex items-center gap-2 bg-tertiary-fixed text-on-tertiary-fixed px-4 py-2 border-[3px] border-black shadow-[2px_2px_0px_#1A1A1A] rounded-md font-headline-md text-headline-md">
+<span class="material-symbols-outlined">timer</span>
+<span id="timer-display">00:45</span>
+</div>
+<!-- Score -->
+<div class="flex flex-col items-end">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Score</span>
+<span class="font-headline-lg text-headline-lg text-primary" id="score-display">0/5</span>
+</div>
+</div>
+<!-- Instructions Sticker -->
+<div class="relative w-full flex justify-center mt-2 mb-6">
+<div class="transform -rotate-2 bg-secondary-container text-on-secondary-container border-[3px] border-black shadow-[6px_6px_0px_#1A1A1A] px-6 py-3 rounded-xl inline-block">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center leading-tight">
+                    Tap ONLY the <span class="text-surface bg-on-background px-2 py-1 rounded-md border-[2px] border-black shadow-[2px_2px_0px_#ffffff] inline-block transform rotate-1">RAYS!</span>
+</h1>
+</div>
+</div>
+<!-- Interactive Game Area (The Star) -->
+<div class="relative w-full max-w-md aspect-square bg-surface border-[3px] border-black shadow-[8px_8px_0px_#1A1A1A] rounded-xl flex items-center justify-center p-6 overflow-hidden">
+<!-- Grid lines inside the card for that geometry feel -->
+<div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(to right, #1a1c1c 1px, transparent 1px), linear-gradient(to bottom, #1a1c1c 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- SVG Shape Canvas -->
+<svg class="w-full h-full relative z-10" id="game-svg" viewbox="0 0 400 400">
+<!-- Defs for arrowheads (Rays) -->
+<defs>
+<marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
+<polygon fill="#1a1c1c" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+<marker id="arrowhead-active" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
+<polygon fill="#b40067" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+</defs>
+<!-- Central Polygon (Angles/Segments - Do NOT tap) -->
+<polygon class="game-shape" data-type="polygon" points="200,120 230,180 290,190 240,230 260,290 200,260 140,290 160,230 110,190 170,180"></polygon>
+<!-- Center Point (Decorative) -->
+<circle class="pointer-events-none" cx="200" cy="210" fill="#b40067" r="6"></circle>
+<!-- RAYS (Extending outwards - Target to tap) -->
+<!-- Top Ray -->
+<line class="game-shape ray" data-type="ray" marker-end="url(#arrowhead)" x1="200" x2="200" y1="120" y2="30"></line>
+<!-- Top Right Ray -->
+<line class="game-shape ray" data-type="ray" marker-end="url(#arrowhead)" x1="290" x2="370" y1="190" y2="160"></line>
+<!-- Bottom Right Ray -->
+<line class="game-shape ray" data-type="ray" marker-end="url(#arrowhead)" x1="260" x2="310" y1="290" y2="360"></line>
+<!-- Bottom Left Ray -->
+<line class="game-shape ray" data-type="ray" marker-end="url(#arrowhead)" x1="140" x2="90" y1="290" y2="360"></line>
+<!-- Top Left Ray -->
+<line class="game-shape ray" data-type="ray" marker-end="url(#arrowhead)" x1="110" x2="30" y1="190" y2="160"></line>
+<!-- INTERIOR SEGMENTS (Distractors) -->
+<line class="game-shape" data-type="segment" x1="200" x2="200" y1="120" y2="210"></line>
+<line class="game-shape" data-type="segment" x1="290" x2="200" y1="190" y2="210"></line>
+<line class="game-shape" data-type="segment" x1="110" x2="200" y1="190" y2="210"></line>
+</svg>
+<!-- Success Overlay (Hidden by default) -->
+<div class="absolute inset-0 bg-tertiary-fixed/90 z-20 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm" id="success-overlay">
+<span class="material-symbols-outlined text-[80px] text-on-tertiary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h2 class="font-headline-xl text-headline-xl text-on-tertiary-fixed border-[3px] border-on-tertiary-fixed bg-surface px-6 py-2 shadow-[4px_4px_0px_#221b00] transform -rotate-3">NAILED IT!</h2>
+</div>
+</div>
+<!-- Utility/Action Buttons -->
+<div class="w-full max-w-md flex justify-between items-center mt-4">
+<button class="bg-surface border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] px-4 py-3 rounded-lg font-label-bold text-label-bold flex items-center gap-2 hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined">restart_alt</span>
+                Reset
+            </button>
+<button class="bg-primary text-on-primary border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] px-8 py-3 rounded-lg font-headline-md text-headline-md hover:bg-primary-container hover:text-on-primary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                Next Shape
+            </button>
+</div>
+</main>
+<!-- Minimal JavaScript for Interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const shapes = document.querySelectorAll('.game-shape');
+            const scoreDisplay = document.getElementById('score-display');
+            const successOverlay = document.getElementById('success-overlay');
+            let score = 0;
+            const totalRays = 5;
+
+            shapes.forEach(shape => {
+                shape.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+                    
+                    if (type === 'ray') {
+                        if (!this.classList.contains('active-ray')) {
+                            this.classList.add('active-ray');
+                            // Change marker color logic via CSS is tricky without redefining, 
+                            // we swap the marker url for visual feedback
+                            this.setAttribute('marker-end', 'url(#arrowhead-active)');
+                            score++;
+                            scoreDisplay.textContent = `${score}/${totalRays}`;
+                            
+                            // Check win condition
+                            if (score === totalRays) {
+                                setTimeout(() => {
+                                    successOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                                    successOverlay.classList.add('opacity-100');
+                                }, 300);
+                            }
+                        }
+                    } else {
+                        // Wrong tap
+                        this.classList.remove('wrong-tap');
+                        void this.offsetWidth; // trigger reflow
+                        this.classList.add('wrong-tap');
+                        
+                        // Small penalty visual feedback
+                        document.body.style.backgroundColor = '#ffdad6'; // error-container
+                        setTimeout(() => {
+                            document.body.style.backgroundColor = '';
+                        }, 200);
+                    }
+                });
+            });
+
+            // Simple Timer Simulation
+            let timeLeft = 45;
+            const timerDisplay = document.getElementById('timer-display');
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                const seconds = timeLeft < 10 ? `0${timeLeft}` : timeLeft;
+                timerDisplay.textContent = `00:${seconds}`;
+                if (timeLeft <= 10) {
+                    timerDisplay.parentElement.classList.add('bg-error', 'text-on-error');
+                    timerDisplay.parentElement.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+                }
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    // Handle Game Over
+                }
+            }, 1000);
+        });
+    </script>
+</body></html>

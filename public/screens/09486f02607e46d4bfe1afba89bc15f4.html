@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry: The Big Comparison</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f3f3f4",
+                      "surface": "#f9f9f9",
+                      "on-secondary-container": "#5b2d00",
+                      "outline-variant": "#e1bdc7",
+                      "on-tertiary-container": "#4c3f00",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#dadada",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed-dim": "#ffb0cb",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#ffd9e3",
+                      "on-tertiary-fixed-variant": "#544600",
+                      "surface-container-high": "#e8e8e8",
+                      "inverse-surface": "#2f3131",
+                      "on-primary-fixed": "#3e0020",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#1a1c1c",
+                      "surface-tint": "#b80069",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container-highest": "#e2e2e2",
+                      "background": "#f9f9f9",
+                      "tertiary-fixed-dim": "#e9c400",
+                      "tertiary-fixed": "#ffe16d",
+                      "secondary-fixed": "#ffdcc4",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#ffb0cb",
+                      "primary-container": "#df0b81",
+                      "secondary-fixed-dim": "#ffb781",
+                      "on-primary-fixed-variant": "#8d004f",
+                      "on-secondary-fixed": "#2f1400",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#eeeeee",
+                      "primary": "#b40067",
+                      "outline": "#8d6f78",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-primary-container": "#fffbff",
+                      "secondary-container": "#f88400",
+                      "tertiary": "#705d00",
+                      "secondary": "#924c00",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#f0f1f1",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "on-surface-variant": "#5a3f48",
+                      "tertiary-container": "#c9a900",
+                      "on-background": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "shadow-offset": "4px",
+                      "unit": "8px",
+                      "border-width": "3px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Fredoka"],
+                      "body-md": ["Nunito Sans"],
+                      "headline-xl": ["Fredoka"],
+                      "headline-xl-mobile": ["Fredoka"],
+                      "headline-md": ["Fredoka"],
+                      "body-lg": ["Nunito Sans"],
+                      "label-bold": ["Nunito Sans"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist utility classes */
+        .brutal-border { border: 3px solid #1a1c1c; }
+        .brutal-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .brutal-shadow-hover:hover { box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); transform: translate(-4px, -4px); transition: all 0.2s ease; }
+        .brutal-shadow-active:active { box-shadow: 0px 0px 0px 0px rgba(0,0,0,1); transform: translate(4px, 4px); transition: all 0.1s ease; }
+        
+        /* Graph paper background */
+        .bg-graph {
+            background-image: radial-gradient(#dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+            background-color: #f9f9f9;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-graph min-h-screen text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface dark:border-on-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center justify-between px-margin-mobile py-unit w-full max-w-7xl mx-auto">
+<button class="text-primary dark:text-primary-fixed hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none">
+<span class="material-symbols-outlined font-headline-md text-headline-md">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">Ganit Pop</h1>
+<div class="w-8"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-8 pb-32">
+<!-- Header Section -->
+<div class="mb-12 text-center md:text-left">
+<div class="inline-block bg-tertiary-fixed brutal-border px-4 py-2 mb-4 transform -rotate-2">
+<span class="font-label-bold text-label-bold text-on-tertiary-fixed uppercase">Intermediate Level</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4">Geometry: The Big Comparison</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl bg-surface brutal-border p-4 brutal-shadow inline-block transform rotate-1">
+                Sabka farak ek saath dekho! Let's break down the basic building blocks of geometry. No confusion, only clarity.
+            </p>
+</div>
+<!-- 2x2 Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+<!-- Point Card -->
+<div class="bg-surface brutal-border brutal-shadow brutal-shadow-hover p-6 md:p-8 flex flex-col group relative overflow-hidden transition-all duration-300">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary rounded-full opacity-10 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex items-start justify-between mb-6">
+<h3 class="font-headline-lg text-headline-lg text-primary">Point</h3>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center brutal-border">
+<span class="w-4 h-4 bg-on-primary rounded-full"></span>
+</div>
+</div>
+<div class="mb-6 flex-grow flex items-center justify-center min-h-[120px] bg-surface-container-high brutal-border border-dashed border-primary/50 relative">
+<!-- Visual Rep -->
+<div class="w-6 h-6 bg-primary rounded-full brutal-border absolute"></div>
+<span class="absolute top-2 left-2 font-label-bold text-label-bold text-on-surface-variant">Exact Location</span>
+</div>
+<div class="bg-primary-fixed brutal-border p-4">
+<p class="font-body-lg text-body-lg text-on-primary-fixed font-bold">Dot hai boss! Sirf location batata hai, size zero.</p>
+</div>
+</div>
+<!-- Line Card -->
+<div class="bg-surface brutal-border brutal-shadow brutal-shadow-hover p-6 md:p-8 flex flex-col group relative overflow-hidden transition-all duration-300">
+<div class="absolute -left-8 -bottom-8 w-32 h-32 bg-secondary-container transform rotate-45 opacity-10 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex items-start justify-between mb-6">
+<h3 class="font-headline-lg text-headline-lg text-secondary-container">Line</h3>
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center brutal-border">
+<span class="material-symbols-outlined text-on-secondary-container">horizontal_rule</span>
+</div>
+</div>
+<div class="mb-6 flex-grow flex items-center justify-center min-h-[120px] bg-surface-container-high brutal-border border-dashed border-secondary-container/50 relative overflow-hidden">
+<!-- Visual Rep -->
+<div class="w-full h-2 bg-secondary-container brutal-border relative">
+<div class="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-on-surface"></div>
+<div class="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-on-surface"></div>
+</div>
+<span class="absolute top-2 left-2 font-label-bold text-label-bold text-on-surface-variant">Infinite Length</span>
+</div>
+<div class="bg-secondary-fixed brutal-border p-4">
+<p class="font-body-lg text-body-lg text-on-secondary-fixed font-bold">Rukti hi nahi! Dono side chalti hi jaati hai infinity tak.</p>
+</div>
+</div>
+<!-- Line Segment Card -->
+<div class="bg-surface brutal-border brutal-shadow brutal-shadow-hover p-6 md:p-8 flex flex-col group relative overflow-hidden transition-all duration-300">
+<div class="absolute right-1/2 bottom-0 w-24 h-24 bg-tertiary-fixed opacity-10 group-hover:scale-150 transition-transform duration-500 rounded-lg"></div>
+<div class="flex items-start justify-between mb-6">
+<h3 class="font-headline-lg text-headline-lg text-tertiary">Line Segment</h3>
+<div class="w-12 h-12 bg-tertiary-fixed rounded-full flex items-center justify-center brutal-border">
+<span class="material-symbols-outlined text-on-tertiary-fixed">straight</span>
+</div>
+</div>
+<div class="mb-6 flex-grow flex items-center justify-center min-h-[120px] bg-surface-container-high brutal-border border-dashed border-tertiary/50 relative">
+<!-- Visual Rep -->
+<div class="w-3/4 h-2 bg-tertiary brutal-border relative flex justify-between items-center">
+<div class="w-4 h-4 bg-tertiary brutal-border rounded-full -ml-2"></div>
+<div class="w-4 h-4 bg-tertiary brutal-border rounded-full -mr-2"></div>
+</div>
+<span class="absolute top-2 left-2 font-label-bold text-label-bold text-on-surface-variant">Fixed Ends</span>
+</div>
+<div class="bg-tertiary-container brutal-border p-4">
+<p class="font-body-lg text-body-lg text-on-tertiary-container font-bold">Fix hai boss. 2 endpoints, na aage badhegi na peeche.</p>
+</div>
+</div>
+<!-- Ray Card -->
+<div class="bg-surface brutal-border brutal-shadow brutal-shadow-hover p-6 md:p-8 flex flex-col group relative overflow-hidden transition-all duration-300">
+<div class="absolute left-1/2 top-0 w-32 h-16 bg-outline opacity-10 group-hover:scale-150 transition-transform duration-500 transform -skew-x-12"></div>
+<div class="flex items-start justify-between mb-6">
+<h3 class="font-headline-lg text-headline-lg text-on-surface-variant">Ray</h3>
+<div class="w-12 h-12 bg-surface-variant rounded-full flex items-center justify-center brutal-border">
+<span class="material-symbols-outlined text-on-surface">arrow_forward</span>
+</div>
+</div>
+<div class="mb-6 flex-grow flex items-center justify-center min-h-[120px] bg-surface-container-high brutal-border border-dashed border-on-surface-variant/50 relative overflow-hidden">
+<!-- Visual Rep -->
+<div class="w-3/4 h-2 bg-on-surface-variant brutal-border relative flex items-center mr-8">
+<div class="w-4 h-4 bg-on-surface-variant brutal-border rounded-full -ml-2"></div>
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-on-surface-variant"></div>
+</div>
+<span class="absolute top-2 left-2 font-label-bold text-label-bold text-on-surface-variant">One Direction</span>
+</div>
+<div class="bg-surface-variant brutal-border p-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant font-bold">Ek taraf se block, doosri taraf se full speed aage!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-margin-mobile bg-surface dark:bg-surface-container-high border-t-[3px] border-on-surface dark:border-on-surface-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] md:hidden">
+<!-- Home (Inactive) -->
+<a class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<!-- Chat (Inactive) -->
+<a class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<!-- Quiz (Active - Based on 'Quiz/Learn' intent) -->
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary border-[3px] border-on-surface dark:border-on-surface-variant px-4 py-1 rounded-lg active:scale-95 transition-transform flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<!-- Story (Inactive) -->
+<a class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahani: The Number Line Race</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#e2bfb0",
+                        "tertiary-container": "#ff6096",
+                        "surface-bright": "#fbf9f3",
+                        "on-primary-fixed": "#351000",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-primary-container": "#572000",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "background": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface": "#fbf9f3",
+                        "secondary-container": "#63ff9d",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffb693",
+                        "outline": "#8e7164",
+                        "inverse-on-surface": "#f2f1eb",
+                        "primary": "#a04100",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#67002f",
+                        "surface-tint": "#a04100",
+                        "secondary-fixed": "#63ff9d",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#ba005b",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e4e2dd",
+                        "primary-fixed": "#ffdbcc",
+                        "on-secondary-fixed": "#00210d",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-surface": "#30312d",
+                        "on-surface-variant": "#5a4136",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005229",
+                        "inverse-primary": "#ffb693",
+                        "secondary": "#006d38",
+                        "surface-dim": "#dbdad4",
+                        "surface-container": "#f0eee8",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-background": "#1b1c19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "container-max-width": "1200px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .neo-brutalist-border {
+            border: 3px solid theme('colors.on-surface');
+        }
+        
+        .neo-brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px theme('colors.on-surface');
+        }
+
+        .neo-brutalist-interactive {
+            transition: all 0.1s ease-in-out;
+        }
+
+        .neo-brutalist-interactive:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-surface w-full max-w-md mx-auto relative pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile py-4 bg-surface dark:bg-surface-dim docked full-width top-0 border-b-3 border-on-surface neo-brutalist-border z-50">
+<button aria-label="Go back" class="flex items-center justify-center w-10 h-10 neo-brutalist-border rounded neo-brutalist-shadow bg-surface-container-highest neo-brutalist-interactive">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-black flex-1 text-center truncate px-4">Kahani 2/5</h1>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-6 p-margin-mobile">
+<!-- Hero Image -->
+<div class="w-full h-64 neo-brutalist-border neo-brutalist-shadow rounded-xl overflow-hidden relative bg-secondary-container">
+<img alt="Two characters racing on a colorful number line track" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBryjxJWWGuVE0u7BYqbcmBlzcGmt0gd8cB8JJvkXSYWspKGQ7zGpHBp0K23Lz0-2kVFiMTfy-Nuu7Lw37LZhom9cZWChDhe32RxSRlesNl0xLl7ltf5nZ2qPiBmUAJYoCRoAkqQFvNO0WDvms6Eitqv9_OUPbAWoBMA1jjcmUxOv6TVtQO9QHsKz1MMGyVSR69QhfNhfDYN3hv8jmd4c_mEa7pmr5_rhUKvnGLtRsOlRVG02tTANWNN2I0DGVF6sgEe1ruVhhcOQwE"/>
+</div>
+<!-- Story Panel -->
+<div class="bg-surface-container-lowest neo-brutalist-border neo-brutalist-shadow rounded p-6 flex flex-col gap-4 relative">
+<div class="absolute -top-3 -left-3 bg-secondary-container neo-brutalist-border neo-brutalist-shadow w-8 h-8 rounded-full flex items-center justify-center z-10">
+<span class="material-symbols-outlined font-bold text-on-surface text-sm">menu_book</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-medium mt-2">
+                Dekho! Track par numbers race laga rahe hain. Kaun jitega?
+            </p>
+</div>
+<!-- Bold Highlight Box (Accent 2 - Gulabi Pink mapped to tertiary-container) -->
+<div class="bg-tertiary-container neo-brutalist-border neo-brutalist-shadow rounded-lg p-6 rotate-1 transform-gpu">
+<h2 class="font-headline-md text-headline-md text-on-surface font-black text-center uppercase tracking-wide">
+                BADA NUMBER, TEZ BHAAGTA HAI! ⚡
+            </h2>
+</div>
+<!-- Secondary Explanation Box -->
+<div class="bg-primary-fixed neo-brutalist-border neo-brutalist-shadow rounded p-5">
+<p class="font-body-md text-body-md text-on-surface-variant font-semibold">
+                Number <span class="bg-surface font-black px-1 rounded neo-brutalist-border text-primary">85</span> aur Number <span class="bg-surface font-black px-1 rounded neo-brutalist-border text-tertiary">42</span> dono bhag rahe hain. <br/>
+<span class="font-black text-primary">85</span> aage nikal gaya kyunki wo bada hai!
+            </p>
+</div>
+<!-- Comparison Pill -->
+<div class="flex justify-center my-2">
+<div class="bg-[#FFE500] neo-brutalist-border neo-brutalist-shadow rounded-full px-8 py-3 flex items-center gap-3 transform -rotate-2">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-black">85</span>
+<span class="material-symbols-outlined text-on-surface font-black text-2xl">more</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-black">42</span>
+</div>
+</div>
+<!-- Extra spacing before bottom nav -->
+<div class="h-8"></div>
+</main>
+<!-- BottomNavBar (Modified CTA based on prompt, integrating JSON structure loosely) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface dark:bg-surface-dim border-t-3 border-on-surface neo-brutalist-border p-margin-mobile flex justify-center pb-8 md:hidden">
+<button class="w-full max-w-sm bg-primary-container text-on-primary-container neo-brutalist-border neo-brutalist-shadow rounded-lg py-4 px-6 flex justify-between items-center neo-brutalist-interactive hover:bg-secondary-container">
+<span class="font-headline-md text-headline-md font-black uppercase tracking-wider">AGLA LEVEL</span>
+<span class="material-symbols-outlined font-bold text-2xl">arrow_forward</span>
+</button>
+</nav>
+</body></html>

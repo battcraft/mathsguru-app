@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry: Rekha &amp; Bindu - Naming Points</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#b80069",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#5b2d00",
+                        "outline-variant": "#e1bdc7",
+                        "on-tertiary-container": "#4c3f00",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffd9e3",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "on-surface-variant": "#5a3f48",
+                        "tertiary-container": "#c9a900",
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#df0b81",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary": "#b40067",
+                        "outline": "#8d6f78",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "tertiary": "#705d00",
+                        "secondary": "#924c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#e2e2e2 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        .neo-shadow-active {
+            box-shadow: 8px 8px 0px #1a1c1c;
+        }
+        .neo-pressed {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1a1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 w-full z-40">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="text-on-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="flex items-center">
+<span class="font-label-lg text-label-lg font-bold">5 🔥</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop max-w-4xl mx-auto w-full pb-24 md:pb-margin-desktop flex flex-col gap-8">
+<!-- Lesson Header Card -->
+<section class="bg-surface border-[3px] border-on-surface neo-shadow rounded-DEFAULT overflow-hidden">
+<div class="p-6 border-b-[3px] border-on-surface bg-primary-container text-on-primary-container">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Point (Bindu): Intermediate</h2>
+<p class="font-body-lg text-body-lg mt-2">Leveling up our geometry skills.</p>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Naming Points</h3>
+<p class="font-body-lg text-body-lg mb-4">
+                    In geometry, we need a way to talk about specific points so we don't get confused. We do this by <strong>naming</strong> them!
+                </p>
+<div class="bg-surface-container-high border-[3px] border-on-surface p-4 rounded-DEFAULT inline-block mb-4">
+<p class="font-label-bold text-label-bold">The Golden Rule:</p>
+<p class="font-body-md text-body-md mt-1">We ALWAYS use single, <strong>Capital Letters</strong> to name points. (Like A, B, X, or Z)</p>
+</div>
+</div>
+</section>
+<!-- Visual Example Section -->
+<section class="bg-surface border-[3px] border-on-surface neo-shadow rounded-DEFAULT p-6">
+<h3 class="font-headline-md text-headline-md mb-6 text-center">Meet the Points</h3>
+<div class="flex flex-col md:flex-row justify-center items-center gap-12 py-8">
+<!-- Point A -->
+<div class="flex flex-col items-center group">
+<div class="w-12 h-12 bg-primary rounded-full border-[3px] border-on-surface relative group-hover:neo-shadow-active transition-all duration-300">
+<span class="absolute -top-10 left-1/2 transform -translate-x-1/2 font-headline-lg text-headline-lg">A</span>
+</div>
+<span class="mt-4 font-label-bold text-label-bold text-on-surface-variant">Point A</span>
+</div>
+<!-- Point B -->
+<div class="flex flex-col items-center group">
+<div class="w-12 h-12 bg-secondary-container rounded-full border-[3px] border-on-surface relative group-hover:neo-shadow-active transition-all duration-300">
+<span class="absolute -top-10 left-1/2 transform -translate-x-1/2 font-headline-lg text-headline-lg">B</span>
+</div>
+<span class="mt-4 font-label-bold text-label-bold text-on-surface-variant">Point B</span>
+</div>
+<!-- Point C -->
+<div class="flex flex-col items-center group">
+<div class="w-12 h-12 bg-tertiary-container rounded-full border-[3px] border-on-surface relative group-hover:neo-shadow-active transition-all duration-300">
+<span class="absolute -top-10 left-1/2 transform -translate-x-1/2 font-headline-lg text-headline-lg">C</span>
+</div>
+<span class="mt-4 font-label-bold text-label-bold text-on-surface-variant">Point C</span>
+</div>
+</div>
+</section>
+<!-- Interactive Section -->
+<section class="bg-surface-container border-[3px] border-on-surface neo-shadow rounded-DEFAULT p-6 relative overflow-hidden">
+<!-- Decorator -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 border-[3px] border-on-surface rounded-full opacity-20 pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md mb-2">Your Turn!</h3>
+<p class="font-body-md text-body-md mb-6">Name these mystery dots using capital letters.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Interactive Point 1 -->
+<div class="bg-surface border-[3px] border-on-surface p-4 rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 bg-on-surface rounded-full"></div>
+<span class="font-body-md text-body-md">Name me:</span>
+</div>
+<input class="w-16 h-12 border-[3px] border-on-surface text-center font-headline-md text-headline-md uppercase focus:outline-none focus:neo-shadow focus:border-tertiary-container transition-all" maxlength="1" placeholder="?" type="text"/>
+</div>
+<!-- Interactive Point 2 -->
+<div class="bg-surface border-[3px] border-on-surface p-4 rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 bg-error rounded-full border-[3px] border-on-surface"></div>
+<span class="font-body-md text-body-md">Name me:</span>
+</div>
+<input class="w-16 h-12 border-[3px] border-on-surface text-center font-headline-md text-headline-md uppercase focus:outline-none focus:neo-shadow focus:border-tertiary-container transition-all" maxlength="1" placeholder="?" type="text"/>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold py-3 px-6 rounded-DEFAULT border-[3px] border-on-surface neo-shadow hover:neo-shadow-active active:neo-pressed transition-all">
+                    Check Answers
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only based on intent) -->
+<!-- Suppressed: This is a specific lesson page, focused journey. -->
+</body></html>

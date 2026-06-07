@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Decimal Duel - Practice</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#3f001a",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#8f0044",
+                        "surface-dim": "#dbdad4",
+                        "surface": "#fbf9f3",
+                        "inverse-on-surface": "#f2f1eb",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#572000",
+                        "on-background": "#1b1c19",
+                        "background": "#fbf9f3",
+                        "primary-container": "#ff6b00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#351000",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-tint": "#a04100",
+                        "primary-fixed": "#ffdbcc",
+                        "outline": "#8e7164",
+                        "surface-bright": "#fbf9f3",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "tertiary-container": "#999999",
+                        "outline-variant": "#e2bfb0",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-fixed-dim": "#ffb693",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#313131",
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#b60059",
+                        "on-surface-variant": "#5a4136",
+                        "secondary-container": "#e30071",
+                        "on-surface": "#1b1c19",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#a04100",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-fixed-dim": "#ffb1c4",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-low": "#f5f3ee",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "tertiary": "#5e5e5e",
+                        "surface-container-highest": "#e4e2dd",
+                        "inverse-surface": "#30312d",
+                        "secondary-fixed": "#ffd9e1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eee8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xl": "64px",
+                        "sm": "16px",
+                        "lg": "40px",
+                        "gutter": "20px",
+                        "md": "24px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-sm": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 bg-surface z-50 fixed top-0 border-b-[3px] border-on-background shadow-[0px_4px_0px_0px_rgba(0,0,0,1)] md:px-margin-desktop md:h-20">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="sports_kabaddi">sports_kabaddi</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary uppercase tracking-tighter">Decimal Duel</h1>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20 pb-24 md:pt-28 md:pb-12 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto w-full flex flex-col items-center gap-md">
+<!-- Header Tracker & Timer -->
+<div class="w-full max-w-3xl flex flex-col gap-xs bg-surface-container-high border-[3px] border-on-background p-sm rounded-DEFAULT shadow-[4px_4px_0px_0px_#1b1c19]">
+<div class="flex justify-between items-center font-label-bold text-label-bold uppercase tracking-wide">
+<span>Wins: <span class="text-primary-container">5</span></span>
+<span>Losses: <span class="text-error">2</span></span>
+</div>
+<!-- Progress Bar Timer -->
+<div class="w-full h-4 border-[3px] border-on-background rounded-full overflow-hidden bg-surface-variant relative">
+<div class="absolute top-0 left-0 h-full bg-primary-container w-[70%]"></div>
+</div>
+</div>
+<!-- Hero Visual Area -->
+<div class="w-full max-w-3xl relative mt-sm">
+<div class="rounded-DEFAULT border-[3px] border-on-background shadow-[8px_8px_0px_0px_#1b1c19] overflow-hidden bg-surface-container-highest">
+<img alt="Two animated warriors facing off in an arena setting" class="w-full h-64 md:h-[400px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA30JLg7YulU03vLtkr94nx_P1ThpvcvlNEiNl1z5Gj4KnmNxmw5lqOkavQv__gSk2BmFio8afWKVa-XJvG9BGm3_OBRKAGgVh8IGb-ZFri5gBN4fwPcD5V1YJPzOREwbFQR5qm425LBXsH_qrZkQPBEtK52qUba-sbbpYGNO1gI2uSeTDvjnUwZtjk8o2_3n8BI2UfQ1V7uxBhwCv_pCNuQ1GKw7SHFMwKxcxmpc1jjAFKyDmae47jV6nKAv0zN-QeKab7JXlJ6Pv"/>
+</div>
+<!-- Badge overlay -->
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface-variant border-[3px] border-on-background shadow-[4px_4px_0px_0px_#1b1c19] rounded-full px-md py-sm rotate-[-3deg] z-10 whitespace-nowrap">
+<span class="font-label-bold text-label-bold text-on-surface-variant">Kaun jeetega decimal ka mahayuddh?</span>
+</div>
+</div>
+<!-- Duel Numbers -->
+<div class="flex w-full max-w-3xl justify-between items-center mt-xl px-xs md:px-lg gap-sm">
+<!-- Left Number (Mango Orange) -->
+<div class="flex-1 bg-primary-container border-[3px] border-on-background rounded-DEFAULT shadow-[6px_6px_0px_0px_#1b1c19] flex items-center justify-center py-md md:py-xl transform -rotate-2">
+<span class="font-headline-xl text-headline-xl text-on-primary-container">7.8</span>
+</div>
+<!-- VS Spacer (Optional visual element) -->
+<div class="hidden md:flex flex-col items-center justify-center font-headline-sm text-headline-sm text-outline px-sm">
+<span>VS</span>
+</div>
+<!-- Right Number (Gulabi Pink) -->
+<div class="flex-1 bg-secondary-container border-[3px] border-on-background rounded-DEFAULT shadow-[6px_6px_0px_0px_#1b1c19] flex items-center justify-center py-md md:py-xl transform rotate-2">
+<span class="font-headline-xl text-headline-xl text-on-secondary-container">7.85</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-center items-center gap-sm md:gap-md mt-lg w-full max-w-2xl">
+<button class="w-20 h-20 md:w-24 md:h-24 bg-surface border-[3px] border-on-background rounded-lg shadow-[4px_4px_0px_0px_#1b1c19] flex items-center justify-center hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#1b1c19] hover:bg-primary-container active:translate-y-1 active:shadow-[2px_2px_0px_0px_#1b1c19] transition-all group">
+<span class="font-headline-lg text-headline-lg group-hover:text-on-primary-container transition-colors">&lt;</span>
+</button>
+<button class="w-20 h-20 md:w-24 md:h-24 bg-surface border-[3px] border-on-background rounded-lg shadow-[4px_4px_0px_0px_#1b1c19] flex items-center justify-center hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#1b1c19] hover:bg-primary-container active:translate-y-1 active:shadow-[2px_2px_0px_0px_#1b1c19] transition-all group">
+<span class="font-headline-lg text-headline-lg group-hover:text-on-primary-container transition-colors">=</span>
+</button>
+<button class="w-20 h-20 md:w-24 md:h-24 bg-surface border-[3px] border-on-background rounded-lg shadow-[4px_4px_0px_0px_#1b1c19] flex items-center justify-center hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#1b1c19] hover:bg-primary-container active:translate-y-1 active:shadow-[2px_2px_0px_0px_#1b1c19] transition-all group">
+<span class="font-headline-lg text-headline-lg group-hover:text-on-primary-container transition-colors">&gt;</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface border-t-[3px] border-on-background rounded-t-lg shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant py-1 px-3 hover:text-secondary transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="swords">swords</span>
+<span class="font-label-bold text-label-bold">Arena</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-sm border-2 border-on-background py-1 px-3 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined mb-1" data-icon="fitness_center">fitness_center</span>
+<span class="font-label-bold text-label-bold">Training</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant py-1 px-3 hover:text-secondary transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="military_tech">military_tech</span>
+<span class="font-label-bold text-label-bold">Rankings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant py-1 px-3 hover:text-secondary transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-bold text-label-bold">Profile</span>
+</button>
+</nav>
+</body></html>

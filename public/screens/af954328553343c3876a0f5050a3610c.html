@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Negative Number Battle - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&amp;family=Fredoka:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist utilities */
+        .brutal-border { border: 3px solid #1a1c1c; }
+        .brutal-shadow { box-shadow: 4px 4px 0px #1a1c1c; }
+        .brutal-shadow-active { box-shadow: 8px 8px 0px #1a1c1c; }
+        .brutal-shadow-pressed { box-shadow: 0px 0px 0px #1a1c1c; transform: translate(4px, 4px); }
+        .brutal-card { background-color: #ffffff; border: 3px solid #1a1c1c; box-shadow: 4px 4px 0px #1a1c1c; }
+        .bg-grid { background-image: radial-gradient(#1a1c1c 2px, transparent 2px); background-size: 32px 32px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen bg-grid">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary-fixed font-headline-md text-headline-md border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] docked full-width top-0 flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 md:px-margin-desktop">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">account_circle</span>
+</div>
+<div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<main class="p-margin-mobile md:p-margin-desktop pb-24 md:pb-margin-desktop max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex items-center justify-between mb-8">
+<div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary font-bold">Negative Number Battle</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Compare depths and altitudes to find the greater number!</p>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-4 py-2 brutal-border brutal-shadow font-label-bold text-label-bold hover:bg-secondary-fixed transition-all active:brutal-shadow-pressed">
+<span class="material-symbols-outlined align-middle mr-1">help</span> Hint
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Battle Area -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Current Problem Card -->
+<div class="brutal-card p-6">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 border-b-[3px] border-black pb-2">Which is deeper?</h2>
+<div class="flex justify-between items-center bg-surface-container-low p-6 brutal-border">
+<!-- Entity 1: Submarine -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-24 h-24 bg-primary-container brutal-border brutal-shadow rounded-full flex items-center justify-center relative overflow-hidden group hover:brutal-shadow-active transition-all cursor-pointer">
+<span class="material-symbols-outlined text-5xl text-on-primary-container z-10">directions_boat</span>
+<div class="absolute inset-0 bg-primary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+</div>
+<div class="text-center">
+<span class="block font-headline-md text-headline-md text-primary">-10 m</span>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase">Submarine</span>
+</div>
+</div>
+<!-- Comparator -->
+<div class="flex flex-col items-center justify-center">
+<div class="w-16 h-16 bg-tertiary-container brutal-border brutal-shadow rounded-lg flex items-center justify-center text-on-tertiary-container font-headline-lg text-headline-lg cursor-pointer hover:bg-tertiary-fixed transition-colors">
+                                ?
+                            </div>
+<span class="mt-2 font-label-bold text-label-bold text-on-surface-variant">Tap to choose</span>
+</div>
+<!-- Entity 2: Fish -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-24 h-24 bg-secondary-container brutal-border brutal-shadow rounded-full flex items-center justify-center relative overflow-hidden group hover:brutal-shadow-active transition-all cursor-pointer">
+<span class="material-symbols-outlined text-5xl text-on-secondary-container z-10">set_meal</span>
+<div class="absolute inset-0 bg-secondary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+</div>
+<div class="text-center">
+<span class="block font-headline-md text-headline-md text-secondary">-2 m</span>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase">Fish</span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary px-8 py-3 brutal-border brutal-shadow font-headline-md text-headline-md hover:bg-primary-container hover:text-on-primary-container transition-all active:brutal-shadow-pressed">
+                            Submit Answer
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Vertical Number Line -->
+<div class="lg:col-span-1">
+<div class="brutal-card h-full flex flex-col p-6">
+<h3 class="font-headline-md text-headline-md mb-4 border-b-[3px] border-black pb-2 text-center">Depth Meter</h3>
+<div class="flex-grow relative flex justify-center py-4">
+<!-- The Line -->
+<div class="w-1 bg-black absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 z-0"></div>
+<!-- Water Surface Line -->
+<div class="absolute top-1/4 w-full border-t-3 border-dashed border-tertiary z-0 flex items-center">
+<span class="bg-surface px-2 text-tertiary font-label-bold text-label-bold ml-2">Sea Level (0)</span>
+</div>
+<!-- Markers Container -->
+<div class="relative w-full h-full flex flex-col justify-between items-center z-10 mt-8 mb-8">
+<!-- Positive (Altitude - just for context) -->
+<div class="flex items-center w-full justify-center group cursor-pointer">
+<div class="w-8 border-t-3 border-black absolute right-1/2"></div>
+<span class="bg-surface font-label-bold text-label-bold px-2 py-1 brutal-border absolute left-[55%]">+5 m</span>
+</div>
+<!-- Zero -->
+<div class="flex items-center w-full justify-center group cursor-pointer absolute top-1/4 transform -translate-y-1/2">
+<div class="w-4 h-4 bg-tertiary rounded-full brutal-border"></div>
+</div>
+<!-- Negative 2 (Fish) -->
+<div class="flex items-center w-full justify-center group cursor-pointer absolute top-[40%] transform -translate-y-1/2">
+<div class="w-8 border-t-3 border-secondary absolute right-1/2"></div>
+<div class="absolute left-[55%] flex items-center gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-2 py-1 brutal-border brutal-shadow">-2 m</span>
+<span class="material-symbols-outlined text-secondary">set_meal</span>
+</div>
+</div>
+<!-- Negative 5 -->
+<div class="flex items-center w-full justify-center group cursor-pointer absolute top-[60%] transform -translate-y-1/2">
+<div class="w-8 border-t-3 border-black absolute right-1/2"></div>
+<span class="bg-surface font-label-bold text-label-bold px-2 py-1 brutal-border absolute left-[55%]">-5 m</span>
+</div>
+<!-- Negative 10 (Submarine) -->
+<div class="flex items-center w-full justify-center group cursor-pointer absolute top-[85%] transform -translate-y-1/2">
+<div class="w-8 border-t-3 border-primary absolute right-1/2"></div>
+<div class="absolute left-[55%] flex items-center gap-2">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-2 py-1 brutal-border brutal-shadow">-10 m</span>
+<span class="material-symbols-outlined text-primary">directions_boat</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-container-lowest font-label-lg text-label-lg border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span>Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span>Story</span>
+</a>
+</nav>
+</body></html>

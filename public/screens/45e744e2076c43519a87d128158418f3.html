@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti - Max/Min Video Lesson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "on-primary-fixed": "#351000",
+                      "on-tertiary-container": "#67002f",
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "tertiary-fixed": "#ffd9e1",
+                      "secondary-container": "#63ff9d",
+                      "outline-variant": "#e2bfb0",
+                      "on-tertiary-fixed": "#3f001a",
+                      "inverse-on-surface": "#f2f1eb",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-secondary-fixed-variant": "#005229",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1b1c19",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f5f3ee",
+                      "primary": "#a04100",
+                      "primary-fixed": "#ffdbcc",
+                      "on-secondary-fixed": "#00210d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#ff6096",
+                      "on-surface-variant": "#5a4136",
+                      "surface": "#fbf9f3",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#40e183",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dbdad4",
+                      "inverse-surface": "#30312d",
+                      "on-surface": "#1b1c19",
+                      "surface-tint": "#a04100",
+                      "primary-fixed-dim": "#ffb693",
+                      "surface-container-high": "#eae8e2",
+                      "on-secondary-container": "#00743c",
+                      "inverse-primary": "#ffb693",
+                      "surface-container": "#f0eee8",
+                      "primary-container": "#ff6b00",
+                      "tertiary": "#ba005b",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fbf9f3",
+                      "outline": "#8e7164",
+                      "on-primary-container": "#572000",
+                      "background": "#fbf9f3",
+                      "secondary": "#006d38",
+                      "surface-variant": "#e4e2dd",
+                      "secondary-fixed": "#63ff9d",
+                      "on-primary-fixed-variant": "#7a3000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "container-max-width": "1200px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "margin-desktop": "40px",
+                      "safe": "env(safe-area-inset-bottom)"
+              },
+              "fontFamily": {
+                      "body-md": ["Nunito Sans"],
+                      "headline-lg": ["Bricolage Grotesque"],
+                      "headline-xl-mobile": ["Bricolage Grotesque"],
+                      "headline-md": ["Bricolage Grotesque"],
+                      "body-lg": ["Nunito Sans"],
+                      "label-lg": ["Nunito Sans"],
+                      "headline-xl": ["Bricolage Grotesque"],
+                      "headline-lg-mobile": ["Bricolage Grotesque"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1b1c19;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed border-[2px] border-on-surface overflow-hidden shrink-0">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A stylized, flat-vector illustration avatar of a young Indian student wearing cool sunglasses and a backwards cap, drawn in a bold Desi Street-Pop style with thick black outlines and vibrant colors against a light yellow background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHVetsICKnDfyzst7QBLd5mTFiKQlcCV0nt-9OGQFBa6ABic7LCfQEYD15ihbiTPjsm9f6zHdyvxu7zCQ5L-bGcJOEw01L2PBN5-quq_FkomZ8mfqkogMr_TUHAXmdF2YxXoW_6Ug69NT-mIk91trqSyHqUagmQB8trAsdihPU0okYitn8EC3mGtlivSm9vGol_pWCLpJxKn1KgbOcsMbSmM5_C-iTQno30UiyRJrF_8n6h5lwD0Xd4jvgifFWkFQvvGGT3gfXK34L"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary truncate">Math-Masti</h1>
+</div>
+<button class="font-label-lg text-label-lg px-4 py-1.5 bg-surface-container-highest border-[3px] border-on-surface rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all flex items-center gap-1 shrink-0">
+            12 🔥
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-6 pb-32 max-w-container-max-width mx-auto">
+<!-- Video Player Section -->
+<section class="flex flex-col gap-4">
+<div class="relative w-full aspect-video rounded-DEFAULT border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden group cursor-pointer active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all bg-surface-variant">
+<img alt="Cricket Stadium Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A highly stylized, vibrant sunset view of a bustling Indian cricket stadium. The sky is painted with intense Mango Orange and electric pink hues. The stadium floodlights are glaring, illuminating the lush green pitch below. The aesthetic is loud, Desi Street-Pop with strong contrasts and a slightly graphic, illustrated feel, perfectly suited for an engaging educational app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyuZ3hvTrqtaZGhbmVLreI1S0Ee-kBcb9p8-IJ6T01Q_1C4SOqOWgrkCvvIKZHodCBEI2WSeuKP0C634wxunu3ESQfJoAtVJODo2LvyoL375ZK7BGMuxaUHKjqpyNM_FrlycE9V05fN_IML_5RCL7RPEpw3xyCqfpaFh9VgCVhWpH4QGYtPvndqZdo8V9IPqIkGoPQfy2kVRfaz5DKMg-F0ABgvk4zyXEtBGJTh1wEozkJRiHeNgok7T4XZoa377TVy7jjP8_W9qOs"/>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/30">
+<div class="w-16 h-16 bg-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-on-primary-container text-[36px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Video Duration Badge -->
+<div class="absolute bottom-3 right-3 bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg px-2 py-1 border-[2px] border-on-surface rounded-md shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    08:00
+                </div>
+</div>
+<!-- Title & Subtitle -->
+<div class="px-1 mt-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight">Max/Min in the Real World</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Temperature, Scores, and Shopping</p>
+</div>
+</section>
+<!-- Guru Tip Block -->
+<section class="mt-8">
+<div class="bg-secondary-container border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-DEFAULT p-5 relative overflow-hidden flex gap-4 items-start">
+<!-- Decorative Graphic -->
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-surface/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="w-12 h-12 shrink-0 bg-surface border-[3px] border-on-surface rounded-full flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-6">
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-secondary-container mb-1">Guru Tip!</h3>
+<p class="font-body-md text-body-md text-on-secondary-container opacity-90 leading-snug">
+                        Bhai, Max aur Min sirf graph par nahi hote! Look around—highest runs, hottest day, lowest price in the bazaar. Har jagah math hai!
+                    </p>
+</div>
+</div>
+</section>
+<!-- Video Chapters Section -->
+<section class="mt-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 px-1">Video Chapters</h3>
+<div class="bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-DEFAULT flex flex-col overflow-hidden">
+<!-- Chapter 1 -->
+<button class="w-full text-left p-4 border-b-[3px] border-on-surface flex items-center gap-4 hover:bg-surface-container-high transition-colors active:bg-surface-dim group">
+<div class="w-8 h-8 rounded-full bg-primary-container border-[2px] border-on-surface flex items-center justify-center font-label-lg text-label-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-active:translate-x-[1px] group-active:translate-y-[1px] group-active:shadow-none transition-all">1</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-[16px] text-on-surface leading-tight">Cricket: High Scores</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-0.5">00:00 - 02:30</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container transition-colors">play_circle</span>
+</button>
+<!-- Chapter 2 -->
+<button class="w-full text-left p-4 border-b-[3px] border-on-surface flex items-center gap-4 hover:bg-surface-container-high transition-colors active:bg-surface-dim group">
+<div class="w-8 h-8 rounded-full bg-primary-container border-[2px] border-on-surface flex items-center justify-center font-label-lg text-label-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-active:translate-x-[1px] group-active:translate-y-[1px] group-active:shadow-none transition-all">2</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-[16px] text-on-surface leading-tight">Weather: Hottest City</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-0.5">02:30 - 05:15</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container transition-colors">play_circle</span>
+</button>
+<!-- Chapter 3 -->
+<button class="w-full text-left p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors active:bg-surface-dim group">
+<div class="w-8 h-8 rounded-full bg-primary-container border-[2px] border-on-surface flex items-center justify-center font-label-lg text-label-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-active:translate-x-[1px] group-active:translate-y-[1px] group-active:shadow-none transition-all">3</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-[16px] text-on-surface leading-tight">Bazaar: Best Deals</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-0.5">05:15 - 08:00</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container transition-colors">play_circle</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-[calc(12px+env(safe-area-inset-bottom))] border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl md:hidden">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg group w-16" href="#">
+<span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">home</span>
+<span class="font-label-lg text-[11px] mt-1">Home</span>
+</a>
+<!-- Chat -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg group w-16" href="#">
+<span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">chat_bubble</span>
+<span class="font-label-lg text-[11px] mt-1">Chat</span>
+</a>
+<!-- Quiz -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg group w-16" href="#">
+<span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">quiz</span>
+<span class="font-label-lg text-[11px] mt-1">Quiz</span>
+</a>
+<!-- Story (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-colors active:scale-95 duration-100 w-16 -mt-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-lg text-[11px] mt-0.5">Story</span>
+</a>
+</nav>
+</body></html>

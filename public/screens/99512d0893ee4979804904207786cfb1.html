@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rounding ka Akhada!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#5a4136",
+                      "surface-container": "#f0eee8",
+                      "on-primary-fixed": "#351000",
+                      "background": "#fbf9f3",
+                      "surface-variant": "#e4e2dd",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-secondary-container": "#00743c",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "on-primary-container": "#572000",
+                      "primary-container": "#ff6b00",
+                      "inverse-on-surface": "#f2f1eb",
+                      "surface-dim": "#dbdad4",
+                      "primary-fixed": "#ffdbcc",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-background": "#1b1c19",
+                      "secondary": "#006d38",
+                      "on-tertiary-fixed": "#3f001a",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#a04100",
+                      "secondary-container": "#63ff9d",
+                      "on-secondary": "#ffffff",
+                      "outline": "#8e7164",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "on-secondary-fixed-variant": "#005229",
+                      "inverse-surface": "#30312d",
+                      "secondary-fixed": "#63ff9d",
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "surface-container-low": "#f5f3ee",
+                      "tertiary-fixed": "#ffd9e1",
+                      "secondary-fixed-dim": "#40e183",
+                      "tertiary": "#ba005b",
+                      "primary": "#a04100",
+                      "on-error": "#ffffff",
+                      "surface": "#fbf9f3",
+                      "surface-bright": "#fbf9f3",
+                      "outline-variant": "#e2bfb0",
+                      "inverse-primary": "#ffb693",
+                      "on-surface": "#1b1c19",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#eae8e2",
+                      "tertiary-container": "#ff6096",
+                      "on-tertiary-container": "#67002f",
+                      "on-secondary-fixed": "#00210d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max-width": "1200px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "40px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Bricolage Grotesque"
+                      ],
+                      "body-md": [
+                              "Nunito Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ],
+                      "label-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-md": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg": [
+                              "Bricolage Grotesque"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .neo-brutal {
+            border: 3px solid #1A1A1A;
+            box-shadow: 4px 4px 0px #1A1A1A;
+            border-radius: 16px;
+            transition: all 0.1s ease;
+        }
+        .neo-brutal:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        
+        .dot-grid {
+            background-size: 20px 20px;
+            background-image: radial-gradient(circle, #e2bfb0 1px, transparent 1px);
+        }
+
+        .arena-stage {
+            perspective: 1000px;
+        }
+        .arena-circle {
+            transform: rotateX(60deg);
+            border-radius: 50%;
+            background: repeating-radial-gradient(
+                circle at center,
+                #f0eee8 0,
+                #f0eee8 10px,
+                #e4e2dd 10px,
+                #e4e2dd 20px
+            );
+            border: 4px dashed #1A1A1A;
+            box-shadow: 0px 20px 0px #dbdad4, 0px 20px 0px 3px #1A1A1A, 0px 24px 0px #1A1A1A;
+        }
+
+        .floating-bubble {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .flip-animate {
+            animation: flipIn 0.6s ease-out forwards;
+        }
+        @keyframes flipIn {
+            0% { transform: rotateY(90deg); opacity: 0; }
+            100% { transform: rotateY(0deg); opacity: 1; }
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen dot-grid font-body-md overflow-x-hidden relative pb-24 md:pb-0">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sticky top-0">
+<div class="flex items-center gap-unit">
+<span class="font-headline-md text-headline-md text-primary-container">Math-Masti</span>
+</div>
+<div class="flex items-center gap-unit">
+<span class="font-label-lg text-label-lg bg-surface-container px-3 py-1 neo-brutal">12 🔥</span>
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden neo-brutal bg-secondary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A brightly lit, stylized avatar of a cheerful student with glasses, rendered in a 3D cartoon style. The background is a vibrant, solid mango orange. The aesthetic is friendly, modern, and perfectly suited for a Desi Street-Pop educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcFOmB8geIjIJpoTR4iCEXUzsKEk15lINVvP7_pT6ceDPPHL40M06mQ2zTQmx1B2I3PRJcZAdmsWqxrtzyvG1wmvieOzxSyq-4V7yYYFsrsE3tyVqVtb3jy7LRyP6rlquPR0F18Qtuiga_ZnsVnE3FQhXMsi2qADiIF3z1LdxI8WOAX4UyXl57zl5B7ssMTGgZ-FgqPlumVFPx9Wk0H_c675eEAglaBaxnXDiAYd-M31H3ju9asZ0HhFAq3akUXqTeAgIgY7WwKD12"/>
+</div>
+</div>
+</header>
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8 flex-wrap gap-4">
+<div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase drop-shadow-[2px_2px_0px_#FF6B00]">Rounding ka Akhada!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Get ready to round up or down. Choose your target carefully!</p>
+</div>
+<!-- Progress Tracker -->
+<div class="neo-brutal bg-surface p-2 flex items-center gap-3">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="4"></path>
+<path class="text-secondary-fixed-dim stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="40, 100" stroke-width="4"></path>
+</svg>
+<span class="absolute font-label-lg text-label-lg">4/10</span>
+</div>
+<span class="font-label-lg text-label-lg pr-2">Done</span>
+</div>
+</div>
+<!-- Difficulty Tabs -->
+<div class="flex gap-2 mb-8 overflow-x-auto pb-4 hide-scrollbar">
+<button class="neo-brutal bg-primary-container text-on-surface px-6 py-3 font-label-lg text-label-lg whitespace-nowrap">Round to 10</button>
+<button class="neo-brutal bg-surface text-on-surface-variant px-6 py-3 font-label-lg text-label-lg whitespace-nowrap">Round to 100</button>
+<button class="neo-brutal bg-surface text-on-surface-variant px-6 py-3 font-label-lg text-label-lg whitespace-nowrap">Round to 1000</button>
+</div>
+<!-- Arena & Action Area -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative">
+<!-- The Arena -->
+<div class="arena-stage relative h-[300px] md:h-[400px] w-full flex items-center justify-center">
+<div class="arena-circle w-[250px] h-[250px] md:w-[350px] md:h-[350px] relative z-10"></div>
+<!-- Crowd / Decor -->
+<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-50">
+<span class="absolute top-10 left-10 text-4xl">🙌</span>
+<span class="absolute top-20 right-10 text-4xl">🔥</span>
+<span class="absolute bottom-10 left-20 text-4xl">🎉</span>
+<span class="absolute bottom-20 right-20 text-4xl">💪</span>
+</div>
+<!-- Floating Numbers -->
+<div class="absolute z-20 top-[20%] left-[10%] neo-brutal bg-[#FFD93D] px-3 py-1 font-headline-md text-headline-md floating-bubble shadow-[2px_2px_0px_#1A1A1A]" style="animation-delay: 0.1s">102</div>
+<div class="absolute z-20 bottom-[30%] right-[10%] neo-brutal bg-[#FFD93D] px-3 py-1 font-headline-md text-headline-md floating-bubble shadow-[2px_2px_0px_#1A1A1A]" style="animation-delay: 0.5s">985</div>
+<!-- Central Active Question Number -->
+<div class="absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div class="neo-brutal bg-primary-container text-on-surface w-24 h-24 flex items-center justify-center font-headline-xl text-headline-xl rounded-full border-4 border-on-surface shadow-[6px_6px_0px_#1A1A1A] relative" id="target-number">
+                        47
+                        <div class="absolute -top-3 -right-3 bg-secondary-fixed text-on-surface text-xs font-bold px-2 py-1 rounded-full border-2 border-on-surface shadow-[2px_2px_0px_#1A1A1A] transform rotate-12">Target!</div>
+</div>
+</div>
+</div>
+<!-- Question Card & Answers -->
+<div class="flex flex-col gap-6">
+<div class="neo-brutal bg-surface p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary-container border-b-[3px] border-on-surface"></div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2 mb-2">Round 47 to the nearest 10</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Look at the ones digit. Is it 5 or more? Round up!</p>
+</div>
+<div class="flex flex-col gap-4">
+<button class="neo-brutal bg-surface-container-highest text-on-surface p-4 text-left font-headline-md text-headline-md hover:bg-surface-container transition-colors group flex justify-between items-center" onclick="handleAnswer(this, false)">
+<span>A. 40</span>
+<span class="material-symbols-outlined text-surface-variant group-hover:text-on-surface transition-colors">close</span>
+</button>
+<button class="neo-brutal bg-surface-container-highest text-on-surface p-4 text-left font-headline-md text-headline-md hover:bg-surface-container transition-colors group flex justify-between items-center" onclick="handleAnswer(this, true)">
+<span>B. 50</span>
+<span class="material-symbols-outlined text-surface-variant group-hover:text-on-surface transition-colors">check</span>
+</button>
+<button class="neo-brutal bg-surface-container-highest text-on-surface p-4 text-left font-headline-md text-headline-md hover:bg-surface-container transition-colors group flex justify-between items-center" onclick="handleAnswer(this, false)">
+<span>C. 45</span>
+<span class="material-symbols-outlined text-surface-variant group-hover:text-on-surface transition-colors">close</span>
+</button>
+<button class="neo-brutal bg-surface-container-highest text-on-surface p-4 text-left font-headline-md text-headline-md hover:bg-surface-container transition-colors group flex justify-between items-center" onclick="handleAnswer(this, false)">
+<span>D. 60</span>
+<span class="material-symbols-outlined text-surface-variant group-hover:text-on-surface transition-colors">close</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-bold text-label-bold text-xs">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span class="font-label-bold text-label-bold text-xs">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold text-xs font-bold">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span class="font-label-bold text-label-bold text-xs">Story</span>
+</button>
+</nav>
+<script>
+        function handleAnswer(btn, isCorrect) {
+            // Reset all buttons
+            document.querySelectorAll('.flex-col > button').forEach(b => {
+                b.classList.remove('bg-secondary-fixed', 'bg-error-container');
+                b.classList.add('bg-surface-container-highest');
+            });
+
+            if (isCorrect) {
+                btn.classList.remove('bg-surface-container-highest');
+                btn.classList.add('bg-secondary-fixed');
+                
+                // Micro-interaction: Flip the number
+                const targetEl = document.getElementById('target-number');
+                targetEl.classList.remove('flip-animate');
+                // Trigger reflow
+                void targetEl.offsetWidth; 
+                targetEl.classList.add('flip-animate');
+                
+                setTimeout(() => {
+                    targetEl.innerHTML = `
+                        50
+                        <div class="absolute -top-3 -right-3 bg-secondary-fixed text-on-surface text-xs font-bold px-2 py-1 rounded-full border-2 border-on-surface shadow-[2px_2px_0px_#1A1A1A] transform rotate-12">Rounded!</div>
+                    `;
+                    targetEl.classList.remove('bg-primary-container');
+                    targetEl.classList.add('bg-secondary-fixed');
+                }, 300); // Change halfway through the flip
+
+            } else {
+                btn.classList.remove('bg-surface-container-highest');
+                btn.classList.add('bg-error-container');
+                // Shake effect
+                btn.animate([
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(-5px)' },
+                    { transform: 'translateX(5px)' },
+                    { transform: 'translateX(-5px)' },
+                    { transform: 'translateX(5px)' },
+                    { transform: 'translateX(0)' }
+                ], { duration: 300 });
+            }
+        }
+    </script>
+</body></html>

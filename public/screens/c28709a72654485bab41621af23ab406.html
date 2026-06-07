@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Socho: Can a Line be Curved?</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#5a3f48",
+                    "on-secondary": "#ffffff",
+                    "outline": "#8d6f78",
+                    "tertiary": "#705d00",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "surface-dim": "#dadada",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb0cb",
+                    "on-secondary-fixed": "#2f1400",
+                    "secondary-fixed-dim": "#ffb781",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-high": "#e8e8e8",
+                    "on-secondary-container": "#5b2d00",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#924c00",
+                    "inverse-surface": "#2f3131",
+                    "surface-tint": "#b80069",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-low": "#f3f3f4",
+                    "secondary-fixed": "#ffdcc4",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#c9a900",
+                    "secondary-container": "#f88400",
+                    "primary-fixed": "#ffd9e3",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e1bdc7",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "on-primary-fixed": "#3e0020",
+                    "primary-container": "#df0b81",
+                    "background": "#f9f9f9",
+                    "on-tertiary-container": "#4c3f00",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-fixed": "#ffe16d",
+                    "inverse-on-surface": "#f0f1f1",
+                    "error": "#ba1a1a",
+                    "primary": "#b40067",
+                    "on-surface": "#1a1c1c",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "on-tertiary-fixed-variant": "#544600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "border-width": "3px",
+                    "shadow-offset": "4px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Nunito Sans"],
+                    "label-bold": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"],
+                    "headline-xl": ["Fredoka"],
+                    "headline-xl-mobile": ["Fredoka"],
+                    "headline-md": ["Fredoka"],
+                    "headline-lg": ["Fredoka"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Neo-Brutalist Graph Paper Background Pattern */
+        .bg-graph-pattern {
+            background-color: theme('colors.background');
+            background-image: radial-gradient(circle at 2px 2px, theme('colors.surface-dim') 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        
+        /* Material Icon Base Class override to ensure proper rendering */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-graph-pattern min-h-screen text-on-background font-body-md antialiased pb-24 md:pb-8 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<!-- Leading Avatar -->
+<div class="w-8 h-8 rounded-full border-3 border-black overflow-hidden shadow-[2px_2px_0px_#1A1A1A] shrink-0 bg-secondary-fixed">
+<img alt="Student profile avatar" class="w-full h-full object-cover" data-alt="A brightly lit, closely cropped portrait of a young student avatar wearing a yellow jacket against a vibrant pink background. The style is modern, sharp, and graphic, fitting a geometric, neo-brutalist user interface aesthetic. The lighting is flat and high-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_LY2WflBG_jMMbgmgbZO-_DkEeJTRbOdDG6NutvVigYOs1MbYp0TMwYMJHm1zszXCuRZ-IQukm4P4hIaskQdhyynWruOrsJdvGQ0lLLaIZCG9WzhIidqha-dB4gSZvuyCCl1p3P6elig0LH6SzAyTjQbIBsiNiV1i9DgV_EkltK_q_ZWXe4jaULpjeLPUaPsC-5-YHVXkm236u-5LW7qh_9ZJdn0kOxWx-L8PNfUL1pN05cstmXFhDVdWIXHhA_IlrE3l754Yfjms"/>
+</div>
+<!-- Headline -->
+<div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed flex-1 text-center">
+            Ganit Dost
+        </div>
+<!-- Trailing Icon -->
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all p-1 rounded-full flex items-center justify-center border-3 border-transparent shrink-0">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-4xl mx-auto px-margin-mobile mt-8">
+<!-- Hero Card (Socho Series Header) -->
+<section class="bg-secondary-fixed border-3 border-black shadow-[8px_8px_0px_#1A1A1A] rounded-xl p-6 mb-10 transform -rotate-1 hover:rotate-0 transition-transform duration-300 relative overflow-hidden">
+<!-- Decorative geometry -->
+<div class="absolute -right-8 -top-8 w-32 h-32 border-3 border-black rounded-full opacity-20"></div>
+<div class="absolute -left-4 -bottom-4 w-16 h-16 border-3 border-black bg-primary-fixed opacity-50 transform rotate-45"></div>
+<div class="relative z-10">
+<div class="inline-block bg-background text-on-background font-label-bold text-label-bold px-3 py-1 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] mb-4 uppercase tracking-widest text-xs">Socho Series</div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-secondary-fixed mb-4">Can a Line be Curved? 🤔</h1>
+<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant max-w-2xl font-bold">
+                    Let's decode straightness. Kya geometry mein line aur raste (path) ke beech ka farq jante ho? Aao explore karein!
+                </p>
+</div>
+</section>
+<!-- Interactive Canvas: The Deep Dive Toggle -->
+<section class="bg-surface border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-xl p-2 md:p-6 mb-10">
+<div class="border-b-3 border-black pb-4 mb-4 px-4 pt-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Experiment Lab 🧪</h2>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-center px-4 pb-4">
+<!-- Visual Display Area -->
+<div class="w-full md:w-2/3 h-56 bg-surface-container-lowest border-3 border-black rounded-lg shadow-inner relative flex items-center justify-center overflow-hidden">
+<!-- Graph grid behind -->
+<div class="absolute inset-0 bg-graph-pattern opacity-50 pointer-events-none"></div>
+<!-- Point A -->
+<div class="absolute left-[10%] top-1/2 -translate-y-1/2 w-6 h-6 bg-primary-container border-3 border-black rounded-full shadow-[2px_2px_0px_#1A1A1A] z-10 flex items-center justify-center">
+<span class="font-label-bold text-[10px] text-on-primary-container">A</span>
+</div>
+<!-- Point B -->
+<div class="absolute right-[10%] top-1/2 -translate-y-1/2 w-6 h-6 bg-tertiary-container border-3 border-black rounded-full shadow-[2px_2px_0px_#1A1A1A] z-10 flex items-center justify-center">
+<span class="font-label-bold text-[10px] text-on-tertiary-container">B</span>
+</div>
+<!-- SVG Canvas for the path -->
+<svg class="absolute inset-0" height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<!-- The dynamic path -->
+<path class="transition-all duration-700 ease-in-out" d="M 10 50 L 90 50" fill="none" id="interactive-path" stroke="#1a1c1c" stroke-dasharray="4 4" stroke-width="3"></path>
+</svg>
+</div>
+<!-- Control Panel -->
+<div class="w-full md:w-1/3 flex flex-col items-center bg-surface-container-low border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-center">Bend Reality</h3>
+<p class="font-body-md text-body-md text-surface-dim mb-6 text-center text-sm text-on-surface-variant">Tap switch to change the path between points A and B.</p>
+<!-- Custom Neo-Brutalist Toggle -->
+<label class="relative inline-flex items-center cursor-pointer group">
+<input class="sr-only peer" id="path-toggle-btn" type="checkbox"/>
+<div class="w-20 h-10 bg-surface-variant border-3 border-black rounded-full peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary shadow-[2px_2px_0px_#1A1A1A] transition-colors peer-checked:bg-secondary-container after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-3 after:border-black after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:after:translate-x-[40px] group-active:translate-y-[2px] group-active:translate-x-[2px] group-active:shadow-none">
+</div>
+</label>
+<div class="mt-4 font-label-bold text-label-bold bg-background border-2 border-black px-4 py-1 shadow-[2px_2px_0px_#1A1A1A]" id="status-text">
+                        Straight Line
+                    </div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Explanation -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<!-- Bento Box 1: The Rule -->
+<article class="bg-primary-fixed border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-xl p-6 flex flex-col h-full hover:shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 hover:-translate-x-1 transition-all duration-200">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 bg-primary-container border-3 border-black rounded-lg flex items-center justify-center mr-4 shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-primary-container">straight</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-primary-fixed">The strict Maths rule</h2>
+</div>
+<div class="border-t-3 border-black pt-4 flex-grow">
+<p class="font-body-md text-body-md text-on-primary-fixed-variant">
+                        Maths ki duniya mein, ek "line" technically hamesha <strong>seedhi (straight)</strong> hi hoti hai. Agar woh mud jaye ya bend ho, toh hum usse "curve" bulaate hain. Ek line dono directions mein endless chalti hai, bina mudey!
+                    </p>
+</div>
+</article>
+<!-- Bento Box 2: The Shortcut -->
+<article class="bg-tertiary-fixed border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-xl p-6 flex flex-col h-full hover:shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 hover:-translate-x-1 transition-all duration-200 relative overflow-hidden">
+<!-- Protractor decoration -->
+<div class="absolute -right-10 -bottom-10 w-32 h-32 rounded-full border-4 border-black border-dashed opacity-30"></div>
+<div class="flex items-center mb-4 relative z-10">
+<div class="w-10 h-10 bg-tertiary-container border-3 border-black rounded-lg flex items-center justify-center mr-4 shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-tertiary-container">route</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-tertiary-fixed">Shortest rasta kaunsa?</h2>
+</div>
+<div class="border-t-3 border-black pt-4 flex-grow relative z-10">
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">
+                        Koi bhi 2 points ke beech ka <strong>sabse chhota rasta (shortest distance)</strong> hamesha ek straight line segment hoti hai. Curve loge toh journey lambi ho jayegi. Seedha jao, time bachao!
+                    </p>
+</div>
+</article>
+<!-- Bento Box 3: Full Width Fun Fact -->
+<article class="md:col-span-2 bg-inverse-surface border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 text-inverse-on-surface transform hover:rotate-1 transition-transform">
+<div class="w-16 h-16 bg-primary border-3 border-black rounded-full flex items-center justify-center shadow-[4px_4px_0px_#df0b81] shrink-0">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<div class="text-center md:text-left">
+<h3 class="font-headline-md text-headline-md text-inverse-primary mb-2">Earth par straight line? 🌍</h3>
+<p class="font-body-md text-body-md">
+                         Mazaedaar baat: Kyunki hamari Earth gol (sphere) hai, real world mein ground par draw ki gayi har "straight line" actually mein thodi si curved hoti hai Earth ke surface ke saath! Par copy par, rule ekdam seedha hai.
+                     </p>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<!-- Applying ACTIVE logic: The screen is a learning module/quiz deep dive, so "Quiz" is the closest intent match -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A] md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16" href="#">
+<span class="material-symbols-outlined text-[28px]">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</a>
+<!-- Chat (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16" href="#">
+<span class="material-symbols-outlined text-[28px]">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</a>
+<!-- Quiz (Active - Highlighted via intent logic) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-20 transform -translate-y-2" href="#">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg font-bold mt-1">Quiz</span>
+</a>
+<!-- Story (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16" href="#">
+<span class="material-symbols-outlined text-[28px]">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</a>
+</nav>
+<!-- Inline script for the toggle interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('path-toggle-btn');
+            const svgPath = document.getElementById('interactive-path');
+            const statusText = document.getElementById('status-text');
+
+            toggleBtn.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    // Switch to Curved Path
+                    svgPath.setAttribute('d', 'M 10 50 Q 50 -10 90 50');
+                    svgPath.setAttribute('stroke', '#df0b81'); // Primary Container color
+                    svgPath.setAttribute('stroke-width', '4');
+                    svgPath.removeAttribute('stroke-dasharray');
+                    
+                    statusText.textContent = 'Curved Path';
+                    statusText.classList.replace('bg-background', 'bg-primary-fixed');
+                } else {
+                    // Switch to Straight Line
+                    svgPath.setAttribute('d', 'M 10 50 L 90 50');
+                    svgPath.setAttribute('stroke', '#1a1c1c'); // On-background color
+                    svgPath.setAttribute('stroke-width', '3');
+                    svgPath.setAttribute('stroke-dasharray', '4 4');
+                    
+                    statusText.textContent = 'Straight Line';
+                    statusText.classList.replace('bg-primary-fixed', 'bg-background');
+                }
+            });
+        });
+    </script>
+</body></html>

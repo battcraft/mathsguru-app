@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti | Numbers Master Quiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+        .pressed {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface bg-grid-pattern min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center px-4 md:px-32 h-16 w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface bg-primary overflow-hidden shadow-sm">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfZ73UliwNahYWz5pw9UVaP2mD1zK3XWKpcHGiknn1sChdaUdM7vqRbGSPbveFyCk1ralgUH6dbPEiRJX6KuzdEXbAoB5hhB9X0lHNc7SIzXybrgtncbBriJgmLRjhmpJWQMqBVyDDtC8lwsMifKbU1KqEQMBjmnyzlHB-lnweePS7_1OJIDTSGKsdcVgEDNcbgnrpaoFqg1UeahyG-kP2MVYG5tlBbPpP9wBcX8EQfASxgy6PIshaHXhsLEpVAPuvPWfulYLe2cNa"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Math-Masti</span>
+</div>
+<div class="flex items-center gap-2 bg-secondary-container border-[3px] border-on-surface px-3 py-1 rounded-lg neo-shadow-sm">
+<span class="font-label-bold text-label-bold text-on-secondary-container">12 🔥</span>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-4 md:px-8 pt-8">
+<!-- Progress Section -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-bold text-label-bold text-secondary uppercase tracking-widest">Mastery Challenge</span>
+<span class="font-label-bold text-label-bold text-on-surface">Question 1 / 15</span>
+</div>
+<div class="w-full h-6 bg-surface-container border-[3px] border-on-surface rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[6.6%] border-r-[3px] border-on-surface transition-all duration-500"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Quiz Card -->
+<section class="lg:col-span-8">
+<div class="bg-surface border-[3px] border-on-surface neo-shadow-lg rounded-xl overflow-hidden mb-8">
+<div class="bg-secondary-fixed border-b-[3px] border-on-surface p-6">
+<h1 class="font-headline-lg text-headline-lg text-on-secondary-fixed leading-tight">Numbers Master Quiz</h1>
+<p class="font-body-md text-on-surface-variant mt-2">Level up your number sense. Answer all questions to unlock the Golden Abacus!</p>
+</div>
+<div class="p-6 md:p-10">
+<div class="mb-10">
+<span class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container border-[3px] border-on-surface font-label-bold text-label-bold mb-4 neo-shadow-sm">CONCEPT: PLACE VALUE</span>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">What is the largest 4-digit number?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option A -->
+<button class="group flex items-center p-4 bg-white border-[3px] border-on-surface rounded-xl neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all text-left" onclick="selectOption(this)">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface font-label-bold group-hover:bg-primary-fixed transition-colors">A</span>
+<span class="ml-4 font-headline-md text-headline-md">1000</span>
+</button>
+<!-- Option B -->
+<button class="group flex items-center p-4 bg-white border-[3px] border-on-surface rounded-xl neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all text-left" onclick="selectOption(this)">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface font-label-bold group-hover:bg-primary-fixed transition-colors">B</span>
+<span class="ml-4 font-headline-md text-headline-md">9990</span>
+</button>
+<!-- Option C -->
+<button class="group flex items-center p-4 bg-white border-[3px] border-on-surface rounded-xl neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all text-left border-primary bg-primary-fixed" onclick="selectOption(this)">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-primary text-white font-label-bold">C</span>
+<span class="ml-4 font-headline-md text-headline-md">9999</span>
+</button>
+<!-- Option D -->
+<button class="group flex items-center p-4 bg-white border-[3px] border-on-surface rounded-xl neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all text-left" onclick="selectOption(this)">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface font-label-bold group-hover:bg-primary-fixed transition-colors">D</span>
+<span class="ml-4 font-headline-md text-headline-md">10000</span>
+</button>
+</div>
+<div class="mt-12 flex justify-between items-center">
+<button class="px-6 py-3 font-label-bold text-label-bold text-on-surface border-[3px] border-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+                                QUIT QUIZ
+                            </button>
+<button class="px-8 py-3 bg-primary text-white font-label-bold text-label-bold border-[3px] border-on-surface rounded-lg neo-shadow active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+                                NEXT QUESTION
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Mascot & Rewards Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Boss Mascot Card -->
+<div class="bg-tertiary-fixed border-[3px] border-on-surface neo-shadow-lg rounded-xl p-6 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-10">
+<span class="material-symbols-outlined text-[120px]">calculate</span>
+</div>
+<div class="relative z-10">
+<img class="w-32 h-32 mx-auto mb-4 border-[3px] border-on-surface rounded-full bg-white p-2" data-alt="A robotic neo-brutalist boss character mascot with square geometric features, large digital eyes, and orange-and-gold metallic plating. The mascot is posed confidently against a bright academic background with floating mathematical symbols. The lighting is crisp and high-contrast, matching a youthful achievement-oriented educational app style with bold black outlines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOWFay1cvJsaHk6NVdTGhrtWMCBlVJ0ffYyX0vTNkY_7P5FT9FZQboGPvJFC7dOlXpRePp7DiTjxvLJaFCXrYsTCKiexI5qInOVEMTtsLOtKgaWHDLdbTm3S1C7nxsJShJUQNxC3roF8PPTw1VhuEuIDurNEZxNXE27aEJxFLMW1ycUmbRK02IupXM6LYnMfIFEpyikLNAtK3VQgPjlhHUGy_7zbIkHvZoNsOszhzPF74W1K9drERnTmKEKsbDr05UjCZGiqWjGL7S"/>
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed mb-2">Professor Prime</h3>
+<div class="bg-white border-[3px] border-on-surface p-3 rounded-lg relative">
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t-[3px] border-l-[3px] border-on-surface rotate-45"></div>
+<p class="font-label-bold text-on-surface leading-tight italic">"Don't let the digits deceive you! Think about the highest possible value for each column."</p>
+</div>
+</div>
+</div>
+<!-- Reward Bento Card -->
+<div class="bg-surface border-[3px] border-on-surface neo-shadow rounded-xl overflow-hidden">
+<div class="bg-on-surface p-3">
+<h4 class="font-label-bold text-label-bold text-white uppercase text-center">Bounty Rewards</h4>
+</div>
+<div class="p-4 grid grid-cols-2 gap-3">
+<div class="bg-secondary-fixed-dim border-[3px] border-on-surface p-3 rounded-lg flex flex-col items-center">
+<span class="material-symbols-outlined text-on-secondary-fixed">workspace_premium</span>
+<span class="font-label-bold text-xs mt-1">+150 XP</span>
+</div>
+<div class="bg-tertiary-fixed-dim border-[3px] border-on-surface p-3 rounded-lg flex flex-col items-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed">token</span>
+<span class="font-label-bold text-xs mt-1">+20 Coins</span>
+</div>
+<div class="col-span-2 bg-primary-fixed-dim border-[3px] border-on-surface p-3 rounded-lg flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-on-primary-fixed" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-bold text-label-bold text-on-primary-fixed">Perfect Run Bonus: +50 XP</span>
+</div>
+</div>
+</div>
+<!-- Leaderboard Teaser -->
+<div class="bg-white border-[3px] border-on-surface p-4 rounded-xl neo-shadow">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-label-bold text-label-bold">Global Rank</h4>
+<span class="text-xs font-label-bold text-primary underline">VIEW ALL</span>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border-[2px] border-on-surface bg-secondary-container flex items-center justify-center font-label-bold text-xs">1</div>
+<span class="font-body-md flex-grow">Aman R.</span>
+<span class="font-label-bold">98%</span>
+</li>
+<li class="flex items-center gap-3 opacity-60">
+<div class="w-8 h-8 rounded-full border-[2px] border-on-surface bg-surface-variant flex items-center justify-center font-label-bold text-xs">24</div>
+<span class="font-body-md flex-grow text-primary font-bold">You</span>
+<span class="font-label-bold">82%</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="quiz" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        function selectOption(el) {
+            // Reset all options in the container
+            const options = el.parentElement.querySelectorAll('button');
+            options.forEach(opt => {
+                opt.classList.remove('border-primary', 'bg-primary-fixed');
+                const badge = opt.querySelector('span:first-child');
+                badge.classList.remove('bg-primary', 'text-white');
+                badge.classList.add('bg-surface');
+            });
+
+            // Apply selected state
+            el.classList.add('border-primary', 'bg-primary-fixed');
+            const badge = el.querySelector('span:first-child');
+            badge.classList.remove('bg-surface');
+            badge.classList.add('bg-primary', 'text-white');
+            
+            // Interaction effect
+            el.classList.add('pressed');
+            setTimeout(() => {
+                el.classList.remove('pressed');
+            }, 100);
+        }
+
+        // Mini confetti-like floaters for atmospheric effect
+        function createFloater() {
+            const symbols = ['+', '-', '×', '÷', '=', '∑', 'π'];
+            const floater = document.createElement('div');
+            floater.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            floater.style.position = 'fixed';
+            floater.style.left = Math.random() * 100 + 'vw';
+            floater.style.top = '110vh';
+            floater.style.opacity = Math.random() * 0.2;
+            floater.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            floater.style.fontWeight = 'bold';
+            floater.style.color = '#b40067';
+            floater.style.pointerEvents = 'none';
+            floater.style.zIndex = '0';
+            floater.style.transition = 'transform 10s linear, opacity 10s linear';
+            document.body.appendChild(floater);
+
+            setTimeout(() => {
+                floater.style.transform = `translateY(-120vh) rotate(${Math.random() * 360}deg)`;
+            }, 100);
+
+            setTimeout(() => {
+                floater.remove();
+            }, 11000);
+        }
+
+        setInterval(createFloater, 2000);
+    </script>
+</body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahani: The Kings Dilemma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800;900&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-tint": "#a04100",
+                        "on-tertiary-fixed": "#3f001a",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#00210d",
+                        "tertiary": "#ba005b",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-bright": "#fbf9f3",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#ff6096",
+                        "on-surface": "#1b1c19",
+                        "on-secondary-fixed-variant": "#005229",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "secondary-container": "#63ff9d",
+                        "primary-fixed": "#ffdbcc",
+                        "surface": "#fbf9f3",
+                        "primary-container": "#ff6b00",
+                        "secondary": "#006d38",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-container": "#572000",
+                        "inverse-primary": "#ffb693",
+                        "on-background": "#1b1c19",
+                        "outline": "#8e7164",
+                        "surface-variant": "#e4e2dd",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "primary": "#a04100",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "on-primary-fixed": "#351000",
+                        "secondary-fixed": "#63ff9d",
+                        "surface-container": "#f0eee8",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-tertiary-container": "#67002f",
+                        "tertiary-fixed": "#ffd9e1",
+                        "outline-variant": "#e2bfb0",
+                        "on-surface-variant": "#5a4136",
+                        "surface-dim": "#dbdad4",
+                        "surface-container-highest": "#e4e2dd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-desktop": "40px",
+                        "container-max-width": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-border {
+            border: 3px solid #1b1c19;
+        }
+        .neo-brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #1b1c19;
+        }
+        .neo-brutalist-interactive:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #1b1c19;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim font-headline-lg-mobile text-headline-lg-mobile dark:text-on-surface fixed top-0 w-full z-50 border-b-3 border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] neo-brutalist-border neo-brutalist-shadow">
+<div class="flex justify-between items-center w-full px-margin-mobile py-4">
+<button aria-label="Go back" class="text-primary dark:text-primary-fixed hover:bg-primary-container hover:text-on-primary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded-full p-2">
+<span class="material-symbols-outlined block">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-black truncate max-w-[200px] text-center">Kahani 2/5</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</div>
+<!-- Story Progress Bar within Header -->
+<div class="w-full bg-surface-variant h-4 neo-brutalist-border border-t-0 border-l-0 border-r-0">
+<div class="bg-secondary-container h-full neo-brutalist-border border-y-0 border-l-0 border-r-3" style="width: 40%;"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col gap-6 px-margin-mobile pt-[120px] pb-[100px] max-w-container-max-width mx-auto w-full">
+<!-- Hero Illustration -->
+<section class="w-full relative">
+<img alt="Placeholder for Raja Ji in bazaar" class="w-full aspect-[4/5] object-cover rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow bg-surface-container-high" src="https://lh3.googleusercontent.com/aida/AP1WRLufigqivd-0a86AEwLZ83f7yf1bx6iGIw1lunXON-yEkflW5TP1DjSyXNaflrciFf4dmCxfLKRb-fDX34xzO8rG5ZSqZD-8qQqYiltOo454pWQ-k7Y8BocmBltVAe7-fg1gDGphdEB7PEynxbwxvk7NO-7GopSKjOM222RDwGqqrt-pjWDDhFVcfka8PnOdP2ZamDLYLg9e8Ceh662zvqbdjN1CHRz4WdFwzhhWNGppft9FIgbjR_Ey_KT9"/>
+<div class="absolute -bottom-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-2 rounded-lg neo-brutalist-border neo-brutalist-shadow font-headline-md text-headline-md rotate-[-3deg]">
+                #BazaarChallenge
+            </div>
+</section>
+<!-- Story Dialogue Bubble -->
+<section class="bg-surface-container-lowest p-6 rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow relative mt-4">
+<div class="absolute -top-3 -left-3 bg-primary-container text-on-primary-container w-8 h-8 flex items-center justify-center rounded-full neo-brutalist-border neo-brutalist-shadow z-10">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface">
+                "Arre wah! Raja ji bazaar aaye hain, par bade confused hain. Raja ji soch rahe hain sabse sasti cheez kahan milegi!"
+            </p>
+</section>
+<!-- Bazaar Catalog -->
+<section class="flex flex-col gap-4 mt-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-2 inline-block border-b-[3px] border-on-surface pb-1">Bazaar Catalog</h2>
+<!-- Item Card 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow p-4 flex items-center justify-between gap-4">
+<div class="w-12 h-12 bg-primary-container rounded-lg neo-brutalist-border flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container">nutrition</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Raja Ji's Mangoes</h3>
+<p class="text-sm text-on-surface-variant mt-1">(Per bucket)</p>
+</div>
+<div class="bg-surface-variant px-3 py-1 rounded neo-brutalist-border font-headline-md text-headline-md">
+                    ₹450
+                </div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow p-4 flex items-center justify-between gap-4">
+<div class="w-12 h-12 bg-tertiary-container rounded-lg neo-brutalist-border flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-container">diamond</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Payal Palace</h3>
+<p class="text-sm text-on-surface-variant mt-1">(Silver Anklets)</p>
+</div>
+<div class="bg-surface-variant px-3 py-1 rounded neo-brutalist-border font-headline-md text-headline-md">
+                    ₹1,200
+                </div>
+</div>
+<!-- Item Card 3 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow p-4 flex items-center justify-between gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-lg neo-brutalist-border flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">local_fire_department</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Spice Bazaar</h3>
+<p class="text-sm text-on-surface-variant mt-1">(Aromatic Spices)</p>
+</div>
+<div class="bg-surface-variant px-3 py-1 rounded neo-brutalist-border font-headline-md text-headline-md">
+                    ₹85
+                </div>
+</div>
+</section>
+<!-- Interactive Mission Block -->
+<section class="bg-secondary-container p-6 rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow mt-4 mb-8 border-dashed border-[3px]">
+<div class="flex items-start gap-3 mb-4">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl mt-1">target</span>
+<h3 class="font-headline-md text-headline-md text-on-secondary-container leading-tight">
+                    Help Raja Ji find the MAXIMUM and MINIMUM price items to win the bazaar challenge!
+                </h3>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<button class="bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 px-4 rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow neo-brutalist-interactive transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">trending_up</span>
+                    Select Max
+                </button>
+<button class="bg-surface-container-lowest text-on-surface font-label-lg text-label-lg py-3 px-4 rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow neo-brutalist-interactive transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">trending_down</span>
+                    Select Min
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 border-t-3 border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] neo-brutalist-border flex justify-between items-center px-margin-mobile py-6 bg-surface dark:bg-surface-dim">
+<!-- Pichla (Inactive state from JSON) -->
+<button class="flex flex-row items-center gap-2 text-on-surface-variant border-3 border-on-surface bg-surface-container-low px-4 py-2 rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-label-lg text-label-lg neo-brutalist-border">
+<span class="material-symbols-outlined">chevron_left</span>
+<span>Pichla</span>
+</button>
+<!-- Agle page pe (Active state from JSON - assumes moving forward is primary action) -->
+<button class="flex flex-row items-center gap-2 bg-primary-container text-on-primary-container border-3 border-on-surface px-4 py-2 rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-label-lg text-label-lg neo-brutalist-border">
+<span>Agle page pe</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', function() {
+                this.classList.add('translate-x-1', 'translate-y-1');
+                this.style.boxShadow = 'none';
+            });
+            btn.addEventListener('mouseup', function() {
+                this.classList.remove('translate-x-1', 'translate-y-1');
+                // Reset shadow if it had one based on classes
+                if(this.classList.contains('shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]') || this.classList.contains('neo-brutalist-shadow')) {
+                    this.style.boxShadow = ''; 
+                }
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.classList.remove('translate-x-1', 'translate-y-1');
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body></html>

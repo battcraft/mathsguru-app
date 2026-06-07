@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", system-ui, sans-serif;
+  
+  /* Desi Street-Pop Neo-Brutalist — Exact Stitch Tokens */
+  --color-brand-bg: #fbf9f3;
+  --color-brand-on-bg: #1b1c19;
+  --color-brand-primary: #a04100;
+  --color-brand-primary-container: #ff6b00;
+  --color-brand-on-primary: #ffffff;
+  --color-brand-on-primary-container: #572000;
+  --color-brand-secondary: #006d38;
+  --color-brand-secondary-container: #63ff9d;
+  --color-brand-on-secondary: #ffffff;
+  --color-brand-on-secondary-container: #00743c;
+  --color-brand-tertiary: #ba005b;
+  --color-brand-tertiary-container: #ff6096;
+  --color-brand-on-tertiary: #ffffff;
+  --color-brand-on-tertiary-container: #67002f;
+  --color-brand-primary-fixed: #ffdbcc;
+  --color-brand-primary-fixed-dim: #ffb693;
+  --color-brand-on-primary-fixed: #351000;
+  --color-brand-on-primary-fixed-variant: #7a3000;
+  --color-brand-secondary-fixed: #63ff9d;
+  --color-brand-secondary-fixed-dim: #40e183;
+  --color-brand-on-secondary-fixed: #00210d;
+  --color-brand-on-secondary-fixed-variant: #005229;
+  --color-brand-surface: #fbf9f3;
+  --color-brand-surface-container: #f0eee8;
+  --color-brand-surface-container-high: #eae8e2;
+  --color-brand-surface-container-low: #f5f3ee;
+  --color-brand-surface-container-lowest: #ffffff;
+  --color-brand-on-surface: #1b1c19;
+  --color-brand-on-surface-variant: #5a4136;
+  --color-brand-surface-variant: #e4e2dd;
+  --color-brand-outline: #8e7164;
+  --color-brand-outline-variant: #e2bfb0;
+  --color-brand-inverse-surface: #30312d;
+  --color-brand-inverse-on-surface: #f2f1eb;
+  --color-brand-inverse-primary: #ffb693;
+}
+
+:root {
+  /* Desi Street-Pop Theme Variables — Exact Stitch Match */
+  --mango: #ff6b00;
+  --nimbu: #006d38;
+  --green: #006d38;
+  --green-light: #63ff9d;
+  --pink: #ba005b;
+  --pink-light: #ff6096;
+  --bg-warm: #fbf9f3;
+  --surface: #f0eee8;
+  --surface-high: #eae8e2;
+  --surface-low: #f5f3ee;
+  --surface-lowest: #ffffff;
+  --yellow-light: #ffdbcc;
+  --black: #1b1c19;
+  --on-surface: #1b1c19;
+  --on-surface-variant: #5a4136;
+  --outline: #8e7164;
+  --outline-variant: #e2bfb0;
+}
+
+/* Neo-Brutalist shadow classes */
+.neo-brutal-shadow {
+  box-shadow: 4px 4px 0px var(--black);
+  transition: all 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.neo-brutal-shadow-active {
+  box-shadow: 0px 0px 0px var(--black);
+  transform: translate(4px, 4px);
+}
+
+.neo-brutal-btn-hover:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px var(--black);
+}
+
+.neo-brutal-btn-hover:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--black);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf9f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff6b00;
+  border-radius: 3px;
+}
+
+/* Global focus styling */
+*:focus {
+  outline: none;
+}
+
+/* Iframe styles for screen viewer */
+.screen-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+.progress-pill {
+  position: relative;
+}

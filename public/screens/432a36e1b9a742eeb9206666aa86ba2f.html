@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lines in the City - Ganit Pop</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px #1a1c1c;
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px #1a1c1c;
+        }
+        .graph-bg {
+            background-image: radial-gradient(#dadada 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen relative graph-bg">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full sticky top-0 z-50 border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit w-full">
+<button class="flex items-center justify-center p-2 rounded-full hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform text-on-surface dark:text-on-surface-variant">
+<span class="material-symbols-outlined text-headline-md font-headline-md">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary uppercase tracking-tighter text-center flex-1 pr-10">Ganit Pop</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile md:px-margin-desktop pt-8 pb-32 max-w-4xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10 text-center md:text-left bg-surface-container-lowest border-border-width border-on-surface neo-shadow p-6 rounded-DEFAULT transform -rotate-1 hover:rotate-0 transition-transform">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-3">Lines in the City</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Dekho apne aas-paas, geometry chhipi hai har jagah! The city is just a giant blueprint. Let's find some math in the wild.</p>
+</div>
+<!-- Concept Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1: Parallel Lines -->
+<article class="bg-surface-container-lowest border-border-width border-on-surface neo-shadow rounded-DEFAULT overflow-hidden group hover:-translate-y-1 hover:-translate-x-1 hover:neo-shadow-lg transition-all">
+<div class="relative h-[240px] w-full border-b-[3px] border-on-surface bg-surface-dim">
+<img alt="Railway tracks" class="w-full h-full object-cover grayscale opacity-80" data-alt="A high-contrast, stark photograph of train tracks converging in the distance on a bright day. The urban setting is raw and industrial, shot in a Neo-Brutalist style with harsh sunlight creating deep, solid shadows. The colors are muted, relying on concrete grays and rusted browns, providing a perfect canvas for bright pink geometry overlays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa12zBy9tISDYEeKX6spNK4mUoIEstm8lfQmRfPAkgaWqVHRhZoCXpXG5VLiijwj2mdqCEcN_LagPoEvlEZ4Dn4gXIzSnxWL22n-tJIexEeYkT1nCjX9FuwfzTowuo9UPCeir3GbweK8lfMvWpmt3rDvaeVqUmKI8ZV_fGjR7F67S00qxgh7874V5yKA6y_VtUm23SQhCJaGMnAy4RaMnPQnoGqxAHMd77LskZMsMmIHIxrRX_3EaAXfqDeI1ww1N_usPsZ3Z8RwBL"/>
+<!-- Neon Geometry Overlays -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+<!-- Left track line -->
+<div class="absolute w-[6px] h-[120%] bg-primary-container shadow-[2px_2px_0px_0px_#1a1c1c] left-[35%] top-[-10%] rotate-[15deg]"></div>
+<!-- Right track line -->
+<div class="absolute w-[6px] h-[120%] bg-primary-container shadow-[2px_2px_0px_0px_#1a1c1c] right-[35%] top-[-10%] -rotate-[15deg]"></div>
+<!-- Measurement annotation -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-surface border-border-width border-on-surface px-3 py-1 font-label-bold text-label-bold flex items-center gap-1 shadow-[2px_2px_0px_0px_#1a1c1c]">
+<span class="material-symbols-outlined text-[16px]">straighten</span> Distance = Constant
+                        </div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-3 h-3 bg-secondary-container border-2 border-on-surface rounded-full"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Parallel Lines</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Yeh tracks kabhi nahi milte, hamesha ek doosre ke saath chalte hain. Just like your two favorite parallel lines. Unke beech ka distance hamesha same rehta hai.</p>
+</div>
+</article>
+<!-- Card 2: Transversals -->
+<article class="bg-surface-container-lowest border-border-width border-on-surface neo-shadow rounded-DEFAULT overflow-hidden group hover:-translate-y-1 hover:-translate-x-1 hover:neo-shadow-lg transition-all">
+<div class="relative h-[240px] w-full border-b-[3px] border-on-surface bg-surface-dim">
+<img alt="Zebra crossing" class="w-full h-full object-cover grayscale opacity-80" data-alt="A top-down, high-contrast photograph of a freshly painted white zebra crossing on black asphalt in a busy city. The lighting is bright and flat, creating a graphic, almost blueprint-like quality. The urban street scene is raw and structural, fitting a Neo-Brutalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5VjKkf7uGYIGmdlnLVG_VFgiIO5QeOc1NY5gmyZa6E6j17qyk5s3M9ah7on57pxptxqAoGIqtMXXp54-pWX-pvgOW7-4NrGn34ie3CtLvU47oSjfnH58MVL5VNnmnsoBmhKwHapQxGbOaHH2FzL2PuqNAiZXnJpCvFVvc3u_YKBLFLDzz2fTd0A87BzqzRxxn4wgSoSKVOd_bEaaC9ylI0BxwMTIXz4eGS6uL02nrx6zMVggDg5SpJZ9KA2-DZVdqKQIAVAMIwhvS"/>
+<!-- Neon Geometry Overlays -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+<!-- Parallel crossing lines -->
+<div class="absolute h-[6px] w-[80%] bg-primary-container shadow-[2px_2px_0px_0px_#1a1c1c] left-[10%] top-[30%]"></div>
+<div class="absolute h-[6px] w-[80%] bg-primary-container shadow-[2px_2px_0px_0px_#1a1c1c] left-[10%] top-[60%]"></div>
+<!-- Transversal line -->
+<div class="absolute w-[6px] h-[140%] bg-secondary-container shadow-[2px_2px_0px_0px_#1a1c1c] left-[40%] top-[-20%] rotate-[25deg]"></div>
+<!-- Angle marker -->
+<div class="absolute top-[32%] left-[48%] w-6 h-6 border-b-[3px] border-r-[3px] border-primary rounded-br-full"></div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-3 h-3 bg-tertiary-container border-2 border-on-surface rounded-full"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Transversals</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Zebra crossing ki parallel lines ko jab ek line diagonally cut karti hai, toh woh transversal ban jaati hai. Look at all those alternate angles forming!</p>
+</div>
+</article>
+<!-- Card 3: Perpendicular -->
+<article class="bg-surface-container-lowest border-border-width border-on-surface neo-shadow rounded-DEFAULT overflow-hidden md:col-span-2 group hover:-translate-y-1 hover:-translate-x-1 hover:neo-shadow-lg transition-all">
+<div class="relative h-[240px] md:h-[300px] w-full border-b-[3px] border-on-surface bg-surface-dim">
+<img alt="Building architecture" class="w-full h-full object-cover grayscale opacity-80" data-alt="A sharp, low-angle photograph of a modern, brutalist concrete building corner against a clear blue sky. The architectural lines are rigid and perfectly straight, emphasizing pure geometry. High contrast lighting creates solid black shadows, defining the 90-degree angles perfectly in a minimal, structural setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbnzJqT6wWJD3fHclUI28Tte1fVzy71zCxGzQOYWwuyjUUFof3kQWDm3a7hy9Qq3UYGLPeiMeTbn7fIPKkWXe2d9lNjH_XONG1EbUkP8SFdr_WSSZDKvvnGDt2IRI4dIvO5wPujLoVM-58L6Io2XBWoMoYxjOCeUPexNfkj27uiNI1kfJRaC87QWkZdtGyWrT98o7W3xmj-SquDNaXlkGl0l_SyA5-6J9uM7eE91V5pl9m2EXW7Ls5vjrzPl8J_nvvElMEP2W7vjE4"/>
+<!-- Neon Geometry Overlays -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none flex items-center justify-center">
+<div class="relative w-[150px] h-[150px]">
+<!-- Vertical -->
+<div class="absolute w-[8px] h-full bg-primary-container shadow-[2px_2px_0px_0px_#1a1c1c] left-0 top-0"></div>
+<!-- Horizontal -->
+<div class="absolute h-[8px] w-full bg-primary-container shadow-[2px_2px_0px_0px_#1a1c1c] left-0 bottom-0"></div>
+<!-- 90 deg square -->
+<div class="absolute bottom-[8px] left-[8px] w-8 h-8 border-t-[3px] border-r-[3px] border-primary-container flex items-center justify-center bg-secondary/20">
+<span class="font-label-bold text-[10px] text-on-surface bg-surface border-[2px] border-on-surface px-1">90°</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5 bg-surface-container-lowest flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-3 h-3 bg-primary border-2 border-on-surface rounded-full"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Perpendicular Lines</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Buildings sidhi khadi hain kyunki base ke saath exact 90-degree angle banati hain. Ekdum straight, no bending! Isko kehte hain perpendicular intersection.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container border-[3px] border-on-surface px-6 py-3 font-label-bold text-label-bold neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none whitespace-nowrap">
+                        Take a Quiz
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface dark:border-on-surface-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] flex justify-around items-center h-20 px-margin-mobile bg-surface dark:bg-surface-container-high md:hidden">
+<!-- Home (Inactive) -->
+<a class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<!-- Chat (Inactive) -->
+<a class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<!-- Quiz (Inactive) -->
+<a class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<!-- Story (Active) -->
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary border-[3px] border-on-surface dark:border-on-surface-variant px-4 py-1 rounded-lg flex flex-col items-center gap-1 active:scale-95 transition-transform shadow-[2px_2px_0px_0px_#1a1c1c]" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<!-- Desktop Navigation Spacer -->
+<div class="hidden md:flex justify-center items-center h-20 w-full fixed bottom-0 bg-surface border-t-[3px] border-on-surface z-40">
+<p class="font-label-bold text-on-surface-variant uppercase tracking-widest">Ganit Pop Learning Environment</p>
+</div>
+</body></html>

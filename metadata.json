@@ -1,0 +1,6 @@
+{
+  "name": "Sabse Chhota Kaun?",
+  "description": "An interactive, Desi Street-Pop themed Math Quiz app to learn and practice comparisons.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

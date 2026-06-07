@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lines in Space - Ganit Dost</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-dot-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #dadada 2px, transparent 0);
+            background-size: 32px 32px;
+        }
+        /* Hide scrollbar for bento scroll if needed, though we aim for fit */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f9f9f9; border-left: 3px solid black; }
+        ::-webkit-scrollbar-thumb { background: #b40067; border: 3px solid black; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background bg-dot-pattern text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary selection:text-on-primary relative">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-gutter">
+<!-- Back Action mapped to TopAppBar's leading intent for a sub-page -->
+<button class="w-10 h-10 flex items-center justify-center border-border-width border-black bg-surface hover:bg-surface-container-high shadow-[2px_2px_0px_#1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rounded-DEFAULT text-on-surface">
+<span class="material-symbols-outlined font-bold">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed uppercase tracking-tight">Ganit Dost</h1>
+</div>
+<div class="flex items-center">
+<button class="w-10 h-10 flex items-center justify-center border-border-width border-black bg-secondary-container text-on-secondary-container hover:bg-surface-container-high shadow-[2px_2px_0px_#1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rounded-DEFAULT">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop py-gutter md:py-margin-desktop flex flex-col gap-margin-desktop">
+<!-- Header Section -->
+<section class="flex flex-col gap-unit items-start">
+<div class="flex gap-2 mb-2">
+<span class="bg-primary-container text-on-primary-container border-border-width border-black px-3 py-1 font-label-bold text-label-bold uppercase tracking-wider rounded-DEFAULT shadow-[2px_2px_0px_#1A1A1A]">Expert Module</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed border-border-width border-black px-3 py-1 font-label-bold text-label-bold uppercase tracking-wider rounded-DEFAULT shadow-[2px_2px_0px_#1A1A1A]">Level 9</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl font-extrabold text-on-background">Lines in Space</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-border-width border-primary pl-4 py-1 bg-surface-container-highest/50">
+                Forget flat paper. Discover how geometric lines behave when wrapped around a sphere, mapping the true geometry of our planet and the cosmos.
+            </p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter md:gap-margin-desktop">
+<!-- Hero 3D Visual (Spans massive area) -->
+<div class="md:col-span-8 bg-surface-container-lowest border-border-width border-black shadow-[4px_4px_0px_#1A1A1A] rounded-xl overflow-hidden relative group min-h-[400px] flex flex-col">
+<!-- Mac-like brutalist window header -->
+<div class="h-10 border-b-border-width border-black bg-surface-container flex items-center px-4 gap-2">
+<div class="w-3 h-3 rounded-full bg-error border-[2px] border-black"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim border-[2px] border-black"></div>
+<div class="w-3 h-3 rounded-full bg-[#00b454] border-[2px] border-black"></div>
+<span class="ml-auto font-label-bold text-label-bold text-on-surface-variant font-mono">sim_v3.geo</span>
+</div>
+<div class="relative flex-grow w-full h-full bg-inverse-surface flex items-center justify-center p-4">
+<img alt="3D Earth Visual" class="w-full h-full object-cover opacity-80 mix-blend-screen" data-alt="A striking, high-contrast 3D visualization of Earth rendered in a neo-brutalist digital style against a stark dark void. Vibrant, glowing neon pink and mango orange geometric lines intersect and travel across the planet's curved surface, mapping complex 3D non-Euclidean geometry and orbital paths. The visual feels tactile and structural, with sharp graphic overlays indicating latitude and longitude grids in bold white lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2aKIRVkMHZ5wMXVALJ_6jdu7byQE8LpMIMmfLH4O3SeZ4q8u1TtJUPPnfXTdwQsJ6g-6z477wA-rkiC1oAjf6a_X0VVcp1Z7t8-NmGUt-Hg3ejdF86jMcfXTP2lf3Vb3ZGkl0I-EajHjAetb60VJMA88x6jqxS_go2o8HaW2xoG5Rbeq4a0paeJ42PxOH8rO0Tfnbh_WprFFGGQYMjx7o5nFhcqB1NwoQAZipkFZEvKSWUu_vU2rfBfH57ig7cka36X8bX-NacD3z"/>
+<!-- Overlay UI elements indicating "Lines" -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<svg class="w-full max-w-md h-auto opacity-90 drop-shadow-[2px_2px_0px_#000]" viewbox="0 0 100 100">
+<!-- Geodesic arc -->
+<path d="M 20 50 Q 50 10 80 50" fill="none" stroke="#b40067" stroke-dasharray="4 2" stroke-width="2"></path>
+<circle cx="20" cy="50" fill="#f88400" r="3" stroke="#000" stroke-width="1"></circle>
+<circle cx="80" cy="50" fill="#f88400" r="3" stroke="#000" stroke-width="1"></circle>
+</svg>
+</div>
+<!-- Interactive FAB over the visual -->
+<button class="absolute bottom-gutter right-gutter bg-secondary-container text-on-secondary-container border-border-width border-black p-4 rounded-full shadow-[4px_4px_0px_#1A1A1A] hover:bg-tertiary-fixed transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none flex items-center justify-center group-hover:scale-110 z-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 32px;">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Explanatory Stack (Right column) -->
+<div class="md:col-span-4 flex flex-col gap-gutter md:gap-margin-desktop">
+<!-- Card 1: Non-Euclidean -->
+<article class="bg-primary-fixed border-border-width border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg p-gutter flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary border-l-border-width border-b-border-width border-black rounded-bl-xl opacity-20 pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">public</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-primary-fixed">Spherical Geometry</h3>
+</div>
+<div class="w-full h-[3px] bg-black mb-4"></div>
+<p class="font-body-md text-body-md text-on-surface mb-4">
+                        On a flat plane, the shortest distance between two points is a straight line. On a sphere, it's a curve called a <strong>Geodesic</strong>. Parallel lines eventually intersect!
+                    </p>
+<ul class="space-y-2 mt-auto">
+<li class="flex items-center gap-2 font-label-bold text-label-bold">
+<div class="w-2 h-2 bg-black rounded-full"></div> Straight = Curved
+                        </li>
+<li class="flex items-center gap-2 font-label-bold text-label-bold">
+<div class="w-2 h-2 bg-black rounded-full"></div> Triangles &gt; 180°
+                        </li>
+</ul>
+</article>
+<!-- Card 2: Astronomy Application -->
+<article class="bg-surface border-border-width border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg p-gutter flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Orbital Mechanics</h3>
+</div>
+<div class="w-full h-[3px] bg-black mb-4"></div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Satellites don't fly in 'straight' lines; they fall continuously around the curve of the Earth, following a geodesic path shaped by gravity.
+                    </p>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary border-border-width border-black py-3 font-label-bold text-label-bold uppercase tracking-wider shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-tint transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none flex items-center justify-center gap-2 rounded-DEFAULT">
+                            Simulate Orbit
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+<!-- Definition Block / Footer area of content -->
+<section class="bg-surface-container-highest border-border-width border-black shadow-[4px_4px_0px_#1A1A1A] p-gutter md:p-margin-desktop rounded-xl flex flex-col md:flex-row items-center gap-margin-desktop mt-4">
+<div class="w-24 h-24 shrink-0 bg-secondary-container border-border-width border-black rounded-full flex items-center justify-center shadow-[inset_4px_4px_0px_rgba(255,255,255,0.4)]">
+<span class="material-symbols-outlined text-[48px] text-on-secondary-container">architecture</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface mb-2">The Geodesic Principle</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Whether determining airplane flight paths or calculating satellite trajectories, understanding non-Euclidean lines is essential. The "Great Circle" path is the mathematically proven shortest route across our planet's surface.
+                </p>
+</div>
+</section>
+</main>
+</body></html>

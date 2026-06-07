@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti | Approximation in the Kitchen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-border {
+            border: 3px solid #1a1c1c;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 neo-border rounded-full overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD047IQ98qGUyFI0GCVTH7mzYVOWBtNqhu89EReP8H3tDtzWVFv8d__cxS-juxopMyTF3oZdBXyKp2cv7TOoZ5Vq-KXj8l_wW6uu-wVbxkG1jZmawZpk2lCiGi7tWIGbHLPcvn6NcO1lezoYXQZ1LR4mgDXvKT_ESWA22wO1HoS2EDqFG-cxkqjzRkVBiplcb73gDagoE-OXcaP38zatfu5rqfyx-ZujaR-wJkdozUm5RNT1UvXzzr_bCaK-6Gjd53uYe39TiTxYuQI"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">Math-Masti</h1>
+</div>
+<button class="bg-tertiary-fixed neo-border px-3 py-1 font-label-bold text-label-bold flex items-center gap-1 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px]">
+            12 🔥
+        </button>
+</header>
+<main class="max-w-4xl mx-auto px-margin-mobile mt-8 space-y-8">
+<!-- Hero Section: Grandma & Quote -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="relative group">
+<div class="neo-border bg-white rounded-xl overflow-hidden neo-shadow-lg transform -rotate-1 transition-transform group-hover:rotate-0">
+<img class="w-full aspect-square object-cover" data-alt="A warm, vibrant neo-brutalist illustration of a friendly Indian grandmother in a colorful kitchen, wearing a traditional saree and an apron. She is playfully holding a milk packet and a large stainless steel vessel. The kitchen is filled with geometric patterns, bright Gulabi pink and Mango yellow accents, and sharp black outlines. The lighting is bright and cheerful, emphasizing a tactile, sticker-like aesthetic with heavy drop shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACm5cn6rdpUC1-w_J6DOuWq8yItmH9xSRcsluj5lF6ooAp2FP6O3P4JKe4YN_GNomPdQOMEkqpEhedT19FoCwEkxUAsxbG4XoxvC7F_1-ehXlRNKoK6cqdBXjecieYVRKuhYwfNRxZ75vx2OmUPn58UDXBzW6RVI8aGG1SAAG0JrPI1izhJyApWQard--3U_hFoJO84g-OXV-k4nEetSxOMNSCya2Hw13dWhwoA3YEVfzrorfLZuMn7B7n5Y59aNxYGw8dpcrNzU3t"/>
+</div>
+<!-- Speech Bubble -->
+<div class="absolute -top-6 -right-4 md:-right-8 bg-secondary-container neo-border p-4 neo-shadow rounded-2xl max-w-[240px] z-10">
+<p class="font-label-bold text-on-secondary-container leading-tight">
+                        "Exact 973ml nahi, lagbhag 1 litre doodh daalo!"
+                    </p>
+<div class="absolute -bottom-3 left-8 w-6 h-6 bg-secondary-container neo-border border-t-0 border-r-0 rotate-45"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-primary-container text-on-primary-container neo-border p-2 inline-block px-4 -rotate-2">
+<span class="font-headline-md text-headline-md">Approximation in the Kitchen</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                    Andaza lagana seekho boss.
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Math isn't just in textbooks; it's in the chai your Dadi makes! Rounding helps us handle big numbers without the headache.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary neo-border neo-shadow px-6 py-3 text-white font-label-bold text-label-bold flex items-center gap-2 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+<span class="material-symbols-outlined">play_circle</span> Start Learning
+                    </button>
+</div>
+</div>
+</section>
+<!-- The Concept Explainer: Bento Style -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: The Rule -->
+<div class="md:col-span-2 bg-surface-container-lowest neo-border neo-shadow p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary font-bold">straighten</span>
+<h3 class="font-headline-md text-headline-md">The 1000 Rule</h3>
+</div>
+<p class="font-body-md text-body-md mb-6">
+                        When rounding to the nearest 1000, we look at the <strong class="text-secondary">hundreds place</strong>. 
+                        If it's 500 or more, we jump UP. If it's less than 500, we stay DOWN.
+                    </p>
+</div>
+<div class="bg-surface-container neo-border p-4 relative overflow-hidden">
+<div class="flex justify-between items-end h-24 gap-2">
+<div class="w-1/3 bg-outline-variant neo-border h-12 flex items-center justify-center font-label-bold">0</div>
+<div class="w-[3px] h-full bg-on-surface relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-label-bold text-primary">973</div>
+<div class="w-4 h-4 bg-primary rounded-full absolute top-0 left-1/2 -translate-x-1/2 neo-border"></div>
+</div>
+<div class="w-1/3 bg-tertiary-fixed neo-border h-full flex items-center justify-center font-label-bold">1000</div>
+</div>
+<p class="mt-4 text-center font-label-bold italic text-on-surface-variant">973 is much closer to 1000 than 0!</p>
+</div>
+</div>
+<!-- Card 2: Quick Tip -->
+<div class="bg-tertiary-container neo-border neo-shadow p-6 text-on-tertiary-container">
+<span class="material-symbols-outlined text-4xl mb-4">lightbulb</span>
+<h3 class="font-headline-md text-headline-md mb-2">Pro Tip</h3>
+<p class="font-body-md text-body-md">
+                    In the kitchen, 1000ml is exactly 1 Litre. So if the recipe says "approx 1L", anything from 900ml to 1100ml works perfectly!
+                </p>
+</div>
+<!-- Card 3: Interactive Visual -->
+<div class="md:col-span-3 bg-white neo-border neo-shadow overflow-hidden">
+<div class="bg-on-surface text-surface p-3 font-label-bold flex justify-between">
+<span>ROUNDING CALCULATOR</span>
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div class="p-8 flex flex-col md:flex-row items-center justify-around gap-8">
+<div class="text-center space-y-2">
+<span class="text-on-surface-variant font-label-bold">EXACT</span>
+<div class="neo-border bg-white p-4 text-4xl font-headline-xl text-on-surface neo-shadow">973 ml</div>
+</div>
+<div class="animate-bounce">
+<span class="material-symbols-outlined text-5xl text-primary">arrow_forward</span>
+</div>
+<div class="text-center space-y-2">
+<span class="text-on-surface-variant font-label-bold">ROUNDED (Nearest 1000)</span>
+<div class="neo-border bg-tertiary-fixed p-4 text-4xl font-headline-xl text-on-surface neo-shadow">1000 ml</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Detail Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8">
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 shrink-0 bg-secondary neo-border flex items-center justify-center text-white neo-shadow">1</div>
+<div>
+<h4 class="font-headline-md text-headline-md">Identify the Target</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Rounding to 1000? Focus on the three digits at the end.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 shrink-0 bg-primary neo-border flex items-center justify-center text-white neo-shadow">2</div>
+<div>
+<h4 class="font-headline-md text-headline-md">Check the Midway</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">500 is your divider. Anything above or equal to 500 rounds up.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high neo-border p-8 neo-shadow relative rotate-1">
+<span class="material-symbols-outlined absolute -top-4 -left-4 text-5xl text-secondary bg-white rounded-full p-2 neo-border">restaurant_menu</span>
+<p class="font-headline-md text-headline-md mb-4">Kitchen Approximation Guide</p>
+<ul class="space-y-2 font-label-bold text-on-surface">
+<li class="flex justify-between border-b-2 border-dashed border-outline p-2">
+<span>840g Sugar</span>
+<span class="text-primary">≈ 1000g (1kg)</span>
+</li>
+<li class="flex justify-between border-b-2 border-dashed border-outline p-2">
+<span>420ml Oil</span>
+<span class="text-secondary">≈ 0ml (Ignore!)</span>
+</li>
+<li class="flex justify-between border-b-2 border-dashed border-outline p-2">
+<span>1550ml Water</span>
+<span class="text-primary">≈ 2000ml (2L)</span>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined fill-icon">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the calculator
+        document.querySelectorAll('.neo-shadow').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translate(-2px, -2px)';
+                card.style.boxShadow = '6px 6px 0px 0px rgba(0,0,0,1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translate(0px, 0px)';
+                card.style.boxShadow = '4px 4px 0px 0px rgba(0,0,0,1)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry: Rekha &amp; Bindu - Line</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#5a3f48",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary-container": "#f88400",
+                        "inverse-primary": "#ffb0cb",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface": "#f9f9f9",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "primary-container": "#df0b81",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#c9a900",
+                        "outline-variant": "#e1bdc7",
+                        "on-secondary-container": "#5b2d00",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-fixed": "#2f1400",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "surface-container-low": "#f3f3f4",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#3e0020",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary": "#705d00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "primary": "#b40067",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "surface-container-highest": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "shadow-offset": "4px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "body-md": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-border { border: 3px solid #1a1c1c; }
+        .neo-brutalist-shadow { box-shadow: 4px 4px 0px #1a1c1c; }
+        .neo-brutalist-shadow-lg { box-shadow: 8px 8px 0px #1a1c1c; }
+        .neo-brutalist-active { transform: translate(4px, 4px); box-shadow: none !important; }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#1a1c1c 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-color: #f9f9f9;
+            opacity: 0.8;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen relative overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container flex flex-col md:flex-row">
+<!-- Background Grid -->
+<div class="fixed inset-0 bg-grid-pattern pointer-events-none -z-10"></div>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 z-40 md:hidden">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="font-label-bold text-label-bold flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full neo-brutalist-border">
+<span>5</span>
+<span aria-hidden="true">🔥</span>
+</div>
+</header>
+<!-- Side Navigation (Desktop) / BottomNavBar (Mobile) placeholder -->
+<!-- As an Explainer screen (linear/educational content), navigation might be suppressed, but we'll include it for context if it's a main module screen. We'll assume it's part of the learning flow and keep it visible for desktop, bottom for mobile. -->
+<nav class="hidden md:flex flex-col w-64 bg-surface border-r-[3px] border-on-surface shadow-[4px_0px_0px_#1B1C19] h-screen sticky top-0 shrink-0 z-40 p-margin-desktop gap-6">
+<div class="flex items-center gap-2 mb-8">
+<h1 class="font-headline-lg text-headline-lg text-primary">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="flex flex-col gap-4 flex-grow">
+<a class="flex items-center gap-3 font-label-bold text-label-bold p-3 rounded-lg hover:bg-secondary-container text-on-surface-variant transition-colors border-[3px] border-transparent hover:border-on-surface" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 font-label-bold text-label-bold p-3 rounded-lg hover:bg-secondary-container text-on-surface-variant transition-colors border-[3px] border-transparent hover:border-on-surface" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span>Chat</span>
+</a>
+<a class="flex items-center gap-3 font-label-bold text-label-bold p-3 rounded-lg hover:bg-secondary-container text-on-surface-variant transition-colors border-[3px] border-transparent hover:border-on-surface" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span>Quiz</span>
+</a>
+<a class="flex items-center gap-3 font-label-bold text-label-bold p-3 rounded-lg bg-primary-container text-on-primary-container border-[3px] border-on-surface neo-brutalist-shadow transition-transform active:translate-x-[4px] active:translate-y-[4px] active:shadow-none" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Story</span>
+</a>
+</div>
+<div class="font-label-bold text-label-bold flex items-center justify-between bg-surface-container-high p-4 rounded-lg neo-brutalist-border neo-brutalist-shadow mt-auto">
+<span>Daily Streak</span>
+<div class="flex items-center gap-1">
+<span>5</span>
+<span aria-hidden="true">🔥</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop pb-32 md:pb-margin-desktop flex flex-col gap-8 max-w-4xl mx-auto w-full">
+<!-- Header Section -->
+<section class="flex flex-col gap-2">
+<div class="inline-block bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-3 py-1 rounded-sm neo-brutalist-border self-start mb-2 uppercase tracking-wide">
+                Concept 2
+            </div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                Line: Jo Chalti hi Jaaye!
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">
+                A line is perfectly straight and extends forever in both directions. It has no thickness and no endpoints.
+            </p>
+</section>
+<!-- Interactive Diagram Card -->
+<section class="bg-surface-container-lowest neo-brutalist-border neo-brutalist-shadow rounded-xl overflow-hidden flex flex-col group transition-all hover:neo-brutalist-shadow-lg">
+<div class="border-b-[3px] border-on-surface bg-surface p-4 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="straight">straight</span>
+                    The Infinite Path
+                </h3>
+<div class="bg-surface-variant px-3 py-1 neo-brutalist-border rounded-full font-label-bold text-label-bold font-mono tracking-widest text-primary">
+                    ↔ AB
+                </div>
+</div>
+<div class="p-8 md:p-16 flex justify-center items-center relative min-h-[200px] bg-white">
+<!-- Grid background for the diagram -->
+<div class="absolute inset-0" style="background-image: linear-gradient(#e2e2e2 1px, transparent 1px), linear-gradient(90deg, #e2e2e2 1px, transparent 1px); background-size: 20px 20px; opacity: 0.5;"></div>
+<!-- The Line Graphic -->
+<div class="relative w-full max-w-md flex items-center z-10 group-hover:scale-105 transition-transform duration-500">
+<!-- Left Arrow -->
+<div class="w-0 h-0 border-t-[8px] border-t-transparent border-r-[16px] border-r-primary border-b-[8px] border-b-transparent animate-pulse"></div>
+<!-- The Line Body -->
+<div class="h-[6px] bg-primary flex-grow relative flex justify-between items-center px-8">
+<!-- Point A -->
+<div class="relative group/pointA">
+<div class="w-4 h-4 bg-primary rounded-full neo-brutalist-border absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+<span class="absolute -top-8 left-1/2 transform -translate-x-1/2 font-headline-md text-headline-md font-bold bg-white px-2 neo-brutalist-border rounded shadow-sm">A</span>
+</div>
+<!-- Point B -->
+<div class="relative group/pointB">
+<div class="w-4 h-4 bg-primary rounded-full neo-brutalist-border absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+<span class="absolute -top-8 left-1/2 transform -translate-x-1/2 font-headline-md text-headline-md font-bold bg-white px-2 neo-brutalist-border rounded shadow-sm">B</span>
+</div>
+</div>
+<!-- Right Arrow -->
+<div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-primary border-b-[8px] border-b-transparent animate-pulse delay-75"></div>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Examples & Thinking -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Real Life Example Card -->
+<section class="bg-surface-container-lowest neo-brutalist-border neo-brutalist-shadow rounded-xl flex flex-col h-full overflow-hidden">
+<div class="border-b-[3px] border-on-surface bg-secondary-container text-on-secondary-container p-4 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<h3 class="font-headline-md text-headline-md">Real-Life Example</h3>
+</div>
+<div class="relative aspect-video border-b-[3px] border-on-surface bg-surface-dim">
+<img alt="Endless Railway Tracks" class="w-full h-full object-cover" data-alt="A striking digital illustration in neo-brutalist style showing endless railway tracks converging at a distant vanishing point. The tracks are drawn with thick black geometric lines on a stark white and light gray background. Subtle accents of vibrant mango orange and gulabi pink highlight the parallel rails. The perspective is highly exaggerated to emphasize infinity, with a bold, flat, sticker-like aesthetic and solid drop shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYbc1NVb7_sxd--ya4GANe40V9wwqgbj3BSvk2KgKFKv3Qbq80if-ih4ZrFOlQ1QUkk0hSXrS3AaVDd2vVM3XOHlFiMjoIa4WIwoYB44kPByqIz1eRqMUgvyQGCc7iEZeBNO13jASK-ZUnxcyS3bwyBHJyL1sTODudQWVWVpfIRXcCJXlrMzzVm9jfOw_Oi-Cu_QWUYEHJcrA43QWy07ACfDEEs9Vme29Q4tHFDoWIjNuDZovQNIQV6_eBEfSempUOgYs-HN8gdAlb"/>
+<div class="absolute inset-0 border-[6px] border-transparent hover:border-primary transition-colors pointer-events-none mix-blend-multiply"></div>
+</div>
+<div class="p-6 bg-white flex-grow">
+<h4 class="font-headline-md text-headline-md mb-2">Endless Railway Tracks</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Just like a mathematical line, railway tracks seem to go on forever in both directions without ever crossing each other.
+                    </p>
+</div>
+</section>
+<!-- Think Box (Socho) -->
+<section class="bg-tertiary-fixed neo-brutalist-border neo-brutalist-shadow rounded-xl flex flex-col h-full p-6 relative overflow-hidden group">
+<!-- Decorative background elements -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+<div class="flex items-start gap-4 z-10">
+<div class="bg-white p-3 rounded-full neo-brutalist-border shadow-[2px_2px_0px_#1a1c1c] flex-shrink-0 animate-bounce">
+<span class="material-symbols-outlined text-tertiary" data-icon="lightbulb" data-weight="fill">lightbulb</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-tertiary-container mb-2">Think Box (Socho)</h3>
+<p class="font-body-lg text-body-lg font-bold text-on-tertiary-container mt-4 p-4 bg-white/50 rounded-lg neo-brutalist-border">
+                            "Railway tracks parallel kyun hoti hain?"
+                        </p>
+<p class="font-body-md text-body-md text-on-tertiary-container/80 mt-4 italic">
+                            Think about what would happen to the train if the lines weren't perfectly straight and keeping the exact same distance apart!
+                        </p>
+</div>
+</div>
+<button class="mt-auto self-end bg-surface text-on-surface px-6 py-3 rounded-lg font-label-bold text-label-bold neo-brutalist-border shadow-[4px_4px_0px_#1a1c1c] hover:shadow-[2px_2px_0px_#1a1c1c] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center gap-2 mt-8 z-10">
+                    Reveal Answer
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</div>
+<!-- Navigation Buttons for Explainer Flow -->
+<div class="flex justify-between items-center mt-8 border-t-[3px] border-on-surface pt-8">
+<button class="bg-surface-variant text-on-surface px-6 py-3 rounded-lg font-label-bold text-label-bold neo-brutalist-border shadow-[4px_4px_0px_#1a1c1c] hover:bg-surface-container-high transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                Previous: Point
+            </button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-bold text-label-bold neo-brutalist-border shadow-[4px_4px_0px_#1a1c1c] hover:bg-primary-container transition-all flex items-center gap-2">
+                Next: Ray
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] flex justify-around items-center h-20 px-margin-mobile bg-surface md:hidden pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-[12px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-bold text-[12px] mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-[12px] mt-1">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-4 py-1 border-[3px] border-on-surface shadow-[2px_2px_0px_#1a1c1c]" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-[12px] mt-1">Story</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the Reveal Answer button
+        document.querySelector('.bg-tertiary-fixed button').addEventListener('click', function(e) {
+            const button = e.currentTarget;
+            button.innerHTML = `
+                <span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>
+                Thinking...
+            `;
+            setTimeout(() => {
+                button.innerHTML = `
+                    So wheels don't slip!
+                    <span class="material-symbols-outlined" data-icon="check">check</span>
+                `;
+                button.classList.replace('bg-surface', 'bg-secondary-container');
+                button.classList.replace('text-on-surface', 'text-on-secondary-container');
+            }, 800);
+        });
+    </script>
+</body></html>

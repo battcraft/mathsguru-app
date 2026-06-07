@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice: Ray Direction (Intermediate)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#5b2d00",
+                        "outline-variant": "#e1bdc7",
+                        "on-tertiary-container": "#4c3f00",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffd9e3",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#b80069",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "primary-container": "#df0b81",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary": "#b40067",
+                        "outline": "#8d6f78",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "tertiary": "#705d00",
+                        "secondary": "#924c00",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "on-surface-variant": "#5a3f48",
+                        "tertiary-container": "#c9a900",
+                        "on-background": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "shadow-offset": "4px",
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            /* 32px repeating dot grid */
+            background-image: radial-gradient(theme('colors.on-surface') 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        
+        .neo-shadow-active {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        
+        .neo-shadow-pressed {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+            transform: translate(4px, 4px);
+        }
+
+        .ray-line {
+            height: 3px;
+            background-color: theme('colors.on-surface');
+            position: relative;
+        }
+
+        .ray-point {
+            width: 12px;
+            height: 12px;
+            background-color: theme('colors.primary');
+            border: 3px solid theme('colors.on-surface');
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .ray-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0; 
+            height: 0; 
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid theme('colors.on-surface');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- TopAppBar (Suppressed for Task-Focused Activity) -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile md:px-margin-desktop py-unit">
+<button aria-label="Go Back" class="text-primary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform">
+<span class="material-symbols-outlined font-headline-md text-headline-md">arrow_back</span>
+</button>
+<div class="font-headline-lg text-headline-lg font-bold text-primary uppercase tracking-tighter">
+            Ganit Pop
+        </div>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow container mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col md:flex-row gap-8">
+<!-- Activity Canvas Area -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Instructions Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface neo-shadow p-6 rounded-lg">
+<div class="flex items-center gap-2 mb-4 border-b-[3px] border-on-surface pb-4">
+<span class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-3 py-1 border-[3px] border-on-surface rounded-full neo-shadow">Practice</span>
+<span class="font-headline-md text-headline-md text-on-surface">Ray Direction</span>
+</div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary mb-2">Arrow kis taraf ja raha hai?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Match the mathematical symbol to the correct visual representation of the ray.</p>
+</div>
+<!-- Visual Options Area (Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Option A -->
+<div class="bg-surface-container-highest border-[3px] border-on-surface neo-shadow p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:neo-shadow-active transition-shadow cursor-pointer draggable-target" data-target="A">
+<div class="text-on-surface-variant font-label-bold text-label-bold bg-surface border-[3px] border-on-surface px-2 py-1 absolute top-2 left-2">A</div>
+<div class="w-3/4 h-24 relative flex items-center justify-center">
+<!-- Ray Pointing Right -->
+<div class="ray-line w-full rotate-[-15deg]">
+<div class="ray-point left-0"></div>
+<div class="ray-arrow right-0 transform translate-x-1/2"></div>
+<span class="absolute top-[-24px] left-2 font-headline-md text-headline-md">P</span>
+<span class="absolute top-[-24px] right-2 font-headline-md text-headline-md">Q</span>
+</div>
+</div>
+</div>
+<!-- Option B -->
+<div class="bg-surface-container-highest border-[3px] border-on-surface neo-shadow p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:neo-shadow-active transition-shadow cursor-pointer draggable-target" data-target="B">
+<div class="text-on-surface-variant font-label-bold text-label-bold bg-surface border-[3px] border-on-surface px-2 py-1 absolute top-2 left-2">B</div>
+<div class="w-3/4 h-24 relative flex items-center justify-center">
+<!-- Ray Pointing Left -->
+<div class="ray-line w-full rotate-[15deg]">
+<div class="ray-point right-0"></div>
+<div class="ray-arrow left-0 transform translate-x-[-50%] rotate-180"></div>
+<span class="absolute top-[-24px] right-2 font-headline-md text-headline-md">X</span>
+<span class="absolute top-[-24px] left-2 font-headline-md text-headline-md">Y</span>
+</div>
+</div>
+</div>
+<!-- Option C -->
+<div class="bg-surface-container-highest border-[3px] border-on-surface neo-shadow p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:neo-shadow-active transition-shadow cursor-pointer draggable-target" data-target="C">
+<div class="text-on-surface-variant font-label-bold text-label-bold bg-surface border-[3px] border-on-surface px-2 py-1 absolute top-2 left-2">C</div>
+<div class="w-3/4 h-24 relative flex items-center justify-center">
+<!-- Ray Pointing Up -->
+<div class="ray-line w-full rotate-[-75deg]">
+<div class="ray-point left-0"></div>
+<div class="ray-arrow right-0 transform translate-x-1/2"></div>
+<span class="absolute top-[-24px] left-2 font-headline-md text-headline-md">M</span>
+<span class="absolute top-[-24px] right-2 font-headline-md text-headline-md">N</span>
+</div>
+</div>
+</div>
+<!-- Option D -->
+<div class="bg-surface-container-highest border-[3px] border-on-surface neo-shadow p-6 rounded-lg flex flex-col items-center justify-center gap-4 hover:neo-shadow-active transition-shadow cursor-pointer draggable-target" data-target="D">
+<div class="text-on-surface-variant font-label-bold text-label-bold bg-surface border-[3px] border-on-surface px-2 py-1 absolute top-2 left-2">D</div>
+<div class="w-3/4 h-24 relative flex items-center justify-center">
+<!-- Ray Pointing Down -->
+<div class="ray-line w-full rotate-[75deg]">
+<div class="ray-point left-0"></div>
+<div class="ray-arrow right-0 transform translate-x-1/2"></div>
+<span class="absolute top-2 left-4 font-headline-md text-headline-md">A</span>
+<span class="absolute top-2 right-4 font-headline-md text-headline-md">B</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Interaction Area -->
+<div class="w-full md:w-80 flex flex-col gap-6">
+<div class="bg-surface-container-lowest border-[3px] border-on-surface neo-shadow p-6 rounded-lg sticky top-24">
+<h2 class="font-headline-md text-headline-md border-b-[3px] border-on-surface pb-2 mb-4">Symbols to Match</h2>
+<p class="font-body-md text-body-md mb-6">Select a symbol below and tap the matching image.</p>
+<div class="flex flex-col gap-4">
+<!-- Draggable / Selectable Symbols -->
+<button class="bg-primary text-on-primary border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors active:neo-shadow-pressed">
+<span class="font-headline-md text-headline-md tracking-widest relative">
+                            PQ
+                            <span class="absolute -top-3 left-0 w-full flex justify-end">
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</span>
+</span>
+</button>
+<button class="bg-surface text-on-surface border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors active:neo-shadow-pressed">
+<span class="font-headline-md text-headline-md tracking-widest relative">
+                            YX
+                            <span class="absolute -top-3 left-0 w-full flex justify-end">
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</span>
+</span>
+</button>
+<button class="bg-surface text-on-surface border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors active:neo-shadow-pressed">
+<span class="font-headline-md text-headline-md tracking-widest relative">
+                            MN
+                            <span class="absolute -top-3 left-0 w-full flex justify-end">
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</span>
+</span>
+</button>
+<button class="bg-surface text-on-surface border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors active:neo-shadow-pressed">
+<span class="font-headline-md text-headline-md tracking-widest relative">
+                            AB
+                            <span class="absolute -top-3 left-0 w-full flex justify-end">
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</span>
+</span>
+</button>
+</div>
+<div class="mt-8 pt-4 border-t-[3px] border-on-surface">
+<button class="w-full bg-secondary-container text-on-secondary-container border-[3px] border-on-surface neo-shadow p-4 rounded-lg font-headline-md text-headline-md hover:bg-secondary hover:text-on-secondary transition-colors active:neo-shadow-pressed opacity-50 cursor-not-allowed">
+                        Check Answer
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Suppressed for Task-Focused Activity) -->
+<script>
+        // Lightweight interaction for visual feedback
+        document.querySelectorAll('.draggable-target').forEach(target => {
+            target.addEventListener('click', () => {
+                // Reset all
+                document.querySelectorAll('.draggable-target').forEach(t => {
+                    t.classList.remove('bg-outline-variant');
+                });
+                // Highlight selected
+                target.classList.add('bg-outline-variant');
+            });
+        });
+    </script>
+</body></html>

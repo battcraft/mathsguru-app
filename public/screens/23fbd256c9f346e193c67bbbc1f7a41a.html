@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Final Panga!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e7164",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-secondary-fixed-variant": "#005229",
+                        "secondary-fixed": "#63ff9d",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "inverse-surface": "#30312d",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary-fixed": "#ffd9e1",
+                        "secondary-fixed-dim": "#40e183",
+                        "surface": "#fbf9f3",
+                        "tertiary": "#ba005b",
+                        "primary": "#a04100",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fbf9f3",
+                        "inverse-primary": "#ffb693",
+                        "outline-variant": "#e2bfb0",
+                        "surface-container-high": "#eae8e2",
+                        "on-surface": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#67002f",
+                        "on-secondary-fixed": "#00210d",
+                        "tertiary-container": "#ff6096",
+                        "surface-container": "#f0eee8",
+                        "on-primary-fixed": "#351000",
+                        "background": "#fbf9f3",
+                        "on-surface-variant": "#5a4136",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-container": "#572000",
+                        "surface-dim": "#dbdad4",
+                        "primary-container": "#ff6b00",
+                        "inverse-on-surface": "#f2f1eb",
+                        "primary-fixed": "#ffdbcc",
+                        "on-background": "#1b1c19",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary": "#006d38",
+                        "on-tertiary-fixed": "#3f001a",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a04100",
+                        "secondary-container": "#63ff9d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow:active, .neo-shadow-active {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+            transform: translate(4px, 4px);
+        }
+        .neo-border {
+            border: 3px solid #1b1c19;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col md:max-w-md md:mx-auto md:border-x-4 md:border-on-background relative overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 bg-surface z-50 sticky top-0 border-b-3 border-on-background shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sports_kabaddi" style="font-variation-settings: 'FILL' 1;">sports_kabaddi</span>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary uppercase tracking-tighter">Decimal Duel</h1>
+</div>
+<button aria-label="Settings" class="flex items-center justify-center w-10 h-10 rounded-full neo-border neo-shadow-sm bg-surface-container hover:bg-primary-container hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col px-margin-mobile py-6 gap-6 relative z-10 pb-32">
+<!-- Stats & Progress -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-center gap-4">
+<div class="flex-1 flex items-center justify-center gap-2 bg-surface-container-highest neo-border neo-shadow rounded-DEFAULT p-3">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+<span class="font-headline-md text-headline-md text-on-surface">08:45</span>
+</div>
+<div class="flex-1 flex items-center justify-center gap-2 bg-surface-container-highest neo-border neo-shadow rounded-DEFAULT p-3">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="star">star</span>
+<span class="font-headline-md text-headline-md text-on-surface">450 <span class="font-body-md text-body-md">pts</span></span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Question 4 of 10</span>
+</div>
+<div class="w-full h-4 neo-border rounded-full bg-surface-variant overflow-hidden flex">
+<div class="h-full bg-secondary-container border-r-2 border-on-background" style="width: 10%;"></div>
+<div class="h-full bg-secondary-container border-r-2 border-on-background" style="width: 10%;"></div>
+<div class="h-full bg-secondary-container border-r-2 border-on-background" style="width: 10%;"></div>
+<div class="h-full bg-secondary-container border-r-2 border-on-background" style="width: 10%;"></div>
+<div class="h-full bg-transparent" style="width: 60%;"></div>
+</div>
+</div>
+</section>
+<!-- Question Card -->
+<section class="bg-surface-container-lowest neo-border neo-shadow rounded-xl p-6 flex flex-col gap-6 relative">
+<div class="absolute -top-4 -right-4 bg-tertiary-container text-on-tertiary-container font-label-lg text-label-lg px-4 py-2 rounded-full neo-border neo-shadow-sm rotate-12">
+                Final Panga!
+            </div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface pt-4">
+                Find the <span class="text-primary underline decoration-4 underline-offset-4">MAXIMUM</span> and <span class="text-tertiary-container underline decoration-4 underline-offset-4">RANGE</span> of this data set:
+            </h2>
+<div class="flex flex-wrap gap-3 justify-center items-center py-4 bg-surface-variant neo-border rounded-lg">
+<span class="bg-primary-fixed text-on-primary-fixed font-headline-md text-headline-md px-4 py-2 rounded-full neo-border neo-shadow-sm">45</span>
+<span class="bg-primary-fixed text-on-primary-fixed font-headline-md text-headline-md px-4 py-2 rounded-full neo-border neo-shadow-sm">12</span>
+<span class="bg-primary-fixed text-on-primary-fixed font-headline-md text-headline-md px-4 py-2 rounded-full neo-border neo-shadow-sm">89</span>
+<span class="bg-primary-fixed text-on-primary-fixed font-headline-md text-headline-md px-4 py-2 rounded-full neo-border neo-shadow-sm">23</span>
+<span class="bg-primary-fixed text-on-primary-fixed font-headline-md text-headline-md px-4 py-2 rounded-full neo-border neo-shadow-sm">5</span>
+</div>
+<!-- Answer Options -->
+<div class="flex flex-col gap-4 mt-2">
+<button class="w-full bg-surface text-left neo-border neo-shadow rounded-lg p-4 flex items-center gap-4 hover:bg-surface-container-low transition-colors group focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-variant neo-border rounded-full font-headline-md text-headline-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">A</span>
+<span class="font-body-lg text-body-lg font-bold">Max: 89, Range: 84</span>
+</button>
+<button class="w-full bg-surface text-left neo-border neo-shadow rounded-lg p-4 flex items-center gap-4 hover:bg-surface-container-low transition-colors group focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-variant neo-border rounded-full font-headline-md text-headline-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">B</span>
+<span class="font-body-lg text-body-lg font-bold">Max: 45, Range: 40</span>
+</button>
+<button class="w-full bg-surface text-left neo-border neo-shadow rounded-lg p-4 flex items-center gap-4 hover:bg-surface-container-low transition-colors group focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-variant neo-border rounded-full font-headline-md text-headline-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">C</span>
+<span class="font-body-lg text-body-lg font-bold">Max: 89, Range: 77</span>
+</button>
+<button class="w-full bg-surface text-left neo-border neo-shadow rounded-lg p-4 flex items-center gap-4 hover:bg-surface-container-low transition-colors group focus:outline-none focus:ring-4 focus:ring-secondary-container">
+<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-variant neo-border rounded-full font-headline-md text-headline-md group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">D</span>
+<span class="font-body-lg text-body-lg font-bold">Max: 89, Range: 44</span>
+</button>
+</div>
+</section>
+<!-- Guru Tip -->
+<section class="mt-4 flex items-start gap-4 p-4 bg-tertiary-fixed neo-border neo-shadow-sm rounded-xl relative">
+<div class="absolute -top-3 -left-3 w-12 h-12 bg-surface neo-border rounded-full flex items-center justify-center overflow-hidden">
+<img alt="MathsGuru Avatar" class="w-10 h-10" data-alt="A colorful, flat vector illustration of an avatar character's face, serving as a friendly 'MathsGuru'. The style is simple, playful, and fits perfectly within a vibrant, light-mode educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3eVAedyLRnlHUlLWKUVlwpLaz953SWAt4i-P3bavkoxb-qqLayk7Cnii22RfunlMagcTW_0KNrg3brrT6hScehazAeJRg3pnEQ69pD_G21G-dvDWaktmTzeV3gMBNb88frI971lKjnJtLq3KPtClefXJZ4Z4-r9xTJfgNGc7xMGqVAP8NSONGWa0F3iewXAISv7cRo0_s-SmnxZw834-Ri_r4X7mufVweoG1b5VrV5Wt-AVEl4z4DigFZf0o9-lMSsM5oSQsUTgLl"/>
+</div>
+<div class="ml-10 flex-1">
+<p class="font-label-lg text-label-lg text-on-tertiary-fixed uppercase mb-1">MathsGuru Bhaiya Says:</p>
+<p class="font-body-md text-body-md font-bold text-on-surface">Remember, the <span class="bg-surface px-1 neo-border rounded-sm text-sm">Range</span> is just the biggest number minus the smallest number. Find the extremes!</p>
+</div>
+</section>
+</main>
+<!-- Footer Action -->
+<div class="fixed bottom-0 left-0 w-full z-50 px-margin-mobile py-4 bg-surface/90 backdrop-blur-sm border-t-3 border-on-background md:max-w-md md:left-1/2 md:-translate-x-1/2">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-4 rounded-xl neo-border neo-shadow flex justify-center items-center gap-3 transition-transform focus:outline-none active:translate-y-1 active:translate-x-1 active:shadow-none">
+<span class="material-symbols-outlined" data-icon="swords" style="font-variation-settings: 'FILL' 1;">swords</span>
+            SUBMIT ATTACK
+        </button>
+</div>
+<script>
+        // Simple interaction for selecting an answer
+        document.querySelectorAll('button.group').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Reset all
+                document.querySelectorAll('button.group').forEach(b => {
+                    b.classList.remove('bg-secondary-container', 'ring-4', 'ring-on-background');
+                    b.classList.add('bg-surface');
+                    const letter = b.querySelector('span:first-child');
+                    letter.classList.remove('bg-primary-container', 'text-on-primary-container');
+                    letter.classList.add('bg-surface-variant');
+                });
+                
+                // Set active
+                this.classList.remove('bg-surface');
+                this.classList.add('bg-secondary-container', 'ring-4', 'ring-on-background');
+                const letter = this.querySelector('span:first-child');
+                letter.classList.remove('bg-surface-variant');
+                letter.classList.add('bg-primary-container', 'text-on-primary-container');
+            });
+        });
+    </script>
+</body></html>

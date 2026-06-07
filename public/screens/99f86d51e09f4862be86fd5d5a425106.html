@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mastery Summary | Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb693",
+                    "tertiary-container": "#ff6096",
+                    "primary-container": "#ff6b00",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8e7164",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad4",
+                    "background": "#fbf9f3",
+                    "surface-container-high": "#eae8e2",
+                    "on-primary-container": "#572000",
+                    "surface-container": "#f0eee8",
+                    "tertiary": "#ba005b",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "inverse-on-surface": "#f2f1eb",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "surface-bright": "#fbf9f3",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-variant": "#e4e2dd",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-surface": "#1b1c19",
+                    "secondary-fixed": "#63ff9d",
+                    "tertiary-fixed": "#ffd9e1",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-container": "#63ff9d",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "primary-fixed": "#ffdbcc",
+                    "outline-variant": "#e2bfb0",
+                    "secondary": "#006d38",
+                    "on-tertiary-fixed": "#3f001a",
+                    "surface": "#fbf9f3",
+                    "primary": "#a04100",
+                    "on-secondary-fixed-variant": "#005229",
+                    "on-tertiary-container": "#67002f",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-primary-fixed": "#351000",
+                    "on-surface-variant": "#5a4136"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max-width": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "label-lg": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .neo-shadow {
+        box-shadow: 4px 4px 0px #1A1A1A;
+      }
+      .neo-shadow-sm {
+        box-shadow: 2px 2px 0px #1A1A1A;
+      }
+      .active-press:active {
+        transform: translate(4px, 4px);
+        box-shadow: 0px 0px 0px #1A1A1A;
+      }
+      .active-press-sm:active {
+        transform: translate(2px, 2px);
+        box-shadow: 0px 0px 0px #1A1A1A;
+      }
+      body {
+        background-color: #fbf9f3;
+        color: #1b1c19;
+      }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 sticky top-0">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden neo-shadow-sm">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrItnauRkGytP0Lmo5REa_yz_kx8TJTA2RJ0vi4x_pcLzJ-sm6aJWYngFEKenOnjl5kxoLlRANffAtQHttkHPQ7fUuhj2Z1fL-FeoEIGAWwlpsABjBVnpkRqpBBKXoWdQWaRLhANJ5H6k08nRCrUQx2dERynKwmo-oRMSt6D7vNJ-GcHNNzbLS2EUyOrz7X0gRVsKNkkc0quDu3n14QrlHs-duM8PKxxlSes_mG6kS9IpnBd82N-ZTUgCmepKv9ixVgkv2XGPFzYRu"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-label-lg text-label-lg text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span> Home
+                </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-all" href="#">Chat</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-all" href="#">Quiz</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-all" href="#">Story</a>
+</nav>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold">12</span>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto max-w-[1000px] px-margin-mobile md:px-0 py-12">
+<!-- Mastery Hero Section -->
+<section class="flex flex-col items-center mb-16 text-center">
+<div class="relative mb-8">
+<!-- Accuracy Badge -->
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-secondary-container border-4 border-black flex flex-col items-center justify-center neo-shadow relative animate-bounce-subtle">
+<span class="material-symbols-outlined text-on-secondary-container text-6xl md:text-8xl mb-2" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h2 class="font-headline-xl text-headline-xl text-on-secondary-container">100%</h2>
+<p class="font-headline-md text-headline-md text-on-secondary-container uppercase tracking-widest">Mastery</p>
+<!-- Decorative Elements -->
+<div class="absolute -top-4 -right-4 bg-primary-container text-on-primary-container px-4 py-2 border-3 border-black neo-shadow -rotate-12 font-bold">TOP 1%</div>
+<div class="absolute -bottom-2 -left-6 bg-tertiary-container text-on-tertiary px-4 py-2 border-3 border-black neo-shadow rotate-12 font-bold">PERFECT!</div>
+</div>
+</div>
+<h3 class="font-headline-xl text-headline-xl mb-2">Shabaash! You nailed it.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">You've completely mastered <strong>Linear Equations</strong>. Your math game is stronger than a cup of cutting chai!</p>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Fastest Solve -->
+<div class="bg-surface-container-lowest border-3 border-black p-6 rounded-lg neo-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-primary-container rounded-lg border-3 border-black flex items-center justify-center mb-4 neo-shadow-sm">
+<span class="material-symbols-outlined text-white">timer</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">4.2s</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Fastest Solve</p>
+</div>
+<div class="mt-4 pt-4 border-t-3 border-black opacity-30">
+<p class="text-xs font-bold italic">Blink and you'll miss it!</p>
+</div>
+</div>
+<!-- Streak -->
+<div class="bg-surface-container-lowest border-3 border-black p-6 rounded-lg neo-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-secondary-container rounded-lg border-3 border-black flex items-center justify-center mb-4 neo-shadow-sm">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">15 Streak</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Correct Answers</p>
+</div>
+<div class="mt-4 pt-4 border-t-3 border-black opacity-30">
+<p class="text-xs font-bold italic">On fire like a Mumbai local!</p>
+</div>
+</div>
+<!-- XP Earned -->
+<div class="bg-surface-container-lowest border-3 border-black p-6 rounded-lg neo-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-tertiary-container rounded-lg border-3 border-black flex items-center justify-center mb-4 neo-shadow-sm">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-1">+450 XP</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Experience Earned</p>
+</div>
+<div class="mt-4 pt-4 border-t-3 border-black opacity-30">
+<p class="text-xs font-bold italic">Leveling up fast, Dost!</p>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="w-full md:w-auto px-10 py-5 bg-surface-container-lowest border-3 border-black rounded-lg neo-shadow flex items-center justify-center gap-3 active-press transition-all font-headline-md text-headline-md">
+<span class="material-symbols-outlined">share</span>
+                Brag to your friends
+            </button>
+<button class="w-full md:w-auto px-10 py-5 bg-primary-container text-on-primary border-3 border-black rounded-lg neo-shadow flex items-center justify-center gap-3 active-press transition-all font-headline-md text-headline-md">
+                Next Topic: Quadratics
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Comparison Visual -->
+<div class="mt-20 border-3 border-black rounded-lg p-8 bg-surface-container overflow-hidden relative">
+<div class="relative z-10">
+<h5 class="font-headline-md text-headline-md mb-4">How you stack up</h5>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between font-bold">
+<span>You (Mastery)</span>
+<span>100%</span>
+</div>
+<div class="h-6 w-full bg-background border-3 border-black rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-full border-r-3 border-black"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-bold">
+<span>Class Average</span>
+<span>72%</span>
+</div>
+<div class="h-6 w-full bg-background border-3 border-black rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[72%] border-r-3 border-black"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Abstract background shape -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-container rounded-full opacity-10 border-4 border-black"></div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on Desktop) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        // Simple animation for the badge on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const badge = document.querySelector('.animate-bounce-subtle');
+            if (badge) {
+                badge.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                badge.style.transform = 'scale(0)';
+                setTimeout(() => {
+                    badge.style.transform = 'scale(1)';
+                }, 100);
+            }
+        });
+
+        // Toggle Active State for Interaction
+        const buttons = document.querySelectorAll('.active-press, .active-press-sm');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = btn.classList.contains('active-press') ? 'translate(4px, 4px)' : 'translate(2px, 2px)';
+                btn.style.boxShadow = 'none';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = '';
+                btn.style.boxShadow = '';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+                btn.style.boxShadow = '';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="hi-IN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Topic Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae8e2",
+                    "background": "#fbf9f3",
+                    "surface-dim": "#dbdad4",
+                    "error": "#ba1a1a",
+                    "tertiary": "#ba005b",
+                    "surface-container": "#f0eee8",
+                    "on-primary-container": "#572000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "inverse-primary": "#ffb693",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e4e2dd",
+                    "primary-container": "#ff6b00",
+                    "tertiary-container": "#ff6096",
+                    "outline": "#8e7164",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#3f001a",
+                    "secondary": "#006d38",
+                    "outline-variant": "#e2bfb0",
+                    "surface-tint": "#a04100",
+                    "primary-fixed": "#ffdbcc",
+                    "primary": "#a04100",
+                    "surface": "#fbf9f3",
+                    "on-tertiary-container": "#67002f",
+                    "on-secondary-fixed-variant": "#005229",
+                    "on-surface-variant": "#5a4136",
+                    "on-primary-fixed": "#351000",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "primary-fixed-dim": "#ffb693",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "inverse-surface": "#30312d",
+                    "inverse-on-surface": "#f2f1eb",
+                    "surface-bright": "#fbf9f3",
+                    "secondary-fixed": "#63ff9d",
+                    "on-surface": "#1b1c19",
+                    "secondary-fixed-dim": "#40e183",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-low": "#f5f3ee",
+                    "on-secondary-container": "#00743c",
+                    "secondary-container": "#63ff9d",
+                    "on-secondary-fixed": "#00210d",
+                    "tertiary-fixed": "#ffd9e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-brutal-card {
+            border: 3px solid #1A1A1A;
+            box-shadow: 4px 4px 0px #1A1A1A;
+            transition: all 0.15s ease;
+        }
+        .neo-brutal-card:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A vibrant digital illustration of a young Indian student character with glasses and a bright yellow hoodie. The character is stylized with bold black outlines and flat, saturated colors in a neo-brutalistic street-art style. The background is a clean, warm cream color, reflecting a high-energy educational app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzZi5FlQ2U7ore_JV-u5ijlFg7tCMhcjQYNZq-G-holS1hRRutnPC6J5EUlJXYcz2hwEjNu2nX46knD-MgK6lygMTwNUvAB_fPxUx86X219IzivubI7Vt18pv3rPqWVp4V1mJuDEmoUvvMFz_zTrcEVkhNeQxvV7vr-GAll4GZS62WCNJpIr4hXikiOkdfRmpi-nUksl83aj97GpthayHdtygBbpAGZITcBZ_F1kfEn0lLzVMdGihheBecgjh86OpU9izCOG_CouYh"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<div class="p-2 rounded-lg hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<main class="px-margin-mobile pt-8 max-w-container-max-width mx-auto">
+<!-- Hero Title -->
+<section class="mb-10">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-background mb-2">
+                Kya seekhna hai aaj?
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Choose a topic and let's master some numbers!</p>
+</section>
+<!-- Topic Explorer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Numbers & Operations -->
+<div class="neo-brutal-card bg-surface-container-lowest p-6 rounded-lg group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-primary-container rounded-lg border-3 border-black flex items-center justify-center shadow-[4px_4px_0px_#1A1A1A]">
+<span class="text-4xl">🔢</span>
+</div>
+<div class="px-3 py-1 bg-secondary-container border-3 border-black rounded-full font-label-lg text-label-lg text-on-secondary-container shadow-[2px_2px_0px_#1A1A1A]">
+                        65% Done
+                    </div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Numbers &amp; Operations</h3>
+<div class="w-full h-6 bg-surface-dim border-3 border-black rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary w-[65%] border-r-3 border-black transition-all duration-700"></div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">12/18 Lessons</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Data & Statistics -->
+<div class="neo-brutal-card bg-surface-container-lowest p-6 rounded-lg group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-tertiary-container rounded-lg border-3 border-black flex items-center justify-center shadow-[4px_4px_0px_#1A1A1A]">
+<span class="text-4xl">📊</span>
+</div>
+<div class="px-3 py-1 bg-surface-container-high border-3 border-black rounded-full font-label-lg text-label-lg text-on-surface-variant shadow-[2px_2px_0px_#1A1A1A]">
+                        10% Done
+                    </div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Data &amp; Statistics</h3>
+<div class="w-full h-6 bg-surface-dim border-3 border-black rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary w-[10%] border-r-3 border-black transition-all duration-700"></div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">2/20 Lessons</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Measurement & Shapes -->
+<div class="neo-brutal-card bg-surface-container-lowest p-6 rounded-lg group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-secondary-fixed rounded-lg border-3 border-black flex items-center justify-center shadow-[4px_4px_0px_#1A1A1A]">
+<span class="text-4xl">📏</span>
+</div>
+<div class="px-3 py-1 bg-secondary-container border-3 border-black rounded-full font-label-lg text-label-lg text-on-secondary-container shadow-[2px_2px_0px_#1A1A1A]">
+                        40% Done
+                    </div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Measurement &amp; Shapes</h3>
+<div class="w-full h-6 bg-surface-dim border-3 border-black rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary w-[40%] border-r-3 border-black transition-all duration-700"></div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">6/15 Lessons</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Probability -->
+<div class="neo-brutal-card bg-surface-container-lowest p-6 rounded-lg group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-primary-fixed-dim rounded-lg border-3 border-black flex items-center justify-center shadow-[4px_4px_0px_#1A1A1A]">
+<span class="text-4xl">🎲</span>
+</div>
+<div class="px-3 py-1 bg-surface-container-high border-3 border-black rounded-full font-label-lg text-label-lg text-on-surface-variant shadow-[2px_2px_0px_#1A1A1A]">
+                        0% Done
+                    </div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Probability</h3>
+<div class="w-full h-6 bg-surface-dim border-3 border-black rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary w-[0%] border-r-0 border-black transition-all duration-700"></div>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">0/10 Lessons</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Visual Anchor/Character -->
+<section class="mt-12 flex flex-col items-center justify-center p-8 bg-primary-fixed rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A] relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-20">
+<span class="material-symbols-outlined text-[120px]">calculate</span>
+</div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary-fixed mb-4 text-center">Ready for a Math Adventure?</h4>
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-headline-md text-headline-md border-3 border-black shadow-[4px_4px_0px_#1A1A1A] hover:bg-opacity-90 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                Chalo, Start Karo!
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</a>
+<!-- Chat -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</a>
+<!-- Quiz -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg mt-1">Quiz</span>
+</a>
+<!-- Story (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" href="#">
+<span class="material-symbols-outlined fill-icon" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for hard-shadow elements
+        document.querySelectorAll('.neo-brutal-card, button').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'translate(4px, 4px)';
+                el.style.boxShadow = '0px 0px 0px #1A1A1A';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'translate(0px, 0px)';
+                el.style.boxShadow = '4px 4px 0px #1A1A1A';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0px, 0px)';
+                el.style.boxShadow = '4px 4px 0px #1A1A1A';
+            });
+        });
+    </script>
+</body></html>

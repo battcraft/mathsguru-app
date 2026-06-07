@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mastery Summary - Kiran</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts for Design System -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#b80069",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-container": "#4c3f00",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary": "#924c00",
+                        "on-primary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "on-primary-fixed": "#3e0020",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-container": "#f88400",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-container": "#c9a900",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#ffb781",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "primary": "#b40067",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5a3f48",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline-variant": "#e1bdc7",
+                        "on-secondary-container": "#5b2d00",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#8d6f78",
+                        "primary-container": "#df0b81",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "inverse-primary": "#ffb0cb",
+                        "on-primary-fixed-variant": "#8d004f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist Graph Paper Pattern */
+        .bg-graph-paper {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, theme('colors.surface-container-high') 1px, transparent 1px),
+                linear-gradient(to bottom, theme('colors.surface-container-high') 1px, transparent 1px);
+            background-position: center top;
+        }
+
+        /* Continuous Rotation Animation for the Sun Motif */
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-slow-spin {
+            animation: slow-spin 20s linear infinite;
+        }
+
+        /* Confetti pseudo-element setup */
+        .confetti-container {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface bg-graph-paper min-h-screen text-on-surface font-body-md flex flex-col relative">
+<!-- TopAppBar (from JSON constraints) -->
+<header class="bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full top-0 sticky z-50">
+<button class="text-primary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all flex items-center justify-center border-[3px] border-transparent hover:border-on-surface rounded p-1">
+<span class="material-symbols-outlined font-headline-md text-headline-md" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Geometry: Rekha &amp; Bindu</h1>
+<div class="font-label-bold text-label-bold text-on-surface-variant flex items-center bg-surface-container px-3 py-1 border-[3px] border-on-surface shadow-[2px_2px_0px_#1a1c1c] rounded-full">
+            5 🔥
+        </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop gap-12 z-10 relative overflow-hidden py-16">
+<!-- Background decoration elements (Geometry specific) -->
+<div class="absolute top-20 left-10 w-4 h-4 bg-primary rounded-full border-[3px] border-on-surface shadow-[2px_2px_0px_#1a1c1c] hidden md:block"></div>
+<div class="absolute bottom-40 right-20 w-32 h-[3px] bg-secondary border-y-[1.5px] border-on-surface hidden md:block rotate-45"></div>
+<!-- Mastery Badge Hero Section -->
+<div class="flex flex-col items-center gap-8 relative">
+<!-- 100% Progress Gauge & Badge -->
+<div class="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+<!-- Outer Ring (Gauge Background) -->
+<div class="absolute inset-0 rounded-full border-[12px] border-surface-container shadow-[4px_4px_0px_theme(colors.on-surface)] border-solid z-0"></div>
+<!-- Active Progress Ring (Simulating 100% fill with conic gradient offset) -->
+<div class="absolute inset-[-4px] rounded-full z-10" style="background: conic-gradient(theme('colors.tertiary-fixed') 100%, transparent 0); -webkit-mask: radial-gradient(transparent 55%, black 56%); mask: radial-gradient(transparent 55%, black 56%);">
+<!-- Overlay border to give it the brutlist edge -->
+<div class="absolute inset-0 rounded-full border-[3px] border-on-surface"></div>
+<div class="absolute inset-[12px] rounded-full border-[3px] border-on-surface"></div>
+</div>
+<!-- Inner Gold Badge -->
+<div class="bg-tertiary-container w-32 h-32 md:w-44 md:h-44 rounded-full border-[3px] border-on-surface flex items-center justify-center z-20 shadow-[inset_4px_4px_0px_rgba(0,0,0,0.1)] relative overflow-hidden">
+<!-- Sun Ray Motif -->
+<span class="material-symbols-outlined text-on-tertiary-container text-[80px] md:text-[100px] animate-slow-spin" data-icon="sunny" style="font-variation-settings: 'FILL' 1;">sunny</span>
+<!-- 100% Label Overlay -->
+<div class="absolute bottom-2 bg-on-surface text-surface font-label-bold text-label-bold px-3 py-1 rounded-full border-[2px] border-surface shadow-[2px_2px_0px_theme(colors.tertiary)] transform -rotate-6">
+                        100%
+                    </div>
+</div>
+</div>
+<!-- Title -->
+<div class="text-center relative">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface tracking-tighter uppercase inline-block relative">
+<span class="block text-primary-container drop-shadow-[2px_2px_0px_#1a1c1c]">Kiran Queen:</span>
+<span class="block mt-2 bg-surface px-4 py-1 border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] transform -skew-x-6">
+                        Mastery Unlocked!
+                    </span>
+</h2>
+</div>
+</div>
+<!-- Unlocked Skills Bento List -->
+<div class="w-full max-w-md flex flex-col gap-4 mt-4">
+<!-- Skill 1 -->
+<div class="bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_theme(colors.on-surface)] p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme(colors.on-surface)] transition-transform duration-200 group">
+<div class="w-12 h-12 bg-secondary-container border-[3px] border-on-surface flex items-center justify-center shadow-[2px_2px_0px_theme(colors.on-surface)] group-hover:bg-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="explore">explore</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">Vertex Scout</h3>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Skill 2 -->
+<div class="bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_theme(colors.on-surface)] p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme(colors.on-surface)] transition-transform duration-200 group">
+<div class="w-12 h-12 bg-primary-fixed border-[3px] border-on-surface flex items-center justify-center shadow-[2px_2px_0px_theme(colors.on-surface)] group-hover:bg-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="conversion_path">conversion_path</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">Path Finder</h3>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Skill 3 -->
+<div class="bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_theme(colors.on-surface)] p-4 flex items-center gap-4 hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme(colors.on-surface)] transition-transform duration-200 group">
+<div class="w-12 h-12 bg-surface-variant border-[3px] border-on-surface flex items-center justify-center shadow-[2px_2px_0px_theme(colors.on-surface)] group-hover:bg-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="draw">draw</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">Notation Pro</h3>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- CTA Action -->
+<button class="mt-8 bg-primary text-on-primary font-headline-md text-headline-md px-8 py-4 border-[3px] border-on-surface shadow-[6px_6px_0px_theme(colors.on-surface)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_theme(colors.on-surface)] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="emoji_events" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+            Back to Champion Board
+        </button>
+</main>
+<!-- BottomNavBar Suppressed: As per rules, transactional/success splash screens must prioritize canvas and suppress global navigation shell. -->
+</body></html>

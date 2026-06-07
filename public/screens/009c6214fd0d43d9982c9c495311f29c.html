@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mastery Recap - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&amp;family=Fredoka:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Grid pattern background */
+        .bg-grid-pattern {
+            background-image: radial-gradient(var(--tw-colors-outline-variant) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background bg-grid-pattern text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md docked full-width top-0 border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 transition-all">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border-2 border-black bg-secondary-container overflow-hidden flex items-center justify-center">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A brightly lit, youthful student avatar illustration in a stylized, modern Neo-Brutalist design. The background is a vibrant solid color, emphasizing the character's energetic and academic persona. High contrast and clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRcMRhhGN9G2hMaW76HCfMQRxfsKLa1p5Yqtopd9W6HkObI0eFpMA1G2j-6ht78IASuhuNh1czOWdWnFwddKJpxP1i8bsMCtcBWV7lOizhwKm8mrH3vAQSYEk0NfOo2ug1bWKgBXxMy-XmImdEY56Fu3_ID8CbtJaKCPDMzmP8L_DwU0MepNFiQl-F-rJQrlztDFjmubLj7anFxb0Us9bKN8MnhbRylUKISrkY--xRvWO2Wfp6kWQbfisICmGtvkbKv5D5HRCarYdV"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-transparent hover:bg-surface-container-high transition-colors active:translate-x-1 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined text-primary">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<!-- Navigation Shell suppressed because this is a 'Success/Confirmation' splash screen -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-8 md:p-margin-desktop w-full max-w-4xl mx-auto">
+<!-- Hero Celebration -->
+<div class="w-full flex flex-col items-center text-center mb-10 relative">
+<!-- Decorative Confetti Elements -->
+<div class="absolute -top-6 -left-4 w-12 h-12 bg-secondary-container rounded-full border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] animate-bounce delay-100 hidden md:block"></div>
+<div class="absolute top-10 -right-6 w-8 h-8 bg-tertiary-container rounded-sm border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] animate-pulse delay-300 hidden md:block rotate-12"></div>
+<div class="w-32 h-32 md:w-40 md:h-40 bg-tertiary-container rounded-xl border-[3px] border-black shadow-[8px_8px_0px_#1A1A1A] flex items-center justify-center mb-6 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+<span class="material-symbols-outlined text-on-tertiary-container filled text-[80px] md:text-[100px]" style="font-variation-settings: 'FILL' 1;">crown</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-primary mb-2 uppercase tracking-tight">The Comparison Kingpin</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">You've mastered the art of less than, greater than, and equal to. The symbols bow to your logic.</p>
+</div>
+<!-- Stats Bento Grid -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<!-- Symbols Mastered Card -->
+<div class="bg-surface rounded-xl border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-[8px_8px_0px_#1A1A1A] transition-all duration-200">
+<div class="bg-primary-container px-4 py-3 border-b-[3px] border-black flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-primary-container">Symbols Mastered</h2>
+<span class="material-symbols-outlined text-on-primary-container">functions</span>
+</div>
+<div class="p-6 flex-grow flex items-center justify-center gap-4 md:gap-8">
+<!-- Less Than -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-secondary-fixed rounded-lg border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center mb-2 transform rotate-3">
+<span class="font-headline-xl text-headline-xl text-on-secondary-fixed">&lt;</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Less</span>
+</div>
+<!-- Greater Than -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-lg border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center mb-2 transform -rotate-3">
+<span class="font-headline-xl text-headline-xl text-on-tertiary-fixed">&gt;</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Greater</span>
+</div>
+<!-- Equal To -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed rounded-lg border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center mb-2">
+<span class="font-headline-xl text-headline-xl text-on-primary-fixed">=</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Equal</span>
+</div>
+</div>
+</div>
+<!-- Coins Earned Card -->
+<div class="bg-surface rounded-xl border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-[8px_8px_0px_#1A1A1A] transition-all duration-200">
+<div class="bg-secondary-container px-4 py-3 border-b-[3px] border-black flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-secondary-container">Loot Secured</h2>
+<span class="material-symbols-outlined text-on-secondary-container">monetization_on</span>
+</div>
+<div class="p-6 flex-grow flex items-center justify-center">
+<div class="flex items-end gap-3">
+<span class="material-symbols-outlined text-tertiary-container filled text-[64px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline-xl text-headline-xl text-on-surface text-[72px] leading-none mb-1">450</span>
+</div>
+</div>
+<div class="bg-surface-container px-4 py-2 border-t-[3px] border-black text-center">
+<p class="font-label-bold text-label-bold text-on-surface-variant">Perfect Streak Bonus Included!</p>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<button class="w-full md:w-auto px-8 py-4 bg-primary text-on-primary rounded-xl border-[3px] border-black shadow-[4px_4px_0px_#1A1A1A] font-headline-md text-headline-md hover:-translate-y-1 hover:shadow-[8px_8px_0px_#1A1A1A] active:translate-y-1 active:translate-x-1 active:shadow-none transition-all duration-150 flex items-center justify-center gap-3">
+<span>Unlock Next Module</span>
+<span class="material-symbols-outlined">lock_open</span>
+</button>
+</main>
+</body></html>

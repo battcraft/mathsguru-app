@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Expert Challenge: The Negative Zone</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006d38",
+                        "background": "#fbf9f3",
+                        "surface-dim": "#dbdad4",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "inverse-primary": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-on-surface": "#f2f1eb",
+                        "tertiary-container": "#ff6096",
+                        "primary-container": "#ff6b00",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-tertiary-fixed": "#3f001a",
+                        "surface-bright": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-primary-container": "#572000",
+                        "surface-variant": "#e4e2dd",
+                        "surface-tint": "#a04100",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "tertiary": "#ba005b",
+                        "surface": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "outline-variant": "#e2bfb0",
+                        "on-surface-variant": "#5a4136",
+                        "inverse-surface": "#30312d",
+                        "on-secondary-fixed": "#00210d",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-background": "#1b1c19",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#67002f",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-container": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "outline": "#8e7164",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#00743c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .thermometer-gradient {
+            background: linear-gradient(to top, #3b82f6 0%, #ffffff 50%, #ef4444 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden neo-shadow-sm">
+<img alt="Avatar" data-alt="A stylized, playful 3D robot avatar representing a student learner, set against a vibrant mango orange background with thick black outlines consistent with neo-brutalist design. The robot has friendly glowing eyes and a sleek metallic finish, reflecting a high-energy urban street-pop aesthetic with high contrast and sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRa_VQFUs4xXpRmDOHbHJ456YgrwnNXnErnb_32n7NvZUbjBZ2Si9l35cg0XikRzC5PUJ1SnxlOBqmQLoKmedeGwJBUeoYJ28qpNK_WO79AXoEsxbYlgYAKD4K1r-lv_2DKrpKWX3yiTiR30YM8b7i7RY5p4xcnGRUFlNf53eYtdQnalBWTnDvT9IFTCGlr3AK3830zUmVWh-sE02rBBY7kibtNzlctjfjcfINGiLv4OMsjTeWOpR9mly6Hmb8LZUyMtx2q0HodKCF"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-lg text-label-lg">12 Day Streak</span>
+</div>
+</header>
+<main class="max-w-container-max-width mx-auto px-margin-mobile mt-8">
+<!-- Expert Header Section -->
+<div class="mb-8">
+<div class="inline-block bg-inverse-surface text-inverse-on-surface px-4 py-1 rounded-full border-3 border-black neo-shadow-sm mb-4">
+<span class="font-label-lg text-label-lg uppercase tracking-widest">EXPERT CHALLENGE</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Level: Expert — The Negative Zone</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Question Card (Bento Style) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="bg-surface-container border-3 border-black p-6 rounded-lg neo-shadow">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-primary-container p-3 rounded-lg border-2 border-black">
+<span class="material-symbols-outlined text-on-primary-container">question_mark</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface leading-tight">
+                            "Bhaiya, agar temperature <span class="text-primary font-extrabold">-10°C</span>, <span class="text-secondary font-extrabold">2°C</span>, aur <span class="text-tertiary font-extrabold">-5°C</span> hai, toh <span class="underline decoration-4 decoration-primary">Minimum</span> (sabse thanda) kaunsa hoga?"
+                        </p>
+</div>
+</div>
+<!-- Pro-Tip Box -->
+<div class="bg-secondary-container border-3 border-black p-6 rounded-lg neo-shadow flex items-center gap-4">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-secondary-container mb-1">PRO-TIP</p>
+<p class="font-body-lg text-body-lg text-on-secondary-container">
+                            Negative numbers mein, jo dikhne mein bada lagta hai (10), woh actually sabse chhota hota hai!
+                        </p>
+</div>
+</div>
+<!-- Answer Options -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<button class="active-press bg-white border-3 border-black p-6 rounded-lg neo-shadow hover:bg-surface-container-high transition-all flex flex-col items-center gap-2 group">
+<span class="font-headline-md text-headline-md text-primary">-10°C</span>
+<span class="font-label-lg text-label-lg opacity-0 group-hover:opacity-100 transition-opacity">Select This</span>
+</button>
+<button class="active-press bg-white border-3 border-black p-6 rounded-lg neo-shadow hover:bg-surface-container-high transition-all flex flex-col items-center gap-2 group">
+<span class="font-headline-md text-headline-md text-secondary">2°C</span>
+<span class="font-label-lg text-label-lg opacity-0 group-hover:opacity-100 transition-opacity">Select This</span>
+</button>
+<button class="active-press bg-white border-3 border-black p-6 rounded-lg neo-shadow hover:bg-surface-container-high transition-all flex flex-col items-center gap-2 group">
+<span class="font-headline-md text-headline-md text-tertiary">-5°C</span>
+<span class="font-label-lg text-label-lg opacity-0 group-hover:opacity-100 transition-opacity">Select This</span>
+</button>
+</div>
+</div>
+<!-- Visual Section (Thermometer) -->
+<div class="lg:col-span-5">
+<div class="bg-white border-3 border-black p-8 rounded-lg neo-shadow relative overflow-hidden min-h-[400px] flex justify-center">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#1A1A1A 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="font-label-lg text-label-lg mb-8 uppercase tracking-widest text-on-surface-variant">Visualizer</h3>
+<!-- Thermometer Number Line -->
+<div class="relative flex items-center gap-6">
+<!-- Labels -->
+<div class="flex flex-col justify-between h-64 py-1 text-right font-headline-md">
+<span class="text-tertiary-container">+10</span>
+<span class="text-secondary">+5</span>
+<span class="text-on-surface">0</span>
+<span class="text-primary">-5</span>
+<span class="text-primary-container">-10</span>
+</div>
+<!-- Physical Thermometer -->
+<div class="w-12 h-64 bg-surface-variant border-3 border-black rounded-full relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 thermometer-gradient h-full"></div>
+<!-- Markers -->
+<div class="absolute inset-0 flex flex-col justify-between py-4 px-2">
+<div class="h-0.5 bg-black opacity-20"></div>
+<div class="h-0.5 bg-black opacity-20"></div>
+<div class="h-1 bg-black"></div>
+<div class="h-0.5 bg-black opacity-20"></div>
+<div class="h-0.5 bg-black opacity-20"></div>
+</div>
+</div>
+<!-- Current Values Indicators -->
+<div class="absolute left-20 h-64 w-32">
+<div class="absolute top-[75%] -translate-y-1/2 flex items-center gap-2 animate-bounce">
+<span class="material-symbols-outlined text-primary-container">arrow_back</span>
+<div class="bg-primary-container text-on-primary-container px-2 py-1 rounded border-2 border-black font-label-lg neo-shadow-sm">-10°C</div>
+</div>
+<div class="absolute top-[45%] -translate-y-1/2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary opacity-40">arrow_back</span>
+<div class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded border-2 border-black font-label-lg neo-shadow-sm opacity-40">2°C</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="font-body-md text-on-surface-variant italic">Niche matlab thanda, Upar matlab garam!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-12 flex justify-center pb-12">
+<button class="active-press bg-primary-container text-on-primary-container px-12 py-4 rounded-lg border-3 border-black neo-shadow flex items-center gap-3 group transition-all">
+<span class="font-headline-md text-headline-md">Submit Answer</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the options
+        document.querySelectorAll('button.active-press').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Reset all
+                document.querySelectorAll('button.active-press').forEach(b => {
+                    b.classList.remove('bg-primary-container', 'text-on-primary-container');
+                    b.classList.add('bg-white');
+                });
+                
+                // Set active
+                if (this.innerText.includes('Submit')) return; // Don't highlight the submit button
+                this.classList.remove('bg-white');
+                this.classList.add('bg-primary-container', 'text-on-primary-container');
+            });
+        });
+    </script>
+</body></html>

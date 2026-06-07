@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Line Hunt - Dhoondh Re Lines Ko!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#df0b81",
+                      "secondary-fixed": "#ffdcc4",
+                      "primary-fixed-dim": "#ffb0cb",
+                      "secondary-fixed-dim": "#ffb781",
+                      "primary-fixed": "#ffd9e3",
+                      "on-secondary-container": "#5b2d00",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#b80069",
+                      "outline-variant": "#e1bdc7",
+                      "inverse-on-surface": "#f0f1f1",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#8d6f78",
+                      "on-secondary-fixed": "#2f1400",
+                      "tertiary-fixed": "#ffe16d",
+                      "tertiary-fixed-dim": "#e9c400",
+                      "surface": "#f9f9f9",
+                      "on-tertiary-fixed-variant": "#544600",
+                      "secondary-container": "#f88400",
+                      "surface-container-high": "#e8e8e8",
+                      "on-primary-container": "#fffbff",
+                      "tertiary": "#705d00",
+                      "inverse-primary": "#ffb0cb",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "tertiary-container": "#c9a900",
+                      "surface-dim": "#dadada",
+                      "on-primary-fixed-variant": "#8d004f",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-surface-variant": "#5a3f48",
+                      "background": "#f9f9f9",
+                      "surface-container": "#eeeeee",
+                      "surface-bright": "#f9f9f9",
+                      "on-tertiary-container": "#4c3f00",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#3e0020",
+                      "on-surface": "#1a1c1c",
+                      "inverse-surface": "#2f3131",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "surface-container-low": "#f3f3f4",
+                      "error": "#ba1a1a",
+                      "secondary": "#924c00",
+                      "primary": "#b40067"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "shadow-offset": "4px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "border-width": "3px",
+                      "unit": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Fredoka"
+                      ],
+                      "body-md": [
+                              "Nunito Sans"
+                      ],
+                      "label-bold": [
+                              "Nunito Sans"
+                      ],
+                      "headline-md": [
+                              "Fredoka"
+                      ],
+                      "headline-lg": [
+                              "Fredoka"
+                      ],
+                      "headline-xl-mobile": [
+                              "Fredoka"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .bg-dots {
+              background-image: radial-gradient(#d1d5db 2px, transparent 2px);
+              background-size: 32px 32px;
+          }
+      </style>
+</head>
+<body class="bg-surface bg-dots text-on-surface font-body-md min-h-screen flex flex-col pt-16 pb-24 md:pb-16 md:pt-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-secondary-container text-on-secondary border-b-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] w-full top-0 fixed md:sticky">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container border-border-width border-on-surface flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-primary-container">person</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-secondary">Line Hunt 🎯</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 font-label-bold text-label-bold bg-surface text-on-surface px-3 py-1 rounded-full border-border-width border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>3/10</span>
+</div>
+<div class="flex items-center gap-1 font-label-bold text-label-bold bg-error text-on-error px-3 py-1 rounded-full border-border-width border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-on-error">timer</span>
+<span>02:45</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row gap-gutter p-margin-mobile md:p-margin-desktop max-w-7xl mx-auto w-full">
+<!-- Left Column: Game Area -->
+<div class="w-full md:w-2/3 flex flex-col gap-gutter">
+<!-- Instruction Card -->
+<div class="bg-surface-container-lowest border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl p-4 flex items-start gap-4">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed-variant p-2 rounded-lg border-border-width border-on-surface shrink-0">
+<span class="material-symbols-outlined text-3xl">search</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md mb-1">Sharp nazar chahiye!</h2>
+<p class="font-body-lg text-body-lg">Bazaar mein lines dhoondho! Horizontal, Vertical, Diagonal sab milenge! 🔍</p>
+</div>
+</div>
+<!-- Interactive Game Area -->
+<div class="relative w-full aspect-[3/4] md:aspect-square lg:aspect-[4/3] bg-surface-container border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden cursor-crosshair">
+<img alt="Illustrated bazaar scene" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7JNWZZO8jP-T6rXe33tM_T8ilSQWjUUGAcxKuqd20zdW9x-jtWnw9Qfhh6ZD2eNVPyxcdWwyUkjDUd6O_y4N_HE8fhVQ1ctswIZaBbDebzdImvvCg9ieoJnRzLxM0Jb3JWO0z2KXmO9bnOyUr9rGzw1jlc_jvswI_EXCLXLn5Ocw-hljZmQO2Mgbl-iTcrfX-WY-ChhD4bPadnlQXplew5SLUotP508kSQGGLwciiMXljAjvwU5xNwyS7Xr4CTzdIWGpgKxd1Ptos"/>
+<!-- Hotspot 1 (Found) -->
+<div class="absolute top-[20%] left-[30%] w-32 h-2 border-[4px] border-dashed border-secondary-container bg-secondary-container/20 flex items-center justify-center rotate-6 transform hover:scale-105 transition-transform">
+<div class="bg-surface rounded-full p-1 border-border-width border-on-surface absolute -top-8 -right-4">
+<span class="material-symbols-outlined text-secondary-container font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Hotspot 2 (Found) -->
+<div class="absolute top-[40%] right-[20%] w-2 h-40 border-[4px] border-dashed border-secondary-container bg-secondary-container/20 flex items-center justify-center -rotate-2 transform hover:scale-105 transition-transform">
+<div class="bg-surface rounded-full p-1 border-border-width border-on-surface absolute -top-4 -right-8">
+<span class="material-symbols-outlined text-secondary-container font-bold" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Controls / Progress Mobile (Hidden on Desktop) -->
+<div class="md:hidden flex flex-col gap-4">
+<div class="flex items-center gap-2 w-full">
+<div class="flex-grow h-4 bg-surface border-border-width border-on-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[30%] border-r-border-width border-on-surface"></div>
+</div>
+<span class="font-label-bold text-label-bold min-w-[40px] text-right">30%</span>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-tertiary-fixed text-on-tertiary-fixed-variant border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg py-3 flex items-center justify-center gap-2 font-label-bold text-label-bold active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+                        Hint
+                    </button>
+<button class="flex-1 bg-surface text-on-surface border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg py-3 flex items-center justify-center font-label-bold text-label-bold active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+                        Skip
+                    </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Panel & Controls Desktop -->
+<div class="w-full md:w-1/3 flex flex-col gap-gutter">
+<!-- Found Items Panel -->
+<div class="bg-surface-container-lowest border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden flex flex-col h-full">
+<div class="bg-secondary-container text-on-secondary-container p-4 border-b-border-width border-on-surface flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">Found Items</h3>
+<span class="font-label-bold text-label-bold bg-surface text-on-surface px-2 py-1 rounded-md border-border-width border-on-surface">2/4</span>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-grow">
+<!-- Item 1 (Found) -->
+<div class="flex items-center gap-3 p-3 bg-primary-container/10 border-border-width border-on-surface rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold line-through opacity-70">Horizontal line</span>
+<span class="font-body-md text-body-md text-on-surface-variant">chhat ki edge</span>
+</div>
+</div>
+<!-- Item 2 (Found) -->
+<div class="flex items-center gap-3 p-3 bg-primary-container/10 border-border-width border-on-surface rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold line-through opacity-70">Vertical line</span>
+<span class="font-body-md text-body-md text-on-surface-variant">bijli ka pole</span>
+</div>
+</div>
+<!-- Item 3 (Pending) -->
+<div class="flex items-center gap-3 p-3 border-[3px] border-dashed border-outline rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-outline">check_box_outline_blank</span>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold">Diagonal line</span>
+<span class="font-body-md text-body-md text-on-surface-variant">???</span>
+</div>
+</div>
+<!-- Item 4 (Pending) -->
+<div class="flex items-center gap-3 p-3 border-[3px] border-dashed border-outline rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-outline">check_box_outline_blank</span>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold">Curved line</span>
+<span class="font-body-md text-body-md text-on-surface-variant">???</span>
+</div>
+</div>
+</div>
+<!-- Controls Desktop (Hidden on Mobile) -->
+<div class="hidden md:flex flex-col gap-4 p-4 border-t-border-width border-on-surface bg-surface-container-highest">
+<div class="flex items-center gap-2 w-full">
+<div class="flex-grow h-4 bg-surface border-border-width border-on-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[30%] border-r-border-width border-on-surface"></div>
+</div>
+<span class="font-label-bold text-label-bold min-w-[40px] text-right">30%</span>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-tertiary-fixed text-on-tertiary-fixed-variant border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg py-3 flex items-center justify-center gap-2 font-label-bold text-label-bold active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+                            Hint
+                        </button>
+<button class="flex-1 bg-surface text-on-surface border-border-width border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg py-3 flex items-center justify-center font-label-bold text-label-bold active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all hover:bg-surface-variant">
+                            Skip
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</div>
+</nav>
+</body></html>

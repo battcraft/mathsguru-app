@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="hi-IN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#006d38",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f3",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-tertiary-container": "#67002f",
+                        "surface": "#fbf9f3",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary": "#ba005b",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "outline": "#8e7164",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-container": "#572000",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#5a4136",
+                        "surface-dim": "#dbdad4",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-primary": "#ffb693",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px #1c1b1b;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .option-card.selected {
+            background-color: #63ff9d; /* secondary-container */
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #1c1b1b;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 w-full bg-background border-b-[3px] border-on-surface neo-shadow">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container border-[2px] border-on-surface active-press transition-all">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Panga 2: Cold Drinks</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="px-3 py-1 bg-secondary-container border-[2px] border-on-surface rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-bold text-label-bold">120</span>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto p-5">
+<!-- Progress Bar -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline-md text-primary">Question 2/5</span>
+<span class="font-label-bold text-secondary">Level: Pro</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border-[3px] border-on-surface rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim border-r-[3px] border-on-surface w-[40%] transition-all duration-500"></div>
+</div>
+</div>
+<!-- Question Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface rounded-lg p-6 neo-shadow mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-4 leading-tight">
+                Inme se <span class="text-primary underline decoration-primary underline-offset-4">Minimum capacity</span> kaunsi hai?
+            </h2>
+<p class="font-body-md text-on-surface-variant mb-6 italic">
+                Dekho aur pehchano sabse choti bottle!
+            </p>
+<!-- Image Comparison Area -->
+<div class="grid grid-cols-3 gap-3 bg-surface-variant p-4 rounded-lg border-[2px] border-dashed border-on-surface-variant">
+<div class="flex flex-col items-center gap-2">
+<div class="bg-white p-2 rounded-md border-[2px] border-on-surface h-32 flex items-end justify-center w-full">
+<img class="h-16 w-auto object-contain" data-alt="A small, compact glass soda bottle containing a dark brown carbonated drink, labeled 200ml in bold black text. The bottle has a red metallic cap and is rendered in a clean, vibrant 2D vector style with thick black outlines, matching a neo-brutalist educational UI. The lighting is bright and flat, emphasizing the small scale relative to larger containers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQQX7nxE86V192yURyivSEKl2MPnrXBj33ms7OJ2o3YJ8nS-tH32szfkkgMthkrLBnX9LfQuHkmVfonNyCt3vmYBpAv-z6alxFxmXaoBe6u-kkBU59eXr59y3QEI94eOKbGvzoi4i-kPeUdB2lar8DogxuphsJSp1fFqEJkNL4uAMCDG95lPbYiFiC0G6sQdwFXSGuUUcabaNxx5ZmBuXFYJgIXxKvOz6s7KjPaOGJ6Mkan7QoHZuaDK3ESchSX-TigdIOVYchX_iI"/>
+</div>
+<span class="font-label-lg bg-primary-fixed px-2 rounded-full border-[1px] border-on-surface">200ml</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-white p-2 rounded-md border-[2px] border-on-surface h-32 flex items-end justify-center w-full">
+<img class="h-28 w-auto object-contain" data-alt="A large 1.5 liter plastic bottle of orange soda with a bright green cap and a bold 1.5L label. The illustration is colorful and pop-art inspired, featuring heavy 3px black strokes and flat tropical orange colors. It stands significantly taller than the other bottles, emphasizing its large capacity in a bright bazaar-style educational interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG9LLzY_OGkFK489CKIdR4CAlFFBgYC43Wlfri7OEmyH9BNH0EwTqXE14xde1MDo5xRSY_HKTdQ_1jMtt4Ej0hGsTjakxr9l48xBomuxaJ1MrDJWxCiTyqOfRWhN1FuZdnyPwUvTbbODSVxgvDojZ0yMso5vejMQ5Mg1pNxMOdW3K_g9habWT_NmQ_zzer9-7wlGDMWqVDcOY72_0IeASHGVvgia_J3ssYMQHGsphXSz0e4IKzYoxM55rwAKhUK3H2cwQeR-oP8OhA"/>
+</div>
+<span class="font-label-lg bg-primary-fixed px-2 rounded-full border-[1px] border-on-surface">1.5L</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-white p-2 rounded-md border-[2px] border-on-surface h-32 flex items-end justify-center w-full">
+<img class="h-20 w-auto object-contain" data-alt="A medium-sized 500ml water bottle with a blue label and a simple white cap. The bottle is illustrated in a friendly, approachable geometric style with a heavy black outline. It is sized between the small soda bottle and the large 1.5L bottle to help students visually compare volumes in a Hinglish math game environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvQYznoKXtkGuct6zasoEjhxrAOkwkAlmAsjw_zoJvtKs-FfdvUnySDoQeacJzSSXathiN19evkP3-Bb48s4kzwLi4uxbbMtPz1rQ2utniDAOhcIOp_mjF997Cwyu5MoZ1nrHIrHyRJJQ4jt7EdonnI4CJIwiKli5szEkcBhheutMZxSiskXrFcA61VG1aitom1Wd5lOdAM014PLwURuqDCWTzN59hop7Fco6RcsJTxmD2Sqc_As2xMm13QMi9b8c4lFZ-83e3fDVj"/>
+</div>
+<span class="font-label-lg bg-primary-fixed px-2 rounded-full border-[1px] border-on-surface">500ml</span>
+</div>
+</div>
+</div>
+<!-- MCQ Options -->
+<div class="grid grid-cols-1 gap-4 mb-10">
+<button class="option-card group flex items-center justify-between p-4 bg-surface border-[3px] border-on-surface rounded-lg neo-shadow active-press text-left transition-all" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full border-[2px] border-on-surface font-headline-md group-[.selected]:bg-on-surface group-[.selected]:text-white">A</div>
+<span class="font-headline-md">200 ml</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary-fixed-variant">check_circle</span>
+</button>
+<button class="option-card group flex items-center justify-between p-4 bg-surface border-[3px] border-on-surface rounded-lg neo-shadow active-press text-left transition-all" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full border-[2px] border-on-surface font-headline-md group-[.selected]:bg-on-surface group-[.selected]:text-white">B</div>
+<span class="font-headline-md">1.5 L</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary-fixed-variant">check_circle</span>
+</button>
+<button class="option-card group flex items-center justify-between p-4 bg-surface border-[3px] border-on-surface rounded-lg neo-shadow active-press text-left transition-all" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full border-[2px] border-on-surface font-headline-md group-[.selected]:bg-on-surface group-[.selected]:text-white">C</div>
+<span class="font-headline-md">500 ml</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary-fixed-variant">check_circle</span>
+</button>
+</div>
+<!-- Action Button -->
+<button class="w-full py-5 bg-surface-variant text-on-surface-variant border-[3px] border-on-surface rounded-lg font-headline-lg neo-shadow opacity-50 transition-all" disabled="" id="checkButton">
+            CHEECO JAWAB! (Check)
+        </button>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface border-t-[3px] border-on-surface px-4 py-2 shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        function selectOption(el) {
+            // Remove selection from all options
+            document.querySelectorAll('.option-card').forEach(opt => {
+                opt.classList.remove('selected');
+                opt.classList.remove('bg-secondary-container');
+                opt.classList.add('bg-surface');
+            });
+
+            // Add selection to clicked option
+            el.classList.add('selected');
+            el.classList.remove('bg-surface');
+            el.classList.add('bg-secondary-container');
+
+            // Enable Check Button
+            const checkBtn = document.getElementById('checkButton');
+            checkBtn.disabled = false;
+            checkBtn.classList.remove('bg-surface-variant', 'text-on-surface-variant', 'opacity-50');
+            checkBtn.classList.add('bg-primary-container', 'text-on-primary', 'opacity-100');
+            checkBtn.innerHTML = "CHECK KARO! 🚀";
+
+            // Add small vibration/feedback
+            if (window.navigator.vibrate) {
+                window.navigator.vibrate(10);
+            }
+        }
+
+        document.getElementById('checkButton').addEventListener('click', function() {
+            const selected = document.querySelector('.option-card.selected span.font-headline-md');
+            if (selected && selected.innerText === '200 ml') {
+                this.classList.replace('bg-primary-container', 'bg-secondary');
+                this.innerText = 'SAHI JAWAB! 🎉';
+                
+                // Success confetti effect simulation
+                document.body.style.backgroundColor = '#f0fff4';
+                setTimeout(() => { document.body.style.backgroundColor = '#fbf9f3'; }, 1000);
+            } else {
+                this.classList.replace('bg-primary-container', 'bg-error');
+                this.innerText = 'GALAT! TRY AGAIN ❌';
+                setTimeout(() => {
+                    this.classList.replace('bg-error', 'bg-primary-container');
+                    this.innerText = 'CHEECO JAWAB!';
+                }, 1500);
+            }
+        });
+    </script>
+</body></html>

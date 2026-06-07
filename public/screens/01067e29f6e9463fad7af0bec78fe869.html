@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Final Panga! - Math Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dbdad4",
+                        "on-primary": "#ffffff",
+                        "secondary": "#006d38",
+                        "inverse-primary": "#ffb693",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "surface-tint": "#a04100",
+                        "background": "#fbf9f3",
+                        "on-primary-container": "#572000",
+                        "inverse-on-surface": "#f2f1eb",
+                        "surface-container-high": "#eae8e2",
+                        "primary-fixed": "#ffdbcc",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary": "#ba005b",
+                        "on-primary-fixed": "#351000",
+                        "inverse-surface": "#30312d",
+                        "on-error-container": "#93000a",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#00210d",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#ff6096",
+                        "outline-variant": "#e2bfb0",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#63ff9d",
+                        "secondary-container": "#63ff9d",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-fixed": "#3f001a",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-container": "#f0eee8",
+                        "surface-bright": "#fbf9f3",
+                        "primary-container": "#ff6b00",
+                        "on-tertiary-container": "#67002f",
+                        "on-surface-variant": "#5a4136",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#00743c",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#40e183",
+                        "surface-container-highest": "#e4e2dd",
+                        "outline": "#8e7164",
+                        // Custom additions based on prompt for the Desi Street-Pop aesthetic
+                        "mango-orange": "#ff6b00",
+                        "nimbu-green": "#006d38",
+                        "auto-yellow": "#ffcc00",
+                        "warm-chalk": "#fff8f0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "container-max-width": "1200px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-border {
+            border: 3px solid #1A1A1A;
+        }
+        .neo-brutalist-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-brutalist-interactive:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 5px 5px 0px #1A1A1A;
+        }
+        .neo-brutalist-interactive:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        body {
+            background-color: #fff8f0; /* warm-chalk */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md pb-[100px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 border-b-[3px] border-on-surface dark:border-surface-container-highest shadow-[4px_4px_0px_#1B1C19] bg-mango-orange z-40 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface text-3xl font-bold" style="font-variation-settings: 'FILL' 1;">timer</span>
+<h1 class="font-headline-md text-headline-md font-extrabold text-on-surface uppercase tracking-tighter">Final Panga! 📝</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-on-surface bg-auto-yellow px-4 py-1 rounded-full neo-brutalist-border">02:30</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Score: 150</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-8">
+<!-- Progress Bar -->
+<div class="w-full">
+<div class="flex justify-between mb-2">
+<span class="font-label-lg text-label-lg uppercase">Question 1/10</span>
+<span class="font-label-lg text-label-lg uppercase">10% Complete</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-6 neo-brutalist-border overflow-hidden flex">
+<div class="bg-nimbu-green h-full w-[10%] border-r-[3px] border-on-surface flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#000_10px,#000_20px)]"></div>
+</div>
+<div class="h-full flex-1 relative">
+<!-- Segment markers -->
+<div class="absolute left-[10%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[20%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[30%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[40%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[50%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[60%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[70%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[80%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+<div class="absolute left-[90%] top-0 bottom-0 w-[3px] bg-on-surface/20"></div>
+</div>
+</div>
+</div>
+<!-- Main Question Card -->
+<section class="bg-white rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow p-6 md:p-8 flex flex-col gap-6">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Sabse zyada aur sabse kam price kaunsi hai? Max aur Min batao! 🔢</h2>
+<hr class="border-t-[3px] border-on-surface my-2"/>
+<!-- Price Tags -->
+<div class="flex flex-wrap gap-4 justify-center py-4">
+<div class="bg-auto-yellow px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow font-headline-md text-headline-md">₹12</div>
+<div class="bg-auto-yellow px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow font-headline-md text-headline-md">₹45</div>
+<div class="bg-auto-yellow px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow font-headline-md text-headline-md">₹8</div>
+<div class="bg-auto-yellow px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow font-headline-md text-headline-md">₹67</div>
+<div class="bg-auto-yellow px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow font-headline-md text-headline-md">₹23</div>
+</div>
+<!-- Input Area -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg uppercase">Max Value</label>
+<input class="w-full bg-white neo-brutalist-border p-4 font-headline-md text-headline-md focus:outline-none focus:shadow-[4px_4px_0px_#006d38] transition-shadow rounded-DEFAULT text-center" placeholder="___" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg uppercase">Min Value</label>
+<input class="w-full bg-white neo-brutalist-border p-4 font-headline-md text-headline-md focus:outline-none focus:shadow-[4px_4px_0px_#006d38] transition-shadow rounded-DEFAULT text-center" placeholder="___" type="text"/>
+</div>
+</div>
+<!-- Quick Pick -->
+<div class="flex flex-col items-center gap-3 mt-4 bg-surface-container p-4 rounded-DEFAULT neo-brutalist-border border-dashed">
+<span class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface-variant">Quick Pick</span>
+<div class="flex gap-4">
+<button class="bg-white border-[3px] border-mango-orange px-6 py-2 rounded-full font-headline-md text-headline-md neo-brutalist-interactive transition-all">₹67 (Max)</button>
+<button class="bg-white border-[3px] border-mango-orange px-6 py-2 rounded-full font-headline-md text-headline-md neo-brutalist-interactive transition-all">₹8 (Min)</button>
+</div>
+</div>
+</section>
+<!-- Playful Tip -->
+<div class="bg-[#00e5ff] rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow p-4 flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<p class="font-body-lg text-body-lg font-bold">Final panga hai ye! Sabse bada aur sabse chhota dhoondh! 🏆</p>
+</div>
+<!-- Desktop Actions (Hidden on Mobile) -->
+<div class="hidden md:flex justify-between items-center mt-8">
+<div class="flex gap-4">
+<button class="bg-white neo-brutalist-border neo-brutalist-shadow px-8 py-4 rounded-DEFAULT font-headline-md text-headline-md neo-brutalist-interactive transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">skip_next</span> Skip
+                </button>
+<button class="bg-white neo-brutalist-border neo-brutalist-shadow px-8 py-4 rounded-DEFAULT font-headline-md text-headline-md neo-brutalist-interactive transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">help</span> Hint
+                </button>
+</div>
+<button class="bg-mango-orange neo-brutalist-border neo-brutalist-shadow px-12 py-4 rounded-DEFAULT font-headline-lg text-headline-lg neo-brutalist-interactive transition-all text-on-surface uppercase">
+                SUBMIT PANGA
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-background dark:bg-surface border-t-[3px] border-on-surface dark:border-surface-container-highest">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-tertiary-container dark:hover:bg-tertiary active:scale-95 transition-transform w-1/3">
+<span class="material-symbols-outlined">close</span>
+<span class="font-label-lg text-label-lg mt-1">Quit</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-tertiary-container dark:hover:bg-tertiary active:scale-95 transition-transform w-1/3 border-l-[3px] border-on-surface">
+<span class="material-symbols-outlined">flag</span>
+<span class="font-label-lg text-label-lg mt-1">Report</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface p-2 bg-mango-orange border-l-[3px] border-on-surface w-1/3 h-full">
+<span class="font-headline-md text-headline-md font-bold uppercase">Submit</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathsGuru Worksheet - Maximum</title>
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "surface-container-high": "#eae8e2",
+                      "on-secondary-fixed-variant": "#005229",
+                      "on-primary-container": "#572000",
+                      "on-surface": "#1b1c19",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed": "#63ff9d",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-secondary-fixed": "#00210d",
+                      "surface-bright": "#fbf9f3",
+                      "surface-container-low": "#f5f3ee",
+                      "outline-variant": "#e2bfb0",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1b1c19",
+                      "background": "#fbf9f3",
+                      "secondary-container": "#63ff9d",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#006d38",
+                      "on-secondary-container": "#00743c",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-dim": "#dbdad4",
+                      "surface": "#fbf9f3",
+                      "on-tertiary-container": "#67002f",
+                      "surface-tint": "#a04100",
+                      "inverse-on-surface": "#f2f1eb",
+                      "on-surface-variant": "#5a4136",
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "outline": "#8e7164",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#3f001a",
+                      "on-primary-fixed": "#351000",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#30312d",
+                      "tertiary-fixed": "#ffd9e1",
+                      "surface-variant": "#e4e2dd",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#ffb693",
+                      "secondary-fixed-dim": "#40e183",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "primary-fixed": "#ffdbcc",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#ff6b00",
+                      "tertiary": "#ba005b",
+                      "error": "#ba1a1a",
+                      "primary": "#a04100",
+                      "tertiary-container": "#ff6096",
+                      "surface-container": "#f0eee8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "40px",
+                      "gutter": "16px",
+                      "container-max-width": "1200px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Nunito Sans"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-md": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg": [
+                              "Bricolage Grotesque"
+                      ],
+                      "label-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl-mobile": [
+                              "Bricolage Grotesque"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist utilities & Specific Aesthetics */
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px #1b1c19;
+        }
+        .brutal-shadow-hover:hover {
+            box-shadow: 2px 2px 0px #1b1c19;
+            transform: translate(2px, 2px);
+        }
+        .brutal-shadow-active:active {
+            box-shadow: 0px 0px 0px #1b1c19;
+            transform: translate(4px, 4px);
+        }
+        
+        /* Dotted Grid Paper Background */
+        .bg-dotted-paper {
+            background-color: #fbf9f3;
+            background-image: radial-gradient(#1b1c19 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+
+        /* Hide scrollbar for clean UI but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f3; 
+            border-left: 3px solid #1b1c19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1b1c19; 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col relative pb-[100px] pt-[80px]">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface border-b-[3px] border-on-surface">
+<div class="flex items-center gap-4">
+<button class="hover:bg-primary-container transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all p-2 rounded-full flex items-center justify-center border-[3px] border-transparent hover:border-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary font-bold tracking-tight">MathsGuru</h1>
+</div>
+<div class="w-10 h-10 bg-tertiary-container border-[3px] border-on-surface rounded-full flex items-center justify-center brutal-shadow overflow-hidden">
+<span class="material-symbols-outlined text-on-surface" data-icon="person">person</span>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow bg-dotted-paper px-margin-mobile md:px-margin-desktop py-8 md:py-12 flex flex-col gap-8 md:gap-12 max-w-container-max-width mx-auto w-full">
+<!-- Header -->
+<div class="bg-surface-container-low border-[3px] border-on-surface rounded-xl p-6 md:p-8 brutal-shadow relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-container rounded-full opacity-50 blur-xl z-0"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<span class="inline-block bg-tertiary-fixed px-3 py-1 rounded-full border-[3px] border-on-surface text-on-surface font-label-lg w-max mb-2">Worksheet 04</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Mastering the <span class="text-primary-container inline-block transform -rotate-2 bg-on-surface px-2">Maximum</span></h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mt-2">Let's find the biggest numbers! Work through these three parts to prove your skills.</p>
+</div>
+</div>
+<!-- Part A: Circle the Maximum -->
+<section class="bg-surface border-[3px] border-on-surface rounded-xl p-6 md:p-8 brutal-shadow flex flex-col gap-6">
+<div class="flex items-center gap-3 border-b-[3px] border-on-surface pb-4">
+<div class="w-10 h-10 bg-secondary-fixed border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md">A</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Circle the Maximum</h3>
+</div>
+<p class="font-body-lg text-on-surface">Tap the highest number in the group below:</p>
+<div class="flex flex-wrap gap-4 mt-2 justify-center md:justify-start" id="part-a-chips">
+<!-- Math Chips -->
+<button class="math-chip w-20 h-20 bg-surface-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md brutal-shadow brutal-shadow-hover brutal-shadow-active transition-all" onclick="toggleChip(this)">14</button>
+<button class="math-chip w-20 h-20 bg-surface-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md brutal-shadow brutal-shadow-hover brutal-shadow-active transition-all" onclick="toggleChip(this)">28</button>
+<button class="math-chip w-20 h-20 bg-surface-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md brutal-shadow brutal-shadow-hover brutal-shadow-active transition-all" onclick="toggleChip(this)">35</button>
+<button class="math-chip w-20 h-20 bg-surface-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md brutal-shadow brutal-shadow-hover brutal-shadow-active transition-all" onclick="toggleChip(this)">22</button>
+<button class="math-chip w-20 h-20 bg-surface-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md text-headline-md brutal-shadow brutal-shadow-hover brutal-shadow-active transition-all" onclick="toggleChip(this)">19</button>
+</div>
+</section>
+<!-- Part B: Table-Based Question -->
+<section class="bg-surface border-[3px] border-on-surface rounded-xl p-6 md:p-8 brutal-shadow flex flex-col gap-6">
+<div class="flex items-center gap-3 border-b-[3px] border-on-surface pb-4">
+<div class="w-10 h-10 bg-primary-fixed-dim border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md">B</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Data Analysis</h3>
+</div>
+<p class="font-body-lg text-on-surface">Review the "Fruits Sold" table. Which fruit sold the maximum quantity?</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-2">
+<!-- Brutalist Table -->
+<div class="border-[3px] border-on-surface rounded-lg overflow-hidden brutal-shadow bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary-container border-b-[3px] border-on-surface">
+<th class="p-4 font-headline-md text-on-surface border-r-[3px] border-on-surface">Fruit</th>
+<th class="p-4 font-headline-md text-on-surface">Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-high transition-colors">
+<td class="p-4 font-body-lg border-r-[3px] border-on-surface flex items-center gap-2"><span class="text-2xl">🍎</span> Apple</td>
+<td class="p-4 font-body-lg font-bold">50</td>
+</tr>
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-high transition-colors">
+<td class="p-4 font-body-lg border-r-[3px] border-on-surface flex items-center gap-2"><span class="text-2xl">🍌</span> Banana</td>
+<td class="p-4 font-body-lg font-bold">80</td>
+</tr>
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-high transition-colors bg-secondary-fixed/20">
+<td class="p-4 font-body-lg border-r-[3px] border-on-surface flex items-center gap-2"><span class="text-2xl">🥭</span> Mango</td>
+<td class="p-4 font-body-lg font-bold text-primary text-xl">120</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="p-4 font-body-lg border-r-[3px] border-on-surface flex items-center gap-2"><span class="text-2xl">🍊</span> Orange</td>
+<td class="p-4 font-body-lg font-bold">65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Answer Selection -->
+<div class="flex flex-col gap-4">
+<p class="font-label-lg text-on-surface-variant uppercase tracking-widest">Select Answer</p>
+<div class="flex flex-col gap-3">
+<button class="w-full text-left px-6 py-4 bg-surface border-[3px] border-on-surface rounded-lg brutal-shadow hover:bg-primary-container transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none font-body-lg flex justify-between items-center group">
+<span>Apple</span>
+<div class="w-6 h-6 rounded-full border-[2px] border-on-surface group-hover:bg-on-surface transition-colors"></div>
+</button>
+<button class="w-full text-left px-6 py-4 bg-surface border-[3px] border-on-surface rounded-lg brutal-shadow hover:bg-primary-container transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none font-body-lg flex justify-between items-center group">
+<span>Mango</span>
+<div class="w-6 h-6 rounded-full border-[2px] border-on-surface group-hover:bg-on-surface transition-colors"></div>
+</button>
+<button class="w-full text-left px-6 py-4 bg-surface border-[3px] border-on-surface rounded-lg brutal-shadow hover:bg-primary-container transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none font-body-lg flex justify-between items-center group">
+<span>Banana</span>
+<div class="w-6 h-6 rounded-full border-[2px] border-on-surface group-hover:bg-on-surface transition-colors"></div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Part C: Word Problem -->
+<section class="bg-surface border-[3px] border-on-surface rounded-xl p-6 md:p-8 brutal-shadow flex flex-col gap-6 relative">
+<!-- Decorative Tape -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-tertiary/20 backdrop-blur-sm transform rotate-2 border border-tertiary/30"></div>
+<div class="flex items-center gap-3 border-b-[3px] border-on-surface pb-4">
+<div class="w-10 h-10 bg-tertiary-fixed border-[3px] border-on-surface rounded-full flex items-center justify-center font-headline-md">C</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Word Problem</h3>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg border-[3px] border-on-surface">
+<p class="font-body-lg text-on-surface leading-relaxed text-xl">
+                    Aarav scored <span class="bg-secondary-fixed px-2 py-1 rounded border-[2px] border-on-surface font-bold inline-block transform -rotate-1">85</span> in Math, <span class="bg-primary-fixed-dim px-2 py-1 rounded border-[2px] border-on-surface font-bold inline-block transform rotate-1">92</span> in Science, and <span class="bg-tertiary-fixed px-2 py-1 rounded border-[2px] border-on-surface font-bold inline-block transform -rotate-2">78</span> in English. 
+                    <br/><br/>What is his <strong>maximum</strong> score?
+                </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-end mt-2">
+<div class="flex flex-col gap-2 w-full sm:w-auto flex-grow">
+<label class="font-label-lg text-on-surface-variant uppercase tracking-widest" for="answer-c">Your Answer</label>
+<input class="w-full bg-surface-container-lowest border-[3px] border-on-surface rounded-lg px-4 py-3 font-headline-md text-headline-md focus:outline-none focus:ring-0 focus:border-on-surface focus:shadow-[4px_4px_0px_#63ff9d] transition-shadow placeholder:text-surface-dim" id="answer-c" placeholder="Type number..." type="number"/>
+</div>
+<button class="w-full sm:w-auto px-8 py-4 bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg brutal-shadow hover:bg-primary transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none font-headline-md flex items-center justify-center gap-2">
+                    Submit <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Hidden on md and up based on general responsive rules, but JSON implies it exists. Following Semantic Rules: Visible on top-level dest. Quiz is active.) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container border-t-[3px] border-on-surface">
+<!-- Home: Inactive -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</button>
+<!-- Chat: Inactive -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</button>
+<!-- Quiz: ACTIVE (matches context of worksheet) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_#1B1C19] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">
+<span class="material-symbols-outlined" data-icon="quiz" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg mt-1">Quiz</span>
+</button>
+<!-- Story: Inactive -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</button>
+</nav>
+<!-- Interactive Script for Math Chips -->
+<script>
+        function toggleChip(element) {
+            // Remove active state from all chips in the group
+            const allChips = document.querySelectorAll('#part-a-chips .math-chip');
+            allChips.forEach(chip => {
+                chip.classList.remove('bg-primary-container', 'text-on-primary-container', 'scale-110');
+                chip.classList.add('bg-surface-container', 'text-on-surface');
+            });
+
+            // Add active state to clicked chip
+            element.classList.remove('bg-surface-container', 'text-on-surface');
+            element.classList.add('bg-primary-container', 'text-on-primary-container', 'scale-110');
+        }
+    </script>
+</body></html>

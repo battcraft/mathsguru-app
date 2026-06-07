@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Range Explainer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow { shadow-[4px_4px_0px_#1A1A1A]; }
+        .active-squish:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #ff6b00;
+            border: 3px solid #1A1A1A;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#ffb693",
+                      "tertiary-container": "#ff6096",
+                      "primary-container": "#ff6b00",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#8e7164",
+                      "on-error": "#ffffff",
+                      "on-background": "#1b1c19",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dbdad4",
+                      "background": "#fbf9f3",
+                      "surface-container-high": "#eae8e2",
+                      "on-primary-container": "#572000",
+                      "surface-container": "#f0eee8",
+                      "tertiary": "#ba005b",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#30312d",
+                      "inverse-on-surface": "#f2f1eb",
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "surface-bright": "#fbf9f3",
+                      "surface-container-low": "#f5f3ee",
+                      "surface-variant": "#e4e2dd",
+                      "secondary-fixed-dim": "#40e183",
+                      "on-surface": "#1b1c19",
+                      "secondary-fixed": "#63ff9d",
+                      "tertiary-fixed": "#ffd9e1",
+                      "on-secondary-fixed": "#00210d",
+                      "secondary-container": "#63ff9d",
+                      "on-secondary-container": "#00743c",
+                      "surface-tint": "#a04100",
+                      "primary-fixed": "#ffdbcc",
+                      "outline-variant": "#e2bfb0",
+                      "secondary": "#006d38",
+                      "on-tertiary-fixed": "#3f001a",
+                      "surface": "#fbf9f3",
+                      "primary": "#a04100",
+                      "on-secondary-fixed-variant": "#005229",
+                      "on-tertiary-container": "#67002f",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "on-primary-fixed": "#351000",
+                      "on-surface-variant": "#5a4136"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "gutter": "16px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "container-max-width": "1200px"
+              },
+              "fontFamily": {
+                      "headline-xl-mobile": ["Bricolage Grotesque"],
+                      "headline-md": ["Bricolage Grotesque"],
+                      "headline-xl": ["Bricolage Grotesque"],
+                      "headline-lg": ["Bricolage Grotesque"],
+                      "body-md": ["Nunito Sans"],
+                      "headline-lg-mobile": ["Bricolage Grotesque"],
+                      "label-lg": ["Nunito Sans"],
+                      "body-lg": ["Nunito Sans"]
+              },
+              "fontSize": {
+                      "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-secondary-fixed shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL5DHvHYkUewkBLnJB8dewuahH4aJ_VQDrCqW5FJbPGgmURVkC1WqvAImd36ZEiZfQIzed0YHEyYFuEgUCRNW9PllEMr_Cd4podMdiq_voDx0SrMEcnyGHsDymsEQ7DQm3qZVGM9BhVyJ3fsmFj88vQyEsd1IqgoIi84aeSRrD14748TZk7cn7kOXXTEitglAebEHeLmMd1Sc8yOXy_SRtI-kHi2JOovW4xjZdVPiL3mNbAD8H6mql0c0fEiOll0IzvdK9iXfXT_cb"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-label-lg text-label-lg text-primary active:translate-x-1 active:translate-y-1 transition-all" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all" href="#">Chat</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all" href="#">Quiz</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all" href="#">Story</a>
+</nav>
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined font-headline-md" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold">12 Days</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max-width mx-auto px-margin-desktop py-12">
+<!-- Hero Section: The "Bhaiya" Audio Explainer -->
+<section class="mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7">
+<div class="inline-block px-4 py-1 mb-4 bg-secondary-container border-3 border-black rounded-full font-label-lg text-on-secondary-container shadow-[2px_2px_0px_#1A1A1A]">
+                    TOPIC: STATISTICS
+                </div>
+<h2 class="font-headline-xl text-headline-xl mb-6 text-on-surface">Samjho "Range" Kya Hai?</h2>
+<p class="font-body-lg text-body-lg mb-8 text-on-surface-variant max-w-xl">
+                    Range basically tells you the gap between the biggest and the smallest number in your group. Bhaiya explains it in simple Hinglish!
+                </p>
+<!-- Custom Audio Player Card -->
+<div class="bg-surface-container-lowest border-3 border-black p-6 rounded-lg shadow-[8px_8px_0px_#1A1A1A] flex flex-col md:flex-row items-center gap-6">
+<button class="w-16 h-16 flex items-center justify-center bg-primary-container text-white rounded-full border-3 border-black shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" id="playBtn">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex-grow w-full">
+<div class="flex justify-between mb-2">
+<span class="font-label-lg text-primary">Bhaiya's Voice Note</span>
+<span class="font-label-lg text-on-surface-variant">02:45</span>
+</div>
+<div class="h-4 bg-surface-container border-3 border-black rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary-fixed w-1/3 border-r-3 border-black" id="audioProgress"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative z-10 bg-white border-3 border-black rounded-lg p-2 shadow-[8px_8px_0px_#ff6b00]">
+<img alt="Bhaiya Explaining Range" class="w-full h-80 object-cover rounded-md border-2 border-black" data-alt="A vibrant, Neo-Brutalist digital illustration of a friendly mentor figure wearing a colorful turban, pointing at a giant wooden ruler. The background features bright Mango Orange and Nimbu Green patterns inspired by Indian truck art. High contrast black outlines and solid, hard shadows create a tactile, three-dimensional pop-art feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDUjfSniOYGAjke5QLIadjUrQ1VAYg5Eix_m6xghtE0zK38tOs7Qi6F1JAd3TJdmEjOmEHaUtLau-O3m9BV69mbgBC4oPMmMP7wh--z7VK-Em6LMXmGMmO4eyFRzvhOOPAJZLKjXgrnNrRfTmlI_961djn1AR-_UngDpz1L4CRlZQOytbRiKRNxkoH3XgO07HAVLft0ZR_y1TMFeDX3Hp4hSe0t4Zj8JBUai8x5IyRtD57kFSKm5VEvAxuNEMTC1OLGFaadmlaab5H"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-tertiary-container border-3 border-black rounded-full -z-0"></div>
+</div>
+</section>
+<!-- Interactive Range Visualizer -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+<!-- Left: Controls and Visualizer -->
+<div class="lg:col-span-8 bg-surface-container-low border-3 border-black p-8 rounded-lg shadow-[8px_8px_0px_#1A1A1A]">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-md text-headline-md">Live Range Visualizer</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-white border-2 border-black rounded-full font-label-lg">Drag Sliders!</span>
+</div>
+</div>
+<div class="relative py-12 px-8 bg-white border-3 border-black rounded-lg mb-8">
+<!-- The Range Line -->
+<div class="h-2 bg-surface-container-highest rounded-full border-2 border-black relative">
+<!-- Active Range Highlight -->
+<div class="absolute h-full bg-primary-fixed border-x-2 border-black" id="rangeHighlight" style="left: 20%; right: 30%;"></div>
+</div>
+<!-- Slider 1 (Min) -->
+<input class="absolute top-1/2 -translate-y-1/2 left-0 w-full appearance-none bg-transparent pointer-events-none cursor-pointer [&amp;::-webkit-slider-thumb]:pointer-events-auto" id="minRange" max="100" min="0" type="range" value="20"/>
+<!-- Slider 2 (Max) -->
+<input class="absolute top-1/2 -translate-y-1/2 left-0 w-full appearance-none bg-transparent pointer-events-none cursor-pointer [&amp;::-webkit-slider-thumb]:pointer-events-auto" id="maxRange" max="100" min="0" type="range" value="70"/>
+<div class="flex justify-between mt-6 font-label-lg font-bold text-on-surface-variant">
+<span>0</span>
+<span>25</span>
+<span>50</span>
+<span>75</span>
+<span>100</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-secondary-fixed border-3 border-black p-4 rounded-lg shadow-[4px_4px_0px_#1A1A1A]">
+<p class="font-label-lg text-on-secondary-fixed mb-1">Smallest Value (L)</p>
+<p class="font-headline-md text-headline-md" id="minDisplay">20</p>
+</div>
+<div class="bg-tertiary-fixed border-3 border-black p-4 rounded-lg shadow-[4px_4px_0px_#1A1A1A]">
+<p class="font-label-lg text-on-tertiary-fixed mb-1">Largest Value (H)</p>
+<p class="font-headline-md text-headline-md" id="maxDisplay">70</p>
+</div>
+<div class="bg-primary-container border-3 border-black p-4 rounded-lg shadow-[4px_4px_0px_#1A1A1A] text-white">
+<p class="font-label-lg mb-1">Range (H - L)</p>
+<p class="font-headline-md text-headline-md" id="rangeDisplay">50</p>
+</div>
+</div>
+</div>
+<!-- Right: Real-time Calculator & Summary -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-highest border-3 border-black p-6 rounded-lg shadow-[4px_4px_0px_#1A1A1A]">
+<h4 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calculate</span> Quick Formula
+                    </h4>
+<div class="p-4 bg-white border-2 border-black border-dashed rounded-lg mb-4 text-center">
+<p class="font-headline-md text-primary">Range = H - L</p>
+<p class="font-label-lg text-on-surface-variant">Highest value minus Lowest value</p>
+</div>
+<ul class="space-y-3 font-body-md">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Find the biggest number</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Find the smallest number</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+<span>Subtract the smallest from the biggest!</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 bg-primary-container text-white font-headline-md text-headline-md rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3">
+                    Start Quiz <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Bento Grid: Concept Deep Dive -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-secondary-container border-3 border-black p-8 rounded-lg shadow-[6px_6px_0px_#1A1A1A]">
+<h4 class="font-headline-md text-headline-md mb-4 italic">"Bro, range ka real use kya hai?"</h4>
+<p class="font-body-lg text-on-secondary-container">Imagine checking the temperature for your trip. If the Range is small (25°C to 28°C), you know what to pack. If the Range is huge (10°C to 40°C), carry everything from a jacket to a t-shirt!</p>
+</div>
+<div class="bg-white border-3 border-black p-6 rounded-lg shadow-[6px_6px_0px_#1A1A1A] flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-tertiary mb-3">trending_up</span>
+<p class="font-headline-md">Easy Gap</p>
+<p class="font-label-lg">Quickly see how spread out data is.</p>
+</div>
+<div class="bg-primary-fixed border-3 border-black p-6 rounded-lg shadow-[6px_6px_0px_#1A1A1A] flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary mb-3">priority_high</span>
+<p class="font-headline-md">Outlier Alert</p>
+<p class="font-label-lg">Large ranges hint at extreme values.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Hidden on desktop as per rules, but included for completeness) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        const minRange = document.getElementById('minRange');
+        const maxRange = document.getElementById('maxRange');
+        const minDisplay = document.getElementById('minDisplay');
+        const maxDisplay = document.getElementById('maxDisplay');
+        const rangeDisplay = document.getElementById('rangeDisplay');
+        const rangeHighlight = document.getElementById('rangeHighlight');
+        const playBtn = document.getElementById('playBtn');
+        const audioProgress = document.getElementById('audioProgress');
+
+        function updateRange() {
+            let minVal = parseInt(minRange.value);
+            let maxVal = parseInt(maxRange.value);
+
+            // Constraint: Min can't exceed Max
+            if (minVal > maxVal) {
+                [minVal, maxVal] = [maxVal, minVal];
+            }
+
+            minDisplay.textContent = minVal;
+            maxDisplay.textContent = maxVal;
+            rangeDisplay.textContent = maxVal - minVal;
+
+            // Visual highlight update
+            rangeHighlight.style.left = minVal + '%';
+            rangeHighlight.style.width = (maxVal - minVal) + '%';
+        }
+
+        minRange.addEventListener('input', updateRange);
+        maxRange.addEventListener('input', updateRange);
+
+        // Simple Audio Player interaction simulation
+        let isPlaying = false;
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            const icon = playBtn.querySelector('.material-symbols-outlined');
+            icon.textContent = isPlaying ? 'pause' : 'play_arrow';
+            
+            if(isPlaying) {
+                playBtn.classList.add('bg-secondary');
+                playBtn.classList.remove('bg-primary-container');
+            } else {
+                playBtn.classList.add('bg-primary-container');
+                playBtn.classList.remove('bg-secondary');
+            }
+        });
+
+        // Periodic progress bar update simulation
+        setInterval(() => {
+            if (isPlaying) {
+                let currentWidth = parseFloat(audioProgress.style.width) || 33.3;
+                if (currentWidth >= 100) currentWidth = 0;
+                audioProgress.style.width = (currentWidth + 0.5) + '%';
+            }
+        }, 100);
+
+        // Initial update
+        updateRange();
+    </script>
+</body></html>

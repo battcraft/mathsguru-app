@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice Phase Intro - MathsGuru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-shadow {
+            shadow-color: #1c1b1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c19;
+            overflow-x: hidden;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Practice Zone</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="bg-secondary-container px-3 py-1 border-[2px] border-on-surface rounded-full flex items-center gap-1 shadow-[2px_2px_0px_#1c1b1b]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-lg text-label-lg text-on-secondary-container">12 Streak</span>
+</div>
+</div>
+</header>
+<main class="max-w-[600px] mx-auto px-4 pt-8 pb-32">
+<!-- Hero Section -->
+<section class="relative mb-8">
+<div class="bg-white border-[3px] border-on-surface rounded-lg shadow-[8px_8px_0px_#1c1b1b] overflow-hidden">
+<!-- Card Header -->
+<div class="bg-primary-container p-6 border-b-[3px] border-on-surface text-center">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-on-primary">Ab Teri Baari, Champ!</h2>
+</div>
+<!-- Character & Message -->
+<div class="p-8 flex flex-col items-center text-center">
+<div class="relative w-48 h-48 mb-6">
+<div class="absolute inset-0 bg-secondary-fixed rounded-full border-[3px] border-on-surface -rotate-3"></div>
+<img alt="MathsGuru Bhaiya Thumbs Up" class="relative z-10 w-full h-full object-contain" data-alt="A friendly, charismatic Indian male teacher character named MathsGuru Bhaiya with a warm smile and energetic thumbs-up gesture. He wears a trendy mustard-yellow kurta and modern glasses. The background is a vibrant lime green circle with hand-drawn math symbols like pi and square roots floating around. The art style is bold, 2D vector illustration with heavy black outlines and neo-brutalist pop colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoym4m9Mz0ktaUFME8Rg34C9iQQMcMesRl689VtMe47_UqYwiQHogRKjs90u3xxw5aYIfw6Tbsx9o2YysbNscJK8YFVM53fRDam1wvsxYohAp_A-AMhfdxnJlhQD1QqXpRqCRj_5zl_UykW5iCe-8WpTW8CPfr82B31uUzEFvsInTfRS-cHEeY02MHMjrVZOSrruROsLqrdZDFmNHyhxBTh7xZW1jS4w-SSsec4LNSO_UTX-YCDrdgJfcw2_qpl54-xLuUqFPnW8vV"/>
+</div>
+<p class="font-body-lg text-body-lg mb-6 px-4">
+                        "You've crushed the concept! Now, let's see those skills in action. Ready to solve some spicy problems?"
+                    </p>
+<!-- Reward Preview Badge -->
+<div class="bg-tertiary-fixed border-[2px] border-on-surface rounded-lg p-4 flex items-center gap-4 w-full shadow-[4px_4px_0px_#1c1b1b] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-default">
+<div class="bg-white p-2 rounded-full border-[2px] border-on-surface shadow-[2px_2px_0px_#1c1b1b]">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div class="text-left">
+<p class="font-label-lg text-label-lg text-on-tertiary-fixed opacity-70">REWARD AWAITING</p>
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed">Quick Learner</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-4 mb-10">
+<div class="bg-surface-container border-[3px] border-on-surface rounded-lg p-4 shadow-[4px_4px_0px_#1c1b1b]">
+<span class="material-symbols-outlined text-primary mb-2">timer</span>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Estimated Time</p>
+<p class="font-headline-md text-headline-md text-on-surface">15 Mins</p>
+</div>
+<div class="bg-surface-container border-[3px] border-on-surface rounded-lg p-4 shadow-[4px_4px_0px_#1c1b1b]">
+<span class="material-symbols-outlined text-secondary mb-2">task_alt</span>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Questions</p>
+<p class="font-headline-md text-headline-md text-on-surface">10 Mix</p>
+</div>
+</section>
+<!-- Main Action CTA -->
+<button class="group relative w-full bg-primary-container border-[3px] border-on-surface rounded-lg py-5 shadow-[4px_4px_0px_#1c1b1b] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all" id="startBtn">
+<span class="font-headline-md text-headline-md text-white flex items-center justify-center gap-3">
+                Start Practice Session
+                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</span>
+</button>
+<p class="text-center mt-6 font-body-md text-body-md text-on-surface-variant italic">
+            "Chak de phatte! You've got this."
+        </p>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface border-t-[3px] border-on-surface px-4 py-3 shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the start button
+        const startBtn = document.getElementById('startBtn');
+        startBtn.addEventListener('click', () => {
+            startBtn.classList.add('bg-secondary');
+            startBtn.innerHTML = `
+                <span class="font-headline-md text-headline-md text-white flex items-center justify-center gap-3">
+                    Let's Go! 🚀
+                </span>
+            `;
+            setTimeout(() => {
+                alert('Navigating to Practice Session...');
+            }, 300);
+        });
+
+        // Add some floating confetti-like elements on load for "energy"
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.body;
+            for(let i = 0; i < 8; i++) {
+                const el = document.createElement('div');
+                el.className = 'fixed pointer-events-none text-primary opacity-20 text-4xl';
+                el.innerHTML = i % 2 === 0 ? '+' : '×';
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.top = Math.random() * 100 + 'vh';
+                el.style.transform = `rotate(${Math.random() * 360}deg)`;
+                container.appendChild(el);
+            }
+        });
+    </script>
+</body></html>

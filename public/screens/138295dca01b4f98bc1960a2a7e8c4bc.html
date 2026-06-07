@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Pop - Max/Min in Nature</title>
+<!-- Google Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-dot-pattern {
+                background-image: radial-gradient(circle at 2px 2px, #1a1c1c 2px, transparent 0);
+                background-size: 32px 32px;
+                opacity: 0.05;
+            }
+            .neo-shadow {
+                box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            }
+            .neo-shadow-active {
+                box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+            }
+            .neo-shadow-pressed {
+                box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+                transform: translate(4px, 4px);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Pattern Overlay -->
+<div class="fixed inset-0 bg-dot-pattern pointer-events-none z-0"></div>
+<!-- TopAppBar -->
+<header class="bg-surface text-primary font-headline-md text-headline-md w-full sticky top-0 z-50 border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit transition-all">
+<button class="text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none bg-surface-container border-[3px] border-on-surface p-1 rounded neo-shadow flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<span class="font-headline-lg text-headline-lg font-bold text-primary uppercase tracking-tighter">Ganit Pop</span>
+<div class="w-8"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Canvas -->
+<main class="relative z-10 px-margin-mobile md:px-margin-desktop py-8 pb-32 md:pb-16 max-w-6xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-12 flex flex-col items-center text-center">
+<div class="inline-block bg-tertiary-fixed border-[3px] border-on-surface px-4 py-1 rounded-full neo-shadow mb-6 rotate-[-2deg]">
+<span class="font-label-bold text-label-bold text-on-tertiary-fixed uppercase tracking-wider">Concept Explainer</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface mb-4">
+                Nature's <span class="text-primary bg-primary-fixed px-2 border-[3px] border-on-surface ml-1 neo-shadow rotate-[1deg] inline-block">MAX</span> &amp; <span class="text-secondary bg-secondary-container px-2 border-[3px] border-on-surface ml-1 neo-shadow rotate-[-1deg] inline-block">MIN</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto border-t-[3px] border-on-surface pt-4 mt-2">
+                In mathematics, we look for absolute limits. In geography, Earth has its own extreme coordinates. Let's compare the highest peak to the deepest abyss.
+            </p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1: MAX (Everest) -->
+<article class="bg-surface border-[3px] border-on-surface rounded-xl overflow-hidden flex flex-col neo-shadow group hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+<div class="h-64 border-b-[3px] border-on-surface relative bg-primary-fixed-dim">
+<img alt="Everest Graphic" class="w-full h-full object-cover" data-alt="A striking, high-contrast digital illustration of Mount Everest in a neo-brutalist style. The mountain peak is drawn with thick, bold black outlines and flat, vibrant primary pink colors against a minimalist geometric canvas. The lighting is harsh and dramatic, creating a stark, modern light-mode aesthetic. The scene incorporates abstract mathematical lines to emphasize extreme vertical height." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5LCjGI1O82_q7sj44vLIuf7UVarogDs7IFU9n1K-I65cVtvsktWDiUZGgblR9Ln6uUn8GpCCn-XhCAK8hZ3EK3rfqv5tkicbD169WJAD5O_eK5zQ2Xpg5uN48JstPhGWsCLew9C0Q4dng3pU00Nr5AWcGRB-h97ZBQXsFemgUj2bjv8BIz6HUDh3ZQaRD58H1XAWt2bZ7hvqIeZYtv-R43gKOStA7r6ONKTxbZFV7tcpgOaQmTl-2Q17q37AgWJNt7K9HerJ3BZ4F"/>
+<div class="absolute top-4 left-4 bg-surface border-[3px] border-on-surface px-3 py-1 neo-shadow rounded-md font-label-bold text-label-bold text-primary flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary border-2 border-on-surface"></div>
+                        MAXIMUM
+                    </div>
+</div>
+<div class="p-6 bg-surface flex flex-col flex-grow relative">
+<!-- Graph paper lines decoration -->
+<div class="absolute inset-0 bg-[linear-gradient(transparent_23px,#e2e2e2_24px)] bg-[size:100%_24px] opacity-50 pointer-events-none"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 relative z-10">Mount Everest</h2>
+<div class="text-primary font-headline-lg text-headline-lg mb-6 relative z-10 flex items-baseline gap-2">
+                        8,848 <span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Meters</span>
+</div>
+<div class="mt-auto relative z-10">
+<div class="bg-tertiary-fixed border-[3px] border-on-surface p-4 rounded-lg neo-shadow transform rotate-[1deg]">
+<p class="font-body-md text-body-md text-on-tertiary-fixed font-bold flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary mt-1" data-icon="lightbulb">lightbulb</span>
+                                Bhai, itna uncha hai ki hawa bhi kam padh jati hai! Oxygen levels are 66% lower than at sea level.
+                            </p>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: MIN (Mariana Trench) -->
+<article class="bg-surface border-[3px] border-on-surface rounded-xl overflow-hidden flex flex-col neo-shadow group hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+<div class="h-64 border-b-[3px] border-on-surface relative bg-surface-variant">
+<img alt="Mariana Trench Graphic" class="w-full h-full object-cover" data-alt="A bold, neo-brutalist digital illustration depicting the extreme depths of the Mariana Trench. The underwater abyss is rendered with thick black structural lines and deep, flat contrasting dark brown colors on a graph-paper-like background. Abstract geometric shapes and UI elements highlight the concept of minimum depth and crushing pressure. The overall mood is intense, mathematically precise, and fits a high-contrast light-mode design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-X6dvytwv63_Jiqqun_VpTOK9eJ1OSrNxlcssxGDDlbPs80dVxBX5vsecu7xjj0L4_b3lBRjgHMAw42ELxYB1Ku3Bo5y2rRSV2jSv-xFPaFK6zkfTl4kwukjJveUUJwWLtNnWctCMPl08fUDVjqNKk1tQcvoR1frfH12D1LftPPLFH9S8iFS620BYxpaV7UOL1N1Kz1Qe4j6JbzTD7NL5ynnw6zMD-0RRuDd_rROtGPJN2RhKzTksVlZY59kyNKrnnxZ3_Xsz681A"/>
+<div class="absolute bottom-4 left-4 bg-surface border-[3px] border-on-surface px-3 py-1 neo-shadow rounded-md font-label-bold text-label-bold text-secondary-container flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container border-2 border-on-surface"></div>
+                        MINIMUM
+                    </div>
+</div>
+<div class="p-6 bg-surface flex flex-col flex-grow relative">
+<!-- Graph paper lines decoration -->
+<div class="absolute inset-0 bg-[linear-gradient(transparent_23px,#e2e2e2_24px)] bg-[size:100%_24px] opacity-50 pointer-events-none"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 relative z-10">Mariana Trench</h2>
+<div class="text-secondary-container font-headline-lg text-headline-lg mb-6 relative z-10 flex items-baseline gap-2">
+                        -10,994 <span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Meters</span>
+</div>
+<div class="mt-auto relative z-10">
+<div class="bg-secondary-fixed border-[3px] border-on-surface p-4 rounded-lg neo-shadow transform rotate-[-1deg]">
+<p class="font-body-md text-body-md text-on-secondary-fixed font-bold flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="water_drop">water_drop</span>
+                                Andhera hi andhera! The pressure at the bottom is over 1,000 times standard atmospheric pressure. You'd be crushed in a second!
+                            </p>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: The Scale (Full Width) -->
+<div class="md:col-span-2 bg-surface-container border-[3px] border-on-surface rounded-xl p-8 neo-shadow relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 bg-primary-container rounded-bl-full opacity-20 pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8 border-b-[3px] border-on-surface pb-2 inline-block">The Absolute Scale</h3>
+<div class="relative flex flex-col items-center py-12">
+<!-- Vertical Axis Line -->
+<div class="absolute top-0 bottom-0 left-1/2 w-[3px] bg-on-surface transform -translate-x-1/2"></div>
+<!-- Sea Level Baseline -->
+<div class="absolute top-1/2 left-0 right-0 h-[3px] bg-on-surface border-dashed border-t-[3px] border-transparent" style="background-image: linear-gradient(to right, #1a1c1c 50%, transparent 50%); background-size: 20px 3px; background-repeat: repeat-x;"></div>
+<div class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-surface border-[3px] border-on-surface px-2 py-1 font-label-bold text-label-bold z-10">Sea Level (0m)</div>
+<!-- Everest Point -->
+<div class="relative z-10 flex flex-col items-center -mt-16 mb-24 hover:-translate-y-2 transition-transform cursor-pointer">
+<div class="bg-primary text-on-primary font-label-bold text-label-bold px-3 py-1 border-[3px] border-on-surface rounded-full neo-shadow mb-2">Max (+8.8km)</div>
+<div class="w-6 h-6 rounded-full bg-primary border-[3px] border-on-surface neo-shadow"></div>
+</div>
+<!-- Trench Point -->
+<div class="relative z-10 flex flex-col items-center mt-24 hover:translate-y-2 transition-transform cursor-pointer">
+<div class="w-6 h-6 rounded-full bg-secondary border-[3px] border-on-surface neo-shadow mb-2"></div>
+<div class="bg-secondary text-on-secondary font-label-bold text-label-bold px-3 py-1 border-[3px] border-on-surface rounded-full neo-shadow">Min (-11km)</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] flex justify-around items-center h-20 px-margin-mobile bg-surface">
+<!-- Inactive: Home -->
+<button class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</button>
+<!-- Inactive: Chat -->
+<button class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</button>
+<!-- Inactive: Quiz -->
+<button class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</button>
+<!-- Active: Story -->
+<button class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg flex flex-col items-center gap-1 active:scale-95 transition-transform neo-shadow">
+<span class="material-symbols-outlined" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Measuring in Real Life - Ganit Pop</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist Dot Grid Background */
+        body {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#1a1c1c 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Material Symbols utility */
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        
+        .neo-shadow-hover:hover {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+            transform: translate(-2px, -2px);
+        }
+        
+        .neo-shadow-active:active {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+            transform: translate(4px, 4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md text-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar (from JSON schema) -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface dark:border-on-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none">
+<button aria-label="Go back" class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">Ganit Pop</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop space-y-8 max-w-5xl mx-auto w-full pb-24 overflow-x-hidden">
+<!-- High Energy Hero Section -->
+<section class="relative mt-4">
+<!-- Decorative Geo Element -->
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary-container rounded-full border-[3px] border-on-surface z-0 neo-shadow"></div>
+<div class="relative z-10 bg-tertiary-fixed border-[3px] border-on-surface neo-shadow p-6 md:p-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-tertiary-fixed uppercase mb-2">
+                    Measuring in Real Life
+                </h2>
+<div class="inline-block bg-on-surface text-surface px-4 py-2 mt-2 border-[3px] border-on-surface transform rotate-2">
+<p class="font-headline-md text-headline-md font-bold tracking-wide">
+                        Badi cheez ke liye <span class="text-secondary-fixed">tape</span>, chhoti ke liye <span class="text-primary-fixed-dim">scale!</span>
+</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Explainer -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-8">
+<!-- Tool 1: Tape Measure -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface neo-shadow flex flex-col overflow-hidden group neo-shadow-hover transition-all duration-200">
+<div class="border-b-[3px] border-on-surface p-4 bg-secondary-container flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md font-bold text-on-secondary-container">Tape Measure</h3>
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" style="font-variation-settings: 'FILL' 1;">straighten</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+<div class="aspect-video w-full bg-surface-variant border-[3px] border-on-surface rounded-sm relative overflow-hidden mb-4">
+<img alt="Measuring Tape" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant, high-contrast photograph of a bright yellow construction tape measure extended across rough wooden planks. The image follows a neo-brutalist aesthetic with stark lighting, deep solid shadows, and high color saturation. The yellow tape heavily contrasts with the dark, textured background, creating a bold, industrial, and geometric composition perfect for a modern educational UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARc0TGq82pxOVFetSEcvRKCzs5vml-OE6_-5rhZxFymr0IG7i0IOCVeoXYghZsPqxhMx32QIm0KNBNFrvduRJc6zEssTumxRXCmBEzSCgrS3nTzsRrr-5asUKHPzu4pFAt8jlqclVEZ-IDYW6R0ZAUkdhwgsidNTQ5ekCz9VGIW7ynFin3AwYjbPGV3FQsvJnKbEQQhu8sWZP4xYI3TexvPAJPBysbEGDof-MaZ81xElnUkhKT79_uhm5ygGAfu8KOfSYLd5fK94lV"/>
+</div>
+<div>
+<p class="font-body-lg text-body-lg font-bold mb-2">For the BIG stuff!</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Rooms, walls, furniture, or how far your friend threw the ball. If it bends or goes far, grab the tape.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="bg-surface px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold">Bed</span>
+<span class="bg-surface px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold">Door</span>
+<span class="bg-surface px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold">Playground</span>
+</div>
+</div>
+</div>
+<!-- Tool 2: School Scale -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface neo-shadow flex flex-col overflow-hidden group neo-shadow-hover transition-all duration-200">
+<div class="border-b-[3px] border-on-surface p-4 bg-primary-container flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md font-bold text-on-primary-container">School Scale</h3>
+<span class="material-symbols-outlined text-on-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+<div class="aspect-video w-full bg-surface-variant border-[3px] border-on-surface rounded-sm relative overflow-hidden mb-4 flex items-center justify-center p-4">
+<img alt="Ruler" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A striking top-down photograph of a clear plastic school ruler lying on a piece of white graph paper covered in geometric pencil sketches. The image is styled with a neo-brutalist edge, featuring harsh, direct lighting that casts a sharp, solid black drop shadow beneath the ruler. Pink and yellow highlighters are scattered nearby, providing vibrant pops of color against the stark, technical background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPBAL3Eqe214b3Fm3NCxybsXvoiuPfX1gYFmfLYeG9eonOIPXAWXQ4L12HsiN1vFBnftIip_cfNm7mzL-fKXYga48nvZa9ievODWLVIjkqZ6ZoqifGy-vnSh98FwDr4ifPzv_UmKvySJY9ILWv5r01LPfPz6BdnFEMOvkMZVAhnk6FBMkgX3KlrE_arZKE5mVmNzw8aqZ6VbEVSccKfbDmK-dcb4ayvoiXX6PuOZnRTOpyIlLtEXav8ATcpXa7Zm2lj38xLyPswdBv"/>
+</div>
+<div>
+<p class="font-body-lg text-body-lg font-bold mb-2">For the SMALL stuff!</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Books, pencils, drawing straight lines, or measuring your eraser. Flat, small, and fits on a desk.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="bg-surface px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold">Notebook</span>
+<span class="bg-surface px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold">Leaf</span>
+<span class="bg-surface px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold">Phone</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive/Action Prompt -->
+<section class="mt-12 bg-inverse-surface text-inverse-on-surface p-8 border-[3px] border-on-surface neo-shadow text-center relative overflow-hidden">
+<!-- Background brutalist shape -->
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-primary border-[3px] border-on-surface transform rotate-45 opacity-50 z-0"></div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg font-bold mb-4">Ready to measure your world?</h3>
+<p class="font-body-lg text-body-lg mb-6 max-w-xl mx-auto">Look around you. Pick an object and decide which tool you would use before you measure it!</p>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed font-headline-md text-headline-md font-bold py-3 px-8 border-[3px] border-on-surface neo-shadow neo-shadow-hover neo-shadow-active transition-all inline-flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Start the Quiz
+                </button>
+</div>
+</section>
+</main>
+<!-- Navigation Suppressed intentionally for this focused explainer screen -->
+<!-- BottomNavBar would normally go here if this was a top-level destination, but per instructions, we suppress it for linear/task-focused pages -->
+</body></html>

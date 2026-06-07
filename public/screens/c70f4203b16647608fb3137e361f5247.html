@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparing Numbers: Intro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-container-high": "#eae8e2",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-primary-container": "#572000",
+                        "on-surface": "#1b1c19",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-fixed": "#00210d",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "outline-variant": "#e2bfb0",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "background": "#fbf9f3",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006d38",
+                        "on-secondary-container": "#00743c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-container": "#67002f",
+                        "surface-tint": "#a04100",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-surface-variant": "#5a4136",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "outline": "#8e7164",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-primary-fixed": "#351000",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312d",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-variant": "#e4e2dd",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "primary-fixed": "#ffdbcc",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "tertiary": "#ba005b",
+                        "error": "#ba1a1a",
+                        "primary": "#a04100",
+                        "tertiary-container": "#ff6096",
+                        "surface-container": "#f0eee8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-btn:active {
+            box-shadow: 0px 0px 0px #1A1A1A;
+            transform: translate(4px, 4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md pt-20 pb-24 md:pb-8 min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-primary-container transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:text-headline-xl text-primary font-bold tracking-tight">MathsGuru</h1>
+</div>
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden bg-primary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF4-Kxfqm-nUnXZ7BF-k8_GqXm_hkXF53rVAgqasIgviPNM5BMFtThkSGGh9Y58vV5ooloUiVgLwPnC8N5OBSFpeML2LZUuvys92aO546euGrwX675ZwdjapW4TKqaPBo0XklAFWlSCN5U4WQASLEEs7tAgyp8hQQse9tEDnWiTtCqmWYIFSDNIzpJwjRRKbi0dQrodcfrHvmJKkw3-GR04IK5XSlDmtH6_zghkGyiVlTV7AesKTdIxo821s6zjAL6-lIqQnE39kSD"/>
+</div>
+</header>
+<main class="max-w-[container-max-width] mx-auto px-margin-mobile md:px-margin-desktop py-8 space-y-8">
+<!-- Header Section -->
+<section class="border-[3px] border-on-surface rounded-xl bg-surface-container-low p-6 md:p-8 neo-shadow relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary-container rounded-full opacity-20 blur-2xl pointer-events-none"></div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-4 text-on-surface">Comparing Numbers: Intro</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+<span class="font-bold text-primary">What is Compare in Maths?</span><br/>
+                Compare karna ka matlab hota hai do ya zyada numbers ko dekhkar yeh decide karna ki kaunsa number bada hai, kaunsa chhota hai, ya dono barabar hain.
+            </p>
+</section>
+<!-- Visual Comparison Section (Mango vs Samosa) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Left Item: Mango -->
+<div class="border-[3px] border-on-surface rounded-xl bg-[#FFF5E6] p-6 neo-shadow flex flex-col items-center text-center">
+<div class="w-32 h-32 mb-4 bg-white rounded-full border-[3px] border-on-surface flex items-center justify-center neo-shadow">
+<span class="text-6xl">🥭</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">5 Mangoes</h3>
+<div class="flex gap-2 mb-4 flex-wrap justify-center">
+<div class="w-10 h-10 bg-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">1</div>
+<div class="w-10 h-10 bg-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">2</div>
+<div class="w-10 h-10 bg-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">3</div>
+<div class="w-10 h-10 bg-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">4</div>
+<div class="w-10 h-10 bg-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">5</div>
+</div>
+<div class="mt-auto pt-4 border-t-[3px] border-on-surface w-full">
+<span class="font-label-lg text-label-lg bg-primary-container text-on-primary-container px-4 py-2 rounded-full border-[3px] border-on-surface inline-block">BADA (Greater)</span>
+</div>
+</div>
+<!-- Right Item: Samosa -->
+<div class="border-[3px] border-on-surface rounded-xl bg-[#E6F9EC] p-6 neo-shadow flex flex-col items-center text-center">
+<div class="w-32 h-32 mb-4 bg-white rounded-full border-[3px] border-on-surface flex items-center justify-center neo-shadow">
+<span class="text-6xl">🥟</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">3 Samosas</h3>
+<div class="flex gap-2 mb-4 flex-wrap justify-center">
+<div class="w-10 h-10 bg-secondary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">1</div>
+<div class="w-10 h-10 bg-secondary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">2</div>
+<div class="w-10 h-10 bg-secondary-container border-[3px] border-on-surface rounded-full flex items-center justify-center font-bold">3</div>
+</div>
+<div class="mt-auto pt-4 border-t-[3px] border-on-surface w-full">
+<span class="font-label-lg text-label-lg bg-surface-container-highest text-on-surface px-4 py-2 rounded-full border-[3px] border-on-surface inline-block">CHHOTA (Smaller)</span>
+</div>
+</div>
+</section>
+<!-- Symbols Guide -->
+<section class="border-[3px] border-on-surface rounded-xl bg-surface p-6 neo-shadow">
+<h3 class="font-headline-md text-headline-md mb-6 border-b-[3px] border-on-surface pb-2 inline-block">The Magic Symbols</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col items-center p-4 border-[3px] border-on-surface rounded-lg bg-white neo-shadow">
+<span class="text-5xl font-bold text-primary mb-2">&gt;</span>
+<span class="font-label-lg text-label-lg text-center">Greater Than<br/>(Crocodile opens mouth to bigger number)</span>
+</div>
+<div class="flex flex-col items-center p-4 border-[3px] border-on-surface rounded-lg bg-white neo-shadow">
+<span class="text-5xl font-bold text-primary mb-2">&lt;</span>
+<span class="font-label-lg text-label-lg text-center">Less Than<br/>(Crocodile faces away from smaller number)</span>
+</div>
+<div class="flex flex-col items-center p-4 border-[3px] border-on-surface rounded-lg bg-white neo-shadow">
+<span class="text-5xl font-bold text-primary mb-2">=</span>
+<span class="font-label-lg text-label-lg text-center">Equal To<br/>(Dono barabar!)</span>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<div class="flex justify-center mt-8">
+<button class="bg-primary-container text-on-primary-container font-headline-md text-headline-md px-8 py-4 rounded-xl border-[3px] border-on-surface neo-shadow neo-btn transition-transform">
+                Start Quiz! 🚀
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19]">
+<!-- Active: Quiz (Assuming this intro leads to a quiz or is part of the learning flow, mapping to Quiz as the closest semantic fit) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" data-icon="forum">forum</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_#1B1C19] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">
+<span class="material-symbols-outlined mb-1" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all p-2 rounded-lg">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</button>
+</nav>
+</body></html>

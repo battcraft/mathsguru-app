@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dimaag ki Batti Jalao! - Active Recall</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#006d38",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f3",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-tertiary-container": "#67002f",
+                        "surface": "#fbf9f3",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary": "#ba005b",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "outline": "#8e7164",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-container": "#572000",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#5a4136",
+                        "surface-dim": "#dbdad4",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-primary": "#ffb693",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .neo-shadow-active:active {
+            box-shadow: 0px 0px 0px #1c1b1b;
+            transform: translate(4px, 4px);
+        }
+        .custom-grid-pattern {
+            background-color: #fbf9f3;
+            background-image: radial-gradient(#1b1c19 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md custom-grid-pattern min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-md py-sm w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-md">
+<button class="active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined text-primary font-headline-md text-headline-md">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Topic Title</h1>
+</div>
+<div class="font-headline-xl text-headline-xl text-primary opacity-20 select-none">Σ</div>
+</header>
+<main class="max-w-[600px] mx-auto px-margin-mobile py-lg md:px-margin-desktop">
+<!-- Screen Title Section -->
+<div class="mb-lg text-center">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-md py-sm border-[3px] border-on-surface rounded-full font-label-lg text-label-lg mb-sm neo-shadow">
+                SOCHO BLOCK
+            </span>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface">Dimaag ki Batti Jalao!</h2>
+</div>
+<!-- Main Interaction Card: The Active Recall Question -->
+<div class="bg-[#FFEB3B] border-[3px] border-on-surface rounded-lg p-lg neo-shadow transition-all cursor-pointer relative overflow-hidden active:translate-x-[4px] active:translate-y-[4px] active:shadow-none" id="recall-card">
+<!-- Animated Lightbulb Background -->
+<div class="absolute -top-6 -right-6 opacity-10 rotate-12">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="flex flex-col items-center text-center gap-md relative z-10">
+<div class="bg-surface-container-lowest p-md rounded-full border-[3px] border-on-surface neo-shadow">
+<span class="material-symbols-outlined text-primary text-[48px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<p class="font-headline-md text-headline-md leading-tight text-on-surface">
+                    Agar sabke marks same hain, toh Max aur Min kya honge?
+                </p>
+<div class="w-full h-[3px] bg-on-surface opacity-20 my-sm"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">
+                    Tap to see Bhaiya's hint
+                </p>
+</div>
+</div>
+<!-- Hidden Hint Section (revealed via JS) -->
+<div class="mt-lg space-y-md hidden opacity-0 transition-all duration-500 transform translate-y-4" id="hint-section">
+<div class="bg-surface-container-highest border-[3px] border-on-surface rounded-lg p-md flex gap-md items-start neo-shadow">
+<div class="w-12 h-12 rounded-full border-[3px] border-on-surface overflow-hidden shrink-0 bg-primary-fixed">
+<img alt="Bhaiya" class="w-full h-full object-cover" data-alt="A friendly young Indian mentor with a warm smile, wearing a casual stylish kurta, against a vibrant street-art background. The lighting is sunny and optimistic, reflecting a neo-brutalist education app aesthetic with high contrast and saturated colors like mango orange and nimbu green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkVnoB4-bZljJiRM-PemHha237dBKgSf1ZULwfakKwCrMJfiFEvyI1-wZM-PgKxB0alhX4s8FY8UWDAtpFg7u8hG1-I13JtdgtCxNVuTvigzY3W3VQrg0h4neUEiE06Jm--50fiDdzAO5RzhAXKbZmP_V_--qZ617KaIHvnXhFO-ULA3aEEbjb0pFX-gdOko5_Xi2GZmlzPqRwFPly7sdYgjacUGfhNaVKBtJto2ve6szhvQxFRMADM9Da62OII792ZaAAWpbEO0JM"/>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-primary uppercase mb-1">Bhaiya says:</p>
+<p class="font-body-lg text-body-lg text-on-surface">
+                        Oye! Simple hai na? Agar line mein sabki height ek hi hai, toh sabse lamba kaun aur sabse chhota kaun? Same logic apply kar!
+                    </p>
+</div>
+</div>
+<!-- Answer Tokens -->
+<div class="flex flex-wrap justify-center gap-sm">
+<button class="bg-secondary-container text-on-secondary-container px-lg py-sm border-[3px] border-on-surface rounded-full font-label-lg text-label-lg neo-shadow neo-shadow-active">
+                    They are Equal
+                </button>
+<button class="bg-surface-container-lowest text-on-surface px-lg py-sm border-[3px] border-on-surface rounded-full font-label-lg text-label-lg neo-shadow neo-shadow-active">
+                    Max is Zero
+                </button>
+</div>
+</div>
+<!-- Descriptive Graphic -->
+<div class="mt-xl border-[3px] border-on-surface rounded-lg bg-surface-container overflow-hidden neo-shadow">
+<div class="p-sm bg-on-surface text-surface flex items-center justify-between">
+<span class="font-label-lg text-label-lg">VISUALIZING EQUALITY</span>
+<span class="material-symbols-outlined text-[18px]">equalizer</span>
+</div>
+<div class="h-48 relative flex items-end justify-around p-lg bg-white">
+<!-- Bar Chart Elements -->
+<div class="w-12 bg-primary border-[3px] border-on-surface" style="height: 100px;"></div>
+<div class="w-12 bg-primary border-[3px] border-on-surface" style="height: 100px;"></div>
+<div class="w-12 bg-primary border-[3px] border-on-surface" style="height: 100px;"></div>
+<div class="w-12 bg-primary border-[3px] border-on-surface" style="height: 100px;"></div>
+<!-- Horizontal Guideline -->
+<div class="absolute bottom-[116px] left-0 w-full border-t-[3px] border-dashed border-error opacity-50"></div>
+<div class="absolute bottom-[125px] right-4 text-error font-bold text-xs">NO DIFFERENCE!</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        document.getElementById('recall-card').addEventListener('click', function() {
+            const hint = document.getElementById('hint-section');
+            hint.classList.remove('hidden');
+            // Trigger animation
+            setTimeout(() => {
+                hint.classList.remove('opacity-0', 'translate-y-4');
+                hint.classList.add('opacity-100', 'translate-y-0');
+            }, 10);
+            
+            // Subtle feedback on the card itself
+            this.classList.remove('neo-shadow');
+            this.classList.add('translate-x-[4px]', 'translate-y-[4px]');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,218 @@
+# MathsGuru AI
+
+## Product Overview
+
+**The Pitch:** A Hinglish-speaking AI math tutor for Class 8 students in India that makes math feel like a conversation with an older sibling. MathsGuru AI combines chat-based learning, interactive quizzes, and culturally relatable concept stories to eliminate math anxiety.
+
+**For:** Indian middle-schoolers (12-14 years old) who find traditional math teaching boring or intimidating, and care about gamification, relatable examples, and immediate help.
+
+**Device:** mobile
+
+**Design Direction:** Desi street-pop meets neo-brutalism. Vibrant, high-contrast, energetic. Heavy black borders, solid drop shadows, and unapologetically bold Indian color palettes. 
+
+**Inspired by:** Duolingo (gamification flow), CRED (bold visual language), Indian comic books (Tinkle).
+
+---
+
+## Screens
+
+- **Home Base:** Dashboard showing daily streak, quick action buttons, and active challenges.
+- **Chat Tutor:** The core conversational interface with MathsGuru Bhaiya/Didi, supporting image uploads and structured pedagogical blocks.
+- **Daily Panga (Quiz):** Fast-paced MCQ challenge mode with cricket/Bollywood themes.
+- **Kahani Mode:** Concept story reader featuring desi characters and interactive math choices.
+- **Report Card:** Visual progress tracker displaying skill levels, accuracy, and unlocked badges.
+
+---
+
+## Key Flows
+
+**Photo se Pucho (Doubt Solving):** User wants to solve a complex math problem from their textbook.
+
+1. User is on **Home Base** -> sees sticky `📸 Pucho` floating action button
+2. User clicks `📸 Pucho` -> camera opens, snaps photo of equation
+3. AI transitions to **Chat Tutor** -> extracts equation, outputs step-by-step Hinglish explanation
+
+**Daily Challenge (Cricket Theme):** User wants to earn their daily points.
+
+1. User is on **Home Base** -> sees `🏏 Daily Panga: Dhoni's Run Rate` card
+2. User clicks the card -> transitions to **Daily Panga**
+3. User completes 3 MCQs -> earns 'Mastermind' badge and 50 coins
+
+---
+
+<details>
+<summary>Design System</summary>
+
+## Color Palette
+
+- **Primary:** `#FF6B00` (Mango Orange) - Main buttons, primary actions
+- **Background:** `#FFFDF7` (Warm Chalk) - Page background
+- **Surface:** `#FFFFFF` (White) - Cards, chat bubbles
+- **Text:** `#1A1A1A` (Deep Ink) - Body text, headings
+- **Muted:** `#8E887E` (Dusty Chai) - Secondary text, placeholders, disabled states
+- **Accent 1:** `#00C46A` (Nimbu Green) - Success, correct answers
+- **Accent 2:** `#FF007F` (Gulabi Pink) - Streaks, special badges
+- **Accent 3:** `#FFD100` (Auto Yellow) - Warnings, highlight blocks
+
+## Typography
+
+Playful, highly legible, rounded but structured. 
+
+- **Headings:** `Fredoka`, 700, 24-32px
+- **Body:** `Nunito`, 600, 16px (bold baseline for readability)
+- **Small text:** `Nunito`, 500, 14px
+- **Buttons:** `Fredoka`, 600, 18px
+
+**Style notes:** Neo-brutalist. Cards have `3px solid #1A1A1A` borders. Buttons have solid drop shadows `4px 4px 0px #1A1A1A` that compress to `0px 0px 0px` on active/press. Heavy use of rounded corners (`16px`).
+
+## Design Tokens
+
+```css
+:root {
+  --color-primary: #FF6B00;
+  --color-background: #FFFDF7;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-muted: #8E887E;
+  --color-success: #00C46A;
+  --color-pink: #FF007F;
+  --color-yellow: #FFD100;
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --radius-card: 16px;
+  --radius-pill: 99px;
+  --border-thick: 3px solid #1A1A1A;
+  --shadow-solid: 4px 4px 0px #1A1A1A;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary>Screen Specifications</summary>
+
+### Home Base
+
+**Purpose:** Landing screen to jump into learning, tracking daily engagement.
+
+**Layout:** Top header (streak & profile), Scrollable feed of action cards, Fixed bottom navigation.
+
+**Key Elements:**
+- **Streak Header:** 56px height, `🔥 12 Din Streak!` in `Gulabi Pink`, top-right profile avatar.
+- **Hero Card:** `Auto Yellow` background, `Let's crack Algebra today, champ!`, CTA `Start Concept Story`.
+- **Quick Actions Grid:** 2-column grid. Buttons: `📸 Scan Doubt`, `📝 Gen Worksheet`, `🏏 Daily Panga`, `📊 Progress`.
+- **Level Indicator:** Progress bar showing `Level 4: Mastermind`.
+
+**States:**
+- **Empty:** "Aaj kya padhna hai, boss?" default state.
+- **Loading:** Shimmering heavy-bordered boxes.
+
+**Components:**
+- **Action Card:** 160px x 140px, `Surface` color, `border-thick`, `shadow-solid`, center-aligned emoji (40px) and text.
+
+**Interactions:**
+- **Click Action Card:** Presses down (shadow goes to 0px, translates 4px down/right).
+
+### Chat Tutor
+
+**Purpose:** Conversational learning interface with MathsGuru.
+
+**Layout:** Sticky top header (topic name), scrollable chat area, fixed bottom input area.
+
+**Key Elements:**
+- **Tutor Bubble:** `Surface` color, `border-thick`, left-aligned. Contains structured blocks.
+- **Think Box Block:** Light `Auto Yellow` background inside bubble, `💡 Socho:` prefix, probing questions.
+- **Practice Block:** `Nimbu Green` border, inline input field for user to type numbers.
+- **Bottom Input:** Input field with `border-thick`, camera icon button, send icon button (`Primary` color).
+
+**States:**
+- **Loading:** AI typing indicator (3 bouncing dots).
+- **Error:** "Oops! Network gol. Try again?"
+
+**Components:**
+- **Chat Bubble:** Max-width 85%, `16px` padding, rounded corners (sharp corner pointing to sender).
+
+**Interactions:**
+- **Click Camera:** Opens native camera modal.
+
+### Daily Panga (Quiz)
+
+**Purpose:** High-energy MCQ quizzes.
+
+**Layout:** Top progress bar, large question card, stacked answer buttons.
+
+**Key Elements:**
+- **Timer/Progress:** Top sticky bar, draining yellow bar for time, `3/5` text.
+- **Question Card:** Centered, 24px `Fredoka` text, e.g., "If Virat hits 4 sixes in 2 overs, what's his strike rate?"
+- **Answer Options:** Stacked full-width buttons, `Surface` color.
+
+**States:**
+- **Correct Answer:** Button turns `Nimbu Green`, plays happy sound, pop-up "+10 coins!".
+- **Wrong Answer:** Button turns red, vibrates, correct answer highlights in green.
+
+**Components:**
+- **Answer Button:** 100% width, 64px height, `border-thick`, left-aligned text, right-aligned circle for selection.
+
+**Interactions:**
+- **Click Answer:** Instant validation, 1-second delay, auto-scroll to next question.
+
+### Kahani Mode
+
+**Purpose:** Story-based conceptual learning.
+
+**Layout:** Full-screen immersive comic-style reader.
+
+**Key Elements:**
+- **Story Panel:** Large illustration area at top (e.g., street vendor selling samosas).
+- **Dialogue Box:** Bottom overlapping box, character name "Raju Ke Samose", conversational text explaining fractions.
+- **Choice Buttons:** Two buttons at bottom to advance story (e.g., "Give 1/2 samosa", "Give 1/4 samosa").
+
+**States:**
+- **Empty:** N/A (always loaded with story data).
+
+**Components:**
+- **Dialogue Box:** `Surface` background, heavy border, `24px` padding, typewriter effect for text reveal.
+
+**Interactions:**
+- **Click Choice:** Advances to next story panel with sliding animation.
+
+### Report Card
+
+**Purpose:** View progress, strengths, weaknesses, and badges.
+
+**Layout:** Segmented control top (Stats / Badges), scrollable list below.
+
+**Key Elements:**
+- **Overall Score:** Massive 48px `Fredoka` number `85%`, label "Accuracy".
+- **Topic Breakdown:** List of topics (Numbers, Geometry). `Nimbu Green` bar for strong, `Mango Orange` for weak.
+- **Badge Grid:** 3-column grid of unlocked emojis/icons (e.g., 👑 Mastermind, 🏏 Sixer King).
+
+**States:**
+- **Empty Badge:** Greyscale icon with `0.5` opacity.
+
+**Components:**
+- **Topic Row:** 48px height, flex-between, label on left, progress bar on right (120px width).
+
+</details>
+
+---
+
+<details>
+<summary>Build Guide</summary>
+
+**Stack:** HTML + Tailwind CSS v3, Custom Font Imports (Google Fonts: Fredoka, Nunito)
+
+**Build Order:**
+1. **Design System & Components:** Define base Tailwind config for heavy borders and solid shadows first.
+2. **Home Base:** Establishes the core layout, navigation, and neo-brutalist card style.
+3. **Chat Tutor:** Most complex component (chat bubbles, inline inputs, varying block types).
+4. **Daily Panga:** Reuses buttons but introduces stateful validation colors.
+5. **Report Card:** Data visualization, progress bars, layout grids.
+6. **Kahani Mode:** Special immersive layout.
+
+</details>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speed Comparison Masterclass - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#5a3f48",
+                      "on-secondary": "#ffffff",
+                      "outline": "#8d6f78",
+                      "tertiary": "#705d00",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "surface-dim": "#dadada",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#e9c400",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#ffb0cb",
+                      "on-secondary-fixed": "#2f1400",
+                      "secondary-fixed-dim": "#ffb781",
+                      "on-primary-container": "#fffbff",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-container": "#5b2d00",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#eeeeee",
+                      "secondary": "#924c00",
+                      "inverse-surface": "#2f3131",
+                      "surface-tint": "#b80069",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-low": "#f3f3f4",
+                      "secondary-fixed": "#ffdcc4",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "tertiary-container": "#c9a900",
+                      "secondary-container": "#f88400",
+                      "primary-fixed": "#ffd9e3",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#e1bdc7",
+                      "primary-fixed-dim": "#ffb0cb",
+                      "on-primary-fixed": "#3e0020",
+                      "primary-container": "#df0b81",
+                      "background": "#f9f9f9",
+                      "on-tertiary-container": "#4c3f00",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary-fixed": "#ffe16d",
+                      "inverse-on-surface": "#f0f1f1",
+                      "error": "#ba1a1a",
+                      "primary": "#b40067",
+                      "on-surface": "#1a1c1c",
+                      "on-primary-fixed-variant": "#8d004f",
+                      "on-tertiary-fixed-variant": "#544600"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "border-width": "3px",
+                      "shadow-offset": "4px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Nunito Sans"
+                      ],
+                      "label-bold": [
+                              "Nunito Sans"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl": [
+                              "Fredoka"
+                      ],
+                      "headline-xl-mobile": [
+                              "Fredoka"
+                      ],
+                      "headline-md": [
+                              "Fredoka"
+                      ],
+                      "headline-lg": [
+                              "Fredoka"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        /* Neo-Brutalist Grid Background */
+        .bg-blueprint {
+            background-image: 
+                linear-gradient(to right, #dadada 1px, transparent 1px),
+                linear-gradient(to bottom, #dadada 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center center;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Video Player Progress Bar Hack for Neo-Brutalism */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #df0b81; /* primary-container */
+            border: 3px solid #1a1c1c;
+            box-shadow: 2px 2px 0px #1a1c1c;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #dadada; /* surface-dim */
+            border: 3px solid #1a1c1c;
+            border-radius: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md bg-blueprint min-h-screen pb-32 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-primary-container shrink-0 flex items-center justify-center">
+<!-- Fallback avatar if image fails -->
+<span class="material-symbols-outlined text-on-primary-container fill">person</span>
+<img alt="Student Profile Avatar" class="w-full h-full object-cover hidden" onerror="this.previousElementSibling.style.display='block'; this.style.display='none';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnJgIafgocoi2zviPb7qNFDWYfHnWxLlEWcWFQ2NIBq36YzBZAKMwvtg_KUBFpqTOqf-C8YLdNk5uYgbOrr_fQVlHEoRLD1bc7ljTKbc6RVEzv6CxaoPJj6bo3_kvFC8sEWFbcsfXzbPQPsyKdYkBWFu8vD7Ypj4eezSClg7ZZtWOU0QW5tmYA9gtz6CViTAnk0istzr0hE4FCB8tHnJsytni1pCw6pq8GmQSucssym5-_gN5znWkOyRSfWsP533tGfNCowAjJN4yI"/>
+</button>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed tracking-tight">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-4 hidden md:flex">
+<!-- Desktop Nav Items -->
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" href="#">Home</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" href="#">Chat</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" href="#">Quiz</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" href="#">Story</a>
+</div>
+<button class="flex items-center justify-center w-10 h-10 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined font-headline-md text-headline-md text-primary dark:text-primary-fixed fill" style="color: #f88400;">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-8">
+<!-- Header Section -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-3 py-1 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]">Level 2</span>
+<span class="text-on-surface-variant font-label-bold text-label-bold uppercase tracking-wider">Number Sense</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background">Speed Comparison Masterclass</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Learn the street-smart tricks to instantly spot the bigger number. We're looking at the leftmost digits—the 'Big Shots'—to settle the score fast.</p>
+</div>
+<!-- Video Player Container (Neo-Brutalist Style) -->
+<section class="w-full bg-surface-container-lowest border-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex flex-col relative overflow-hidden">
+<!-- Decorative Top Bar -->
+<div class="h-8 bg-surface-dim border-b-3 border-black flex items-center px-4 gap-2">
+<div class="w-3 h-3 rounded-full bg-error border-2 border-black"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim border-2 border-black"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container border-2 border-black"></div>
+<span class="ml-auto font-label-bold text-label-bold text-on-surface-variant text-xs uppercase">Video_Lesson_04.mp4</span>
+</div>
+<!-- Video Aspect Ratio Wrapper -->
+<div class="relative w-full aspect-video bg-inverse-surface flex items-center justify-center overflow-hidden group">
+<!-- Placeholder Image for Video -->
+<img alt="Video thumbnail showing colorful abstract geometric shapes representing numbers" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="A dynamic, high-contrast digital illustration of large 3D numbers crashing into each other in a street-art inspired abstract void. The scene is brightly lit with a Neo-Brutalist light mode aesthetic. Colors pop intensely with vivid pinks (Gulabi), mango oranges, and stark blacks against a slightly off-white grid background. The composition is energetic, structured yet chaotic, looking like a frame from an edgy educational animation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMC2mL62WQKuzar8E7tLFZyiut558uDHrmVECGFmwfRhu1lIdz1rmy4LyfT1aLiIG0d8TltFvL2PdwARHphZf7nArWWz7t1xIi3ercyzJQarR6-DTBTo5RBGyYWMlKj3XlKvPHL0mdoPGiW6EGsGSRYVzr2cfD3_cODa64kVLVLTBYuQEiaGbGsD2t_bm9RBlQwKOr7DGBH19A7_3eTDMyAEucDac_JDtFcZBzwXvjmpcInBMcEtHWTWYkicdPzkENXzjo7g5oo83e"/>
+<!-- Play Button Overlay -->
+<button class="absolute z-10 w-20 h-20 bg-primary-container rounded-full border-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center transition-transform hover:scale-110 active:scale-95 active:shadow-[0px_0px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1">
+<span class="material-symbols-outlined text-on-primary-container text-5xl ml-2 fill">play_arrow</span>
+</button>
+<!-- On-Screen Graphic Mockup (Big Shot vs Contender) -->
+<div class="absolute bottom-16 left-8 right-8 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-surface-container-lowest p-4 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] transform -rotate-2">
+<span class="font-label-bold text-label-bold text-error uppercase block mb-1">The Big Shot</span>
+<span class="font-headline-xl text-headline-xl">8</span><span class="font-headline-md text-headline-md text-on-surface-variant">421</span>
+</div>
+<div class="bg-surface-container-lowest p-4 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] transform rotate-3">
+<span class="font-label-bold text-label-bold text-secondary uppercase block mb-1">The Contender</span>
+<span class="font-headline-xl text-headline-xl">6</span><span class="font-headline-md text-headline-md text-on-surface-variant">999</span>
+</div>
+</div>
+</div>
+<!-- Custom Controls -->
+<div class="bg-surface-container-lowest p-4 border-t-3 border-black flex flex-col gap-4">
+<input class="w-full appearance-none bg-transparent" max="100" min="0" type="range" value="35"/>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">pause</span>
+</button>
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+<span class="font-label-bold text-label-bold text-on-surface-variant">02:14 / 06:45</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">closed_caption</span>
+</button>
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Lesson Interaction / Key Takeaways Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+<!-- Quick Quiz Card -->
+<div class="md:col-span-2 bg-surface-container-lowest border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-6 flex flex-col gap-6">
+<div class="flex justify-between items-center border-b-3 border-black pb-4">
+<h3 class="font-headline-md text-headline-md">Quick Check</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-bold text-label-bold px-3 py-1 border-3 border-black">+50 XP</span>
+</div>
+<p class="font-body-lg text-body-lg">Which number is the true heavyweight?</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-2">
+<button class="flex-1 bg-surface py-4 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[6px_6px_0px_#1A1A1A] hover:-translate-y-1 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 group">
+<span class="font-headline-lg text-headline-lg group-hover:text-primary transition-colors">45,901</span>
+</button>
+<div class="flex items-center justify-center w-12 h-12 bg-surface-dim rounded-full border-3 border-black mx-auto sm:mx-0 -my-2 sm:my-auto z-10">
+<span class="font-label-bold text-label-bold">VS</span>
+</div>
+<button class="flex-1 bg-surface py-4 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[6px_6px_0px_#1A1A1A] hover:-translate-y-1 transition-all active:shadow-none active:translate-x-1 active:translate-y-1 group">
+<span class="font-headline-lg text-headline-lg group-hover:text-secondary-container transition-colors">45,899</span>
+</button>
+</div>
+</div>
+<!-- Key Rule Card -->
+<div class="bg-primary-container text-on-primary-container border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-6 flex flex-col justify-center relative overflow-hidden">
+<!-- Abstract geometry accent -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary border-3 border-black rounded-full opacity-50"></div>
+<div class="absolute -left-4 -bottom-4 w-16 h-16 bg-primary-fixed border-3 border-black transform rotate-45 opacity-50"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<span class="material-symbols-outlined text-4xl fill">visibility</span>
+<h3 class="font-headline-md text-headline-md font-bold">The Leftmost Rule</h3>
+<p class="font-body-md text-body-md">Always look at the largest place value first. The biggest digit on the far left wins. If there's a tie, move one step right!</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A] md:hidden">
+<!-- Home (Active) - Automatically suppressing active style based on instructions, semantic matching implies this is a focused lesson, not the top level home, but if forced by standard JSON execution for active state, we pick one. Intent implies we might be in 'Home' or 'Quiz'. Let's say we launched from 'Home'. Wait, strict logic says if linear/focused, hide nav. But user requested UI based on components. Since it's a specific lesson, it borders on Task-Focused. However, to fulfill the prompt requirements fully, I will include it and highlight Home as the closest parent. -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined fill">home</span>
+<span class="font-label-lg text-label-lg mt-1 text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1 text-xs">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg text-label-lg mt-1 text-xs">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1 text-xs">Story</span>
+</a>
+</nav>
+</body></html>

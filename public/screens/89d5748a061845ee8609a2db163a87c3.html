@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahani Mode: Ray</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#b80069",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-container": "#4c3f00",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary": "#924c00",
+                        "on-primary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "on-primary-fixed": "#3e0020",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-container": "#f88400",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-container": "#c9a900",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#ffb781",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "primary": "#b40067",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5a3f48",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline-variant": "#e1bdc7",
+                        "on-secondary-container": "#5b2d00",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-surface": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#8d6f78",
+                        "primary-container": "#df0b81",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "inverse-primary": "#ffb0cb",
+                        "on-primary-fixed-variant": "#8d004f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        .neo-shadow-hover:hover {
+            box-shadow: 8px 8px 0px #1a1c1c;
+        }
+        .neo-shadow-active:active {
+            box-shadow: 0px 0px 0px transparent;
+            transform: translate(4px, 4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+<header class="bg-surface text-primary w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all">arrow_back</span>
+<h1 class="font-headline-md text-headline-md text-primary truncate max-w-[200px] md:max-w-none">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="font-label-bold text-label-bold flex items-center border-[3px] border-on-surface bg-surface px-3 py-1 neo-shadow">
+<span class="mr-1">5</span>
+<span class="text-secondary-container">🔥</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col px-margin-mobile md:px-margin-desktop py-8 max-w-3xl mx-auto w-full gap-8">
+<div class="flex justify-between items-center bg-tertiary-fixed border-[3px] border-on-surface px-4 py-2 neo-shadow w-fit -rotate-2">
+<span class="font-headline-md text-headline-md text-on-tertiary-fixed uppercase tracking-wider">Kahani Mode</span>
+</div>
+<section class="flex flex-col gap-6 relative">
+<div class="w-full aspect-[4/5] md:aspect-video bg-surface border-[3px] border-on-surface overflow-hidden relative neo-shadow z-10 group">
+<div class="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity z-20 pointer-events-none"></div>
+<img alt="Story Visual" class="w-full h-full object-cover filter contrast-125 saturate-150" data-alt="A vibrant, comic-book style illustration of a relatable Indian teacher character named MathsGuru Bhaiya standing on a dark, urban rooftop at night. He is holding a powerful, heavy-duty flashlight that projects a bright, solid beam of light diagonally up into the starry night sky. The scene is rendered in a Neo-Brutalist, Desi Street-Pop aesthetic, featuring flat colors, thick black outlines, and high contrast. The color palette emphasizes deep blacks, stark whites, and vivid accents of bright Gulabi Pink and Auto Yellow. The mood is energetic, educational, and slightly rebellious, capturing a dynamic urban teaching moment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1wl0OTBJ323w_XlExUR3e8ZN8rfwUFD7DczttjDU0fvfdz7nVwrdlkhTXxLZGKdYBzHRtCnbEBMYvlECCqkG6Sj-PZ1X_NmDJkUjOddxxfzTXS7ci_FaPAinwc6TL5H1KIvab5ZtePlmHPpdZJg2foieKjpl6I7-7_kDGeFI4fJmgE_j89_2xg5TOi0Hm2hsZ_aw2ZI94R14YeKdhkG0ZyJU8ZzC2xaoO86bVAKifaJzYR73uFJW1uXoy321zvOFfR9mxxuT_zCbY"/>
+<div class="absolute bottom-4 left-4 border-[3px] border-on-surface bg-primary text-on-primary px-3 py-1 font-label-bold text-label-bold rotate-3 shadow-[2px_2px_0px_#1B1C19]">
+                    Kiran (Ray)
+                </div>
+</div>
+<div class="relative z-20 -mt-12 md:-mt-16 ml-4 mr-8 md:ml-12 md:mr-12">
+<div class="bg-surface-container-lowest border-[3px] border-on-surface p-6 neo-shadow relative">
+<div class="absolute -top-[15px] left-8 w-[20px] h-[20px] bg-surface-container-lowest border-t-[3px] border-l-[3px] border-on-surface rotate-45"></div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                        Dekho, flashlight ki beam ek point se shuru hoti hai aur aage endless chalti rehti hai—bilkul ek 
+                        <span class="inline-block border-[3px] border-on-surface bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 font-headline-md mx-1 shadow-[2px_2px_0px_#1B1C19] -rotate-1">Ray</span> 
+                        ki tarah!
+                    </p>
+</div>
+</div>
+</section>
+<div class="mt-auto pt-8 pb-4 w-full flex justify-end">
+<button class="bg-primary text-on-primary font-headline-md text-headline-md px-10 py-4 border-[3px] border-on-surface neo-shadow neo-shadow-hover neo-shadow-active transition-all w-full md:w-auto uppercase tracking-wide flex items-center justify-center gap-2 group">
+                Next
+                <span class="material-symbols-outlined text-3xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

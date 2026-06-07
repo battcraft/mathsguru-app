@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry: Rekha &amp; Bindu - Socho</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdcc4",
+                        "outline-variant": "#e1bdc7",
+                        "on-primary-fixed": "#3e0020",
+                        "primary": "#b40067",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffb781",
+                        "tertiary": "#705d00",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-container": "#df0b81",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#b80069",
+                        "inverse-surface": "#2f3131",
+                        "secondary": "#924c00",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "tertiary-container": "#c9a900",
+                        "on-surface-variant": "#5a3f48",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#ffd9e3",
+                        "error": "#ba1a1a",
+                        "outline": "#8d6f78",
+                        "on-secondary-container": "#5b2d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "headline-lg": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Neo-brutalist custom utilities */
+        .neo-border { border: 3px solid #1a1c1c; }
+        .neo-shadow { box-shadow: 4px 4px 0px #1a1c1c; }
+        .neo-shadow-lg { box-shadow: 8px 8px 0px #1a1c1c; }
+        .neo-active:active { box-shadow: 0px 0px 0px #1a1c1c; transform: translate(4px, 4px); }
+        
+        /* Blueprint background pattern */
+        .blueprint-bg {
+            background-color: #f9f9f9;
+            background-image: 
+                linear-gradient(to right, #e2e2e2 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Explainer animation */
+        #explainer-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+        #explainer-text.open {
+            max-height: 200px; /* arbitrary max height for animation */
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="blueprint-bg text-on-surface min-h-screen flex flex-col font-body-md relative overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 z-40">
+<div class="flex items-center gap-2 cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-headline-md text-headline-md-mobile text-primary font-bold tracking-tight">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="flex items-center">
+<span class="font-label-bold text-label-bold text-on-surface-variant bg-surface-container-highest px-3 py-1 rounded-full neo-border neo-shadow">5 🔥</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop flex flex-col items-center justify-center gap-8 pb-28 md:pb-margin-desktop">
+<!-- Socho Tag & Title -->
+<div class="w-full max-w-2xl text-center flex flex-col items-center gap-2">
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1 font-label-bold text-label-bold neo-border neo-shadow uppercase tracking-widest">Socho</span>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Can we measure it?</h2>
+</div>
+<!-- Visual Hero Card -->
+<div class="w-full max-w-2xl bg-surface-container-lowest neo-border neo-shadow-lg p-4 flex flex-col items-center">
+<div class="w-full aspect-video bg-surface-container-highest neo-border relative overflow-hidden mb-4">
+<img alt="Ruler measuring a pencil" class="w-full h-full object-cover" data-alt="A vivid, neo-brutalist style photograph of a bright yellow wooden pencil laid flat against a white graph-paper background, being measured precisely by a transparent plastic ruler. The lighting is high-key and stark, creating a solid, distinct black offset shadow under the pencil. The overall aesthetic is geometric, colorful, and academic, blending raw structural elements with playful vibrant accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMPhQQmS8DU76P7FHh3s_r8dP3E1xfICg3WdBteyZejmkBcam-x8aQtaTRkl2YiY_vLMSg_dqzEegNh0fWSwy6ipHW91YaNzmf8sPV5CazbKn-egKhlxvJSzpg1RzZtB0Q2sjtksiit_1c-5b-0zXeBu9Y0BAEw3qZBmC0GGvFiTa4M9xt2j19Ge0w2hm55xGgW-XsKsedBDaFdnKRa4uG5vN4CmJuc9I1dPTRCR21XtySJh1o29Ce2mASNuOTGwZOFsby5IU0qb3S"/>
+<!-- Geometry accent lines -->
+<div class="absolute top-1/2 left-1/4 w-1/2 h-[3px] bg-primary transform -translate-y-1/2">
+<div class="absolute -left-1.5 -top-1.5 w-3 h-3 rounded-full bg-primary neo-border"></div>
+<div class="absolute -right-1.5 -top-1.5 w-3 h-3 rounded-full bg-primary neo-border"></div>
+</div>
+</div>
+<!-- Probing Question -->
+<p class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center my-6 text-on-surface px-4">
+                Kya hum segment ki length naap sakte hain? Kyun?
+            </p>
+<!-- Choice Buttons -->
+<div class="w-full flex flex-col md:flex-row gap-4 px-2">
+<button class="flex-1 bg-surface-container-lowest neo-border neo-shadow neo-active p-4 text-center font-label-bold text-label-bold md:font-body-lg md:text-body-lg text-on-surface hover:bg-secondary-fixed transition-colors" onclick="handleChoice('correct')">
+                    Haan, kyunki ends fixed hain
+                </button>
+<button class="flex-1 bg-surface-container-lowest neo-border neo-shadow neo-active p-4 text-center font-label-bold text-label-bold md:font-body-lg md:text-body-lg text-on-surface hover:bg-error-container transition-colors" onclick="handleChoice('incorrect')">
+                    Nahi, kyunki yeh chalti rehti hai
+                </button>
+</div>
+<!-- Hidden Explainer -->
+<div class="w-full px-4 mt-2 border-t-[3px] border-on-surface hidden" id="explainer-text">
+<div class="flex items-start gap-3 p-4 bg-tertiary-fixed neo-border">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-2xl" data-icon="lightbulb" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<p class="font-body-md text-body-md text-on-tertiary-fixed" id="explainer-content">
+<!-- Content injected via JS -->
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on Desktop) -->
+<nav class="flex md:hidden justify-around items-center h-20 px-margin-mobile bg-surface fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-4 py-1 border-[3px] border-on-surface hover:bg-secondary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</button>
+</nav>
+<script>
+        function handleChoice(choice) {
+            const explainerContainer = document.getElementById('explainer-text');
+            const explainerContent = document.getElementById('explainer-content');
+            
+            explainerContainer.classList.remove('hidden');
+            
+            // Force reflow
+            void explainerContainer.offsetWidth;
+            
+            if(choice === 'correct') {
+                explainerContent.innerHTML = "<strong>Sahi jawab!</strong> Ek line segment ke do fixed endpoints hote hain, isliye uski lambai (length) ko ruler se accurately measure kiya ja sakta hai.";
+                explainerContent.parentElement.className = "flex items-start gap-3 p-4 bg-tertiary-fixed neo-border";
+            } else {
+                explainerContent.innerHTML = "<strong>Socho wapas!</strong> Jo chalti rehti hai use 'Line' ya 'Ray' kehte hain. Par 'Line Segment' ke dono ends band (fixed) hote hain, isliye use naapa ja sakta hai.";
+                explainerContent.parentElement.className = "flex items-start gap-3 p-4 bg-secondary-fixed neo-border";
+            }
+            
+            explainerContainer.classList.add('open');
+        }
+    </script>
+</body></html>

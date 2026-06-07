@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="hi-EN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-shadow { shadow-[4px_4px_0px_#1c1b1b] }
+        .neo-btn-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .drop-zone-active {
+            border-color: #006d38;
+            background-color: #63ff9d;
+        }
+        .draggable {
+            touch-action: none;
+            cursor: grab;
+        }
+        .draggable:active {
+            cursor: grabbing;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 border-[3px] border-on-surface rounded-full bg-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all shadow-[2px_2px_0px_#1c1b1b]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Panga 3: Temperature Mix</h1>
+</div>
+<div class="hidden md:flex gap-6 items-center font-label-bold">
+<span class="text-on-surface">Home</span>
+<span class="text-muted">Chat</span>
+<span class="text-muted">Quiz</span>
+<span class="text-muted">Story</span>
+<span class="text-muted">Report</span>
+</div>
+</nav>
+<main class="max-w-screen-md mx-auto px-4 mt-8">
+<!-- Progress Bar -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-2">
+<span class="font-headline-md text-primary">Level 3/10</span>
+<span class="font-body-lg text-secondary">300 XP</span>
+</div>
+<div class="h-6 w-full border-[3px] border-on-surface bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[30%] border-r-[3px] border-on-surface"></div>
+</div>
+</div>
+<!-- Question Section -->
+<section class="bg-surface border-[3px] border-on-surface rounded-lg p-6 shadow-[4px_4px_0px_#1c1b1b] mb-10 relative overflow-hidden">
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-fixed-dim opacity-20 rounded-full blur-2xl"></div>
+<div class="flex items-start gap-4 mb-6">
+<div class="bg-primary-container p-3 border-[3px] border-on-surface rounded-lg shadow-[2px_2px_0px_#1c1b1b]">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-2">Chalo, Temperature set karo!</h2>
+<p class="font-body-lg text-on-surface-variant">Sabse thanda (Min) aur sabse garam (Max) dhoondo!</p>
+</div>
+</div>
+<!-- Drag Containers -->
+<div class="flex flex-wrap gap-4 justify-center py-8" id="source-container">
+<div class="draggable bg-surface-container-highest border-[3px] border-on-surface rounded-lg px-6 py-4 font-headline-md text-headline-md shadow-[4px_4px_0px_#1c1b1b] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-95" data-val="4" draggable="true" id="temp-4">4°C</div>
+<div class="draggable bg-surface-container-highest border-[3px] border-on-surface rounded-lg px-6 py-4 font-headline-md text-headline-md shadow-[4px_4px_0px_#1c1b1b] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-95" data-val="-2" draggable="true" id="temp-neg2">-2°C</div>
+<div class="draggable bg-surface-container-highest border-[3px] border-on-surface rounded-lg px-6 py-4 font-headline-md text-headline-md shadow-[4px_4px_0px_#1c1b1b] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-95" data-val="10" draggable="true" id="temp-10">10°C</div>
+<div class="draggable bg-surface-container-highest border-[3px] border-on-surface rounded-lg px-6 py-4 font-headline-md text-headline-md shadow-[4px_4px_0px_#1c1b1b] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-95" data-val="0" draggable="true" id="temp-0">0°C</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+<!-- Drop Zone Min -->
+<div class="flex flex-col items-center">
+<span class="font-label-lg text-primary uppercase tracking-widest mb-2">Minimum (Sabse Thanda)</span>
+<div class="w-full h-24 border-[3px] border-dashed border-outline rounded-lg flex items-center justify-center bg-surface-container-low transition-colors" data-target="-2" id="drop-min">
+<span class="text-outline-variant font-body-lg">Drag here</span>
+</div>
+</div>
+<!-- Drop Zone Max -->
+<div class="flex flex-col items-center">
+<span class="font-label-lg text-secondary uppercase tracking-widest mb-2">Maximum (Sabse Garam)</span>
+<div class="w-full h-24 border-[3px] border-dashed border-outline rounded-lg flex items-center justify-center bg-surface-container-low transition-colors" data-target="10" id="drop-max">
+<span class="text-outline-variant font-body-lg">Drag here</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Illustration Card (Asymmetric) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+<div class="md:col-span-8 bg-white border-[3px] border-on-surface rounded-lg p-6 shadow-[4px_4px_0px_#1c1b1b]">
+<h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tips_and_updates</span>
+                    Pro Tip!
+                </h3>
+<p class="font-body-lg">Negative numbers are always "thanda" than zero or positive numbers. Think of an ice cream stall in Shimla! Jitna kam number, utni zyada thand.</p>
+</div>
+<div class="md:col-span-4 bg-tertiary-container border-[3px] border-on-surface rounded-lg p-0 shadow-[4px_4px_0px_#1c1b1b] overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A vibrant, Neo-Brutalist digital illustration showing a thermometer placed in a bowl of Indian street style spicy mango ice. The visual style features thick black outlines, saturated oranges and greens, and high contrast lighting. The atmosphere is energetic and educational, using flat graphic design principles with heavy drop shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaislP4HnZbwBhwW1ATzVqzRyQojsLxAfXq3MmBSXhhK5N6gtTehuxdTkT2L6po7QbFDWdJkJGHEcLg-zyMGWlglFzW7owMfh0eVK9Lhol6txXexpJs80prLTjTHVojKl8GU6eFC5UlKgpJmPozzCEtlqsCrlJKnv3g1abvNfnWdtqsQL8LSdLbk_8sYv2-i7wzhqStGUdTl2v91x5xKp-0LAMlG-7RvLzoxsqKnVI2rDsn8PZirksFjk57KUDzMzSWnZftlDPXxNC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-label-lg">Math in Masti</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="mt-12 flex justify-center pb-20">
+<button class="group relative inline-flex items-center gap-3 px-12 py-5 bg-primary-container text-white border-[3px] border-on-surface rounded-lg font-headline-md text-headline-md shadow-[6px_6px_0px_#1c1b1b] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_#1c1b1b] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none" id="check-btn">
+                Check Answer
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">bolt</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b] px-4 py-3">
+<button class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-[10px] uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-[10px] uppercase">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-[10px] uppercase">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-[10px] uppercase">Story</span>
+</button>
+<button class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-[10px] uppercase">Report</span>
+</button>
+</nav>
+<script>
+        const draggables = document.querySelectorAll('.draggable');
+        const containers = document.querySelectorAll('#drop-min, #drop-max, #source-container');
+        const checkBtn = document.getElementById('check-btn');
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', () => {
+                draggable.classList.add('opacity-50');
+            });
+
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('opacity-50');
+            });
+        });
+
+        containers.forEach(container => {
+            container.addEventListener('dragover', e => {
+                e.preventDefault();
+                if (container.id !== 'source-container') {
+                    container.classList.add('drop-zone-active');
+                }
+            });
+
+            container.addEventListener('dragleave', () => {
+                container.classList.remove('drop-zone-active');
+            });
+
+            container.addEventListener('drop', e => {
+                e.preventDefault();
+                container.classList.remove('drop-zone-active');
+                const draggableId = e.dataTransfer.getData('text/plain') || document.querySelector('.opacity-50')?.id;
+                const draggable = document.getElementById(draggableId);
+                
+                if (draggable) {
+                    // Only allow one item in drop zones
+                    if (container.id !== 'source-container' && container.children.length > 1) {
+                        const existing = container.querySelector('.draggable');
+                        document.getElementById('source-container').appendChild(existing);
+                    }
+                    container.appendChild(draggable);
+                    
+                    // Remove "Drag here" text if dropping into zone
+                    if (container.id !== 'source-container') {
+                        const hint = container.querySelector('span');
+                        if (hint) hint.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        checkBtn.addEventListener('click', () => {
+            const minZone = document.getElementById('drop-min');
+            const maxZone = document.getElementById('drop-max');
+            
+            const minVal = minZone.querySelector('.draggable')?.dataset.val;
+            const maxVal = maxZone.querySelector('.draggable')?.dataset.val;
+
+            if (minVal === "-2" && maxVal === "10") {
+                alert("Wah! Bilkul sahi. You are a Temperature Master! 🎉");
+                checkBtn.classList.replace('bg-primary-container', 'bg-secondary-container');
+                checkBtn.innerHTML = 'Next Panga! <span class="material-symbols-outlined">arrow_forward</span>';
+            } else {
+                alert("Arre! Ek baar phir se check karo. Min matlab sabse chota, Max matlab sabse bada.");
+                
+                // Add error animation
+                [minZone, maxZone].forEach(z => {
+                    z.classList.add('border-error');
+                    setTimeout(() => z.classList.remove('border-error'), 1000);
+                });
+            }
+        });
+
+        // Simple touch support for mobile (Pseudo-implementation)
+        draggables.forEach(d => {
+            d.addEventListener('touchstart', (e) => {
+                // Focus element visually
+                d.classList.add('border-primary');
+            });
+        });
+    </script>
+</body></html>

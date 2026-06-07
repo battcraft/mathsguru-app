@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rounding Arena - Gol Gol Ghoom!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#ff6096",
+                        "on-background": "#1b1c19",
+                        "on-surface-variant": "#5a4136",
+                        "on-secondary-fixed-variant": "#005229",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#ba005b",
+                        "secondary": "#006d38",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-primary-container": "#572000",
+                        "surface-container": "#f0eee8",
+                        "primary": "#a04100",
+                        "outline": "#8e7164",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#00210d",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-fixed-dim": "#40e183",
+                        "primary-container": "#ff6b00",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "tertiary-fixed": "#ffd9e1",
+                        "secondary-fixed": "#63ff9d",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-container-highest": "#e4e2dd",
+                        "background": "#fbf9f3",
+                        "surface-tint": "#a04100",
+                        "surface-bright": "#fbf9f3",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "on-primary-fixed": "#351000",
+                        "inverse-surface": "#30312d",
+                        "surface-container-high": "#eae8e2",
+                        "primary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "primary-fixed-dim": "#ffb693",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e4e2dd",
+                        "surface-dim": "#dbdad4",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#67002f",
+                        "outline-variant": "#e2bfb0",
+                        "surface": "#fbf9f3",
+                        "on-secondary-container": "#00743c",
+                        "surface-container-low": "#f5f3ee",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fff8f0;
+            color: #1b1c19;
+            font-family: "Nunito Sans", sans-serif;
+            overflow-x: hidden;
+        }
+        .neo-border {
+            border: 3px solid #000;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-btn {
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px #1A1A1A;
+            transition: all 0.1s ease-in-out;
+        }
+        .neo-btn:active {
+            box-shadow: 0px 0px 0px #1A1A1A;
+            transform: translate(4px, 4px);
+        }
+        .neo-card {
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0px #1A1A1A;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px black;
+        }
+        
+        /* Custom Colors based on prompt */
+        .bg-mango { background-color: #ff6b00; }
+        .text-mango { color: #ff6b00; }
+        .bg-teal-custom { background-color: #00bcd4; }
+        .bg-yellow-custom { background-color: #ffd700; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- Top Header -->
+<header class="bg-mango w-full px-margin-mobile md:px-margin-desktop py-4 flex flex-col items-center z-10 neo-border border-b-0 border-x-0 border-t-0 border-b-3 relative">
+<div class="w-full max-w-container-max-width flex justify-between items-center mb-4">
+<!-- Back Button -->
+<button class="bg-surface-container-lowest text-on-surface neo-btn rounded-full w-10 h-10 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-on-primary">Rounding Arena 🎯</h1>
+<!-- Settings Button -->
+<button class="bg-surface-container-lowest text-on-surface neo-btn rounded-full w-10 h-10 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+</div>
+<div class="w-full max-w-container-max-width flex justify-between items-center">
+<div class="bg-surface-container-lowest neo-border rounded-full px-4 py-1 text-on-surface font-label-lg text-label-lg">
+                Question 3/8
+            </div>
+<div class="bg-surface-container-lowest neo-border rounded-full px-4 py-1 text-on-surface font-label-lg text-label-lg flex items-center gap-1">
+                🔥 Streak: 2
+            </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full px-margin-mobile md:px-margin-desktop py-8 max-w-container-max-width mx-auto relative z-0">
+<!-- Main Stage Arena -->
+<div class="relative w-full max-w-md mx-auto aspect-square flex items-center justify-center mb-12 mt-4">
+<!-- Arena Background Decorative Circles -->
+<div class="absolute inset-0 bg-yellow-custom rounded-full opacity-20 transform scale-110"></div>
+<div class="absolute inset-0 bg-mango rounded-full opacity-30 transform scale-105 border-4 border-dashed border-mango"></div>
+<!-- Core Arena -->
+<div class="relative w-full h-full bg-surface-container-lowest rounded-full neo-border neo-shadow flex items-center justify-center flex-col z-10">
+<div class="font-headline-xl text-headline-xl md:text-[96px] text-on-background leading-none tracking-tighter">
+                    47
+                </div>
+<!-- Small decorative elements -->
+<span class="material-symbols-outlined absolute top-10 left-10 text-mango" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined absolute bottom-10 right-10 text-teal-custom" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Overlapping Question Card -->
+<div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-[110%] md:w-[120%] z-20">
+<div class="bg-surface-container-lowest neo-card rounded-lg p-4 text-center">
+<p class="font-body-lg text-body-lg text-on-background">
+                        47 ko round karo! Kiske paas jayega? 🎯
+                    </p>
+</div>
+</div>
+</div>
+<!-- Target Zones / Interactive Buttons -->
+<div class="w-full max-w-md mx-auto flex flex-col gap-4 mt-8 z-10">
+<button class="w-full bg-teal-custom neo-btn rounded-lg py-4 px-6 flex justify-between items-center group">
+<span class="font-headline-md text-headline-md text-on-primary group-hover:text-black transition-colors">Round to 10</span>
+<span class="material-symbols-outlined text-on-primary group-hover:text-black transition-colors" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+<button class="w-full bg-yellow-custom neo-btn rounded-lg py-4 px-6 flex justify-between items-center group">
+<span class="font-headline-md text-headline-md text-on-background">Round to 50</span>
+<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+<button class="w-full bg-mango neo-btn rounded-lg py-4 px-6 flex justify-between items-center group">
+<span class="font-headline-md text-headline-md text-on-primary group-hover:text-black transition-colors">Round to 100</span>
+<span class="material-symbols-outlined text-on-primary group-hover:text-black transition-colors" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Dashboard -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-6 bg-surface-container-highest neo-border border-b-0 border-x-0 border-t-3 mt-auto relative z-20 shadow-[0px_-4px_0px_#1A1A1A]">
+<div class="max-w-container-max-width mx-auto flex flex-col gap-4">
+<!-- Row 1: Dashboard Stats -->
+<div class="flex justify-between items-center">
+<button class="bg-surface-container-lowest neo-btn rounded-full w-12 h-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-mango" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</button>
+<div class="bg-yellow-custom neo-border rounded-full px-6 py-2 font-headline-md text-headline-md text-on-background neo-shadow flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+                    01:30
+                </div>
+<div class="bg-surface-container-lowest neo-border rounded-lg px-4 py-2 font-headline-md text-headline-md text-on-background neo-shadow">
+                    Score: 420
+                </div>
+</div>
+<!-- Row 2: Progress Bar -->
+<div class="w-full h-8 bg-surface-dim neo-border rounded-full relative overflow-hidden flex">
+<!-- Segments -->
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8 border-r-3 border-black"></div>
+<div class="h-full w-1/8"></div>
+<!-- Fill -->
+<div class="absolute top-0 left-0 h-full bg-secondary-fixed w-3/8 -z-10"></div>
+</div>
+<!-- Footer Text -->
+<div class="text-center w-full pt-2">
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">
+                    Gol gol ghoom ke answer dhoondh! 🔄
+                </p>
+</div>
+</div>
+</section>
+<!-- Navigation Shell Mapping: Intent is focused task ("Practice Screen / Quiz"). Suppressing BottomNavBar/TopAppBar global nav. -->
+</body></html>

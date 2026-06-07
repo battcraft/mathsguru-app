@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahani - Number Line Race</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800;900&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system prompt -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "surface-container-low": "#f5f3ee",
+                      "on-surface-variant": "#5a4136",
+                      "on-tertiary-container": "#67002f",
+                      "surface-container-highest": "#e4e2dd",
+                      "outline": "#8e7164",
+                      "secondary-fixed-dim": "#40e183",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#00743c",
+                      "outline-variant": "#e2bfb0",
+                      "tertiary-container": "#ff6096",
+                      "tertiary-fixed": "#ffd9e1",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed": "#00210d",
+                      "surface-container": "#f0eee8",
+                      "surface-bright": "#fbf9f3",
+                      "primary-container": "#ff6b00",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "on-tertiary-fixed": "#3f001a",
+                      "surface": "#fbf9f3",
+                      "secondary-fixed": "#63ff9d",
+                      "secondary-container": "#63ff9d",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#eae8e2",
+                      "primary-fixed": "#ffdbcc",
+                      "inverse-on-surface": "#f2f1eb",
+                      "on-primary-container": "#572000",
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "error": "#ba1a1a",
+                      "primary": "#a04100",
+                      "on-secondary-fixed-variant": "#005229",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#30312d",
+                      "on-primary-fixed": "#351000",
+                      "tertiary": "#ba005b",
+                      "surface-variant": "#e4e2dd",
+                      "on-background": "#1b1c19",
+                      "secondary": "#006d38",
+                      "inverse-primary": "#ffb693",
+                      "surface-dim": "#dbdad4",
+                      "on-primary": "#ffffff",
+                      "background": "#fbf9f3",
+                      "surface-tint": "#a04100",
+                      "on-surface": "#1b1c19"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "40px",
+                      "unit": "8px",
+                      "container-max-width": "1200px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-md": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "body-md": [
+                              "Nunito Sans"
+                      ],
+                      "label-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-xl-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "body-lg": [
+                              "Nunito Sans"
+                      ],
+                      "headline-lg": [
+                              "Bricolage Grotesque"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Desi Street-Pop / Neo-Brutalist specifics */
+        .brutalist-border { border: 3px solid #1b1c19; }
+        .brutalist-shadow { box-shadow: 4px 4px 0px #1b1c19; }
+        .brutalist-btn-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1b1c19;
+        }
+        
+        /* Night sky background gradient for the story area */
+        .story-bg {
+            background: linear-gradient(180deg, #1B0F4C 0%, #351A85 100%);
+        }
+
+        /* Number line animation */
+        @keyframes pulse-node {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .anim-node {
+            animation: pulse-node 2s infinite ease-in-out;
+        }
+        .anim-node:nth-child(2) { animation-delay: 0.2s; }
+        .anim-node:nth-child(3) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface border-b-3 border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile py-4 max-w-container-max-width mx-auto">
+<!-- Leading Icon (Back) -->
+<button aria-label="Go Back" class="w-10 h-10 flex items-center justify-center rounded-full brutalist-border bg-surface-container hover:bg-primary-container hover:text-on-primary-container brutalist-shadow brutalist-btn-active transition-all">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Headline -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary text-center flex-1">Kahani 1/5</h1>
+<!-- Placeholder for balance if trailing icon needed, empty here to center title -->
+<div class="w-10 h-10"></div>
+</div>
+</header>
+<!-- Main Content Canvas (Story Area) -->
+<main class="flex-1 flex flex-col w-full max-w-container-max-width mx-auto pb-32">
+<!-- Illustration Area with Night Sky -->
+<section class="story-bg relative w-full aspect-[4/5] md:aspect-[21/9] flex items-end justify-center overflow-hidden brutalist-border brutalist-shadow my-4 mx-4 md:mx-auto md:w-[calc(100%-32px)] rounded-xl">
+<!-- Background Image -->
+<img alt="Illustration" class="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAdlxK8WozrTkK7E4i0Kza1U6gBhYKFI0be3C2JwZ3vG79iIbHRINThcBAdzMcpehhWxqMu9IshqGjJFCBPbvc1Z-507UUDCHPr1kNxAOlhoguIxpkefyxZIE4CmYlzVBzLG0sbXDngtm0nvM_IcjjsnFCPT1pmaLPMlWkm30c5eFtxwje21o6ZJs_tepv03-EoA6MsrkTJFTeLEw2M9mL3eth7Ndk5pMQAwMbr6nrN7hmzivOeW1-pbHSTTRdTrFLjGJt4hBmzqpg"/>
+<!-- Story Text Overlay -->
+<div class="relative z-10 w-full p-6 bg-gradient-to-t from-black/80 to-transparent pt-20">
+<p class="font-headline-md text-headline-md text-on-secondary text-center drop-shadow-[2px_2px_0px_#000]">
+                    Ek raat Priya ne socha - numbers bhi daud sakte hain! Bada number tez daudta hai, chhota number dheere! 🔴
+                </p>
+</div>
+</section>
+<!-- Concept Callout Card -->
+<section class="px-margin-mobile my-6 flex justify-center">
+<div class="bg-surface-bright brutalist-border brutalist-shadow rounded-xl w-full max-w-2xl overflow-hidden">
+<div class="bg-primary-container text-on-primary-container p-4 border-b-3 border-on-surface">
+<h2 class="font-headline-md text-headline-md text-center">NUMBER LINE = Jahan sab numbers ek line mein khade hain!</h2>
+</div>
+<div class="p-6 text-center">
+<p class="font-body-lg text-body-lg mb-6">Bada = Right, Chhota = Left! 📍</p>
+<!-- Animated Horizontal Number Line -->
+<div class="relative w-full max-w-md mx-auto py-8">
+<!-- The Line -->
+<div class="absolute top-1/2 left-0 right-0 h-3 bg-on-surface -translate-y-1/2 rounded-full"></div>
+<!-- Arrow Left -->
+<div class="absolute top-1/2 -left-4 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-r-[16px] border-r-on-surface border-b-[10px] border-b-transparent"></div>
+<!-- Arrow Right -->
+<div class="absolute top-1/2 -right-4 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-on-surface border-b-[10px] border-b-transparent"></div>
+<!-- Nodes -->
+<div class="relative z-10 flex justify-between items-center w-full px-2">
+<!-- Node 0 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-6 h-6 bg-tertiary-container brutalist-border rounded-full anim-node"></div>
+<span class="font-label-lg text-label-lg font-bold">0</span>
+</div>
+<!-- Node 5 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-6 h-6 bg-secondary-container brutalist-border rounded-full anim-node"></div>
+<span class="font-label-lg text-label-lg font-bold">5</span>
+</div>
+<!-- Node 10 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-6 h-6 bg-primary-container brutalist-border rounded-full anim-node"></div>
+<span class="font-label-lg text-label-lg font-bold">10</span>
+</div>
+</div>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface-variant mt-4">
+                        Numbers ki daud shuru! Bada number jeetega! 🏃
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Custom setup for Story flow, mapped loosely from JSON but tailored to prompt constraints) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t-3 border-on-surface px-margin-mobile py-4 flex flex-col items-center gap-4">
+<!-- Page Indicators -->
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary brutalist-border"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant brutalist-border"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant brutalist-border"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant brutalist-border"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant brutalist-border"></div>
+</div>
+<!-- Primary Action Button -->
+<div class="w-full max-w-container-max-width mx-auto flex justify-between items-center gap-4">
+<button class="flex-1 flex flex-row items-center justify-center gap-2 text-on-surface-variant border-3 border-on-surface bg-surface-container-low px-4 py-3 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-container brutalist-btn-active transition-all font-label-lg text-label-lg">
+<span class="material-symbols-outlined">chevron_left</span>
+                Pichla
+            </button>
+<button class="flex-[2] flex flex-row items-center justify-center gap-2 bg-primary-container text-on-primary-container border-3 border-on-surface px-4 py-3 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-container brutalist-btn-active transition-all font-label-lg text-label-lg">
+                Agle page pe aur seekho 
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</nav>
+</body></html>

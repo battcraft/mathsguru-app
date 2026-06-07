@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            background-color: #fbf9f3; /* Warm Chalk */
+            overflow-x: hidden;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1b1c19",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1eb",
+                        "secondary": "#006d38",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#00210d",
+                        "primary-fixed": "#ffdbcc",
+                        "outline-variant": "#e2bfb0",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-secondary-container": "#00743c",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-surface": "#30312d",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#5a4136",
+                        "primary": "#a04100",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "tertiary": "#ba005b",
+                        "surface-container-high": "#eae8e2",
+                        "surface-variant": "#e4e2dd",
+                        "on-primary-container": "#572000",
+                        "inverse-primary": "#ffb693",
+                        "surface-dim": "#dbdad4",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-tint": "#a04100",
+                        "surface": "#fbf9f3",
+                        "surface-bright": "#fbf9f3",
+                        "tertiary-container": "#ff6096",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf9f3",
+                        "on-primary-fixed": "#351000",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "outline": "#8e7164",
+                        "surface-container": "#f0eee8",
+                        "primary-container": "#ff6b00",
+                        "secondary-fixed": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-tertiary-container": "#67002f",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 border-b-3 border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-40 fixed">
+<div class="flex justify-between items-center w-full px-margin-mobile py-4">
+<button class="text-primary dark:text-primary-fixed active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile dark:text-on-surface">Kahani 2/5</h1>
+<div class="w-8"></div> <!-- Spacer for symmetry -->
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-lg mx-auto">
+<!-- Story Illustration Section -->
+<section class="mb-8 relative">
+<div class="border-3 border-on-surface rounded-lg overflow-hidden neo-shadow bg-on-background">
+<img alt="A beautiful shooting star leaving a trail of glowing points" class="w-full aspect-square object-cover" data-alt="A vibrant digital illustration of a shooting star in a deep midnight blue sky. The star is a glowing pink orb with a dynamic trail of multiple pink, orange, and blue streaks composed of glowing circular dots or bindu. Small white and yellow stars twinkle in the dark textured background. The art style is bold Neo-Brutalist with heavy black comic-book outlines and high-energy Desi Street-Pop color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRmwcGnnKxg2PLljL-681mUHepwkKw3xpQQIreyzoOhcRxE0eHBI2GiR-QHjnlPSkVaPMQb8pv_VbltWW_V1hHl6Ta22AWb_EvkUmcgfVg6DDjWCeICtULN2yLDxoRU6foLHsAgNNyzhJOOVa8azPxo7HyZtHyXa0RAXG2Fofcor0gEXY0pLnjvwEFUZWFvpfHmkUcTBGXJDgyeVZRxe6PyWC62qgedK6dmMg8iy6B4neha0JweNb_xK0d9i9FzgoPFi7fCm2B_27f"/>
+</div>
+<!-- Decorative Sparkles -->
+<div class="absolute -top-4 -right-4 text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</section>
+<!-- Character Dialogue Bubble -->
+<section class="mb-8 flex gap-4 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-tertiary-container border-3 border-on-surface rounded-full neo-shadow flex items-center justify-center overflow-hidden">
+<img alt="MathsGuru Bhaiya" data-alt="A friendly and clever Indian math teacher avatar styled like a modern digital character. The character is smiling, wearing a stylish turban in a vibrant street-art style, with colorful glasses. The visual style is playful, energetic, and clean, fitting into a gamified education app interface with high-contrast elements and friendly geometric shapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuMQwto5ukHPzoq7TsxIEblVPh1qKfSvaCk2BEbvgksNS3Yaw47Ow-aQSD46IVDTsfJ9vxuy0EHX9jMJLNBO3_13Oi5rr3GolWA_WueAZovM6TkYsUfMFNPIkYCR7nrbemTSxKGewBmo5jUYJgabxpZJSGY5xBs7TmP-i5Me3mvxmNC-FX0wGDvtH7TJsP-T6FBQxaO5AwwVXBLmBwrLh_4enXhdTpZKN9i2z1TjQcLPNmxfuOM5y8DfoCLNWjlOgfVBhPCa24KkDV"/>
+</div>
+<div class="relative bg-surface-container-low border-3 border-on-surface rounded-lg p-4 neo-shadow">
+<div class="absolute left-[-12px] top-6 w-3 h-3 bg-surface-container-low border-l-3 border-b-3 border-on-surface rotate-45"></div>
+<p class="font-body-lg text-body-lg text-on-surface leading-tight">
+                    "Dekho Sitara gaya aur usne chhote chhote <span class="font-bold text-primary">Bindu</span> chhod diye! Har Bindu ki koi size nahi hai, par location ekdum perfect hai."
+                </p>
+</div>
+</section>
+<!-- Dost Secret Tip Card (Neo-Brutalist) -->
+<section class="bg-primary-container border-3 border-on-surface rounded-lg p-6 neo-shadow">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-on-primary-container font-bold" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h2 class="font-headline-md text-headline-md text-on-primary-container uppercase tracking-tight">Dost Secret Tip</h2>
+</div>
+<div class="bg-surface border-3 border-on-surface rounded p-4">
+<p class="font-headline-md text-headline-md mb-2 text-primary">Bindu (Point) = Location Only</p>
+<p class="font-body-md text-body-md mb-4 text-on-surface">
+                    A point is just a <span class="font-bold underline decoration-secondary-fixed-dim decoration-4">position in space</span>. It's so tiny that it has zero dimensions—no length, no width, and no height.
+                </p>
+<div class="flex items-center gap-3 bg-on-background text-surface p-3 rounded">
+<span class="material-symbols-outlined text-secondary-fixed-dim">location_on</span>
+<p class="font-label-lg text-label-lg">Think of it as an exact address on a map!</p>
+</div>
+</div>
+</section>
+<!-- Interactive Micro-interaction: Progress Dots -->
+<div class="mt-12 flex justify-center gap-4">
+<div class="w-4 h-4 rounded-full border-2 border-on-surface bg-secondary-fixed-dim"></div>
+<div class="w-4 h-4 rounded-full border-2 border-on-surface bg-primary-container animate-bounce"></div>
+<div class="w-4 h-4 rounded-full border-2 border-on-surface bg-surface-container-highest"></div>
+<div class="w-4 h-4 rounded-full border-2 border-on-surface bg-surface-container-highest"></div>
+<div class="w-4 h-4 rounded-full border-2 border-on-surface bg-surface-container-highest"></div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface dark:bg-surface-dim border-t-3 border-on-surface shadow-none">
+<div class="flex justify-between items-center w-full px-margin-mobile py-6 bg-surface dark:bg-surface-dim">
+<!-- Inactive Navigation -->
+<button class="flex flex-row items-center gap-2 text-on-surface-variant border-3 border-on-surface bg-surface-container-low px-4 py-2 rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all hover:bg-secondary-container">
+<span class="material-symbols-outlined">chevron_left</span>
+<span class="font-label-lg text-label-lg">Pichla</span>
+</button>
+<!-- Active Navigation -->
+<button class="flex flex-row items-center gap-2 bg-primary-container text-on-primary-container border-3 border-on-surface px-4 py-2 rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all hover:bg-secondary-container">
+<span class="font-label-lg text-label-lg">Agle page pe</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for the character avatar
+        const avatar = document.querySelector('img[alt="MathsGuru Bhaiya"]');
+        if (avatar) {
+            avatar.parentElement.addEventListener('mouseenter', () => {
+                avatar.parentElement.style.transform = 'scale(1.1) rotate(5deg)';
+                avatar.parentElement.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            avatar.parentElement.addEventListener('mouseleave', () => {
+                avatar.parentElement.style.transform = 'scale(1) rotate(0deg)';
+            });
+        }
+    </script>
+</body></html>

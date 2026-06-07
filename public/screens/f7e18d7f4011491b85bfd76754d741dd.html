@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Segment Ruler Challenge - Ganit Pop</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .neo-shadow-hover { box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); }
+        .neo-border { border: 3px solid #1a1c1c; }
+        
+        /* Blueprint grid background */
+        .bg-blueprint {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#8d6f78 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .input-focus-neo:focus {
+            outline: none;
+            box-shadow: 4px 4px 0px 0px #ffe16d; /* Auto Yellow */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-blueprint min-h-screen text-on-surface antialiased flex flex-col">
+<!-- TopAppBar (Task-Focused: Bottom Nav Suppressed) -->
+<header class="bg-surface dark:bg-surface-dim font-headline-md text-headline-md w-full sticky top-0 z-50 border-b-[3px] border-on-surface dark:border-on-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit">
+<div class="flex items-center gap-4">
+<button class="hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform neo-border rounded-full p-2 bg-surface-container-lowest flex items-center justify-center neo-shadow">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="arrow_back" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">Ganit Pop</span>
+</div>
+<div class="neo-border bg-secondary-container px-4 py-1 rounded-full neo-shadow transform rotate-3">
+<span class="font-label-bold text-label-bold text-on-secondary-container">Level 2</span>
+</div>
+</header>
+<main class="flex-grow p-margin-mobile md:p-margin-desktop flex flex-col gap-8 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-2">Segment Ruler Challenge</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Measure the objects using the ruler below. Type the exact length in cm.</p>
+</div>
+<!-- Progress Chips -->
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-primary neo-border neo-shadow flex items-center justify-center text-on-primary font-label-bold text-label-bold">1</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest neo-border flex items-center justify-center text-on-surface-variant font-label-bold text-label-bold">2</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest neo-border flex items-center justify-center text-on-surface-variant font-label-bold text-label-bold">3</div>
+</div>
+</section>
+<!-- Main Challenge Area (Bento Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Measurement Canvas -->
+<div class="lg:col-span-2 bg-surface-container-lowest neo-border neo-shadow rounded-xl flex flex-col overflow-hidden">
+<!-- Canvas Header -->
+<div class="border-b-[3px] border-on-surface p-4 bg-tertiary-fixed flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-on-tertiary-fixed">Object: Yellow Pencil</span>
+<span class="material-symbols-outlined text-on-tertiary-fixed">edit</span>
+</div>
+<!-- Canvas Body -->
+<div class="p-8 flex-grow flex flex-col items-center justify-center gap-12 relative min-h-[300px] bg-white bg-[radial-gradient(#e2e2e2_1px,transparent_1px)] [background-size:16px_16px]">
+<!-- Object to Measure -->
+<div class="relative w-full max-w-[400px] h-24 mt-8">
+<!-- Connecting dotted lines to ruler -->
+<div class="absolute top-full left-0 w-0 h-16 border-l-[3px] border-dashed border-primary z-0"></div>
+<div class="absolute top-full left-[70%] w-0 h-16 border-l-[3px] border-dashed border-primary z-0"></div>
+<!-- The Object Image -->
+<div class="absolute inset-0 bg-contain bg-center bg-no-repeat z-10 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]" data-alt="A brightly lit, top-down photograph of a classic yellow wooden pencil lying horizontally on a stark white background. The image features high contrast, crisp edges, and a bold pop-art aesthetic with sharp, solid lighting creating a distinct drop shadow, fitting a neo-brutalist digital style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuCBtkNGr8t0yiu-p_ktHrMevKM2_jb49KZUbQjCX0-X2-VPZwH-HVjHaxKlgmaj_QwTw3-4_t1qhgowMV-OFp4-woH3fdo0X48DiSLVuik9a48zcEQMyxVbBKYFNc3TLOlLrKRgrRcTuSjlJVbxOHA72Vr80AJhdxBRp96yDTCsqpl08wiawCrZKQc8-KV56MuEiM9SR-MZhUbPhAs0MXPfOkSUnsAytiiI7oav-V2R2LVcB8Zv7d50STJflW2EpkrOXUkTsajdF7');">
+</div>
+</div>
+<!-- Neo-Brutalist Ruler -->
+<div class="w-full max-w-[500px] bg-tertiary-fixed-dim neo-border neo-shadow h-20 relative flex rounded-sm">
+<!-- Ruler Ticks -->
+<div class="flex-1 border-r-[3px] border-on-surface h-full flex flex-col justify-end pb-1 relative">
+<span class="absolute top-1 left-1 font-label-bold text-label-bold text-on-surface">0</span>
+</div>
+<div class="flex-1 border-r-[3px] border-on-surface h-1/2 mt-auto"></div>
+<div class="flex-1 border-r-[3px] border-on-surface h-full flex flex-col justify-end pb-1 relative">
+<span class="absolute top-1 left-1 font-label-bold text-label-bold text-on-surface">2</span>
+</div>
+<div class="flex-1 border-r-[3px] border-on-surface h-1/2 mt-auto"></div>
+<div class="flex-1 border-r-[3px] border-on-surface h-full flex flex-col justify-end pb-1 relative">
+<span class="absolute top-1 left-1 font-label-bold text-label-bold text-on-surface">4</span>
+</div>
+<div class="flex-1 border-r-[3px] border-on-surface h-1/2 mt-auto"></div>
+<div class="flex-1 border-r-[3px] border-on-surface h-full flex flex-col justify-end pb-1 relative">
+<span class="absolute top-1 left-1 font-label-bold text-label-bold text-on-surface">6</span>
+</div>
+<div class="flex-1 border-r-[3px] border-on-surface h-1/2 mt-auto"></div>
+<div class="flex-1 border-r-[3px] border-on-surface h-full flex flex-col justify-end pb-1 relative">
+<span class="absolute top-1 left-1 font-label-bold text-label-bold text-on-surface">8</span>
+</div>
+<div class="flex-1 h-full flex flex-col justify-end pb-1 relative">
+<span class="absolute top-1 left-1 font-label-bold text-label-bold text-on-surface">10</span>
+<span class="absolute bottom-1 right-2 font-label-bold text-label-bold text-on-surface">cm</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Input & Actions Sidebar -->
+<div class="flex flex-col gap-6">
+<!-- Answer Card -->
+<div class="bg-secondary-container neo-border neo-shadow p-6 rounded-xl transform rotate-1 hover:rotate-0 transition-transform">
+<h2 class="font-headline-md text-headline-md text-on-secondary-container mb-4">Your Answer</h2>
+<div class="flex items-center gap-2 mb-6">
+<input class="flex-grow text-center font-headline-xl text-headline-xl text-on-background neo-border p-4 bg-surface-container-lowest input-focus-neo rounded-none appearance-none" placeholder="0.0" step="0.1" type="number"/>
+<span class="font-headline-md text-headline-md text-on-secondary-container">cm</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 neo-border neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+                        Check Answer
+                    </button>
+</div>
+<!-- Up Next Queue -->
+<div class="bg-surface-container-lowest neo-border neo-shadow p-4 rounded-xl flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b-[3px] border-on-surface pb-2 mb-4">Up Next</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-center gap-4 p-2 bg-surface-variant neo-border grayscale opacity-70">
+<span class="material-symbols-outlined text-3xl">match_word</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Matchstick</span>
+</li>
+<li class="flex items-center gap-4 p-2 bg-surface-variant neo-border grayscale opacity-70">
+<span class="material-symbols-outlined text-3xl">ink_eraser</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Pink Eraser</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</body></html>

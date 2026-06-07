@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maximum &amp; Minimum Intro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,700;1,6..12,400;1,6..12,500;1,6..12,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-fixed-dim": "#ffb1c4",
+                "surface-container-high": "#eae8e2",
+                "on-secondary-fixed-variant": "#005229",
+                "on-primary-container": "#572000",
+                "on-surface": "#1b1c19",
+                "surface-container-highest": "#e4e2dd",
+                "secondary-fixed": "#63ff9d",
+                "primary-fixed-dim": "#ffb693",
+                "on-secondary-fixed": "#00210d",
+                "surface-bright": "#fbf9f3",
+                "surface-container-low": "#f5f3ee",
+                "outline-variant": "#e2bfb0",
+                "on-tertiary": "#ffffff",
+                "on-background": "#1b1c19",
+                "background": "#fbf9f3",
+                "secondary-container": "#63ff9d",
+                "on-secondary": "#ffffff",
+                "secondary": "#006d38",
+                "on-secondary-container": "#00743c",
+                "surface-container-lowest": "#ffffff",
+                "surface-dim": "#dbdad4",
+                "surface": "#fbf9f3",
+                "on-tertiary-container": "#67002f",
+                "surface-tint": "#a04100",
+                "inverse-on-surface": "#f2f1eb",
+                "on-surface-variant": "#5a4136",
+                "on-tertiary-fixed-variant": "#8f0044",
+                "outline": "#8e7164",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed": "#3f001a",
+                "on-primary-fixed": "#351000",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#30312d",
+                "tertiary-fixed": "#ffd9e1",
+                "surface-variant": "#e4e2dd",
+                "on-error": "#ffffff",
+                "inverse-primary": "#ffb693",
+                "secondary-fixed-dim": "#40e183",
+                "on-primary-fixed-variant": "#7a3000",
+                "primary-fixed": "#ffdbcc",
+                "on-primary": "#ffffff",
+                "primary-container": "#ff6b00",
+                "tertiary": "#ba005b",
+                "error": "#ba1a1a",
+                "primary": "#a04100",
+                "tertiary-container": "#ff6096",
+                "surface-container": "#f0eee8"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "margin-desktop": "40px",
+                "gutter": "16px",
+                "container-max-width": "1200px",
+                "unit": "8px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Nunito Sans"
+                ],
+                "body-lg": [
+                        "Nunito Sans"
+                ],
+                "headline-xl": [
+                        "Bricolage Grotesque"
+                ],
+                "headline-lg-mobile": [
+                        "Bricolage Grotesque"
+                ],
+                "headline-md": [
+                        "Bricolage Grotesque"
+                ],
+                "headline-lg": [
+                        "Bricolage Grotesque"
+                ],
+                "label-lg": [
+                        "Nunito Sans"
+                ],
+                "headline-xl-mobile": [
+                        "Bricolage Grotesque"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "800"
+                        }
+                ],
+                "label-lg": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "1.1",
+                                "fontWeight": "800"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pb-[80px] md:pb-0 pt-[72px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19]">
+<div class="flex items-center gap-4 text-on-surface hover:bg-primary-container transition-colors p-2 rounded-lg active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-primary dark:text-primary-fixed-dim">MathsGuru</h1>
+<div class="flex items-center gap-4 text-on-surface hover:bg-primary-container transition-colors p-2 rounded-lg active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center p-margin-mobile md:p-margin-desktop gap-unit max-w-container-max-width mx-auto w-full">
+<!-- Title Section -->
+<div class="w-full text-center mb-8">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-2">Maximum &amp; Minimum</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Let's learn about extremes!</p>
+</div>
+<!-- Dual Split Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-12">
+<!-- Maximum Card -->
+<div class="bg-surface-bright border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT p-6 flex flex-col items-center text-center transform transition-transform hover:-translate-y-1">
+<div class="w-24 h-24 bg-primary-container rounded-full border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary-container text-5xl" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Maximum</h3>
+<p class="font-body-lg text-body-lg text-on-surface mb-4 font-bold">(Sabse badi value)</p>
+<p class="font-body-md text-body-md text-on-surface-variant">The highest possible amount, value, or degree.</p>
+</div>
+<!-- Minimum Card -->
+<div class="bg-surface-bright border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT p-6 flex flex-col items-center text-center transform transition-transform hover:-translate-y-1">
+<div class="w-24 h-24 bg-secondary-container rounded-full border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container text-5xl" style="font-variation-settings: 'FILL' 1;">trending_down</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-2">Minimum</h3>
+<p class="font-body-lg text-body-lg text-on-surface mb-4 font-bold">(Sabse chhoti value)</p>
+<p class="font-body-md text-body-md text-on-surface-variant">The lowest possible amount, value, or degree.</p>
+</div>
+</div>
+<!-- Think Box -->
+<div class="w-full bg-surface-container border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] rounded-DEFAULT p-6 md:p-8">
+<div class="flex items-center gap-4 mb-6 border-b-[3px] border-on-surface pb-4">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">psychology_alt</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Think Box</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-bright border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] rounded-lg p-4 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer hover:bg-tertiary-fixed-dim/20">
+<p class="font-body-lg text-body-lg font-bold text-on-surface">"Sabse zyada marks kisne liye?"</p>
+</div>
+<div class="bg-surface-bright border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] rounded-lg p-4 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer hover:bg-tertiary-fixed-dim/20">
+<p class="font-body-lg text-body-lg font-bold text-on-surface">"Minimum kaise identify karte ho?"</p>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-8 mb-8">
+<button class="bg-primary-container text-on-primary-container border-[3px] border-on-surface shadow-[4px_4px_0px_#1A1A1A] rounded-full px-8 py-4 font-headline-md text-headline-md flex items-center gap-3 active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_#1A1A1A] transition-all hover:brightness-110">
+        Let's Practice
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only for transactional, but included as per requirements if considered top destination. Since it's an Intro, likely a lesson flow, but following instructions to map if exact intent. Hiding for this specific content focused canvas, but code included based on JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container dark:bg-surface-container-highest border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19]">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_#1B1C19] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all hover:bg-tertiary-container/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all hover:bg-tertiary-container/20 rounded-lg px-4 py-1">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all hover:bg-tertiary-container/20 rounded-lg px-4 py-1">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all hover:bg-tertiary-container/20 rounded-lg px-4 py-1">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</button>
+</nav>
+</body></html>

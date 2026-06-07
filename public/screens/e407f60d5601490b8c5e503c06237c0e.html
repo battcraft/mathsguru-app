@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahani: The Kings Dilemma</title>
+<!-- Google Fonts: Bricolage Grotesque & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800;900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,700;1,6..12,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-surface-variant": "#5a4136",
+                        "on-surface": "#1b1c19",
+                        "on-tertiary-container": "#67002f",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb693",
+                        "outline": "#8e7164",
+                        "on-primary-fixed": "#351000",
+                        "outline-variant": "#e2bfb0",
+                        "secondary-fixed": "#63ff9d",
+                        "surface-bright": "#fbf9f3",
+                        "surface": "#fbf9f3",
+                        "surface-tint": "#a04100",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-primary-container": "#572000",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary-container": "#ff6096",
+                        "surface-container": "#f0eee8",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "primary-container": "#ff6b00",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae8e2",
+                        "background": "#fbf9f3",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-dim": "#dbdad4",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed-dim": "#40e183",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-error": "#ffffff",
+                        "tertiary": "#ba005b",
+                        "secondary": "#006d38",
+                        "inverse-surface": "#30312d",
+                        "inverse-primary": "#ffb693"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base styles to enforce Neo-Brutalist feel globally */
+        body {
+            background-color: #fbf9f3; /* surface color */
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col relative pb-[100px]">
+<!-- SHARED COMPONENT: TopAppBar -->
+<!-- Applying exact styles from JSON: style_bg_color, style_component_shape, style_separation_logic, style_shadows_and_elevation, style_shell_layout -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center w-full px-margin-mobile py-4 z-40 sticky">
+<button class="flex items-center justify-center p-2 rounded text-primary dark:text-primary-fixed hover:bg-primary-container hover:text-on-primary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-black">Kahani 2/5</h1>
+<!-- Invisible spacer to keep headline centered if needed, but flex-between handles it based on JSON structure -->
+<div class="w-10"></div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-1 px-margin-mobile py-6 flex flex-col gap-6 max-w-lg mx-auto w-full">
+<!-- Hero Illustration -->
+<section class="border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden bg-white -rotate-1 hover:rotate-0 transition-transform duration-300">
+<img alt="Raja Ji in Bazaar" class="w-full h-48 object-cover object-top border-b-[3px] border-on-surface" data-alt="A vibrant, comic-book style illustration of an Indian King (Raja Ji) wearing a colorful turban, standing in a bustling Delhi-style bazaar. The scene features bright, high-contrast colors typical of Desi Street-Pop, with stalls selling yellow mangoes, silver anklets, and vibrant spices. The art style incorporates thick black outlines and flat, bold colors fitting a Neo-Brutalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDExiXGP0vrSXAEx0FvEgbUryvEnsM1rtyVIj1_8hTvjRNHYbPpRy4QPNMsJ0OjKB7Y9IVOlYicDeOKhYae4U5amOb1c_KC0yC-KuupMa5DVOWsjeUDFWi7IqqsbxsUlLaaM0mL6LcVONslNle30qdfyD1SJSwrNqiRxdg5H1MHT8So34DqA-mE23eQt181GK8ndwWgX1kgNhV00bocqRIkKiJsXmxhTy12LtBzwlVwbHSDibfX6yE4gKfybzKsqzSpL1b5TSjG8c9H"/>
+</section>
+<!-- Story Text Card -->
+<section class="bg-surface-container-low border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl p-5 rotate-1">
+<p class="font-body-lg text-body-lg text-on-surface font-bold leading-relaxed">
+                Raja ji bazaar mein confuse hain! Unhe sabse sasti <span class="bg-secondary-container px-1 rounded border-2 border-on-surface text-on-secondary-container">Minimum</span> aur sabse mehengi <span class="bg-primary-container px-1 rounded border-2 border-on-surface text-on-primary-container">Maximum</span> cheez dhundni hai.
+            </p>
+</section>
+<!-- Bazaar Catalog Cards -->
+<section class="flex flex-col gap-4 mt-2">
+<!-- Item 1: Mangoes -->
+<div class="flex justify-between items-center bg-primary-container text-on-primary-container border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl p-4 cursor-pointer hover:bg-[#ff8533] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all group">
+<div class="flex items-center gap-3">
+<div class="bg-surface p-2 rounded-full border-2 border-on-surface flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+<span class="font-headline-md text-headline-md">Raja Ji's Mangoes</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile bg-surface px-3 py-1 rounded border-[3px] border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">₹450</span>
+</div>
+<!-- Item 2: Anklets -->
+<div class="flex justify-between items-center bg-tertiary-container text-on-tertiary-container border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl p-4 cursor-pointer hover:bg-[#ff85b3] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all group -rotate-1">
+<div class="flex items-center gap-3">
+<div class="bg-surface p-2 rounded-full border-2 border-on-surface flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<span class="font-headline-md text-headline-md">Payal Palace</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile bg-surface px-3 py-1 rounded border-[3px] border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">₹1,200</span>
+</div>
+<!-- Item 3: Spices -->
+<div class="flex justify-between items-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl p-4 cursor-pointer hover:bg-[#85ffb3] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all group rotate-1">
+<div class="flex items-center gap-3">
+<div class="bg-surface p-2 rounded-full border-2 border-on-surface flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-headline-md text-headline-md">Spice Bazaar</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile bg-surface px-3 py-1 rounded border-[3px] border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">₹85</span>
+</div>
+</section>
+<!-- Mission Block -->
+<section class="bg-surface-container-high border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl p-5 mt-4 flex flex-col gap-4">
+<div class="flex items-center justify-between border-b-[3px] border-on-surface pb-3">
+<h2 class="font-headline-md text-headline-md text-on-surface">Mission</h2>
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">flag</span>
+</div>
+<div class="flex gap-4 w-full">
+<button class="flex-1 bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl py-3 font-label-lg text-label-lg text-on-surface active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 hover:bg-surface-container-highest">
+<span class="material-symbols-outlined font-bold">arrow_downward</span> Select Min
+                </button>
+<button class="flex-1 bg-primary border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl py-3 font-label-lg text-label-lg text-on-primary active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 hover:bg-[#b84a00]">
+<span class="material-symbols-outlined font-bold">arrow_upward</span> Select Max
+                </button>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: BottomNavBar -->
+<!-- Applying exact styles from JSON. Logic: 'Agle page pe' is the primary forward action in a story, so it gets the active state. 'Pichla' gets inactive. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 border-t-[3px] border-on-surface bg-surface dark:bg-surface-dim flex justify-between items-center px-margin-mobile py-6 max-w-lg mx-auto left-1/2 -translate-x-1/2 border-x-[3px] md:border-x-0">
+<!-- Pichla (Inactive) -->
+<button class="flex flex-row items-center gap-2 text-on-surface-variant border-[3px] border-on-surface bg-surface-container-low px-4 py-2 rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-label-lg text-label-lg hover:bg-secondary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+            Pichla
+        </button>
+<!-- Agle page pe (Active) -->
+<button class="flex flex-row items-center gap-2 bg-primary-container text-on-primary-container border-[3px] border-on-surface px-4 py-2 rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-label-lg text-label-lg hover:bg-secondary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+            Agle page pe
+            <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction: Add a slight shake effect to price tags when they are clicked to emphasize the Neo-Brutalist "physical" feel.
+        document.querySelectorAll('.font-headline-lg-mobile').forEach(tag => {
+            tag.addEventListener('click', (e) => {
+                e.stopPropagation(); // prevent triggering the parent card click
+                tag.style.transform = 'translate(2px, 2px)';
+                tag.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,1)';
+                setTimeout(() => {
+                    tag.style.transform = '';
+                    tag.style.boxShadow = '2px 2px 0px 0px rgba(0,0,0,1)';
+                }, 150);
+            });
+        });
+    </script>
+</body></html>

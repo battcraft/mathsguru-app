@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Broken Bridge - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-primary-fixed": "#3e0020",
+                    "outline-variant": "#e1bdc7",
+                    "tertiary-fixed": "#ffe16d",
+                    "tertiary-container": "#c9a900",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#705d00",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#ffdcc4",
+                    "outline": "#8d6f78",
+                    "primary-fixed": "#ffd9e3",
+                    "surface-container-low": "#f3f3f4",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "surface": "#f9f9f9",
+                    "secondary-fixed-dim": "#ffb781",
+                    "on-secondary-container": "#5b2d00",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#b80069",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary-fixed": "#2f1400",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "primary": "#b40067",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary-container": "#4c3f00",
+                    "background": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-high": "#e8e8e8",
+                    "error": "#ba1a1a",
+                    "primary-container": "#df0b81",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed": "#221b00",
+                    "inverse-primary": "#ffb0cb",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "error-container": "#ffdad6",
+                    "secondary": "#924c00",
+                    "secondary-container": "#f88400",
+                    "on-primary-container": "#fffbff",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#5a3f48"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "border-width": "3px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "shadow-offset": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "headline-md": ["Fredoka"],
+                    "headline-xl": ["Fredoka"],
+                    "headline-lg": ["Fredoka"],
+                    "label-bold": ["Nunito Sans"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Fredoka"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-brutalist-card {
+            border: 3px solid #1A1A1A;
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-brutalist-btn {
+            border: 3px solid #1A1A1A;
+            box-shadow: 4px 4px 0px #1A1A1A;
+            transition: all 0.1s ease;
+        }
+        .neo-brutalist-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .blueprint-lines {
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 20px;
+            border-width: 15px 15px 0 0;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            filter: drop-shadow(3px 3px 0px #1A1A1A);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background dot-grid min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTgeBKf44VSXHqzAA48N40BSupXret3uOLpGswkXTSiG2e2BWQ9bhZVvGYF1c339cTe7-I7G0CA-ngfyMnHgu9N0P6o9MrT2FUJFShuNFl0Do8XbH4J2O4e3dD4ne60ubu0CMxM5LOSWnBgsZvH0llWce0sIUfYF1POlw9SzLolVMqVrt9JB609eTw4DFr3OpyIzP_kb3AE9VGBq5V6tNf1TiF58ZoflziIZutUN-s_t-q_hBRPTJTdOSLGoy73nUGFtiOFoBzPe_w"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container-high px-3 py-1 border-3 border-black rounded-lg gap-1">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-on-surface">12</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-start p-margin-mobile md:p-margin-desktop gap-gutter max-w-4xl mx-auto w-full">
+<!-- Story Title Card -->
+<div class="w-full neo-brutalist-card bg-surface-container-lowest p-4 mb-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">auto_stories</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">The Broken Bridge</h2>
+</div>
+<div class="bg-secondary px-4 py-1 border-3 border-black rounded-full">
+<span class="text-white font-label-bold">Beginner Level</span>
+</div>
+</div>
+<!-- Story Illustration Canvas -->
+<div class="w-full neo-brutalist-card bg-white relative overflow-hidden aspect-video md:aspect-[21/9] flex items-center justify-center p-0">
+<img class="w-full h-full object-cover" data-alt="A vibrant, Neo-Brutalist comic illustration of a friendly round robot with large digital eyes standing at the edge of a jagged gap in a futuristic wooden bridge. The art style uses thick black outlines and flat poppy colors like Mango Yellow and Gulabi Pink. The background shows a whimsical geometric forest with triangular trees and a dot-grid sky. The overall lighting is bright and cheerful, emphasizing a playful educational storybook vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB8ElGn6RJbE4O54WdvIO1f_1kZq1-_0CYhg9hpOuGpnbRBE3HTVcBsL83CuPaDqdPYBHO0kN_ki0P8cO99yrpFX0cLtEtWw3Ccg5d6KHkSAaEMzdFvUlEZrAveldvlD__45_uu6VFOnycAXCGGwhdbmBiHpHYVAKyIgvqUO4SMt3SUz8-baVcaSUa62oT8oXQiEcB1INkTL6LSkqzSFJmg9WrKrcSz1gVx6Sk5JaWRNjeIQ_O3ilQu6YcTTPZ_Ynb8qNj8EQsIyq0"/>
+<!-- Speech Bubble -->
+<div class="absolute top-4 left-4 right-4 md:left-8 md:right-auto md:max-w-md">
+<div class="bg-white border-3 border-black p-4 rounded-xl shadow-[4px_4px_0px_#1A1A1A] relative speech-bubble">
+<p class="font-body-lg text-body-lg leading-tight">
+<span class="font-bold text-primary">Arre yaar, bridge toot gaya!</span> 
+                        Hamein ek <span class="text-secondary font-extrabold underline decoration-3">5cm ka Line Segment</span> chahiye isse jodne ke liye.
+                    </p>
+</div>
+</div>
+<!-- Geometry Hint Overlay -->
+<div class="absolute bottom-4 right-4 bg-tertiary-fixed border-3 border-black p-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined">straighten</span>
+<span class="font-label-bold">Goal: 5.0cm</span>
+</div>
+</div>
+<!-- Geometric Interaction Area -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-gutter mt-4">
+<!-- Choice 1: Action -->
+<button class="neo-brutalist-btn bg-primary-container p-6 rounded-xl group flex flex-col items-center text-center gap-3">
+<div class="w-16 h-16 bg-white rounded-full border-3 border-black flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-black text-4xl">edit_note</span>
+</div>
+<h3 class="font-headline-md text-on-primary-container">Draw 5cm Segment</h3>
+<p class="font-body-md text-on-primary-container opacity-90">Grab the virtual ruler and fix the gap myself!</p>
+</button>
+<!-- Choice 2: Support -->
+<button class="neo-brutalist-btn bg-surface-container-highest p-6 rounded-xl group flex flex-col items-center text-center gap-3">
+<div class="w-16 h-16 bg-white rounded-full border-3 border-black flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-black text-4xl">help_center</span>
+</div>
+<h3 class="font-headline-md text-on-surface">Ask for Help</h3>
+<p class="font-body-md text-on-surface-variant">Check the geometry handbook for bridge building tips.</p>
+</button>
+</div>
+<!-- Progress Tracker -->
+<div class="w-full mt-8 flex flex-col gap-2">
+<div class="flex justify-between font-label-bold text-on-surface-variant uppercase tracking-wider">
+<span>Story Progress</span>
+<span>20%</span>
+</div>
+<div class="w-full h-4 bg-surface-container border-3 border-black rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-1/5 border-r-3 border-black"></div>
+</div>
+</div>
+</main>
+<!-- Spacer for BottomNavBar -->
+<div class="h-24"></div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the "Choice" buttons
+        document.querySelectorAll('.neo-brutalist-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.add('bg-tertiary-fixed');
+                setTimeout(() => {
+                    this.classList.remove('bg-tertiary-fixed');
+                }, 200);
+            });
+        });
+
+        // Atmospheric effect: gentle floating for the robot's speech bubble
+        const bubble = document.querySelector('.speech-bubble');
+        if(bubble) {
+            let start = Date.now();
+            function animate() {
+                let delta = (Date.now() - start) / 1000;
+                let y = Math.sin(delta * 2) * 5;
+                bubble.style.transform = `translateY(${y}px)`;
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+</body></html>

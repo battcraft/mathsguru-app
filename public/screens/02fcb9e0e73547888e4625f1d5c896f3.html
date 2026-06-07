@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Invisible Grid - Ganit Dost</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-xl": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "headline-xl-mobile": ["36px", { lineHeight: "1.1", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.2", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base geometric pattern for background outside canvas */
+        .bg-dot-pattern {
+            background-image: radial-gradient(#dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        
+        /* Remove arrows from number inputs */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background bg-dot-pattern min-h-screen flex flex-col font-body-md text-on-background">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md font-extrabold border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] sticky top-0 flex justify-between items-center w-full px-margin-mobile h-16 z-50">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full border-[2px] border-black overflow-hidden bg-secondary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-RRd3kiCf8I3ZHYi_tsIW76Wlm1i7EdYD3pm309doaQ6h2ropkN8egLJEko1ChfTBuJYTN494CW4i4Nqxn_mnwWD1ip3wK2MkSgxKLPMJEBnlDjCiQAfiQ5lwA9xk6Zzj-B9AbD2oqkdad1HYenQfXUXynINXYL8BUwum4Kw6-TaGWXXEHPVgkthMrNQtDVp3i2HasTeAcF16RJEQpltbgAgmTFRnw2ZKHpIMjrYtpX5D_NFSmlBIyrTrZGAz66xvyWhzTFWJ_2z"/>
+</div>
+</div>
+<div class="text-center">Ganit Dost</div>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded-full border-2 border-transparent focus:border-black">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center pt-8 pb-[100px] px-margin-mobile gap-8 max-w-3xl mx-auto w-full">
+<!-- Instruction / Header -->
+<div class="text-center w-full">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">The Invisible Grid</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Estimate the (X, Y) coordinates of the <span class="font-label-bold text-label-bold text-secondary">Target Point</span>.</p>
+</div>
+<!-- The Canvas -->
+<div class="w-full max-w-[400px] aspect-square bg-surface-container-lowest border-width border-black shadow-[4px_4px_0px_#1A1A1A] relative overflow-hidden group">
+<!-- Reference Point (Origin) -->
+<div class="absolute bottom-[20%] left-[20%] w-3 h-3 rounded-full bg-primary border-[1.5px] border-black -translate-x-1/2 translate-y-1/2">
+<span class="absolute top-4 left-1/2 -translate-x-1/2 font-label-bold text-label-bold text-on-surface-variant text-xs whitespace-nowrap">(0, 0)</span>
+</div>
+<!-- Reference Point (Known) -->
+<div class="absolute bottom-[20%] left-[60%] w-3 h-3 rounded-full bg-primary border-[1.5px] border-black -translate-x-1/2 translate-y-1/2">
+<span class="absolute top-4 left-1/2 -translate-x-1/2 font-label-bold text-label-bold text-on-surface-variant text-xs whitespace-nowrap">(4, 0)</span>
+</div>
+<!-- Reference Point (Known) -->
+<div class="absolute bottom-[60%] left-[20%] w-3 h-3 rounded-full bg-primary border-[1.5px] border-black -translate-x-1/2 translate-y-1/2">
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-label-bold text-label-bold text-on-surface-variant text-xs whitespace-nowrap">(0, 4)</span>
+</div>
+<!-- Target Point to Estimate -->
+<div class="absolute bottom-[70%] left-[80%] w-4 h-4 rounded-full bg-secondary border-2 border-black -translate-x-1/2 translate-y-1/2 shadow-[2px_2px_0px_#1A1A1A] animate-pulse">
+<span class="absolute top-5 left-1/2 -translate-x-1/2 font-label-bold text-label-bold text-secondary text-sm whitespace-nowrap">?</span>
+</div>
+</div>
+<!-- Input Section -->
+<div class="flex flex-col items-center gap-4 w-full">
+<div class="flex items-center gap-2 justify-center bg-surface border-width border-black shadow-[4px_4px_0px_#1A1A1A] p-4 w-full max-w-[300px]">
+<span class="font-headline-md text-headline-md text-on-background font-extrabold">(</span>
+<input class="w-16 h-12 border-width border-black text-center font-headline-md text-headline-md rounded-none bg-surface-container-lowest focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0px_#ffe16d] transition-shadow text-on-background placeholder:text-surface-dim" placeholder="X" type="number"/>
+<span class="font-headline-md text-headline-md text-on-background font-extrabold">,</span>
+<input class="w-16 h-12 border-width border-black text-center font-headline-md text-headline-md rounded-none bg-surface-container-lowest focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0px_#ffe16d] transition-shadow text-on-background placeholder:text-surface-dim" placeholder="Y" type="number"/>
+<span class="font-headline-md text-headline-md text-on-background font-extrabold">)</span>
+</div>
+<button class="bg-primary text-on-primary border-width border-black shadow-[4px_4px_0px_#1A1A1A] py-3 px-8 font-label-bold text-label-bold uppercase active:translate-x-1 active:translate-y-1 active:shadow-none transition-all w-full max-w-[300px]">
+                Check Coordinates
+            </button>
+</div>
+<!-- Hint Box ('Socho') -->
+<div class="mt-8 bg-tertiary-fixed border-width border-black shadow-[4px_4px_0px_#1A1A1A] p-4 flex gap-4 items-start w-full max-w-md transform rotate-1">
+<div class="bg-surface-container-lowest border-2 border-black rounded-full w-10 h-10 flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant text-xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed-variant uppercase mb-1 drop-shadow-md">Socho</h3>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant font-bold">Use the known points as anchors. How far right and how far up is the target compared to them?</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20 md:hidden">
+<!-- Inactive: Home -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16 h-full">
+<span class="material-symbols-outlined text-2xl mb-1">home</span>
+<span class="font-label-bold text-[10px] uppercase">Home</span>
+</button>
+<!-- Inactive: Chat -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16 h-full">
+<span class="material-symbols-outlined text-2xl mb-1">chat_bubble</span>
+<span class="font-label-bold text-[10px] uppercase">Chat</span>
+</button>
+<!-- Active: Quiz -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16 -mt-4">
+<span class="material-symbols-outlined text-2xl mb-1" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-[10px] uppercase">Quiz</span>
+</button>
+<!-- Inactive: Story -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16 h-full">
+<span class="material-symbols-outlined text-2xl mb-1">auto_stories</span>
+<span class="font-label-bold text-[10px] uppercase">Story</span>
+</button>
+</nav>
+<!-- Desktop Nav Placeholder (Hidden on mobile) -->
+<nav class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-24 bg-surface-container-lowest border-r-3 border-black shadow-[4px_0px_0px_#1A1A1A] flex-col items-center py-8 gap-8 z-40">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all w-16 h-16 rounded-xl border-2 border-transparent">
+<span class="material-symbols-outlined text-3xl">home</span>
+<span class="font-label-bold text-xs mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] w-16 h-16 translate-x-1">
+<span class="material-symbols-outlined text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-xs mt-1">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all w-16 h-16 rounded-xl border-2 border-transparent">
+<span class="material-symbols-outlined text-3xl">chat_bubble</span>
+<span class="font-label-bold text-xs mt-1">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all w-16 h-16 rounded-xl border-2 border-transparent">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+<span class="font-label-bold text-xs mt-1">Story</span>
+</button>
+</nav>
+</body></html>

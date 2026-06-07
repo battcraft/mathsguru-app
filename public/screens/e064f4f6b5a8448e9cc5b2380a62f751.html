@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Points in Nature - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;family=Nunito+Sans:ital,wght@0,400;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .neo-brutal-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-brutal-shadow-large {
+            box-shadow: 8px 8px 0px #1A1A1A;
+        }
+        .bg-grid {
+            background-size: 32px 32px;
+            background-image: radial-gradient(circle, #e2e2e2 1px, transparent 1px);
+        }
+        .gulabi-point {
+            width: 12px;
+            height: 12px;
+            background-color: #df0b81;
+            border: 2px solid #ffffff;
+            border-radius: 9999px;
+            position: absolute;
+            z-index: 10;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md bg-grid min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A portrait of a cheerful young student wearing a colorful academic cap, set against a bright yellow background. The lighting is crisp and high-contrast, mimicking a professional studio setting. The visual style is vibrant and energetic, reflecting a youthful, academic neo-brutalist aesthetic with high saturation and bold, clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZT2rRHHw8gAnMzmXInDlUXkg9-Byd3X3CyGezXlcV9o2escss7sgGWZ2cSM6y0NM0I_SwwnlZZ377znSdZslwWtVMboUKyk2JGt16nv4IFZ_UozbLlW3malEfi0MJAsyAQ19atosAHYK25wCkiFg-_jCUa8I0MCp_m2oHTQUAeoBZRh0JoSfGNG0E47eSFnXn-DHkFDZx8t-5vz0u6f6zK3ASS6A-w3SZBScNLJ3dKRl-eVQrWZEbPCySAnsAML365wUMns-sYxlw"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</span>
+</div>
+<div class="active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer hover:bg-surface-container-high p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_fire_department">local_fire_department</span>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-margin-mobile py-8 pb-32">
+<!-- Title & Intro -->
+<section class="mb-10">
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4 text-on-surface">Points in Nature</h1>
+<div class="bg-surface-container-lowest border-3 border-black p-4 neo-brutal-shadow">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Dekho, <span class="font-bold text-primary">Point</span> har jagah hai! Aasmaan ka tara ho ya map ka pin—location hi sab kuch hai.
+                </p>
+</div>
+</section>
+<!-- Image Collage (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Star in Sky -->
+<div class="md:col-span-7 group relative overflow-hidden bg-white border-3 border-black neo-brutal-shadow h-64 md:h-80 transition-transform hover:-translate-y-1">
+<div class="absolute top-4 left-4 z-20 bg-secondary-container border-2 border-black px-3 py-1 font-label-bold neo-brutal-shadow">
+                    Aasmaan ka Tara
+                </div>
+<div class="gulabi-point top-[45%] left-[60%] animate-pulse"></div>
+<img alt="Star in night sky" class="w-full h-full object-cover grayscale-[0.2]" data-alt="A mesmerizing deep night sky filled with countless twinkling stars and a visible nebula in shades of deep indigo and violet. A single, bright star is prominently featured in the center-right. The aesthetic is atmospheric and vast, with high-contrast lighting that makes the celestial bodies pop against the dark cosmic void." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbkFh0tYioQ_DmPa5-pDYRAnjL20o4QRxpCaqaccRwsfrhMLSZllOV_VrMms7q3kf-CKzrKQ9SbW2mDGQpXIvoaPzvZy4LZFob_d0ZRhbUIIXKi0segdJ2tu8kaTTl7OEv77uhnK2J7Y8ba8IWakurTBLYmdmX_O9oWqOKAeUMkuPqrHhfVF9v2E-dvylhWXmBYu_dJTPZmMfBEEfGWsPTObyaZIdKulmQ7yZCt6t9-ts_C_mDzfgVm4ckR1mGs3FA4k63a3g76lIB"/>
+<div class="absolute inset-0 border-3 border-black pointer-events-none"></div>
+</div>
+<!-- Leaf Tip -->
+<div class="md:col-span-5 group relative overflow-hidden bg-white border-3 border-black neo-brutal-shadow h-64 md:h-80 transition-transform hover:-translate-y-1">
+<div class="absolute top-4 left-4 z-20 bg-tertiary-fixed border-2 border-black px-3 py-1 font-label-bold neo-brutal-shadow">
+                    Leaf Tip
+                </div>
+<div class="gulabi-point top-[25%] left-[45%] animate-pulse"></div>
+<img alt="Leaf tip" class="w-full h-full object-cover grayscale-[0.2]" data-alt="A sharp, macro close-up of a vibrant green tropical leaf, showing intricate veins and a perfectly sharp tip. The background is a soft, creamy bokeh of forest greens. The lighting is natural morning sunlight, casting gentle shadows that emphasize the geometric structure of the leaf's organic form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZpHw4o0izjE0-lQdiT3NZRg0WZtv9YRgZX-gA9ZxCGIKXU-4vMxtt7tQSFO5GJ5T3vzhJVFOo4Pbvo7Pn95Q78F05rMzsEFuEuh7fnnNaCdIneUhDqNqiiBTAJSTFUPYocaL879fey_ixwwIIQrHc5ZvJsaXmEzqq1w5iQthH5srVS7pN8bOK9LPQqUaloIdo5wkbidXyRry8s0zAr8zlKbrb7qsyLp94Uoc17fuH88x8jDbssv-5Ytl6i3Dbc987Y2_o6Y5UczxK"/>
+<div class="absolute inset-0 border-3 border-black pointer-events-none"></div>
+</div>
+<!-- GPS Pin (Location) -->
+<div class="md:col-span-12 group relative overflow-hidden bg-white border-3 border-black neo-brutal-shadow h-64 transition-transform hover:-translate-y-1">
+<div class="absolute top-4 left-4 z-20 bg-primary-fixed border-2 border-black px-3 py-1 font-label-bold neo-brutal-shadow">
+                    Map Location
+                </div>
+<!-- Highlighted Point on Pin -->
+<div class="gulabi-point top-[58%] left-[50%] -translate-x-1/2 animate-pulse"></div>
+<img alt="GPS Pin on Map" class="w-full h-full object-cover grayscale-[0.3]" data-alt="A clean, minimalist 3D rendering of a city map with a single red GPS location pin dropped in the center. The map features a light gray blueprint-style grid. The lighting is bright and even, creating a clear, high-contrast urban planning aesthetic that matches the neo-brutalist theme of geometric precision." data-location="Mumbai, India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBy5rMej73sQIuQYuqvgjFjf33NVvdCgnMe7oSPNR1_klMcQl1geOqqQfImf5Bia8583sRF36Di96-9Y3KxsSOGZYEByRfMvbScQ24UCKlq4nTqbHDTUVg_30v_0r_1IKctqjTyXPx0k7C4hEQMNsGGmj5zagHUFqsk690he4-0pNhryVidU2qHCX9tQnDIPGDONUhOh7HVpgeJtjCM41nhvGXo3YjP7jYpgtAVpO0sAObmG-Exk0rTwPXhbpP7zprZtN5P6O2RXLJ"/>
+<div class="absolute inset-0 border-3 border-black pointer-events-none"></div>
+</div>
+</section>
+<!-- 'Socho' Box -->
+<section class="mt-8">
+<div class="bg-tertiary-container border-3 border-black p-6 neo-brutal-shadow-large transform -rotate-1">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-3xl font-bold bg-white p-1 border-2 border-black rounded" data-icon="psychology">psychology</span>
+<h3 class="font-headline-md text-headline-md font-bold">Socho...</h3>
+</div>
+<p class="font-body-lg text-body-lg mb-4 text-on-tertiary-container font-medium">
+                    Can you find a point on your own body? 
+                    <span class="block mt-2 text-sm italic opacity-90">(Hint: Mole or tip of finger)</span>
+</p>
+<button class="bg-primary hover:bg-primary-container text-white border-3 border-black px-6 py-2 font-bold transition-all active:translate-x-1 active:translate-y-1 active:shadow-none shadow-[4px_4px_0px_#1A1A1A]">
+                    Found it!
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</div>
+<!-- Chat -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</div>
+<!-- Quiz -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</div>
+<!-- Story (Active) -->
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for the "Found it!" button
+        const btn = document.querySelector('button');
+        if(btn) {
+            btn.addEventListener('click', () => {
+                btn.innerText = "Awesome! 🌟";
+                btn.classList.add('bg-mango'); // Use a brand-aligned pop color
+                setTimeout(() => {
+                    btn.innerText = "Found it!";
+                    btn.classList.remove('bg-mango');
+                }, 2000);
+            });
+        }
+    </script>
+</body></html>

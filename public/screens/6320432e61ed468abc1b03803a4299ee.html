@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice Session - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .neo-shadow {
+            shadow-offset: 4px 4px 0px #1A1A1A;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c19;
+            overflow-x: hidden;
+        }
+        .active-state:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A !important;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb693",
+                        "tertiary-container": "#ff6096",
+                        "primary-container": "#ff6b00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#8e7164",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "background": "#fbf9f3",
+                        "surface-container-high": "#eae8e2",
+                        "on-primary-container": "#572000",
+                        "surface-container": "#f0eee8",
+                        "tertiary": "#ba005b",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-variant": "#e4e2dd",
+                        "on-surface": "#1b1c19",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary-container": "#00743c",
+                        "primary": "#a04100",
+                        "on-surface-variant": "#5a4136"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-10 h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden bg-secondary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK8aOy85QVdG8mQaOP1oaYz9LqeCOTSRphAG4MI24asl07vps_3Wr0Jaj-hT7huNNiZGMK_dTodmRqTvqYVMZXcspa5s5nJDIUEUFK2z4O_h34PLn71FySOM1fqJn4EoNo9UHNUje3xtkZOjrK8oxqSaybr8Dtgac2w0KzReOz1liKgkMurZhkzY6yo1DkWov3Q_WQ-R5eG67HB-buvgUHq6gP-ARfcP2GVX646pHyZyjkvxYLOenL_LsVuQuGy9KzqDIpK-Oek_G1"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-lg text-label-lg text-primary transition-all" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all" href="#">Chat</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all" href="#">Quiz</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all" href="#">Story</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container-high px-3 py-1 rounded-full border-2 border-black">
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-lg text-label-lg ml-1">12 Days</span>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-10 py-12">
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Hero Banner Section -->
+<section class="col-span-12 lg:col-span-8">
+<div class="bg-primary-container p-10 rounded-lg border-3 border-black shadow-[8px_8px_0px_#1A1A1A] relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+<!-- Text Content -->
+<div class="flex-1 z-10">
+<span class="inline-block bg-white text-black font-label-lg text-label-lg px-4 py-1 rounded-full border-2 border-black mb-4">PRACTICE MODE</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-4">Ab Teri Baari</h2>
+<p class="font-body-lg text-body-lg text-white/90 max-w-md">
+                            Ready to tackle some spicy math problems? You've studied the concepts, now let's see how fast you can solve these Hinglish challenges!
+                        </p>
+</div>
+<!-- Avatar Illustration -->
+<div class="w-64 h-64 relative z-10 shrink-0">
+<img class="w-full h-full object-contain drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]" data-alt="A playful and energetic 3D stylized character illustration of a South Asian student holding a digital tablet with math symbols floating around. The character has an optimistic expression, wearing bright modern streetwear. The lighting is vibrant and high-contrast, reflecting the Neo-Brutalist street-pop aesthetic with bold outlines and a mango orange and lime green color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV7lTSdK6zngHmJWGYWl9t9i0aavL2w-FCVUbXWi_tiymHgf-NqBIDIIip0hWGriLNuolh7y4HKYLnzclookdVov0G2xNii-Moh5LCblaXqk3Dvl0QzLqIlVI6W4qoCvbrE0PIkh-tsaB_CZTvwwB5uiHGK_DsNZVUHHCzbp-C7jNsykDyiFGeUyaUmmaFmc57qOraOmhmHJ0upWXIoaIIiEnVkwOoLlG8MixZZ-j9GJkl1_j01U2wNBLnw9Jcbs5S6BjxXPpsxiqe"/>
+</div>
+<!-- Decorative Background Shapes -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-secondary-container rounded-full border-3 border-black opacity-30"></div>
+<div class="absolute top-10 right-20 w-12 h-12 bg-tertiary-container rotate-12 border-3 border-black"></div>
+</div>
+<!-- Session Configuration -->
+<div class="mt-12">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings</span>
+                        Session Highlights
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Estimated Time Card -->
+<div class="bg-white p-6 rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center border-2 border-black">
+<span class="material-symbols-outlined text-primary">timer</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Estimated Time</p>
+<h4 class="font-headline-md text-headline-md">15 Minutes</h4>
+</div>
+</div>
+<div class="w-full bg-surface-variant h-4 rounded-full border-2 border-black overflow-hidden flex">
+<div class="bg-secondary-container w-2/3 border-r-2 border-black"></div>
+</div>
+<p class="mt-3 font-body-md text-body-md text-on-surface-variant">Based on your recent solve speed.</p>
+</div>
+<!-- Question Mix Card -->
+<div class="bg-white p-6 rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center border-2 border-black">
+<span class="material-symbols-outlined text-primary">shuffle</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Question Mix</p>
+<h4 class="font-headline-md text-headline-md">Adaptive Mix</h4>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-lg text-label-lg rounded-full border-2 border-black">5 Hard</span>
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-lg text-label-lg rounded-full border-2 border-black">10 Medium</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant font-label-lg text-label-lg rounded-full border-2 border-black">5 Easy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar Info Section -->
+<aside class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Topics Covered -->
+<div class="bg-surface-container-low p-6 rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<h3 class="font-headline-md text-headline-md mb-4">Topics Covered</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 p-3 bg-white rounded-lg border-2 border-black">
+<span class="material-symbols-outlined text-on-secondary-container bg-secondary-container p-1 rounded border-2 border-black" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md font-bold">Algebraic Expressons</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-white rounded-lg border-2 border-black">
+<span class="material-symbols-outlined text-on-secondary-container bg-secondary-container p-1 rounded border-2 border-black" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md font-bold">Linear Equations</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-white rounded-lg border-2 border-black">
+<span class="material-symbols-outlined text-on-surface-variant bg-surface-variant p-1 rounded border-2 border-black">pending</span>
+<span class="font-body-md text-body-md font-bold text-on-surface-variant">Word Problems (Hinglish)</span>
+</li>
+</ul>
+</div>
+<!-- Pro Tip Card -->
+<div class="bg-secondary-container p-6 rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A] transform -rotate-1 hover:rotate-0 transition-transform">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h4 class="font-headline-md text-headline-md">Dost Pro-Tip!</h4>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-container">
+                        Remember, <i>x</i> is just a value we don't know yet. Don't let it scare you. Think of it like a hidden "gift box"! 🎁
+                    </p>
+</div>
+<!-- CTA Button Group -->
+<div class="pt-4 flex flex-col gap-4">
+<button class="active-state group relative w-full bg-primary-container text-white py-6 px-8 rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A] transition-all flex items-center justify-center gap-4">
+<span class="font-headline-lg text-headline-lg">CHALO START KAREIN!</span>
+<span class="material-symbols-outlined text-[32px] group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+</button>
+<button class="active-state w-full bg-white text-black py-4 px-8 rounded-lg border-3 border-black shadow-[4px_4px_0px_#1A1A1A] font-headline-md text-headline-md">
+                        Abhi Nahi
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</div>
+</nav>
+<script>
+        // Micro-interactions for button "squish" effect
+        document.querySelectorAll('.active-state').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'translate(4px, 4px)';
+                button.style.boxShadow = '0px 0px 0px #1A1A1A';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'translate(0px, 0px)';
+                button.style.boxShadow = '4px 4px 0px #1A1A1A';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translate(0px, 0px)';
+                button.style.boxShadow = '4px 4px 0px #1A1A1A';
+            });
+        });
+    </script>
+</body></html>

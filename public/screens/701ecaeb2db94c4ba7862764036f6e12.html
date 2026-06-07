@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Point Hunt: City Search</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Bricolage Grotesque & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-tertiary-container": "#67002f",
+                        "surface-container": "#f0eee8",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-fixed": "#ffd9e1",
+                        "outline-variant": "#e2bfb0",
+                        "on-surface-variant": "#5a4136",
+                        "primary": "#a04100",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-surface": "#30312d",
+                        "on-background": "#1b1c19",
+                        "outline": "#8e7164",
+                        "surface-variant": "#e4e2dd",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-fixed": "#63ff9d",
+                        "background": "#fbf9f3",
+                        "on-primary-fixed": "#351000",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "secondary-container": "#63ff9d",
+                        "tertiary-container": "#ff6096",
+                        "on-surface": "#1b1c19",
+                        "on-secondary-fixed-variant": "#005229",
+                        "primary-container": "#ff6b00",
+                        "secondary": "#006d38",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-container": "#572000",
+                        "inverse-primary": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "surface": "#fbf9f3",
+                        "surface-tint": "#a04100",
+                        "on-tertiary-fixed": "#3f001a",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "primary-fixed-dim": "#ffb693",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-bright": "#fbf9f3",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#00210d",
+                        "tertiary": "#ba005b",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max-width": "1200px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom grid pattern for the map */
+        .map-grid {
+            background-image: 
+                linear-gradient(to right, rgba(90, 65, 54, 0.2) 2px, transparent 2px),
+                linear-gradient(to bottom, rgba(90, 65, 54, 0.2) 2px, transparent 2px);
+            background-size: 20% 20%;
+            background-position: bottom left;
+        }
+        
+        /* Neo-brutalist interaction classes added via JS */
+        .btn-correct {
+            background-color: #63ff9d !important; /* secondary-fixed */
+            border-color: #00210d !important; /* on-secondary-fixed */
+        }
+        .btn-wrong {
+            background-color: #ffdad6 !important; /* error-container */
+            border-color: #93000a !important; /* on-error-container */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar (From JSON, enforcing literal styles and structure) -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface dark:border-on-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit">
+<button class="text-primary dark:text-primary-fixed hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none p-2 border-[3px] border-transparent hover:border-on-surface rounded-full flex items-center justify-center bg-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">
+            Ganit Pop
+        </h1>
+<!-- Invisible placeholder to balance flex-between if needed, or streak icon -->
+<div class="flex items-center gap-1 bg-surface-variant px-3 py-1 rounded-full border-[3px] border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-lg text-label-lg">14</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max-width mx-auto px-margin-mobile py-margin-mobile md:py-margin-desktop flex flex-col gap-6 md:gap-8 pb-32">
+<!-- Header & Progress -->
+<section class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase tracking-tight">Point Hunt</h2>
+<span class="font-label-lg text-label-lg text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border-[3px] border-on-surface">3/10</span>
+</div>
+<!-- Brutalist Progress Bar -->
+<div class="w-full h-5 rounded-full border-[3px] border-on-surface bg-surface-container-high overflow-hidden flex shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<!-- Segments (3 completed) -->
+<div class="h-full bg-secondary-fixed w-[10%] border-r-[3px] border-on-surface"></div>
+<div class="h-full bg-secondary-fixed w-[10%] border-r-[3px] border-on-surface"></div>
+<div class="h-full bg-secondary-fixed w-[10%] border-r-[3px] border-on-surface"></div>
+<!-- Current flashing segment -->
+<div class="h-full bg-primary-fixed w-[10%] border-r-[3px] border-on-surface animate-pulse"></div>
+</div>
+</section>
+<!-- Question Card -->
+<section class="border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded bg-primary-fixed p-5 md:p-8 flex flex-col gap-2 relative overflow-hidden">
+<!-- Decorative shape -->
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-surface border-[3px] border-on-surface rounded-full opacity-50"></div>
+<h3 class="font-label-lg text-label-lg text-on-primary-fixed-variant uppercase tracking-widest mb-1">Question</h3>
+<p class="font-headline-md text-headline-md md:text-headline-lg text-on-surface">
+                Hospital ka address (Point H) kahan hai?
+            </p>
+</section>
+<!-- Interactive Map Area -->
+<section class="relative w-full aspect-square md:aspect-video max-h-[500px] border-[3px] border-on-surface shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded bg-surface-bright overflow-hidden p-2">
+<!-- Inner Map Container with Grid -->
+<div class="w-full h-full relative border-[3px] border-on-surface rounded bg-surface-container-low map-grid">
+<!-- Decorative "Street/Building" Blocks behind points -->
+<div class="absolute bottom-[20%] left-[20%] w-[15%] h-[15%] bg-outline-variant border-[2px] border-on-surface opacity-60"></div>
+<div class="absolute bottom-[60%] left-[60%] w-[25%] h-[10%] bg-surface-variant border-[2px] border-on-surface opacity-60"></div>
+<!-- X & Y Axes Lines (Thick) -->
+<div class="absolute bottom-0 left-0 w-full h-[4px] bg-on-surface z-10"></div>
+<div class="absolute bottom-0 left-0 h-full w-[4px] bg-on-surface z-10"></div>
+<!-- Axis Labels (Coordinates) -->
+<!-- X Axis -->
+<div class="absolute bottom-1 left-[20%] transform -translate-x-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">1</div>
+<div class="absolute bottom-1 left-[40%] transform -translate-x-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">2</div>
+<div class="absolute bottom-1 left-[60%] transform -translate-x-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">3</div>
+<div class="absolute bottom-1 left-[80%] transform -translate-x-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">4</div>
+<!-- Y Axis -->
+<div class="absolute left-1 bottom-[20%] transform translate-y-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">1</div>
+<div class="absolute left-1 bottom-[40%] transform translate-y-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">2</div>
+<div class="absolute left-1 bottom-[60%] transform translate-y-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">3</div>
+<div class="absolute left-1 bottom-[80%] transform translate-y-1/2 font-label-lg text-label-lg font-bold z-10 bg-surface px-1 border-[2px] border-on-surface rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">4</div>
+<!-- Points -->
+<!-- Point M (School) at 1,4 -->
+<div class="absolute bottom-[80%] left-[20%] transform -translate-x-1/2 translate-y-1/2 z-20 group">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-[3px] border-on-surface bg-primary-container shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center font-headline-md text-headline-md text-on-primary-container relative">
+                        M
+                        <!-- Hover Label -->
+<div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-surface border-[3px] border-on-surface px-3 py-1 rounded font-label-lg text-label-lg whitespace-nowrap shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">School</div>
+</div>
+</div>
+<!-- Point S (Shop) at 4,2 -->
+<div class="absolute bottom-[40%] left-[80%] transform -translate-x-1/2 translate-y-1/2 z-20 group">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-[3px] border-on-surface bg-secondary-container shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center font-headline-md text-headline-md text-on-secondary-container relative">
+                        S
+                        <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-surface border-[3px] border-on-surface px-3 py-1 rounded font-label-lg text-label-lg whitespace-nowrap shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Shop</div>
+</div>
+</div>
+<!-- Point H (Hospital) at 2,3 - TARGET -->
+<div class="absolute bottom-[60%] left-[40%] transform -translate-x-1/2 translate-y-1/2 z-30 group animate-bounce">
+<div class="w-12 h-12 md:w-14 md:h-14 rounded-full border-[3px] border-on-surface bg-tertiary-container shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center font-headline-md text-headline-md text-on-tertiary-container relative">
+                        H
+                        <!-- Always visible label for target -->
+<div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-surface border-[3px] border-on-surface px-3 py-1 rounded font-label-lg text-label-lg whitespace-nowrap shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-tertiary">Hospital</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Multiple Choice Options -->
+<section class="grid grid-cols-2 gap-4 md:gap-6 mt-4">
+<button class="answer-btn w-full py-5 border-[3px] border-on-surface rounded bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-headline-md text-headline-md text-on-surface flex items-center justify-center gap-2" data-correct="false">
+                (3, 2)
+            </button>
+<button class="answer-btn w-full py-5 border-[3px] border-on-surface rounded bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-headline-md text-headline-md text-on-surface flex items-center justify-center gap-2" data-correct="true">
+                (2, 3)
+            </button>
+<button class="answer-btn w-full py-5 border-[3px] border-on-surface rounded bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-headline-md text-headline-md text-on-surface flex items-center justify-center gap-2" data-correct="false">
+                (1, 4)
+            </button>
+<button class="answer-btn w-full py-5 border-[3px] border-on-surface rounded bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-headline-md text-headline-md text-on-surface flex items-center justify-center gap-2" data-correct="false">
+                (4, 2)
+            </button>
+</section>
+</main>
+<!-- BottomNavBar is SUPPRESSED deliberately as per the Semantic Shell Mandate: 
+         "Automatic Suppression: You MUST exclude the navigation shell if the page intent is Task-Focused... implies a temporary departure from the main navigation flow." -->
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.answer-btn');
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Reset all buttons to prevent multiple clicks
+                    buttons.forEach(b => {
+                        b.disabled = true;
+                        b.classList.add('opacity-80', 'cursor-not-allowed');
+                    });
+
+                    const isCorrect = this.getAttribute('data-correct') === 'true';
+                    
+                    if (isCorrect) {
+                        // Success State
+                        this.classList.add('btn-correct', 'translate-x-[4px]', 'translate-y-[4px]', 'shadow-none');
+                        this.classList.remove('shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]', 'hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]');
+                        
+                        // Add checkmark
+                        this.innerHTML = `<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span> ${this.innerText}`;
+                        
+                        // Proceed to next question logic here (mocked with timeout)
+                        setTimeout(() => {
+                            alert('Correct! Moving to next question...');
+                        }, 1000);
+                    } else {
+                        // Fail State
+                        this.classList.add('btn-wrong', 'translate-x-[4px]', 'translate-y-[4px]', 'shadow-none');
+                        this.classList.remove('shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]', 'hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]');
+                        
+                        // Add cross
+                        this.innerHTML = `<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cancel</span> ${this.innerText}`;
+                        
+                        // Highlight correct answer
+                        const correctBtn = document.querySelector('.answer-btn[data-correct="true"]');
+                        correctBtn.classList.add('border-secondary', 'border-[4px]', 'animate-pulse');
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

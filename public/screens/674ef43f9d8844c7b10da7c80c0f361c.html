@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"><head><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Interactive Explainer: Min matlab Sabse Kam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#006d38",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f3",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-tertiary-container": "#67002f",
+                        "surface": "#fbf9f3",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary": "#ba005b",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "outline": "#8e7164",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-container": "#572000",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#5a4136",
+                        "surface-dim": "#dbdad4",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-primary": "#ffb693",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "secondary-fixed": "#63ff9d",
+                        "secondary-fixed-dim": "#40e183"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px #1c1b1b; }
+        .neo-shadow-sm { box-shadow: 2px 2px 0px #1c1b1b; }
+        .active-press:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #1c1b1b; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            .shake-horizontal {
+                animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+                border-color: #ba1a1a !important;
+            }
+        </style></head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-md py-sm w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface" style="font-family: Fredoka, sans-serif;">Min matlab Sabse Kam</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="bg-secondary-container px-3 py-1 rounded-full border-[2px] border-on-surface neo-shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-bold text-on-secondary-container">240</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-margin-mobile py-8 md:px-margin-desktop max-w-[800px] mx-auto w-full">
+<!-- Explanation Card -->
+<div class="w-full bg-surface-container-lowest border-[3px] border-on-surface neo-shadow rounded-lg p-6 mb-8">
+<div class="flex flex-col items-center text-center mb-6">
+<div class="px-4 py-1 rounded-full border-[2px] border-on-surface mb-4 font-label-bold text-white" style="background-color: rgb(255, 0, 127);">VOCABULARY CHECK</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2" style="font-family: Fredoka, sans-serif;">Minimum yaani bottom-most, sabse chhota!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Imagine a scale where you are looking for the absolute base.</p>
+</div>
+<!-- Comparison Interactive -->
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface border-[3px] border-on-surface rounded-lg p-4 flex flex-col items-center justify-center transition-all cursor-pointer group hover:bg-surface-container-high active-press neo-shadow" id="bigRock">
+<div class="w-24 h-24 mb-4 relative">
+<img alt="Large Rock" class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all" data-alt="A massive, weathered grey granite boulder with a rough texture, sitting prominently in a desert landscape under bright, direct sunlight. The lighting creates sharp, high-contrast shadows emphasizing its heavy, grounded presence. The visual style is crisp and detailed, maintaining a warm light-mode aesthetic with deep black lines and vibrant orange desert sand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq8owfa7SXmvzHvq6MMkoXQNSEP0sCClS_9WQ3eMbCyiI1534BSGL8-5TO7XadpYA5or_EguTPmfbuUwHyB1rs7iTN-2npiWSqmgWJ0qFUucStP2EJ7fkMOeJYIiX1wdYgaiW78bgyse2Q6pM_ffg6gaRbFb2ksrU5XjTU6DKAgpwF0F1NfVgI6NmIM1KQf411921WwyfH9ulfdgL-9LLKh47IEpAt9wl3Ei8BRVqNMHKLT61Gq4cP2PzPd7NU7iKVwfqcHmOFuD3D">
+</div>
+<span class="font-headline-md text-headline-md text-on-surface-variant">Bada Rock</span>
+<span class="font-label-bold text-error mt-1 opacity-0 group-hover:opacity-100">Not Minimum!</span>
+</div>
+<div class="bg-primary-fixed border-[3px] border-on-surface rounded-lg p-4 flex flex-col items-center justify-center transition-all cursor-pointer group hover:bg-primary neo-shadow active-press" id="smallPebble">
+<div class="w-24 h-24 mb-4 flex items-center justify-center">
+<div class="w-8 h-8 bg-on-surface rounded-full neo-shadow-sm border-[2px] border-primary-container"></div>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">Chhota Pebble</span>
+<span class="font-label-bold text-secondary-fixed mt-1"><span class="px-2 py-0.5 rounded-full text-white" style="background-color: rgb(0, 196, 106);">MINIMUM</span></span>
+</div>
+</div>
+<div class="border-t-[3px] border-on-surface pt-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4" style="font-family: Fredoka, sans-serif;">Real Life Examples:</h3>
+<div class="space-y-4">
+<!-- Example 1 -->
+<div class="flex items-center gap-4 bg-surface-container p-4 border-[3px] border-on-surface rounded-lg neo-shadow-sm">
+<div class="bg-secondary-container p-3 rounded-full border-[2px] border-on-surface">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="ac_unit">ac_unit</span>
+</div>
+<div>
+<p class="font-label-bold text-on-surface">Minimum temperature in winter</p>
+<p class="font-body-md text-body-md text-on-surface-variant">The coldest it gets during a cold Delhi night!</p>
+</div>
+</div>
+<!-- Example 2 -->
+<div class="flex items-center gap-4 bg-surface-container p-4 border-[3px] border-on-surface rounded-lg neo-shadow-sm">
+<div class="bg-tertiary-fixed p-3 rounded-full border-[2px] border-on-surface">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<div>
+<p class="font-label-bold text-on-surface">Minimum Balance</p>
+<p class="font-body-md text-body-md text-on-surface-variant">The smallest amount you need to keep in your piggy bank.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="w-full flex flex-col gap-4">
+<button class="w-full text-on-primary-container font-headline-md text-headline-md py-4 border-[3px] border-on-surface rounded-lg neo-shadow active-press transition-all hover:bg-primary hover:text-white" style="background-color: #FF6B00; box-shadow: 4px 4px 0px 0px #000000;">
+                Samajh gaya! Next chalo.
+            </button>
+<div class="flex gap-4">
+<button class="flex-1 bg-surface-container-high text-on-surface font-label-bold py-3 border-[3px] border-on-surface rounded-lg neo-shadow-sm active-press hover:bg-surface-variant">
+                    Re-play animation
+                </button>
+<button class="flex-1 bg-secondary-container text-on-secondary-container font-label-bold py-3 border-[3px] border-on-surface rounded-lg neo-shadow-sm active-press hover:bg-secondary hover:text-white">
+                    Ask a doubt
+                </button>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="w-full mt-12 mb-20">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-bold text-on-surface-variant">Lesson Progress</span>
+<span class="font-headline-md text-headline-md text-primary">4/10</span>
+</div>
+<div class="h-6 w-full bg-surface-container-highest border-[3px] border-on-surface rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[40%] border-r-[3px] border-on-surface relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] bg-[size:10px_10px]"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="quiz" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the "Minimum" selection
+        document.getElementById('smallPebble').addEventListener('click', function() {
+            this.classList.add('bg-secondary-container');
+            this.querySelector('.material-symbols-outlined')?.classList.add('animate-bounce');
+            const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10I... (placeholder)');
+            // In a real app, play a subtle success chime
+        });
+
+        document.getElementById('bigRock').addEventListener('click', function() {
+            this.classList.add('shake-horizontal');
+            setTimeout(() => this.classList.remove('shake-horizontal'), 500);
+        });
+
+        // Shake effect helper
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            .shake-horizontal {
+                animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+                border-color: #ba1a1a !important;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+</body></html>

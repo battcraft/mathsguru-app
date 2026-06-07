@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Hard Mode Challenge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c19;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        .neo-shadow {
+            shadow-[4px_4px_0px_#1A1A1A];
+        }
+        .active-btn-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#ffb693",
+                      "tertiary-container": "#ff6096",
+                      "primary-container": "#ff6b00",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#8e7164",
+                      "on-error": "#ffffff",
+                      "on-background": "#1b1c19",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dbdad4",
+                      "background": "#fbf9f3",
+                      "surface-container-high": "#eae8e2",
+                      "on-primary-container": "#572000",
+                      "surface-container": "#f0eee8",
+                      "tertiary": "#ba005b",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#8f0044",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#30312d",
+                      "inverse-on-surface": "#f2f1eb",
+                      "tertiary-fixed-dim": "#ffb1c4",
+                      "surface-bright": "#fbf9f3",
+                      "surface-container-low": "#f5f3ee",
+                      "surface-variant": "#e4e2dd",
+                      "secondary-fixed-dim": "#40e183",
+                      "on-surface": "#1b1c19",
+                      "secondary-fixed": "#63ff9d",
+                      "tertiary-fixed": "#ffd9e1",
+                      "on-secondary-fixed": "#00210d",
+                      "secondary-container": "#63ff9d",
+                      "on-secondary-container": "#00743c",
+                      "surface-tint": "#a04100",
+                      "primary-fixed": "#ffdbcc",
+                      "outline-variant": "#e2bfb0",
+                      "secondary": "#006d38",
+                      "on-tertiary-fixed": "#3f001a",
+                      "surface": "#fbf9f3",
+                      "primary": "#a04100",
+                      "on-secondary-fixed-variant": "#005229",
+                      "on-tertiary-container": "#67002f",
+                      "primary-fixed-dim": "#ffb693",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "on-primary-fixed": "#351000",
+                      "on-surface-variant": "#5a4136"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "gutter": "16px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "container-max-width": "1200px"
+              },
+              "fontFamily": {
+                      "headline-xl-mobile": ["Bricolage Grotesque"],
+                      "headline-md": ["Bricolage Grotesque"],
+                      "headline-xl": ["Bricolage Grotesque"],
+                      "headline-lg": ["Bricolage Grotesque"],
+                      "body-md": ["Nunito Sans"],
+                      "headline-lg-mobile": ["Bricolage Grotesque"],
+                      "label-lg": ["Nunito Sans"],
+                      "body-lg": ["Nunito Sans"]
+              },
+              "fontSize": {
+                      "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<nav class="flex justify-between items-center w-full px-margin-desktop h-20 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border-3 border-black overflow-hidden shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnT6fQsSyLYniGkefZV1R0dOqB_0nZlE7ZwIaP17nhZAjwMMF_6d3yZX8w6MTe6FMFKlpy32aKtcxHjtoGkRLEXxoEpRnvz9haip7-65k0aDyS9X2bVvNoQV9D8oMNIjATR8G10kwHhVw_ddOO_DJSWu8GoNvOkGxRjhgjUKNY6aOhOncYP9sJuLbnGM4TiFR1aLJ1YaJM1oRxYyDYtkqZ2-2f6MzA4WyrQVe94p0yCUe1j_VtmmlbQzhpx30gQ2WnKxBOmJTXNoY5"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<!-- Desktop Navigation Cluster -->
+<div class="hidden md:flex items-center gap-8">
+<a class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">home</span> Home
+            </a>
+<a class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span> Chat
+            </a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 px-4 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] font-label-lg text-label-lg" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">quiz</span> Quiz
+                </div>
+</a>
+<a class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span> Story
+            </a>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full border-2 border-black">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold">12</span>
+</div>
+</div>
+</nav>
+<main class="flex-grow max-w-container-max-width mx-auto px-margin-desktop py-12 w-full grid grid-cols-12 gap-8">
+<!-- Hero Section: Hard Mode Challenge -->
+<header class="col-span-12 mb-4">
+<div class="inline-block bg-tertiary-container text-on-tertiary font-headline-md text-headline-md px-6 py-2 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] mb-4">
+                BONUS: HARD MODE
+            </div>
+<h1 class="font-headline-xl text-headline-xl text-on-background">Stats Master Problem</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">This one is strictly for the toppers! Can you calculate the hidden mean without losing your cool?</p>
+</header>
+<!-- Main Challenge Area: Bento Grid Style -->
+<section class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Problem Card -->
+<div class="bg-surface-container-lowest border-3 border-black shadow-[8px_8px_0px_#1A1A1A] rounded-lg overflow-hidden">
+<div class="p-8 border-b-3 border-black bg-primary-fixed">
+<div class="flex justify-between items-start">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-on-primary-fixed">The Mean Mystery</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant leading-relaxed">
+                                A set of 5 numbers has a mean of <span class="bg-secondary px-2 text-white rounded">24</span>. If one number is replaced by <span class="font-bold underline">42</span>, the new mean becomes <span class="bg-secondary px-2 text-white rounded">28</span>. <br/><br/>
+<span class="font-bold">Question:</span> What was the original number that was replaced?
+                            </p>
+</div>
+<div class="hidden sm:block">
+<img alt="Math Abstract Art" class="w-32 h-32 opacity-80" data-alt="A sophisticated abstract digital art piece featuring floating mathematical symbols, geometric shapes, and clean lines. The composition uses a minimalist color palette of charcoal black and vibrant mango orange against a warm chalk background. The style is inspired by modern Bauhaus graphic design with a neo-brutalist twist, emphasizing clarity and bold forms in a clean learning environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3CqjkC2nP-1A-PoY6Ayd6BuQjbZ4mKDSyBf-c4-KKO4cE0pXzlqsfU9A2T3svpIqAq3w6z5Z2O49CD9N76erzSGMvsk6HfxTQKWOMHAv_jBfQG178ZdtARXvB-AgZZsR-OW6gdCiFwM5CIrT9mkkID2iBZYvhmXikAVN6q0C9g2MrmI377smgnzbaEFUDS4QZJR3mI9rvJwdmimebHVxrFE8htteF9qht6Ypw4lOo6zCMGGaSh9plQbzNJK3Xjv5U7CvyougOo-kb"/>
+</div>
+</div>
+</div>
+<div class="p-8 grid md:grid-cols-2 gap-8 items-center">
+<!-- Calculator UI Visual -->
+<div class="bg-surface-container-high border-3 border-black p-4 rounded-lg shadow-[4px_4px_0px_#1A1A1A]">
+<div class="bg-white border-3 border-black p-4 mb-4 text-right h-16 flex items-center justify-end font-headline-md text-headline-md">
+<span class="text-on-surface" id="calc-display">?</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">7</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">8</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">9</button>
+<button class="bg-secondary-container border-2 border-black p-2 font-bold hover:bg-secondary active:translate-y-0.5 transition-all">/</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">4</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">5</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">6</button>
+<button class="bg-secondary-container border-2 border-black p-2 font-bold hover:bg-secondary active:translate-y-0.5 transition-all">×</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">1</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">2</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">3</button>
+<button class="bg-secondary-container border-2 border-black p-2 font-bold hover:bg-secondary active:translate-y-0.5 transition-all">-</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">0</button>
+<button class="bg-surface border-2 border-black p-2 font-bold hover:bg-surface-variant active:translate-y-0.5 transition-all">.</button>
+<button class="bg-error-container border-2 border-black p-2 font-bold hover:bg-error text-on-error-container active:translate-y-0.5 transition-all col-span-2">C</button>
+</div>
+</div>
+<!-- Input and Action Side -->
+<div class="space-y-6">
+<div>
+<label class="font-label-lg text-label-lg block mb-2 uppercase tracking-widest text-on-surface-variant">Your Answer</label>
+<input class="w-full bg-white border-3 border-black p-4 text-headline-md font-headline-md focus:shadow-[4px_4px_0px_#40e183] focus:outline-none transition-shadow rounded-lg" placeholder="Enter value..." type="number"/>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-surface-container-highest text-on-surface font-headline-md text-headline-md py-4 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span> Hint
+                            </button>
+<button class="flex-[2] bg-primary-container text-on-primary-container font-headline-md text-headline-md py-4 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span> Submit
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Challenges Section -->
+<div class="mt-12">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-4xl">history</span>
+<h3 class="font-headline-lg text-headline-lg">Recent Battles</h3>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- History Item 1 -->
+<div class="bg-surface-container-low p-6 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container border-3 border-black flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">check_circle</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-bold text-lg">Pythagoras Paradox</h4>
+<p class="text-on-surface-variant text-sm">Solved in 4:20s</p>
+</div>
+<div class="font-bold text-secondary text-xl">+50 XP</div>
+</div>
+<!-- History Item 2 -->
+<div class="bg-surface-container-low p-6 border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg flex items-center gap-4">
+<div class="w-12 h-12 bg-error-container border-3 border-black flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-error-container">cancel</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-bold text-lg">Algebra Storm</h4>
+<p class="text-on-surface-variant text-sm">Timed out</p>
+</div>
+<div class="font-bold text-error text-xl">-10 XP</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar: Stats & Leaderboard -->
+<aside class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Mastery Progress -->
+<div class="bg-surface-container-highest border-3 border-black shadow-[6px_6px_0px_#1A1A1A] p-6 rounded-lg">
+<h3 class="font-headline-md text-headline-md mb-4">Mastery Stats</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold">Logic Power</span>
+<span class="font-bold">75%</span>
+</div>
+<div class="w-full h-8 bg-black/10 border-3 border-black rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed shadow-[inset_-2px_0px_0px_#000]" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-bold">Speed Demon</span>
+<span class="font-bold">40%</span>
+</div>
+<div class="w-full h-8 bg-black/10 border-3 border-black rounded-full overflow-hidden">
+<div class="h-full bg-primary-container shadow-[inset_-2px_0px_0px_#000]" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ad/Quote Card -->
+<div class="bg-secondary-container border-3 border-black p-6 shadow-[6px_6px_0px_#1A1A1A] rounded-lg relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10">calculate</span>
+<p class="font-headline-md text-headline-md text-on-secondary-container italic relative z-10 leading-tight">
+                    "Mathematics is the music of reason."
+                </p>
+<p class="font-bold text-on-secondary-container mt-4">— James J. Sylvester</p>
+</div>
+<!-- Hard Mode Badges -->
+<div class="bg-white border-3 border-black p-6 shadow-[6px_6px_0px_#1A1A1A] rounded-lg">
+<h4 class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface-variant mb-4">Legendary Status</h4>
+<div class="flex flex-wrap gap-3">
+<div class="w-14 h-14 bg-tertiary-fixed border-2 border-black rounded-lg flex items-center justify-center shadow-[2px_2px_0px_#1A1A1A] transform -rotate-3" title="Hard Mode Veteran">
+<span class="material-symbols-outlined text-on-tertiary-fixed">military_tech</span>
+</div>
+<div class="w-14 h-14 bg-secondary-fixed border-2 border-black rounded-lg flex items-center justify-center shadow-[2px_2px_0px_#1A1A1A] transform rotate-6" title="Calculation Master">
+<span class="material-symbols-outlined text-on-secondary-fixed">functions</span>
+</div>
+<div class="w-14 h-14 bg-primary-fixed border-2 border-black rounded-lg flex items-center justify-center shadow-[2px_2px_0px_#1A1A1A] transform -rotate-6" title="Daily Warrior">
+<span class="material-symbols-outlined text-on-primary-fixed">calendar_today</span>
+</div>
+<div class="w-14 h-14 bg-surface-container-highest border-2 border-black rounded-lg flex items-center justify-center shadow-[2px_2px_0px_#1A1A1A] opacity-30">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer Space -->
+<footer class="mt-auto border-t-3 border-black bg-surface-container py-8 px-margin-desktop text-center">
+<p class="font-bold">Built for Math Lovers in Bharat 🇮🇳</p>
+<p class="text-sm text-on-surface-variant mt-2">© 2024 Ganit Dost. No Calculators Allowed!</p>
+</footer>
+<!-- Interactive Layer: Simple JS for calculator numbers -->
+<script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const text = this.innerText;
+                const display = document.getElementById('calc-display');
+                if(!isNaN(text) || text === '.') {
+                    if(display.innerText === '?') display.innerText = '';
+                    display.innerText += text;
+                } else if (text === 'C') {
+                    display.innerText = '?';
+                }
+            });
+        });
+
+        // Floating particle effect for "Hard Mode" background
+        const createParticle = () => {
+            const particle = document.createElement('div');
+            particle.className = 'fixed pointer-events-none text-2xl opacity-10 font-bold';
+            const chars = ['+', '-', '÷', '×', '√', 'π', '∑'];
+            particle.innerText = chars[Math.floor(Math.random() * chars.length)];
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '110vh';
+            particle.style.transition = 'transform 10s linear, opacity 10s';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.style.transform = `translateY(-120vh) rotate(${Math.random() * 360}deg)`;
+                particle.style.opacity = '0';
+            }, 100);
+            
+            setTimeout(() => particle.remove(), 10000);
+        };
+
+        setInterval(createParticle, 2000);
+    </script>
+</body></html>

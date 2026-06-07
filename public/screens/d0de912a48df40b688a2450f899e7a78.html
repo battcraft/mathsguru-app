@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px #1A1A1A;
+        }
+        .neo-shadow-active {
+            box-shadow: 0px 0px 0px #1A1A1A;
+            transform: translate(4px, 4px);
+        }
+        .blueprint-bg {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+        .pulse-timer {
+            animation: pulse-border 1s infinite alternate;
+        }
+        @keyframes pulse-border {
+            from { border-color: #ba1a1a; }
+            to { border-color: #f88400; }
+        }
+        .card-swipe-left { transform: translateX(-150%) rotate(-20deg); opacity: 0; transition: all 0.4s ease-out; }
+        .card-swipe-right { transform: translateX(150%) rotate(20deg); opacity: 0; transition: all 0.4s ease-out; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="blueprint-bg min-h-screen flex flex-col font-body-md text-on-background overflow-hidden">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-secondary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyNvaAwxC6LIgmj-sxQ37O2h2vws9LNjWS6PXrOqK8f2utdTxbYGhILYwqfQDdLrhYlJ5jwirtSxDb-ObQ9RsUiL7deOld-_7Gqd82yT311qkddEwvUctEWPWYMe4P3H4SrblIDuHBE_CS3LIIXAM29uUIziYfRW6dFweDDYvawSkiUYFHxuZs-3Tc1LWJNiir7G81h-2Lk6AvZDStDPAhOYu50CoS17WNErGL0x5Y_JX5nl2xntVhiq-uvCs3wSBF_I3Rzj52biJu"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high border-3 border-black rounded-lg neo-shadow">
+<span class="material-symbols-outlined text-orange-500" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-label-bold">12</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile relative">
+<!-- Game Stats Row -->
+<div class="w-full max-w-md flex justify-between items-center mb-8">
+<div class="bg-white border-3 border-black px-4 py-2 neo-shadow flex flex-col items-center min-w-[80px]">
+<span class="text-xs font-label-bold uppercase opacity-60">Score</span>
+<span class="font-headline-md text-headline-md text-primary" id="score">0</span>
+</div>
+<!-- Central Timer -->
+<div class="bg-white border-3 border-black p-4 rounded-full neo-shadow flex flex-col items-center justify-center w-24 h-24 pulse-timer" id="timer-container">
+<span class="text-[10px] font-label-bold uppercase leading-none mb-1 text-error">Fatafat!</span>
+<span class="font-headline-lg text-headline-lg-mobile text-on-background" id="timer">15</span>
+</div>
+<div class="bg-white border-3 border-black px-4 py-2 neo-shadow flex flex-col items-center min-w-[80px]">
+<span class="text-xs font-label-bold uppercase opacity-60">Best</span>
+<span class="font-headline-md text-headline-md text-secondary" id="best-score">42</span>
+</div>
+</div>
+<!-- Game Title -->
+<div class="mb-10 text-center">
+<h1 class="font-headline-lg text-headline-lg-mobile mb-2">Segment or Ray?</h1>
+<p class="font-body-md text-on-surface-variant italic">Swipe fast, choose right!</p>
+</div>
+<!-- Central Card Container -->
+<div class="relative w-full max-w-xs aspect-square perspective-1000">
+<!-- Active Card -->
+<div class="absolute inset-0 bg-white border-3 border-black neo-shadow-lg flex items-center justify-center transition-all duration-300 transform cursor-grab active:cursor-grabbing" id="game-card">
+<!-- SVG Geometry Content -->
+<div class="w-full h-full flex items-center justify-center p-8" id="geometry-visual">
+<svg class="w-full h-full" viewbox="0 0 200 200">
+<!-- Segment Template (Swapped via JS) -->
+<g id="geometry-shape">
+<line stroke="black" stroke-width="6" x1="40" x2="160" y1="100" y2="100"></line>
+<circle cx="40" cy="100" fill="#b40067" r="8" stroke="black" stroke-width="3"></circle>
+<circle cx="160" cy="100" fill="#b40067" r="8" stroke="black" stroke-width="3"></circle>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<!-- Desktop Controls / Indicators -->
+<div class="mt-16 w-full max-w-md flex justify-around items-center">
+<button class="group flex flex-col items-center gap-3" onclick="handleChoice('ray')">
+<div class="bg-tertiary-container text-white p-6 border-3 border-black neo-shadow rounded-xl transition-all group-active:translate-x-1 group-active:translate-y-1 group-active:shadow-none">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 700;">arrow_back</span>
+</div>
+<span class="font-headline-md text-headline-md">Ray</span>
+<span class="text-xs uppercase font-label-bold opacity-40 md:block hidden">Left Arrow</span>
+</button>
+<div class="hidden md:flex flex-col items-center px-4">
+<div class="h-12 w-px bg-black opacity-20"></div>
+<span class="font-label-bold py-2">VS</span>
+<div class="h-12 w-px bg-black opacity-20"></div>
+</div>
+<button class="group flex flex-col items-center gap-3" onclick="handleChoice('segment')">
+<div class="bg-secondary-container text-white p-6 border-3 border-black neo-shadow rounded-xl transition-all group-active:translate-x-1 group-active:translate-y-1 group-active:shadow-none">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 700;">arrow_forward</span>
+</div>
+<span class="font-headline-md text-headline-md">Segment</span>
+<span class="text-xs uppercase font-label-bold opacity-40 md:block hidden">Right Arrow</span>
+</button>
+</div>
+</main>
+<!-- Success/Failure Feedback Overlay (Hidden by Default) -->
+<div class="fixed inset-0 pointer-events-none z-[100] flex items-center justify-center opacity-0 transition-opacity duration-200" id="feedback">
+<div class="w-48 h-48 rounded-full border-3 border-black flex items-center justify-center neo-shadow" id="feedback-bg">
+<span class="material-symbols-outlined text-7xl text-white" id="feedback-icon"></span>
+</div>
+</div>
+<!-- Scripting for Game Logic -->
+<script>
+        const card = document.getElementById('game-card');
+        const shapeContainer = document.getElementById('geometry-shape');
+        const scoreEl = document.getElementById('score');
+        const timerEl = document.getElementById('timer');
+        const feedbackEl = document.getElementById('feedback');
+        const feedbackIcon = document.getElementById('feedback-icon');
+        const feedbackBg = document.getElementById('feedback-bg');
+
+        let score = 0;
+        let timeLeft = 15;
+        let currentType = 'segment'; // 'segment' or 'ray'
+        let gameActive = true;
+
+        const shapes = {
+            segment: `
+                <line x1="40" y1="100" x2="160" y2="100" stroke="black" stroke-width="6" />
+                <circle cx="40" cy="100" r="8" fill="#b40067" stroke="black" stroke-width="3" />
+                <circle cx="160" cy="100" r="8" fill="#b40067" stroke="black" stroke-width="3" />
+            `,
+            ray: `
+                <line x1="50" y1="100" x2="150" y2="100" stroke="black" stroke-width="6" />
+                <circle cx="50" cy="100" r="8" fill="#f88400" stroke="black" stroke-width="3" />
+                <path d="M 140 85 L 165 100 L 140 115 Z" fill="black" />
+            `
+        };
+
+        function nextRound() {
+            currentType = Math.random() > 0.5 ? 'segment' : 'ray';
+            shapeContainer.innerHTML = shapes[currentType];
+            card.classList.remove('card-swipe-left', 'card-swipe-right', 'shake');
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+        }
+
+        function handleChoice(choice) {
+            if (!gameActive) return;
+
+            if (choice === currentType) {
+                // Success
+                score += 10;
+                scoreEl.textContent = score;
+                showFeedback(true);
+                card.classList.add(choice === 'ray' ? 'card-swipe-left' : 'card-swipe-right');
+            } else {
+                // Fail
+                score = Math.max(0, score - 5);
+                scoreEl.textContent = score;
+                showFeedback(false);
+                card.classList.add('shake');
+            }
+
+            setTimeout(nextRound, 300);
+        }
+
+        function showFeedback(isCorrect) {
+            feedbackEl.style.opacity = '1';
+            if (isCorrect) {
+                feedbackBg.className = 'w-48 h-48 rounded-full border-3 border-black flex items-center justify-center neo-shadow bg-green-500';
+                feedbackIcon.textContent = 'check_circle';
+            } else {
+                feedbackBg.className = 'w-48 h-48 rounded-full border-3 border-black flex items-center justify-center neo-shadow bg-error';
+                feedbackIcon.textContent = 'cancel';
+            }
+            setTimeout(() => { feedbackEl.style.opacity = '0'; }, 500);
+        }
+
+        // Timer Logic
+        const timerInterval = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                if (timeLeft <= 5) {
+                    document.getElementById('timer-container').classList.add('animate-pulse');
+                    timerEl.classList.add('text-error');
+                }
+            } else {
+                gameActive = false;
+                clearInterval(timerInterval);
+                alert(`Fatafat Chuno over! Final Score: ${score}`);
+                location.reload();
+            }
+        }, 1000);
+
+        // Keyboard support
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') handleChoice('ray');
+            if (e.key === 'ArrowRight') handleChoice('segment');
+        });
+
+        // Initialize first round
+        nextRound();
+    </script>
+</body></html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Asli Panga: Final Test</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed": "#63ff9d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-brutal-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .neo-brutal-shadow-hover:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .neo-brutal-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-8 py-4 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary font-headline-md text-headline-md hover:translate-x-[2px] hover:translate-y-[2px] transition-all">arrow_back</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Asli Panga: Final Test</h1>
+</div>
+<div class="flex items-center gap-2 bg-secondary-container border-[3px] border-on-surface px-3 py-1 rounded-full neo-brutal-shadow">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="font-label-bold text-label-bold text-on-secondary-container">1,240</span>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-10 pb-32">
+<!-- Hero Section -->
+<section class="relative w-full rounded-lg border-[3px] border-on-surface neo-brutal-shadow overflow-hidden mb-12">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A grand, high-octane cricket stadium at night, illuminated by towering floodlights that cast a cinematic glow across the field. The atmosphere is vibrant and electric with a hint of urban grit, featuring deep shadows and saturated pops of neon mango orange and nimbu green in the signage. The style is a fusion of realistic photography and stylized graphic art, emphasizing a neo-brutalist energy with strong contrasts and a massive, cheering crowd blurred in the distance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdf_rF-O3ih3hDUp4Max8dYAt6RZLlOh1j2rZ3AXlDK0-dTWMMedauzmDhDIQXgr6PpOG_IPCH3BaF0TyZcQQqzK814foaCmVTlylvlLyW8OR864emYCEYp2f304ohzpO0e83KRcoyW6da_vQmRBy5VO4YyK2QnjK1hDbqBWrxlL4E4xBpne_h69uMaL3xIUgY7wWeuJAMUfaKyIEhVp-crdOGi2gH_CFTs_gDMkn-DKCT6wh0RI4rAeEdJci7DrJ5egZNjQBO5TmC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex-1 space-y-4">
+<span class="inline-block bg-primary-container text-on-primary-container font-headline-md text-headline-md px-4 py-1 border-[3px] border-on-surface neo-brutal-shadow rotate-[-2deg]">
+                        FINAL LEVEL
+                    </span>
+<h2 class="font-headline-xl text-headline-xl text-white drop-shadow-lg leading-tight">
+                        Show your <br/><span class="text-secondary-fixed">Mastermind Status!</span>
+</h2>
+<p class="font-body-lg text-body-lg text-white/90 max-w-lg">
+                        You've made it to the final stadium. No more warm-ups, just 10 high-stakes questions to prove your skills.
+                    </p>
+</div>
+<div class="glass-card p-6 border-[3px] border-on-surface neo-brutal-shadow rotate-[3deg] text-center min-w-[200px]">
+<div class="text-primary font-headline-xl text-headline-xl mb-1">10</div>
+<div class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Total Questions</div>
+<div class="mt-4 pt-4 border-t-[3px] border-on-surface/20">
+<div class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-headline-md text-headline-md">15:00</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reward & Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<!-- Reward Preview -->
+<div class="md:col-span-2 bg-surface-container border-[3px] border-on-surface neo-brutal-shadow p-8 rounded-lg flex items-center justify-between overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-2">Bumper Reward!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-xs">Score 100% to unlock the legendary 'Panga King' badge and bonus coins.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-white px-4 py-2 border-[3px] border-on-surface rounded-full">
+<span class="material-symbols-outlined text-on-primary-fixed" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="font-headline-md text-headline-md">+500</span>
+</div>
+<div class="flex items-center gap-2 bg-secondary-fixed px-4 py-2 border-[3px] border-on-surface rounded-full">
+<span class="material-symbols-outlined text-on-secondary-fixed" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label-lg text-label-lg">King Badge</span>
+</div>
+</div>
+</div>
+<div class="hidden sm:block absolute right-0 top-0 h-full w-1/3 opacity-20 transform translate-x-10 translate-y-10">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<!-- Syllabus Card -->
+<div class="bg-tertiary-fixed border-[3px] border-on-surface neo-brutal-shadow p-8 rounded-lg flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md mb-4">Topic Covered</h3>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 font-body-md">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                            Complex Fractions
+                        </li>
+<li class="flex items-center gap-2 font-body-md">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                            Ratio Proportion
+                        </li>
+<li class="flex items-center gap-2 font-body-md">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                            Geometry Basics
+                        </li>
+</ul>
+</div>
+<div class="mt-6 flex justify-end">
+<span class="material-symbols-outlined text-tertiary text-4xl">menu_book</span>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="flex flex-col items-center gap-6">
+<button class="group w-full md:w-auto md:min-w-[400px] bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-12 py-6 neo-brutal-shadow neo-brutal-press transition-all flex items-center justify-center gap-4">
+<span class="font-headline-lg text-headline-lg uppercase tracking-tight">Chalo Start Karein!</span>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">rocket_launch</span>
+</button>
+<p class="font-label-lg text-label-lg text-on-surface-variant italic">
+                Ready to face the challenge? Once started, the timer won't stop!
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the coin highlight
+        const coinBox = document.querySelector('.bg-secondary-container');
+        if(coinBox) {
+            setInterval(() => {
+                coinBox.classList.add('scale-105');
+                setTimeout(() => coinBox.classList.remove('scale-105'), 200);
+            }, 3000);
+        }
+
+        // Simple parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroImg = document.querySelector('img[data-alt*="stadium"]');
+            if(heroImg) {
+                heroImg.style.transform = `translateY(${scroll * 0.1}px)`;
+            }
+        });
+    </script>
+</body></html>

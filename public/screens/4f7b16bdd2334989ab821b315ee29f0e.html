@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rounding Arena - Gol Gol Ghoom!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e7164",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006d38",
+                        "surface-tint": "#a04100",
+                        "on-primary": "#ffffff",
+                        "primary": "#a04100",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#63ff9d",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "surface-bright": "#fbf9f3",
+                        "on-tertiary-container": "#67002f",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-fixed": "#351000",
+                        "on-surface-variant": "#5a4136",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f1eb",
+                        "tertiary-container": "#ff6096",
+                        "surface-dim": "#dbdad4",
+                        "primary-fixed": "#ffdbcc",
+                        "on-surface": "#1b1c19",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "primary-container": "#ff6b00",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-container": "#f0eee8",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-tertiary-fixed": "#3f001a",
+                        "secondary-fixed-dim": "#40e183",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "inverse-primary": "#ffb693",
+                        "secondary-container": "#63ff9d",
+                        "on-background": "#1b1c19",
+                        "tertiary": "#ba005b",
+                        "on-secondary-fixed": "#00210d",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f3",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-container": "#572000",
+                        "outline-variant": "#e2bfb0",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fff8f0; } /* Specific background requested */
+        .neo-shadow { box-shadow: 4px 4px 0px #1A1A1A; }
+        .neo-border { border: 3px solid #1A1A1A; }
+        .neo-active:active { transform: translate(4px, 4px); box-shadow: none; }
+        .neo-hover:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #1A1A1A; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col items-center">
+<!-- TopAppBar JSON Component -->
+<header class="w-full top-0 sticky border-b-[3px] border-on-surface dark:border-outline-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center px-margin-mobile h-16 z-50 bg-surface">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container neo-border flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Math-Masti</span>
+</div>
+<div class="flex items-center">
+<span class="font-label-bold text-label-bold text-on-surface">12 🔥</span>
+</div>
+</header>
+<main class="w-full max-w-container-max-width px-margin-mobile py-8 flex-1 flex flex-col items-center gap-8 mb-24">
+<!-- Screen Header -->
+<div class="w-full flex flex-col md:flex-row justify-between items-center gap-4 bg-primary-container neo-border rounded-xl p-4 neo-shadow">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary-container">Rounding Arena 🎯</h1>
+<div class="flex gap-4">
+<div class="bg-surface neo-border rounded-full px-4 py-1 font-label-lg text-label-lg text-on-surface">Question 3/8</div>
+<div class="bg-surface neo-border rounded-full px-4 py-1 font-label-lg text-label-lg text-on-surface">🔥 Streak: 2</div>
+</div>
+</div>
+<!-- Main Arena Area -->
+<div class="relative w-full max-w-lg aspect-square bg-tertiary-fixed neo-border rounded-full flex flex-col items-center justify-center neo-shadow overflow-hidden group">
+<!-- decorative circles -->
+<div class="absolute inset-4 rounded-full border-[3px] border-on-surface border-dashed opacity-30 animate-spin-slow" style="animation: spin 30s linear infinite;"></div>
+<div class="absolute inset-8 rounded-full border-[3px] border-on-surface opacity-10"></div>
+<div class="z-10 bg-surface w-40 h-40 rounded-full neo-border flex items-center justify-center neo-shadow transform group-hover:scale-105 transition-transform">
+<span class="font-headline-xl text-headline-xl text-on-surface">47</span>
+</div>
+<p class="mt-8 z-10 font-headline-md text-headline-md text-on-surface text-center bg-surface px-4 py-2 neo-border rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                47 ko round karo!<br/>Kiske paas jayega? 🎯
+            </p>
+</div>
+<!-- Target Zones -->
+<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+<button class="bg-[#40e0d0] neo-border rounded-xl p-6 flex flex-col items-center gap-2 neo-shadow neo-active neo-hover transition-all group">
+<span class="material-symbols-outlined text-4xl text-on-surface group-hover:scale-110 transition-transform">adjust</span>
+<span class="font-headline-md text-headline-md text-on-surface">Round to 10</span>
+</button>
+<button class="bg-[#ffd700] neo-border rounded-xl p-6 flex flex-col items-center gap-2 neo-shadow neo-active neo-hover transition-all group">
+<span class="material-symbols-outlined text-4xl text-on-surface group-hover:scale-110 transition-transform">adjust</span>
+<span class="font-headline-md text-headline-md text-on-surface">Round to 100</span>
+</button>
+<button class="bg-primary-container neo-border rounded-xl p-6 flex flex-col items-center gap-2 neo-shadow neo-active neo-hover transition-all group">
+<span class="material-symbols-outlined text-4xl text-on-surface group-hover:scale-110 transition-transform">adjust</span>
+<span class="font-headline-md text-headline-md text-on-surface">Round to 50</span>
+</button>
+</div>
+<!-- Progress and Hints -->
+<div class="w-full bg-surface neo-border rounded-xl p-4 neo-shadow flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="bg-secondary-container neo-border rounded-full w-12 h-12 flex items-center justify-center neo-shadow neo-active" title="Hint">
+<span class="material-symbols-outlined text-on-secondary-container">lightbulb</span>
+</button>
+<div class="bg-[#ffd700] neo-border rounded-lg px-3 py-1 font-headline-md text-headline-md text-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface">timer</span> 01:30
+                    </div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface">Score: 420</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-6 neo-border bg-surface-dim rounded-full overflow-hidden relative">
+<div class="h-full bg-[#63ff9d] border-r-[3px] border-on-surface" style="width: 37.5%;"></div>
+<!-- chunks -->
+<div class="absolute inset-0 flex">
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1 border-r-[3px] border-on-surface/30"></div>
+<div class="flex-1"></div>
+</div>
+</div>
+<p class="text-center font-label-lg text-label-lg text-on-surface-variant italic mt-2">Gol gol ghoom ke answer dhoondh! 🔄</p>
+</div>
+</main>
+<!-- BottomNavBar JSON Component - Quiz is Active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface dark:border-outline-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</button>
+</nav>
+<style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</body></html>

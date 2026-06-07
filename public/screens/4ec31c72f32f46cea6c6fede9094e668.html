@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dbdad4",
+                        "surface-container-low": "#f5f3ee",
+                        "secondary-container": "#63ff9d",
+                        "on-primary-fixed": "#351000",
+                        "on-tertiary-container": "#67002f",
+                        "on-primary-container": "#572000",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#ff6096",
+                        "surface-tint": "#a04100",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#00210d",
+                        "inverse-on-surface": "#f2f1eb",
+                        "background": "#fbf9f3",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-bright": "#fbf9f3",
+                        "surface-variant": "#e4e2dd",
+                        "primary-container": "#ff6b00",
+                        "outline-variant": "#e2bfb0",
+                        "secondary-fixed": "#63ff9d",
+                        "secondary": "#006d38",
+                        "surface-container-highest": "#e4e2dd",
+                        "primary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed": "#3f001a",
+                        "primary-fixed-dim": "#ffb693",
+                        "inverse-surface": "#30312d",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#40e183",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-surface": "#1b1c19",
+                        "surface-container-high": "#eae8e2",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-container": "#f0eee8",
+                        "outline": "#8e7164",
+                        "surface": "#fbf9f3",
+                        "on-secondary-container": "#00743c",
+                        "tertiary": "#ba005b",
+                        "on-surface-variant": "#5a4136",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-background": "#1b1c19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max-width": "1200px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px #1c1b1b; }
+        .active-squish:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #1c1b1b; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary font-headline-md text-headline-md hover:translate-x-[2px] hover:translate-y-[2px] transition-all">arrow_back</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Max/Min: Full Journey Prototype</h1>
+</div>
+<div class="font-headline-xl text-headline-xl text-primary leading-none">M</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-mobile md:px-margin-desktop py-8 max-w-container-max-width mx-auto w-full">
+<!-- Hero Section -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+<div class="relative order-2 md:order-1">
+<div class="bg-secondary-container border-[3px] border-on-surface rounded-lg p-8 neo-shadow relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-4 text-on-secondary-container">Oye Hero, <br/>Taiyyar Ho?</h2>
+<p class="font-body-lg text-body-lg mb-8 max-w-md">Let's master Maxima and Minima today! Hum seekhenge everything from basic curves to high-level optimization. MathsGuru Bhaiya is ready for you!</p>
+<a class="inline-flex items-center justify-center px-10 py-5 bg-primary-container text-on-primary-container font-headline-md text-headline-md rounded-DEFAULT border-[3px] border-on-surface neo-shadow active-squish hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full md:w-auto" href="{{DATA:SCREEN:SCREEN_10}}">
+                            Start Full Journey
+                            <span class="material-symbols-outlined ml-2">play_arrow</span>
+</a>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary opacity-20 rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-center order-1 md:order-2">
+<div class="relative w-full max-w-sm aspect-square bg-tertiary-fixed border-[3px] border-on-surface rounded-full neo-shadow flex items-center justify-center overflow-hidden">
+<img alt="MathsGuru Bhaiya" class="w-full h-full object-cover grayscale-0" data-alt="A charismatic and friendly South Asian male tutor with a warm smile, wearing a modern streetwear-style kurta with neon accents. He is waving enthusiastically at the viewer. The background is a vibrant Desi Street-Pop collage featuring stylized mathematical symbols, hand-painted truck art floral patterns, and bold mango orange and nimbu green geometric shapes. High-contrast neo-brutalist lighting creates sharp outlines and deep black shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXJESCWmpiCR4DcwmBzvW5yriGjhlzzvngkBeckqnWcjzfD9waG2HOAFTgE_pT7VdoMm3q4SRnGAbeSrDNvOW3raPRYPSN8WleuAjKxoIQPUwirYivhKYAAtf4aJ-MwzuOR_SDt2WvjUBnAPaqv1U_4Vh8m0Km_WZWsRtJDtDpo1Tapn9-llCLfPGFnajOsrbtZ2XhT-bBa_ELIlnUr5Ezd7BznqsiBCBaeyIN88NQS0VDiWnyu_zAwx0vtyIU7b7FH7WkCNoxc7Q3"/>
+</div>
+</div>
+</div>
+<!-- Sitemap / Scene Selector Grid -->
+<div class="w-full mb-20">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-10 h-1 bg-primary"></span>
+<h3 class="font-headline-md text-headline-md">Sitemap: Pick Your Starting Point</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-gutter">
+<!-- Video Lessons -->
+<a class="group bg-surface-container-low border-[3px] border-on-surface p-6 rounded-DEFAULT neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active-squish transition-all flex flex-col gap-4" href="{{DATA:SCREEN:SCREEN_10}}">
+<div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined">smart_display</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Video Lessons</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Watch &amp; Learn</p>
+</div>
+</a>
+<!-- Concept Explainers -->
+<a class="group bg-surface-container-low border-[3px] border-on-surface p-6 rounded-DEFAULT neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active-squish transition-all flex flex-col gap-4" href="{{DATA:SCREEN:SCREEN_67}}">
+<div class="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Concept Explainers</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Deep Dive Theory</p>
+</div>
+</a>
+<!-- Practice Zone -->
+<a class="group bg-surface-container-low border-[3px] border-on-surface p-6 rounded-DEFAULT neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active-squish transition-all flex flex-col gap-4" href="{{DATA:SCREEN:SCREEN_55}}">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">edit_square</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Practice Zone</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Solve Challenges</p>
+</div>
+</a>
+<!-- Final Evaluation -->
+<a class="group bg-surface-container-low border-[3px] border-on-surface p-6 rounded-DEFAULT neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active-squish transition-all flex flex-col gap-4" href="{{DATA:SCREEN:SCREEN_23}}">
+<div class="w-12 h-12 rounded-full bg-on-surface flex items-center justify-center text-surface">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Final Evaluation</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Test Your Might</p>
+</div>
+</a>
+<!-- Mastery Summary -->
+<a class="group bg-surface-container-low border-[3px] border-on-surface p-6 rounded-DEFAULT neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active-squish transition-all flex flex-col gap-4" href="{{DATA:SCREEN:SCREEN_54}}">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim border-2 border-on-surface flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Mastery Summary</h4>
+<p class="font-label-lg text-label-lg text-on-surface-variant">Review Progress</p>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-3 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-on-surface font-bold scale-110 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<!-- Chat -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<!-- Quiz -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<!-- Story -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<!-- Report -->
+<a class="flex flex-col items-center justify-center text-muted hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.transform = 'scale(1.2) rotate(-5deg)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed": "#63ff9d",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-brutal-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .neo-brutal-shadow-active {
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-segment {
+            border-right: 3px solid #1c1b1b;
+        }
+        .progress-segment:last-child {
+            border-right: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-on-surface bg-surface active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Max/Min Video 2: Samosa Party</h1>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full border-[3px] border-on-surface bg-secondary-container">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-lg text-label-lg text-on-secondary-container">120 XP</span>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-4 mt-6 space-y-6">
+<!-- Progress Bar -->
+<div class="w-full h-8 bg-surface-container-highest border-[3px] border-on-surface rounded-full overflow-hidden flex">
+<div class="w-1/3 bg-secondary progress-segment" style="background-color: rgb(255, 107, 0);"></div>
+<div class="w-1/3 bg-secondary progress-segment" style="background-color: rgb(255, 107, 0);"></div>
+<div class="w-1/3 bg-surface-variant progress-segment"></div>
+</div>
+<!-- Hero Video Section (Bento Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 relative aspect-video bg-white border-[3px] border-on-surface rounded-lg neo-brutal-shadow overflow-hidden group">
+<img alt="Raju Bhaiya counting samosas" class="w-full h-full object-cover" data-alt="A warm, vibrant illustration of a friendly Indian street vendor, Raju Bhaiya, standing behind a traditional wooden cart filled with golden-brown triangular samosas. The scene is set in a bustling bazaar with a warm sunset glow, using a high-energy Indian street-pop aesthetic with bold black outlines. Raju is pointing at a small plate with only two samosas, contrasting with larger heaps nearby. The lighting is high-contrast, emphasizing the deep oranges and greens of the market stalls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBspvAe23Ht-Wud_q1AH-iUaWsJL0G7EAlWcd3Dw3e18nMYxv-PGXS55C_HAjYujU-3lOb9W_m_YW0uaqgj9FBlRqpRO6s7EInFpyav2IwiwOuuc370RiiTSMVRQgdLdV_NBW1AxhTP17XEplJsWEH7UgIrUASAgVqrck9dNYtlN7OJIQM1vOlJGr-yxVzGm6E-YgwMZT13SZ6OGyZtIh3jYLaGwMTL2Rdiz04zW56iRizE-83j6UgIGYXlhRuWLe8AY00xtLtF687E">
+<!-- Play Overlay -->
+<div class="absolute inset-0 flex items-center justify-center bg-on-surface/20 group-hover:bg-on-surface/10 transition-colors">
+<button class="w-20 h-20 rounded-full bg-primary-container border-[3px] border-on-surface flex items-center justify-center neo-brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-90">
+<span class="material-symbols-outlined text-on-primary-container text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Video Controls Badge -->
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<div class="bg-on-surface text-white px-4 py-1 rounded-full border-[2px] border-white font-label-lg">
+                        02:45 / 05:00
+                    </div>
+<div class="flex gap-2">
+<button class="p-2 bg-white border-[2px] border-on-surface rounded-md"><span class="material-symbols-outlined">subtitles</span></button>
+<button class="p-2 bg-white border-[2px] border-on-surface rounded-md"><span class="material-symbols-outlined">fullscreen</span></button>
+</div>
+</div>
+</div>
+<!-- Concept Card -->
+<div class="lg:col-span-1 bg-surface-container border-[3px] border-on-surface rounded-lg p-6 flex flex-col justify-between neo-brutal-shadow">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container border-[2px] border-on-surface flex items-center justify-center" style="background-color: rgb(0, 196, 106); border: 2px solid rgb(27, 28, 25);">
+<span class="material-symbols-outlined text-on-tertiary-container">lightbulb</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Concept: Minimum</h2>
+</div>
+<hr class="border-t-[3px] border-on-surface mb-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span class="bg-secondary-container px-1 font-bold">Minimum</span> ka matlab hota hai sabse chhota hissa ya value! 
+                    </p>
+<div class="mt-6 p-4 bg-white border-[3px] border-on-surface rounded-lg">
+<p class="font-label-lg text-label-lg uppercase text-primary mb-2">Hinglish Tip</p>
+<p class="font-body-md text-body-md">Jab Raju Bhaiya ne plate mein sabse kam samosas dikhaye, toh woh unka <span class="font-bold">Minimum</span> count tha!</p>
+</div>
+</div>
+<button class="mt-8 w-full bg-primary-container py-4 rounded-lg border-[3px] border-on-surface neo-brutal-shadow font-headline-md text-on-primary-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none" style="background-color: rgb(255, 107, 0); box-shadow: rgb(28, 27, 27) 4px 4px 0px;">
+                    Next Concept
+                </button>
+</div>
+</div>
+<!-- Interactive Question Section -->
+<div class="bg-surface-bright border-[3px] border-on-surface rounded-lg p-8 neo-brutal-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">help</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-6" style="font-family: Fredoka, sans-serif; font-weight: 700;">Sabse Kam Samosas Kiske Paas Hain?</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Option A -->
+<button class="option-card flex flex-col items-center p-6 bg-white border-[3px] border-on-surface rounded-lg neo-brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none group" onclick="selectOption(this)">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full border-[3px] border-on-surface flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="font-headline-md">5</span>
+</div>
+<p class="font-headline-md text-headline-md">Rahul</p>
+</button>
+<!-- Option B -->
+<button class="option-card flex flex-col items-center p-6 bg-white border-[3px] border-on-surface rounded-lg neo-brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none group" onclick="selectOption(this)">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full border-[3px] border-on-surface flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="font-headline-md">2</span>
+</div>
+<p class="font-headline-md text-headline-md">Priya</p>
+</button>
+<!-- Option C -->
+<button class="option-card flex flex-col items-center p-6 bg-white border-[3px] border-on-surface rounded-lg neo-brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none group" onclick="selectOption(this)">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full border-[3px] border-on-surface flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="font-headline-md">8</span>
+</div>
+<p class="font-headline-md text-headline-md">Amit</p>
+</button>
+</div>
+</div>
+<!-- Chat Bubble Decor -->
+<div class="flex items-start gap-4 max-w-2xl">
+<div class="w-12 h-12 rounded-full border-[3px] border-on-surface bg-tertiary-fixed overflow-hidden flex-shrink-0">
+<img alt="Teacher Avatar" class="w-full h-full object-cover" data-alt="A friendly, stylized cartoon female teacher with large expressive eyes and a warm smile, wearing a modern Indian outfit. She is depicted in a high-contrast Neo-Brutalist digital art style with bold black outlines and flat colors, standing against a Warm Chalk background with subtle geometric pops of Mango Orange and Nimbu Green. The mood is encouraging and cheerful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMmYOAskyhfl-LppsDdN8uktCAKXDUK9ntxmLCvlH--lUuZ0cNyeCI9UwwXK9Q_apVwnBn0DNE5V6rRb2Lep2Js1K-uljZ7W7utAgp7wWnRZYwj6ZY_LU_0IZBaLCyEKMy5qTZmf_SBlMyRQAHT5GaepUJuy8SGEWIIQ77KnbRdBgjwRJHFmKQ5h7L1WXbZ2ZfI-vpQbRPqIgzP7tHjQuswwxhe7hYQCWV4T7bcnHfBr5k1Me8Z2MYfnaEnlE4uiEIoIH1pZkiVfVZ">
+</div>
+<div class="bg-white border-[3px] border-on-surface p-4 rounded-lg neo-brutal-shadow relative">
+<div class="absolute -left-3 top-4 w-6 h-6 bg-white border-l-[3px] border-b-[3px] border-on-surface rotate-45"></div>
+<p class="font-body-md text-body-md relative z-10">Look closely! Priya ke paas sirf 2 samosas hain. That is the <span class="font-bold text-tertiary">Minimum value</span> among all three friends.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="quiz" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        function selectOption(el) {
+            // Reset all
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('bg-secondary-container', 'translate-x-[4px]', 'translate-y-[4px]', 'shadow-none');
+                card.classList.add('bg-white');
+            });
+            
+            // Select active
+            el.classList.remove('bg-white');
+            el.classList.add('bg-secondary-container', 'translate-x-[4px]', 'translate-y-[4px]', 'shadow-none');
+            
+            // Trigger a small confetti effect or feedback if correct (Option B is 2)
+            if (el.innerText.includes('2')) {
+                el.style.borderColor = '#006d38';
+                setTimeout(() => {
+                    alert('Sahi Jawab! 2 is the Minimum number.');
+                }, 200);
+            } else {
+                el.style.borderColor = '#ba1a1a';
+            }
+        }
+    </script>
+
+
+</body></html>

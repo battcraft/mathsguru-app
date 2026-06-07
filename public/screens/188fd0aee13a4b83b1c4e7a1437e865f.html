@@ -1,0 +1,227 @@
+<!DOCTYPE html><html class="light" lang="en"><head><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#006d38",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f3",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-tertiary-container": "#67002f",
+                        "surface": "#fbf9f3",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary": "#ba005b",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "outline": "#8e7164",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-container": "#572000",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#5a4136",
+                        "surface-dim": "#dbdad4",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-primary": "#ffb693",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .neo-shadow-none {
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-squish:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation (Generated from JSON guidance) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full border-[3px] border-on-surface bg-surface active:translate-x-[2px] active:translate-y-[2px] transition-all">
+<span class="material-symbols-outlined text-primary font-bold">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-['Fredoka']" style="font-family: 'Fredoka', sans-serif;">Max/Min Video 1: IPL Dhamaka</h1>
+</div>
+<div class="hidden md:flex gap-6 font-label-bold text-label-bold">
+<span class="text-on-surface hover:text-primary cursor-pointer" onclick="window.location.href='max_min_proto_hub'">Home</span>
+<span class="text-muted hover:text-primary cursor-pointer">Chat</span>
+<span class="text-muted hover:text-primary cursor-pointer" onclick="window.location.href='{{DATA:SCREEN:SCREEN_55}}'">Quiz</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="min-h-[calc(100vh-160px)] flex flex-col items-center justify-center p-6 md:p-12">
+<!-- Video Player Section (Neo-Brutalist Frame) -->
+<div class="relative w-full max-w-4xl aspect-video border-[3px] border-on-surface bg-surface-container neo-shadow rounded-lg overflow-hidden group" style="border: 3px solid rgb(26, 26, 26);">
+<!-- Video Poster / Placeholder Illustration -->
+<img alt="IPL Cricket Match Illustration" class="w-full h-full object-cover" data-alt="A vibrant digital illustration of a high-energy cricket match in a packed Indian stadium at night. The art style is bold Neo-Brutalist with thick black outlines and saturated mango oranges and nimbu greens. A batsman in a red jersey is striking a massive shot while a scoreboard in the background highlights the numbers. The lighting is theatrical with neon stadium flares, maintaining a cheerful and educational street-pop aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVyj6sDLWRZ5DyqCQpitlorv2eky0qZOxcJ5t59rXtXY-V4as_SF7zrgEm3DnSQSfSKkksR6muh8yirR8QOOJo0fCLdL4s0oeqf4UEwzmeJ-hHh-Z7UMVq5JYa82d6sdc9wv2vhm-PmuoheEbQ_N63F8yTmE_HiN7JAwwVqbWmal_EE0ltKbhEXN50U4KyZsqQgY5ZWcnaoWs1WkaZgFFUb5U96A6noWRpqkdADZb2W3nHZrIHNBFwerbqwSerMohy2ysiBvwJK9v8">
+<!-- Overlay for Play State -->
+<div class="absolute inset-0 bg-on-background/20 flex items-center justify-center group-hover:bg-on-background/10 transition-colors">
+<button class="w-24 h-24 bg-primary-container text-on-primary-container rounded-full border-[3px] border-on-surface neo-shadow flex items-center justify-center active-squish transition-all" id="playBtn" onclick="window.location.href='{{DATA:SCREEN:SCREEN_61}}'">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Custom Controls UI (Minimalist Overlay) -->
+<div class="absolute bottom-4 left-4 right-4 flex items-center gap-4 bg-surface/90 border-[3px] border-on-surface p-3 rounded-lg neo-shadow">
+<div class="flex-1 h-3 bg-surface-variant border-[2px] border-on-surface rounded-full overflow-hidden">
+<div class="w-1/3 h-full border-r-[2px] border-on-surface bg-[#FF6B00]"></div>
+</div>
+<span class="font-label-lg text-label-lg px-2">12:45 / 45:00</span>
+<span class="material-symbols-outlined cursor-pointer">fullscreen</span>
+</div>
+</div>
+<!-- Subtitle / Intro Section -->
+<div class="mt-10 max-w-2xl text-center space-y-4">
+<div class="inline-block bg-tertiary-container text-on-tertiary-container font-headline-md text-headline-md px-6 py-2 border-[3px] border-on-surface neo-shadow rounded-lg transform -rotate-1 shadow-[4px_4px_0px_#1c1b1b]" style="transform: rotate(1deg) translateY(-4px);">
+                🏏 Game On, Yaar!
+            </div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg leading-tight">
+                Aaj sikhenge King Kohli ke scoreboards se <span class="text-primary underline decoration-[4px] decoration-secondary">maximum</span> aur <span class="text-secondary underline decoration-[4px] decoration-primary">minimum</span>!
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                Discover how to find the highest and lowest scores in a data set while cheering for your favorite cricket legends.
+            </p>
+<div class="pt-6 flex flex-wrap justify-center gap-4">
+<button class="bg-primary-container text-on-primary-container font-headline-md px-10 py-4 border-[3px] border-on-surface neo-shadow rounded-lg active-squish transition-all hover:bg-opacity-90" onclick="window.location.href='{{DATA:SCREEN:SCREEN_61}}'">
+                    Start Learning!
+                </button>
+<button class="bg-surface text-on-surface font-headline-md px-10 py-4 border-[3px] border-on-surface neo-shadow rounded-lg active-squish transition-all hover:bg-surface-container" onclick="window.location.href='{{DATA:SCREEN:SCREEN_51}}'">
+                    View Recap
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only - Generated from JSON guidance) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<div class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110" onclick="window.location.href='max_min_proto_hub'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-[10px]">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted" onclick="window.location.href='{{DATA:SCREEN:SCREEN_55}}'">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-[10px]">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted" onclick="window.location.href='kahani_mode_placeholder'">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-[10px]">Story</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-[10px]">Report</span>
+</div>
+</nav>
+<script>
+        // Simple Interaction logic
+        const playBtn = document.getElementById('playBtn');
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            const icon = playBtn.querySelector('.material-symbols-outlined');
+            icon.innerText = isPlaying ? 'pause' : 'play_arrow';
+            
+            // Add a small bounce effect on play
+            playBtn.classList.add('scale-110');
+            setTimeout(() => playBtn.classList.remove('scale-110'), 200);
+        });
+
+        // Add floating animation to the intro tag
+        const tag = document.querySelector('.transform.-rotate-1');
+        let floatUp = true;
+        setInterval(() => {
+            tag.style.transform = floatUp ? 'rotate(1deg) translateY(-4px)' : 'rotate(-1deg) translateY(0px)';
+            floatUp = !floatUp;
+        }, 2000);
+    </script>
+
+
+
+
+</body></html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparing Money - Ganit Pop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container": "#eeeeee",
+                "on-background": "#1a1c1c",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#6f3800",
+                "surface-tint": "#b80069",
+                "primary-fixed": "#ffd9e3",
+                "secondary": "#924c00",
+                "surface-bright": "#f9f9f9",
+                "primary": "#b40067",
+                "on-primary-fixed-variant": "#8d004f",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e2e2e2",
+                "on-primary-container": "#fffbff",
+                "secondary-container": "#f88400",
+                "outline": "#8d6f78",
+                "on-error": "#ffffff",
+                "surface-variant": "#e2e2e2",
+                "tertiary": "#705d00",
+                "primary-fixed-dim": "#ffb0cb",
+                "on-tertiary-fixed": "#221b00",
+                "on-primary": "#ffffff",
+                "on-secondary-container": "#5b2d00",
+                "on-primary-fixed": "#3e0020",
+                "on-tertiary-container": "#4c3f00",
+                "secondary-fixed": "#ffdcc4",
+                "inverse-primary": "#ffb0cb",
+                "secondary-fixed-dim": "#ffb781",
+                "surface-container-low": "#f3f3f4",
+                "background": "#f9f9f9",
+                "surface": "#f9f9f9",
+                "surface-container-high": "#e8e8e8",
+                "on-secondary": "#ffffff",
+                "inverse-surface": "#2f3131",
+                "on-surface-variant": "#5a3f48",
+                "on-error-container": "#93000a",
+                "surface-container-lowest": "#ffffff",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffe16d",
+                "on-tertiary-fixed-variant": "#544600",
+                "on-secondary-fixed": "#2f1400",
+                "tertiary-fixed-dim": "#e9c400",
+                "surface-dim": "#dadada",
+                "outline-variant": "#e1bdc7",
+                "primary-container": "#df0b81",
+                "on-surface": "#1a1c1c",
+                "inverse-on-surface": "#f0f1f1",
+                "tertiary-container": "#c9a900"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-desktop": "32px",
+                "margin-mobile": "16px",
+                "border-width": "3px",
+                "gutter": "16px",
+                "unit": "8px",
+                "shadow-offset": "4px"
+        },
+        "fontFamily": {
+                "headline-lg": ["Fredoka"],
+                "label-bold": ["Nunito Sans"],
+                "body-md": ["Nunito Sans"],
+                "body-lg": ["Nunito Sans"],
+                "headline-xl": ["Fredoka"],
+                "headline-md": ["Fredoka"],
+                "headline-xl-mobile": ["Fredoka"]
+        },
+        "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+        }
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.surface');
+    background-image: radial-gradient(theme('colors.surface-dim') 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+  }
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+  .neo-shadow-active {
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+  }
+  .neo-border {
+    border: 3px solid #000;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md min-h-screen flex flex-col pt-[72px] pb-[80px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim flex items-center justify-between px-margin-mobile py-unit shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-b-[3px] border-on-surface dark:border-on-surface-variant">
+<div class="flex items-center gap-2">
+<button aria-label="Go back" class="hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none p-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">Ganit Pop</h1>
+</div>
+</header>
+<main class="flex-grow w-full max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-8 flex flex-col gap-8">
+<!-- Hero Section -->
+<section class="w-full bg-tertiary-fixed neo-border neo-shadow p-6 md:p-10 rounded-lg flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
+<!-- Decorative Element -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-container rounded-full neo-border opacity-20"></div>
+<div class="flex-1 z-10 flex flex-col gap-4">
+<div class="inline-block bg-primary px-3 py-1 neo-border text-on-primary font-label-bold text-label-bold w-max self-start transform -rotate-2">Concept Explainer</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Comparing Money</h2>
+<p class="font-body-lg text-body-lg text-on-surface max-w-prose font-bold">Why is currency the best way to understand comparison? Because everyone knows exactly what it's worth!</p>
+</div>
+<div class="flex-1 w-full flex justify-center z-10">
+<div class="relative w-full max-w-sm aspect-[4/3] bg-surface rounded-lg neo-border neo-shadow flex items-center justify-center p-4">
+<img alt="A flat lay composition of various Indian currency notes and coins scattered on a vibrant yellow background. The lighting is harsh and direct, creating strong neo-brutalist shadows that pop off the page. The scene includes bright pink 2000 rupee notes and green 500 rupee notes, styled in a bold, graphic manner consistent with a youthful, street-culture aesthetic." class="w-full h-full object-cover rounded border-2 border-black" data-alt="A flat lay composition of various Indian currency notes and coins scattered on a vibrant yellow background. The lighting is harsh and direct, creating strong neo-brutalist shadows that pop off the page. The scene includes bright pink 2000 rupee notes and green 500 rupee notes, styled in a bold, graphic manner consistent with a youthful, street-culture aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJORx7s7QVnJIpRVJ2PDuZbl9XC17znIy0D69Sr9XcA83ya1Nxvi5N18NaSFQLnNHPx-nyC_yeknk0UY1nNVRVpLEN1ezJcO6zvp2vdkM4TNK8QUhcGODiZihhLrpNhVyB3QN8-42VPzCMRCI0I8PBS2PUBS_C9wvoPzrUoeNwMuyPwcrC2Npou-GVqWzWQoVOE3NkyWW-k9wP93P9RkFL-lq17nmD4AqVbGLUZaVg5o5NzImU7nQnkljDT-pk02gkqPRt9zLao5QS"/>
+</div>
+</div>
+</section>
+<!-- The Core Concept: Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="col-span-1 md:col-span-2 bg-surface neo-border neo-shadow rounded-lg overflow-hidden flex flex-col">
+<div class="border-b-[3px] border-black p-4 bg-primary-container text-on-primary-container flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md">The Ultimate Test</h3>
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="p-6 flex-grow flex flex-col items-center justify-center gap-6 relative">
+<div class="flex items-center gap-4 w-full justify-around relative z-10">
+<div class="flex flex-col items-center gap-2 transform hover:scale-105 transition-transform">
+<div class="w-24 h-12 bg-[#8bc34a] neo-border neo-shadow flex items-center justify-center rounded">
+<span class="font-headline-md text-headline-md text-black font-bold">₹500</span>
+</div>
+<span class="font-label-bold text-label-bold">Bada Hai!</span>
+</div>
+<div class="text-primary-container font-headline-xl text-headline-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl" data-icon="chevron_right" data-weight="fill">chevron_right</span>
+</div>
+<div class="flex flex-col items-center gap-2 transform hover:scale-95 transition-transform">
+<div class="w-20 h-10 bg-[#03a9f4] neo-border flex items-center justify-center rounded">
+<span class="font-label-bold text-label-bold text-black font-bold">₹50</span>
+</div>
+<span class="font-label-bold text-label-bold opacity-70">Chhota Hai</span>
+</div>
+</div>
+<!-- decorative math symbol -->
+<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+<span class="font-headline-xl text-[120px]">&gt;</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="col-span-1 bg-secondary-container neo-border neo-shadow rounded-lg p-6 flex flex-col gap-4 text-on-secondary-container relative">
+<h3 class="font-headline-md text-headline-md">Why use money?</h3>
+<ul class="flex flex-col gap-3 font-body-md text-body-md mt-2">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined mt-0.5 text-primary" data-icon="check_box">check_box</span>
+<span>It's real and tangible.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined mt-0.5 text-primary" data-icon="check_box">check_box</span>
+<span>We use it every single day.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined mt-0.5 text-primary" data-icon="check_box">check_box</span>
+<span>Making a mistake hurts (literally!).</span>
+</li>
+</ul>
+<div class="mt-auto pt-4 flex justify-end">
+<div class="w-12 h-12 bg-primary rounded-full neo-border neo-shadow flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="lightbulb" data-weight="fill">lightbulb</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Concept Area -->
+<section class="bg-surface neo-border neo-shadow rounded-lg p-6 flex flex-col gap-6">
+<div class="flex items-center gap-3 border-b-[3px] border-black pb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="compare_arrows">compare_arrows</span>
+<h3 class="font-headline-md text-headline-md">Practice Comparing</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Scenario 1 -->
+<div class="flex flex-col gap-4 bg-surface-container-low p-4 neo-border rounded">
+<p class="font-label-bold text-label-bold uppercase tracking-wider text-primary">Scenario 1</p>
+<div class="flex justify-between items-center bg-white p-4 neo-border">
+<div class="flex gap-1">
+<span class="w-8 h-8 rounded-full bg-amber-400 neo-border flex items-center justify-center font-bold text-xs">₹5</span>
+<span class="w-8 h-8 rounded-full bg-amber-400 neo-border flex items-center justify-center font-bold text-xs">₹5</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-sm font-label-bold mb-1">vs</span>
+<select class="neo-border rounded bg-surface p-1 text-center font-bold focus:ring-0 focus:outline-none focus:shadow-[4px_4px_0px_0px_#f88400]">
+<option>?</option>
+<option>&gt;</option>
+<option>&lt;</option>
+<option>=</option>
+</select>
+</div>
+<div class="flex">
+<span class="w-12 h-12 rounded-full bg-slate-300 neo-border flex items-center justify-center font-bold text-sm">₹10</span>
+</div>
+</div>
+</div>
+<!-- Scenario 2 -->
+<div class="flex flex-col gap-4 bg-surface-container-low p-4 neo-border rounded">
+<p class="font-label-bold text-label-bold uppercase tracking-wider text-primary">Scenario 2</p>
+<div class="flex justify-between items-center bg-white p-4 neo-border">
+<div class="w-16 h-8 bg-[#8bc34a] neo-border flex items-center justify-center rounded">
+<span class="font-label-bold text-label-bold text-black font-bold text-xs">₹500</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-sm font-label-bold mb-1">vs</span>
+<select class="neo-border rounded bg-surface p-1 text-center font-bold focus:ring-0 focus:outline-none focus:shadow-[4px_4px_0px_0px_#f88400]">
+<option>?</option>
+<option>&gt;</option>
+<option>&lt;</option>
+<option>=</option>
+</select>
+</div>
+<div class="flex gap-1 flex-wrap w-24 justify-end">
+<div class="w-10 h-6 bg-[#ff9800] neo-border flex items-center justify-center rounded mb-1"><span class="text-[10px] font-bold">₹200</span></div>
+<div class="w-10 h-6 bg-[#ff9800] neo-border flex items-center justify-center rounded mb-1"><span class="text-[10px] font-bold">₹200</span></div>
+<div class="w-10 h-6 bg-[#03a9f4] neo-border flex items-center justify-center rounded"><span class="text-[10px] font-bold">₹50</span></div>
+</div>
+</div>
+</div>
+</div>
+<button class="self-center mt-4 bg-primary text-on-primary neo-border neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all px-8 py-3 rounded font-headline-md text-headline-md">
+            Check Answers
+        </button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden flex justify-around items-center h-20 px-margin-mobile bg-surface dark:bg-surface-container-high fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface dark:border-on-surface-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<div class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</div>
+<div class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</div>
+<div class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform p-2 rounded">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</div>
+<div class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary border-[3px] border-on-surface dark:border-on-surface-variant px-4 py-1 rounded-lg flex flex-col items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</div>
+</nav>
+</body></html>

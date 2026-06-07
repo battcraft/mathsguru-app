@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Final Panga! - Ganit Pop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-secondary-container": "#00743c",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#a04100",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-variant": "#e4e2dd",
+                        "on-secondary-fixed": "#00210d",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-primary-fixed": "#351000",
+                        "outline-variant": "#e2bfb0",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#ba005b",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#63ff9d",
+                        "outline": "#8e7164",
+                        "primary-fixed": "#ffdbcc",
+                        "surface-container-low": "#f5f3ee",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "inverse-surface": "#30312d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "inverse-primary": "#ffb693",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "secondary": "#006d38",
+                        "secondary-container": "#63ff9d",
+                        "on-primary-container": "#572000",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a4136",
+                        "primary": "#a04100",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary-container": "#67002f",
+                        "background": "#fbf9f3",
+                        "on-surface": "#1b1c19",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-high": "#eae8e2",
+                        "error": "#ba1a1a",
+                        "primary-container": "#ff6b00"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "unit": "8px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-xl-mobile": ["36px", { lineHeight: "1.1", fontWeight: "800" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "1.2", fontWeight: "800" }],
+                        "label-lg": ["14px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "headline-xl": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .neo-shadow-sm { box-shadow: 2px 2px 0px 0px rgba(0,0,0,1); }
+        .neo-interactive:active {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+            transform: translate(4px, 4px);
+        }
+        .neo-border { border: 3px solid #1b1c19; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar Semantic Shell -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit">
+<button class="text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-icon="arrow_back" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<div class="font-headline-lg-mobile md:font-headline-lg font-bold text-primary uppercase tracking-tighter">
+            Ganit Pop
+        </div>
+<div class="w-[28px]"></div> <!-- Spacer for balance -->
+</header>
+<main class="max-w-container-max-width mx-auto px-margin-mobile py-margin-desktop space-y-8">
+<!-- Header & Stats -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-on-surface">Final Panga!</h1>
+<div class="flex gap-4 w-full md:w-auto">
+<div class="bg-surface-variant neo-border rounded-DEFAULT px-4 py-2 flex items-center gap-2 neo-shadow flex-1 justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="timer">timer</span>
+<span class="font-label-lg text-on-surface font-bold">08:45</span>
+</div>
+<div class="bg-surface-variant neo-border rounded-DEFAULT px-4 py-2 flex items-center gap-2 neo-shadow flex-1 justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-lg text-on-surface font-bold">Score: 450</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="space-y-2">
+<div class="flex justify-between text-on-surface-variant font-label-lg">
+<span>Question 4 of 10</span>
+<span>Max/Min Module</span>
+</div>
+<div class="w-full h-8 bg-surface-variant neo-border rounded-full overflow-hidden flex">
+<!-- 10 segments -->
+<div class="h-full flex-1 bg-secondary-container border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 bg-secondary-container border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 bg-secondary-container border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 bg-secondary-container border-r-[3px] border-on-surface relative overflow-hidden">
+<!-- Animated active state could go here -->
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+<div class="h-full flex-1 border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1 border-r-[3px] border-on-surface"></div>
+<div class="h-full flex-1"></div>
+</div>
+</div>
+<!-- Question Card -->
+<div class="bg-surface neo-border rounded-lg neo-shadow overflow-hidden">
+<div class="bg-surface-variant p-6 border-b-[3px] border-on-surface">
+<h2 class="font-headline-md md:font-headline-lg text-on-surface">
+                    Find the <span class="text-tertiary">MAXIMUM</span> and <span class="text-primary-container">RANGE</span> of this data set:
+                </h2>
+<div class="mt-4 flex flex-wrap gap-3">
+<span class="bg-primary-fixed neo-border px-4 py-2 rounded-full font-label-lg text-on-surface neo-shadow-sm">45</span>
+<span class="bg-primary-fixed neo-border px-4 py-2 rounded-full font-label-lg text-on-surface neo-shadow-sm">12</span>
+<span class="bg-primary-fixed neo-border px-4 py-2 rounded-full font-label-lg text-on-surface neo-shadow-sm">89</span>
+<span class="bg-primary-fixed neo-border px-4 py-2 rounded-full font-label-lg text-on-surface neo-shadow-sm">23</span>
+<span class="bg-primary-fixed neo-border px-4 py-2 rounded-full font-label-lg text-on-surface neo-shadow-sm">5</span>
+</div>
+</div>
+<!-- Options -->
+<div class="p-6 space-y-4">
+<button class="w-full text-left bg-surface hover:bg-surface-variant neo-border rounded-DEFAULT p-4 flex items-center gap-4 neo-shadow neo-interactive transition-colors group">
+<div class="w-10 h-10 rounded-full bg-surface-variant border-[3px] border-on-surface flex items-center justify-center font-headline-md group-hover:bg-primary-fixed transition-colors">A</div>
+<span class="font-body-lg text-on-surface">Max: 89, Range: 84</span>
+</button>
+<button class="w-full text-left bg-surface hover:bg-surface-variant neo-border rounded-DEFAULT p-4 flex items-center gap-4 neo-shadow neo-interactive transition-colors group">
+<div class="w-10 h-10 rounded-full bg-surface-variant border-[3px] border-on-surface flex items-center justify-center font-headline-md group-hover:bg-primary-fixed transition-colors">B</div>
+<span class="font-body-lg text-on-surface">Max: 89, Range: 40</span>
+</button>
+<button class="w-full text-left bg-surface hover:bg-surface-variant neo-border rounded-DEFAULT p-4 flex items-center gap-4 neo-shadow neo-interactive transition-colors group">
+<div class="w-10 h-10 rounded-full bg-surface-variant border-[3px] border-on-surface flex items-center justify-center font-headline-md group-hover:bg-primary-fixed transition-colors">C</div>
+<span class="font-body-lg text-on-surface">Max: 45, Range: 84</span>
+</button>
+<button class="w-full text-left bg-surface hover:bg-surface-variant neo-border rounded-DEFAULT p-4 flex items-center gap-4 neo-shadow neo-interactive transition-colors group">
+<div class="w-10 h-10 rounded-full bg-surface-variant border-[3px] border-on-surface flex items-center justify-center font-headline-md group-hover:bg-primary-fixed transition-colors">D</div>
+<span class="font-body-lg text-on-surface">Max: 45, Range: 40</span>
+</button>
+</div>
+</div>
+<!-- MathsGuru Tip -->
+<div class="bg-tertiary-fixed neo-border rounded-DEFAULT p-4 flex items-start gap-4 neo-shadow-sm relative -rotate-1 transform-gpu">
+<span class="material-symbols-outlined text-[32px] text-tertiary bg-surface rounded-full p-2 neo-border" data-icon="tips_and_updates" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+<div>
+<p class="font-label-lg text-on-surface font-bold uppercase mb-1">MathsGuru Bhaiya Says:</p>
+<p class="font-body-md text-on-surface">"Arre boss, Range is just the biggest number minus the smallest number. Easy peasy!"</p>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-4 flex justify-end">
+<button class="w-full md:w-auto bg-primary-container hover:bg-primary text-on-primary font-headline-md md:font-headline-lg px-8 py-4 neo-border rounded-DEFAULT neo-shadow neo-interactive uppercase tracking-wide flex items-center justify-center gap-2">
+                SUBMIT ATTACK ⚔️
+            </button>
+</div>
+</main>
+<!-- BottomNavBar Semantic Shell (Mobile Only for Quiz, though usually suppressed on linear flows, keeping it per 'shared component' rules if this is a main 'Quiz' destination. The JSON specifies "Quiz" as an option. Since it's a specific question, it might be debatable, but sticking strictly to the component list if required. Actually, rule says: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional... Task-Focused". A quiz screen is highly task focused. Therefore, SUPPRESS BottomNavBar.) -->
+<!-- Navigation intentionally suppressed due to linear/task-focused page intent. -->
+</body></html>

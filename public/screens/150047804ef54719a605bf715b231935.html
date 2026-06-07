@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti - Completion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#ff6096",
+                        "on-tertiary-container": "#67002f",
+                        "on-secondary-fixed": "#00210d",
+                        "on-surface": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-bright": "#fbf9f3",
+                        "outline-variant": "#e2bfb0",
+                        "inverse-primary": "#ffb693",
+                        "tertiary-fixed": "#ffd9e1",
+                        "secondary-fixed-dim": "#40e183",
+                        "tertiary": "#ba005b",
+                        "primary": "#a04100",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f3",
+                        "inverse-surface": "#30312d",
+                        "secondary-fixed": "#63ff9d",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8e7164",
+                        "secondary-container": "#63ff9d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a04100",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-background": "#1b1c19",
+                        "secondary": "#006d38",
+                        "on-tertiary-fixed": "#3f001a",
+                        "error": "#ba1a1a",
+                        "primary-container": "#ff6b00",
+                        "inverse-on-surface": "#f2f1eb",
+                        "surface-dim": "#dbdad4",
+                        "primary-fixed": "#ffdbcc",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-primary-container": "#572000",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5a4136",
+                        "surface-container": "#f0eee8",
+                        "on-primary-fixed": "#351000",
+                        "background": "#fbf9f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutal-border {
+            border: 3px solid #1b1c19;
+        }
+        .neo-brutal-shadow {
+            box-shadow: 4px 4px 0px 0px #1b1c19;
+        }
+        .neo-brutal-shadow-sm {
+            box-shadow: 2px 2px 0px 0px #1b1c19;
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #dbdad4 1px, transparent 1px), linear-gradient(to bottom, #dbdad4 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .hover-lift:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #1b1c19;
+        }
+        .active-squish:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #1b1c19;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface bg-grid-pattern min-h-screen flex flex-col font-body-md antialiased pb-24 md:pb-0">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sticky top-0 md:px-margin-desktop">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full neo-brutal-border bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A vibrant, stylized portrait photo of an Indian student smiling, lit with energetic neon colors, fitting a high-contrast pop-art aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh8n-Wgq6spYZy7WKOA64YzHgnTpSPRtlapOITj1QXQz2gLj8TvkhW_OE9cZ_93XldtgMuBMYus0mmDoNI0bWK5ew3m8mbOtrB59Xb82_Zom92DABYBaKGmIpiT9uBYk46r1oRWBLbuhp4nt67_PHrfOwiC2N7CyGrTpyVQaQNb8e12QYpulCfpgpCGNVqEbOYWCiiIvFH5jJMDxKCr73Wf5BRZkJ4c-Wzc7TPY6NGJAFUvCvBWiz1kFt5RVQGPGm7oGmEHUYFcbKe"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Math-Masti</span>
+</div>
+<div class="flex items-center">
+<span class="font-label-lg text-label-lg mr-1 text-on-surface">12</span>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-4 py-6 w-full max-w-container-max-width mx-auto md:px-margin-desktop gap-6">
+<!-- Hero Section -->
+<section class="w-full flex flex-col items-center text-center mt-4">
+<div class="relative w-32 h-32 mb-4 animate-bounce">
+<!-- Confetti Background simulated with colored divs -->
+<div class="absolute top-0 left-0 w-4 h-4 bg-tertiary-container rounded-sm neo-brutal-border -rotate-12 animate-pulse"></div>
+<div class="absolute top-4 right-2 w-3 h-3 bg-secondary-container rounded-full neo-brutal-border rotate-45 animate-pulse" style="animation-delay: 0.2s;"></div>
+<div class="absolute bottom-2 left-4 w-5 h-2 bg-primary-container neo-brutal-border rotate-12 animate-pulse" style="animation-delay: 0.4s;"></div>
+<div class="absolute bottom-8 right-0 w-4 h-4 bg-inverse-primary rounded-sm neo-brutal-border rotate-45 animate-pulse" style="animation-delay: 0.1s;"></div>
+<div class="w-full h-full bg-[#ffd9e1] rounded-full neo-brutal-border neo-brutal-shadow flex items-center justify-center z-10 relative">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">trophy</span>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2 max-w-[300px]">
+                Kamaal kar diya! Numbers ka baap ban gaye!
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Module Completed Successfully</p>
+</section>
+<!-- Stats Grid -->
+<section class="w-full grid grid-cols-2 gap-4 mt-2">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT neo-brutal-border neo-brutal-shadow p-4 flex flex-col items-start">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">format_list_numbered</span>
+<span class="font-body-md text-body-md text-on-surface-variant mb-1">Attempted</span>
+<span class="font-headline-md text-headline-md text-on-surface">250</span>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT neo-brutal-border neo-brutal-shadow p-4 flex flex-col items-start">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">radar</span>
+<span class="font-body-md text-body-md text-on-surface-variant mb-1">Accuracy</span>
+<span class="font-headline-md text-headline-md text-secondary">92%</span>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest rounded-DEFAULT neo-brutal-border neo-brutal-shadow p-4 flex flex-col items-start">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">timer</span>
+<span class="font-body-md text-body-md text-on-surface-variant mb-1">Time Taken</span>
+<span class="font-headline-md text-headline-md text-on-surface">45m 12s</span>
+</div>
+<!-- Stat Card 4 (XP) -->
+<div class="bg-primary-container rounded-DEFAULT neo-brutal-border neo-brutal-shadow p-4 flex flex-col items-start relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-20">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="material-symbols-outlined text-on-primary-container mb-2 relative z-10" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-body-md text-body-md text-on-primary-container mb-1 relative z-10">XP Earned</span>
+<span class="font-headline-md text-headline-md text-on-primary-container relative z-10">+450 XP</span>
+</div>
+</section>
+<!-- Badges Section -->
+<section class="w-full mt-4 bg-surface-container-low rounded-lg neo-brutal-border neo-brutal-shadow p-5">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4 border-b-[3px] border-on-surface pb-2">Badges Achieved</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Badge 1 -->
+<div class="flex items-center gap-3 bg-surface-container-lowest p-2 rounded-lg neo-brutal-border neo-brutal-shadow-sm">
+<div class="w-10 h-10 bg-[#ffd9e1] rounded-full neo-brutal-border flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">crown</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Comparison<br/>King</span>
+</div>
+</div>
+<!-- Badge 2 -->
+<div class="flex items-center gap-3 bg-surface-container-lowest p-2 rounded-lg neo-brutal-border neo-brutal-shadow-sm">
+<div class="w-10 h-10 bg-secondary-container rounded-full neo-brutal-border flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">sort</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Order<br/>Master</span>
+</div>
+</div>
+<!-- Badge 3 -->
+<div class="flex items-center gap-3 bg-surface-container-lowest p-2 rounded-lg neo-brutal-border neo-brutal-shadow-sm">
+<div class="w-10 h-10 bg-inverse-primary rounded-full neo-brutal-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">scatter_plot</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Decimal<br/>Expert</span>
+</div>
+</div>
+<!-- Badge 4 (Locked) -->
+<div class="flex items-center gap-3 bg-surface-dim p-2 rounded-lg border-[3px] border-outline-variant border-dashed">
+<div class="w-10 h-10 bg-surface-variant rounded-full flex items-center justify-center grayscale opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant">track_changes</span>
+</div>
+<div class="flex flex-col opacity-60 grayscale">
+<span class="font-label-lg text-label-lg text-on-surface-variant leading-tight">Rounding<br/>Champ</span>
+<span class="text-[10px] font-bold mt-1 bg-surface-variant px-1 rounded inline-block w-max uppercase">Locked</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="w-full flex flex-col gap-4 mt-6 mb-8">
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-headline-md text-headline-md rounded-lg neo-brutal-border neo-brutal-shadow transition-all active-squish flex items-center justify-center gap-2">
+                Next Module: Algebra
+                <span class="material-symbols-outlined" style="font-variation-settings: 'wght' 700;">arrow_forward</span>
+</button>
+<button class="w-full py-3 bg-surface-container-lowest text-on-surface font-label-lg text-label-lg rounded-lg neo-brutal-border neo-brutal-shadow transition-all active-squish flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">share</span>
+                Share Result
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Hidden on md and above) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] md:hidden rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:scale-95 transition-transform duration-100 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:scale-95 transition-transform duration-100 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg mt-1">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:scale-95 transition-transform duration-100 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</button>
+</nav>
+</body></html>

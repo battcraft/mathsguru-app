@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Find the Vertex! - Ganit Pop</title>
+<!-- Google Fonts: Bricolage Grotesque (Headlines) & Nunito Sans (Body/Labels) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-tertiary-container": "#67002f",
+                    "surface-container": "#f0eee8",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dbdad4",
+                    "surface-container-highest": "#e4e2dd",
+                    "tertiary-fixed": "#ffd9e1",
+                    "outline-variant": "#e2bfb0",
+                    "on-surface-variant": "#5a4136",
+                    "primary": "#a04100",
+                    "surface-container-low": "#f5f3ee",
+                    "inverse-surface": "#30312d",
+                    "on-background": "#1b1c19",
+                    "outline": "#8e7164",
+                    "surface-variant": "#e4e2dd",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-fixed": "#63ff9d",
+                    "background": "#fbf9f3",
+                    "on-primary-fixed": "#351000",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "secondary-container": "#63ff9d",
+                    "tertiary-container": "#ff6096",
+                    "on-surface": "#1b1c19",
+                    "on-secondary-fixed-variant": "#005229",
+                    "primary-container": "#ff6b00",
+                    "secondary": "#006d38",
+                    "on-secondary-container": "#00743c",
+                    "on-primary-container": "#572000",
+                    "inverse-primary": "#ffb693",
+                    "primary-fixed": "#ffdbcc",
+                    "surface": "#fbf9f3",
+                    "surface-tint": "#a04100",
+                    "on-tertiary-fixed": "#3f001a",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "primary-fixed-dim": "#ffb693",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "surface-bright": "#fbf9f3",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#00210d",
+                    "tertiary": "#ba005b",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max-width": "1200px",
+                    "margin-desktop": "40px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Nunito Sans"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                    "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                    "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Neo-Brutalist utility classes for interactions not easily handled by standard Tailwind */
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px #1b1c19;
+        }
+        .brutal-active:active {
+            box-shadow: 0px 0px 0px 0px #1b1c19;
+            transform: translate(4px, 4px);
+        }
+        
+        /* Math Chip Selection States */
+        .dot-selected-correct {
+            background-color: #63ff9d !important; /* secondary-container */
+            color: #00743c !important; /* on-secondary-container */
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #1b1c19 !important;
+        }
+        .dot-selected-wrong {
+            background-color: #ffdad6 !important; /* error-container */
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_#1b1c19] flex items-center justify-between px-margin-mobile py-unit transition-all">
+<div class="flex items-center gap-3">
+<button aria-label="Go Back" class="flex items-center justify-center text-primary font-headline-md text-headline-md hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-primary uppercase tracking-tighter">Ganit Pop</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile py-8 pb-32 flex flex-col gap-6">
+<!-- Instruction Card -->
+<div class="bg-primary-fixed border-[3px] border-on-surface brutal-shadow rounded-DEFAULT p-5 relative overflow-hidden">
+<!-- Decorative pattern behind text -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#1b1c19 2px, transparent 2px); background-size: 16px 16px;"></div>
+<div class="relative z-10">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-on-primary-fixed mb-2">Find the Vertex!</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant font-bold">Har Kiran ka starting point (Vertex) pehchano!</p>
+</div>
+</div>
+<!-- Activity Grid / List -->
+<div class="flex flex-col gap-8 mt-4">
+<!-- Ray Challenge 1: Pointing Right -->
+<div class="bg-surface border-[3px] border-on-surface brutal-shadow rounded-DEFAULT p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center border-b-[3px] border-on-surface pb-2">
+<span class="font-headline-md text-headline-md">1. Kiran PXY</span>
+<span class="material-symbols-outlined text-primary-container" data-icon="east" style="font-variation-settings: 'FILL' 1;">east</span>
+</div>
+<div class="relative w-full h-24 flex items-center mt-4">
+<!-- Line -->
+<div class="absolute left-[10%] right-[10%] h-[4px] bg-on-surface z-0"></div>
+<!-- Arrowhead -->
+<div class="absolute right-[8%] w-5 h-5 border-t-[4px] border-r-[4px] border-on-surface transform rotate-45 z-0"></div>
+<!-- Interactive Dots -->
+<button class="ray-dot absolute left-[10%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center font-headline-md text-headline-md text-on-surface hover:-translate-y-1 transition-transform z-10 focus:outline-none focus:ring-4 focus:ring-primary-container" data-correct="true">P</button>
+<button class="ray-dot absolute left-[45%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center font-headline-md text-headline-md text-on-surface hover:-translate-y-1 transition-transform z-10 focus:outline-none focus:ring-4 focus:ring-primary-container" data-correct="false">X</button>
+<button class="ray-dot absolute left-[80%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center font-headline-md text-headline-md text-on-surface hover:-translate-y-1 transition-transform z-10 focus:outline-none focus:ring-4 focus:ring-primary-container" data-correct="false">Y</button>
+</div>
+</div>
+<!-- Ray Challenge 2: Pointing Left -->
+<div class="bg-surface-container border-[3px] border-on-surface brutal-shadow rounded-DEFAULT p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center border-b-[3px] border-on-surface pb-2">
+<span class="font-headline-md text-headline-md">2. Kiran QAB</span>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="west" style="font-variation-settings: 'FILL' 1;">west</span>
+</div>
+<div class="relative w-full h-24 flex items-center mt-4">
+<!-- Line -->
+<div class="absolute left-[10%] right-[10%] h-[4px] bg-on-surface z-0"></div>
+<!-- Arrowhead (Left) -->
+<div class="absolute left-[8%] w-5 h-5 border-b-[4px] border-l-[4px] border-on-surface transform rotate-45 z-0"></div>
+<!-- Interactive Dots (Vertex is on the right this time) -->
+<button class="ray-dot absolute left-[20%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center font-headline-md text-headline-md text-on-surface hover:-translate-y-1 transition-transform z-10 focus:outline-none focus:ring-4 focus:ring-tertiary-container" data-correct="false">B</button>
+<button class="ray-dot absolute left-[55%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center font-headline-md text-headline-md text-on-surface hover:-translate-y-1 transition-transform z-10 focus:outline-none focus:ring-4 focus:ring-tertiary-container" data-correct="false">A</button>
+<button class="ray-dot absolute right-[10%] translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-[#ffdbcc] brutal-shadow flex items-center justify-center font-headline-md text-headline-md text-on-surface hover:-translate-y-1 transition-transform z-10 focus:outline-none focus:ring-4 focus:ring-tertiary-container" data-correct="true">Q</button>
+</div>
+</div>
+<!-- Ray Challenge 3: Angled Down-Right -->
+<div class="bg-surface border-[3px] border-on-surface brutal-shadow rounded-DEFAULT p-6 flex flex-col gap-4 overflow-hidden">
+<div class="flex justify-between items-center border-b-[3px] border-on-surface pb-2">
+<span class="font-headline-md text-headline-md">3. Kiran RMN</span>
+<span class="material-symbols-outlined text-secondary-container transform rotate-45" data-icon="south_east" style="font-variation-settings: 'FILL' 1;">south_east</span>
+</div>
+<div class="relative w-full h-32 flex items-center justify-center mt-2">
+<!-- Rotated Container for the Ray itself -->
+<div class="absolute w-full h-full flex items-center justify-center transform rotate-[15deg]">
+<!-- Line -->
+<div class="absolute left-[15%] right-[15%] h-[4px] bg-on-surface z-0"></div>
+<!-- Arrowhead (Right/Down) -->
+<div class="absolute right-[13%] w-5 h-5 border-t-[4px] border-r-[4px] border-on-surface transform rotate-45 z-0"></div>
+<!-- Interactive Dots. To keep text upright, we counter-rotate the content -->
+<button class="ray-dot absolute left-[15%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center text-on-surface hover:scale-110 transition-transform z-10 focus:outline-none" data-correct="true">
+<span class="font-headline-md text-headline-md block transform -rotate-[15deg]">R</span>
+</button>
+<button class="ray-dot absolute left-[50%] -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center text-on-surface hover:scale-110 transition-transform z-10 focus:outline-none" data-correct="false">
+<span class="font-headline-md text-headline-md block transform -rotate-[15deg]">M</span>
+</button>
+<button class="ray-dot absolute right-[25%] translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-on-surface bg-surface brutal-shadow flex items-center justify-center text-on-surface hover:scale-110 transition-transform z-10 focus:outline-none" data-correct="false">
+<span class="font-headline-md text-headline-md block transform -rotate-[15deg]">N</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_#1b1c19] flex justify-around items-center h-20 px-margin-mobile bg-surface md:hidden transition-all">
+<!-- Home -->
+<button class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform rounded-lg px-4 py-1">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<!-- Chat -->
+<button class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform rounded-lg px-4 py-1">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</button>
+<!-- Quiz (ACTIVE) -->
+<button class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg hover:bg-surface-variant active:scale-95 transition-transform flex flex-col items-center gap-1">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</button>
+<!-- Story -->
+<button class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform rounded-lg px-4 py-1">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</button>
+</nav>
+<!-- Interactive Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dots = document.querySelectorAll('.ray-dot');
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    // Reset styling on siblings within the same ray card
+                    const siblings = this.parentElement.querySelectorAll('.ray-dot');
+                    siblings.forEach(s => {
+                        s.classList.remove('dot-selected-correct', 'dot-selected-wrong');
+                    });
+
+                    // Check if correct
+                    const isCorrect = this.getAttribute('data-correct') === 'true';
+                    
+                    if (isCorrect) {
+                        this.classList.add('dot-selected-correct');
+                        // Optional: Add a small confetti or success sound logic here
+                    } else {
+                        this.classList.add('dot-selected-wrong');
+                        // Remove the wrong class after animation completes so it can shake again
+                        setTimeout(() => {
+                            this.classList.remove('dot-selected-wrong');
+                        }, 400);
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

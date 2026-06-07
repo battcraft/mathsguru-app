@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Maximum &amp; Minimum Lesson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb693",
+                    "tertiary-container": "#ff6096",
+                    "primary-container": "#ff6b00",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8e7164",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad4",
+                    "background": "#fbf9f3",
+                    "surface-container-high": "#eae8e2",
+                    "on-primary-container": "#572000",
+                    "surface-container": "#f0eee8",
+                    "tertiary": "#ba005b",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "inverse-on-surface": "#f2f1eb",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "surface-bright": "#fbf9f3",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-variant": "#e4e2dd",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-surface": "#1b1c19",
+                    "secondary-fixed": "#63ff9d",
+                    "tertiary-fixed": "#ffd9e1",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-container": "#63ff9d",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "primary-fixed": "#ffdbcc",
+                    "outline-variant": "#e2bfb0",
+                    "secondary": "#006d38",
+                    "on-tertiary-fixed": "#3f001a",
+                    "surface": "#fbf9f3",
+                    "primary": "#a04100",
+                    "on-secondary-fixed-variant": "#005229",
+                    "on-tertiary-container": "#67002f",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-primary-fixed": "#351000",
+                    "on-surface-variant": "#5a4136"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max-width": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "label-lg": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .neo-brutal-border { border: 3px solid #1A1A1A; }
+        .neo-brutal-shadow { shadow: 4px 4px 0px #1A1A1A; }
+        .neo-brutal-interactive:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #1A1A1A; }
+        
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c19;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 12px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0eee8;
+            border-left: 3px solid #1A1A1A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff6b00;
+            border: 3px solid #1A1A1A;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-secondary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDynFkgU0qvzKZM22mJ0iihcy0oEhcx2lWie84krtdhlV7PMH3Gx3we4LiBMB2X3HQe1KjIqBIQOlNzk0n-LlMN9YB3_9eNPdY9DAK9-iw4lzSd9_OydDsdX4KarmQ7fzR8Ws8L7c3lhngjhoSEw0Ux4YYFZNX4kp2zrD3JBorqC0Y3C6zKjG3ZLJ6jN8zHm4KemwSRc_qouqPJVxTnN2pyDTdzwT3P8mcfwcBic6AhQMVYqRoeLypdNvuAKdfOBWodfsFWHzKq_uhE"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span> Home
+            </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span> Chat
+            </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">quiz</span> Quiz
+            </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span> Story
+            </a>
+</nav>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold">12 Day Streak</span>
+</div>
+</header>
+<main class="max-w-[1400px] mx-auto p-margin-desktop grid grid-cols-12 gap-8">
+<!-- Video Player Column -->
+<section class="col-span-12 lg:col-span-8 space-y-6">
+<div class="relative w-full aspect-video bg-black rounded-lg border-3 border-black shadow-[8px_8px_0px_#1A1A1A] overflow-hidden group">
+<img class="w-full h-full object-cover opacity-80" data-alt="A cinematic wide shot of an IPL cricket stadium at night, filled with a massive crowd and vibrant neon floodlights. The focal point is a large, high-contrast digital scoreboard displaying maximum and minimum statistics in a bold Desi Street-Pop graphic style. The atmosphere is high-energy, with bright mango oranges and nimbu greens reflecting off the surfaces, creating a modern neo-brutalist learning environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLqH8_VDSjS_jVAks56unK5IydqcRMpxiKUIMEsVkrzQGg7JASK0gU2hLlj4wVrtnCl_X0pJxG3kqXh1kTkPzSVQ5jGKRnXIPJ4nPD2MH8fSyKCWQih9who17CacPWuD0aImwyAlhqOJQbRgWEKJf052o26l0wSzr6JnEcClL7V-O55F4f8Xi5oh-OYliECkcd1A-fRO_bhUlDf0kBu8SlmGad3Tu8-2fRp2ramerrL2-lnmh2j-AlzSRHNqEt1Js0ADDWSWOCgxB3"/>
+<!-- Video UI Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 bg-primary-container text-white rounded-full border-4 border-black shadow-[4px_4px_0px_#1A1A1A] flex items-center justify-center neo-brutal-interactive transition-all">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Scoreboard Graphic (Math Content) -->
+<div class="absolute top-6 left-6 p-4 bg-secondary-container border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg">
+<p class="font-label-lg text-label-lg text-on-secondary-container uppercase mb-1">Current Lesson Topic</p>
+<h2 class="font-headline-md text-headline-md text-on-secondary-container">Finding the Max Score 🏏</h2>
+</div>
+<!-- Custom Progress Bar -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
+<div class="w-full h-4 bg-surface-container-highest border-3 border-black rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary w-3/4 border-r-3 border-black"></div>
+<div class="h-full bg-secondary-container w-1/12 border-r-3 border-black opacity-50"></div>
+</div>
+<div class="flex justify-between mt-2 text-white font-bold">
+<span>12:45</span>
+<span>18:00</span>
+</div>
+</div>
+</div>
+<!-- Lesson Header Info -->
+<div class="p-6 bg-background border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Maximum &amp; Minimum in IPL Stats</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            Learn how to identify extreme values using the <span class="bg-primary-fixed px-1 font-bold">Boundary Method</span>. We'll use RCB vs MI scoreboards to understand peaks and troughs in data!
+                        </p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 p-3 bg-tertiary-container text-white border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg neo-brutal-interactive">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex items-center gap-2 p-3 bg-surface-container-lowest border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg neo-brutal-interactive">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Interaction Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 bg-primary-fixed border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4">trending_up</span>
+<h3 class="font-headline-md text-headline-md mb-2">Peak Data</h3>
+</div>
+<p class="font-body-md text-on-primary-fixed-variant">Identify the highest score in a 20-over dataset using comparison logic.</p>
+</div>
+<div class="p-6 bg-secondary-fixed border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">functions</span>
+<h3 class="font-headline-md text-headline-md mb-2">Formula Tip</h3>
+</div>
+<code class="bg-white/50 p-2 border-2 border-black rounded font-mono text-sm">MAX(Scores) = Largest Value</code>
+</div>
+<div class="p-6 bg-tertiary-fixed border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4">lightbulb</span>
+<h3 class="font-headline-md text-headline-md mb-2">Pro Trick</h3>
+</div>
+<p class="font-body-md text-on-tertiary-fixed-variant">Always look at the 'Outliers' first—they often hold the Min/Max values.</p>
+</div>
+</div>
+</section>
+<!-- Sidebar: Lesson Notes & Progress -->
+<aside class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Overall Course Progress -->
+<div class="p-6 bg-surface-container border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg">
+<h3 class="font-headline-md text-headline-md mb-4">Lesson Progress</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg">Unit 4: Statistics</span>
+<span class="font-label-lg text-label-lg text-primary">75% Complete</span>
+</div>
+<div class="w-full h-6 bg-surface-container-highest border-3 border-black rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary w-3/4 border-r-3 border-black"></div>
+</div>
+</div>
+</div>
+<!-- Lesson Playlist/Notes -->
+<div class="bg-surface-container-lowest border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg flex flex-col h-[600px]">
+<div class="p-4 border-b-3 border-black bg-primary-container text-white flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">Up Next</h3>
+<span class="material-symbols-outlined">playlist_play</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
+<!-- Playlist Item: Active -->
+<div class="p-4 bg-secondary-container border-3 border-black shadow-[2px_2px_0px_#1A1A1A] rounded-lg flex gap-4">
+<div class="w-16 h-16 bg-white border-2 border-black rounded shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-secondary-container">Maximum &amp; Minimum Basics</h4>
+<p class="text-xs text-on-secondary-container opacity-70">CURRENTLY PLAYING • 18:00</p>
+</div>
+</div>
+<!-- Playlist Item: Upcoming -->
+<div class="p-4 bg-background border-3 border-black shadow-[2px_2px_0px_#1A1A1A] rounded-lg flex gap-4 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-16 h-16 bg-surface-container border-2 border-black rounded shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">lock</span>
+</div>
+<div>
+<h4 class="font-bold">Calculating the Average (Mean)</h4>
+<p class="text-xs text-on-surface-variant">UP NEXT • 12:45</p>
+</div>
+</div>
+<!-- Note Taking Tool -->
+<div class="mt-8 p-4 bg-primary-fixed border-3 border-black rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-bold">Quick Note</span>
+</div>
+<textarea class="w-full h-24 bg-white border-3 border-black rounded-lg p-2 focus:outline-none focus:shadow-[4px_4px_0px_#63ff9d]" placeholder="Type your doubt here..."></textarea>
+<button class="mt-2 w-full py-2 bg-primary-container text-white border-3 border-black shadow-[4px_4px_0px_#1A1A1A] font-bold rounded-lg neo-brutal-interactive">
+                            Save Note
+                        </button>
+</div>
+<!-- Quiz Teaser -->
+<div class="p-4 bg-tertiary-container text-white border-3 border-black shadow-[4px_4px_0px_#1A1A1A] rounded-lg">
+<p class="font-bold mb-2">Ready for the Match?</p>
+<p class="text-sm mb-4">Take the 'Scoreboard Challenge' quiz to unlock the next lesson!</p>
+<button class="w-full py-2 bg-white text-tertiary border-3 border-black font-bold rounded-lg">
+                            Start Quiz
+                        </button>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Floating Action Button for Doubt Solving (Suppressed logic check: only on main dashboards usually, but useful for a lesson) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-primary-container text-white rounded-full border-4 border-black shadow-[6px_6px_0px_#1A1A1A] flex items-center justify-center neo-brutal-interactive z-50">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat_bubble_outline</span>
+</button>
+<script>
+        // Simple micro-interaction for playback
+        const playBtn = document.querySelector('button .material-symbols-outlined');
+        let isPlaying = false;
+        
+        playBtn?.parentElement?.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            playBtn.textContent = isPlaying ? 'pause' : 'play_arrow';
+            // In a real app, this would trigger video play/pause
+        });
+
+        // Interactive "Save Note" feedback
+        const saveBtn = document.querySelector('button:contains("Save Note")');
+        saveBtn?.addEventListener('click', () => {
+            saveBtn.textContent = 'Saved! ✅';
+            setTimeout(() => {
+                saveBtn.textContent = 'Save Note';
+            }, 2000);
+        });
+    </script>
+</body></html>

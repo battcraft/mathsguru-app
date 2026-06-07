@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-primary-fixed": "#3e0020",
+                    "outline-variant": "#e1bdc7",
+                    "tertiary-fixed": "#ffe16d",
+                    "tertiary-container": "#c9a900",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#705d00",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#ffdcc4",
+                    "outline": "#8d6f78",
+                    "primary-fixed": "#ffd9e3",
+                    "surface-container-low": "#f3f3f4",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "surface": "#f9f9f9",
+                    "secondary-fixed-dim": "#ffb781",
+                    "on-secondary-container": "#5b2d00",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#b80069",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary-fixed": "#2f1400",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "primary": "#b40067",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary-container": "#4c3f00",
+                    "background": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-high": "#e8e8e8",
+                    "error": "#ba1a1a",
+                    "primary-container": "#df0b81",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed": "#221b00",
+                    "inverse-primary": "#ffb0cb",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "error-container": "#ffdad6",
+                    "secondary": "#924c00",
+                    "secondary-container": "#f88400",
+                    "on-primary-container": "#fffbff",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#5a3f48"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "border-width": "3px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "shadow-offset": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "headline-md": ["Fredoka"],
+                    "headline-xl": ["Fredoka"],
+                    "headline-lg": ["Fredoka"],
+                    "label-bold": ["Nunito Sans"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Fredoka"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(#dadada 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-border {
+            border: 3px solid #1a1c1c;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 40px;
+            border-width: 20px 20px 0 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+        }
+        .speech-bubble-border::before {
+            content: '';
+            position: absolute;
+            bottom: -26px;
+            left: 37px;
+            border-width: 23px 23px 0 0;
+            border-style: solid;
+            border-color: #1a1c1c transparent transparent transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md flex flex-col">
+<!-- Top AppBar Component -->
+<header class="w-full top-0 sticky flex justify-between items-center px-margin-mobile h-16 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0y_-mwIlV5Agorx61Jb3afDAKmnUP2gl8tCkOUoJq5dEx9eIFcMQkBOKLp633y2ieH5HIet0FOxBCpmG_tRVQHIImLKDmdfk0DJlDXpSzsT5MVma8BlqQb2OeA8eoSu_hboxgglO4r_MTzIAE3Jr6zMdc_r-InkwpvnPgldr7UuARbsrWLkbtl5wprlV69Mh9QNoC6XKTEUuEdMlm0gvMG7hkRxfdDw5A58i7OyXCv_BbymsAj3rapI2BCFqwntV9jk8roJYqFrJL"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">Math-Masti</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-secondary-container border-[3px] border-on-surface px-3 py-1 rounded-lg neo-shadow">
+<span class="font-label-bold text-label-bold text-on-secondary-container">12 🔥</span>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-margin-mobile py-8 pb-32">
+<!-- Story Section Header -->
+<div class="mb-8 text-center md:text-left">
+<span class="inline-block bg-tertiary text-on-tertiary px-4 py-1 rounded-full border-[3px] border-on-surface font-label-bold text-label-bold mb-4 uppercase tracking-wider">
+                Kahani Mode: Level 5
+            </span>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                The Cricket Scorekeeper
+            </h2>
+</div>
+<!-- Comic Canvas -->
+<div class="relative w-full max-w-5xl mx-auto">
+<!-- Main Illustration Block -->
+<div class="relative rounded-xl neo-border bg-white overflow-hidden neo-shadow-lg aspect-[16/10] md:aspect-[16/7] mb-8">
+<!-- Background Image of Stadium -->
+<img alt="Cricket Stadium Background" class="w-full h-full object-cover opacity-80" data-alt="A vibrant and energetic cricket stadium packed with a cheering crowd under bright floodlights. The field is lush green, with stylized geometric patterns on the grass. The atmosphere is cinematic and comic-book style, with high-contrast shadows and saturated team colors like deep blue and neon yellow, evoking a high-stakes championship match feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyrnWcKhJVjkcsHsL8yDu3p7iRy3xpF_ICJYEqlSiN4t8WJMQKjntHwUI9-ZbsMiIShB8PoQAN9OZzAIH6P966Y0802V-wbveKnV0VoaRHAt_tU-YnqPKMYd2UyIvug5Qk8l8QSSKlznAtY-fyjoCSXr3FItSzNh_YJnUDjEkgT_EXcxnDDXyhFiHiq81akNh6d4eIlXeCEWZZxiguLle-tKqpyQtqJJuYcejFfmJRCVnfNpno_IY-qb7hwNbledyfjUvSxBo8Rmsc"/>
+<!-- Umpire Illustration (Floating Content) -->
+<div class="absolute inset-0 flex items-end justify-center md:justify-start px-8 md:px-16 pointer-events-none">
+<div class="relative w-48 md:w-64 transform transition-transform hover:scale-105 pointer-events-auto cursor-pointer" onclick="this.classList.toggle('scale-110')">
+<img alt="Cricket Umpire" class="w-full h-auto drop-shadow-[8px_8px_0px_rgba(0,0,0,1)]" data-alt="A high-energy, sporty cartoon illustration of a professional cricket umpire in a white uniform and wide-brimmed hat. He has a friendly but authoritative expression, with one arm pointing dynamically toward the viewer. The art style is bold and neo-brutalist, featuring thick black outlines, flat colors, and a modern comic-book aesthetic consistent with sporty graphic novels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF90V0hFYKTQqJH780AVHK8GptQMASmZJl2hoiECUrCp3YWInuh3cvQsnclu4tfaSDtdbqSW8kTzEVQCGteRJGYukaEuAklmWqNoKoo9hjdP3wPTDpzcKXt651GUmb4FiusFqLW_Tm4pFMRgDNVyUxdSdIlcfyep2H3iRYFeED--v6XlPLtGRks36mxvNN4rK7ypicdqInRmOGXEK60QVS2N9AMpcVSKikcPcCaeQgT5nqCd18ULg8zuudn154cCeDFEthwfGKQhgm"/>
+</div>
+</div>
+<!-- Speech Bubble -->
+<div class="absolute top-8 right-4 left-4 md:left-auto md:right-16 md:w-1/2">
+<div class="relative speech-bubble-border">
+<div class="relative speech-bubble bg-white neo-border p-6 rounded-2xl">
+<p class="font-headline-md text-headline-md text-on-surface italic">
+                                "Dhoni hit <span class="text-primary font-bold">15 runs</span> in 1 over, Virat hit <span class="text-secondary font-bold">18</span>. Kiska strike rate maximum hai?"
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Interaction Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Dhoni Card -->
+<div class="bg-white neo-border p-6 rounded-xl neo-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none group">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-16 h-16 rounded-lg neo-border overflow-hidden bg-primary-fixed group-hover:bg-primary-container transition-colors">
+<img alt="Dhoni Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSEr34RI-ANS6tVrOtvKk1hQxT7kkZUnKTT3sEmkbHpD8wQlmeDS6F-YEBkOia92LDskBF9nZ1uPghZ3uTTITG0bW389FyEVXTcySuxIawndPwGfoTfJZ0u9NsVYq1IK0iReVNaW7HEcUU5w7Sa6dm5vXk7qLa_L6ZffTjPn08psid04t4t7TkxXCUS1DX3-hvEEhwxTdyldAxJrbh4ftWmQy0Tt5KqkU4_EHFmJzH1o3_WXlXN03is86LUVaiFG5CKnyLwp8qX9C7"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Dhoni</h3>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Captain Cool</span>
+</div>
+</div>
+<div class="space-y-2 border-t-3 border-on-surface pt-4">
+<div class="flex justify-between items-center">
+<span class="text-body-md font-body-md">Runs</span>
+<span class="text-headline-md font-headline-md text-primary">15</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md font-body-md">Balls</span>
+<span class="text-headline-md font-headline-md">6</span>
+</div>
+</div>
+<button class="w-full mt-6 bg-primary text-on-primary py-3 px-4 neo-border neo-shadow font-label-bold text-label-bold hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+                        SELECT DHONI
+                    </button>
+</div>
+<!-- Virat Card -->
+<div class="bg-white neo-border p-6 rounded-xl neo-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none group border-secondary">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-16 h-16 rounded-lg neo-border overflow-hidden bg-secondary-fixed group-hover:bg-secondary-container transition-colors">
+<img alt="Virat Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_J2-ftSy_0-uDJxwO2wOwQJ5X2DW8QyIO6eW1HdPjlT3YOguJeqODL64T1MCANCM4Fs_mxZtxM1UQWzE-ynW9qKIMLkN6NygL_JMHmOy0wLvJeKZuSRIuXt9LxVU4MaE7ZC328NnBFoHYerJtjW0dyEZhYr-BAcXUeXbssbTUfw5CRRbfKqQJ0pwG70v0dN3Nz2EjwTj4QRditDx8_EL5mUxsABaCAmAwNJKZwV2jvnXoJEyzid57bLoqCTG-_Lk2QNDTe0Ms9OXg"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Virat</h3>
+<span class="font-label-bold text-label-bold text-on-surface-variant">King Kohli</span>
+</div>
+</div>
+<div class="space-y-2 border-t-3 border-on-surface pt-4">
+<div class="flex justify-between items-center">
+<span class="text-body-md font-body-md">Runs</span>
+<span class="text-headline-md font-headline-md text-secondary">18</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md font-body-md">Balls</span>
+<span class="text-headline-md font-headline-md">6</span>
+</div>
+</div>
+<button class="w-full mt-6 bg-secondary text-on-secondary py-3 px-4 neo-border neo-shadow font-label-bold text-label-bold hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+                        SELECT VIRAT
+                    </button>
+</div>
+<!-- Hint/Toolbox Card -->
+<div class="bg-tertiary-fixed neo-border p-6 rounded-xl neo-shadow md:col-span-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4 text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h4 class="font-label-bold text-label-bold uppercase">Math Formula</h4>
+</div>
+<div class="bg-white neo-border p-4 rounded-lg">
+<p class="font-body-md text-on-surface text-center">
+<span class="font-bold">Strike Rate</span> = <br/>
+                                (Total Runs / Total Balls) × 100
+                            </p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-on-tertiary-fixed-variant opacity-60 italic text-sm">
+                        Hint: Both played exactly 1 over (6 balls).
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interactions for the neo-brutalist buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.boxShadow = '0px 0px 0px 0px rgba(0,0,0,1)';
+                btn.style.transform = 'translate(4px, 4px)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.boxShadow = '4px 4px 0px 0px rgba(0,0,0,1)';
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.boxShadow = '4px 4px 0px 0px rgba(0,0,0,1)';
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    </script>
+</body></html>

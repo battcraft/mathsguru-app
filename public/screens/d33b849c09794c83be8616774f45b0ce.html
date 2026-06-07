@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Longest Road - Kahani Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "tertiary": "#705d00",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#df0b81",
+                        "on-primary-fixed": "#3e0020",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#f3f3f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "surface-container": "#eeeeee",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e2e2e2",
+                        "surface-tint": "#b80069",
+                        "on-error": "#ffffff",
+                        "primary": "#b40067",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed-dim": "#ffb781",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#5b2d00",
+                        "primary-fixed": "#ffd9e3",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "outline": "#8d6f78",
+                        "background": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "outline-variant": "#e1bdc7",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#f88400",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #1a1c1c;
+        }
+        .neo-shadow-active:active {
+            box-shadow: 0px 0px 0px #1a1c1c;
+            transform: translate(var(--shadow-offset), var(--shadow-offset));
+        }
+        
+        .blueprint-bg {
+            background-image: 
+                linear-gradient(to right, #e2e2e2 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col blueprint-bg">
+<!-- TopAppBar -->
+<header class="bg-surface w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 z-40">
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="flex items-center">
+<span class="font-label-bold text-label-bold text-primary">5 🔥</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col px-margin-mobile py-6 md:px-margin-desktop md:py-8 max-w-4xl mx-auto w-full mb-24">
+<!-- Story Illustration Area -->
+<div class="relative w-full aspect-[4/3] md:aspect-video rounded-xl border-[3px] border-on-surface neo-shadow bg-surface-container overflow-hidden mb-8 group">
+<img alt="A vibrant, stylized illustration of a long highway stretching into an endless horizon. The scene features two cartoonish characters, a friendly teacher figure and a robotic companion, standing on the road. The style is bold, with thick black outlines and flat, bright colors reminiscent of urban graffiti mixed with textbook diagrams. The lighting is bright and cheerful, evoking a sense of discovery and endless possibilities in a neo-brutalist aesthetic." class="w-full h-full object-cover" data-alt="A vibrant, stylized illustration of a long highway stretching into an endless horizon. The scene features two cartoonish characters, a friendly teacher figure and a robotic companion, standing on the road. The style is bold, with thick black outlines and flat, bright colors reminiscent of urban graffiti mixed with textbook diagrams. The lighting is bright and cheerful, evoking a sense of discovery and endless possibilities in a neo-brutalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD99JPmSwT63RyetUvybys4RweilMrs5hp4NGdLuOMgLlp_kx7oXUAnFZrRnlxDsVO0DZ_-AizozpNugAA6mFSWFaJByxAVrdMml6Y3Z_KqflcFL1q0Dqepf1-2yWGiec9BFsSDvY0eRrVI96aWT8YF9Lu37SI7ekynz1Bepd060ChfkZyJpsKSJyMO10I9s28xwRZBk4-hRacERke_y6d1OCAgubymQ2Hqgp70shjGIlSZjJJenlLKzaHqHTmB1c50v5Lgw-EwMGq8"/>
+<!-- Graphic Overlay Elements -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Mathematical Line Representation -->
+<div class="absolute bottom-1/4 left-0 w-full h-[3px] bg-primary-container z-10 opacity-80">
+<!-- Arrows indicating infinite length -->
+<span class="material-symbols-outlined absolute left-2 -top-3 text-primary-container" style="font-variation-settings: 'FILL' 1;">arrow_left</span>
+<span class="material-symbols-outlined absolute right-2 -top-3 text-primary-container" style="font-variation-settings: 'FILL' 1;">arrow_right</span>
+</div>
+<!-- Geometry Points -->
+<div class="absolute bottom-1/4 left-1/4 w-3 h-3 bg-primary-container rounded-full border-[2px] border-on-surface -translate-y-[4.5px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-3 h-3 bg-primary-container rounded-full border-[2px] border-on-surface -translate-y-[4.5px]"></div>
+</div>
+<!-- Story Title Tag -->
+<div class="absolute top-4 left-4 bg-tertiary-fixed border-[3px] border-on-surface px-3 py-1 neo-shadow">
+<span class="font-label-bold text-label-bold text-on-tertiary-fixed uppercase tracking-wider">The Longest Road</span>
+</div>
+</div>
+<!-- Dialogue Area -->
+<div class="space-y-6">
+<!-- MathsGuru Speech Bubble -->
+<div class="flex items-end gap-4 w-full md:w-4/5">
+<div class="w-12 h-12 rounded-full border-[3px] border-on-surface neo-shadow overflow-hidden bg-primary shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">face</span>
+</div>
+<div class="bg-surface border-[3px] border-on-surface rounded-2xl rounded-bl-none p-4 neo-shadow relative">
+<p class="font-body-md text-body-md text-on-surface">
+                        See this highway, Robot Dost? It goes on and on, past the mountains, past the cities... it feels like it never ends!
+                    </p>
+<!-- Decorative corner fold -->
+<div class="absolute top-0 right-0 w-4 h-4 border-l-[3px] border-b-[3px] border-on-surface bg-surface-container"></div>
+</div>
+</div>
+<!-- Robot Dost Speech Bubble -->
+<div class="flex items-end gap-4 w-full md:w-4/5 self-end flex-row-reverse">
+<div class="w-12 h-12 rounded-full border-[3px] border-on-surface neo-shadow overflow-hidden bg-secondary-container shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="bg-surface-container-high border-[3px] border-on-surface rounded-2xl rounded-br-none p-4 neo-shadow relative">
+<p class="font-body-md text-body-md text-on-surface">
+                        *Beep Boop* Yes, Bhaiya. Just like a mathematical Line! A true <strong class="text-primary">Rekha</strong> has no start and no finish. It stretches infinitely in both directions.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-12 flex justify-end">
+<button class="bg-primary-container text-on-primary-container font-label-bold text-label-bold border-[3px] border-on-surface py-3 px-8 rounded-lg neo-shadow neo-shadow-active transition-all flex items-center gap-2">
+                Next
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on md and up) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] flex justify-around items-center h-20 px-margin-mobile bg-surface">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-[12px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-bold text-[12px] mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-[12px] mt-1">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-4 py-1 border-[3px] border-on-surface hover:bg-secondary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-bold text-[12px] mt-1">Story</span>
+</a>
+</nav>
+</body></html>

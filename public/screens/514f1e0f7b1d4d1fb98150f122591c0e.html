@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Pop - Practice Zone</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            background-image: radial-gradient(theme('colors.surface-dim') 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+        }
+        
+        .neo-brutalist-border {
+            border: theme('spacing.border-width') solid theme('colors.on-surface');
+        }
+        
+        .neo-brutalist-shadow {
+            box-shadow: theme('spacing.shadow-offset') theme('spacing.shadow-offset') 0px 0px theme('colors.on-surface');
+        }
+        
+        .neo-brutalist-shadow-hover:hover {
+            box-shadow: 8px 8px 0px 0px theme('colors.on-surface');
+            transform: translate(-2px, -2px);
+        }
+        
+        .neo-brutalist-shadow-active:active {
+            box-shadow: 0px 0px 0px 0px theme('colors.on-surface');
+            transform: translate(theme('spacing.shadow-offset'), theme('spacing.shadow-offset'));
+        }
+
+        .neo-row-selected {
+            background-color: theme('colors.tertiary-fixed');
+            box-shadow: 8px 8px 0px 0px theme('colors.on-surface');
+            transform: translate(-2px, -2px);
+            border: theme('spacing.border-width') solid theme('colors.on-surface');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile md:px-margin-desktop py-unit w-full">
+<div class="flex items-center gap-4">
+<button class="hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none text-primary">
+<span class="material-symbols-outlined font-headline-md text-headline-md" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary uppercase tracking-tighter">Ganit Pop</h1>
+</div>
+<!-- Desktop Nav items -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface flex flex-col items-center gap-1 font-label-bold text-label-bold hover:bg-surface-variant px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+                Home
+            </a>
+<a class="text-on-surface flex flex-col items-center gap-1 font-label-bold text-label-bold hover:bg-surface-variant px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">forum</span>
+                Chat
+            </a>
+<a class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-2 rounded-lg flex flex-col items-center gap-1 font-label-bold text-label-bold neo-brutalist-shadow transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+                Quiz
+            </a>
+<a class="text-on-surface flex flex-col items-center gap-1 font-label-bold text-label-bold hover:bg-surface-variant px-4 py-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                Story
+            </a>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-8 max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-8">
+<!-- Left Column: Context & Questions -->
+<div class="w-full md:w-1/3 flex flex-col gap-6">
+<div class="bg-surface-container neo-brutalist-border neo-brutalist-shadow p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-16 h-16 rounded-full bg-primary opacity-20 group-hover:scale-150 transition-transform duration-500"></div>
+<h2 class="font-headline-md text-headline-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sports_cricket</span>
+                    Practice Zone
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Analyze the fake IPL points table to answer the questions below. Tap on the rows to select your answer.
+                </p>
+</div>
+<div class="bg-primary-container text-on-primary-container neo-brutalist-border neo-brutalist-shadow p-6">
+<h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">help_center</span>
+                    Questions
+                </h3>
+<div class="space-y-4">
+<div class="bg-surface text-on-surface neo-brutalist-border p-4">
+<p class="font-label-bold text-label-bold mb-2 text-primary">Q1</p>
+<p class="font-body-md text-body-md">Identify the team with the Maximum points.</p>
+<div class="mt-3 flex items-center gap-2" id="ans1-display">
+<span class="inline-block w-4 h-4 bg-surface-variant neo-brutalist-border rounded-full"></span>
+<span class="text-on-surface-variant text-sm italic">Select a row from table...</span>
+</div>
+</div>
+<div class="bg-surface text-on-surface neo-brutalist-border p-4">
+<p class="font-label-bold text-label-bold mb-2 text-primary">Q2</p>
+<p class="font-body-md text-body-md">Identify the team with Minimum points.</p>
+<div class="mt-3 flex items-center gap-2" id="ans2-display">
+<span class="inline-block w-4 h-4 bg-surface-variant neo-brutalist-border rounded-full"></span>
+<span class="text-on-surface-variant text-sm italic">Select a row from table...</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 bg-secondary-container text-on-secondary-container neo-brutalist-border neo-brutalist-shadow neo-brutalist-shadow-hover neo-brutalist-shadow-active transition-all py-3 font-label-bold text-label-bold flex justify-center items-center gap-2">
+                    Submit Answers
+                    <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Data Table -->
+<div class="w-full md:w-2/3">
+<div class="bg-surface neo-brutalist-border neo-brutalist-shadow overflow-hidden flex flex-col h-full">
+<div class="bg-surface-variant p-4 border-b-[3px] border-on-surface flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">table_chart</span>
+                        IPL Points Table (Mock)
+                    </h2>
+<span class="bg-surface px-3 py-1 neo-brutalist-border font-label-bold text-label-bold text-xs uppercase tracking-wider">Interactive</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b-[3px] border-on-surface">
+<th class="p-4 font-label-bold text-label-bold border-r-[3px] border-on-surface w-16 text-center">Pos</th>
+<th class="p-4 font-label-bold text-label-bold border-r-[3px] border-on-surface">Team</th>
+<th class="p-4 font-label-bold text-label-bold border-r-[3px] border-on-surface text-center">Played</th>
+<th class="p-4 font-label-bold text-label-bold text-center bg-tertiary-fixed">Points</th>
+</tr>
+</thead>
+<tbody id="interactive-table">
+<!-- Rows generated via JS for interactivity -->
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low border-t-[3px] border-on-surface mt-auto flex items-center justify-between text-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">info</span> Tap rows to answer questions</span>
+<button class="font-label-bold text-label-bold text-primary underline hover:text-primary-fixed-dim" id="reset-btn">Reset Selection</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-margin-mobile bg-surface border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<a class="text-on-surface flex flex-col items-center gap-1 font-label-bold text-label-bold hover:bg-surface-variant transition-colors p-2" href="#">
+<span class="material-symbols-outlined">home</span>
+            Home
+        </a>
+<a class="text-on-surface flex flex-col items-center gap-1 font-label-bold text-label-bold hover:bg-surface-variant transition-colors p-2" href="#">
+<span class="material-symbols-outlined">forum</span>
+            Chat
+        </a>
+<a class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg flex flex-col items-center gap-1 font-label-bold text-label-bold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+            Quiz
+        </a>
+<a class="text-on-surface flex flex-col items-center gap-1 font-label-bold text-label-bold hover:bg-surface-variant transition-colors p-2" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+            Story
+        </a>
+</nav>
+<script>
+        const tableData = [
+            { id: 't1', pos: 1, name: 'Mumbai Indians', played: 14, points: 20 },
+            { id: 't2', pos: 2, name: 'Chennai Super Kings', played: 14, points: 18 },
+            { id: 't3', pos: 3, name: 'Royal Challengers Bangalore', played: 14, points: 16 },
+            { id: 't4', pos: 4, name: 'Kolkata Knight Riders', played: 14, points: 14 },
+            { id: 't5', pos: 5, name: 'Rajasthan Royals', played: 14, points: 12 },
+            { id: 't6', pos: 6, name: 'Sunrisers Hyderabad', played: 14, points: 10 },
+            { id: 't7', pos: 7, name: 'Delhi Capitals', played: 14, points: 8 },
+            { id: 't8', pos: 8, name: 'Punjab Kings', played: 14, points: 6 }
+        ];
+
+        const tbody = document.getElementById('interactive-table');
+        let selectedMax = null;
+        let selectedMin = null;
+
+        function renderTable() {
+            tbody.innerHTML = '';
+            tableData.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                tr.className = `border-b-[3px] border-on-surface cursor-pointer transition-all duration-200 hover:bg-surface-variant group ${row.id === selectedMax || row.id === selectedMin ? 'neo-row-selected' : 'bg-surface'}`;
+                tr.onclick = () => handleRowClick(row);
+                
+                tr.innerHTML = `
+                    <td class="p-4 border-r-[3px] border-on-surface text-center font-label-bold text-label-bold group-hover:bg-primary group-hover:text-on-primary transition-colors">${row.pos}</td>
+                    <td class="p-4 border-r-[3px] border-on-surface font-body-md text-body-md font-bold">${row.name}</td>
+                    <td class="p-4 border-r-[3px] border-on-surface text-center font-body-md text-body-md">${row.played}</td>
+                    <td class="p-4 text-center font-headline-md text-headline-md ${row.id === selectedMax || row.id === selectedMin ? 'text-on-surface' : 'text-primary'}">${row.points}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function handleRowClick(row) {
+            // Simple logic: if click, assign to max first, then min. 
+            // In a real app, you might have specific UI to choose WHICH question they are answering.
+            if (!selectedMax) {
+                selectedMax = row.id;
+                updateDisplays();
+            } else if (!selectedMin && row.id !== selectedMax) {
+                selectedMin = row.id;
+                updateDisplays();
+            } else {
+                // If both selected or clicking same, reset for simplicity in this demo
+                selectedMax = row.id;
+                selectedMin = null;
+                updateDisplays();
+            }
+            renderTable();
+        }
+
+        function updateDisplays() {
+            const ans1Display = document.getElementById('ans1-display');
+            const ans2Display = document.getElementById('ans2-display');
+
+            if (selectedMax) {
+                const team = tableData.find(t => t.id === selectedMax);
+                ans1Display.innerHTML = `
+                    <span class="inline-block w-4 h-4 bg-tertiary-fixed neo-brutalist-border rounded-full"></span>
+                    <span class="font-label-bold text-label-bold px-2 py-1 bg-surface neo-brutalist-border">${team.name}</span>
+                `;
+            } else {
+                ans1Display.innerHTML = `
+                    <span class="inline-block w-4 h-4 bg-surface-variant neo-brutalist-border rounded-full"></span>
+                    <span class="text-on-surface-variant text-sm italic">Select a row from table...</span>
+                `;
+            }
+
+            if (selectedMin) {
+                const team = tableData.find(t => t.id === selectedMin);
+                ans2Display.innerHTML = `
+                    <span class="inline-block w-4 h-4 bg-tertiary-fixed neo-brutalist-border rounded-full"></span>
+                    <span class="font-label-bold text-label-bold px-2 py-1 bg-surface neo-brutalist-border">${team.name}</span>
+                `;
+            } else {
+                ans2Display.innerHTML = `
+                    <span class="inline-block w-4 h-4 bg-surface-variant neo-brutalist-border rounded-full"></span>
+                    <span class="text-on-surface-variant text-sm italic">Select a row from table...</span>
+                `;
+            }
+        }
+
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            selectedMax = null;
+            selectedMin = null;
+            updateDisplays();
+            renderTable();
+        });
+
+        // Initial render
+        renderTable();
+    </script>
+</body></html>

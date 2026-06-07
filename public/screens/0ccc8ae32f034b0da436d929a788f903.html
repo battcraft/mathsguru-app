@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Collection Examples - MathsGuru</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-container-high": "#eae8e2",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-primary-container": "#572000",
+                        "on-surface": "#1b1c19",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary-fixed": "#00210d",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "outline-variant": "#e2bfb0",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "background": "#fbf9f3",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006d38",
+                        "on-secondary-container": "#00743c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-container": "#67002f",
+                        "surface-tint": "#a04100",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-surface-variant": "#5a4136",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "outline": "#8e7164",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-primary-fixed": "#351000",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312d",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-variant": "#e4e2dd",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb693",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "primary-fixed": "#ffdbcc",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "tertiary": "#ba005b",
+                        "error": "#ba1a1a",
+                        "primary": "#a04100",
+                        "tertiary-container": "#ff6096",
+                        "surface-container": "#f0eee8"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px",
+                        "unit": "8px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }],
+                        "headline-xl": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "1.2", fontWeight: "800" }],
+                        "headline-md": ["24px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "800" }],
+                        "label-lg": ["14px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "headline-xl-mobile": ["36px", { lineHeight: "1.1", fontWeight: "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base typography application for material symbols to ensure correct weight rendering */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen pb-32 pt-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19]">
+<button aria-label="menu" class="w-12 h-12 flex items-center justify-center rounded-full border-[3px] border-on-surface bg-surface-container hover:bg-primary-container transition-colors active:translate-x-[4px] active:translate-y-[4px] active:shadow-none shadow-[2px_2px_0px_#1B1C19]">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-md md:text-headline-md text-primary tracking-tight">
+            MathsGuru
+        </h1>
+<div class="w-12 h-12 rounded-full border-[3px] border-on-surface shadow-[2px_2px_0px_#1B1C19] overflow-hidden bg-surface-container-highest">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A close up studio portrait of a young Indian student looking bright and engaged, wearing a casual yellow t-shirt against a vibrant teal background. The lighting is high-key and colorful, matching a modern street-pop aesthetic with high contrast and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEOXPKOTW3xQp9GauGBjwGD5io65pNhBcKKLYM-xekKu6Y4kTheNqGiGkeLuuaEd0qIT5uU9VrAyjGbf-nX5MLIC-7ktkQm-rQhktt0Uwxt5E_8swk12HEbbHaELtBag7J3YoAhjyt0bIZ2WqY-RdS2gYHH_cMyVG-n1-k9cn3083BhoiT4_ZpeQVrFcJta-zwOzbisj_XYNt9s9fHF427_cKKlrc9wRoWFdcZ__sl896tB8-r7cOfh_SUBftyUexzkWGQ7kgMiUBz"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop space-y-12">
+<!-- Page Header -->
+<section class="mt-8 mb-12">
+<div class="inline-block bg-primary-container text-on-primary-container border-[3px] border-on-surface px-4 py-2 rounded-lg font-label-lg text-label-lg mb-4 shadow-[4px_4px_0px_#1B1C19] -rotate-2">
+                Data Collection Basics
+            </div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface max-w-2xl">
+                Let's explore some <span class="text-primary">Examples!</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-xl">
+                See how we gather information from everyday life and organize it so it makes sense.
+            </p>
+</section>
+<!-- Bento Grid Layout for Examples -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-gutter">
+<!-- Example 1: Favorite Fruit Survey (Full Width) -->
+<article class="col-span-1 md:col-span-2 bg-surface-bright border-[3px] border-on-surface rounded-DEFAULT shadow-[4px_4px_0px_#1B1C19] overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+<div class="bg-surface-container border-b-[3px] border-on-surface px-6 py-4 flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">1. Favorite Fruit Survey</h3>
+<div class="w-10 h-10 rounded-full bg-secondary-container border-[3px] border-on-surface flex items-center justify-center shadow-[2px_2px_0px_#1B1C19]">
+<span class="material-symbols-outlined text-on-secondary-container">list_alt</span>
+</div>
+</div>
+<div class="p-6 md:p-8">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">We asked 5 friends what their favorite fruit is. Here is the raw data in a table!</p>
+<div class="border-[3px] border-on-surface rounded-lg overflow-hidden bg-surface">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b-[3px] border-on-surface font-headline-md text-headline-md text-on-surface">
+<th class="p-4 border-r-[3px] border-on-surface w-1/2">Friend's Name</th>
+<th class="p-4 w-1/2">Favorite Fruit</th>
+</tr>
+</thead>
+<tbody class="font-body-lg text-body-lg">
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r-[3px] border-on-surface font-bold">Riya</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-2 bg-primary-fixed border-[2px] border-on-surface rounded-full px-4 py-1 font-label-lg text-label-lg shadow-[2px_2px_0px_#1B1C19]">
+                                            🥭 Mango
+                                        </span>
+</td>
+</tr>
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r-[3px] border-on-surface font-bold">Aarav</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-2 bg-surface-container-highest border-[2px] border-on-surface rounded-full px-4 py-1 font-label-lg text-label-lg shadow-[2px_2px_0px_#1B1C19]">
+                                            🍌 Banana
+                                        </span>
+</td>
+</tr>
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r-[3px] border-on-surface font-bold">Zara</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-2 bg-tertiary-fixed border-[2px] border-on-surface rounded-full px-4 py-1 font-label-lg text-label-lg shadow-[2px_2px_0px_#1B1C19]">
+                                            🍎 Apple
+                                        </span>
+</td>
+</tr>
+<tr class="border-b-[3px] border-on-surface hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r-[3px] border-on-surface font-bold">Kabir</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-2 bg-primary-fixed border-[2px] border-on-surface rounded-full px-4 py-1 font-label-lg text-label-lg shadow-[2px_2px_0px_#1B1C19]">
+                                            🥭 Mango
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 border-r-[3px] border-on-surface font-bold">Sneha</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-2 bg-secondary-fixed border-[2px] border-on-surface rounded-full px-4 py-1 font-label-lg text-label-lg shadow-[2px_2px_0px_#1B1C19]">
+                                            🍇 Grapes
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+<!-- Example 2: School Bag Weight (Half Width) -->
+<article class="col-span-1 bg-surface-bright border-[3px] border-on-surface rounded-DEFAULT shadow-[4px_4px_0px_#1B1C19] flex flex-col">
+<div class="bg-surface-container border-b-[3px] border-on-surface px-6 py-4 flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">2. Bag Weight</h3>
+<div class="w-10 h-10 rounded-full bg-primary-container border-[3px] border-on-surface flex items-center justify-center shadow-[2px_2px_0px_#1B1C19]">
+<span class="material-symbols-outlined text-on-primary-container">backpack</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-center">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Measuring the weight of Rohan's school bag across the week (in KG).</p>
+<div class="space-y-4 font-label-lg text-label-lg">
+<!-- Monday -->
+<div class="flex items-center gap-4">
+<span class="w-12 font-bold">Mon</span>
+<div class="flex-grow flex items-center">
+<div class="h-8 bg-tertiary-container border-[3px] border-on-surface rounded-r-lg shadow-[2px_2px_0px_#1B1C19] w-[80%] flex items-center justify-end px-3">
+<span class="text-on-surface font-bold">4 KG</span>
+</div>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="flex items-center gap-4">
+<span class="w-12 font-bold">Tue</span>
+<div class="flex-grow flex items-center">
+<div class="h-8 bg-secondary-container border-[3px] border-on-surface rounded-r-lg shadow-[2px_2px_0px_#1B1C19] w-[60%] flex items-center justify-end px-3">
+<span class="text-on-surface font-bold">3 KG</span>
+</div>
+</div>
+</div>
+<!-- Wednesday -->
+<div class="flex items-center gap-4">
+<span class="w-12 font-bold">Wed</span>
+<div class="flex-grow flex items-center">
+<div class="h-8 bg-primary-container border-[3px] border-on-surface rounded-r-lg shadow-[2px_2px_0px_#1B1C19] w-[100%] flex items-center justify-end px-3">
+<span class="text-on-surface font-bold">5 KG</span>
+</div>
+</div>
+</div>
+<!-- Thursday -->
+<div class="flex items-center gap-4">
+<span class="w-12 font-bold">Thu</span>
+<div class="flex-grow flex items-center">
+<div class="h-8 bg-surface-container-highest border-[3px] border-on-surface rounded-r-lg shadow-[2px_2px_0px_#1B1C19] w-[40%] flex items-center justify-end px-3">
+<span class="text-on-surface font-bold">2 KG</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Example 3: TV Time (Half Width) -->
+<article class="col-span-1 bg-surface-bright border-[3px] border-on-surface rounded-DEFAULT shadow-[4px_4px_0px_#1B1C19] flex flex-col">
+<div class="bg-surface-container border-b-[3px] border-on-surface px-6 py-4 flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">3. TV Time</h3>
+<div class="w-10 h-10 rounded-full bg-primary-fixed border-[3px] border-on-surface flex items-center justify-center shadow-[2px_2px_0px_#1B1C19]">
+<span class="material-symbols-outlined text-on-surface">tv</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Tracking hours spent watching cartoons over the weekend using data blocks.</p>
+<div class="grid grid-cols-2 gap-4 h-full">
+<!-- Saturday -->
+<div class="bg-surface border-[3px] border-on-surface rounded-lg p-4 flex flex-col items-center justify-center gap-4 shadow-[2px_2px_0px_#1B1C19]">
+<span class="font-headline-md text-headline-md">Saturday</span>
+<div class="flex gap-2">
+<div class="w-8 h-12 bg-secondary-container border-[3px] border-on-surface rounded-sm shadow-[2px_2px_0px_#1B1C19]"></div>
+<div class="w-8 h-12 bg-secondary-container border-[3px] border-on-surface rounded-sm shadow-[2px_2px_0px_#1B1C19]"></div>
+<div class="w-8 h-12 bg-secondary-container border-[3px] border-on-surface rounded-sm shadow-[2px_2px_0px_#1B1C19]"></div>
+</div>
+<span class="font-label-lg text-label-lg bg-surface-container px-3 py-1 border-[2px] border-on-surface rounded-full">3 Hours</span>
+</div>
+<!-- Sunday -->
+<div class="bg-surface border-[3px] border-on-surface rounded-lg p-4 flex flex-col items-center justify-center gap-4 shadow-[2px_2px_0px_#1B1C19]">
+<span class="font-headline-md text-headline-md">Sunday</span>
+<div class="flex gap-2">
+<div class="w-8 h-12 bg-primary-container border-[3px] border-on-surface rounded-sm shadow-[2px_2px_0px_#1B1C19]"></div>
+<div class="w-8 h-12 bg-primary-container border-[3px] border-on-surface rounded-sm shadow-[2px_2px_0px_#1B1C19]"></div>
+</div>
+<span class="font-label-lg text-label-lg bg-surface-container px-3 py-1 border-[2px] border-on-surface rounded-full">2 Hours</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only based on intent, but JSON says fixed w-full) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] md:hidden">
+<!-- Active Tab: Home -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_#1B1C19] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="fill">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 px-4 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">forum</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 px-4 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-tertiary-container/20 px-4 py-1 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+</body></html>

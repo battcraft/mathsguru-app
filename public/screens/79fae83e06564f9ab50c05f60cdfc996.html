@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti - Video Lesson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Nunito+Sans:opsz,wght@6..12,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f2f1eb",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#ba005b",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#63ff9d",
+                        "outline": "#8e7164",
+                        "primary-fixed": "#ffdbcc",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-container-low": "#f5f3ee",
+                        "surface": "#fbf9f3",
+                        "on-secondary-container": "#00743c",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-variant": "#e4e2dd",
+                        "on-secondary-fixed": "#00210d",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#a04100",
+                        "surface-dim": "#dbdad4",
+                        "primary": "#a04100",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "background": "#fbf9f3",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary-container": "#67002f",
+                        "on-surface": "#1b1c19",
+                        "surface-container-high": "#eae8e2",
+                        "surface-bright": "#fbf9f3",
+                        "primary-container": "#ff6b00",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c19",
+                        "inverse-surface": "#30312d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "inverse-primary": "#ffb693",
+                        "secondary": "#006d38",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#63ff9d",
+                        "on-primary-container": "#572000",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a4136"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-brutalist-border {
+            border: 3px solid #1b1c19;
+        }
+        .interactive-element {
+            transition: all 0.1s ease-in-out;
+        }
+        .interactive-element:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md md:hidden pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] top-0 sticky">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest neo-brutalist-border interactive-element neo-brutalist-shadow">
+<span class="material-symbols-outlined text-primary font-bold">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Math-Masti</h1>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-1 rounded-full neo-brutalist-border neo-brutalist-shadow">
+<span class="font-label-lg text-label-lg font-bold">12</span>
+<span class="text-lg">🔥</span>
+</div>
+</header>
+<main class="p-margin-mobile flex flex-col gap-unit">
+<!-- Video Player Section -->
+<section class="bg-surface-container-lowest rounded-DEFAULT neo-brutalist-border neo-brutalist-shadow overflow-hidden mb-4">
+<div class="relative aspect-video w-full border-b-[3px] border-on-surface">
+<img alt="A vibrant, stylized sunset over a crowded cricket stadium. The image has a slightly retro, high-contrast look fitting a 'Desi Street-Pop' aesthetic, with deep oranges and dark silhouettes." class="w-full h-full object-cover" data-alt="A vibrant, stylized sunset over a crowded cricket stadium. The image has a slightly retro, high-contrast look fitting a 'Desi Street-Pop' aesthetic, with deep oranges and dark silhouettes. It feels energetic and highly saturated, capturing the excitement of a match." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChQdfQpRycRv6JHnha_S33fMrWvt5msLFbZdk3TfYZJMss_ACWmCbFitHyd3b29vZDolFgG5N-HjVUqy7U__2L3OrMwaJTFWwIiDm4myJpQdREmCHU3AZhgVRbWwnFVFikwYnoFny_-LOvaQyNNjCY6spAAndMNFlKzsQ8gatFyEeDJkBq8E_SjvdFqTcXJ8QKHWH4IfmYxsFLJCokaJDglSSZsee9uP29VeNHgJkArlJxlbvhTW-FnGmLfYVC2oFm-eF3ZTeJRXk_"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<button class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center neo-brutalist-border neo-brutalist-shadow interactive-element text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 32px;">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="p-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Max/Min in Real Life: Cricket, Weather &amp; Shopping</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Video 3 • Real World Applications</p>
+</div>
+</section>
+<!-- Guru Tip Block -->
+<div class="bg-secondary-container rounded-DEFAULT p-4 neo-brutalist-border neo-brutalist-shadow mb-4 flex gap-4 items-start">
+<div class="bg-surface-container-lowest p-2 rounded-full neo-brutalist-border flex-shrink-0">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg uppercase mb-1 text-on-secondary-container">Guru Tip</h3>
+<p class="font-body-lg text-body-lg font-bold text-on-secondary-fixed">"Video dekho aur seekho! Real life mein max/min kahan dikhta hai!"</p>
+</div>
+</div>
+<!-- Key Learnings Section -->
+<section class="bg-surface-container-lowest rounded-DEFAULT p-4 neo-brutalist-border neo-brutalist-shadow">
+<h3 class="font-headline-md text-headline-md mb-4 border-b-[3px] border-on-surface pb-2">Key Learnings</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-fixed rounded-full flex items-center justify-center neo-brutalist-border flex-shrink-0">
+<span class="material-symbols-outlined text-primary">sports_cricket</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block text-on-surface">Cricket Scores</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Tracking the highest and lowest runs.</span>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-full flex items-center justify-center neo-brutalist-border flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary">partly_cloudy_day</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block text-on-surface">Weather Reports</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Hottest and coldest city temperatures.</span>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center neo-brutalist-border flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">shopping_cart</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg block text-on-surface">Bazaar Prices</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Finding the best deals and cheapest items.</span>
+</div>
+</li>
+</ul>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface rounded-t-xl shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</button>
+</nav>
+</body></html>

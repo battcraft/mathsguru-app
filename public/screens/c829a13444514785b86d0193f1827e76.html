@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Numbers Panga! - Evaluation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#67002f",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-primary-container": "#572000",
+                        "on-secondary-fixed": "#00210d",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-high": "#eae8e2",
+                        "primary": "#a04100",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-background": "#1b1c19",
+                        "inverse-on-surface": "#f2f1eb",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffd9e1",
+                        "secondary-fixed": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a4136",
+                        "background": "#fbf9f3",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-surface": "#1b1c19",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-primary": "#ffb693",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff6b00",
+                        "outline": "#8e7164",
+                        "surface-container": "#f0eee8",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-secondary-container": "#00743c",
+                        "secondary": "#006d38",
+                        "inverse-surface": "#30312d",
+                        "secondary-container": "#63ff9d",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf9f3",
+                        "surface-dim": "#dbdad4",
+                        "outline-variant": "#e2bfb0",
+                        "surface-tint": "#a04100",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-container": "#ff6096",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-fixed": "#3f001a",
+                        "tertiary": "#ba005b",
+                        "mango-orange": "#ff6b00",
+                        "nimbu-green": "#40e183",
+                        "warm-chalk": "#fbf9f3",
+                        "auto-yellow": "#ffd966"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-border {
+            border: 3px solid #1b1c19;
+        }
+        .neo-brutalist-shadow {
+            box-shadow: 4px 4px 0px #1b1c19;
+        }
+        .neo-brutalist-active:active {
+            box-shadow: 0px 0px 0px #1b1c19;
+            transform: translate(4px, 4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md selection:bg-mango-orange selection:text-white">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-margin-mobile md:px-margin-desktop py-unit bg-background w-full border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1b1c19]">
+<button aria-label="Go back" class="text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface flex-1 text-center">Numbers Panga!</h1>
+<div class="flex items-center gap-1 text-mango-orange">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-lg text-label-lg font-bold">12</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-gutter pb-32 flex flex-col gap-gutter">
+<!-- Status Bar -->
+<section class="bg-surface-container-low neo-brutalist-border rounded-lg p-unit neo-brutalist-shadow flex flex-col gap-unit">
+<div class="flex justify-between items-center px-2">
+<div class="flex items-center gap-2 font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-mango-orange" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span>08:45</span>
+</div>
+<div class="flex items-center gap-2 font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-auto-yellow" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span>Score: 450</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-6 bg-surface-variant neo-brutalist-border rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-nimbu-green w-2/5 border-r-[3px] border-on-surface transition-all duration-500"></div>
+<div class="absolute inset-0 flex items-center justify-center font-label-lg text-label-lg font-bold text-on-surface z-10 mix-blend-difference">
+                    4/10 Questions
+                </div>
+</div>
+<p class="text-center font-label-lg text-label-lg text-mango-orange italic">"Fatafat jawab do boss!"</p>
+</section>
+<!-- Question List -->
+<div class="flex flex-col gap-gutter">
+<!-- Q1 (Comparison) -->
+<article class="bg-surface-container-lowest neo-brutalist-border rounded-lg p-gutter neo-brutalist-shadow flex flex-col gap-unit">
+<h2 class="font-headline-sm text-headline-sm font-bold border-b-[3px] border-on-surface pb-2 mb-2">Q1. Battle of the Biggies</h2>
+<p class="font-body-lg text-body-lg text-center py-4 bg-surface-variant rounded-md neo-brutalist-border mb-4">45 <span class="inline-block w-12 h-10 border-b-[3px] border-dashed border-on-surface align-bottom mx-2"></span> 89</p>
+<div class="flex justify-center gap-gutter">
+<button class="w-16 h-16 bg-mango-orange text-white font-headline-md text-headline-md neo-brutalist-border rounded-full neo-brutalist-shadow neo-brutalist-active transition-all">&lt;</button>
+<button class="w-16 h-16 bg-warm-chalk font-headline-md text-headline-md neo-brutalist-border rounded-full neo-brutalist-shadow neo-brutalist-active transition-all hover:bg-surface-container-low">&gt;</button>
+<button class="w-16 h-16 bg-warm-chalk font-headline-md text-headline-md neo-brutalist-border rounded-full neo-brutalist-shadow neo-brutalist-active transition-all hover:bg-surface-container-low">=</button>
+</div>
+</article>
+<!-- Q2 (Ordering) -->
+<article class="bg-surface-container-lowest neo-brutalist-border rounded-lg p-gutter neo-brutalist-shadow flex flex-col gap-unit relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-auto-yellow px-3 py-1 neo-brutalist-border border-t-0 border-r-0 rounded-bl-lg font-label-lg text-label-lg font-bold z-10">Ascending</div>
+<h2 class="font-headline-sm text-headline-sm font-bold border-b-[3px] border-on-surface pb-2 mb-2 pr-20">Q2. Line up!</h2>
+<p class="font-body-lg text-body-lg mb-4">Put these in order, chhote se bada:</p>
+<div class="flex justify-center gap-2 mb-6">
+<span class="bg-surface-variant px-4 py-2 rounded-full neo-brutalist-border font-label-lg text-label-lg font-bold">12</span>
+<span class="bg-surface-variant px-4 py-2 rounded-full neo-brutalist-border font-label-lg text-label-lg font-bold">5</span>
+<span class="bg-surface-variant px-4 py-2 rounded-full neo-brutalist-border font-label-lg text-label-lg font-bold">89</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit">
+<button class="bg-warm-chalk p-3 rounded-md neo-brutalist-border neo-brutalist-shadow neo-brutalist-active text-left flex gap-3 items-center hover:bg-surface-container-low transition-all">
+<span class="w-8 h-8 flex items-center justify-center bg-mango-orange text-white rounded-full font-bold neo-brutalist-border">A</span>
+<span class="font-body-md text-body-md">12, 5, 89</span>
+</button>
+<button class="bg-nimbu-green p-3 rounded-md neo-brutalist-border neo-brutalist-shadow neo-brutalist-active text-left flex gap-3 items-center hover:bg-opacity-90 transition-all">
+<span class="w-8 h-8 flex items-center justify-center bg-white rounded-full font-bold neo-brutalist-border">B</span>
+<span class="font-body-md text-body-md font-bold">5, 12, 89</span>
+<span class="material-symbols-outlined ml-auto text-on-surface" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="bg-warm-chalk p-3 rounded-md neo-brutalist-border neo-brutalist-shadow neo-brutalist-active text-left flex gap-3 items-center hover:bg-surface-container-low transition-all">
+<span class="w-8 h-8 flex items-center justify-center bg-mango-orange text-white rounded-full font-bold neo-brutalist-border">C</span>
+<span class="font-body-md text-body-md">89, 12, 5</span>
+</button>
+<button class="bg-warm-chalk p-3 rounded-md neo-brutalist-border neo-brutalist-shadow neo-brutalist-active text-left flex gap-3 items-center hover:bg-surface-container-low transition-all">
+<span class="w-8 h-8 flex items-center justify-center bg-mango-orange text-white rounded-full font-bold neo-brutalist-border">D</span>
+<span class="font-body-md text-body-md">5, 89, 12</span>
+</button>
+</div>
+</article>
+<!-- Q3 (Decimal Battle) -->
+<article class="bg-surface-container-lowest neo-brutalist-border rounded-lg p-gutter neo-brutalist-shadow flex flex-col gap-unit">
+<h2 class="font-headline-sm text-headline-sm font-bold border-b-[3px] border-on-surface pb-2 mb-2">Q3. Decimal Dangal</h2>
+<p class="font-body-lg text-body-lg text-center mb-4">Which one is heavier, dost?</p>
+<div class="flex flex-col md:flex-row gap-gutter justify-center items-center">
+<button class="w-full md:w-48 aspect-[2/1] md:aspect-square bg-warm-chalk neo-brutalist-border rounded-lg neo-brutalist-shadow neo-brutalist-active flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low transition-all group">
+<span class="font-headline-lg text-headline-lg font-bold group-hover:scale-110 transition-transform">0.5</span>
+</button>
+<span class="font-headline-md text-headline-md text-mango-orange italic font-bold shrink-0">OR</span>
+<button class="w-full md:w-48 aspect-[2/1] md:aspect-square bg-warm-chalk neo-brutalist-border rounded-lg neo-brutalist-shadow neo-brutalist-active flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low transition-all group">
+<span class="font-headline-lg text-headline-lg font-bold group-hover:scale-110 transition-transform">0.05</span>
+</button>
+</div>
+</article>
+<!-- Q4 (Rounding) -->
+<article class="bg-surface-container-lowest neo-brutalist-border rounded-lg p-gutter neo-brutalist-shadow flex flex-col gap-unit relative">
+<h2 class="font-headline-sm text-headline-sm font-bold border-b-[3px] border-on-surface pb-2 mb-2">Q4. Round Gol-Mol</h2>
+<div class="bg-surface-variant p-4 rounded-md neo-brutalist-border text-center mb-4 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#1b1c19 2px, transparent 2px); background-size: 16px 16px;"></div>
+<p class="font-body-lg text-body-lg relative z-10">Round <span class="font-bold text-mango-orange text-xl bg-white px-2 py-1 rounded neo-brutalist-border inline-block mx-1">456</span> to the nearest 100.</p>
+</div>
+<div class="flex flex-wrap gap-unit justify-center">
+<button class="bg-auto-yellow px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow neo-brutalist-active font-label-lg text-label-lg font-bold hover:brightness-95 transition-all w-full md:w-auto flex-1 md:flex-none text-center min-w-[120px]">
+                        400
+                    </button>
+<button class="bg-warm-chalk px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow neo-brutalist-active font-label-lg text-label-lg font-bold hover:bg-surface-container-low transition-all w-full md:w-auto flex-1 md:flex-none text-center min-w-[120px]">
+                        450
+                    </button>
+<button class="bg-warm-chalk px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow neo-brutalist-active font-label-lg text-label-lg font-bold hover:bg-surface-container-low transition-all w-full md:w-auto flex-1 md:flex-none text-center min-w-[120px]">
+                        500
+                    </button>
+<button class="bg-warm-chalk px-6 py-3 rounded-full neo-brutalist-border neo-brutalist-shadow neo-brutalist-active font-label-lg text-label-lg font-bold hover:bg-surface-container-low transition-all w-full md:w-auto flex-1 md:flex-none text-center min-w-[120px]">
+                        460
+                    </button>
+</div>
+</article>
+<!-- Placeholders for remaining questions -->
+<div class="opacity-50 text-center py-gutter border-t-[3px] border-dashed border-on-surface mt-4">
+<span class="material-symbols-outlined text-4xl mb-2" style="font-variation-settings: 'FILL' 0;">keyboard_arrow_down</span>
+<p class="font-label-lg text-label-lg">Scroll down for Q5 - Q10...</p>
+</div>
+</div>
+</main>
+<!-- Sticky Footer Action -->
+<footer class="fixed bottom-0 left-0 w-full z-40 bg-surface px-margin-mobile md:px-margin-desktop py-gutter border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1b1c19]">
+<div class="max-w-container-max-width mx-auto flex justify-center">
+<button class="w-full md:w-auto md:min-w-[300px] bg-mango-orange text-white py-4 px-8 rounded-lg neo-brutalist-border neo-brutalist-shadow neo-brutalist-active font-headline-md text-headline-md font-bold flex items-center justify-center gap-3 transition-all hover:brightness-110 active:brightness-95 group">
+                SUBMIT ATTACK 
+                <span class="text-2xl group-hover:scale-125 transition-transform origin-center inline-block">⚔️</span>
+</button>
+</div>
+</footer>
+</body></html>

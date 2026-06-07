@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision in Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#5a3f48",
+                      "on-secondary": "#ffffff",
+                      "outline": "#8d6f78",
+                      "tertiary": "#705d00",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "surface-dim": "#dadada",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#e9c400",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#ffb0cb",
+                      "on-secondary-fixed": "#2f1400",
+                      "secondary-fixed-dim": "#ffb781",
+                      "on-primary-container": "#fffbff",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-container": "#5b2d00",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#eeeeee",
+                      "secondary": "#924c00",
+                      "inverse-surface": "#2f3131",
+                      "surface-tint": "#b80069",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-low": "#f3f3f4",
+                      "secondary-fixed": "#ffdcc4",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "tertiary-container": "#c9a900",
+                      "secondary-container": "#f88400",
+                      "primary-fixed": "#ffd9e3",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#e1bdc7",
+                      "primary-fixed-dim": "#ffb0cb",
+                      "on-primary-fixed": "#3e0020",
+                      "primary-container": "#df0b81",
+                      "background": "#f9f9f9",
+                      "on-tertiary-container": "#4c3f00",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary-fixed": "#ffe16d",
+                      "inverse-on-surface": "#f0f1f1",
+                      "error": "#ba1a1a",
+                      "primary": "#b40067",
+                      "on-surface": "#1a1c1c",
+                      "on-primary-fixed-variant": "#8d004f",
+                      "on-tertiary-fixed-variant": "#544600"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "border-width": "3px",
+                      "shadow-offset": "4px",
+                      "margin-desktop": "32px"
+              },
+              "fontFamily": {
+                      "body-md": ["Nunito Sans"],
+                      "label-bold": ["Nunito Sans"],
+                      "body-lg": ["Nunito Sans"],
+                      "headline-xl": ["Fredoka"],
+                      "headline-xl-mobile": ["Fredoka"],
+                      "headline-md": ["Fredoka"],
+                      "headline-lg": ["Fredoka"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                      "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                      "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                      "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .dot-grid {
+            background-image: radial-gradient(circle at center, #dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md dot-grid min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md docked full-width top-0 border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky transition-all">
+<div class="flex items-center gap-unit">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-3 border-black flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-secondary-container text-sm font-bold">person</span>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded">
+<span class="material-symbols-outlined">local_fire_department</span>
+</button>
+</header>
+<main class="flex-grow p-margin-mobile md:p-margin-desktop pb-32 max-w-5xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-12 relative">
+<div class="bg-primary text-on-primary border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-gutter md:p-margin-desktop inline-block rotate-[-1deg] hover:rotate-0 transition-transform">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl uppercase">Precision in<br/>Engineering</h1>
+</div>
+<div class="mt-gutter max-w-2xl bg-surface border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-gutter relative top-2 left-2 z-10">
+<p class="font-body-lg text-body-lg">
+                    In the mathematical universe, a 1mm deviation in a line segment seems trivial. In the physical world, amplified over distance, it's the difference between a successful orbit and a catastrophic structural failure. Let's look at the geometry of disaster.
+                </p>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
+<!-- Rocket Card -->
+<article class="col-span-1 md:col-span-7 bg-surface border-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex flex-col overflow-hidden group">
+<div class="h-64 border-b-3 border-black relative overflow-hidden bg-surface-container-highest">
+<img alt="Space launch" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A highly detailed, cinematic shot of a massive space rocket launching from a pad, viewed from a low angle emphasizing geometric structure and scale. The scene is rendered in a neo-brutalist style, characterized by harsh lighting, high contrast, and stark shadows against a light graph-paper patterned sky. Technical blueprint lines and angular measurements are subtly overlaid in bright yellow and pink on the rocket's fuselage. The overall aesthetic is raw, industrial, and deeply mathematical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmqpvGEac3QqZj4V0it6Lv4GIpWddizW4McrpzDxd_ER8DzGABpEMyaN9lUxh2SH5mL4VO5_nLpjlpBUH2-7XT7qsVRtBgxV1fLVBoyvmfBChD_bx_IFNodHFkHfumvG2qlGlrxQ7IfdLDgteYyMpxI0pjFvrV2NiPLKAzIXBCK1w4Avk8OdeLVdY_AimMZ4-6EYEjeTBfuUvQHDAKUcSFpYss_uKZyC2jVAZWU54zdu1kIVKRdKdGqjHmVQT81rPlRrXQrxghUmXb"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-2 py-1 border-3 border-black">
+                        TRAJECTORY ERROR
+                    </div>
+</div>
+<div class="p-gutter flex-grow">
+<h2 class="font-headline-lg text-headline-lg mb-unit text-primary">The 1mm Orbit Shift</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        If a navigation sensor's alignment is off by just 1 millimeter, the initial launch angle deviates by a fraction of a degree. Over a 384,400 km journey to the moon, that minuscule angular error extrapolates into a miss distance of thousands of kilometers.
+                    </p>
+</div>
+</article>
+<!-- Geometry Demo Card -->
+<article class="col-span-1 md:col-span-5 bg-tertiary-container text-on-tertiary-container border-3 border-black shadow-[4px_4px_0px_#1A1A1A] p-gutter flex flex-col justify-center items-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000); background-position: 0 0, 10px 10px; background-size: 20px 20px;"></div>
+<h3 class="font-headline-md text-headline-md mb-gutter relative z-10 bg-background border-3 border-black px-3 py-1 rotate-2">The Multiplier Effect</h3>
+<div class="w-full h-40 relative z-10 border-3 border-black bg-surface flex items-end p-4">
+<!-- Base line -->
+<div class="absolute bottom-4 left-4 right-4 h-1 bg-black"></div>
+<!-- Correct path -->
+<div class="absolute bottom-4 left-4 w-[90%] h-1 bg-primary origin-left -rotate-6"></div>
+<!-- Error path -->
+<div class="absolute bottom-4 left-4 w-[90%] h-1 bg-secondary origin-left -rotate-[8deg] border-y border-dashed border-black"></div>
+<div class="absolute right-6 top-10 font-label-bold text-label-bold bg-secondary text-on-secondary px-2 py-1 border-2 border-black rotate-12">
+                        +4500km Diff
+                    </div>
+</div>
+</article>
+<!-- Bridge Card -->
+<article class="col-span-1 md:col-span-12 bg-surface border-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex flex-col md:flex-row overflow-hidden">
+<div class="w-full md:w-1/2 p-gutter md:p-margin-desktop flex flex-col justify-center border-b-3 md:border-b-0 md:border-r-3 border-black relative">
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full border-3 border-black z-0 opacity-50"></div>
+<h2 class="font-headline-lg text-headline-lg mb-unit relative z-10">Structural Shear</h2>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">
+                        In civil engineering, suspension bridge cables rely on exact tension. A steel support strut machined 1mm too short won't immediately fail. However, it forces neighboring struts to bear micro-fractions of unintended weight. Under thermal expansion, that 1mm gap becomes a pivot point for structural shear.
+                    </p>
+</div>
+<div class="w-full md:w-1/2 h-64 md:h-auto bg-surface-container-high relative">
+<img alt="Bridge construction" class="w-full h-full object-cover mix-blend-multiply" data-alt="A stark, high-contrast photograph of massive steel bridge girders and suspension cables under construction, viewed straight on to emphasize pure geometry. The image follows a neo-brutalist aesthetic with heavy black shadows and bright, overexposed highlights, giving it a raw, tactile feel. Bright pink and yellow structural nodes are superimposed over the joints, mimicking a technical blueprint overlay. The background is a clean, minimal sky allowing the industrial structure to dominate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr-eQnAkrhTZoqqkQz-55tRbfgYba6wYUrp92hJ4V-bQ0ZP085HL8T5KNHgmOHu1UsDkP9YdFpDHbfL6IuzjZnB3E4KXEgF3pXI_-tXhYyoEWCqcD0-IjzbBAXni4c4bovzqcpZyApouZ18J86P63EgG7zWoOI57i378NKjaBMUVgJNYVNOZiUxti56njTcrI6DzMDgUNwCOppyaHRfyPIUvoA61_dgIU8uCJ_CfSndlYAcVGypwp2VMtCQmDmkP-rFsmScX6ZRova"/>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest text-primary font-label-lg text-label-lg docked full-width bottom-0 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20 md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="text-xs font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="text-xs font-bold">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined mb-1">quiz</span>
+<span class="text-xs font-bold">Quiz</span>
+</button>
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="text-xs font-bold">Story</span>
+</button>
+</nav>
+</body></html>

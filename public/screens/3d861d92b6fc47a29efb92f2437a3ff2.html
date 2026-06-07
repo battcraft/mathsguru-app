@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparison Champ Unlocked!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "tertiary": "#705d00",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#df0b81",
+                        "on-primary-fixed": "#3e0020",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#f3f3f4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "surface-container": "#eeeeee",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e2e2e2",
+                        "surface-tint": "#b80069",
+                        "on-error": "#ffffff",
+                        "primary": "#b40067",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed-dim": "#ffb781",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#5b2d00",
+                        "primary-fixed": "#ffd9e3",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "outline": "#8d6f78",
+                        "background": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "outline-variant": "#e1bdc7",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#f88400",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(circle at 1px 1px, #dadada 1px, transparent 0);
+            background-size: 32px 32px;
+            background-color: #f9f9f9;
+        }
+        
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px #1a1c1c;
+        }
+        
+        .neo-border {
+            border: 3px solid #1a1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Top App Bar - Extracted from JSON -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 z-40 transition-all">
+<button class="text-primary dark:text-primary-fixed-dim hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary font-headline-md">Geometry: Rekha &amp; Bindu</h1>
+<div class="flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant">
+<span>5 🔥</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-margin-mobile md:px-margin-desktop py-12 md:py-24 max-w-4xl mx-auto w-full gap-8">
+<!-- Header Section -->
+<div class="text-center w-full">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary mb-2">Comparison Champ Unlocked!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Module Complete: Comparing Numbers</p>
+</div>
+<!-- Mastery Visualization Container -->
+<div class="w-full bg-surface neo-border neo-shadow-lg rounded-xl p-8 relative overflow-hidden flex flex-col items-center">
+<!-- Decorative Background Element -->
+<div class="absolute -top-16 -right-16 w-32 h-32 bg-secondary-container rounded-full neo-border opacity-20"></div>
+<div class="relative w-48 h-48 md:w-64 md:h-64 mb-8 flex items-center justify-center">
+<!-- Outer Ring -->
+<svg class="w-full h-full transform -rotate-90 absolute top-0 left-0" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle cx="50" cy="50" fill="transparent" r="45" stroke="#e2e2e2" stroke-width="8"></circle>
+<!-- Progress Circle (100%) -->
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="transparent" r="45" stroke="#b40067" stroke-dasharray="283" stroke-dashoffset="0" stroke-width="8"></circle>
+</svg>
+<!-- Center Content / Badge -->
+<div class="bg-tertiary-fixed w-36 h-36 md:w-48 md:h-48 rounded-full neo-border neo-shadow flex flex-col items-center justify-center z-10 relative overflow-hidden group">
+<!-- Inner pattern -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[size:16px_16px]"></div>
+<span class="material-symbols-outlined text-6xl md:text-8xl text-secondary mb-2 relative z-10 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold text-on-secondary-container relative z-10">100% MASTERY</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-center mb-6 border-b-[3px] border-on-surface pb-2 w-full max-w-sm">Skills Mastered</h3>
+<!-- Skills List -->
+<div class="w-full max-w-md flex flex-col gap-4">
+<!-- Skill 1 -->
+<div class="flex items-center gap-4 bg-surface-container w-full p-4 neo-border neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-container neo-border flex items-center justify-center flex-shrink-0 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Digit Counting</span>
+</div>
+<!-- Skill 2 -->
+<div class="flex items-center gap-4 bg-surface-container w-full p-4 neo-border neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-container neo-border flex items-center justify-center flex-shrink-0 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Left-to-Right Rule</span>
+</div>
+<!-- Skill 3 -->
+<div class="flex items-center gap-4 bg-surface-container w-full p-4 neo-border neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-container neo-border flex items-center justify-center flex-shrink-0 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Decimal Logic</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-8 bg-primary text-on-primary font-label-bold text-label-bold py-4 px-8 w-full max-w-sm rounded-lg neo-border neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">home</span>
+            Back to Home Base
+        </button>
+</main>
+<!-- Bottom Nav Bar - Suppressed based on 'Task-Focused / Splash Screen' rules, but kept commented out to show logic if it were standard browsing.
+    <nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] flex justify-around items-center h-20 px-margin-mobile bg-surface dark:bg-surface-dim transition-all md:hidden">
+        ...
+    </nav>
+    -->
+</body></html>

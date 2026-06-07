@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini Panga! - Mid-Lesson Quiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        @keyframes timer-shrink {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+        .timer-animate {
+            animation: timer-shrink 10s linear forwards;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center w-10 h-10 border-[3px] border-on-surface rounded-full bg-surface active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all shadow-[2px_2px_0px_#1c1b1b]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Mini Panga!</h1>
+</div>
+<div class="flex items-center gap-2 border-[3px] border-on-surface px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container neo-shadow">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-lg text-label-lg">150</span>
+</div>
+</header>
+<!-- Timer Bar Section -->
+<div class="w-full h-4 bg-surface-container-highest border-b-[3px] border-on-surface relative overflow-hidden">
+<div class="h-full bg-secondary timer-animate border-r-[3px] border-on-surface" id="timer-bar"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center p-6 max-w-lg mx-auto w-full">
+<!-- Question Counter -->
+<div class="mb-8 self-start">
+<span class="bg-primary-container text-on-primary-container px-4 py-2 border-[3px] border-on-surface rounded-full font-headline-md text-headline-md neo-shadow">
+                Sawaal 1/3
+            </span>
+</div>
+<!-- Question Card -->
+<div class="w-full bg-surface-container-lowest border-[3px] border-on-surface rounded-lg p-8 neo-shadow relative mb-12">
+<div class="absolute -top-6 -right-4 bg-tertiary-container border-[3px] border-on-surface p-2 rounded-lg rotate-12 neo-shadow">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">quiz</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4">
+                Max value data ke bahar se ho sakti hai?
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-80">
+                Think carefully! Is the maximum value always part of the given set?
+            </p>
+</div>
+<!-- Options Container -->
+<div class="w-full grid grid-cols-2 gap-6">
+<!-- True / Sahi Option -->
+<button class="group flex flex-col items-center justify-center gap-3 bg-secondary-container border-[3px] border-on-surface p-6 rounded-lg neo-shadow active-press transition-all hover:bg-secondary hover:text-white" onclick="handleSelect(this, true)">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">check_circle</span>
+<span class="font-headline-md text-headline-md">Sahi</span>
+</button>
+<!-- False / Galat Option -->
+<button class="group flex flex-col items-center justify-center gap-3 bg-error-container border-[3px] border-on-surface p-6 rounded-lg neo-shadow active-press transition-all hover:bg-error hover:text-white" onclick="handleSelect(this, false)">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">cancel</span>
+<span class="font-headline-md text-headline-md">Galat</span>
+</button>
+</div>
+<!-- Hint Section -->
+<div class="mt-12 w-full">
+<div class="flex items-start gap-4 bg-surface-container border-[3px] border-on-surface p-4 rounded-lg">
+<div class="bg-primary p-2 border-[2px] border-on-surface rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary">lightbulb</span>
+</div>
+<div>
+<p class="font-body-md text-body-md italic text-on-surface">
+                        "Recall: Range formula uses high and low values from the dataset itself..."
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</footer>
+<!-- Image for Context (Hidden/Subtle Background or Specific Block) -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 opacity-5 pointer-events-none">
+<img alt="Educational Background" class="w-full h-full object-cover" data-alt="A vibrant neo-brutalist pattern background for a learning app featuring abstract mathematical symbols and descriptive geometric shapes. The color palette uses Mango Orange and Nimbu Green with heavy black outlines. The mood is energetic, urban, and educational inspired by Indian street art and contemporary pop culture. Bright daylight and high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8vugMvh00wmCGQIIFBRfK5clfGt6ANJYRNgDIv5BDNTRhGjBpEphm_1sVfj0NNC3AFlMis_tvuu04EkN3cQ60zc1t4p7eLVGviIXjuNWrcgZd1UBMICU3IBcISl-0HLU0PkeOlb3DfdrU-7oYDpYDJEJLqXTfDiBtKVkgZ-JvrIppxi4_rOrUMkUmWgQjihpLknEhPKaOSoDW5U2kjh3Dxt9Q6YJ1kA-85mnp2Wz39wbF54uTLeNv6TvjrdhQXuxPb_UTLRJIP4z"/>
+</div>
+<script>
+        function handleSelect(btn, isTrue) {
+            // Remove selection from others
+            document.querySelectorAll('button').forEach(b => {
+                b.classList.remove('ring-4', 'ring-primary');
+            });
+            
+            // Highlight selected
+            btn.classList.add('ring-4', 'ring-primary');
+            
+            // Visual feedback
+            if (!isTrue) {
+                btn.classList.add('animate-shake');
+                setTimeout(() => btn.classList.remove('animate-shake'), 500);
+            } else {
+                btn.classList.add('bg-secondary');
+                btn.classList.add('text-white');
+            }
+            
+            // Pause timer
+            document.getElementById('timer-bar').style.animationPlayState = 'paused';
+        }
+
+        // CSS for shake
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-8px); }
+                75% { transform: translateX(8px); }
+            }
+            .animate-shake {
+                animation: shake 0.2s ease-in-out 0s 2;
+                border-color: #ba1a1a !important;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>

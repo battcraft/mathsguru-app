@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Pop - Vertex vs Endpoints</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface');
+            background-image: radial-gradient(circle, #e2e2e2 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        
+        .neo-brutalist-card {
+            border: theme('spacing.border-width') solid theme('colors.on-surface');
+            box-shadow: theme('spacing.shadow-offset') theme('spacing.shadow-offset') 0px 0px theme('colors.on-surface');
+            transition: all 0.2s ease-in-out;
+        }
+
+        .neo-brutalist-card:hover {
+            box-shadow: 8px 8px 0px 0px theme('colors.on-surface');
+            transform: translate(-2px, -2px);
+        }
+
+        .neo-brutalist-card:active {
+            box-shadow: 0px 0px 0px 0px theme('colors.on-surface');
+            transform: translate(4px, 4px);
+        }
+
+        .neo-brutalist-btn-primary {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+            border: theme('spacing.border-width') solid theme('colors.on-surface');
+            box-shadow: theme('spacing.shadow-offset') theme('spacing.shadow-offset') 0px 0px theme('colors.on-surface');
+            transition: all 0.2s ease-in-out;
+        }
+
+        .neo-brutalist-btn-primary:hover {
+            box-shadow: 8px 8px 0px 0px theme('colors.on-surface');
+            transform: translate(-2px, -2px);
+        }
+
+        .neo-brutalist-btn-primary:active {
+            box-shadow: 0px 0px 0px 0px theme('colors.on-surface');
+            transform: translate(4px, 4px);
+        }
+
+        /* Geometry specific */
+        .geo-point {
+            width: 12px;
+            height: 12px;
+            background-color: theme('colors.primary-container');
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .geo-line {
+            height: 3px;
+            background-color: theme('colors.secondary-container');
+            width: 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] w-full sticky top-0 z-50 flex items-center justify-between px-margin-mobile md:px-margin-desktop py-unit">
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none">
+<span class="material-symbols-outlined font-headline-md text-headline-md">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary uppercase tracking-tighter">Ganit Pop</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-label-bold text-label-bold text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span> Home
+            </a>
+<a class="font-label-bold text-label-bold text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">forum</span> Chat
+            </a>
+<a class="font-label-bold text-label-bold bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg hover:bg-surface-variant transition-all flex items-center gap-2 active:scale-95 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[2px] hover:-translate-y-[2px]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span> Quiz
+            </a>
+<a class="font-label-bold text-label-bold text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">menu_book</span> Story
+            </a>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop pb-32 md:pb-16 max-w-5xl mx-auto w-full flex flex-col gap-8">
+<!-- Section Header -->
+<section class="neo-brutalist-card bg-surface-container-highest p-6 md:p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container opacity-20 rounded-bl-full border-b-[3px] border-l-[3px] border-on-surface"></div>
+<div class="inline-block bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 border-[3px] border-on-surface font-label-bold text-label-bold self-start mb-2">
+                Practice Zone
+            </div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-on-surface">Vertex vs Endpoints</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">
+                Identify the correct geometric properties for each shape below. Does it have a definite starting point, an end, or does it go on forever?
+            </p>
+<!-- Progress / Score Indicator -->
+<div class="flex items-center gap-4 mt-4 bg-surface border-[3px] border-on-surface px-4 py-2 self-start rounded-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">Score: 0 / 3</span>
+</div>
+</section>
+<!-- Bento Grid for Questions -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Question 1: Ray -->
+<article class="neo-brutalist-card bg-surface rounded-lg flex flex-col">
+<div class="p-6 border-b-[3px] border-on-surface bg-surface-bright flex justify-center items-center h-40 relative">
+<!-- Drawing a Ray -->
+<div class="w-3/4 flex items-center relative">
+<div class="geo-point absolute left-0 z-10" style="background-color: theme('colors.secondary-container'); border: 2px solid #000;"></div>
+<div class="geo-line bg-secondary-container" style="height: 4px;"></div>
+<span class="material-symbols-outlined absolute -right-4 text-secondary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">arrow_right</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6 flex-grow bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md">What does this shape have?</h3>
+<p class="font-body-md text-on-surface-variant italic">It's a Ray.</p>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            1 Vertex
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            2 Endpoints
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            No Endpoints
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Question 2: Line Segment -->
+<article class="neo-brutalist-card bg-surface rounded-lg flex flex-col">
+<div class="p-6 border-b-[3px] border-on-surface bg-surface-bright flex justify-center items-center h-40 relative">
+<!-- Drawing a Segment -->
+<div class="w-3/4 flex items-center relative">
+<div class="geo-point absolute left-0 z-10" style="background-color: theme('colors.tertiary-fixed-dim'); border: 2px solid #000;"></div>
+<div class="geo-line bg-tertiary-fixed-dim" style="height: 4px;"></div>
+<div class="geo-point absolute right-0 z-10" style="background-color: theme('colors.tertiary-fixed-dim'); border: 2px solid #000;"></div>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6 flex-grow bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md">What does this shape have?</h3>
+<p class="font-body-md text-on-surface-variant italic">It's a Line Segment.</p>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            1 Vertex
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            2 Endpoints
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            No Endpoints
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Question 3: Line -->
+<article class="neo-brutalist-card bg-surface rounded-lg flex flex-col">
+<div class="p-6 border-b-[3px] border-on-surface bg-surface-bright flex justify-center items-center h-40 relative">
+<!-- Drawing a Line -->
+<div class="w-3/4 flex items-center relative">
+<span class="material-symbols-outlined absolute -left-4 text-primary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1; transform: scaleX(-1);">arrow_right</span>
+<div class="geo-line bg-primary-container" style="height: 4px;"></div>
+<span class="material-symbols-outlined absolute -right-4 text-primary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">arrow_right</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6 flex-grow bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md">What does this shape have?</h3>
+<p class="font-body-md text-on-surface-variant italic">It's a Line.</p>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            1 Vertex
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            2 Endpoints
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="neo-brutalist-card bg-surface w-full py-3 px-4 text-left font-label-bold text-label-bold hover:bg-primary-fixed transition-colors flex justify-between items-center group">
+                            No Endpoints
+                            <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Action Area -->
+<div class="flex justify-center mt-8">
+<button class="neo-brutalist-btn-primary px-8 py-4 rounded-xl font-headline-md text-headline-md flex items-center gap-3">
+                Submit Answers
+                <span class="material-symbols-outlined font-bold">send</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-margin-mobile bg-surface border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant p-2 rounded transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant p-2 rounded transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg flex flex-col items-center gap-1 active:scale-95 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant p-2 rounded transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        // Simple interaction script to demonstrate selection
+        document.querySelectorAll('article button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove selection from siblings
+                const siblings = this.parentElement.querySelectorAll('button');
+                siblings.forEach(sib => {
+                    sib.classList.remove('bg-primary-container', 'text-on-primary-container');
+                    sib.classList.add('bg-surface', 'text-on-surface');
+                    sib.querySelector('span').style.opacity = '0';
+                });
+                
+                // Add selection to clicked
+                this.classList.remove('bg-surface', 'text-on-surface');
+                this.classList.add('bg-primary-container', 'text-on-primary-container');
+                this.querySelector('span').style.opacity = '1';
+                this.querySelector('span').style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body></html>

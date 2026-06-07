@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice Question 1 - IPL Score | Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+        .neo-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .neo-active-sm:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        body {
+            background-color: #fbf9f3;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb693",
+                        "tertiary-container": "#ff6096",
+                        "primary-container": "#ff6b00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#8e7164",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "background": "#fbf9f3",
+                        "surface-container-high": "#eae8e2",
+                        "on-primary-container": "#572000",
+                        "surface-container": "#f0eee8",
+                        "tertiary": "#ba005b",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "inverse-on-surface": "#f2f1eb",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-variant": "#e4e2dd",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-surface": "#1b1c19",
+                        "secondary-fixed": "#63ff9d",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "primary-fixed": "#ffdbcc",
+                        "outline-variant": "#e2bfb0",
+                        "secondary": "#006d38",
+                        "on-tertiary-fixed": "#3f001a",
+                        "surface": "#fbf9f3",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-tertiary-container": "#67002f",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-primary-fixed": "#351000",
+                        "on-surface-variant": "#5a4136"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-desktop h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-secondary-fixed-dim">
+<img alt="Student Profile Avatar" data-alt="A stylized vector avatar of a cheerful young student wearing large spectacles and a colorful hoodie. The character is set against a vibrant green circular background, following a modern, friendly educational app aesthetic with bold outlines and flat colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbiw4wN9DTZZjYSTVi1_jNOUSj3NpQpPDMfFEIlAK-5nHZiADZoQxn4Cqw37poEpuC7CKqdjDiSoV2cf0QmOxFqj8EfhT6vl8d_sUa1yJ492N926jLrGntMHK_BXUugxE0FQNG_0pClN9AAdblDaCd2Dach8-RekRF6VXuOBu73J6wuV4QyC6vWwKf1mecZZcIIscZ6hY2UxUgHvnTLzj5S92BexR5lUtzuefrk3w5wz11NmG8ksgGOlLgiI-mAPGu7fkZSL_Xr8Xb"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="flex items-center gap-2 text-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                Chat
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+                Quiz
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+                Story
+            </a>
+</nav>
+<div class="flex items-center gap-2 bg-primary-container/10 px-4 py-1.5 rounded-full border-3 border-black neo-shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold text-primary">12 Days</span>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-margin-desktop py-12 max-w-[1200px]">
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Left Side: Progress & Question -->
+<div class="col-span-8 flex flex-col gap-8">
+<!-- Progressive Progress Bar -->
+<div class="w-full flex flex-col gap-2">
+<div class="flex justify-between items-end mb-1">
+<span class="font-headline-md text-primary">Practice Question 1 of 5</span>
+<span class="font-bold text-secondary">20% Completed</span>
+</div>
+<div class="h-6 w-full bg-surface-container-high border-3 border-black rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary-fixed w-1/5 border-r-3 border-black flex items-center justify-center transition-all duration-500">
+</div>
+</div>
+</div>
+<!-- Main Question Card -->
+<div class="bg-surface-container-lowest border-3 border-black rounded-xl neo-shadow overflow-hidden">
+<div class="bg-primary-container text-on-primary-container p-6 border-b-3 border-black flex justify-between items-center">
+<h2 class="font-headline-lg text-headline-lg">IPL Score Check! 🏏</h2>
+<span class="material-symbols-outlined text-4xl" data-icon="sports_cricket">sports_cricket</span>
+</div>
+<div class="p-8 flex flex-col gap-8">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                            Mumbai Indians scored <span class="bg-secondary-fixed/30 px-2 py-1 rounded font-bold border-2 border-black">182 runs</span> in their 20 overs. Chennai Super Kings is currently at <span class="bg-secondary-fixed/30 px-2 py-1 rounded font-bold border-2 border-black">154 runs</span> at the end of 17 overs. 
+                        </p>
+<div class="bg-surface-container border-3 border-black p-6 rounded-lg relative">
+<span class="material-symbols-outlined absolute -top-4 -left-4 bg-primary text-white p-2 rounded-full border-3 border-black text-xl" data-icon="question_mark">question_mark</span>
+<p class="font-headline-md text-headline-md italic">
+                                "Bhai, how many more runs do CSK need to win the match?"
+                            </p>
+</div>
+<!-- MCQ Options -->
+<div class="grid gap-4">
+<button class="group flex items-center justify-between p-5 border-3 border-black rounded-lg bg-white neo-shadow neo-active transition-all hover:bg-surface-container-low text-left" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 flex items-center justify-center bg-surface-container-high border-3 border-black rounded-md font-extrabold group-hover:bg-primary-container transition-colors">A</span>
+<span class="font-bold text-body-lg">28 Runs</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary font-black" data-icon="check_circle">check_circle</span>
+</button>
+<button class="group flex items-center justify-between p-5 border-3 border-black rounded-lg bg-white neo-shadow neo-active transition-all hover:bg-surface-container-low text-left" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 flex items-center justify-center bg-surface-container-high border-3 border-black rounded-md font-extrabold group-hover:bg-primary-container transition-colors">B</span>
+<span class="font-bold text-body-lg">29 Runs</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary font-black" data-icon="check_circle">check_circle</span>
+</button>
+<button class="group flex items-center justify-between p-5 border-3 border-black rounded-lg bg-white neo-shadow neo-active transition-all hover:bg-surface-container-low text-left" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 flex items-center justify-center bg-surface-container-high border-3 border-black rounded-md font-extrabold group-hover:bg-primary-container transition-colors">C</span>
+<span class="font-bold text-body-lg">38 Runs</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary font-black" data-icon="check_circle">check_circle</span>
+</button>
+<button class="group flex items-center justify-between p-5 border-3 border-black rounded-lg bg-white neo-shadow neo-active transition-all hover:bg-surface-container-low text-left" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 flex items-center justify-center bg-surface-container-high border-3 border-black rounded-md font-extrabold group-hover:bg-primary-container transition-colors">D</span>
+<span class="font-bold text-body-lg">32 Runs</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-[.selected]:opacity-100 text-secondary font-black" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex justify-between items-center mt-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high border-3 border-black rounded-lg font-bold neo-shadow neo-active">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                        Previous
+                    </button>
+<button class="flex items-center gap-2 px-10 py-4 bg-primary-container text-on-primary-container border-3 border-black rounded-lg font-extrabold text-headline-md neo-shadow neo-active">
+                        Check Answer
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Persistent Hint Panel -->
+<aside class="col-span-4 sticky top-28 flex flex-col gap-6">
+<div class="bg-tertiary-fixed border-3 border-black rounded-xl neo-shadow overflow-hidden">
+<div class="p-6 border-b-3 border-black bg-tertiary text-white flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 class="font-headline-md text-headline-md">Pro Tip!</h3>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<p class="font-body-md text-on-surface leading-relaxed">
+                            To win, a team needs <span class="font-bold">Total Runs + 1</span>.
+                        </p>
+<div class="bg-white/50 border-2 border-black border-dashed p-4 rounded-lg">
+<code class="font-bold text-tertiary">Equation: (182 + 1) - 154 = ?</code>
+</div>
+<p class="text-sm italic text-on-surface-variant">
+                            "Ek extra run toh chaiye hi to beat the target!"
+                        </p>
+</div>
+</div>
+<div class="bg-secondary-container border-3 border-black rounded-xl neo-shadow p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="calculate">calculate</span>
+<h4 class="font-bold text-xl">Quick Scratchpad</h4>
+</div>
+<div class="bg-white border-3 border-black rounded-lg min-h-[160px] p-4 font-mono text-lg flex items-start justify-start cursor-text hover:bg-surface-bright transition-colors">
+<span class="text-gray-400">Tap here to scribble calculations...</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 bg-white border-2 border-black rounded font-bold text-sm neo-shadow-sm neo-active-sm">Clear</button>
+<button class="flex-1 py-2 bg-white border-2 border-black rounded font-bold text-sm neo-shadow-sm neo-active-sm">Copy Hint</button>
+</div>
+</div>
+<!-- Mascot Moment -->
+<div class="flex items-center gap-4 bg-surface-container border-3 border-black rounded-xl p-4 neo-shadow">
+<img alt="Dost Mascot" class="w-16 h-16 border-2 border-black rounded-full bg-primary-fixed-dim" data-alt="A friendly, yellow robotic mascot with large expressive digital eyes and a small antenna, styled in a neo-brutalist tech aesthetic. The character is set against a simple warm white background with bold black line-art details, representing a helpful digital math companion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3tvZqG6wdzK7zExAnkVbGjHDao1J_Vw5oB2J1evI-p-ZV8W-ntpbPXCEZhpIHEM_M2VNiUpzA_OwZHGNIA9q3lroNiZTMI1qAIwv7uomdJ6z0pcNgOoU815PheQIHS1VrUhyb6ProXAPjEwLYlxGvYHbHpsjp4_o5rD2c6V3kpzkr2SpHw3cVXLD6qduL7QnStyZlXfpoZEnEIVyegORKFT-8rdQ3ZzPU9P3vQGZJIVTN_2CeNFHntQjKdM5cr1MAGTt6fjfWA4Vj"/>
+<p class="text-sm font-bold leading-tight">"Keep going, Champion! You're calculating like a pro commentator! 🎙️"</p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only Suppression Logic Handled via Tailwind) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</div>
+</footer>
+<script>
+        function selectOption(btn) {
+            // Remove selection from all buttons
+            const buttons = document.querySelectorAll('button[onclick="selectOption(this)"]');
+            buttons.forEach(b => {
+                b.classList.remove('selected', 'bg-secondary-container', 'translate-x-1', 'translate-y-1', 'shadow-none');
+                b.classList.add('bg-white', 'neo-shadow');
+            });
+            
+            // Add selection to clicked button
+            btn.classList.add('selected', 'bg-secondary-container');
+            btn.classList.remove('bg-white');
+        }
+
+        // Simple interactive scratchpad placeholder behavior
+        const scratchpad = document.querySelector('.font-mono.cursor-text');
+        scratchpad.addEventListener('click', () => {
+            if (scratchpad.textContent.includes('Tap here')) {
+                scratchpad.textContent = '';
+                scratchpad.classList.add('text-on-surface');
+            }
+        });
+    </script>
+</body></html>

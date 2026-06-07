@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Railway Track Matchup - Ganit Dost</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-color: #f9f9f9;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px #1A1A1A;
+        }
+        .neo-shadow-active {
+            box-shadow: 0px 0px 0px #1A1A1A;
+            transform: translate(4px, 4px);
+        }
+        .track-hotspot {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .track-hotspot:hover {
+            background-color: rgba(223, 11, 129, 0.3);
+        }
+        .track-selected {
+            background-color: rgba(223, 11, 129, 0.6) !important;
+            border: 3px solid #1A1A1A;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container border-3 border-black rounded-full flex items-center justify-center overflow-hidden">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2rAq6xywdHVf1ZcSUvfeoo-zyyCe6CiyX4A31ZYSaaf-SR3Ne_UOf8c20w5HcuyCCRfe7qLLlJWoeVjRp3KXmBaipVGITM-_OQEEWIQdMsjTg_pNi4bmgcuE0ziY7W3bUxXv5HhQQfNh-kgfn-QsVcQQEX6Ii715DLwg5Z61l0co518Hzhz_eeU3CU7PktsVFZMUPXT5d18kXPqrUbjQFNK8PVO99AUAcpqCs226RKu3x9i6_tKWwRjXkmsMV-O8__D8e_3C58XD5"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 bg-surface-container border-3 border-black px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold">12</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow p-4 md:p-8 max-w-5xl mx-auto w-full">
+<!-- Breadcrumb / Task Title -->
+<div class="mb-6">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Railway Track Matchup</h2>
+<div class="inline-block bg-secondary-fixed border-3 border-black px-4 py-1 neo-shadow">
+<p class="font-label-bold text-on-secondary-fixed">Level: Geometry Intermediate</p>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Interaction Card -->
+<div class="lg:col-span-8">
+<div class="bg-white border-3 border-black neo-shadow-lg p-2 relative overflow-hidden group">
+<!-- Instruction Header -->
+<div class="bg-primary text-white p-4 border-b-3 border-black mb-2 -mx-2 -mt-2">
+<h3 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined">touch_app</span>
+                            Tap on the Parallel Lines
+                        </h3>
+</div>
+<!-- Interactive Photo Canvas -->
+<div class="relative w-full aspect-video border-3 border-black overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle perspective shot of industrial railway tracks stretching into the distance under a bright morning sun. The polished steel rails gleam with high-contrast metallic highlights, contrasting against the dark, textured wooden sleepers and grey gravel ballast. The image follows a vibrant Neo-Brutalist color palette with deep blacks and sharp shadows, evoking a sense of structured geometry and urban precision. The lighting is crisp and clear, emphasizing the parallel lines of the train tracks as they converge toward a vanishing point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtOAYsNWDUWNIdVGsohSZlawRm2xYnNKiIEPFqULwVkPZbSjBdUqiFJynT5CDEjLfK8IfHU6P3grzi13WOLxTipZT9jBwl81dViJ4SjDx0zZP36J9NaYdDmoa0Cmy59-iSRj7T5uA3KIKKFlkfvLidANesMbWi_f9EVrdFq33bluKa_lKaP0xvrwEb4U-0_MQXYCGQyI1zjkP5hiTtXQHLbiXy4iJeALpkK6o1meHeY6JqmJYB1kgLq3DfIR-jmgv3oPuUj1Ix1kNB"/>
+<!-- Interactive Hotspots (SVG Overlay for precision) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 800 450">
+<!-- Left Rail Hitbox -->
+<path class="track-hotspot pointer-events-auto" d="M 280 450 L 380 0 L 395 0 L 310 450 Z" fill="transparent" onclick="toggleTrack(this)"></path>
+<!-- Right Rail Hitbox -->
+<path class="track-hotspot pointer-events-auto" d="M 490 450 L 415 0 L 430 0 L 520 450 Z" fill="transparent" onclick="toggleTrack(this)"></path>
+</svg>
+<!-- Floating Feedback -->
+<div class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary-fixed border-3 border-black p-6 neo-shadow-lg z-20 text-center scale-110" id="success-message">
+<span class="material-symbols-outlined text-5xl text-tertiary mb-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-headline-md text-on-tertiary-fixed">Bilkul Sahi!</p>
+<p class="font-body-md text-on-tertiary-fixed-variant">These lines never meet.</p>
+</div>
+</div>
+<!-- Footer Controls -->
+<div class="mt-4 flex justify-between items-center px-2">
+<button class="bg-surface-container-high border-3 border-black px-6 py-2 font-label-bold neo-shadow active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+                            RESET
+                        </button>
+<button class="opacity-50 bg-primary-container text-white border-3 border-black px-8 py-3 font-headline-md neo-shadow-lg active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-not-allowed" disabled="" id="submit-btn">
+                            CHECK ANSWER
+                        </button>
+</div>
+</div>
+</div>
+<!-- Side Sidebar / Hint Box -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Hint Box: Dhyan se dekho -->
+<div class="bg-tertiary-fixed border-3 border-black p-6 neo-shadow relative">
+<div class="absolute -top-4 -left-4 bg-white border-3 border-black px-3 py-1 font-label-bold rotate-[-5deg]">
+                        HINT / संकेत
+                    </div>
+<div class="flex items-start gap-4 mt-2">
+<span class="material-symbols-outlined text-tertiary text-4xl">lightbulb</span>
+<div>
+<p class="font-headline-md text-on-tertiary-fixed mb-2 italic">Dhyan se dekho</p>
+<p class="font-body-md text-on-tertiary-fixed-variant">Parallel lines are like railway tracks – they stay the same distance apart forever and <span class="font-bold underline">never intersect</span>.</p>
+</div>
+</div>
+</div>
+<!-- Fun Fact / Geometry Rule -->
+<div class="bg-secondary-fixed border-3 border-black p-6 neo-shadow">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-8 h-8 bg-black flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">square</span>
+</div>
+<h4 class="font-label-bold text-on-secondary-fixed">GEOMETRY RULE #101</h4>
+</div>
+<p class="font-body-md text-on-secondary-fixed-variant">If you extend these rails across the whole world, they would still maintain a 1.67-meter gap!</p>
+</div>
+<!-- Progress Visual -->
+<div class="bg-white border-3 border-black p-4 neo-shadow flex items-center justify-between">
+<span class="font-label-bold">Module Progress</span>
+<div class="flex gap-1">
+<div class="w-4 h-4 bg-primary border-2 border-black"></div>
+<div class="w-4 h-4 bg-primary border-2 border-black"></div>
+<div class="w-4 h-4 bg-surface-container-high border-2 border-black"></div>
+<div class="w-4 h-4 bg-surface-container-high border-2 border-black"></div>
+<div class="w-4 h-4 bg-surface-container-high border-2 border-black"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<div class="h-24"></div> <!-- Spacer for fixed nav -->
+<script>
+        let selectedTracks = 0;
+        
+        function toggleTrack(el) {
+            if (el.classList.contains('track-selected')) {
+                el.classList.remove('track-selected');
+                selectedTracks--;
+            } else {
+                el.classList.add('track-selected');
+                selectedTracks++;
+            }
+            
+            const submitBtn = document.getElementById('submit-btn');
+            if (selectedTracks >= 2) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                submitBtn.onclick = checkAnswer;
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                submitBtn.onclick = null;
+            }
+        }
+
+        function checkAnswer() {
+            const successMsg = document.getElementById('success-message');
+            successMsg.classList.remove('hidden');
+            successMsg.classList.add('animate-bounce');
+            
+            // Add haptic-like effect
+            document.body.classList.add('bg-tertiary-fixed');
+            setTimeout(() => {
+                document.body.classList.remove('bg-tertiary-fixed');
+            }, 300);
+        }
+
+        // Add 8px grid alignment helper console log for developer
+        console.log("Visual baseline: 8px grid system active.");
+    </script>
+</body></html>

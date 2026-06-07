@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow { shadow: 4px 4px 0px #1c1b1b; }
+        .active-squish:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+        .waveform-bar {
+            transition: height 0.2s ease;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #ff6b00;
+            cursor: pointer;
+            border: 3px solid #1c1b1b;
+            box-shadow: 2px 2px 0px #1c1b1b;
+            margin-top: -10px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #e4e2dd;
+            border-radius: 4px;
+            border: 2px solid #1c1b1b;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary text-headline-md">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">The Range Mystery</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+<span class="font-label-lg">Lesson 10</span>
+</div>
+</header>
+<main class="max-w-[600px] mx-auto px-4 pt-8">
+<!-- Hero Section: AI Bhaiya Voice Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface rounded-lg shadow-[4px_4px_0px_#1c1b1b] p-6 mb-8 overflow-hidden relative">
+<div class="flex items-start gap-4 mb-6">
+<div class="w-16 h-16 rounded-full border-[3px] border-on-surface overflow-hidden bg-secondary-container shrink-0 shadow-[2px_2px_0px_#1c1b1b]">
+<img class="w-full h-full object-cover" data-alt="A friendly South Asian male tutor with glasses and a warm smile, styled as a vibrant digital illustration with thick neo-brutalist outlines. The character 'Bhaiya' is set against a bright yellow background with Mango Orange accents, evoking a helpful and energetic educational vibe consistent with street-pop aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF9ejbdUmzNdlC9xVGRbZ5y0OJ9HYWNZeiIr8tVxyzu9rpPOuxMx5TsWigFwsrOGuWcFCw0Xo3E9zeIgeRmQtbx6RRTuhTUAlfX9Bc3N9Lhc5OEvXx8SH2mwfGOXie1OmnshPxKXUMun_IQxfLsYR7GlSVRro_CFiB9DSl0oq9IPRf-aBws620cdsQeQV5ABSxavRjw6ZzHf8-DP1ZjbIMTWcA3hBBG8WTG3A2GxbLLFNagwGoJTFZLqPhRpXSvQxeErH-q0VRzUQg"/>
+</div>
+<div class="flex-1">
+<p class="font-headline-md text-headline-md text-primary mb-1">Bhaiya explains...</p>
+<p class="font-body-md text-on-surface-variant">Range = Max - Min. Bhaiya explains why this gap matters in statistics.</p>
+</div>
+</div>
+<!-- Audio Waveform Visualization -->
+<div class="bg-surface-container border-[3px] border-on-surface rounded-lg p-6 mb-4 flex items-end justify-center gap-1 h-32 overflow-hidden">
+<div class="flex items-end gap-[3px] h-full" id="waveform">
+<!-- JS will populate these -->
+</div>
+</div>
+<!-- Player Controls -->
+<div class="flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary-container text-on-primary border-[3px] border-on-surface rounded-lg py-3 px-6 shadow-[4px_4px_0px_#1c1b1b] font-headline-md active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center gap-2" id="playBtn">
+<span class="material-symbols-outlined" id="playIcon">play_arrow</span>
+<span>Listen Now</span>
+</button>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high border-[3px] border-on-surface rounded-lg font-label-lg">
+<span class="material-symbols-outlined text-secondary">graphic_eq</span>
+<span>0:42</span>
+</div>
+</div>
+</div>
+<!-- Interactive Playground -->
+<div class="bg-surface-bright border-[3px] border-on-surface rounded-lg shadow-[4px_4px_0px_#1c1b1b] p-6 mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">tune</span>
+                Live Range Adjuster
+            </h2>
+<div class="space-y-8">
+<!-- Max Value Slider -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-lg text-primary uppercase">Maximum Value</span>
+<span class="bg-secondary-container px-3 py-1 border-[2px] border-on-surface rounded-full font-headline-md text-on-secondary-container shadow-[2px_2px_0px_#1c1b1b]" id="maxLabel">80</span>
+</div>
+<input class="w-full appearance-none bg-transparent" id="maxSlider" max="100" min="51" type="range" value="80"/>
+</div>
+<!-- Min Value Slider -->
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="font-label-lg text-tertiary uppercase">Minimum Value</span>
+<span class="bg-tertiary-fixed px-3 py-1 border-[2px] border-on-surface rounded-full font-headline-md text-on-tertiary-fixed shadow-[2px_2px_0px_#1c1b1b]" id="minLabel">20</span>
+</div>
+<input class="w-full appearance-none bg-transparent" id="minSlider" max="50" min="1" type="range" value="20"/>
+</div>
+</div>
+<!-- Result Card -->
+<div class="mt-10 pt-8 border-t-[3px] border-on-surface">
+<div class="grid grid-cols-3 gap-2 items-center text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-lg text-on-surface-variant mb-1">MAX</span>
+<span class="font-headline-md text-primary" id="resMax">80</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-on-surface-variant">remove</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-lg text-on-surface-variant mb-1">MIN</span>
+<span class="font-headline-md text-tertiary" id="resMin">20</span>
+</div>
+</div>
+<div class="mt-6 bg-secondary-container border-[3px] border-on-surface rounded-lg p-4 shadow-[4px_4px_0px_#1c1b1b] flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Decorative background pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#1c1b1b 1px, transparent 1px); background-size: 10px 10px;"></div>
+<span class="font-label-lg text-secondary-fixed-variant mb-1 relative z-10 uppercase tracking-widest">Total Range</span>
+<span class="font-headline-xl text-headline-xl text-on-secondary-container relative z-10" id="totalRange">60</span>
+</div>
+</div>
+</div>
+<!-- Concept Chip -->
+<div class="flex items-center gap-3 p-4 bg-primary-fixed border-[3px] border-on-surface rounded-lg shadow-[4px_4px_0px_#1c1b1b]">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shrink-0 border-[2px] border-on-surface">
+<span class="material-symbols-outlined text-white">lightbulb</span>
+</div>
+<p class="font-body-md text-on-primary-fixed-variant">
+                Think of **Range** as the "spread" of your data. Large range means data is scattered; small range means data is closely packed!
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<div class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform hover:text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform hover:text-primary">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform hover:text-primary">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</div>
+<div class="flex flex-col items-center justify-center text-muted dark:text-surface-variant active:scale-95 transition-transform hover:text-primary">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</div>
+</nav>
+<script>
+        // Waveform Animation
+        const waveform = document.getElementById('waveform');
+        const barCount = 40;
+        const bars = [];
+
+        for (let i = 0; i < barCount; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'waveform-bar w-2 bg-primary border-[1px] border-on-surface rounded-t-sm';
+            bar.style.height = `${Math.random() * 100}%`;
+            waveform.appendChild(bar);
+            bars.push(bar);
+        }
+
+        let isPlaying = false;
+        let animationId;
+
+        function animateWaveform() {
+            if (!isPlaying) return;
+            bars.forEach(bar => {
+                const h = Math.random() * 80 + 20;
+                bar.style.height = `${h}%`;
+            });
+            animationId = setTimeout(animateWaveform, 150);
+        }
+
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playIcon.innerText = 'pause';
+                animateWaveform();
+            } else {
+                playIcon.innerText = 'play_arrow';
+                clearTimeout(animationId);
+                bars.forEach(bar => bar.style.height = '30%');
+            }
+        });
+
+        // Range Logic
+        const maxSlider = document.getElementById('maxSlider');
+        const minSlider = document.getElementById('minSlider');
+        const maxLabel = document.getElementById('maxLabel');
+        const minLabel = document.getElementById('minLabel');
+        const resMax = document.getElementById('resMax');
+        const resMin = document.getElementById('resMin');
+        const totalRange = document.getElementById('totalRange');
+
+        function updateRange() {
+            const max = parseInt(maxSlider.value);
+            const min = parseInt(minSlider.value);
+            const range = max - min;
+
+            maxLabel.innerText = max;
+            minLabel.innerText = min;
+            resMax.innerText = max;
+            resMin.innerText = min;
+            totalRange.innerText = range;
+
+            // Visual feedback - scale the result card based on range size
+            const scale = 0.9 + (range / 100) * 0.2;
+            totalRange.parentElement.style.transform = `scale(${scale})`;
+        }
+
+        maxSlider.addEventListener('input', updateRange);
+        minSlider.addEventListener('input', updateRange);
+
+        // Initial call
+        updateRange();
+    </script>
+</body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti: Data Log Max/Min Challenge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;family=Nunito+Sans:ital,wght@0,200;0,400;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow { shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] }
+        .blueprint-bg {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .logbook-line {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, #e2e2e2 31px, #e2e2e2 32px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background blueprint-bg font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 z-50 border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface bg-secondary-container overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjbnejUd10YzLKT3FK5S6WKTd94wUAB_Jx9EHKBQvPX_Y5ELmHOcVP3qw_Kk1iOp9JlI9aZ9Ik_lPMkjlIK7YlbIugSeWI31q3qyyztZnUwmcC4im2SHujobmlghfCyJe-nfkT4m1CeSYQ8ismZqE9W28--92s0UL0eBzhJmX4MhoHohs1y2AnHAPsuscZOipv1bdSniUQtLAtCXc8_FFJGBtaoHmFMDGCU9ieHCx1xVx2Hyg-lvguHRT8lXPWor-WZuousIy7j353"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Math-Masti</h1>
+</div>
+<div class="flex items-center gap-2 px-4 py-1 border-[3px] border-on-surface bg-tertiary-fixed rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="font-label-bold text-label-bold">12 🔥</span>
+</div>
+</header>
+<main class="max-w-4xl mx-auto p-margin-mobile md:p-margin-desktop space-y-8">
+<!-- Header Section -->
+<section class="space-y-2">
+<div class="inline-block bg-primary-container text-on-primary-container px-4 py-1 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform -rotate-1">
+<p class="font-label-bold text-label-bold uppercase tracking-wider">Expert Practice</p>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Data Log Max/Min Challenge</h2>
+</section>
+<!-- Challenge Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Data Table Card -->
+<div class="md:col-span-8 bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+<div class="bg-secondary p-4 border-b-[3px] border-on-surface flex items-center justify-between">
+<h3 class="text-on-secondary font-label-bold text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined">database</span>
+                        Daily Temperature Log
+                    </h3>
+<span class="text-on-secondary font-label-bold opacity-80">Ref: STATION_092</span>
+</div>
+<div class="p-4 logbook-line">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-[3px] border-on-surface">
+<th class="p-3 font-label-bold text-on-surface-variant">City Name</th>
+<th class="p-3 font-label-bold text-on-surface-variant text-right">Temp (°C)</th>
+</tr>
+</thead>
+<tbody class="divide-y-2 divide-surface-variant">
+<tr class="hover:bg-secondary-fixed-dim transition-colors group">
+<td class="p-3 font-body-lg">Mumbai</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">32°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Delhi</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">41°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Bangalore</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">24°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Chennai</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">36°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Kolkata</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">35°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Shimla</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">12°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Hyderabad</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">33°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Jaipur</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">39°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Srinagar</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">8°</td>
+</tr>
+<tr class="hover:bg-secondary-fixed-dim transition-colors">
+<td class="p-3 font-body-lg">Pune</td>
+<td class="p-3 font-body-lg text-right font-bold text-primary">28°</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Interaction Sidebar -->
+<div class="md:col-span-4 space-y-gutter">
+<div class="bg-surface p-6 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] space-y-6">
+<div class="space-y-4">
+<p class="font-headline-md text-on-surface-variant leading-tight">
+                            Is data set ka <span class="text-primary font-bold underline decoration-[3px]">Range (Max - Min)</span> kya hai?
+                        </p>
+<div class="relative">
+<input class="w-full h-14 bg-white border-[3px] border-on-surface px-4 font-body-lg focus:outline-none focus:shadow-[4px_4px_0px_0px_#f88400] transition-all" placeholder="Enter value..." type="number"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant opacity-50">°C</div>
+</div>
+</div>
+<button class="w-full bg-primary py-4 px-6 border-[3px] border-on-surface text-on-primary font-headline-md shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all">
+                        Verify
+                    </button>
+<div class="pt-4 border-t-2 border-dashed border-on-surface-variant">
+<p class="font-label-bold text-on-surface-variant mb-2">Hints:</p>
+<ul class="space-y-2 text-body-md text-on-surface-variant">
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                Find the highest value first.
+                            </li>
+<li class="flex gap-2">
+<span class="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                                Subtract the lowest value.
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Fun Fact / Geometry Anchor -->
+<div class="bg-tertiary-container p-4 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-2">
+<p class="font-label-bold text-on-tertiary-container flex items-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span>
+                        DYK?
+                    </p>
+<p class="text-body-md text-on-tertiary-container leading-tight mt-1">
+                        Statistics helps scientists visualize chaotic systems as geometric models!
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="quiz" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for input shadow
+        const input = document.querySelector('input');
+        input.addEventListener('focus', () => {
+            input.parentElement.parentElement.classList.add('scale-[1.02]');
+        });
+        input.addEventListener('blur', () => {
+            input.parentElement.parentElement.classList.remove('scale-[1.02]');
+        });
+
+        // Verification logic (Max 41, Min 8 -> Range 33)
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            const val = input.value;
+            if(val === '33') {
+                btn.classList.replace('bg-primary', 'bg-green-500');
+                btn.innerHTML = 'Correct! (33)';
+                confettiEffect();
+            } else {
+                btn.classList.add('animate-shake');
+                setTimeout(() => btn.classList.remove('animate-shake'), 500);
+            }
+        });
+
+        function confettiEffect() {
+            // Simple visual feedback could go here
+            console.log('Math Master!');
+        }
+    </script>
+<style>
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        .animate-shake { animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both; }
+    </style>
+</body></html>

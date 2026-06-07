@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Infinity of Decimals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-bg {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        .neo-shadow-hover:hover {
+            box-shadow: 8px 8px 0px #1a1c1c;
+            transform: translate(-2px, -2px);
+        }
+        .neo-shadow-active:active {
+            box-shadow: 0px 0px 0px #1a1c1c;
+            transform: translate(4px, 4px);
+        }
+        .zoom-animation {
+            animation: zoomPulse 4s infinite alternate ease-in-out;
+        }
+        @keyframes zoomPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md neo-brutalist-bg min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary-fixed border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-primary-container">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A brightly lit, stylized cartoon avatar of an inquisitive student wearing vibrant Neo-Brutalist inspired clothing (sharp primary colors, heavy black outlines). The character is smiling against a stark white background with subtle geometric grid lines, matching the overall app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF44hJAnTQyk1BnIXBTZMW2CZpoPUmKLQBOx3PR6MNBwyhNnSz4hGS3lFbgIHszpscCwnVvaEmMtY73FPhK1vl8bSg1-9LB00El24yPJlhyzuHwhF95i9OTIrR9aj0fvnHmIpDbcjxGUV2Z0Hl7eLbwhDWQr_LleEko1VYXzicDTWh6XZf05RtCQNXF3VjhfqkRM8FAM36wj1K2kOKzZequQ7hYTxTA8nRd5N2SBdTt9v6Dl0LVq5CzbjLV701nRx3au9D856u6k8_"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</span>
+</div>
+<button aria-label="Action" class="w-10 h-10 flex items-center justify-center border-3 border-black rounded-lg bg-surface hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all neo-shadow">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop pb-28 md:pb-margin-desktop flex flex-col gap-8 max-w-5xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="border-3 border-black rounded-xl bg-surface-container-lowest neo-shadow p-6 md:p-10 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80')] bg-cover bg-center" data-alt="A vast, stylized cosmic space background featuring geometric starbursts, rigid grid lines, and high-contrast celestial bodies. The scene uses bold Neo-Brutalist colors like bright pinks, vibrant yellows, and stark blacks against a slightly off-white space void, conveying infinite mathematical possibility."></div>
+<div class="relative z-10 flex flex-col gap-4 max-w-2xl">
+<div class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-bold text-label-bold px-3 py-1 rounded border-3 border-black w-max neo-shadow">
+<span class="material-symbols-outlined text-sm">explore</span> Expert Explainer
+                </div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">The Infinity of Decimals</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+                    Think there's nothing between 0 and 1? Think again. The space between any two numbers is packed with an endless universe of decimals.
+                </p>
+</div>
+</section>
+<!-- The Zoom Explainer (Bento Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Magnifying Glass Interactive Area -->
+<div class="md:col-span-8 border-3 border-black rounded-xl bg-tertiary-container neo-shadow p-6 flex flex-col items-center justify-center min-h-[400px] relative overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container opacity-20" style="background-image: repeating-linear-gradient(45deg, #1a1c1c 25%, transparent 25%, transparent 75%, #1a1c1c 75%, #1a1c1c), repeating-linear-gradient(45deg, #1a1c1c 25%, #f9f9f9 25%, #f9f9f9 75%, #1a1c1c 75%, #1a1c1c); background-position: 0 0, 10px 10px; background-size: 20px 20px;"></div>
+<h2 class="font-headline-lg text-headline-lg text-on-tertiary-container relative z-10 mb-8 text-center bg-surface-container-lowest px-4 py-2 border-3 border-black rounded shadow-[4px_4px_0px_#1A1A1A]">Zoom into 0 to 1</h2>
+<div class="relative z-10 w-full max-w-md mx-auto h-32 flex items-center justify-center zoom-animation">
+<!-- The Number Line Base -->
+<div class="w-full h-1 bg-black relative flex items-center justify-between px-4">
+<div class="w-4 h-4 bg-primary rounded-full absolute -left-2 top-1/2 transform -translate-y-1/2 border-3 border-black"></div>
+<div class="w-4 h-4 bg-primary rounded-full absolute -right-2 top-1/2 transform -translate-y-1/2 border-3 border-black"></div>
+<span class="absolute -bottom-8 left-0 font-headline-md text-headline-md text-on-tertiary-container font-bold">0</span>
+<span class="absolute -bottom-8 right-0 font-headline-md text-headline-md text-on-tertiary-container font-bold">1</span>
+<!-- Zoomed Decimals appearing -->
+<div class="absolute left-1/4 top-1/2 transform -translate-y-1/2 flex flex-col items-center">
+<div class="w-3 h-3 bg-secondary-container rounded-full border-3 border-black"></div>
+<span class="mt-4 font-label-bold text-label-bold text-on-tertiary-container bg-surface px-1 border-2 border-black">0.1</span>
+</div>
+<div class="absolute left-1/3 top-1/2 transform -translate-y-1/2 flex flex-col items-center -mt-6">
+<div class="w-2 h-2 bg-inverse-primary rounded-full border-2 border-black"></div>
+<span class="mb-4 font-label-bold text-label-bold text-on-tertiary-container bg-surface px-1 border-2 border-black">0.11</span>
+</div>
+<div class="absolute left-2/5 top-1/2 transform -translate-y-1/2 flex flex-col items-center">
+<div class="w-2 h-2 bg-error rounded-full border-2 border-black"></div>
+<span class="mt-4 font-label-bold text-label-bold text-on-tertiary-container bg-surface px-1 border-2 border-black">0.111</span>
+</div>
+</div>
+<!-- Magnifying Glass overlay -->
+<div class="absolute w-40 h-40 border-[8px] border-black rounded-full bg-surface-container-lowest/50 backdrop-blur-sm shadow-[8px_8px_0px_#1a1c1c] flex items-center justify-center -ml-16">
+<div class="absolute w-4 h-24 bg-black rounded-full -bottom-16 -right-12 transform -rotate-45"></div>
+<span class="material-symbols-outlined text-[64px] opacity-20">search</span>
+</div>
+</div>
+</div>
+<!-- Side Info Cards -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Card 1 -->
+<div class="border-3 border-black rounded-xl bg-secondary-container neo-shadow p-5 flex flex-col gap-3 h-full">
+<div class="flex items-center gap-2 text-on-secondary-container border-b-3 border-black pb-2">
+<span class="material-symbols-outlined">zoom_in</span>
+<h3 class="font-headline-md text-headline-md">Keep Splitting</h3>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-container">
+                        No matter how small the gap between two numbers gets, you can always find another number halfway between them.
+                    </p>
+<div class="mt-auto pt-4 flex gap-2">
+<span class="px-2 py-1 bg-surface border-3 border-black font-label-bold text-label-bold text-on-surface text-sm">0.5</span>
+<span class="px-2 py-1 bg-surface border-3 border-black font-label-bold text-label-bold text-on-surface text-sm">0.55</span>
+<span class="px-2 py-1 bg-surface border-3 border-black font-label-bold text-label-bold text-on-surface text-sm">...</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="border-3 border-black rounded-xl bg-primary-container neo-shadow p-5 flex flex-col gap-3 h-full">
+<div class="flex items-center gap-2 text-on-primary-container border-b-3 border-black pb-2">
+<span class="material-symbols-outlined">all_inclusive</span>
+<h3 class="font-headline-md text-headline-md">Infinite Density</h3>
+</div>
+<p class="font-body-md text-body-md text-on-primary-container">
+                        This property makes the rational numbers "dense". Between any two integers, there is an entire universe of fractions and decimals.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<section class="flex justify-center mt-4">
+<button class="bg-primary text-on-primary font-headline-md text-headline-md px-8 py-4 rounded-xl border-3 border-black neo-shadow neo-shadow-hover neo-shadow-active transition-all flex items-center gap-2">
+<span>Try the Practice Quiz</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only for navigation) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary-fixed font-label-lg text-label-lg border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe h-20">
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="mt-1">Quiz</span>
+</a>
+<!-- Active -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="mt-1 font-bold">Story</span>
+</a>
+</nav>
+</body></html>

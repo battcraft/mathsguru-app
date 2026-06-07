@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Topper's Challenge!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1c1b1b;
+        }
+        .active-squish:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1c1b1b;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2dd",
+                        "secondary": "#006d38",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005229",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f3",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-tertiary-container": "#67002f",
+                        "surface": "#fbf9f3",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "tertiary-fixed": "#ffd9e1",
+                        "tertiary": "#ba005b",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "outline": "#8e7164",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary-container": "#572000",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-container": "#ff6096",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#5a4136",
+                        "surface-dim": "#dbdad4",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-primary": "#ffb693",
+                        "primary-container": "#ff6b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "background": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-4">
+<button class="active:translate-x-[2px] active:translate-y-[2px] transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Topper's Challenge!</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-md text-headline-md text-primary">850</span>
+</div>
+</header>
+<main class="flex-grow w-full max-w-2xl px-5 py-8 flex flex-col gap-8 pb-32">
+<!-- Hero Challenge Section -->
+<section class="relative bg-secondary-container border-[3px] border-on-surface rounded-DEFAULT p-6 shadow-[4px_4px_0px_#1c1b1b]">
+<div class="absolute -top-6 -right-2 transform rotate-12 bg-tertiary-container border-[3px] border-on-surface px-4 py-1 rounded-full shadow-[2px_2px_0px_#1c1b1b]">
+<span class="font-label-lg text-label-lg text-on-tertiary-container">HARD MODE</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" data-icon="psychology">psychology</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-secondary-container">The Stats Master!</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-secondary-container bg-surface/50 p-4 border-[2px] border-on-secondary-container border-dashed rounded-DEFAULT">
+                    "Class range is <span class="font-bold underline">40</span>. Highest is <span class="font-bold underline">95</span>. Min kya hai?"
+                </p>
+<div class="flex items-center justify-between bg-white/30 rounded-lg p-3">
+<div class="flex gap-2">
+<span class="bg-primary text-white px-2 py-1 rounded text-xs font-bold">STATISTICS</span>
+<span class="bg-secondary text-white px-2 py-1 rounded text-xs font-bold">LEVEL 12</span>
+</div>
+<div class="flex items-center gap-1 text-on-secondary-container">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+<span class="font-label-lg text-label-lg">00:45</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Illustration Section -->
+<div class="w-full h-48 rounded-DEFAULT border-[3px] border-on-surface overflow-hidden shadow-[4px_4px_0px_#1c1b1b]">
+<img class="w-full h-full object-cover" data-alt="A vibrant Neo-Brutalist digital illustration of mathematical formulas and geometric shapes floating in a dynamic space. The art style uses thick 3px black outlines, bright mango orange and lime green fills, and hard black shadows. A stylized calculator and range diagram are centered, creating an energetic and friendly learning atmosphere. The background is a warm chalk white with subtle grid paper textures, maintaining a clean and modern education-focused aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx4vzixNwJXNqz8fRPNx61nvFJ-LZPcyDeKfcbH3-RVCqqSiZG9FX3V2pEzd-SVWx9UAJHPN0_F-lwFBJx2znjilATiRXVNieM6ONzQozeCQqAUMTdg2nImJKUj7FHUhGhPCjOYqZDWEsOKFMcCHIhW0M0SrlaqJrQvp0KjAgIBc4PE9kj50VzjZLgeu89-szeC7HC-BpIfl85UX6b-aPuNIiFTvp9SO6Eq8bZh7zS5kUxZTtcxvW_Xu2XCdgEZGTz-isa5BECi8FD"/>
+</div>
+<!-- Input Section -->
+<section class="flex flex-col gap-6">
+<div class="relative">
+<label class="block font-label-lg text-label-lg text-on-surface mb-2 px-2">YOUR ANSWER</label>
+<input class="w-full h-20 bg-white border-[4px] border-on-surface rounded-DEFAULT px-6 text-headline-md font-headline-md placeholder:text-surface-variant focus:ring-0 focus:outline-none focus:shadow-[0px_0px_0px_#1c1b1b] focus:translate-x-[4px] focus:translate-y-[4px] transition-all shadow-[4px_4px_0px_#1c1b1b]" placeholder="Enter value..." type="number"/>
+<button class="absolute right-4 top-[44px] w-12 h-12 bg-primary-container border-[3px] border-on-surface rounded-lg shadow-[2px_2px_0px_#1c1b1b] active-squish flex items-center justify-center" id="calc-trigger">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="calculate">calculate</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-variant border-[3px] border-on-surface py-4 rounded-DEFAULT font-headline-md text-headline-md shadow-[4px_4px_0px_#1c1b1b] active-squish">
+                    HINT?
+                </button>
+<button class="bg-primary-container border-[3px] border-on-surface py-4 rounded-DEFAULT font-headline-md text-headline-md shadow-[4px_4px_0px_#1c1b1b] active-squish text-on-primary-container">
+                    SUBMIT
+                </button>
+</div>
+</section>
+<!-- Quick Math Chips -->
+<section class="flex flex-col gap-3">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant">RECENT CHALLENGES</h3>
+<div class="flex flex-wrap gap-2">
+<div class="bg-tertiary-fixed border-[2px] border-on-surface px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-label-lg text-label-lg">Mean: 55</span>
+</div>
+<div class="bg-secondary-fixed border-[2px] border-on-surface px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-label-lg text-label-lg">Median: 42</span>
+</div>
+<div class="bg-surface border-[2px] border-on-surface border-dashed px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span class="font-label-lg text-label-lg">Mode?</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<!-- Floating Calculator Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-6" id="calculator-overlay">
+<div class="bg-surface border-[4px] border-on-surface rounded-lg p-6 w-full max-w-xs shadow-[8px_8px_0px_#1c1b1b]">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-md text-headline-md">Quick Calc</h4>
+<button class="material-symbols-outlined font-bold" data-icon="close" id="close-calc">close</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- Simple dummy calculator UI -->
+<div class="col-span-4 bg-white border-[3px] border-on-surface p-2 text-right font-headline-md mb-2">95 - 40</div>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">7</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">8</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">9</button>
+<button class="aspect-square bg-primary-container border-[2px] border-on-surface rounded-lg font-bold">/</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">4</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">5</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">6</button>
+<button class="aspect-square bg-primary-container border-[2px] border-on-surface rounded-lg font-bold">×</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">1</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">2</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">3</button>
+<button class="aspect-square bg-primary-container border-[2px] border-on-surface rounded-lg font-bold">-</button>
+<button class="aspect-square bg-secondary-container border-[2px] border-on-surface rounded-lg font-bold">C</button>
+<button class="aspect-square bg-surface-variant border-[2px] border-on-surface rounded-lg font-bold">0</button>
+<button class="aspect-square bg-primary-container border-[2px] border-on-surface rounded-lg font-bold">.</button>
+<button class="aspect-square bg-primary-container border-[2px] border-on-surface rounded-lg font-bold">+</button>
+<button class="col-span-4 bg-primary border-[3px] border-on-surface text-white py-2 rounded-lg font-bold mt-2 shadow-[2px_2px_0px_#1c1b1b] active-squish">=</button>
+</div>
+</div>
+</div>
+<script>
+        const calcTrigger = document.getElementById('calc-trigger');
+        const calcOverlay = document.getElementById('calculator-overlay');
+        const closeCalc = document.getElementById('close-calc');
+
+        calcTrigger.addEventListener('click', () => {
+            calcOverlay.classList.remove('hidden');
+        });
+
+        closeCalc.addEventListener('click', () => {
+            calcOverlay.classList.add('hidden');
+        });
+
+        calcOverlay.addEventListener('click', (e) => {
+            if (e.target === calcOverlay) {
+                calcOverlay.classList.add('hidden');
+            }
+        });
+
+        // Add some interaction feel
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.backgroundColor = btn.dataset.hover || '';
+            });
+        });
+    </script>
+</body></html>

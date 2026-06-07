@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Pop - Place Value Power</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-tint": "#b80069",
+                        "primary-fixed": "#ffd9e3",
+                        "secondary": "#924c00",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#b40067",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "outline": "#8d6f78",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#705d00",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5b2d00",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary-container": "#4c3f00",
+                        "secondary-fixed": "#ffdcc4",
+                        "inverse-primary": "#ffb0cb",
+                        "secondary-fixed-dim": "#ffb781",
+                        "surface-container-low": "#f3f3f4",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#5a3f48",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-fixed": "#2f1400",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-dim": "#dadada",
+                        "outline-variant": "#e1bdc7",
+                        "primary-container": "#df0b81",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-container": "#c9a900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .neo-shadow-active { box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); }
+        .neo-shadow-pressed { box-shadow: 0px 0px 0px 0px rgba(0,0,0,1); transform: translate(4px, 4px); }
+        .grid-bg {
+            background-size: 32px 32px;
+            background-image: radial-gradient(circle, #e2e2e2 2px, transparent 2.5px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md grid-bg min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile md:px-margin-desktop py-unit">
+<div class="flex items-center gap-4 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer">
+<span class="material-symbols-outlined text-primary font-headline-md text-headline-md" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary uppercase tracking-tighter">Ganit Pop</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center font-label-bold text-label-bold">
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span>Home
+            </a>
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">forum</span>Chat
+            </a>
+<a class="text-primary bg-secondary-container px-4 py-1 rounded-lg border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">quiz</span>Quiz
+            </a>
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">menu_book</span>Story
+            </a>
+</nav>
+</header>
+<main class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop py-8 space-y-8">
+<!-- Hero Section -->
+<section class="bg-primary-container text-on-primary-container border-[3px] border-on-surface neo-shadow rounded-DEFAULT p-6 md:p-10 relative overflow-hidden">
+<div class="absolute -right-10 -top-10 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[200px]">functions</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-block bg-tertiary-fixed text-on-tertiary-fixed font-label-bold text-label-bold px-3 py-1 border-[3px] border-on-surface rounded-sm mb-4">
+                    Concept Explainer
+                </div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl mb-2">Place Value Power</h2>
+<p class="font-body-lg text-on-primary-container/90">Master the Indian Number System. It's all about position!</p>
+</div>
+</section>
+<!-- Explainer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Content Area -->
+<div class="col-span-1 md:col-span-8 space-y-6">
+<!-- Hint Box -->
+<div class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface neo-shadow rounded-DEFAULT p-6 flex items-start gap-4">
+<span class="material-symbols-outlined text-[40px] text-on-surface">campaign</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Left side se start karo boss!</h3>
+<p class="font-body-md">Always read numbers from left to right, but understand their value from right to left.</p>
+</div>
+</div>
+<!-- Visual Table -->
+<div class="bg-surface border-[3px] border-on-surface neo-shadow rounded-DEFAULT overflow-hidden">
+<div class="border-b-[3px] border-on-surface p-4 bg-surface-container-high flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">The Number Lineup</h3>
+<span class="material-symbols-outlined">grid_on</span>
+</div>
+<div class="p-6 overflow-x-auto">
+<div class="min-w-[600px] grid grid-cols-6 gap-2">
+<!-- Headers -->
+<div class="text-center font-label-bold text-label-bold bg-primary text-on-primary border-[3px] border-on-surface p-2 neo-shadow">TL</div>
+<div class="text-center font-label-bold text-label-bold bg-primary text-on-primary border-[3px] border-on-surface p-2 neo-shadow">L</div>
+<div class="text-center font-label-bold text-label-bold bg-secondary text-on-secondary border-[3px] border-on-surface p-2 neo-shadow">TTh</div>
+<div class="text-center font-label-bold text-label-bold bg-secondary text-on-secondary border-[3px] border-on-surface p-2 neo-shadow">Th</div>
+<div class="text-center font-label-bold text-label-bold bg-tertiary text-on-tertiary border-[3px] border-on-surface p-2 neo-shadow">H</div>
+<div class="text-center font-label-bold text-label-bold bg-tertiary text-on-tertiary border-[3px] border-on-surface p-2 neo-shadow">TO</div>
+<!-- Full Names -->
+<div class="text-center text-xs font-bold p-1">Ten Lakhs</div>
+<div class="text-center text-xs font-bold p-1">Lakhs</div>
+<div class="text-center text-xs font-bold p-1">Ten Th.</div>
+<div class="text-center text-xs font-bold p-1">Thousands</div>
+<div class="text-center text-xs font-bold p-1">Hundreds</div>
+<div class="text-center text-xs font-bold p-1">Tens/Ones</div>
+<!-- Example Number -->
+<div class="text-center font-headline-lg text-headline-lg p-4 border-[3px] border-on-surface bg-surface-container mt-2 neo-shadow">4</div>
+<div class="text-center font-headline-lg text-headline-lg p-4 border-[3px] border-on-surface bg-surface-container mt-2 neo-shadow relative group">
+                                5
+                                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-xs p-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Comma Here!</div>
+</div>
+<div class="text-center font-headline-lg text-headline-lg p-4 border-[3px] border-on-surface bg-surface-container mt-2 neo-shadow">2</div>
+<div class="text-center font-headline-lg text-headline-lg p-4 border-[3px] border-on-surface bg-surface-container mt-2 neo-shadow relative group">
+                                8
+                                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-xs p-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Comma Here!</div>
+</div>
+<div class="text-center font-headline-lg text-headline-lg p-4 border-[3px] border-on-surface bg-surface-container mt-2 neo-shadow">3</div>
+<div class="text-center font-headline-lg text-headline-lg p-4 border-[3px] border-on-surface bg-surface-container mt-2 neo-shadow">91</div>
+</div>
+<div class="mt-8 text-center font-headline-md text-headline-md p-4 bg-surface-variant border-[3px] border-on-surface border-dashed">
+                            Read as: Forty-Five Lakh, Twenty-Eight Thousand, Three Hundred Ninety-One
+                        </div>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<div class="col-span-1 md:col-span-4 space-y-6">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed border-[3px] border-on-surface neo-shadow rounded-DEFAULT p-6">
+<h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span> Pro Tips
+                    </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>First comma after 3 digits from right (Hundreds).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>Next commas after every 2 digits (Thousands, Lakhs, Crores).</span>
+</li>
+</ul>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 border-[3px] border-on-surface neo-shadow hover:neo-shadow-active active:neo-shadow-pressed transition-all rounded-DEFAULT flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">play_arrow</span> Try Practice Quiz
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] flex justify-around items-center h-20 px-margin-mobile">
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant p-2 rounded" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold text-[10px]">Home</span>
+</a>
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant p-2 rounded" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold text-[10px]">Chat</span>
+</a>
+<a class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold text-[10px]">Quiz</span>
+</a>
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant p-2 rounded" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold text-[10px]">Story</span>
+</a>
+</nav>
+</body></html>

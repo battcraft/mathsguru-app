@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Pop - Scale Master</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,700;1,6..12,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-tertiary-container": "#67002f",
+                    "surface-container": "#f0eee8",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dbdad4",
+                    "surface-container-highest": "#e4e2dd",
+                    "tertiary-fixed": "#ffd9e1",
+                    "outline-variant": "#e2bfb0",
+                    "on-surface-variant": "#5a4136",
+                    "primary": "#a04100",
+                    "surface-container-low": "#f5f3ee",
+                    "inverse-surface": "#30312d",
+                    "on-background": "#1b1c19",
+                    "outline": "#8e7164",
+                    "surface-variant": "#e4e2dd",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-fixed": "#63ff9d",
+                    "background": "#fbf9f3",
+                    "on-primary-fixed": "#351000",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "secondary-container": "#63ff9d",
+                    "tertiary-container": "#ff6096",
+                    "on-surface": "#1b1c19",
+                    "on-secondary-fixed-variant": "#005229",
+                    "primary-container": "#ff6b00",
+                    "secondary": "#006d38",
+                    "on-secondary-container": "#00743c",
+                    "on-primary-container": "#572000",
+                    "inverse-primary": "#ffb693",
+                    "primary-fixed": "#ffdbcc",
+                    "surface": "#fbf9f3",
+                    "surface-tint": "#a04100",
+                    "on-tertiary-fixed": "#3f001a",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "primary-fixed-dim": "#ffb693",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "surface-bright": "#fbf9f3",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#00210d",
+                    "tertiary": "#ba005b",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max-width": "1200px",
+                    "margin-desktop": "40px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Nunito Sans"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                    "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                    "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar Shared Component -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit w-full">
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full border-[3px] border-transparent hover:border-on-surface hover:bg-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all outline-none focus:border-on-surface">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<span class="font-headline-lg-mobile md:font-headline-lg font-bold text-primary uppercase tracking-tighter">Ganit Pop</span>
+</div>
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface bg-tertiary-container shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-tertiary-container text-xl" style="font-variation-settings: 'FILL' 1;">face</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop py-8 max-w-container-max-width mx-auto w-full pb-32">
+<!-- Page Header -->
+<div class="mb-8 relative z-10">
+<div class="inline-block transform -rotate-1 hover:rotate-0 transition-transform">
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-on-surface bg-secondary-container px-6 py-3 border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(27,28,25,1)] rounded-DEFAULT">
+                    Scale Master: <br class="md:hidden"/> <span class="text-on-surface-variant">Precision Check</span>
+</h1>
+</div>
+</div>
+<!-- Interactive Challenge Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Image -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(27,28,25,1)] rounded-DEFAULT overflow-hidden relative group">
+<img alt="Ruler measuring a line" class="w-full h-auto min-h-[250px] md:min-h-[400px] object-cover object-center grayscale-[20%] contrast-125" data-alt="A macro photograph of a clear plastic ruler lying on white paper, taken from directly above. A thick, hand-drawn black ink line segment is positioned just above the ruler's edge. The start of the line segment explicitly does not align with the zero mark on the ruler; it begins at approximately the 2-centimeter mark. The lighting is high-contrast, casting a hard, distinct black shadow beneath the ruler, fitting a stark, brutalist aesthetic. The colors are limited to bright white paper, clear plastic, deep black ink, and stark black shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALevq19XsBT_8VTda0h9hHDgkfFLiiLllTZJFEZyWFWl_wFqnW0lRrbUlPfCcQPIURb_5ZBFSxjdvA0W3AUOlYQyh_vKsBqUTZyW7NgejeYAF1DTDOengbWc-klwJlt7IB7946Rn2QQaReV_dQJ7gHpP_Q6cTBQBZC0ehM2wOwAS_kphYlpEKyXpErcmRiqRiSACismNwT5OVPPXbqq_mOZg_pxcYHL2qYxpHw2j15GwGvbdwCMGepnNoahJ5ftPe7deW9Ifphpys4"/>
+<!-- Decorative Zoom Element -->
+<div class="absolute bottom-4 right-4 bg-tertiary-container text-on-tertiary-container border-[3px] border-on-surface rounded-full px-4 py-2 font-label-lg flex items-center gap-2 shadow-[2px_2px_0px_0px_rgba(27,28,25,1)] transform rotate-2 group-hover:scale-105 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-lg">zoom_in</span>
+                        Observe Closely
+                    </div>
+</div>
+</div>
+<!-- Right Column: Question & Options -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Question Card -->
+<div class="bg-primary-container border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(27,28,25,1)] rounded-DEFAULT p-6 relative">
+<div class="absolute -top-5 -left-4 bg-surface w-12 h-12 rounded-full border-[3px] border-on-surface shadow-[2px_2px_0px_0px_rgba(27,28,25,1)] flex items-center justify-center font-headline-md text-primary transform -rotate-12 z-10">
+                        ?
+                    </div>
+<p class="font-headline-md text-on-primary-container relative z-0 mt-2">
+                        Kya yeh segment sahi se naapa gaya hai?
+                    </p>
+<p class="font-body-md text-on-primary-container opacity-80 mt-2 italic">
+                        (Is it measured correctly?)
+                    </p>
+</div>
+<!-- Answer Options -->
+<div class="flex flex-col gap-4">
+<!-- Option 1 -->
+<button class="w-full text-left bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(27,28,25,1)] rounded-DEFAULT p-5 flex items-center justify-between hover:bg-surface-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(27,28,25,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all group focus:outline-none focus:ring-4 focus:ring-primary-container/50">
+<div>
+<span class="font-body-lg font-bold text-on-surface block group-active:text-primary">Haan bhai</span>
+<span class="font-body-md text-on-surface-variant text-sm">(Yes)</span>
+</div>
+<div class="w-8 h-8 rounded-full border-[3px] border-on-surface bg-surface-container-lowest flex items-center justify-center group-active:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-primary-container opacity-0 group-active:opacity-100 text-sm" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</button>
+<!-- Option 2 -->
+<button class="w-full text-left bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(27,28,25,1)] rounded-DEFAULT p-5 flex items-center justify-between hover:bg-surface-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(27,28,25,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all group focus:outline-none focus:ring-4 focus:ring-primary-container/50">
+<div>
+<span class="font-body-lg font-bold text-on-surface block group-active:text-primary">Nahi, 0 se shuru karo</span>
+<span class="font-body-md text-on-surface-variant text-sm">(No, start from 0)</span>
+</div>
+<div class="w-8 h-8 rounded-full border-[3px] border-on-surface bg-surface-container-lowest flex items-center justify-center group-active:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-primary-container opacity-0 group-active:opacity-100 text-sm" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</button>
+<!-- Option 3 -->
+<button class="w-full text-left bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(27,28,25,1)] rounded-DEFAULT p-5 flex items-center justify-between hover:bg-surface-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(27,28,25,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all group focus:outline-none focus:ring-4 focus:ring-primary-container/50">
+<div>
+<span class="font-body-lg font-bold text-on-surface block group-active:text-primary">Scale tilted hai</span>
+</div>
+<div class="w-8 h-8 rounded-full border-[3px] border-on-surface bg-surface-container-lowest flex items-center justify-center group-active:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-primary-container opacity-0 group-active:opacity-100 text-sm" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shared Component (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] flex justify-around items-center h-20 px-margin-mobile bg-surface md:hidden">
+<!-- Inactive: Home -->
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform p-2 rounded-lg w-16" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-xs font-bold tracking-wider">Home</span>
+</a>
+<!-- Inactive: Chat -->
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform p-2 rounded-lg w-16" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">forum</span>
+<span class="text-xs font-bold tracking-wider">Chat</span>
+</a>
+<!-- Active: Quiz -->
+<a class="bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-1 rounded-lg flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform -translate-y-2 shadow-[2px_2px_0px_0px_rgba(27,28,25,1)]" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="text-xs font-bold tracking-wider">Quiz</span>
+</a>
+<!-- Inactive: Story -->
+<a class="text-on-surface flex flex-col items-center gap-1 hover:bg-surface-variant active:scale-95 transition-transform p-2 rounded-lg w-16" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+<span class="text-xs font-bold tracking-wider">Story</span>
+</a>
+</nav>
+<!-- Simple JS for Option Selection Micro-interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.flex-col.gap-4 button');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Reset all
+                    buttons.forEach(btn => {
+                        btn.classList.remove('bg-secondary-container');
+                        btn.classList.add('bg-surface');
+                        const checkIcon = btn.querySelector('.material-symbols-outlined');
+                        checkIcon.classList.remove('opacity-100');
+                        checkIcon.classList.add('opacity-0');
+                    });
+                    
+                    // Set active
+                    this.classList.remove('bg-surface');
+                    this.classList.add('bg-secondary-container');
+                    const activeCheck = this.querySelector('.material-symbols-outlined');
+                    activeCheck.classList.remove('opacity-0');
+                    activeCheck.classList.add('opacity-100');
+                });
+            });
+        });
+    </script>
+</body></html>

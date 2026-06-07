@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Minimum Explainer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb693",
+                    "tertiary-container": "#ff6096",
+                    "primary-container": "#ff6b00",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8e7164",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad4",
+                    "background": "#fbf9f3",
+                    "surface-container-high": "#eae8e2",
+                    "on-primary-container": "#572000",
+                    "surface-container": "#f0eee8",
+                    "tertiary": "#ba005b",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "inverse-on-surface": "#f2f1eb",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "surface-bright": "#fbf9f3",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-variant": "#e4e2dd",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-surface": "#1b1c19",
+                    "secondary-fixed": "#63ff9d",
+                    "tertiary-fixed": "#ffd9e1",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-container": "#63ff9d",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "primary-fixed": "#ffdbcc",
+                    "outline-variant": "#e2bfb0",
+                    "secondary": "#006d38",
+                    "on-tertiary-fixed": "#3f001a",
+                    "surface": "#fbf9f3",
+                    "primary": "#a04100",
+                    "on-secondary-fixed-variant": "#005229",
+                    "on-tertiary-container": "#67002f",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-primary-fixed": "#351000",
+                    "on-surface-variant": "#5a4136"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max-width": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "label-lg": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-brutalist-shadow {
+            shadow-color: #1A1A1A;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c19;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-secondary-container">
+<!-- TopAppBar -->
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 sticky top-0 bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-3 border-black bg-secondary-container overflow-hidden shadow-[2px_2px_0px_#1A1A1A]">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDlCliwR9RxQteJyOhwspMpIrf-StC7HugadnVEJKFbtsxjhXnG5BtPAjc587Kns4mOnwscdUtN0rg30AZOvuPa8mSETC6tapE92Xiv4P8jGaDz5HYHp1JZ1ELRNU13EnsX85Ub0bWN6zcUyV4bikOYrq0WZpDAFIOswbNqPSRa6m01YVJmKUOn8Jck_biQ62fl4hBnAZ9PnbUDhzey33bRW3_K2vzT2yFOurNH3bybdDvQw83YmfLeHeILKXuRuWouin8BQtHVm-k"/>
+</div>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<!-- Desktop Nav Items -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-primary bg-secondary-container border-3 border-black rounded-lg px-4 py-2 shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all" href="#">Chat</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all" href="#">Quiz</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg transition-all" href="#">Story</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary text-3xl active:translate-x-1 active:translate-y-1 transition-all">local_fire_department</button>
+</div>
+</nav>
+<main class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Section -->
+<section class="mb-16 text-center md:text-left">
+<span class="inline-block bg-tertiary-container text-on-tertiary font-label-lg text-label-lg px-4 py-1 border-3 border-black rounded-full mb-6 shadow-[4px_4px_0px_#1A1A1A]">CONCEPT EXPLORER</span>
+<h1 class="font-headline-xl text-headline-xl mb-4">Minimum Kya Hai? <span class="text-primary italic">(What is Minimum?)</span></h1>
+<p class="font-body-lg text-body-lg max-w-2xl">Numbers can be confusing, but thinking about them as 'Bada Rock' and 'Chhota Pebble' makes everything clear. Let's find the smallest of them all!</p>
+</section>
+<!-- Bento Comparison Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+<!-- Comparison Card: Bada Rock -->
+<div class="md:col-span-6 bg-surface-container-lowest border-3 border-black rounded-lg shadow-[4px_4px_0px_#1A1A1A] overflow-hidden flex flex-col">
+<div class="bg-primary-container p-6 border-b-3 border-black flex items-center justify-between">
+<h2 class="font-headline-lg text-headline-lg text-on-primary">Bada Rock</h2>
+<span class="material-symbols-outlined text-4xl text-on-primary">landscape</span>
+</div>
+<div class="p-8 flex-grow">
+<img class="w-full h-64 object-cover border-3 border-black rounded-lg mb-6 shadow-[4px_4px_0px_#1A1A1A]" data-alt="A massive, weathered granite boulder sitting majestically in a rugged desert landscape under a clear blue sky. The lighting is harsh and direct, emphasizing the rough textures and immense scale of the rock. The visual style follows a high-contrast Neo-Brutalist aesthetic with deep shadows and vibrant earth tones that align with the mango and warm chalk palette of the UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmCfUtg6mXpBmpxr5s7N8PkPSw7JWgkoWF1o-ovfmXSj5N_RHibJ591u3gT2sq_36GL3MtmVuHoP3BGmP1lqwYacCFx7VOw2NCOnwX1aUU4VyNWAviQ3t7XyomYE-VsCJEhbFFWXCTGSqaHhgl4vhkIR9JqIWYhw4cYNu2demaZA0URdnOik3Vadf2bOfsl9jOus2E0CMrbAelv-IJxsTMGDuCw2H7PCnmRqKVXbQwdH4Kx6b1QVNwPQi7iip2_5Na4dT4uV77GrGP"/>
+<h3 class="font-headline-md text-headline-md mb-4 text-primary">Maximum Value</h3>
+<p class="font-body-md text-body-md mb-6">Think of the biggest number in your group like a giant rock. It's the highest point, the most money, or the hottest temperature. We call this the <span class="font-bold underline">Maximum</span>.</p>
+<div class="bg-surface-container-high p-4 border-3 border-black rounded-lg flex items-center gap-4">
+<span class="text-3xl font-extrabold text-primary">99</span>
+<div class="h-3px bg-black w-8"></div>
+<span class="font-label-lg text-label-lg">The "Bada" Number</span>
+</div>
+</div>
+</div>
+<!-- Comparison Card: Chhota Pebble -->
+<div class="md:col-span-6 bg-surface-container-lowest border-3 border-black rounded-lg shadow-[4px_4px_0px_#1A1A1A] overflow-hidden flex flex-col">
+<div class="bg-secondary-container p-6 border-b-3 border-black flex items-center justify-between">
+<h2 class="font-headline-lg text-headline-lg text-on-secondary-container">Chhota Pebble</h2>
+<span class="material-symbols-outlined text-4xl text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">circle</span>
+</div>
+<div class="p-8 flex-grow">
+<img class="w-full h-64 object-cover border-3 border-black rounded-lg mb-6 shadow-[4px_4px_0px_#1A1A1A]" data-alt="A small, smooth river pebble resting on a pristine, textured surface in a soft, bright environment. The pebble is tiny compared to its surroundings, perfectly captured in a macro shot that highlights its delicate roundness. The lighting is bright and cheerful, reflecting the Desi Street-Pop style with light-mode clarity and sharp, hard shadows typical of Neo-Brutalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt3Saam2IGpRRn-q__kt0XFGU2it_Kbz6_3fPjzT8vfpId6UBaddrVlEeaasWlr3l9ob8TLYtR2fUnG21P9g0e34D627Ihgvy5lxNoDJ3Uum5Nl6li6NMqThgDoHsyggaulDZ6ZEs7hxmU8E-Dq8KX8Ltvj581DO2cMTlbJ6Iizw6PODXyMq1Mbmtfr3oSgunMlyXXfkD2aD_pDf_nht57gX_tB6QB7s0c5I2J9WZPK-Wzu2p5pOqmQoTqJf6FqTAYYo_qTMCjW4cC"/>
+<h3 class="font-headline-md text-headline-md mb-4 text-secondary">Minimum Value</h3>
+<p class="font-body-md text-body-md mb-6">Now look for the tiny pebble. It's the smallest quantity, the lowest temperature, or the least amount of coins. This is the <span class="font-bold underline text-secondary">Minimum</span>.</p>
+<div class="bg-secondary-fixed p-4 border-3 border-black rounded-lg flex items-center gap-4">
+<span class="text-3xl font-extrabold text-secondary">02</span>
+<div class="h-3px bg-black w-8"></div>
+<span class="font-label-lg text-label-lg">The "Chhota" Number</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Real Life Examples Section -->
+<section class="mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-10 border-b-3 border-black inline-block">Real Life Examples</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Temperature Card -->
+<div class="flex flex-col md:flex-row bg-white border-3 border-black rounded-lg shadow-[8px_8px_0px_#1A1A1A] overflow-hidden group">
+<div class="md:w-1/3 bg-error-container p-6 border-b-3 md:border-b-0 md:border-r-3 border-black flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-6xl mb-4 text-on-error-container">thermostat</span>
+<span class="font-headline-md text-headline-md text-on-error-container">Temperature</span>
+</div>
+<div class="p-8 md:w-2/3 flex flex-col justify-between">
+<p class="font-body-lg text-body-lg mb-6 italic">"Aaj Delhi mein minimum temperature 10°C rahega."</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 border-3 border-black rounded-lg bg-surface-container-low">
+<span class="font-bold">Hot Afternoon</span>
+<span class="bg-primary-container text-on-primary px-3 py-1 rounded-full border-2 border-black font-bold">42°C (Max)</span>
+</div>
+<div class="flex items-center justify-between p-3 border-3 border-black rounded-lg bg-secondary-fixed">
+<span class="font-bold">Cold Morning</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full border-2 border-black font-bold">10°C (Min)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Piggy Bank Card -->
+<div class="flex flex-col md:flex-row bg-white border-3 border-black rounded-lg shadow-[8px_8px_0px_#1A1A1A] overflow-hidden">
+<div class="md:w-1/3 bg-tertiary-fixed p-6 border-b-3 md:border-b-0 md:border-r-3 border-black flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-6xl mb-4 text-on-tertiary-fixed-variant" style="font-variation-settings: 'FILL' 1;">savings</span>
+<span class="font-headline-md text-headline-md text-on-tertiary-fixed-variant text-center">Piggy Bank</span>
+</div>
+<div class="p-8 md:w-2/3 flex flex-col justify-between">
+<p class="font-body-lg text-body-lg mb-6 italic">"Mere gullak mein minimum ₹5 toh honge hi!"</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 border-3 border-black rounded-lg bg-surface-container-low">
+<span class="font-bold">Total Saved</span>
+<span class="bg-primary-container text-on-primary px-3 py-1 rounded-full border-2 border-black font-bold">₹500 (Max)</span>
+</div>
+<div class="flex items-center justify-between p-3 border-3 border-black rounded-lg bg-secondary-fixed">
+<span class="font-bold">Smallest Coin</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full border-2 border-black font-bold">₹1 (Min)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Quiz Mini Section -->
+<section class="bg-primary-fixed border-3 border-black rounded-lg p-10 shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg mb-4">Ab Tumhari Baari!</h2>
+<p class="font-body-lg text-body-lg mb-6">Look at these numbers. Can you find the <span class="font-bold text-secondary">Minimum (Chhota Pebble)</span>?</p>
+<div class="flex flex-wrap gap-4 mb-8">
+<button class="w-16 h-16 border-3 border-black rounded-lg bg-white font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" onclick="checkAnswer(this, false)">45</button>
+<button class="w-16 h-16 border-3 border-black rounded-lg bg-white font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" onclick="checkAnswer(this, true)">12</button>
+<button class="w-16 h-16 border-3 border-black rounded-lg bg-white font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" onclick="checkAnswer(this, false)">89</button>
+<button class="w-16 h-16 border-3 border-black rounded-lg bg-white font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none" onclick="checkAnswer(this, false)">34</button>
+</div>
+<div class="hidden font-headline-md text-headline-md py-4 transition-all" id="feedback"></div>
+</div>
+<div class="md:w-1/2 relative">
+<img class="w-full h-80 object-cover border-3 border-black rounded-lg shadow-[8px_8px_0px_#1A1A1A]" data-alt="A collection of colorful wooden math toy blocks arranged on a vibrant yellow surface. The blocks show different digits in a playful, educational setting. The lighting is bright and high-energy, with crisp, sharp shadows that create a layered, graphic feel. The aesthetic is clean, modern, and perfectly aligns with the tropical fruit and neon city light palette of the Ganit Dost brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5yK32MHE1UgyXz2oAtS5KeP9YADLchpA_tbcWq09JxHh5S0zvSNWjXwzTtcWhJsG1LfBKgm8ePvmxvvd190KcDW9cyygnG-r0u9xi2AGrf6V2UyZX6RJsDJlcNe4XHF5YEhD9qIh4Ce9cgBk58XUvPNBH0ZBO5_Uyqqo3cm3PlHjTSGgiX9Sy3je_Fqar0fcJIdu3B7nRvkvW3L2OR6_TIP2698K-4SLYqCBoa5dPIQ-5KUG-ctTVCQ6WGQrFWQnuK-GvcbUDxAyf"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / Bottom Navigation Placeholder -->
+<footer class="bg-surface-container-lowest border-t-3 border-black py-12 px-margin-mobile md:px-margin-desktop mt-12">
+<div class="max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div>
+<p class="font-headline-md text-headline-md font-extrabold text-primary mb-2">Ganit Dost</p>
+<p class="font-body-md text-body-md">Math simplified for the Desi heart.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-4 border-3 border-black rounded-lg shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-4 border-3 border-black rounded-lg shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-all active:translate-x-1 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="bg-primary-container text-on-primary px-8 py-4 border-3 border-black rounded-lg font-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-orange-600 transition-all active:translate-x-1 active:translate-y-1 active:shadow-none">
+                    Next Lesson
+                </button>
+</div>
+</div>
+</footer>
+<script>
+        function checkAnswer(el, isCorrect) {
+            const feedback = document.getElementById('feedback');
+            feedback.classList.remove('hidden');
+            
+            // Reset all buttons
+            document.querySelectorAll('button[onclick*="checkAnswer"]').forEach(btn => {
+                btn.classList.remove('bg-secondary-fixed', 'bg-error-container', 'text-on-secondary-container', 'text-on-error-container');
+            });
+
+            if (isCorrect) {
+                el.classList.add('bg-secondary-fixed', 'text-on-secondary-container');
+                feedback.innerText = "Shabaash! 12 is the Chhota Pebble (Minimum)! 🌟";
+                feedback.className = "font-headline-md text-headline-md py-4 text-secondary block animate-bounce";
+            } else {
+                el.classList.add('bg-error-container', 'text-on-error-container');
+                feedback.innerText = "Oops! Yeh toh Bada Rock hai. Try again! 🤔";
+                feedback.className = "font-headline-md text-headline-md py-4 text-error block";
+            }
+        }
+
+        // Add visual flair to sections on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .grid > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

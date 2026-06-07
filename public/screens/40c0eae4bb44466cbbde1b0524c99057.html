@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry: Intersections</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdcc4",
+                    "outline-variant": "#e1bdc7",
+                    "on-primary-fixed": "#3e0020",
+                    "primary": "#b40067",
+                    "primary-fixed-dim": "#ffb0cb",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "tertiary-fixed": "#ffe16d",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#ffb781",
+                    "tertiary": "#705d00",
+                    "surface-container-low": "#f3f3f4",
+                    "surface-dim": "#dadada",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "secondary-container": "#f88400",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb0cb",
+                    "on-secondary-fixed": "#2f1400",
+                    "primary-container": "#df0b81",
+                    "on-tertiary-container": "#4c3f00",
+                    "on-tertiary-fixed": "#221b00",
+                    "surface-tint": "#b80069",
+                    "inverse-surface": "#2f3131",
+                    "secondary": "#924c00",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f0f1f1",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "on-primary-fixed-variant": "#8d004f",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed-variant": "#6f3800",
+                    "tertiary-container": "#c9a900",
+                    "on-surface-variant": "#5a3f48",
+                    "on-background": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed": "#ffd9e3",
+                    "error": "#ba1a1a",
+                    "outline": "#8d6f78",
+                    "on-secondary-container": "#5b2d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "border-width": "3px",
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px",
+                    "shadow-offset": "4px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Fredoka"],
+                    "headline-md": ["Fredoka"],
+                    "headline-xl": ["Fredoka"],
+                    "label-bold": ["Nunito Sans"],
+                    "headline-lg": ["Fredoka"],
+                    "body-md": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                    "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                    "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-dots {
+            background-image: radial-gradient(circle, #1a1c1c 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        .glowing-point {
+            animation: pulse-glow 2s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px 2px rgba(223, 11, 129, 0.4); }
+            100% { box-shadow: 0 0 20px 8px rgba(223, 11, 129, 0.8); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Texture -->
+<div class="fixed inset-0 pointer-events-none opacity-10 bg-dots z-0"></div>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 transition-all">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-highest transition-colors group">
+<span class="material-symbols-outlined text-[28px] group-hover:-translate-x-[2px] transition-transform">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary text-center flex-1 mx-4 truncate">Geometry: Rekha &amp; Bindu</h1>
+<div class="flex items-center gap-1 font-label-bold text-label-bold bg-surface-container-high px-3 py-1 border-[3px] border-on-surface rounded-full shadow-[2px_2px_0px_#1B1C19]">
+            5 🔥
+        </div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-margin-mobile pt-8 pb-32 z-10 relative flex flex-col gap-8">
+<!-- Header / Title -->
+<div class="flex flex-col gap-2">
+<span class="font-label-bold text-label-bold text-primary-container tracking-widest uppercase">Expert Deep-Dive</span>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Intersections</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mt-1 border-l-[3px] border-primary pl-4">"Jab do lines milti hain, toh kya banta hai?"</p>
+</div>
+<!-- Geometric Visual Canvas -->
+<div class="w-full aspect-square md:aspect-[16/9] bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] rounded-lg relative overflow-hidden flex items-center justify-center">
+<!-- Blueprint grid lines -->
+<div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#1a1c1c 1px, transparent 1px), linear-gradient(90deg, #1a1c1c 1px, transparent 1px); background-size: 64px 64px; background-position: center;"></div>
+<!-- Protractor/Angle hints -->
+<div class="absolute w-48 h-48 border-[2px] border-dashed border-tertiary rounded-full opacity-30"></div>
+<div class="absolute w-32 h-32 border-[3px] border-tertiary-fixed rounded-full opacity-50"></div>
+<!-- Line 1 (Rekha 1) -->
+<div class="absolute w-[150%] h-[4px] bg-on-surface rotate-[-30deg] shadow-[2px_2px_0px_#df0b81]"></div>
+<!-- Line 2 (Rekha 2) -->
+<div class="absolute w-[150%] h-[4px] bg-on-surface rotate-[45deg] shadow-[2px_2px_0px_#f88400]"></div>
+<!-- Intersection Point (Bindu) -->
+<div class="absolute w-6 h-6 bg-primary-container rounded-full border-[3px] border-on-surface z-10 glowing-point flex items-center justify-center shadow-[4px_4px_0px_#1B1C19]">
+<div class="w-1.5 h-1.5 bg-on-primary-container rounded-full"></div>
+</div>
+<!-- Decorative Coordinate Tags -->
+<div class="absolute top-4 left-4 bg-surface border-[3px] border-on-surface px-2 py-1 font-label-bold text-label-bold text-xs shadow-[2px_2px_0px_#1B1C19]">L₁: y = mx + c</div>
+<div class="absolute bottom-4 right-4 bg-surface border-[3px] border-on-surface px-2 py-1 font-label-bold text-label-bold text-xs shadow-[2px_2px_0px_#1B1C19]">L₂: ax + by + c = 0</div>
+</div>
+<!-- Multiple Choice Section -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-lg md:font-headline-lg text-headline-lg md:text-headline-lg mb-2">Select the correct geometry:</h3>
+<button class="quiz-option w-full text-left bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] p-4 rounded-lg flex items-center gap-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1B1C19] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none group" onclick="selectOption(this)">
+<div class="w-8 h-8 rounded-full border-[3px] border-on-surface flex items-center justify-center font-headline-md text-headline-md group-[.selected]:bg-primary-container group-[.selected]:text-on-primary-container">A</div>
+<span class="font-body-lg text-body-lg font-bold">A new line</span>
+</button>
+<button class="quiz-option w-full text-left bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] p-4 rounded-lg flex items-center gap-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1B1C19] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none group" onclick="selectOption(this)">
+<div class="w-8 h-8 rounded-full border-[3px] border-on-surface flex items-center justify-center font-headline-md text-headline-md group-[.selected]:bg-primary-container group-[.selected]:text-on-primary-container">B</div>
+<span class="font-body-lg text-body-lg font-bold">A point (Bindu)</span>
+</button>
+<button class="quiz-option w-full text-left bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] p-4 rounded-lg flex items-center gap-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1B1C19] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none group" onclick="selectOption(this)">
+<div class="w-8 h-8 rounded-full border-[3px] border-on-surface flex items-center justify-center font-headline-md text-headline-md group-[.selected]:bg-primary-container group-[.selected]:text-on-primary-container">C</div>
+<span class="font-body-lg text-body-lg font-bold">A segment</span>
+</button>
+</div>
+<!-- Teacher's Note Box (Neo-Brutalist Alert) -->
+<div class="bg-tertiary-fixed border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] p-6 rounded-lg mt-4 relative">
+<!-- Decorative Pin -->
+<div class="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full border-[3px] border-on-surface shadow-[2px_2px_0px_#1B1C19] flex items-center justify-center">
+<div class="w-2 h-2 bg-on-primary rounded-full"></div>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-[32px] text-on-surface" style="font-variation-settings: 'FILL' 1;">school</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Teacher's Note</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed font-semibold">
+                In Euclidean geometry, two distinct non-parallel lines intersect at exactly one point. This <span class="bg-primary-fixed px-1 border border-on-surface">zero-dimensional intersection</span> is the fundamental concept bridging linear algebra and spatial reasoning. It's the absolute 'Bindu' where two trajectories collide.
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-dim border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] flex justify-around items-center h-20 px-margin-mobile transition-all md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+<span class="font-label-bold text-label-bold mt-1">Home</span>
+</a>
+<!-- Chat (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">chat</span>
+<span class="font-label-bold text-label-bold mt-1">Chat</span>
+</a>
+<!-- Quiz (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-4 py-1 border-[3px] border-on-surface shadow-[2px_2px_0px_#1B1C19] hover:bg-secondary-container active:scale-95 transition-transform group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold mt-1">Quiz</span>
+</a>
+<!-- Story (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">menu_book</span>
+<span class="font-label-bold text-label-bold mt-1">Story</span>
+</a>
+</nav>
+<!-- SideNav placeholder for desktop to maintain structural logic -->
+<nav class="hidden md:flex flex-col fixed left-0 top-[76px] bottom-0 w-24 bg-surface border-r-[3px] border-on-surface shadow-[4px_0px_0px_#1B1C19] z-30 pt-8 items-center gap-8">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 rounded-xl hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">home</span>
+<span class="font-label-bold text-label-bold mt-1 text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 rounded-xl hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">chat</span>
+<span class="font-label-bold text-label-bold mt-1 text-xs">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-2 py-3 border-[3px] border-on-surface shadow-[2px_2px_0px_#1B1C19] group" href="#">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold mt-1 text-xs">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 rounded-xl hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">menu_book</span>
+<span class="font-label-bold text-label-bold mt-1 text-xs">Story</span>
+</a>
+</nav>
+<!-- Logic for interactive quiz selection -->
+<script>
+        function selectOption(clickedElement) {
+            // Remove selected state from all options
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => {
+                opt.classList.remove('selected');
+                opt.classList.remove('bg-primary-fixed');
+            });
+            
+            // Add selected state to clicked option
+            clickedElement.classList.add('selected');
+            clickedElement.classList.add('bg-primary-fixed');
+        }
+    </script>
+</body></html>

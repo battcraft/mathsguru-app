@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e4e2dd",
+                    "secondary": "#006d38",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005229",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f3",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-fixed": "#63ff9d",
+                    "primary": "#a04100",
+                    "on-tertiary-container": "#67002f",
+                    "surface": "#fbf9f3",
+                    "outline-variant": "#e2bfb0",
+                    "on-primary-fixed": "#351000",
+                    "inverse-on-surface": "#f2f1eb",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "tertiary-fixed": "#ffd9e1",
+                    "tertiary": "#ba005b",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "secondary-container": "#63ff9d",
+                    "on-tertiary-fixed": "#3f001a",
+                    "outline": "#8e7164",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary-container": "#572000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-background": "#1b1c19",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e2",
+                    "surface-container": "#f0eee8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "tertiary-container": "#ff6096",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-surface-variant": "#5a4136",
+                    "surface-dim": "#dbdad4",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdbcc",
+                    "inverse-primary": "#ffb693",
+                    "primary-container": "#ff6b00",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "background": "#fbf9f3",
+                    "secondary-fixed-dim": "#40e183"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max-width": "1200px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Nunito Sans"],
+                    "label-lg": ["Nunito Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow { box-shadow: 4px 4px 0px #1c1b1b; }
+        .neo-active:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #1c1b1b; }
+        .progress-segment { border-right: 2px solid #1c1b1b; }
+        .progress-segment:last-child { border-right: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 w-full bg-background border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container border-[3px] border-on-surface neo-shadow neo-active transition-all">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Panga 1: IPL Score</h1>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-secondary-container border-[3px] border-on-surface rounded-full">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-lg text-label-lg text-on-secondary-container">120 XP</span>
+</div>
+</header>
+<main class="flex-grow p-5 md:p-10 max-w-2xl mx-auto w-full mb-20">
+<!-- Progress Bar -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-lg text-label-lg text-on-surface">Question 1 of 5</span>
+<span class="font-label-lg text-label-lg text-secondary">Level: Pro Player</span>
+</div>
+<div class="h-6 w-full bg-surface-container-highest border-[3px] border-on-surface rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary-fixed progress-segment w-1/5"></div>
+<div class="h-full bg-surface-container-highest progress-segment w-1/5"></div>
+<div class="h-full bg-surface-container-highest progress-segment w-1/5"></div>
+<div class="h-full bg-surface-container-highest progress-segment w-1/5"></div>
+<div class="h-full bg-surface-container-highest progress-segment w-1/5"></div>
+</div>
+</div>
+<!-- Question Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface rounded-lg neo-shadow p-6 mb-8 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-fixed border-[3px] border-on-surface rounded-full opacity-20"></div>
+<div class="flex items-start gap-4 mb-4">
+<div class="w-12 h-12 flex-shrink-0 bg-primary-container border-[3px] border-on-surface rounded-lg flex items-center justify-center neo-shadow">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">sports_cricket</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Virat hits 45, 102, 12, 88.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Max score kya hai?</p>
+</div>
+</div>
+<div class="mt-4 p-3 bg-surface border-[3px] border-on-surface border-dashed rounded-lg">
+<p class="font-body-md text-body-md text-on-surface italic">Tip: Largest number ko dhoondo!</p>
+</div>
+</div>
+<!-- Options Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="group flex items-center p-5 bg-white border-[3px] border-on-surface rounded-lg neo-shadow neo-active transition-all text-left hover:bg-secondary-container">
+<span class="w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface-container-high group-hover:bg-white mr-4 font-headline-md">A</span>
+<span class="font-headline-md text-headline-md">45</span>
+</button>
+<button class="group flex items-center p-5 bg-white border-[3px] border-on-surface rounded-lg neo-shadow neo-active transition-all text-left hover:bg-secondary-container">
+<span class="w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface-container-high group-hover:bg-white mr-4 font-headline-md">B</span>
+<span class="font-headline-md text-headline-md">102</span>
+</button>
+<button class="group flex items-center p-5 bg-white border-[3px] border-on-surface rounded-lg neo-shadow neo-active transition-all text-left hover:bg-secondary-container">
+<span class="w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface-container-high group-hover:bg-white mr-4 font-headline-md">C</span>
+<span class="font-headline-md text-headline-md">12</span>
+</button>
+<button class="group flex items-center p-5 bg-white border-[3px] border-on-surface rounded-lg neo-shadow neo-active transition-all text-left hover:bg-secondary-container">
+<span class="w-10 h-10 flex items-center justify-center border-[3px] border-on-surface rounded-lg bg-surface-container-high group-hover:bg-white mr-4 font-headline-md">D</span>
+<span class="font-headline-md text-headline-md">88</span>
+</button>
+</div>
+<!-- Hint Section -->
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-3 px-8 py-4 bg-tertiary-container border-[3px] border-on-surface rounded-full neo-shadow neo-active transition-all group" onclick="toggleHint()">
+<span class="material-symbols-outlined text-on-tertiary-container group-hover:rotate-12 transition-transform">lightbulb</span>
+<span class="font-headline-md text-on-tertiary-container">Hint Chahiye?</span>
+</button>
+</div>
+<!-- Hidden Hint Popup (Simulated) -->
+<div class="hidden mt-6 p-6 bg-surface-bright border-[3px] border-on-surface rounded-lg neo-shadow animate-bounce-short" id="hint-box">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-tertiary">psychology</span>
+<p class="font-headline-md text-tertiary">Quick Hint!</p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface">Compare all numbers one by one. Which one is the "baap" of all numbers here?</p>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-4 py-2 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1c1b1b]">
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-primary-fixed-dim font-bold scale-110 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+<a class="flex flex-col items-center justify-center text-muted dark:text-surface-variant hover:text-primary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-bold text-label-bold">Report</span>
+</a>
+</nav>
+<script>
+        function toggleHint() {
+            const hintBox = document.getElementById('hint-box');
+            hintBox.classList.toggle('hidden');
+            if(!hintBox.classList.contains('hidden')) {
+                hintBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Add visual feedback to option buttons
+        const buttons = document.querySelectorAll('main .grid button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => {
+                    b.classList.remove('bg-secondary-container', 'translate-x-[4px]', 'translate-y-[4px]', 'shadow-none');
+                    b.classList.add('bg-white');
+                });
+                btn.classList.remove('bg-white');
+                btn.classList.add('bg-secondary-container');
+            });
+        });
+    </script>
+</body></html>

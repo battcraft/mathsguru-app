@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry Champion Board</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdcc4",
+                        "outline-variant": "#e1bdc7",
+                        "on-primary-fixed": "#3e0020",
+                        "primary": "#b40067",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffb781",
+                        "tertiary": "#705d00",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-dim": "#dadada",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "primary-container": "#df0b81",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#b80069",
+                        "inverse-surface": "#2f3131",
+                        "secondary": "#924c00",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "tertiary-container": "#c9a900",
+                        "on-surface-variant": "#5a3f48",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#ffd9e3",
+                        "error": "#ba1a1a",
+                        "outline": "#8d6f78",
+                        "on-secondary-container": "#5b2d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "headline-lg": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .dot-grid {
+            background-image: radial-gradient(var(--tw-colors-surface-container-highest) 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col relative dot-grid">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] flex justify-between items-center px-margin-mobile py-4 transition-all">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center h-10 w-10 border-[3px] border-transparent rounded-full hover:border-on-surface hover:bg-surface-container-highest">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary truncate max-w-[200px] md:max-w-none">Geometry: Rekha &amp; Bindu</h1>
+</div>
+<div class="flex items-center">
+<div class="font-label-bold text-label-bold text-on-surface bg-tertiary-fixed border-[3px] border-on-surface px-3 py-1 rounded-full shadow-[2px_2px_0px_#1B1C19]">
+                5 🔥
+            </div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col px-margin-mobile md:px-margin-desktop py-8 pb-32">
+<!-- Page Header -->
+<div class="mb-8 w-full max-w-4xl mx-auto text-center">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-2">Champion Board</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Master the primitives to unlock geometry!</p>
+</div>
+<!-- Mastery Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 w-full max-w-4xl mx-auto mb-12">
+<!-- Point Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-lg p-6 flex flex-col items-center justify-center gap-4 relative overflow-hidden group hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1a1c1c] transition-all cursor-pointer">
+<div class="absolute top-2 right-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">scatter_plot</span>
+</div>
+<div class="relative w-24 h-24">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-surface-container-highest border-[3px]" cx="50" cy="50" fill="transparent" r="40" stroke-width="8"></circle>
+<circle class="stroke-primary" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="0" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-on-surface">100%</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-headline-md text-primary-container">Bindu Boss</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mt-1">Point</p>
+</div>
+</div>
+<!-- Line Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-lg p-6 flex flex-col items-center justify-center gap-4 relative overflow-hidden group hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1a1c1c] transition-all cursor-pointer">
+<div class="absolute top-2 right-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">horizontal_rule</span>
+</div>
+<div class="relative w-24 h-24">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-surface-container-highest border-[3px]" cx="50" cy="50" fill="transparent" r="40" stroke-width="8"></circle>
+<circle class="stroke-tertiary-container" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-on-surface">75%</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-headline-md text-tertiary-container">Rekha King</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mt-1">Line</p>
+</div>
+</div>
+<!-- Segment Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-lg p-6 flex flex-col items-center justify-center gap-4 relative overflow-hidden group hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1a1c1c] transition-all cursor-pointer">
+<div class="absolute top-2 right-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">space_bar</span>
+</div>
+<div class="relative w-24 h-24">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-surface-container-highest border-[3px]" cx="50" cy="50" fill="transparent" r="40" stroke-width="8"></circle>
+<circle class="stroke-secondary-container" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-on-surface">50%</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-headline-md text-secondary-container">Tukda Don</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mt-1">Segment</p>
+</div>
+</div>
+<!-- Ray Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-lg p-6 flex flex-col items-center justify-center gap-4 relative overflow-hidden group hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1a1c1c] transition-all cursor-pointer">
+<div class="absolute top-2 right-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl">arrow_right_alt</span>
+</div>
+<div class="relative w-24 h-24">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-surface-container-highest border-[3px]" cx="50" cy="50" fill="transparent" r="40" stroke-width="8"></circle>
+<circle class="stroke-outline" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="188.4" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-headline-md text-headline-md text-on-surface">25%</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-headline-md text-outline">Kiran Queen</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mt-1">Ray</p>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="w-full max-w-md mx-auto mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#1B1C19] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all font-headline-lg text-headline-lg py-4 rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                Claim Badge
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface shadow-[0px_-4px_0px_#1B1C19] flex justify-around items-center h-20 px-margin-mobile bg-surface dark:bg-surface-dim md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</a>
+<!-- Chat (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</a>
+<!-- Quiz (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-lg px-4 py-1 border-[3px] border-on-surface hover:bg-secondary-container active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg mt-1">Quiz</span>
+</a>
+<!-- Story (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-secondary-container active:scale-95 transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</a>
+</nav>
+<!-- Desktop Navigation Cluster (hidden on mobile, required per constraints) -->
+<div class="hidden md:flex fixed right-margin-desktop top-4 z-50 bg-surface border-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] rounded-lg overflow-hidden">
+<a class="px-6 py-3 border-r-[3px] border-on-surface text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="px-6 py-3 border-r-[3px] border-on-surface text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="px-6 py-3 border-r-[3px] border-on-surface bg-primary-container text-on-primary-container flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="px-6 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</div>
+</body></html>

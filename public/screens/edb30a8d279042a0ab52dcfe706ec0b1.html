@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Strike Rate Sprint</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&amp;family=Fredoka:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-active {
+            box-shadow: 8px 8px 0px #1A1A1A;
+        }
+        .neo-shadow-pressed {
+            box-shadow: 0px 0px 0px #1A1A1A;
+            transform: translate(4px, 4px);
+        }
+        body {
+            background-image: radial-gradient(#dadada 2px, transparent 2px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-8 flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 sticky top-0 bg-background dark:bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden neo-shadow bg-surface-container-high">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A stylized portrait of a student avatar in a vibrant, high-contrast pop-art style with bold black outlines and flat, saturated colors like bright pink and yellow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLOX02HgoEbT4QkhFuvl9S32MneBI-1sFqrgIEa59qfBQpXxMw-a29OY4to3PYXj6DlDZsv2KxPlR_VaeD80w5121xOJ7XdLQNtp32SB3Gq4d91zbK1KXd-vFzqU9SibgPMRc1QMGOpdyWqPQ0FOlNOigzpVVLbz-H8cZCPriH8Z6loGncvkvqbz6F08vxTMb65PKcZ5uWQdi7xb87-vG2vmKV7cTVSbM_1t7cXlrxHLaz3x7aWDo4VdK5qHFpOFn9LwE5sWvzy6G"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Ganit Dost</h1>
+</div>
+<div class="text-primary dark:text-primary-fixed p-2 rounded-lg border-3 border-transparent hover:border-black hover:bg-surface-container-high hover:shadow-[4px_4px_0px_#1A1A1A] transition-all cursor-pointer flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 flex flex-col gap-8">
+<!-- Header Section -->
+<div class="flex flex-col items-center justify-center gap-4 text-center">
+<div class="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg border-3 border-black neo-shadow gap-2">
+<span class="material-symbols-outlined" data-icon="sports_cricket">sports_cricket</span>
+<span class="font-label-bold text-label-bold uppercase tracking-wider">Practice Sprint</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl">Strike Rate Sprint</h2>
+<p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">Calculate the strike rate (Runs ÷ Balls × 100) and pick the 'Maximum' impact player!</p>
+</div>
+<!-- Scoreboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 relative">
+<!-- VS Badge (Desktop Center) -->
+<div class="hidden md:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-primary text-on-primary w-16 h-16 rounded-full border-3 border-black items-center justify-center font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A]">
+                VS
+            </div>
+<!-- Player 1 Card -->
+<div class="bg-surface text-on-surface border-3 border-black rounded-xl p-6 shadow-[4px_4px_0px_#1A1A1A] flex flex-col gap-6 relative overflow-hidden group hover:shadow-[8px_8px_0px_#1A1A1A] transition-shadow">
+<!-- Background Graphic -->
+<div class="absolute -right-8 -top-8 text-surface-container-high opacity-50 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]" data-icon="sports_cricket" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sports_cricket</span>
+</div>
+<div class="flex items-center gap-4 pb-4 border-b-3 border-black relative z-10">
+<div class="w-16 h-16 rounded-full border-3 border-black bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-headline-lg text-headline-lg shadow-[2px_2px_0px_#1A1A1A]">
+                        P1
+                    </div>
+<div>
+<h3 class="font-headline-lg text-headline-lg">Player One</h3>
+<p class="font-label-bold text-label-bold text-secondary">The Opener</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 relative z-10">
+<div class="bg-surface-container-low p-4 rounded-lg border-3 border-black text-center">
+<span class="font-label-bold text-label-bold text-on-surface-variant block mb-1">Runs</span>
+<span class="font-headline-xl text-headline-xl text-primary">85</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border-3 border-black text-center">
+<span class="font-label-bold text-label-bold text-on-surface-variant block mb-1">Balls</span>
+<span class="font-headline-xl text-headline-xl">42</span>
+</div>
+</div>
+<div class="mt-4 relative z-10">
+<label class="font-label-bold text-label-bold text-on-surface block mb-2">Calculate Strike Rate:</label>
+<div class="flex gap-2">
+<input class="flex-grow bg-surface-container-lowest border-3 border-black rounded-lg px-4 py-3 font-body-lg text-body-lg focus:outline-none focus:border-secondary focus:shadow-[4px_4px_0px_#f88400] transition-shadow" placeholder="???.??" type="number"/>
+<button class="bg-primary text-on-primary border-3 border-black rounded-lg px-6 font-label-bold text-label-bold shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[2px_2px_0px_#1A1A1A] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">Check</button>
+</div>
+</div>
+</div>
+<!-- Player 2 Card -->
+<div class="bg-surface text-on-surface border-3 border-black rounded-xl p-6 shadow-[4px_4px_0px_#1A1A1A] flex flex-col gap-6 relative overflow-hidden group hover:shadow-[8px_8px_0px_#1A1A1A] transition-shadow">
+<!-- Background Graphic -->
+<div class="absolute -right-8 -top-8 text-surface-container-high opacity-50 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]" data-icon="sports_cricket" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sports_cricket</span>
+</div>
+<div class="flex items-center gap-4 pb-4 border-b-3 border-black relative z-10">
+<div class="w-16 h-16 rounded-full border-3 border-black bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline-lg text-headline-lg shadow-[2px_2px_0px_#1A1A1A]">
+                        P2
+                    </div>
+<div>
+<h3 class="font-headline-lg text-headline-lg">Player Two</h3>
+<p class="font-label-bold text-label-bold text-tertiary">The Finisher</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 relative z-10">
+<div class="bg-surface-container-low p-4 rounded-lg border-3 border-black text-center">
+<span class="font-label-bold text-label-bold text-on-surface-variant block mb-1">Runs</span>
+<span class="font-headline-xl text-headline-xl text-primary">54</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border-3 border-black text-center">
+<span class="font-label-bold text-label-bold text-on-surface-variant block mb-1">Balls</span>
+<span class="font-headline-xl text-headline-xl">25</span>
+</div>
+</div>
+<div class="mt-4 relative z-10">
+<label class="font-label-bold text-label-bold text-on-surface block mb-2">Calculate Strike Rate:</label>
+<div class="flex gap-2">
+<input class="flex-grow bg-surface-container-lowest border-3 border-black rounded-lg px-4 py-3 font-body-lg text-body-lg focus:outline-none focus:border-secondary focus:shadow-[4px_4px_0px_#f88400] transition-shadow" placeholder="???.??" type="number"/>
+<button class="bg-primary text-on-primary border-3 border-black rounded-lg px-6 font-label-bold text-label-bold shadow-[4px_4px_0px_#1A1A1A] hover:shadow-[2px_2px_0px_#1A1A1A] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">Check</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Final Decision Action -->
+<div class="mt-8 flex flex-col items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed border-3 border-black rounded-xl p-8 shadow-[8px_8px_0px_#1A1A1A]">
+<h3 class="font-headline-lg text-headline-lg mb-6 text-center">Who has the 'Maximum' impact?</h3>
+<div class="flex gap-6 w-full max-w-md">
+<button class="flex-1 bg-surface text-on-surface border-3 border-black rounded-lg py-4 font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-colors active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+                    Player 1
+                </button>
+<button class="flex-1 bg-surface text-on-surface border-3 border-black rounded-lg py-4 font-headline-md text-headline-md shadow-[4px_4px_0px_#1A1A1A] hover:bg-surface-container-high transition-colors active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
+                    Player 2
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high rounded-lg transition-all w-16 h-16 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg text-xs">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high rounded-lg transition-all w-16 h-16 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg text-xs">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] w-16 h-16 transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+<span class="material-symbols-outlined mb-1" data-icon="quiz" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg text-xs font-bold">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high rounded-lg transition-all w-16 h-16 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg text-xs">Story</span>
+</button>
+</nav>
+</body></html>

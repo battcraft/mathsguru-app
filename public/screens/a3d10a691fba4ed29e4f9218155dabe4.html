@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&amp;family=Fredoka:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-active {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+            transform: translate(4px, 4px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md dot-grid min-h-screen">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border-[3px] border-on-surface rounded-full overflow-hidden neo-shadow bg-secondary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdiUDbGecFsx0llnXpqAA4a8oJGK0InVo9i_yZGT3w7Cca0AX6ya8QJbUA1RjW8deXljlYORVe9Y439grsKSIF5vWb8dG3XWkDohAPOKl_m-ZqOZeUaJJeDmkl2a8ubUeL1aKZO69xSKVGVHpUy7qLadaSO0MFOIu0xW5KPbU2y5JCleclClqYIMb8CYpsojtFYiLtPgOIkuoaj9_qGQXK0vJP53jlRFOA86CZdo9F17I2zooK_EItpa6vvQogQ9Znp2tw-RPCyrv8"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Math-Masti</h1>
+</div>
+<div class="flex items-center gap-2 bg-tertiary-fixed border-[3px] border-on-surface px-3 py-1 rounded-lg neo-shadow">
+<span class="font-label-bold text-label-bold text-on-surface">12 🔥</span>
+</div>
+</header>
+<main class="max-w-4xl mx-auto p-margin-mobile md:p-margin-desktop mb-24">
+<!-- Header Section -->
+<div class="mb-10 text-center md:text-left">
+<div class="inline-block bg-secondary-container text-on-secondary-container border-[3px] border-on-surface px-4 py-2 neo-shadow mb-4 -rotate-1">
+<span class="font-headline-md text-headline-md">LEVEL 01: SHOPPING SPREE</span>
+</div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-2">Price Tag Comparison</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Let's find the best deals! Look at the prices and pick the one that costs less.</p>
+</div>
+<!-- Question Card -->
+<div class="bg-surface border-[3px] border-on-surface p-6 mb-12 neo-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+</div>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg relative z-10">Bhai, kaunsa sasta hai? <span class="text-primary-container">(Which is cheaper?)</span></p>
+</div>
+<!-- Items Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<!-- Item 1: Cricket Bat -->
+<button class="group relative bg-surface border-[3px] border-on-surface p-4 transition-all duration-150 neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none text-left" onclick="checkAnswer('bat')">
+<div class="h-48 md:h-64 bg-surface-container-high border-b-[3px] border-on-surface mb-4 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-quality cricket bat leaned against a rough brick wall in an urban street setting. The bat shows signs of use with grass stains and scuffs. The lighting is bright and high-contrast, characteristic of a sunny afternoon, with deep black solid shadows. The color palette includes natural wood tones against a neo-brutalist white and pink background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDASfvoAjrkjMjpAKUbCPCuFLoqsbCfyHkvaSgb1Vj0GiH_u3tGHlBwUkuPkPfHlIyOgtZuTFbOq9y8N95QBeNNhB5x-E63I9STLATlyc-xhVbLMtFFALGnEFnB7giVqS6OhtJhgIia5Wo7qb1cw44-TTbwCJk6TXG_f_Ka9TB1esz7EKonoA0KgrWJMXIBq3ECt1rlkqgwa4Fdw8pJ8P10LYs5CfFsMDA9j1QjomOLJCTmy-447NbyNW7XGO2ZsOAWSZ73OKUTuqJN"/>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-bold text-label-bold bg-primary-fixed border-[2px] border-on-surface px-2 py-0.5 mb-2 inline-block">SPORTS</span>
+<h3 class="font-headline-md text-headline-md">Cricket Bat</h3>
+</div>
+<div class="bg-on-surface text-surface px-4 py-2 border-[3px] border-on-surface rotate-3 neo-shadow">
+<span class="font-headline-md text-headline-md">₹850</span>
+</div>
+</div>
+</button>
+<!-- Item 2: Football -->
+<button class="group relative bg-surface border-[3px] border-on-surface p-4 transition-all duration-150 neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none text-left" onclick="checkAnswer('football')">
+<div class="h-48 md:h-64 bg-surface-container-high border-b-[3px] border-on-surface mb-4 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A classic black and white stitched football sitting on a vibrant green turf field. The image has a crisp, geometric focus with strong directional lighting creating sharp, solid shadows. The style is urban and energetic, echoing a neo-brutalist aesthetic with high-contrast lines and a punchy Mango and Gulabi Pink color scheme in the background UI elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzMQUWwH-rgUCM0Tv1A6G8kl_2H2l41Mq8FzmqRuUk3wNd2YMtv5XtI6e6KRH5cbU3GdOuLgI68M_oCdKon0kgrpq7Sih0dTUzTMYl3tHUt7Zm3NarjCS5SrhhFjLlkW-wiFZzjDbQrW6whrpZCDPvEdyJFsAVWzwIrqNktm_LtcXXSKjLjf2TRgQpuI1e3wUJ8DxUYcWhb767lcxr0R10QfKQQX3xLFZi05R0tapbcXakMyxLEOqfSYBmRZ3Nfy_KRA1aqC7yNPZ6"/>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-bold text-label-bold bg-tertiary-fixed border-[2px] border-on-surface px-2 py-0.5 mb-2 inline-block">OUTDOOR</span>
+<h3 class="font-headline-md text-headline-md">Football</h3>
+</div>
+<div class="bg-primary text-on-primary px-4 py-2 border-[3px] border-on-surface -rotate-3 neo-shadow">
+<span class="font-headline-md text-headline-md">₹790</span>
+</div>
+</div>
+</button>
+</div>
+<!-- Feedback Area -->
+<div class="hidden transform scale-95 transition-all duration-300" id="feedback">
+<div class="border-[3px] border-on-surface p-6 flex items-center gap-4 neo-shadow-lg" id="feedback-card">
+<div class="w-16 h-16 rounded-full border-[3px] border-on-surface flex items-center justify-center neo-shadow" id="feedback-icon">
+<span class="material-symbols-outlined text-4xl" id="icon-text"></span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md" id="feedback-title"></h4>
+<p class="font-body-lg text-body-lg" id="feedback-msg"></p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        function checkAnswer(choice) {
+            const feedback = document.getElementById('feedback');
+            const feedbackCard = document.getElementById('feedback-card');
+            const feedbackIcon = document.getElementById('feedback-icon');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackMsg = document.getElementById('feedback-msg');
+            const iconText = document.getElementById('icon-text');
+
+            feedback.classList.remove('hidden');
+            setTimeout(() => feedback.classList.replace('scale-95', 'scale-100'), 50);
+
+            if (choice === 'football') {
+                // Correct
+                feedbackCard.className = "border-[3px] border-on-surface p-6 flex items-center gap-4 neo-shadow-lg bg-tertiary-fixed-dim";
+                feedbackIcon.className = "w-16 h-16 rounded-full border-[3px] border-on-surface flex items-center justify-center neo-shadow bg-surface";
+                iconText.innerText = "check";
+                feedbackTitle.innerText = "Sahi Jawab!";
+                feedbackMsg.innerText = "The Football (₹790) is cheaper than the Bat (₹850). Great eye!";
+                
+                // Particle effect
+                createParticles();
+            } else {
+                // Incorrect
+                feedbackCard.className = "border-[3px] border-on-surface p-6 flex items-center gap-4 neo-shadow-lg bg-error-container";
+                feedbackIcon.className = "w-16 h-16 rounded-full border-[3px] border-on-surface flex items-center justify-center neo-shadow bg-surface";
+                iconText.innerText = "close";
+                feedbackTitle.innerText = "Arey Yaar!";
+                feedbackMsg.innerText = "The Bat is ₹850. Look closely at the prices again. 790 is less than 850!";
+            }
+            
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function createParticles() {
+            for(let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'fixed pointer-events-none z-[100] border-[2px] border-on-surface w-4 h-4';
+                p.style.backgroundColor = ['#b40067', '#f88400', '#e9c400'][Math.floor(Math.random() * 3)];
+                p.style.left = '50%';
+                p.style.top = '50%';
+                document.body.appendChild(p);
+
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 100 + Math.random() * 200;
+                const tx = Math.cos(angle) * dist;
+                const ty = Math.sin(angle) * dist;
+
+                p.animate([
+                    { transform: 'translate(-50%, -50%) scale(1) rotate(0deg)', opacity: 1 },
+                    { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0) rotate(720deg)`, opacity: 0 }
+                ], {
+                    duration: 1000,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                }).onfinish = () => p.remove();
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Grocery List Max/Min</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#5a3f48",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8d6f78",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed": "#2f1400",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-container": "#5b2d00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#924c00",
+                        "inverse-surface": "#2f3131",
+                        "surface-tint": "#b80069",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary-fixed": "#ffdcc4",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#c9a900",
+                        "secondary-container": "#f88400",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#e1bdc7",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "on-primary-fixed": "#3e0020",
+                        "primary-container": "#df0b81",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#ffe16d",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "primary": "#b40067",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "border-width": "3px",
+                        "shadow-offset": "4px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"],
+                        "headline-lg": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-blueprint {
+            background-image: 
+                linear-gradient(#e2e2e2 1px, transparent 1px),
+                linear-gradient(90deg, #e2e2e2 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .brutalist-border {
+            border: 3px solid #1a1c1c;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        .brutalist-shadow-active {
+            box-shadow: 8px 8px 0px #1a1c1c;
+        }
+        .brutalist-shadow-pressed {
+            box-shadow: 0px 0px 0px #1a1c1c;
+            transform: translate(4px, 4px);
+        }
+        /* Custom scrollbar for desktop */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9f9f9;
+            border-left: 3px solid #1a1c1c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b40067;
+            border: 3px solid #1a1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background bg-blueprint text-on-background font-body-md text-body-md min-h-screen flex flex-col relative selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<header class="bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 sticky top-0 transition-all">
+<!-- Leading: Avatar -->
+<div class="flex items-center gap-2 cursor-pointer hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all p-1 rounded-full border-3 border-transparent hover:border-black">
+<div class="w-10 h-10 rounded-full bg-secondary-container border-3 border-black flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="face">face</span>
+</div>
+</div>
+<!-- Brand Headline -->
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary absolute left-1/2 -translate-x-1/2">
+            Ganit Dost
+        </h1>
+<!-- Desktop Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex gap-6 absolute left-1/2 -translate-x-1/2 translate-y-12 bg-surface-container-lowest border-3 border-black p-2 rounded-lg brutalist-shadow">
+<a class="font-label-bold text-label-bold text-on-surface-variant flex items-center gap-1 p-2 hover:bg-surface-container-high border-3 border-transparent hover:border-black rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span> Home
+            </a>
+<a class="font-label-bold text-label-bold text-on-surface-variant flex items-center gap-1 p-2 hover:bg-surface-container-high border-3 border-transparent hover:border-black rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span> Chat
+            </a>
+<a class="font-label-bold text-label-bold text-primary bg-secondary-container flex items-center gap-1 p-2 border-3 border-black brutalist-shadow rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="quiz" data-weight="fill">quiz</span> Quiz
+            </a>
+<a class="font-label-bold text-label-bold text-on-surface-variant flex items-center gap-1 p-2 hover:bg-surface-container-high border-3 border-transparent hover:border-black rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span> Story
+            </a>
+</nav>
+<!-- Trailing: Icon -->
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-highest border-3 border-black brutalist-shadow hover:bg-surface-container-high active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="local_fire_department">local_fire_department</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center px-margin-mobile md:px-margin-desktop pt-8 pb-32 w-full max-w-5xl mx-auto z-10 relative">
+<!-- Section Header -->
+<div class="w-full text-center mb-8 bg-tertiary-fixed border-3 border-black p-4 brutalist-shadow transform -rotate-1">
+<h2 class="font-headline-lg text-headline-lg text-on-tertiary-fixed mb-1">Mission: Max &amp; Min</h2>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">Analyze the receipt and find the extreme values!</p>
+</div>
+<div class="w-full flex flex-col lg:flex-row gap-8 items-start">
+<!-- The Receipt (Left Side) -->
+<div class="w-full lg:w-1/2 bg-surface-container-lowest border-3 border-black p-6 brutalist-shadow transform rotate-1 relative">
+<!-- Receipt Jagged Top -->
+<div class="absolute -top-3 left-0 w-full h-3 bg-blueprint" style="mask-image: radial-gradient(circle at 10px 0, transparent 10px, black 11px); mask-size: 20px 10px; mask-repeat: repeat-x;"></div>
+<div class="text-center border-b-3 border-black pb-4 mb-4 border-dashed">
+<span class="material-symbols-outlined text-4xl text-on-surface mb-2 block" data-icon="storefront">storefront</span>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest">Raju's Kirana Store</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-mono text-sm mt-1">Date: Today | Bill #402</p>
+</div>
+<!-- Interactive Receipt Items -->
+<div class="flex flex-col gap-3 font-mono" id="receipt-items">
+<!-- Item: Atta -->
+<button class="receipt-item group flex justify-between items-center w-full p-3 bg-surface border-3 border-black hover:bg-tertiary-fixed transition-all text-left brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" data-name="Atta" data-value="450">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-container" data-icon="grain">grain</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Atta (10kg)</p>
+<p class="text-xs text-on-surface-variant">Essential</p>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary">
+                            ₹450
+                        </div>
+</button>
+<!-- Item: Dal -->
+<button class="receipt-item group flex justify-between items-center w-full p-3 bg-surface border-3 border-black hover:bg-tertiary-fixed transition-all text-left brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" data-name="Dal" data-value="180">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-container" data-icon="eco">eco</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Dal (1kg)</p>
+<p class="text-xs text-on-surface-variant">Lentils</p>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary">
+                            ₹180
+                        </div>
+</button>
+<!-- Item: Chai Patti -->
+<button class="receipt-item group flex justify-between items-center w-full p-3 bg-surface border-3 border-black hover:bg-tertiary-fixed transition-all text-left brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" data-name="Chai Patti" data-value="120">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-container" data-icon="local_cafe">local_cafe</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Chai Patti</p>
+<p class="text-xs text-on-surface-variant">Tea Leaves</p>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary">
+                            ₹120
+                        </div>
+</button>
+<!-- Item: Doodh -->
+<button class="receipt-item group flex justify-between items-center w-full p-3 bg-surface border-3 border-black hover:bg-tertiary-fixed transition-all text-left brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" data-name="Doodh" data-value="60">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-container" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Doodh (1L)</p>
+<p class="text-xs text-on-surface-variant">Milk</p>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary">
+                            ₹60
+                        </div>
+</button>
+<!-- Item: Samosa -->
+<button class="receipt-item group flex justify-between items-center w-full p-3 bg-surface border-3 border-black hover:bg-tertiary-fixed transition-all text-left brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" data-name="Samosa" data-value="15">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-on-secondary-container" data-icon="fastfood">fastfood</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Samosa (1pc)</p>
+<p class="text-xs text-on-surface-variant">Snack</p>
+</div>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary">
+                            ₹15
+                        </div>
+</button>
+</div>
+<div class="mt-6 pt-4 border-t-3 border-black border-dashed flex justify-between items-center font-headline-md text-headline-md text-on-surface">
+<span>Total</span>
+<span>₹825</span>
+</div>
+</div>
+<!-- Interaction Area (Right Side) -->
+<div class="w-full lg:w-1/2 flex flex-col gap-6">
+<!-- Instruction Card -->
+<div class="bg-primary-container border-3 border-black p-4 brutalist-shadow rounded-xl text-on-primary-container relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[80px] opacity-20" data-icon="target">target</span>
+<h3 class="font-headline-md text-headline-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="touch_app">touch_app</span> Tap to Select
+                    </h3>
+<p class="font-body-lg text-body-lg">Tap an item on the receipt to assign it as the Maximum or Minimum value.</p>
+</div>
+<!-- Selection Zones -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- MAX Zone -->
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-background uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary" data-icon="arrow_upward">arrow_upward</span> Highest Price (MAX)
+                        </label>
+<button class="h-24 bg-surface-container-lowest border-3 border-black border-dashed flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface transition-all cursor-pointer brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" id="zone-max">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="add_circle">add_circle</span>
+<span class="font-body-md text-body-md">Tap here, then tap item</span>
+</button>
+</div>
+<!-- MIN Zone -->
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-background uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_downward">arrow_downward</span> Lowest Price (MIN)
+                        </label>
+<button class="h-24 bg-surface-container-lowest border-3 border-black border-dashed flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface transition-all cursor-pointer brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" id="zone-min">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="add_circle">add_circle</span>
+<span class="font-body-md text-body-md">Tap here, then tap item</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-4 w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 border-3 border-black brutalist-shadow hover:bg-primary-container hover:text-on-primary-container active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                    Verify Answers
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg mt-1 text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined text-2xl" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1 text-[10px]">Chat</span>
+</button>
+<!-- Active Tab: Quiz -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16 -translate-y-2">
+<span class="material-symbols-outlined text-2xl" data-icon="quiz" data-weight="fill">quiz</span>
+<span class="font-label-lg text-label-lg mt-1 text-[10px] font-bold">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all w-16">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1 text-[10px]">Story</span>
+</button>
+</nav>
+<!-- Lightweight Interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.receipt-item');
+            const zoneMax = document.getElementById('zone-max');
+            const zoneMin = document.getElementById('zone-min');
+            
+            let activeZone = null;
+
+            // Handle Zone Selection
+            [zoneMax, zoneMin].forEach(zone => {
+                zone.addEventListener('click', function() {
+                    // Reset both
+                    zoneMax.classList.remove('bg-secondary-fixed', 'border-solid');
+                    zoneMax.classList.add('border-dashed');
+                    zoneMin.classList.remove('bg-primary-fixed', 'border-solid');
+                    zoneMin.classList.add('border-dashed');
+
+                    // Activate clicked
+                    activeZone = this.id;
+                    if(activeZone === 'zone-max') {
+                        this.classList.add('bg-secondary-fixed', 'border-solid');
+                        this.classList.remove('border-dashed');
+                    } else {
+                        this.classList.add('bg-primary-fixed', 'border-solid');
+                        this.classList.remove('border-dashed');
+                    }
+                });
+            });
+
+            // Handle Item Selection
+            items.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (!activeZone) return; // Need to select a zone first
+
+                    const name = this.getAttribute('data-name');
+                    const value = this.getAttribute('data-value');
+                    const zoneElem = document.getElementById(activeZone);
+
+                    // Update Zone Visuals
+                    zoneElem.innerHTML = `
+                        <span class="font-headline-md text-headline-md text-on-surface">${name}</span>
+                        <span class="font-label-bold text-label-bold text-on-surface-variant">₹${value}</span>
+                    `;
+                    zoneElem.classList.remove('border-dashed');
+                    zoneElem.classList.add('border-solid');
+
+                    if(activeZone === 'zone-max') {
+                        zoneElem.classList.add('bg-secondary-container');
+                        zoneElem.classList.remove('bg-secondary-fixed');
+                    } else {
+                        zoneElem.classList.add('bg-primary-container');
+                        zoneElem.classList.remove('bg-primary-fixed');
+                    }
+
+                    // Reset active zone to require clicking again
+                    activeZone = null;
+                });
+            });
+        });
+    </script>
+</body></html>

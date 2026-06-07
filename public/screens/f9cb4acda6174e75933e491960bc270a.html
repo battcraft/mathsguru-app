@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Decimal Duel - Kaun Bada?</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error-container": "#ffdad6",
+                "on-primary-fixed": "#351000",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#ff6096",
+                "background": "#fbf9f3",
+                "surface-tint": "#a04100",
+                "surface": "#fbf9f3",
+                "on-tertiary-fixed-variant": "#8f0044",
+                "surface-bright": "#fbf9f3",
+                "surface-variant": "#e4e2dd",
+                "on-primary-container": "#572000",
+                "inverse-primary": "#ffb693",
+                "tertiary-fixed": "#ffd9e1",
+                "surface-dim": "#dbdad4",
+                "on-secondary": "#ffffff",
+                "on-error-container": "#93000a",
+                "secondary-fixed": "#63ff9d",
+                "on-tertiary-fixed": "#3f001a",
+                "on-tertiary-container": "#67002f",
+                "outline": "#8e7164",
+                "surface-container": "#f0eee8",
+                "primary-container": "#ff6b00",
+                "primary-fixed-dim": "#ffb693",
+                "secondary-container": "#63ff9d",
+                "secondary": "#006d38",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-fixed": "#00210d",
+                "on-surface": "#1b1c19",
+                "inverse-on-surface": "#f2f1eb",
+                "on-error": "#ffffff",
+                "secondary-fixed-dim": "#40e183",
+                "surface-container-highest": "#e4e2dd",
+                "on-background": "#1b1c19",
+                "primary": "#a04100",
+                "on-primary-fixed-variant": "#7a3000",
+                "surface-container-high": "#eae8e2",
+                "tertiary": "#ba005b",
+                "on-surface-variant": "#5a4136",
+                "tertiary-fixed-dim": "#ffb1c4",
+                "on-secondary-container": "#00743c",
+                "on-secondary-fixed-variant": "#005229",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f5f3ee",
+                "inverse-surface": "#30312d",
+                "outline-variant": "#e2bfb0",
+                "primary-fixed": "#ffdbcc",
+                
+                "mango-orange": "#ff6b00",
+                "nimbu-green": "#40e183",
+                "auto-yellow": "#ffd700",
+                "desi-teal": "#00bcd4",
+                "warm-chalk": "#fbf9f3"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px",
+                "neo": "16px"
+        },
+        "spacing": {
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "container-max-width": "1200px",
+                "margin-desktop": "40px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "headline-xl-mobile": [
+                        "Bricolage Grotesque"
+                ],
+                "headline-lg-mobile": [
+                        "Bricolage Grotesque"
+                ],
+                "headline-xl": [
+                        "Bricolage Grotesque"
+                ],
+                "body-md": [
+                        "Nunito Sans"
+                ],
+                "headline-md": [
+                        "Bricolage Grotesque"
+                ],
+                "headline-lg": [
+                        "Bricolage Grotesque"
+                ],
+                "label-lg": [
+                        "Nunito Sans"
+                ],
+                "body-lg": [
+                        "Nunito Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-xl-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "1.1",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "800"
+                        }
+                ],
+                "label-lg": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: #fff8f0;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .neo-border {
+    border: 3px solid #1A1A1A;
+  }
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px #1A1A1A;
+  }
+  .neo-button:active {
+    box-shadow: 0px 0px 0px 0px #1A1A1A;
+    transform: translate(4px, 4px);
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col h-screen overflow-hidden antialiased">
+<!-- TopAppBar (Shared Component styling logic integrated) -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 bg-mango-orange z-50 docked full-width top-0 border-b-3 neo-border text-on-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl" data-icon="sports_kabaddi" data-weight="fill">sports_kabaddi</span>
+<h1 class="font-headline-md text-headline-md font-extrabold uppercase tracking-tighter">Decimal Duel</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 font-label-bold text-label-bold">
+<span class="material-symbols-outlined text-auto-yellow" data-icon="star" data-weight="fill">star</span>
+<span>3/10</span>
+</div>
+<div class="bg-error text-on-error px-3 py-1 rounded-full font-label-bold text-label-bold neo-border flex items-center gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span>
+<span>02:45</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto px-4 py-6 flex flex-col gap-8 relative">
+<!-- Decorative background elements -->
+<div class="absolute top-10 left-4 text-4xl opacity-20">📐</div>
+<div class="absolute bottom-20 right-8 text-4xl opacity-20">💥</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 pointer-events-none"></div>
+<!-- Instruction Card -->
+<div class="bg-surface-lowest rounded-neo p-4 neo-border neo-shadow text-center z-10 bg-white">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Kaunsa bada hai? Tap karke batao! <span class="text-2xl inline-block ml-1">🔍</span></h2>
+</div>
+<!-- Duel Area -->
+<div class="relative flex justify-between items-center gap-4 w-full max-w-sm mx-auto z-10 mt-4">
+<!-- Left Card -->
+<button class="neo-button bg-white rounded-neo neo-border neo-shadow p-6 flex-1 flex flex-col items-center justify-center min-h-[140px] transition-all relative group overflow-hidden">
+<div class="absolute inset-0 bg-desi-teal/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-desi-teal relative z-10">3.75</span>
+</button>
+<!-- VS Badge -->
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-auto-yellow w-16 h-16 rounded-full neo-border neo-shadow flex items-center justify-center rotate-12">
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold italic">VS</span>
+</div>
+<!-- Right Card -->
+<button class="neo-button bg-white rounded-neo neo-border neo-shadow p-6 flex-1 flex flex-col items-center justify-center min-h-[140px] transition-all relative group overflow-hidden">
+<div class="absolute inset-0 bg-mango-orange/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-mango-orange relative z-10">3.9</span>
+</button>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-4 w-full max-w-sm mx-auto mt-8 z-10">
+<button class="neo-button flex-1 bg-nimbu-green text-on-surface font-label-lg text-label-lg font-bold py-4 rounded-neo neo-border neo-shadow flex items-center justify-center gap-2">
+        Left Bada!
+        <span class="material-symbols-outlined">arrow_left</span>
+</button>
+<button class="neo-button flex-1 bg-nimbu-green text-on-surface font-label-lg text-label-lg font-bold py-4 rounded-neo neo-border neo-shadow flex items-center justify-center gap-2">
+        Right Bada!
+        <span class="material-symbols-outlined">arrow_right</span>
+</button>
+</div>
+<!-- Progress & Footer -->
+<div class="mt-auto flex flex-col gap-4 w-full max-w-sm mx-auto z-10 pb-20">
+<!-- Progress Bar -->
+<div class="w-full bg-surface-variant h-6 rounded-full neo-border overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-nimbu-green border-r-3 border-on-surface" style="width: 30%;"></div>
+<!-- Progress Chunks Lines -->
+<div class="absolute inset-0 flex justify-around pointer-events-none opacity-30">
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+<div class="w-px h-full bg-on-surface"></div>
+</div>
+</div>
+<!-- Footer Text -->
+<p class="text-center font-body-lg text-body-lg text-on-surface-variant font-bold flex items-center justify-center gap-2">
+        Decimal ka duel! Kaun jeetega? <span class="text-2xl">🏆</span>
+</p>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component styling logic integrated - Suppressed active state logic as it's a linear game screen, but rendering shell per rules if it's considered a destination. Assuming it's the 'Arena' destination for this example.) -->
+<nav class="fixed bottom-0 w-full z-50 border-t-3 neo-border rounded-t-lg shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] flex justify-around items-center px-4 py-2 pb-safe bg-surface text-on-surface-variant font-label-bold">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-sm border-2 neo-border py-1 px-3 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" data-icon="swords" data-weight="fill">swords</span>
+<span class="text-xs mt-1">Arena</span>
+</button>
+<button class="flex flex-col items-center justify-center py-1 px-3 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="text-xs mt-1">Training</span>
+</button>
+<button class="flex flex-col items-center justify-center py-1 px-3 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="text-xs mt-1">Rankings</span>
+</button>
+<button class="flex flex-col items-center justify-center py-1 px-3 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-xs mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

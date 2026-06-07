@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mid-Lesson Panga!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffd9e1",
+                        "outline-variant": "#e2bfb0",
+                        "on-surface-variant": "#5a4136",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-dim": "#dbdad4",
+                        "surface-container": "#f0eee8",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-tertiary-container": "#67002f",
+                        "background": "#fbf9f3",
+                        "on-primary-fixed": "#351000",
+                        "secondary-fixed": "#63ff9d",
+                        "on-background": "#1b1c19",
+                        "surface-variant": "#e4e2dd",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "outline": "#8e7164",
+                        "primary": "#a04100",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-surface": "#30312d",
+                        "primary-fixed": "#ffdbcc",
+                        "surface": "#fbf9f3",
+                        "secondary": "#006d38",
+                        "on-secondary-container": "#00743c",
+                        "on-primary-container": "#572000",
+                        "primary-container": "#ff6b00",
+                        "inverse-primary": "#ffb693",
+                        "on-secondary-fixed-variant": "#005229",
+                        "tertiary-container": "#ff6096",
+                        "on-surface": "#1b1c19",
+                        "secondary-container": "#63ff9d",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary": "#ba005b",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f3",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#eae8e2",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a04100",
+                        "on-tertiary-fixed": "#3f001a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fbf9f3; }
+        .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(27,28,25,1); }
+        .neo-shadow-sm { box-shadow: 2px 2px 0px 0px rgba(27,28,25,1); }
+        .neo-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px rgba(27,28,25,1);
+        }
+        .neo-selected {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px rgba(27,28,25,1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar from Shared Components JSON -->
+<header class="w-full sticky top-0 z-50 border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit bg-surface">
+<button class="text-primary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none flex items-center justify-center p-2 rounded-full">
+<span class="material-symbols-outlined font-headline-md text-headline-md" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary uppercase tracking-tighter">Ganit Pop</h1>
+<div class="w-10"></div> <!-- Spacer for flex-between alignment -->
+</header>
+<main class="flex-1 flex flex-col px-margin-mobile py-6 gap-6 max-w-lg mx-auto w-full">
+<!-- Screen Title -->
+<div>
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface">Mid-Lesson<br/><span class="text-primary-container">Panga!</span></h2>
+</div>
+<!-- Progress & Timer Section -->
+<div class="flex items-end justify-between gap-4">
+<div class="flex-1">
+<div class="font-label-lg text-label-lg mb-2 text-on-surface-variant uppercase tracking-widest">Question 2 / 5</div>
+<div class="h-6 w-full bg-surface-container-highest border-[3px] border-on-surface rounded-full overflow-hidden relative">
+<!-- Segmented Progress Bar -->
+<div class="h-full bg-secondary-container w-[40%] border-r-[3px] border-on-surface flex items-center justify-end pr-1">
+<div class="h-4 w-[3px] bg-on-surface opacity-50 mr-2"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-[3px] border-on-surface neo-shadow px-4 py-2 rounded-lg font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="timer">timer</span>
+<span class="tracking-tight">02:15</span>
+</div>
+</div>
+<!-- Question Card -->
+<div class="bg-primary-fixed border-[3px] border-on-surface neo-shadow p-6 rounded-lg mt-2 relative overflow-hidden">
+<!-- Decorative geometric element -->
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-primary-container border-[3px] border-on-surface rounded-full opacity-20"></div>
+<h3 class="font-headline-md text-headline-md mb-6 relative z-10 leading-snug">
+                Find the <span class="bg-primary-container text-on-primary-container px-2 border-[2px] border-on-surface -rotate-2 inline-block">MINIMUM</span> value in this set:
+            </h3>
+<div class="flex flex-wrap gap-3 relative z-10">
+<div class="bg-surface-container-lowest border-[3px] border-on-surface px-4 py-2 rounded-full font-headline-md text-headline-md neo-shadow-sm flex items-center justify-center min-w-[3rem]">15</div>
+<div class="bg-surface-container-lowest border-[3px] border-on-surface px-4 py-2 rounded-full font-headline-md text-headline-md neo-shadow-sm flex items-center justify-center min-w-[3rem]">8</div>
+<div class="bg-surface-container-lowest border-[3px] border-on-surface px-4 py-2 rounded-full font-headline-md text-headline-md neo-shadow-sm flex items-center justify-center min-w-[3rem]">22</div>
+<div class="bg-surface-container-lowest border-[3px] border-on-surface px-4 py-2 rounded-full font-headline-md text-headline-md neo-shadow-sm flex items-center justify-center min-w-[3rem]">10</div>
+<div class="bg-surface-container-lowest border-[3px] border-on-surface px-4 py-2 rounded-full font-headline-md text-headline-md neo-shadow-sm flex items-center justify-center min-w-[3rem]">31</div>
+</div>
+</div>
+<!-- Answer Options -->
+<div class="flex flex-col gap-4 mt-2">
+<!-- Option 1: Incorrect/Default -->
+<button class="w-full bg-surface-container-lowest border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-between hover:bg-surface-container-low transition-colors neo-active group">
+<span class="font-headline-md text-headline-md">15</span>
+<span class="w-7 h-7 border-[3px] border-on-surface rounded-full bg-surface group-active:bg-surface-variant transition-colors"></span>
+</button>
+<!-- Option 2: Correct/Selected State -->
+<button class="w-full bg-secondary-container border-[3px] border-on-surface p-4 rounded-lg flex items-center justify-between neo-selected relative overflow-hidden">
+<!-- Success animated stripes (subtle css pattern) -->
+<div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 2px, transparent 2px, transparent 8px);"></div>
+<span class="font-headline-md text-headline-md relative z-10 text-on-surface">8</span>
+<span class="material-symbols-outlined text-[32px] text-on-surface relative z-10" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Option 3: Default -->
+<button class="w-full bg-surface-container-lowest border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-between hover:bg-surface-container-low transition-colors neo-active group">
+<span class="font-headline-md text-headline-md">22</span>
+<span class="w-7 h-7 border-[3px] border-on-surface rounded-full bg-surface group-active:bg-surface-variant transition-colors"></span>
+</button>
+<!-- Option 4: Default -->
+<button class="w-full bg-surface-container-lowest border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-center justify-between hover:bg-surface-container-low transition-colors neo-active group">
+<span class="font-headline-md text-headline-md">10</span>
+<span class="w-7 h-7 border-[3px] border-on-surface rounded-full bg-surface group-active:bg-surface-variant transition-colors"></span>
+</button>
+</div>
+<!-- Spacer to push footer down slightly if needed, though gap handles most of it -->
+<div class="flex-1 min-h-[20px]"></div>
+<!-- Guru Tip Footer -->
+<div class="bg-tertiary-fixed border-[3px] border-on-surface neo-shadow p-4 rounded-lg flex items-start gap-4 relative">
+<!-- Tail pointing to avatar -->
+<div class="absolute -top-[3px] left-8 w-4 h-4 bg-tertiary-fixed border-t-[3px] border-l-[3px] border-on-surface rotate-45 -translate-y-1/2"></div>
+<div class="w-14 h-14 rounded-full border-[3px] border-on-surface bg-primary-container shrink-0 flex items-center justify-center neo-shadow-sm overflow-hidden z-10 relative">
+<!-- Avatar placeholder using an image generated from prompt -->
+<img alt="MathsGuru Avatar" class="w-full h-full object-cover" data-alt="A stylized 2D illustration of an energetic Indian teacher named MathsGuru Bhaiya. He has a friendly, expressive face, wearing colorful modern street-pop style clothing with mango orange accents. The portrait is framed in a tight circular composition with bold black neo-brutalist outlines. The background behind him is a solid bright yellow. The lighting is flat and graphic, emphasizing a playful, approachable gamified education aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_XksZEtqaTnBBALokz4vVcbaT2Ih6JtmbQ-nwc1R16CwOVpjVwzOK0tw9tPb4Hx7x9tPYcuvu1Ch3Bin_aEq4afo5tKkQhYkl_t39CZq9lp8pneUU882H14Y_WpdsKvm03YDkzDIKQOwkvWUKHwMKxvmTHo7cYdW5mNQMYkbpSAYTatyYNteqFWCkFH6qsqtlZHQSLN0m6cZQXPLzVrYdMzN2YFpshW16y0mt7BE6Da6lUVOEIW8tv92DGsq047F_T6-0_DbmnVy4"/>
+</div>
+<div class="pt-1">
+<div class="font-label-lg text-label-lg mb-1 text-on-surface">MathsGuru Bhaiya</div>
+<p class="font-body-md text-body-md text-on-surface leading-tight">
+                    Chhota number matlab sabse kam value. Simple hai!
+                </p>
+</div>
+</div>
+</main>
+</body></html>

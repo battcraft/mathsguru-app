@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti Final Panga!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&amp;family=Nunito+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#3f001a",
+                        "primary-container": "#ff6b00",
+                        "on-tertiary-container": "#67002f",
+                        "surface-tint": "#a04100",
+                        "inverse-surface": "#30312d",
+                        "secondary": "#006d38",
+                        "surface-variant": "#e4e2dd",
+                        "on-surface": "#1b1c19",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "background": "#fbf9f3",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eee8",
+                        "on-secondary-fixed-variant": "#005229",
+                        "tertiary-container": "#ff6096",
+                        "on-surface-variant": "#5a4136",
+                        "surface-container-high": "#eae8e2",
+                        "primary-fixed": "#ffdbcc",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c19",
+                        "outline": "#8e7164",
+                        "on-secondary-container": "#00743c",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-fixed": "#351000",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9f3",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface": "#fbf9f3",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#40e183",
+                        "tertiary": "#ba005b",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-dim": "#dbdad4",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#572000",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#63ff9d",
+                        "inverse-primary": "#ffb693",
+                        "on-secondary-fixed": "#00210d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-border { border: 3px solid #1A1A1A; }
+        .neo-shadow { box-shadow: 4px 4px 0px 0px #1A1A1A; }
+        .neo-interactive:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #1A1A1A;
+        }
+        .neo-interactive {
+            transition: all 0.1s ease-in-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32 pt-20">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-surface dark:bg-surface-dim top-0 sticky border-b-[3px] border-on-surface dark:border-outline-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold">Math-Masti</h1>
+</div>
+<div class="flex items-center gap-2 font-label-bold text-label-bold bg-surface-container-high px-3 py-1 rounded-full neo-border neo-shadow">
+<span class="material-symbols-outlined" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span>12 🔥</span>
+</div>
+</header>
+<main class="max-w-[800px] mx-auto px-margin-mobile mt-8 space-y-6">
+<!-- Quiz Status Bar -->
+<div class="flex justify-between items-center font-label-lg text-label-lg mb-2">
+<span class="bg-[#ffd100] px-3 py-1 rounded-full neo-border neo-shadow">Question 1/10</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full neo-border neo-shadow">Score: 0</span>
+<span class="flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full neo-border neo-shadow">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span> 04:59
+            </span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-6 bg-surface-variant rounded-full neo-border overflow-hidden flex">
+<div class="h-full bg-[#ff007f] w-[10%] border-r-[3px] border-[#1A1A1A]"></div>
+</div>
+<!-- Header -->
+<div class="text-center space-y-2 py-4">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary-container drop-shadow-[2px_2px_0px_#1A1A1A]">
+                Final Panga! 🏏
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-bold">
+                Sab kuch lagao, yeh hai asli test!
+            </p>
+<p class="font-body-md text-body-md text-on-surface italic mt-2">
+                'Math tension? No mention! Fatafat jawab do boss!'
+            </p>
+</div>
+<!-- Question Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 neo-border neo-shadow">
+<h3 class="font-headline-md text-headline-md mb-4 border-b-[3px] border-on-surface pb-4">
+                Find the MAXIMUM and RANGE of this data set:
+            </h3>
+<div class="flex flex-wrap gap-3 justify-center mb-6">
+<span class="font-headline-md text-headline-md bg-[#ffd100] px-4 py-2 rounded-full neo-border neo-shadow">45</span>
+<span class="font-headline-md text-headline-md bg-[#ffd100] px-4 py-2 rounded-full neo-border neo-shadow">12</span>
+<span class="font-headline-md text-headline-md bg-[#ffd100] px-4 py-2 rounded-full neo-border neo-shadow">89</span>
+<span class="font-headline-md text-headline-md bg-[#ffd100] px-4 py-2 rounded-full neo-border neo-shadow">23</span>
+<span class="font-headline-md text-headline-md bg-[#ffd100] px-4 py-2 rounded-full neo-border neo-shadow">5</span>
+</div>
+</div>
+<!-- Options -->
+<div class="space-y-4">
+<button class="w-full bg-surface-container-lowest hover:bg-[#eae8e2] text-left p-4 rounded-lg neo-border neo-shadow neo-interactive font-body-lg text-body-lg flex items-center justify-between group">
+<span><strong class="mr-2">A.</strong> Max: 89, Range: 84</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-lowest hover:bg-[#eae8e2] text-left p-4 rounded-lg neo-border neo-shadow neo-interactive font-body-lg text-body-lg flex items-center justify-between group">
+<span><strong class="mr-2">B.</strong> Max: 89, Range: 77</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-lowest hover:bg-[#eae8e2] text-left p-4 rounded-lg neo-border neo-shadow neo-interactive font-body-lg text-body-lg flex items-center justify-between group">
+<span><strong class="mr-2">C.</strong> Max: 45, Range: 40</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-lowest hover:bg-[#eae8e2] text-left p-4 rounded-lg neo-border neo-shadow neo-interactive font-body-lg text-body-lg flex items-center justify-between group">
+<span><strong class="mr-2">D.</strong> Max: 89, Range: 5</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface-container-highest px-2 py-3 pb-safe rounded-t-xl border-t-[3px] border-on-surface dark:border-outline-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg mt-1">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="quiz" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-lg text-label-lg mt-1">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg mt-1">Story</span>
+</a>
+</nav>
+<script>
+        // Simple timer logic for demonstration
+        let timeRemaining = 299; // 4:59
+        const timerElement = document.querySelector('[data-icon="timer"]').nextSibling;
+        
+        setInterval(() => {
+            if (timeRemaining > 0) {
+                timeRemaining--;
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                timerElement.textContent = ` ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }, 1000);
+    </script>
+</body></html>

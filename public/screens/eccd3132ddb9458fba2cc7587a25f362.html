@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice Zone - Scale Reading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#b80069",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#e9c400",
+                      "surface-dim": "#dadada",
+                      "surface-container-high": "#e8e8e8",
+                      "on-tertiary-container": "#4c3f00",
+                      "inverse-on-surface": "#f0f1f1",
+                      "surface": "#f9f9f9",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-secondary-fixed": "#2f1400",
+                      "secondary": "#924c00",
+                      "on-primary-container": "#fffbff",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f3f3f4",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "on-primary-fixed": "#3e0020",
+                      "surface-container-highest": "#e2e2e2",
+                      "secondary-container": "#f88400",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary-container": "#c9a900",
+                      "surface-container": "#eeeeee",
+                      "secondary-fixed-dim": "#ffb781",
+                      "tertiary": "#705d00",
+                      "primary-fixed-dim": "#ffb0cb",
+                      "primary": "#b40067",
+                      "background": "#f9f9f9",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#5a3f48",
+                      "tertiary-fixed": "#ffe16d",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#ffdcc4",
+                      "outline-variant": "#e1bdc7",
+                      "on-secondary-container": "#5b2d00",
+                      "on-tertiary-fixed-variant": "#544600",
+                      "on-surface": "#1a1c1c",
+                      "inverse-surface": "#2f3131",
+                      "primary-fixed": "#ffd9e3",
+                      "surface-variant": "#e2e2e2",
+                      "outline": "#8d6f78",
+                      "primary-container": "#df0b81",
+                      "on-secondary-fixed-variant": "#6f3800",
+                      "inverse-primary": "#ffb0cb",
+                      "on-primary-fixed-variant": "#8d004f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "shadow-offset": "4px",
+                      "margin-desktop": "32px",
+                      "gutter": "16px",
+                      "margin-mobile": "16px",
+                      "border-width": "3px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Fredoka"],
+                      "label-bold": ["Nunito Sans"],
+                      "body-md": ["Nunito Sans"],
+                      "headline-lg": ["Fredoka"],
+                      "headline-md": ["Fredoka"],
+                      "body-lg": ["Nunito Sans"],
+                      "headline-xl-mobile": ["Fredoka"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Neo-Brutalist Blueprint Background */
+        body {
+            background-color: #f9f9f9;
+            background-image: 
+                linear-gradient(#e2e2e2 1px, transparent 1px),
+                linear-gradient(90deg, #e2e2e2 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        /* Custom scrollbar for horizontal ruler area */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Tick marks for CSS ruler */
+        .ruler-tick-minor::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 8px;
+            width: 3px;
+            background-color: #1a1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar (From Shared Components JSON) -->
+<!-- Applying style_bg_color, style_separation_logic, style_shadows_and_elevation, style_component_shape, style_shell_layout -->
+<header class="bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] w-full top-0 sticky flex justify-between items-center px-margin-mobile py-4 z-50">
+<!-- Leading Icon -->
+<button class="flex items-center justify-center p-2 rounded-full border-[3px] border-transparent hover:border-on-surface hover:bg-surface-container-highest active:bg-surface-variant transition-all cursor-pointer">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<!-- Headline -->
+<!-- Applying style_brand_logo/style_typography directly as requested for consistency -->
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">
+            Geometry: Rekha &amp; Bindu
+        </h1>
+<!-- Trailing Action -->
+<div class="flex items-center justify-center px-3 py-1 bg-surface-container-highest border-[3px] border-on-surface shadow-[2px_2px_0px_#1a1c1c] rounded-DEFAULT font-label-bold text-label-bold">
+            5 🔥
+        </div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-8 max-w-5xl mx-auto w-full flex flex-col items-center">
+<!-- Context Tag -->
+<div class="self-start md:self-center mb-6 bg-tertiary-fixed border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] px-4 py-2 flex items-center gap-2 transform -rotate-1">
+<span class="material-symbols-outlined text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-label-bold text-label-bold uppercase tracking-wider text-on-tertiary-fixed">Practice Zone</span>
+</div>
+<!-- Challenge Title -->
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-center mb-10 text-on-surface">
+            Scale Reading Challenge
+        </h2>
+<!-- The Interactive Geometry Canvas -->
+<section class="w-full max-w-2xl bg-surface-container-lowest border-[3px] border-on-surface shadow-[8px_8px_0px_#1a1c1c] rounded-lg p-4 md:p-8 mb-10 relative overflow-hidden">
+<!-- Decorative grid dot -->
+<div class="absolute top-4 right-4 w-3 h-3 bg-primary rounded-full border-2 border-on-surface"></div>
+<div class="absolute bottom-4 left-4 w-3 h-3 bg-secondary-container rounded-full border-2 border-on-surface"></div>
+<!-- Scroll Hint for Mobile -->
+<div class="md:hidden flex items-center justify-center gap-2 mb-2 text-on-surface-variant font-label-bold text-label-bold">
+<span class="material-symbols-outlined text-sm">swipe</span> Swipe to see full scale
+            </div>
+<!-- Ruler Container (Horizontally Scrollable on small screens) -->
+<div class="w-full overflow-x-auto no-scrollbar pb-6 pt-16">
+<!-- Inner Fixed Width Area to maintain scale (1cm = 50px) -->
+<!-- Total 12cm = 600px width -->
+<div class="relative w-[600px] mx-auto h-32 flex flex-col justify-end">
+<!-- THE LINE SEGMENT -->
+<!-- Placed absolutely. Starts at 2cm (100px), Length is 5cm (250px) -->
+<div class="absolute top-0 left-[100px] w-[250px] h-10 flex items-center justify-center group z-10">
+<!-- Connecting Line -->
+<div class="absolute w-full h-[6px] bg-primary border-y-[2px] border-on-surface group-hover:h-[8px] transition-all"></div>
+<!-- Point A (Start) -->
+<div class="absolute left-0 w-4 h-4 bg-primary border-[3px] border-on-surface rounded-full transform -translate-x-1/2 shadow-[2px_2px_0px_#1a1c1c]"></div>
+<!-- Point B (End) -->
+<div class="absolute right-0 w-4 h-4 bg-primary border-[3px] border-on-surface rounded-full transform translate-x-1/2 shadow-[2px_2px_0px_#1a1c1c]"></div>
+<!-- Label floating above -->
+<div class="absolute -top-10 bg-surface border-[3px] border-on-surface px-2 py-1 font-label-bold text-label-bold shadow-[2px_2px_0px_#1a1c1c] transform -rotate-2">
+                            Segment <span class="text-primary font-bold">AB</span>
+</div>
+</div>
+<!-- THE RULER -->
+<div class="h-16 w-full bg-[#ffe16d] border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] flex relative">
+<!-- Zero Line (Left Edge of Ruler) -->
+<div class="absolute left-0 top-0 h-full w-[3px] bg-on-surface"></div>
+<!-- 12 Centimeter Blocks (50px each) -->
+<!-- 1 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface bg-[#fff0ab]">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            1
+                        </div>
+<!-- 2 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            2
+                        </div>
+<!-- 3 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface bg-[#fff0ab]">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            3
+                        </div>
+<!-- 4 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            4
+                        </div>
+<!-- 5 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface bg-[#fff0ab]">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            5
+                        </div>
+<!-- 6 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            6
+                        </div>
+<!-- 7 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface bg-[#fff0ab]">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            7
+                        </div>
+<!-- 8 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            8
+                        </div>
+<!-- 9 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface bg-[#fff0ab]">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            9
+                        </div>
+<!-- 10 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            10
+                        </div>
+<!-- 11 -->
+<div class="flex-none w-[50px] h-full border-r-[3px] border-on-surface relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface bg-[#fff0ab]">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+                            11
+                        </div>
+<!-- 12 -->
+<div class="flex-none w-[50px] h-full relative flex justify-end items-end pb-1 pr-1 font-label-bold text-label-bold text-on-surface">
+<div class="ruler-tick-minor absolute h-full w-full top-0 left-0"></div>
+<span class="absolute right-2 bottom-6 text-xs font-bold opacity-50">CM</span>
+                            12
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Question Section -->
+<section class="w-full max-w-2xl text-center mb-8">
+<p class="font-headline-md text-headline-md text-on-surface leading-snug">
+                Is segment ki sahi length kya hai? 
+                <br class="hidden md:block"/>
+<span class="inline-block mt-2 bg-primary-container text-on-primary-container px-3 py-1 border-[3px] border-on-surface shadow-[2px_2px_0px_#1a1c1c] transform rotate-2">
+                    Dhyaan se zero check karo!
+                </span>
+</p>
+</section>
+<!-- Options Grid -->
+<section class="w-full max-w-2xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-12" id="options-container">
+<!-- Option 1 -->
+<button class="option-btn relative w-full bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-DEFAULT p-6 flex flex-col items-center justify-center gap-2 transition-all hover:shadow-[8px_8px_0px_#1a1c1c] hover:-translate-y-1 hover:-translate-x-1 group" onclick="selectOption(this)">
+<div class="absolute inset-0 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2 group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">straighten</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">5cm</span>
+</button>
+<!-- Option 2 -->
+<button class="option-btn relative w-full bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-DEFAULT p-6 flex flex-col items-center justify-center gap-2 transition-all hover:shadow-[8px_8px_0px_#1a1c1c] hover:-translate-y-1 hover:-translate-x-1 group" onclick="selectOption(this)">
+<div class="absolute inset-0 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2 group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">straighten</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">4cm</span>
+</button>
+<!-- Option 3 -->
+<button class="option-btn relative w-full bg-surface-container-lowest border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-DEFAULT p-6 flex flex-col items-center justify-center gap-2 transition-all hover:shadow-[8px_8px_0px_#1a1c1c] hover:-translate-y-1 hover:-translate-x-1 group" onclick="selectOption(this)">
+<div class="absolute inset-0 bg-surface-container opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2 group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 0;">straighten</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">6cm</span>
+</button>
+</section>
+<!-- Action Button (Disabled by default until selection) -->
+<button class="disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-on-primary border-[3px] border-on-surface shadow-[4px_4px_0px_#1a1c1c] rounded-DEFAULT px-12 py-4 font-headline-md text-headline-md flex items-center gap-2 transition-all hover:shadow-[8px_8px_0px_#1a1c1c] hover:-translate-y-1 hover:-translate-x-1 active:shadow-none active:translate-x-1 active:translate-y-1" disabled="" id="submit-btn">
+            Check Answer
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</main>
+<!-- JavaScript for Interactions -->
+<script>
+        function selectOption(selectedButton) {
+            const allButtons = document.querySelectorAll('.option-btn');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Reset all buttons to default neo-brutalist unselected state
+            allButtons.forEach(btn => {
+                // Remove active classes
+                btn.classList.remove('bg-tertiary-fixed', 'border-primary', 'shadow-[8px_8px_0px_#b40067]', '-translate-y-2', '-translate-x-2');
+                
+                // Reset to default classes
+                btn.classList.add('bg-surface-container-lowest', 'border-on-surface', 'shadow-[4px_4px_0px_#1a1c1c]');
+                
+                // Reset icon color
+                const icon = btn.querySelector('.material-symbols-outlined');
+                icon.classList.remove('text-primary');
+                icon.classList.add('text-on-surface-variant');
+                icon.style.fontVariationSettings = "'FILL' 0";
+            });
+
+            // Apply active state to selected button
+            // Active state: Pop out more, change background to a vibrant highlight, change border to primary
+            selectedButton.classList.remove('bg-surface-container-lowest', 'border-on-surface', 'shadow-[4px_4px_0px_#1a1c1c]');
+            selectedButton.classList.add('bg-tertiary-fixed', 'border-primary', 'shadow-[8px_8px_0px_#b40067]', '-translate-y-2', '-translate-x-2');
+            
+            // Highlight icon
+            const selectedIcon = selectedButton.querySelector('.material-symbols-outlined');
+            selectedIcon.classList.remove('text-on-surface-variant');
+            selectedIcon.classList.add('text-primary');
+            selectedIcon.style.fontVariationSettings = "'FILL' 1";
+
+            // Enable submit button
+            submitBtn.disabled = false;
+            
+            // Add a subtle pop animation to submit button to draw attention
+            submitBtn.classList.add('animate-pulse');
+            setTimeout(() => {
+                submitBtn.classList.remove('animate-pulse');
+            }, 1000);
+        }
+    </script>
+</body></html>

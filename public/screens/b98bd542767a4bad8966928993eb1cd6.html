@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math-Masti: The Decimal "Zero Trap"</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#3e0020",
+                        "outline-variant": "#e1bdc7",
+                        "tertiary-fixed": "#ffe16d",
+                        "tertiary-container": "#c9a900",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#705d00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcc4",
+                        "outline": "#8d6f78",
+                        "primary-fixed": "#ffd9e3",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-secondary-container": "#5b2d00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b80069",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "primary": "#b40067",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#4c3f00",
+                        "background": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#df0b81",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "error-container": "#ffdad6",
+                        "secondary": "#924c00",
+                        "secondary-container": "#f88400",
+                        "on-primary-container": "#fffbff",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5a3f48"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-width": "3px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "16px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Fredoka"],
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-lg {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+        .caution-pattern {
+            background: repeating-linear-gradient(
+                45deg,
+                #f88400,
+                #f88400 10px,
+                #000000 10px,
+                #000000 20px
+            );
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky flex justify-between items-center px-4 h-16 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-[3px] border-on-surface overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOW40BE-5-r-GWvHWk5NelMf9i-7IB-_-cEeojZe0Oe9SGyhw8Y0A0MKYYq7JRv0oPnD3uScjYoO4yq2h50iMVEkWM2LPXQAqNG77BuOtiHblxNbYuTxgBw1rT-Svl0nlvYWzBGYMPKIGEztCYgeT5nRHjmgg5zanYEtufs4KeXV39bOjgiA_3aZSjJe8WA24XyMp94zPU37yC6DYbKuzPeWt7fHnKDKpWvq1TYYhsn6m73LbDWfcyxZrkEWEzQJ2qL9gGTeVHJG_t"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">Math-Masti</h1>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface border-[3px] border-on-surface rounded-lg neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-pointer">
+<span class="font-label-bold text-label-bold text-primary">12 🔥</span>
+</div>
+</header>
+<main class="flex-grow p-4 md:p-8 max-w-5xl mx-auto w-full mb-24">
+<!-- Title & Alert -->
+<div class="mb-8 relative">
+<div class="absolute -top-4 -left-2 caution-pattern h-4 w-24 border-[3px] border-on-surface"></div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-2">
+                The Decimal <span class="text-secondary bg-secondary-fixed px-2 border-[3px] border-on-surface neo-shadow-sm inline-block rotate-[-1deg]">"Zero Trap"</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Chhota zero, bada dhoka! Dekho decimals ka asli sach.
+            </p>
+</div>
+<!-- Video Player Section -->
+<div class="relative group mb-10">
+<div class="bg-surface border-[3px] border-on-surface neo-shadow-lg rounded-xl overflow-hidden aspect-video flex items-center justify-center relative">
+<!-- Video Placeholder -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80" data-alt="A cinematic, high-contrast educational visual showing the numbers 0.5 and 0.05 side-by-side in bold, urban graffiti typography. The lighting is dramatic with neon yellow accents highlighting the placement of the zero. The style is neo-brutalist with thick black outlines and geometric grid patterns in the background, creating a youthful and energetic mathematical study atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArUwOAJykn_60EiIj2abCcMG0krzdtqONhfaQMY50X2Ucwb8I6fUz4Nbb9anK43s1JYgC1cU-7CIF6iLPcnUwfKMaIFG5f3tT05e0Tl9HyQHZqSZeWo9zn0_Hnz2mfiyrv1Av_C1aCaakSPApGyYAYxiUkeSP-wdFB3bYr8O3-waZ0Bol-_-Uk3X80FZfpVmhwd8QLitWNHE-vecsNMSt44TO-GiN8GeCvgcSYc1fnhF2mJlNHSfXkJCHh09e-UmTJ13WMNLU0GIQA"/>
+</div>
+<!-- Play Button Overlay -->
+<button class="z-10 bg-secondary-container text-on-secondary-container border-[3px] border-on-surface p-6 rounded-full neo-shadow hover:scale-110 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- UI Controls Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-on-surface/50 to-transparent flex justify-between items-center z-10">
+<div class="flex items-center gap-4 text-surface">
+<span class="material-symbols-outlined">pause</span>
+<div class="h-2 w-48 bg-surface-container rounded-full overflow-hidden border-[2px] border-on-surface">
+<div class="h-full bg-secondary w-1/3"></div>
+</div>
+<span class="font-label-bold">03:45 / 12:00</span>
+</div>
+<span class="material-symbols-outlined text-surface">fullscreen</span>
+</div>
+</div>
+<!-- Caution Tag -->
+<div class="absolute -top-4 -right-4 bg-secondary-container border-[3px] border-on-surface px-4 py-2 neo-shadow rotate-[5deg] z-20">
+<span class="font-label-bold text-on-secondary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">warning</span> WARNING: MATH MISTAKES
+                </span>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Pro Tip Box -->
+<div class="bg-tertiary-fixed border-[3px] border-on-surface neo-shadow rounded-xl p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-on-tertiary-fixed text-tertiary-fixed p-2 border-[2px] border-on-surface rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed">Pro Tip</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-tertiary-fixed-variant leading-tight">
+                    Counting digits doesn't work for decimals. <span class="font-bold border-b-2 border-on-surface">Place value is king!</span>
+</p>
+<div class="mt-2 bg-surface/50 p-3 rounded border-[2px] border-dashed border-on-surface">
+<span class="font-label-bold">Ex: 0.5 = 5/10 whereas 0.05 = 5/100</span>
+</div>
+</div>
+<!-- Interaction Card -->
+<div class="bg-surface border-[3px] border-on-surface neo-shadow rounded-xl p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Got the trap?</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Test your logic before we move to the next level of decimal madness.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-primary text-on-primary border-[3px] border-on-surface py-3 rounded-lg font-label-bold neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all">
+                        TAKE QUIZ
+                    </button>
+<button class="flex-1 bg-surface border-[3px] border-on-surface py-3 rounded-lg font-label-bold neo-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                        NOTES (PDF)
+                    </button>
+</div>
+</div>
+</div>
+<!-- Additional Practice Section -->
+<div class="mt-12">
+<h4 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="w-8 h-8 bg-secondary border-[3px] border-on-surface rounded-full"></span>
+                More for you
+            </h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<!-- Bento Card 1 -->
+<div class="bg-white border-[3px] border-on-surface neo-shadow rounded-xl overflow-hidden group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="h-32 bg-primary-fixed border-b-[3px] border-on-surface flex items-center justify-center p-4">
+<img class="w-full h-full object-cover" data-alt="Macro photography of math equations on a chalkboard, styled with vibrant pink and yellow chalk dust. The composition is dynamic and diagonal, following the neo-brutalist aesthetic with strong contrasts and geometric focus on the decimal points." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-KSKHG9Kp5jTv65uJCuYLANkLV9FyXGN_PL-7p07GwOAGVDr4Id3ydRKgR1zUA_M7nW_1KUsoX8QDr9q3EW4W9B0-1tN28qiQmbOXlieizYFxC2GmiFSGOCU0qoNP49YAzkF8Pjt0d13fN5Z6-I9u4o-fZHPeXV_l5nzHBGgVhurUydfQjtr_SGHW_oBaIf4FfjnC4tipJ7xCfDq0XCKRIMC990Id0xwdq9P2uvlnZ4MH3LzHGXoS5yllAXeEMrFLeswZba1tBi_q"/>
+</div>
+<div class="p-4">
+<span class="text-[10px] font-label-bold bg-secondary-fixed px-2 py-0.5 border-[2px] border-on-surface rounded mb-2 inline-block">EASY</span>
+<p class="font-label-bold">Comparing Tenths &amp; Hundredths</p>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="bg-white border-[3px] border-on-surface neo-shadow rounded-xl overflow-hidden group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="h-32 bg-secondary-fixed border-b-[3px] border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-on-surface">calculate</span>
+</div>
+<div class="p-4">
+<span class="text-[10px] font-label-bold bg-primary-fixed px-2 py-0.5 border-[2px] border-on-surface rounded mb-2 inline-block">MEDIUM</span>
+<p class="font-label-bold">The Multiplier Effect</p>
+</div>
+</div>
+<!-- Bento Card 3 -->
+<div class="hidden md:block bg-white border-[3px] border-on-surface neo-shadow rounded-xl overflow-hidden group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="h-32 bg-tertiary-fixed border-b-[3px] border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-on-surface">emoji_events</span>
+</div>
+<div class="p-4">
+<span class="text-[10px] font-label-bold bg-surface-container-highest px-2 py-0.5 border-[2px] border-on-surface rounded mb-2 inline-block">CHALLENGE</span>
+<p class="font-label-bold">Decimal Sprint Contest</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 py-3 pb-safe border-t-[3px] border-on-surface shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container border-[3px] border-on-surface rounded-lg px-4 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the warning tag rotation
+        const warningTag = document.querySelector('.bg-secondary-container.rotate-\\[5deg\\]');
+        if (warningTag) {
+            setInterval(() => {
+                warningTag.style.transform = `rotate(${Math.sin(Date.now() / 500) * 2 + 5}deg)`;
+            }, 50);
+        }
+
+        // Ripple-like effect on play button
+        const playBtn = document.querySelector('button .material-symbols-outlined');
+        if (playBtn) {
+            playBtn.parentElement.addEventListener('mouseenter', () => {
+                playBtn.style.fontVariationSettings = "'FILL' 1, 'wght' 700";
+            });
+            playBtn.parentElement.addEventListener('mouseleave', () => {
+                playBtn.style.fontVariationSettings = "'FILL' 1, 'wght' 400";
+            });
+        }
+    </script>
+</body></html>

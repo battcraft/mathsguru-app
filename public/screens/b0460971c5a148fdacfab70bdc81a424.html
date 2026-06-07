@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Samosa Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb693",
+                    "tertiary-container": "#ff6096",
+                    "primary-container": "#ff6b00",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8e7164",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad4",
+                    "background": "#fbf9f3",
+                    "surface-container-high": "#eae8e2",
+                    "on-primary-container": "#572000",
+                    "surface-container": "#f0eee8",
+                    "tertiary": "#ba005b",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#8f0044",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#30312d",
+                    "inverse-on-surface": "#f2f1eb",
+                    "tertiary-fixed-dim": "#ffb1c4",
+                    "surface-bright": "#fbf9f3",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-variant": "#e4e2dd",
+                    "secondary-fixed-dim": "#40e183",
+                    "on-surface": "#1b1c19",
+                    "secondary-fixed": "#63ff9d",
+                    "tertiary-fixed": "#ffd9e1",
+                    "on-secondary-fixed": "#00210d",
+                    "secondary-container": "#63ff9d",
+                    "on-secondary-container": "#00743c",
+                    "surface-tint": "#a04100",
+                    "primary-fixed": "#ffdbcc",
+                    "outline-variant": "#e2bfb0",
+                    "secondary": "#006d38",
+                    "on-tertiary-fixed": "#3f001a",
+                    "surface": "#fbf9f3",
+                    "primary": "#a04100",
+                    "on-secondary-fixed-variant": "#005229",
+                    "on-tertiary-container": "#67002f",
+                    "primary-fixed-dim": "#ffb693",
+                    "on-primary-fixed-variant": "#7a3000",
+                    "on-primary-fixed": "#351000",
+                    "on-surface-variant": "#5a4136"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max-width": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-md": ["Nunito Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "label-lg": ["Nunito Sans"],
+                    "body-lg": ["Nunito Sans"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .active-press-sm:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0eee8;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1A1A1A;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md custom-scrollbar">
+<!-- TopAppBar -->
+<header class="bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 sticky top-0">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden bg-primary-fixed">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhA1yYn8gabPG3g_NeCAdjNuapFZwIdr5MWrzpCnO5qw-eou5ZZ8vkUWkWYzrvcCiDEJoE6bclvklNWPTzjaIy_gvYwI4MkO67G-BGnY6FWTrBijPgsLRxRwd49HKNKoFjqNmVQsij0YIvKWJqnvvDqe0xkvdEM_YSlLK07vEoYIEKJtgtY-CWH5kCLGL-N_zO2IILSeK6SoLWxFxfGBHZ_utGBTDsZ4NDjP0zs_n5qx4tqzvWGPl4u6veTZp-ipiyFPw_M9CXedyy"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-label-lg flex items-center gap-1 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+                Home
+            </a>
+<a class="text-on-surface-variant font-label-lg flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+                Chat
+            </a>
+<a class="text-on-surface-variant font-label-lg flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">quiz</span>
+                Quiz
+            </a>
+<a class="text-on-surface-variant font-label-lg flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                Story
+            </a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-surface-container-high px-3 py-1 border-2 border-black rounded-full neo-shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold">12</span>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Video Area -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Samosa Party 🥟</h2>
+<p class="text-body-lg text-on-surface-variant">Chapter 4: Linear Equations with Halwai Logic</p>
+</div>
+<div class="hidden md:flex gap-2">
+<button class="p-2 border-3 border-black bg-surface-container-low rounded-lg neo-shadow active-press-sm">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-2 border-3 border-black bg-surface-container-low rounded-lg neo-shadow active-press-sm">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Video Player Container -->
+<div class="relative aspect-video bg-black border-3 border-black rounded-lg neo-shadow overflow-hidden group">
+<img class="w-full h-full object-cover opacity-80" data-alt="A cinematic, high-definition shot of a bustling Indian street food stall with golden, crispy samosas being fried in a large iron kadhai. The scene is vibrant with warm orange tones from the setting sun and the glow of stall lights. Neo-brutalist graphic overlays like math equations float in the air using bold black outlines and Mango Orange fills, creating a gamified educational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5gHgtI0GKE92NCryVxRdrJQau65ifHj5ZS57WAbytcieAft9wLCDdOEd9CL0uzMcolEqSWs_jn5tOMzUi7LeNaelQxUJ6FbhwCq3coMW2XgJBFj4d05jH5MoVVsyEzaXMJDX5cd5vD_BHdFXUOAUyEEtrHbIA5T3TnPHx4VieVdNsx37GKaoIlEwThik5frP_jps7BlVXNF0uTVtmiY6pRWcxq-BukRdiUIAhV0Do_MAt8noBTr734GFAAklIeKuZd7rrsGW5SnRK"/>
+<!-- Custom Video Controls Overlay -->
+<div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-full bg-surface-variant/30 h-2 rounded-full mb-4 overflow-hidden border border-black/50">
+<div class="bg-primary-container h-full w-2/3 border-r-2 border-black"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined cursor-pointer hover:scale-110" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110">skip_next</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110">volume_up</span>
+<span class="font-label-lg">12:45 / 18:30</span>
+</div>
+<div class="flex items-center gap-4 text-white">
+<span class="material-symbols-outlined cursor-pointer hover:scale-110">subtitles</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110">fullscreen</span>
+</div>
+</div>
+</div>
+<!-- Central Play Button -->
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 bg-primary-container text-on-primary-container border-4 border-black rounded-full neo-shadow active-press flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Lesson Content -->
+<div class="bg-surface-container-low border-3 border-black rounded-lg p-6 neo-shadow">
+<h3 class="font-headline-md text-headline-md mb-4 text-primary">Aman ki Recipe</h3>
+<p class="text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                    If 1 samosa costs <span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded border border-black font-bold">₹x</span> and a chai cup costs <span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded border border-black font-bold">₹y</span>, how do we calculate the total bill for a table of 5 friends? 
+                    <br/><br/>
+                    Think of equations as a <span class="font-bold text-on-surface">Balance (Tarazu)</span>. Jo left pe karoge, wahi right pe karna padega!
+                </p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface-container-highest border-2 border-black rounded-lg font-bold text-sm">#BasicAlgebra</span>
+<span class="px-4 py-2 bg-surface-container-highest border-2 border-black rounded-lg font-bold text-sm">#StreetMath</span>
+<span class="px-4 py-2 bg-surface-container-highest border-2 border-black rounded-lg font-bold text-sm">#SamosaLogic</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Quiz Panel -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- Quiz Card -->
+<div class="bg-background border-3 border-black rounded-lg neo-shadow overflow-hidden">
+<div class="bg-primary-container p-4 border-b-3 border-black">
+<h3 class="font-headline-md text-headline-md text-on-primary-container flex items-center gap-2">
+<span class="material-symbols-outlined">quiz</span>
+                            Check Samajh
+                        </h3>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div class="relative">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-lg text-on-surface-variant">Progress: 3/5</span>
+<span class="font-label-lg text-secondary font-bold">+50 XP</span>
+</div>
+<div class="h-4 w-full bg-surface-container border-3 border-black rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[60%] border-r-2 border-black"></div>
+</div>
+</div>
+<div class="py-2">
+<p class="font-body-lg text-on-surface font-bold">If 3 Samosas cost ₹45, what is the cost of 'x' Samosas?</p>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Answer Options -->
+<button class="group flex items-center justify-between p-4 border-3 border-black rounded-lg bg-surface hover:bg-surface-container-high transition-all text-left neo-shadow-sm active-press-sm">
+<span class="font-body-md font-bold">A) 45 / x</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="group flex items-center justify-between p-4 border-3 border-black rounded-lg bg-secondary-container text-on-secondary-container transition-all text-left neo-shadow-sm active-press-sm">
+<span class="font-body-md font-bold">B) 15x</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="group flex items-center justify-between p-4 border-3 border-black rounded-lg bg-surface hover:bg-surface-container-high transition-all text-left neo-shadow-sm active-press-sm">
+<span class="font-body-md font-bold">C) 15 + x</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="group flex items-center justify-between p-4 border-3 border-black rounded-lg bg-surface hover:bg-surface-container-high transition-all text-left neo-shadow-sm active-press-sm">
+<span class="font-body-md font-bold">D) 45x - 3</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+</div>
+<button class="w-full py-4 bg-primary-container text-on-primary-container border-3 border-black rounded-lg font-headline-md neo-shadow active-press mt-2">
+                            SUBMIT JAWAB
+                        </button>
+</div>
+</div>
+<!-- Help/Dost Card -->
+<div class="bg-tertiary-container text-on-tertiary border-3 border-black rounded-lg p-6 neo-shadow flex items-start gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex-shrink-0 border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl">lightbulb</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1">Dost ki Tip</h4>
+<p class="font-body-md opacity-90">Remember: 'Unitary Method' is your best friend in the market. Ek ki value nikalo, phir sabki!</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interactions
+        document.querySelectorAll('.active-press').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('translate-x-1', 'translate-y-1', 'shadow-none');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('translate-x-1', 'translate-y-1', 'shadow-none');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('translate-x-1', 'translate-y-1', 'shadow-none');
+            });
+        });
+
+        // Answer selection simulation
+        const options = document.querySelectorAll('.group.flex.items-center.justify-between');
+        options.forEach(opt => {
+            opt.addEventListener('click', function() {
+                options.forEach(o => {
+                    o.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                    o.classList.add('bg-surface');
+                    const icon = o.querySelector('.material-symbols-outlined');
+                    if (icon) {
+                        icon.innerHTML = 'arrow_forward';
+                        icon.style.fontVariationSettings = "'FILL' 0";
+                        icon.classList.add('opacity-0');
+                    }
+                });
+                this.classList.remove('bg-surface');
+                this.classList.add('bg-secondary-container', 'text-on-secondary-container');
+                const myIcon = this.querySelector('.material-symbols-outlined');
+                if (myIcon) {
+                    myIcon.innerHTML = 'check_circle';
+                    myIcon.style.fontVariationSettings = "'FILL' 1";
+                    myIcon.classList.remove('opacity-0');
+                }
+            });
+        });
+    </script>
+</body></html>

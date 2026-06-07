@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Minimum vs Maximum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006d38",
+                        "background": "#fbf9f3",
+                        "surface-dim": "#dbdad4",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "inverse-primary": "#ffb693",
+                        "primary-fixed": "#ffdbcc",
+                        "inverse-on-surface": "#f2f1eb",
+                        "tertiary-container": "#ff6096",
+                        "primary-container": "#ff6b00",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-tertiary-fixed": "#3f001a",
+                        "surface-bright": "#fbf9f3",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-primary-container": "#572000",
+                        "surface-variant": "#e4e2dd",
+                        "surface-tint": "#a04100",
+                        "surface-container-high": "#eae8e2",
+                        "surface-container": "#f0eee8",
+                        "secondary-fixed": "#63ff9d",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "tertiary": "#ba005b",
+                        "surface": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "outline-variant": "#e2bfb0",
+                        "on-surface-variant": "#5a4136",
+                        "inverse-surface": "#30312d",
+                        "on-secondary-fixed": "#00210d",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-background": "#1b1c19",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#67002f",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-container": "#63ff9d",
+                        "primary-fixed-dim": "#ffb693",
+                        "outline": "#8e7164",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#00743c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .active-press-sm:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-background border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-3 border-black overflow-hidden bg-primary-fixed">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAodVlNtcnvOYPgbT9fmHl2VQRfw96bCACd1BtQGRHJNjoFlIvFcFlsnwzhpGNf3h2qSTRa0IFmCjvBOB-mjTwROCDKI5hPu_U1P1Bq5ZQPJMG3boXTd08N57uXUIOnVWvWBUNCW4va8aTLr0bx_ce9dg3AWVlxaZ4IrCKnXlYJAYr_vMYwQoYrwMkv_pFmg58y6qGwEZz-ZNSZNtUMmcT9edhenZXuPeeCC7a9mjWx1smUljzZG8wl8OwyZazLEzbbbj8IYEddEHzL"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center bg-tertiary-container px-3 py-1 rounded-full border-3 border-black neo-shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary-container mr-1" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-lg text-on-tertiary-container">12</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max-width mx-auto px-margin-mobile py-8">
+<!-- Title Section -->
+<div class="mb-8">
+<div class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full border-3 border-black neo-shadow-sm font-label-lg mb-4">
+                Beginner Level
+            </div>
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl">Asli Pehchan: King vs Ant</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">Kya tum sabse bade aur sabse chhote ko dhoond sakte ho?</p>
+</div>
+<!-- Concept Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Card 1: Maximum -->
+<div class="bg-surface-container-lowest border-3 border-black rounded-lg p-6 neo-shadow flex flex-col items-center">
+<div class="w-full aspect-square bg-primary-fixed rounded-lg border-3 border-black mb-6 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A large, majestic African elephant standing tall in a vibrant, sunny savanna. The style is bold and high-contrast, with thick black outlines reflecting a neo-brutalist aesthetic. Bright mango orange and warm chalk tones dominate the environment, creating a friendly yet striking visual for a children's math education app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmAINoZLEb51f5QCyp4whIGu9ZB8rpeHh1FWCJKWDJRvHwnbjYdUTEC1IAfO5eKTzngrsYA35FyRNfsWbCUXsRB7lPRj3_J-CHNnOQDSF8TeKS-zvO2jRv-GaEdnwuqoKcYTr4ap83fQdAyiinmkkGxJbt6wjn8dAsgwU3btudOH0ZyzUIwRkc2W0kjoVp8DJpLZLXRgk7exDWBuxu7bl2VpJTurUDSf2WuRZLRcIklB1BiENd8_EHPEG5cjI6w_mrczyUpCKrFwa"/>
+</div>
+<div class="bg-primary text-on-primary px-6 py-2 rounded-full border-3 border-black neo-shadow-sm font-headline-md text-center">
+                    MAXIMUM
+                </div>
+<p class="mt-4 font-headline-md text-primary">(Sabse Bada)</p>
+<p class="text-center font-body-md mt-2 text-on-surface-variant">Group ka sabse bada member — the King of Numbers!</p>
+</div>
+<!-- Card 2: Minimum -->
+<div class="bg-surface-container-lowest border-3 border-black rounded-lg p-6 neo-shadow flex flex-col items-center">
+<div class="w-full aspect-square bg-secondary-fixed rounded-lg border-3 border-black mb-6 flex items-center justify-center overflow-hidden">
+<div class="relative w-full h-full flex items-center justify-center">
+<img class="w-24 h-24 object-contain" data-alt="A tiny, detailed ant crawling on a bright green leaf. The scene is shot with a macro lens perspective to emphasize the smallness. The lighting is bright and cheerful, using the nimbu green and warm chalk palette of the UI. The ant is depicted with stylized, bold lines to maintain the street-pop brutalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbRNhl-bjcX2_OZKmq-xwy19A9HtAkmOsOb0IS5exb8PZYG-SuFRsnWdzNSrmqf6spqAoXLLKK-79pPPLrLsQIRnk7op4whydhVvdqpc1Jk5OAysZN88ueebWb10zTPP-3A9aEuMZTu3bIEq76MS1mPo9ADr5-503S1z2PKCryUd_1F164yJSiQuTtzgRUum9KXx8_nKJCkIJCtpF4lBMv2rlYpccD1LgtTjcxNWqkWfScsizKYxNiS2ipbTWZY9WW9928IGq767EH"/>
+</div>
+</div>
+<div class="bg-secondary text-on-secondary px-6 py-2 rounded-full border-3 border-black neo-shadow-sm font-headline-md text-center">
+                    MINIMUM
+                </div>
+<p class="mt-4 font-headline-md text-secondary">(Sabse Chhota)</p>
+<p class="text-center font-body-md mt-2 text-on-surface-variant">Chhota par powerful! Sabse chhoti value ko kehte hain Minimum.</p>
+</div>
+</div>
+<!-- Quiz Section -->
+<section class="bg-tertiary-fixed border-3 border-black rounded-lg p-8 neo-shadow">
+<h3 class="font-headline-lg text-on-tertiary-fixed text-center mb-8">Spot the Minimum!</h3>
+<p class="text-center font-headline-md mb-8 text-on-tertiary-fixed-variant">Inme se <span class="underline decoration-4">Minimum</span> (sabse chhota) kaun hai?</p>
+<div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+<!-- Option 1: Big Cake -->
+<button class="group bg-surface-container-lowest border-3 border-black rounded-lg p-4 neo-shadow active-press flex flex-col items-center transition-all hover:bg-error-container" onclick="checkAnswer(false)">
+<div class="w-full aspect-square bg-white border-3 border-black rounded-lg mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A giant, multi-layered chocolate cake with vibrant frosting and sprinkles, presented in a colorful, fun, pop-art style. The cake is intentionally drawn large to fill the frame, with thick black borders consistent with the neo-brutalist theme. Warm yellow and orange tones create a delicious and inviting visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTRBf7f9Z6xA9--kSO9NnodbLAPbq2krQVoSXsXq3iIKSsSJv9gueFmp-oXUFM3mMNYLWuWta4Tlz5Dp2QFO8Ggnv6XB-mQ4zaFnJeBDaayxdu29Wiil1HMn1TEVH_I_g7MkK1cED2zCjKgvKyY2oXHqm5QCv7OMFCmd6w94v8K2yUJzUcQMxubUG1yn9wpAkNeBpCywWXZjqS5VbxdLNUmJ3EuJCjfbdnN-4S7jnftQzbZscdwQ3kOjxD5SnO8R1G3YuMIxjKILnI"/>
+</div>
+<span class="font-label-lg text-on-surface uppercase tracking-widest">Big Cake</span>
+</button>
+<!-- Option 2: Small Chocolate -->
+<button class="group bg-surface-container-lowest border-3 border-black rounded-lg p-4 neo-shadow active-press flex flex-col items-center transition-all hover:bg-secondary-container" onclick="checkAnswer(true)">
+<div class="w-full aspect-square bg-white border-3 border-black rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+<img class="w-16 h-16 object-contain" data-alt="A single, small square of dark chocolate wrapped in colorful foil, placed in the center of a large warm chalk surface to emphasize its tiny size. The visual style follows the street-pop aesthetic with high saturation and bold black outlines. It feels like a collectible game token." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAetiShNRQ8O-Ic047hJFz-kQsavrTwxX11M0cdKyGlu_5P0yvxQza7y549o_Sxf1dagOUnez92AYoSVHY55QqmD1w4aThEXRKtrWgyCXYxhj8hWMomFtnc7jx_UCXmvl22sXTHcSJEyTfH6ernusaf5FJ3MfKQUPlZqdv4j6VA_lG6zZYdJPoGMADxCjxR2b_iE-wRp8PUQkeGVxHnQxhL1NsgEgMPPVv1IHx6ZCwjxbK_1Z7yFIN2S3tIJ5HncqTnySCV3kj1LOF"/>
+</div>
+<span class="font-label-lg text-on-surface uppercase tracking-widest">Small Choco</span>
+</button>
+</div>
+<div class="mt-8 text-center font-headline-md hidden" id="feedback">
+<div class="inline-block px-8 py-3 rounded-full border-3 border-black neo-shadow-sm" id="feedback-content"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 active-press-sm" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 active-press-sm" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-lg text-label-lg">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A] active-press-sm" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-lg text-label-lg">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 active-press-sm" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-lg text-label-lg">Story</span>
+</a>
+</nav>
+<script>
+        function checkAnswer(isCorrect) {
+            const feedback = document.getElementById('feedback');
+            const content = document.getElementById('feedback-content');
+            
+            feedback.classList.remove('hidden');
+            
+            if (isCorrect) {
+                content.textContent = "Wah! Sahi Jawab! 🎉";
+                content.className = "inline-block px-8 py-3 rounded-full border-3 border-black neo-shadow-sm bg-secondary-container text-on-secondary-container";
+                
+                // Visual effect
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach(btn => btn.disabled = true);
+            } else {
+                content.textContent = "Oops! Try again Dost. Minimum means smaller!";
+                content.className = "inline-block px-8 py-3 rounded-full border-3 border-black neo-shadow-sm bg-error-container text-on-error-container";
+                
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 2000);
+            }
+        }
+    </script>
+</body></html>

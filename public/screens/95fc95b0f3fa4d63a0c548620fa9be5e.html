@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Video Lesson: Point (Bindu)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#40e183",
+                        "on-tertiary-fixed": "#3f001a",
+                        "tertiary-fixed": "#ffd9e1",
+                        "surface-container": "#f0eee8",
+                        "on-secondary-fixed-variant": "#005229",
+                        "primary-container": "#ff6b00",
+                        "surface-container-high": "#eae8e2",
+                        "tertiary": "#ba005b",
+                        "on-secondary-fixed": "#00210d",
+                        "on-background": "#1b1c19",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "inverse-primary": "#ffb693",
+                        "surface-variant": "#e4e2dd",
+                        "on-secondary-container": "#00743c",
+                        "surface": "#fbf9f3",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#e2bfb0",
+                        "on-primary-container": "#572000",
+                        "surface-tint": "#a04100",
+                        "on-primary": "#ffffff",
+                        "secondary": "#006d38",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8e7164",
+                        "on-tertiary-container": "#67002f",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fbf9f3",
+                        "background": "#fbf9f3",
+                        "surface-container-highest": "#e4e2dd",
+                        "secondary-fixed": "#63ff9d",
+                        "inverse-surface": "#30312d",
+                        "primary": "#a04100",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-surface-variant": "#5a4136",
+                        "on-primary-fixed": "#351000",
+                        "surface-container-low": "#f5f3ee",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "tertiary-container": "#ff6096",
+                        "surface-dim": "#dbdad4",
+                        "primary-fixed": "#ffdbcc",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f1eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max-width": "1200px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-xl": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .neo-shadow-active:active { box-shadow: 0px 0px 0px 0px rgba(0,0,0,1); transform: translate(4px, 4px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b-[3px] border-on-surface dark:border-on-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit">
+<div class="flex items-center gap-2 cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="arrow_back" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">
+            Ganit Pop
+        </div>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[container-max-width] mx-auto px-margin-mobile py-8 pb-32">
+<!-- Header Info -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl">Geometry: Point (Bindu)</h1>
+<p class="font-body-lg text-body-lg mt-2">Level: <span class="font-bold text-primary">Beginner</span></p>
+</div>
+<div class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg border-[3px] border-on-surface neo-shadow font-label-lg text-label-lg uppercase inline-block">
+                Video dekho aur samjho Bindu ki power!
+            </div>
+</div>
+<!-- Video Player Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Video Player -->
+<div class="lg:col-span-2 relative">
+<div class="w-full aspect-video bg-surface-container-high border-[3px] border-on-surface rounded-DEFAULT neo-shadow overflow-hidden relative flex items-center justify-center">
+<img alt="Math Background" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="A stylized, neon-infused educational graphic showing geometric points and lines connecting in 3D space. The aesthetic is bright, high-energy, and modern, fitting a 'Desi Street-Pop' style with vivid mango orange and lime green accents against a dark, chalk-like background. The visual should feel like a dynamic, gamified math lesson interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC46rNMpQNYSMTJX9n03fjqbQWROOsfPKj58V2HFlU8sQ3bF4_T_rgmEcJJjCT7J_cJGBIlDmiVd4lxoFWJqW--eUOSglPoL3aMaahjwQOI1iwg4PUhiRla6asia9NpXzX8LlZm-kAe0_AtRr3QrxVIHOBscJ4ZoTk4sK9flU3HweWMO6yRiKITeqNFmjHw-RItk6AMeunznQom1MV5m7ABzWv7sW5sRV9mzMZtXN4RN1Qu-X6hRMAXUPuc2tk9MistO41kVIF9LkAE"/>
+<div class="z-10 text-center flex flex-col items-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface bg-surface px-6 py-2 border-[3px] border-on-surface rounded-full mb-6 neo-shadow">Bindu: The Zero-Dimension Hero</h2>
+<button class="bg-primary-container text-on-primary-container font-headline-md text-headline-md border-[3px] border-on-surface rounded-full px-8 py-4 neo-shadow neo-shadow-active transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            Start Video
+                        </button>
+</div>
+</div>
+</div>
+<!-- Side Panel (Avatar & Notes) -->
+<div class="flex flex-col gap-6">
+<!-- Avatar Card -->
+<div class="bg-secondary-container border-[3px] border-on-surface rounded-DEFAULT p-6 neo-shadow flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full border-[3px] border-on-surface bg-surface-container-lowest overflow-hidden mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<img alt="MathsGuru Bhaiya" class="w-full h-full object-cover" data-alt="A vibrant, stylized portrait illustration of an enthusiastic Indian math tutor (MathsGuru Bhaiya) in a modern, casual outfit. He is smiling warmly and pointing slightly off-camera. The illustration uses bold outlines, flat colors, and dynamic comic-book style shading, perfectly matching the 'Desi Street-Pop' and Neo-Brutalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMHq4ppN5MYMLiE9tAzO3agFuXcycJIS1dbe9_PID_QPRGAFbc9fjdlQ53Y-vZMpsk61wH9UcJvgqH7APPZFA28-1F6nO2gyi_x4e694oCvTycT16oL7klwD0Fdnq_8dW8Xh1ArdOz_G3Ij5BW1igFwHG8-1V7KbPjKKzXlX-q0JjPXGjAcLoZ7MoutECrWgTUcXKi9qabJEti70RMZJv8Smc5_Nops4ea2w4CznTekScZWHdVgmv1QeNQyONAFKxX_lix5smVCMoS"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-secondary-container">MathsGuru Bhaiya</h3>
+<p class="font-body-md text-body-md mt-2">"A point has no size, but it's the start of everything!"</p>
+</div>
+<!-- Concept Checklist -->
+<div class="bg-surface border-[3px] border-on-surface rounded-DEFAULT p-6 neo-shadow">
+<h4 class="font-headline-md text-headline-md border-b-[3px] border-on-surface pb-2 mb-4">Concepts</h4>
+<ul class="space-y-3 font-body-lg text-body-lg">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+                            What is a Point?
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+                            Naming a Point
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+                            Zero Dimensions
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 border-t-[3px] border-on-surface dark:border-on-surface-variant shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] flex justify-around items-center h-20 px-margin-mobile bg-surface dark:bg-surface-container-high md:hidden">
+<div class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary border-[3px] border-on-surface dark:border-on-surface-variant px-4 py-1 rounded-lg flex flex-col items-center gap-1 active:scale-95 transition-transform hover:bg-surface-variant dark:hover:bg-inverse-surface cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</div>
+<div class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 active:scale-95 transition-transform hover:bg-surface-variant dark:hover:bg-inverse-surface cursor-pointer">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-label-bold text-label-bold">Chat</span>
+</div>
+<div class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 active:scale-95 transition-transform hover:bg-surface-variant dark:hover:bg-inverse-surface cursor-pointer">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-bold text-label-bold">Quiz</span>
+</div>
+<div class="text-on-surface dark:text-on-surface-variant flex flex-col items-center gap-1 active:scale-95 transition-transform hover:bg-surface-variant dark:hover:bg-inverse-surface cursor-pointer">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Story</span>
+</div>
+</nav>
+</body></html>

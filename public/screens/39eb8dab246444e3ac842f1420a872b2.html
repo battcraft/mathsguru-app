@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Pop - Mid-Lesson Panga!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#ff6b00",
+                        "inverse-surface": "#30312d",
+                        "secondary-fixed-dim": "#40e183",
+                        "inverse-primary": "#ffb693",
+                        "tertiary-container": "#ff6096",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-secondary-fixed-variant": "#005229",
+                        "surface": "#fbf9f3",
+                        "inverse-on-surface": "#f2f1eb",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-tint": "#a04100",
+                        "on-tertiary-container": "#67002f",
+                        "on-secondary-container": "#00743c",
+                        "surface-variant": "#e4e2dd",
+                        "surface-bright": "#fbf9f3",
+                        "secondary-fixed": "#63ff9d",
+                        "surface-dim": "#dbdad4",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container-high": "#eae8e2",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eee8",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-primary-container": "#572000",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#5a4136",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fbf9f3",
+                        "primary": "#a04100",
+                        "outline-variant": "#e2bfb0",
+                        "on-background": "#1b1c19",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "outline": "#8e7164",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "on-secondary-fixed": "#00210d",
+                        "tertiary": "#ba005b",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-container": "#63ff9d",
+                        "on-tertiary-fixed": "#3f001a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#351000",
+                        "secondary": "#006d38"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "container-max-width": "1200px",
+                        "unit": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-lg": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-brutalist-border {
+            border: 3px solid #1A1A1A;
+        }
+        .neo-brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #1A1A1A;
+        }
+        .neo-brutalist-interactive:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+        .math-chip {
+            background-color: #FACC15; /* Auto Yellow approx */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:hidden">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface border-b-[3px] border-on-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between px-margin-mobile py-unit">
+<button aria-label="Back" class="text-on-surface hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-transform w-[48px] h-[48px] flex items-center justify-center neo-brutalist-border rounded-lg bg-surface-container-low neo-brutalist-shadow neo-brutalist-interactive">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tighter">Mid-Lesson Panga!</h1>
+<div class="w-[48px] h-[48px] flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</header>
+<main class="flex-grow px-margin-mobile py-6 flex flex-col gap-6">
+<!-- Progress & Timer -->
+<div class="flex items-center justify-between gap-4">
+<div class="flex-grow flex items-center gap-3">
+<span class="font-label-lg text-label-lg text-on-surface-variant font-bold">2/5</span>
+<div class="flex-grow h-4 bg-surface-variant neo-brutalist-border rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-2/5 bg-secondary-fixed neo-brutalist-border border-l-0 border-t-0 border-b-0 border-r-[3px]"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-tertiary-container text-on-tertiary-container px-3 py-1 neo-brutalist-border rounded-full neo-brutalist-shadow">
+<span class="material-symbols-outlined text-xl">timer</span>
+<span class="font-label-lg text-label-lg font-bold font-mono">02:15</span>
+</div>
+</div>
+<!-- Question Card -->
+<section class="bg-surface-container-lowest neo-brutalist-border rounded-DEFAULT p-6 neo-brutalist-shadow flex flex-col gap-6 relative">
+<!-- Decorative Pin -->
+<div class="absolute -top-3 -right-3 w-8 h-8 bg-tertiary-container rounded-full neo-brutalist-border neo-brutalist-shadow flex items-center justify-center">
+<span class="w-3 h-3 bg-white rounded-full"></span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
+                Find the <span class="bg-primary-container text-on-primary-container px-2 py-1 rounded-md neo-brutalist-border inline-block rotate-[-2deg]">MINIMUM</span> value in this set:
+            </h2>
+<div class="flex flex-wrap gap-3 justify-center py-4 border-t-[3px] border-b-[3px] border-on-surface border-dashed">
+<div class="w-12 h-12 rounded-full math-chip neo-brutalist-border flex items-center justify-center font-headline-md text-headline-md neo-brutalist-shadow">15</div>
+<div class="w-12 h-12 rounded-full math-chip neo-brutalist-border flex items-center justify-center font-headline-md text-headline-md neo-brutalist-shadow">8</div>
+<div class="w-12 h-12 rounded-full math-chip neo-brutalist-border flex items-center justify-center font-headline-md text-headline-md neo-brutalist-shadow">22</div>
+<div class="w-12 h-12 rounded-full math-chip neo-brutalist-border flex items-center justify-center font-headline-md text-headline-md neo-brutalist-shadow">10</div>
+<div class="w-12 h-12 rounded-full math-chip neo-brutalist-border flex items-center justify-center font-headline-md text-headline-md neo-brutalist-shadow">31</div>
+</div>
+</section>
+<!-- Answer Options -->
+<section class="flex flex-col gap-4">
+<button class="w-full bg-surface-container-lowest text-on-surface font-headline-md text-headline-md py-4 px-6 rounded-lg neo-brutalist-border neo-brutalist-shadow neo-brutalist-interactive flex items-center justify-between transition-transform text-left">
+<span><span class="text-on-surface-variant mr-2 opacity-50">A.</span> 15</span>
+<div class="w-6 h-6 rounded-full border-2 border-on-surface-variant"></div>
+</button>
+<!-- Selected State (Option B) -->
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed-variant font-headline-md text-headline-md py-4 px-6 rounded-lg neo-brutalist-border neo-brutalist-shadow neo-brutalist-interactive flex items-center justify-between transition-transform text-left translate-y-[2px] translate-x-[2px]">
+<span><span class="text-on-secondary-fixed-variant mr-2 opacity-75">B.</span> 8</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest border-2 border-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</button>
+<button class="w-full bg-surface-container-lowest text-on-surface font-headline-md text-headline-md py-4 px-6 rounded-lg neo-brutalist-border neo-brutalist-shadow neo-brutalist-interactive flex items-center justify-between transition-transform text-left">
+<span><span class="text-on-surface-variant mr-2 opacity-50">C.</span> 22</span>
+<div class="w-6 h-6 rounded-full border-2 border-on-surface-variant"></div>
+</button>
+<button class="w-full bg-surface-container-lowest text-on-surface font-headline-md text-headline-md py-4 px-6 rounded-lg neo-brutalist-border neo-brutalist-shadow neo-brutalist-interactive flex items-center justify-between transition-transform text-left">
+<span><span class="text-on-surface-variant mr-2 opacity-50">D.</span> 10</span>
+<div class="w-6 h-6 rounded-full border-2 border-on-surface-variant"></div>
+</button>
+</section>
+<!-- Guru Feedback -->
+<div class="mt-4 flex gap-4 items-end">
+<div class="w-16 h-16 rounded-full overflow-hidden neo-brutalist-border neo-brutalist-shadow bg-surface-variant shrink-0">
+<div class="w-full h-full bg-[url('https://api.dicebear.com/7.x/avataaars/svg?seed=GuruBhaiya&amp;backgroundColor=ffb693')] bg-cover bg-center"></div>
+</div>
+<div class="bg-primary-container text-on-primary-container p-4 rounded-xl rounded-bl-none neo-brutalist-border neo-brutalist-shadow flex-grow relative">
+<span class="font-label-lg text-label-lg font-bold block mb-1 uppercase tracking-wider text-primary-fixed-dim">MathsGuru Bhaiya</span>
+<p class="font-body-md text-body-md font-bold">Chhota number matlab sabse kam value. Simple hai!</p>
+<!-- Speech triangle -->
+<div class="absolute -left-[14px] bottom-0 w-0 h-0 border-t-[14px] border-t-transparent border-r-[14px] border-r-primary-container border-b-[0px] border-b-transparent"></div>
+<div class="absolute -left-[18px] -bottom-[3px] w-0 h-0 border-t-[16px] border-t-transparent border-r-[16px] border-r-[#1A1A1A] border-b-[0px] border-b-transparent -z-10"></div>
+</div>
+</div>
+</main>
+<!-- Navigation suppressed due to task-focused/transactional intent -->
+</body></html>

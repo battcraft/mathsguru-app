@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ganit Dost - Practice Question 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Nunito+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb693",
+                        "tertiary-container": "#ff6096",
+                        "primary-container": "#ff6b00",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#8e7164",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad4",
+                        "background": "#fbf9f3",
+                        "surface-container-high": "#eae8e2",
+                        "on-primary-container": "#572000",
+                        "surface-container": "#f0eee8",
+                        "tertiary": "#ba005b",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8f0044",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#30312d",
+                        "inverse-on-surface": "#f2f1eb",
+                        "tertiary-fixed-dim": "#ffb1c4",
+                        "surface-bright": "#fbf9f3",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-variant": "#e4e2dd",
+                        "secondary-fixed-dim": "#40e183",
+                        "on-surface": "#1b1c19",
+                        "secondary-fixed": "#63ff9d",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-secondary-fixed": "#00210d",
+                        "secondary-container": "#63ff9d",
+                        "on-secondary-container": "#00743c",
+                        "surface-tint": "#a04100",
+                        "primary-fixed": "#ffdbcc",
+                        "outline-variant": "#e2bfb0",
+                        "secondary": "#006d38",
+                        "on-tertiary-fixed": "#3f001a",
+                        "surface": "#fbf9f3",
+                        "primary": "#a04100",
+                        "on-secondary-fixed-variant": "#005229",
+                        "on-tertiary-container": "#67002f",
+                        "primary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-primary-fixed": "#351000",
+                        "on-surface-variant": "#5a4136"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Nunito Sans"],
+                        "label-lg": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #1A1A1A;
+        }
+        .neo-shadow-sm {
+            box-shadow: 2px 2px 0px #1A1A1A;
+        }
+        .active-interaction:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .active-interaction-sm:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1A1A1A;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background text-primary font-headline-md text-headline-md docked full-width top-0 border-b-3 border-black shadow-[4px_4px_0px_#1A1A1A] flex justify-between items-center w-full px-margin-mobile h-16 z-50 sticky top-0 transition-all">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low border-2 border-black hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md font-extrabold text-primary">Ganit Dost</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-label-lg flex items-center gap-1" href="#">
+<span class="material-symbols-outlined">home</span> Home
+            </a>
+<a class="text-on-surface-variant font-label-lg flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span> Chat
+            </a>
+<a class="text-on-surface-variant font-label-lg flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">quiz</span> Quiz
+            </a>
+<a class="text-on-surface-variant font-label-lg flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span> Story
+            </a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-secondary-container px-3 py-1 rounded-full border-2 border-black">
+<span class="material-symbols-outlined text-orange-600" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold text-on-secondary-container">12</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-black bg-primary-fixed overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASp3eSbjKchOBKVjp-ABPuvtGTYdp5v8kL4Z78K5Zr-yD1Mi6Fz6KXqrr5fcQRtZpcBNAUlPKsV46KCmN71sFXvzoAI5KKjfSOlIyjKCO9muk0M35ywssekpTPC-hzVaEb9teA91CKkBLynKPYNYpK3X7pu1uNWxHsbOIRF58__xdYgaO2PA8mrlSa7M8Mx4iZMDH8UbcvLnsQUKlkOGyZvFiGU9zsM4Y-IrxnJswp0MUX3M9UvDamgwvDhbzdt7GolVkDZ8h_vNmA"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-desktop space-y-8 max-w-[1200px] mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="w-full max-w-3xl space-y-2">
+<div class="flex justify-between items-end px-2">
+<span class="font-headline-md text-headline-md text-primary">Practice Question 2</span>
+<span class="font-label-lg text-on-surface-variant">Step 2 of 10</span>
+</div>
+<div class="h-6 w-full bg-surface-container-highest border-3 border-black rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary w-1/5 border-r-3 border-black"></div>
+<div class="h-full bg-secondary w-1/5 border-r-3 border-black"></div>
+<div class="h-full bg-surface-container-highest w-3/5"></div>
+</div>
+</div>
+<!-- Question Card -->
+<div class="w-full max-w-4xl bg-surface border-3 border-black neo-shadow rounded-lg overflow-hidden flex flex-col">
+<div class="bg-primary-fixed-dim p-6 border-b-3 border-black">
+<h1 class="font-headline-lg text-headline-lg text-on-primary-fixed leading-tight">
+                    Ek dukan mein 5 cold drink ki bottles hain. Agar Ramesh 2 bottles kharid leta hai, toh dukan mein kitni bottles bachengi?
+                </h1>
+<p class="font-body-lg text-on-primary-fixed-variant mt-2 opacity-80">
+                    How many bottles will remain in the shop?
+                </p>
+</div>
+<div class="p-8 space-y-10 bg-background">
+<!-- Visual Representation -->
+<div class="flex flex-wrap justify-center gap-6">
+<div class="relative group">
+<div class="w-32 h-48 bg-white border-3 border-black rounded-lg neo-shadow flex items-center justify-center p-4 transition-transform group-hover:-translate-y-2">
+<img class="max-h-full object-contain" data-alt="A classic glass bottle of cold drink with vibrant red labeling, set against a clean white studio background with high-contrast lighting. The bottle has a neo-brutalist aesthetic with sharp edges and bold shadows, reflecting a modern Desi street-pop vibe. Professional product photography with crisp details and a playful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4EF8oJ9fTgXoSLj7i3Qg1bObo7hPEtj6J1XZbUk4XToJT8I4LLby0PTF7Zv4P2_vY8mCJHCsBhzoGbTzkRvJptu9yAKmvqt5b3BleJ2WjJ9vMJUDOtkEtPww7TQlxMRByU4zpCzaxc2-aMI5LEDZA82FK7j91l0O4ov45iYUEajWuIP_hVdk5_cxXwhhR1Svkl8IjXI3e91VM2ei4SdbbCGF_Lx_dkRjJvjoLXzVd9AgexgHzoXJyshjjRB5DC9Fi8jsKy1qY3Cwu"/>
+</div>
+</div>
+<div class="relative group">
+<div class="w-32 h-48 bg-white border-3 border-black rounded-lg neo-shadow flex items-center justify-center p-4 transition-transform group-hover:-translate-y-2">
+<img class="max-h-full object-contain" data-alt="A classic glass bottle of cold drink with vibrant red labeling, set against a clean white studio background with high-contrast lighting. The bottle has a neo-brutalist aesthetic with sharp edges and bold shadows, reflecting a modern Desi street-pop vibe. Professional product photography with crisp details and a playbook mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzu5aB1b7eo8rnEdQFzLoi1_1D1_kEApXlWMxrpqe-0Skh3O6I0GFnP_KyINP3IsrD5EQMvl7IP1z2y5xsxO99HCz6l9w4JuKb-NVEMIqLBmE0FefkPE41kJVNEu0fDW193wv1480TX3i3tZAtGHOpjSVvUZdpyUvke8aHAjP4PrmYCfvs6mm7Qs7-nSEM6LN4GCCsRRGKJz5kKCg2Ii8uUFV7G9RHocDQvDQx5kuwiNraQlmdRk6tALnhsiUGy2o7XEB_FH-G2u87"/>
+</div>
+</div>
+<div class="relative group">
+<div class="w-32 h-48 bg-white border-3 border-black rounded-lg neo-shadow flex items-center justify-center p-4 transition-transform group-hover:-translate-y-2">
+<img class="max-h-full object-contain" data-alt="A classic glass bottle of cold drink with vibrant red labeling, set against a clean white studio background with high-contrast lighting. The bottle has a neo-brutalist aesthetic with sharp edges and bold shadows, reflecting a modern Desi street-pop vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCPNRlMkNoSaW4_HOG-cRjpUp-bv_sIhXTkK8AWqMf-qvD3N5vo_rSX_xlCX8d5iOEgH3mOdUY45EE1ZLepzBbnPUutSzm38Jjbzbi_X1gPWOAtHpoSdCXtz2eFC7zJMpICyUz4AeLEm4Y6XF2td1ArT68pQxI_a7rpfjfvYN47TiKfDB4FroJaUbUBEnJPGfegmM7hMJFjKTzV2CKS3272vLxZFreiJqmqX9qM90t-TOIg6GvxzyqLv-UQD74TjQ2_39EVYyxp8cN"/>
+</div>
+</div>
+<div class="relative group opacity-30 grayscale italic border-dashed border-2 border-black/20">
+<div class="w-32 h-48 bg-white border-3 border-black rounded-lg flex items-center justify-center p-4">
+<img class="max-h-full object-contain" data-alt="A faded glass bottle silhouette representing a purchase, with dashed borders around it. The overall image maintains the neo-brutalist style with heavy outlines and flat color aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkG2zp8HNqtpEoUlhNuSaX_cBdxjZn4BQv2eEu35I72qjYHcV9AVjUz0b9LYWryUwwXQ639HtViibk7KX9KEp4yE5wDNbsL1O8T-cLNgxKvb2QREob9WgcDQdeGSVbsDu92-KXLd__xjEwy2LiXYLEwXpYgH0zcFIh6JTil3P4SOuxnxbgegMGSU0JfPahnw9tvxxrUAAjI9ODfwnjyCqUj0xu3kZeKjeyfVnhj7jIAbsW_TwY0xqPjjwnaZnFaIz0goJuw-0qmzGr"/>
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-error font-extrabold text-4xl">X</span>
+</div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-bold bg-error text-white px-2 py-0.5 rounded border-2 border-black">BOUGHT</span>
+</div>
+<div class="relative group opacity-30 grayscale italic border-dashed border-2 border-black/20">
+<div class="w-32 h-48 bg-white border-3 border-black rounded-lg flex items-center justify-center p-4">
+<img class="max-h-full object-contain" data-alt="A faded glass bottle silhouette representing a purchase, with dashed borders around it. The overall image maintains the neo-brutalist style with heavy outlines and flat color aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAShj-WD7UmBYKI5Ei4jOWgi4EiHX0K4VFwkb8-AzSQPSO1f9NeBHION_SP7jyKeVpbG_GIm7GsD0KeukQi5Wrz-x5vYf3cM1UGHLM7E5AHIlSZuQfaIMZUjG16V2W8rkFwtJDBwHwGO7nJfjmT09RbrizKY_uBaLQe5Nn-AwqpaNdVDL3fveStyIuCRfJ6CHg6_7IYQ_xTcLGEZxhpHwLbNpXJoE7-x2AEbJWJRPHxzbEqCDCTlR2UDdPhk51jSzmu0AwEU6WJ_-Mx"/>
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-error font-extrabold text-4xl">X</span>
+</div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-bold bg-error text-white px-2 py-0.5 rounded border-2 border-black">BOUGHT</span>
+</div>
+</div>
+<!-- MCQ Options -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+<button class="answer-btn group bg-surface-container-lowest border-3 border-black neo-shadow p-6 rounded-lg text-center hover:bg-secondary-container transition-all active-interaction" onclick="selectAnswer(this)">
+<span class="font-headline-xl text-headline-xl text-on-surface">3</span>
+<div class="h-1 w-12 bg-black mx-auto my-2 rounded-full group-hover:w-20 transition-all"></div>
+<p class="font-label-lg text-on-surface-variant uppercase tracking-widest">Bottles</p>
+</button>
+<button class="answer-btn group bg-surface-container-lowest border-3 border-black neo-shadow p-6 rounded-lg text-center hover:bg-secondary-container transition-all active-interaction" onclick="selectAnswer(this)">
+<span class="font-headline-xl text-headline-xl text-on-surface">2</span>
+<div class="h-1 w-12 bg-black mx-auto my-2 rounded-full group-hover:w-20 transition-all"></div>
+<p class="font-label-lg text-on-surface-variant uppercase tracking-widest">Bottles</p>
+</button>
+<button class="answer-btn group bg-surface-container-lowest border-3 border-black neo-shadow p-6 rounded-lg text-center hover:bg-secondary-container transition-all active-interaction" onclick="selectAnswer(this)">
+<span class="font-headline-xl text-headline-xl text-on-surface">7</span>
+<div class="h-1 w-12 bg-black mx-auto my-2 rounded-full group-hover:w-20 transition-all"></div>
+<p class="font-label-lg text-on-surface-variant uppercase tracking-widest">Bottles</p>
+</button>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="bg-surface-container p-6 flex justify-between items-center border-t-3 border-black">
+<button class="flex items-center gap-2 font-label-lg text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">help_outline</span> Need a Hint?
+                </button>
+<button class="px-10 py-4 bg-primary-container text-on-primary-container font-headline-md text-headline-md rounded-lg border-3 border-black neo-shadow opacity-50 cursor-not-allowed transition-all active-interaction" disabled="" id="submitBtn">
+                    Check Answer
+                </button>
+</div>
+</div>
+<!-- Chat Hint Buddy (Bento Style Sidebar-like info) -->
+<div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-secondary-fixed text-on-secondary-fixed p-6 border-3 border-black neo-shadow rounded-lg flex items-center gap-4">
+<div class="w-16 h-16 bg-white border-2 border-black rounded-full flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0px_#000]">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">Samajhne ki koshish karo!</h3>
+<p class="font-body-md">Subtraction ka matlab hota hai kuch nikaal dena. Kul 5 mein se 2 bottles chali gayi!</p>
+</div>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-6 border-3 border-black neo-shadow rounded-lg flex flex-col justify-center items-center text-center">
+<span class="font-headline-lg text-headline-lg">5 - 2 = ?</span>
+<p class="font-label-lg mt-1 opacity-70">Simple Maths!</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe bg-surface-container-lowest h-20 border-t-3 border-black shadow-[0px_-4px_0px_#1A1A1A]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-lg">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg p-2 border-3 border-black shadow-[2px_2px_0px_#1A1A1A]">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-lg">Quiz</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-lg">Story</span>
+</button>
+</nav>
+<script>
+        function selectAnswer(btn) {
+            // Reset all buttons
+            document.querySelectorAll('.answer-btn').forEach(b => {
+                b.classList.remove('bg-secondary-container', 'translate-x-[2px]', 'translate-y-[2px]', 'shadow-none');
+                b.classList.add('bg-surface-container-lowest', 'neo-shadow');
+            });
+
+            // Select clicked button
+            btn.classList.remove('bg-surface-container-lowest', 'neo-shadow');
+            btn.classList.add('bg-secondary-container', 'translate-x-[2px]', 'translate-y-[2px]', 'shadow-none');
+            
+            // Enable submit button
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            
+            // Interaction effect
+            const ripple = document.createElement('div');
+            ripple.className = 'absolute inset-0 bg-white/20 pointer-events-none rounded-lg';
+            btn.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 300);
+        }
+
+        // Simple feedback on submit
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const selected = document.querySelector('.answer-btn.bg-secondary-container');
+            if (selected.querySelector('span').innerText === '3') {
+                alert('Shabaash! Sahi jawaab! 🎉');
+            } else {
+                alert('Oops! Phir se koshish karo. Hint dekho!');
+            }
+        });
+    </script>
+</body></html>

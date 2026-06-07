@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Geometry: Rekha &amp; Bindu - Points on a Line</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-fixed": "#3e0020",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#b80069",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed": "#ffdcc4",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb0cb",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f3f4",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#5b2d00",
+                        "outline-variant": "#e1bdc7",
+                        "on-tertiary-container": "#4c3f00",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb0cb",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffd9e3",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-fixed-variant": "#6f3800",
+                        "on-surface-variant": "#5a3f48",
+                        "tertiary-container": "#c9a900",
+                        "on-background": "#1a1c1c",
+                        "primary-container": "#df0b81",
+                        "secondary-fixed-dim": "#ffb781",
+                        "on-primary-fixed-variant": "#8d004f",
+                        "on-secondary-fixed": "#2f1400",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary": "#b40067",
+                        "outline": "#8d6f78",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#f88400",
+                        "tertiary": "#705d00",
+                        "secondary": "#924c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "border-width": "3px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Fredoka"],
+                        "headline-lg": ["Fredoka"],
+                        "body-md": ["Nunito Sans"],
+                        "label-bold": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "headline-xl-mobile": ["Fredoka"],
+                        "headline-md": ["Fredoka"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Blueprint dot grid background */
+        body {
+            background-color: #f9f9f9;
+            background-image: radial-gradient(#e2e2e2 2px, transparent 2px);
+            background-size: 32px 32px;
+        }
+        
+        /* Neo-brutalist shared styles */
+        .brutal-card {
+            background-color: #ffffff;
+            border: 3px solid #1a1c1c;
+            box-shadow: 4px 4px 0px #1a1c1c;
+        }
+        
+        .brutal-btn {
+            border: 3px solid #1a1c1c;
+            box-shadow: 4px 4px 0px #1a1c1c;
+            transition: all 0.1s ease;
+        }
+        
+        .brutal-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1a1c1c;
+        }
+
+        /* Animation for Infinite Points Visual */
+        @keyframes pointReveal {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .dot-line-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 40px;
+            position: relative;
+        }
+
+        .dot-line-base {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #1a1c1c;
+            z-index: 1;
+        }
+
+        .infinite-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #df0b81; /* primary-container */
+            border-radius: 50%;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        /* Activity specific */
+        #interactive-line-area {
+            cursor: crosshair;
+        }
+        
+        .user-point {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #b40067; /* primary */
+            border: 3px solid #1a1c1c;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pointReveal 0.3s ease-out forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface min-h-screen pb-24 font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface w-full top-0 sticky border-b-[3px] border-on-surface shadow-[4px_4px_0px_#1B1C19] z-50 flex justify-between items-center px-margin-mobile py-4 transition-all">
+<button aria-label="Go back" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary font-headline-md text-headline-md">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary truncate max-w-[60%] text-center">
+            Geometry: Rekha &amp; Bindu
+        </h1>
+<div class="flex items-center gap-1 font-label-bold text-label-bold bg-secondary-fixed px-3 py-1 rounded-full border-[3px] border-on-surface">
+<span>5</span>
+<span>🔥</span>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-margin-mobile pt-8 space-y-8">
+<!-- Concept Header -->
+<section>
+<h2 class="font-headline-xl-mobile md:text-headline-xl text-on-surface mb-2">Points on a Line</h2>
+<div class="inline-flex items-center gap-2 bg-tertiary-fixed px-3 py-1 border-[3px] border-on-surface font-label-bold uppercase tracking-wider text-xs mb-6 shadow-[2px_2px_0px_#1a1c1c]">
+<span class="w-3 h-3 rounded-full bg-primary border-[2px] border-on-surface block"></span>
+                Intermediate Concept
+            </div>
+<div class="brutal-card p-6 relative overflow-hidden">
+<!-- Decorative element -->
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-secondary-container border-[3px] border-on-surface rounded-full opacity-50"></div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 leading-tight">What makes up a line?</h3>
+<p class="font-body-lg text-body-lg">
+                    A line (Rekha) might look like a single, solid stroke, but it's actually a collection of <strong>infinite points</strong> (Bindu) packed so tightly together that there is no space between them.
+                </p>
+</div>
+</section>
+<!-- Visual Explanation -->
+<section class="brutal-card p-6 bg-surface-container-low">
+<div class="flex items-center justify-between mb-6 border-b-[3px] border-on-surface pb-2">
+<span class="font-label-bold text-label-bold uppercase tracking-wide">Visualizer</span>
+<span class="material-symbols-outlined">zoom_in</span>
+</div>
+<p class="font-body-md text-body-md mb-8 text-center">Watch as we zoom into a solid line to reveal its true nature.</p>
+<!-- Animated Line Visual -->
+<div class="h-32 flex flex-col items-center justify-center border-[3px] border-on-surface bg-surface-container-lowest p-4 relative overflow-hidden">
+<div class="dot-line-container" id="visual-line">
+<div class="dot-line-base"></div>
+<!-- Dots will be injected here via JS to show the "infinite points" concept -->
+</div>
+</div>
+</section>
+<!-- Interactive Activity -->
+<section class="brutal-card p-6 border-primary bg-primary-fixed">
+<div class="flex items-center justify-between mb-4 border-b-[3px] border-on-surface pb-2">
+<span class="font-label-bold text-label-bold uppercase tracking-wide text-on-primary-fixed">Activity</span>
+<div class="font-headline-md text-primary bg-surface px-3 py-1 border-[3px] border-on-surface rounded-full shadow-[2px_2px_0px_#1a1c1c]" id="score-counter">0/3</div>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 text-on-primary-fixed">Find 3 points on this line</h3>
+<p class="font-body-md text-body-md mb-6">Click anywhere on the thick black line below to identify a point.</p>
+<!-- The Interactive Canvas -->
+<div class="h-40 bg-surface border-[3px] border-on-surface shadow-[inset_4px_4px_0px_rgba(0,0,0,0.1)] relative flex items-center justify-center overflow-hidden" id="activity-canvas">
+<!-- The target line -->
+<div aria-label="Interactive line, click to find points" class="w-full h-12 flex items-center relative z-10 group" id="interactive-line-area">
+<div class="w-full h-[6px] bg-on-surface relative group-hover:bg-primary transition-colors"></div>
+</div>
+<!-- Success Message Overlay (Hidden by default) -->
+<div class="absolute inset-0 bg-secondary-fixed z-50 flex flex-col items-center justify-center border-[3px] border-on-surface hidden" id="success-overlay">
+<span class="material-symbols-outlined text-headline-xl text-primary mb-2" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h4 class="font-headline-lg text-headline-lg text-on-surface text-center px-4">Brilliant!</h4>
+<p class="font-body-md mt-2 text-center px-4">You found 3 of the infinite points on this line.</p>
+<button class="mt-4 bg-primary text-on-primary font-label-bold px-6 py-2 brutal-btn" onclick="resetActivity()">Try Again</button>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // --- Visualizer Animation Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const visualLineContainer = document.getElementById('visual-line');
+            const numDots = 25;
+            
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'infinite-dot';
+                // Stagger animation delay
+                dot.style.animation = `pointReveal 2s infinite alternate ${i * 0.1}s`;
+                visualLineContainer.appendChild(dot);
+            }
+        });
+
+        // --- Interactive Activity Logic ---
+        const activityArea = document.getElementById('interactive-line-area');
+        const activityCanvas = document.getElementById('activity-canvas');
+        const scoreCounter = document.getElementById('score-counter');
+        const successOverlay = document.getElementById('success-overlay');
+        
+        let pointsFound = 0;
+        const targetPoints = 3;
+
+        activityArea.addEventListener('click', (e) => {
+            if (pointsFound >= targetPoints) return;
+
+            // Calculate position relative to the activity area
+            const rect = activityArea.getBoundingClientRect();
+            // We want x relative to the container, y fixed to middle of line
+            const x = e.clientX - rect.left;
+            
+            // Create point element
+            const point = document.createElement('div');
+            point.className = 'user-point';
+            point.style.left = `${x}px`;
+            point.style.top = `50%`; // Centered vertically on the line
+            
+            activityArea.appendChild(point);
+            
+            pointsFound++;
+            scoreCounter.textContent = `${pointsFound}/${targetPoints}`;
+            
+            // Pulse the counter
+            scoreCounter.classList.add('scale-110');
+            setTimeout(() => scoreCounter.classList.remove('scale-110'), 200);
+
+            if (pointsFound === targetPoints) {
+                setTimeout(() => {
+                    successOverlay.classList.remove('hidden');
+                }, 500);
+            }
+        });
+
+        function resetActivity() {
+            pointsFound = 0;
+            scoreCounter.textContent = `0/${targetPoints}`;
+            successOverlay.classList.add('hidden');
+            
+            // Remove all user points
+            const points = activityArea.querySelectorAll('.user-point');
+            points.forEach(p => p.remove());
+        }
+    </script>
+</body></html>
