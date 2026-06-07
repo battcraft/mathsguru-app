@@ -24,8 +24,8 @@ interface Props {
 }
 
 export function HomeView({ stats, onStartQuiz, onNavigate, difficulty, onSetDifficulty, onAddXP }: Props) {
-  const [mascotIdx] = useState(Math.floor(Math.random() * mascotMessages.length));
-  const [riddleIdx] = useState(Math.floor(Math.random() * DAILY_RIDDLES.length));
+  const [mascotIdx] = useState(() => Math.floor(Math.random() * mascotMessages.length));
+  const [riddleIdx] = useState(() => Math.floor(Math.random() * DAILY_RIDDLES.length));
   const [riddleAnswer, setRiddleAnswer] = useState<number | null>(null);
   const [riddleSolved, setRiddleSolved] = useState(false);
   const [chatInput, setChatInput] = useState('');

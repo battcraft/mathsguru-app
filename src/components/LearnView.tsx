@@ -17,6 +17,7 @@ export function LearnView({ stats, onViewScreen, onCompleteScreen, onAddXP, diff
   const [selectedSubtopic, setSelectedSubtopic] = useState<string | null>(null);
   const [selectedScreenIdx, setSelectedScreenIdx] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const completingRef = useRef(false);
 
   const topic = TOPICS.find(t => t.id === selectedTopic);
   const subtopic = topic?.subtopics.find(s => s.id === selectedSubtopic);
@@ -33,10 +34,13 @@ export function LearnView({ stats, onViewScreen, onCompleteScreen, onAddXP, diff
   // Listen for score postMessage from iframe
   useEffect(() => {
     const handler = (e: MessageEvent) => {
+      const allowedOrigins = [window.location.origin, 'null', ''];
+      if (!allowedOrigins.includes(e.origin)) return;
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.type === 'score' && typeof data.score === 'number') {
-          onAddXP(data.score);
+          const clamped = Math.max(0, Math.min(100, data.score));
+          onAddXP(clamped);
         }
       } catch {}
     };
@@ -155,7 +159,7 @@ export function LearnView({ stats, onViewScreen, onCompleteScreen, onAddXP, diff
             <iframe ref={iframeRef}
               src={currentScreen.file}
               className="w-full h-full border-0"
-              sandbox="allow-scripts allow-same-origin"
+              sandbox="allow-scripts"
               onLoad={() => onViewScreen(currentScreen.id)}
             />
           )}
@@ -171,7 +175,12 @@ export function LearnView({ stats, onViewScreen, onCompleteScreen, onAddXP, diff
           <span className="text-xs text-gray-500 font-bold">{selectedScreenIdx + 1}/{screens.length}</span>
           <div className="flex gap-2">
             {currentScreen && !stats.completedScreens.has(currentScreen.id) && (
-              <button onClick={() => { onCompleteScreen(currentScreen.id); onAddXP(5); }}
+              <button onClick={() => {
+                if (completingRef.current) return;
+                completingRef.current = true;
+                onCompleteScreen(currentScreen.id);
+                onAddXP(5);
+              }}
                 className="bg-[var(--green)] text-white px-4 py-2 rounded-lg border-2 border-black font-bold text-sm hover:translate-y-[1px] shadow-[2px_2px_0px_var(--black)] transition-all flex items-center gap-1">
                 <CheckCircle size={16} /> Done!
               </button>
