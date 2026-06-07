@@ -47,6 +47,7 @@ export interface QuizQuestion {
 export interface UserStats {
   xp: number;
   streak: number;
+  lastActiveDate: string;
   screensViewed: Set<string>;
   completedScreens: Set<string>;
   badges: string[];

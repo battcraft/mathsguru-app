@@ -9,14 +9,45 @@ import type { UserStats, DifficultyLevel } from './types';
 
 const STORAGE_KEY = 'mathsguru-stats';
 
+function todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function yesterdayStr() {
+  const d = new Date();
+  d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+
 export function loadStats(): UserStats {
+  const today = todayStr();
+  const yesterday = yesterdayStr();
+
+  const defaults: UserStats = {
+    xp: 0, streak: 0, lastActiveDate: '',
+    screensViewed: new Set(), completedScreens: new Set(),
+    badges: [], quizScores: {},
+  };
+
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
+      const last = parsed.lastActiveDate || '';
+      let streak = parsed.streak || 0;
+
+      if (last === today) {
+        // already active today — keep streak
+      } else if (last === yesterday) {
+        streak += 1;
+      } else {
+        streak = 1;
+      }
+
       return {
         xp: parsed.xp || 0,
-        streak: parsed.streak || 0,
+        streak,
+        lastActiveDate: today,
         screensViewed: new Set(parsed.screensViewed || []),
         completedScreens: new Set(parsed.completedScreens || []),
         badges: parsed.badges || [],
@@ -24,7 +55,7 @@ export function loadStats(): UserStats {
       };
     }
   } catch {}
-  return { xp: 0, streak: 0, screensViewed: new Set(), completedScreens: new Set(), badges: [], quizScores: {} };
+  return { ...defaults, lastActiveDate: today, streak: 1 };
 }
 
 export function saveStats(stats: UserStats) {
@@ -106,6 +137,7 @@ export default function App() {
                 onNavigate={setActiveTab}
                 difficulty={difficulty}
                 onSetDifficulty={setDifficulty}
+                onAddXP={addXP}
               />
             </motion.div>
           )}
