@@ -20,7 +20,7 @@ export function QuizView({ stats, onAddXP, onCompleteQuiz, difficulty }: Props) 
   const [quizComplete, setQuizComplete] = useState(false);
 
   // Shuffle and pick 5 questions
-  const [questions] = useState<QuizQuestion[]>(() => {
+  const [questions, setQuestions] = useState<QuizQuestion[]>(() => {
     const shuffled = [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 5);
   });
@@ -55,6 +55,10 @@ export function QuizView({ stats, onAddXP, onCompleteQuiz, difficulty }: Props) 
     }
   };
 
+  const shuffleQuestions = (): QuizQuestion[] => {
+    return [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 5);
+  };
+
   const handleRestart = () => {
     setCurrentIndex(0);
     setSelectedAnswer(null);
@@ -64,11 +68,6 @@ export function QuizView({ stats, onAddXP, onCompleteQuiz, difficulty }: Props) 
     setShowHint(false);
     setQuizComplete(false);
     setQuestions(shuffleQuestions());
-  };
-
-  const setQuestions = (_q: QuizQuestion[]) => {};
-  const shuffleQuestions = (): QuizQuestion[] => {
-    return [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 5);
   };
 
   if (quizComplete) {
