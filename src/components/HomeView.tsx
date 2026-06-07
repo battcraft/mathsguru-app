@@ -20,12 +20,14 @@ interface Props {
   onNavigate: (tab: string) => void;
   difficulty: DifficultyLevel;
   onSetDifficulty: (d: DifficultyLevel) => void;
+  onAddXP: (amount: number) => void;
 }
 
-export function HomeView({ stats, onStartQuiz, onNavigate, difficulty, onSetDifficulty }: Props) {
+export function HomeView({ stats, onStartQuiz, onNavigate, difficulty, onSetDifficulty, onAddXP }: Props) {
   const [mascotIdx] = useState(Math.floor(Math.random() * mascotMessages.length));
   const [riddleIdx] = useState(Math.floor(Math.random() * DAILY_RIDDLES.length));
   const [riddleAnswer, setRiddleAnswer] = useState<number | null>(null);
+  const [riddleSolved, setRiddleSolved] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [chatResponse, setChatResponse] = useState('');
   const [showChat, setShowChat] = useState(false);
@@ -129,7 +131,13 @@ export function HomeView({ stats, onStartQuiz, onNavigate, difficulty, onSetDiff
         <p className="text-sm font-medium mb-3">{riddle.question}</p>
         <div className="grid grid-cols-3 gap-2">
           {riddle.options.map((opt, i) => (
-            <button key={i} onClick={() => setRiddleAnswer(i)}
+            <button key={i} onClick={() => {
+              setRiddleAnswer(i);
+              if (i === riddle.correct && !riddleSolved) {
+                setRiddleSolved(true);
+                onAddXP(20);
+              }
+            }}
               className={`text-sm font-bold py-2 rounded-lg border-2 border-black transition-all ${
                 riddleAnswer === i
                   ? i === riddle.correct ? 'bg-green-400 text-white' : 'bg-red-400 text-white'
